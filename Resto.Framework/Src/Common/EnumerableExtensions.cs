@@ -140,7 +140,7 @@ namespace Resto.Framework.Common
         [NotNull, Pure]
         public static IEnumerable<TSource> AsSequence<TSource>(this TSource item)
         {
-            return EnumerableEx.Return(item);
+            yield return item;
         }
 
         /// <summary>
@@ -879,7 +879,10 @@ namespace Resto.Framework.Common
             if (items == null)
                 throw new ArgumentNullException(nameof(items));
 
-            items.ForEach(item => item.Dispose());
+            foreach (var item in items)
+            {
+                item.Dispose();
+            }
         }
 
         /// <summary>

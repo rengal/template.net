@@ -101,14 +101,6 @@ namespace Resto.Framework.Common
             }
         }
 
-        public static ReadOnlyCollection<T> AsReadOnly<T>([NotNull] this IList<T> list)
-        {
-            if (list == null)
-                throw new ArgumentNullException(nameof(list));
-
-            return new ReadOnlyCollection<T>(list);
-        }
-
         /// <summary>
         /// Делит элементы исходного списка на указанное количество примерно равных по размеру групп (последняя группа может оказаться больше остальных).
         /// </summary>

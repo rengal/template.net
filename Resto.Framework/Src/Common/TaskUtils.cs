@@ -165,27 +165,6 @@ namespace Resto.Framework.Common
         }
 
         /// <summary>
-        /// Если задача завершается исключением, пробрасывает это исключение в главный поток.
-        /// </summary>
-        public static void RethrowExceptionToUiThread([NotNull] this Task task)
-        {
-            task.ContinueWith(failedTask => ReThrowExceptionToUiThread(failedTask.Exception), TaskContinuationOptions.OnlyOnFaulted);
-        }
-
-        private static void ReThrowExceptionToUiThread(AggregateException aggregateException)
-        {
-            if (aggregateException == null)
-                return;
-
-            var exceptionInfo = ExceptionDispatchInfo.Capture(aggregateException.GetBaseException());
-            UiDispatcher.DispatcherScheduler.Schedule(exceptionInfo, (_, e) =>
-            {
-                e.Throw();
-                return Disposable.Empty;
-            });
-        }
-
-        /// <summary>
         /// Обёртывает <paramref name="result"/> в <see cref="Task{TResult}"/>.
         /// </summary>
         /// <typeparam name="T">Тип результата.</typeparam>

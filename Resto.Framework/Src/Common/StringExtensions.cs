@@ -493,55 +493,6 @@ namespace Resto.Framework.Common
             return str.Substring(0, i) + trimmedEnd;
         }
 
-        /// <summary>
-        /// Генерирует хэш-код заданной длины от переданной строки.
-        /// Аналогичен методу написанному на серверной стороне на Java и JS.Используется для вычисления токена GUID'a, чтобы можно было сопоставлять логи бэка и сервера.
-        /// Вероятность коллизий для рандомного токена от 0 до 3х на 20млн токенов. Последовательных 20 на 20млн.
-        /// При изменении алгоритма просьба поправить аналогичные функции на Java и JS.
-        /// Запустить StringHelperTests.TestRandomGuidToken с количеством не меньшим 20млн и убедиться, что количество коллизий не возросло.
-        /// См. аналоги на
-        /// JS dev/Server/Resto/web/js/hashUtils.js#calcHashCode
-        /// Java resto.utils.log4j.MdcUtils#calcHashCode
-        /// Описание: https://wiki.iiko.ru/display/support/Hash+token
-        /// </summary>
-        /// <param name="source">Исходная строка</param>
-        /// <param name="n">Длина хэш-кода в байтах</param>
-        /// <returns>Хеш код в вдие масива байт</returns>
-        [NotNull]
-        [Pure]
-        public static byte[] CalcHashCode([NotNull] this string source, int n)
-        {
-            if (n <= 0)
-            {
-                throw new ArgumentOutOfRangeException(nameof(n));
-            }
-            byte[] result = new byte[n];
-            // считаем контрольную сумму
-            uint crcValue = Crc32Helper.CalcCrc32(Encoding.ASCII.GetBytes(source), 0, source.Length);
-            // преобразуем результат контрольной суммы из long в массив байт
-            for (int i = 0; i < n; i++)
-            {
-                // именно при таком смещении распределение получается более эффективным
-                // noinspection NumericCastThatLosesPrecision
-                result[i] = (byte)(crcValue >> (i % 32));
-            }
-            // итерируемся с конца, т.к. для Guid при последовательном получении значения инкрементится именно хвост
-            int current = 1;
-            int j = 0;
-            const int prime = 37;
-            for (int i = source.Length - 1; i >= 0; i--)
-            {
-                if (j >= result.Length)
-                {
-                    j = 0;
-                }
-                // noinspection NumericCastThatLosesPrecision
-                result[j] ^= (byte)(current * prime + source[i]);
-                current = result[j++];
-            }
-            return result;
-        }
-
         public static int IntParseOrDefault(this string s)
         {
             return int.TryParse(s, out var result) ? result : 0;

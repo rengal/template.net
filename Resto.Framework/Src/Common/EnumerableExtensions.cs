@@ -1454,5 +1454,19 @@ namespace Resto.Framework.Common
                 count--;
             }
         }
+
+        public static IEnumerable<TResult> Generate<TState, TResult>(
+            TState initialState,
+            Func<TState, bool> condition,
+            Func<TState, TState> iterate,
+            Func<TState, TResult> resultSelector)
+        {
+            TState state = initialState;
+            while (condition(state))
+            {
+                yield return resultSelector(state);
+                state = iterate(state);
+            }
+        }
     }
 }

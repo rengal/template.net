@@ -1,4 +1,5 @@
 using Resto.Framework.Attributes.JetBrains;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Resto.Framework.Common
 {
@@ -7,10 +8,19 @@ namespace Resto.Framework.Common
     /// </summary>
     public class LogFactory
     {
-        [NotNull]
+        private static ILogFactory? instance;
+
         public static ILogFactory Instance
         {
-            get { return UnityHelper.GetFactoryContainer().Resolve<ILogFactory>(); }
+            get
+            {
+                if (instance != null)
+                    return instance;
+                var services = new ServiceCollection();
+                var serviceProvider = services.BuildServiceProvider();
+                instance = serviceProvider.GetService<ILogFactory>();
+                return instance;
+            }
         }
 
         /// <summary>

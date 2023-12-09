@@ -3,6 +3,7 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
 using System.Linq;
+using EnumerableExtensions;
 using Resto.Framework.Attributes.JetBrains;
 using Wintellect.PowerCollections;
 

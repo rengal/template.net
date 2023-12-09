@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using System.Diagnostics;
 using System.Globalization;
-using System.IO;
-using System.Linq;
 using System.Reflection;
 using System.Resources;
 using System.Text.RegularExpressions;
-
 using Resto.Framework.Attributes.JetBrains;
-
 using Resto.Framework.Common;
+using System.Resources.NetStandard;
 
 namespace Resto.Framework.Localization
 {

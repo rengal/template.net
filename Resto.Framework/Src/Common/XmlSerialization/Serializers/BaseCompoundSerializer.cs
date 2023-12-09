@@ -55,7 +55,7 @@ namespace Resto.Framework.Common.XmlSerialization.Serializers
         {
             Debug.Assert(type != null);
 
-            return EnumerableEx
+            return EnumerableExtensions
                 .Generate(type, t => t != typeof(object), t => t.BaseType, t => t.GetFields(BindingFlags.DeclaredOnly | BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic))
                 .SelectMany(fields => fields)
                 .Where(field => !field.IsDefined(typeof(TransientAttribute), false))
@@ -67,7 +67,7 @@ namespace Resto.Framework.Common.XmlSerialization.Serializers
         {
             Debug.Assert(type != null);
 
-            return EnumerableEx
+            return EnumerableExtensions
                 .Generate(type, t => t != typeof(object), t => t.BaseType, t => t.GetProperties(BindingFlags.DeclaredOnly | BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic))
                 .SelectMany(properties => properties)
                 .Where(property => !property.IsDefined(typeof(TransientAttribute), false))

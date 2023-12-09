@@ -1,0 +1,1382 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ErrorOK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="ErrorError" xml:space="preserve">
+    <value>Произошла ошибка</value>
+  </data>
+  <data name="ErrorUnexpected" xml:space="preserve">
+    <value>Произошла неопределенная ошибка</value>
+  </data>
+  <data name="ErrorParameter" xml:space="preserve">
+    <value>Неверный параметр при вызове функции</value>
+  </data>
+  <data name="ErrorBuffer" xml:space="preserve">
+    <value>Переполнение буфера</value>
+  </data>
+  <data name="ErrorMemory" xml:space="preserve">
+    <value>Программе не хватает памяти</value>
+  </data>
+  <data name="ErrorCOMObject" xml:space="preserve">
+    <value>Ошибка при вызове COM метода</value>
+  </data>
+  <data name="ErrorNullPointer" xml:space="preserve">
+    <value>Объект не создан</value>
+  </data>
+  <data name="ErrorConnect" xml:space="preserve">
+    <value>Не удалось подключиться к удаленному компьютеру</value>
+  </data>
+  <data name="ErrorSend" xml:space="preserve">
+    <value>Не удалось передать данные по сети</value>
+  </data>
+  <data name="ErrorFunctionality" xml:space="preserve">
+    <value>Текущая функциональность не поддерживается или не реализована</value>
+  </data>
+  <data name="ErrorNullPointerDriver" xml:space="preserve">
+    <value>Не создан класс-драйвер для работы с устройством</value>
+  </data>
+  <data name="ErrorIncompatibleVersion" xml:space="preserve">
+    <value>Несовместимая версия внешнего компонента</value>
+  </data>
+  <data name="ErrorDeviceLocked" xml:space="preserve">
+    <value>Устройство заблокировано</value>
+  </data>
+  <data name="ErrorBadMessage" xml:space="preserve">
+    <value>Получена неопознанная команда</value>
+  </data>
+  <data name="ErrorStarted" xml:space="preserve">
+    <value>Устройство уже работает</value>
+  </data>
+  <data name="ErrorNotConfigured" xml:space="preserve">
+    <value>Устройство не настроено и не может работать</value>
+  </data>
+  <data name="ErrorBadState" xml:space="preserve">
+    <value>Устройство не может обработать команду в данный момент времени</value>
+  </data>
+  <data name="ErrorStopped" xml:space="preserve">
+    <value>Устройство уже остановлено</value>
+  </data>
+  <data name="ErrorShutdown" xml:space="preserve">
+    <value>Устройство остановлено и не может обрабатывать команды</value>
+  </data>
+  <data name="ErrorPaused" xml:space="preserve">
+    <value>Работа устройства уже приостановлена</value>
+  </data>
+  <data name="ErrorStopping" xml:space="preserve">
+    <value>Устройство завершает работу и не может обрабатывать команды</value>
+  </data>
+  <data name="ErrorPausedTask" xml:space="preserve">
+    <value>Работа устройства приостановлена и оно не может обрабатывать задания</value>
+  </data>
+  <data name="ErrorNoPause" xml:space="preserve">
+    <value>Устройство не может быть приостановлено</value>
+  </data>
+  <data name="ErrorBadCommand" xml:space="preserve">
+    <value>Устройство не поддерживает эту команду</value>
+  </data>
+  <data name="ErrorNoDevice" xml:space="preserve">
+    <value>Неизвестный тип устройства</value>
+  </data>
+  <data name="ErrorDeviceId" xml:space="preserve">
+    <value>Устройство имеет продублированный идентификатор</value>
+  </data>
+  <data name="ErrorDeviceNotFound" xml:space="preserve">
+    <value>Устройство с заданным идентификатором не найдено</value>
+  </data>
+  <data name="ErrorDeviceExists" xml:space="preserve">
+    <value>Устройство с заданным идентификатором уже существует</value>
+  </data>
+  <data name="ErrorRemoveDevice" xml:space="preserve">
+    <value>Данное устройство не может быть удалено</value>
+  </data>
+  <data name="ErrorDeviceCount" xml:space="preserve">
+    <value>Слишком много устройств данной модели</value>
+  </data>
+  <data name="ErrorDeviceStart" xml:space="preserve">
+    <value>Не удалось привести устройство в рабочее состояние</value>
+  </data>
+  <data name="ErrorNoConnection" xml:space="preserve">
+    <value>Нет связи с устройством</value>
+  </data>
+  <data name="ErrorPortName" xml:space="preserve">
+    <value>Неверный тип порта</value>
+  </data>
+  <data name="ErrorPortNumber" xml:space="preserve">
+    <value>Неверный номер порта</value>
+  </data>
+  <data name="ErrorBaudrate" xml:space="preserve">
+    <value>Неверная скорость обмена с портом</value>
+  </data>
+  <data name="ErrorPortClose" xml:space="preserve">
+    <value>Ошибка при закрытии порта</value>
+  </data>
+  <data name="ErrorTextSize" xml:space="preserve">
+    <value>Слишком большое количество данных для печати</value>
+  </data>
+  <data name="ErrorNoText" xml:space="preserve">
+    <value>Нет данных для печати</value>
+  </data>
+  <data name="ErrorWriteFile" xml:space="preserve">
+    <value>Не удалось записать данные в файл или в порт</value>
+  </data>
+  <data name="ErrorAddr" xml:space="preserve">
+    <value>Неправильный сетевой адрес</value>
+  </data>
+  <data name="ErrorPortSetup" xml:space="preserve">
+    <value>Не удалось настроить порт для передачи данных</value>
+  </data>
+  <data name="ErrorPrinterList" xml:space="preserve">
+    <value>Не удалось получить список принтеров</value>
+  </data>
+  <data name="ErrorPrinterName" xml:space="preserve">
+    <value>Неправильное название принтера</value>
+  </data>
+  <data name="ErrorPrinter" xml:space="preserve">
+    <value>Не удалось получить доступ к принтеру</value>
+  </data>
+  <data name="ErrorOPOSDeviceList" xml:space="preserve">
+    <value>Не удалось получить список OPOS устройств</value>
+  </data>
+  <data name="ErrorNoChequePaper" xml:space="preserve">
+    <value>Закончилась чековая лента</value>
+  </data>
+  <data name="ErrorChequeCutter" xml:space="preserve">
+    <value>Неисправность обрезчика чековой ленты</value>
+  </data>
+  <data name="Error24H" xml:space="preserve">
+    <value>Истекли 24 часа, необходимо закрыть смену</value>
+  </data>
+  <data name="ErrorNoMoney" xml:space="preserve">
+    <value>Недостаточно наличных в кассе</value>
+  </data>
+  <data name="ErrorNoControlPaper" xml:space="preserve">
+    <value>Закончилась контрольная лента</value>
+  </data>
+  <data name="ErrorBadPass" xml:space="preserve">
+    <value>Неправильный пароль доступа</value>
+  </data>
+  <data name="ErrorBadDepartment" xml:space="preserve">
+    <value>Недопустимое значение номера отдела</value>
+  </data>
+  <data name="ErrorBadMoney" xml:space="preserve">
+    <value>Слишком большая сумма</value>
+  </data>
+  <data name="ErrorChequeBufferOverflow" xml:space="preserve">
+    <value>Буфер чека переполнен, разделите заказ</value>
+  </data>
+  <data name="ErrorRegisterName" xml:space="preserve">
+    <value>Неправильное название фискального регистратора</value>
+  </data>
+  <data name="ErrorRegisterInfo" xml:space="preserve">
+    <value>Отсутствие регистрационной информации</value>
+  </data>
+  <data name="ErrorPrintTextNotSupported" xml:space="preserve">
+    <value>Печать произвольного текста не поддерживается</value>
+  </data>
+  <data name="ErrorVatNotSupported" xml:space="preserve">
+    <value>Неизвестная налоговая ставка</value>
+  </data>
+  <data name="ErrorVatValueNotSupported" xml:space="preserve">
+    <value>Неизвестная налоговая ставка: </value>
+  </data>
+  <data name="ErrorVatIdIncorrect" xml:space="preserve">
+    <value>Некорректный идентификатор налоговой ставки: </value>
+  </data>
+  <data name="ErrorItemCategoryIncorrect" xml:space="preserve">
+    <value>Некорректный признак предмета расчета: </value>
+  </data>
+  <data name="ErrorVat" xml:space="preserve">
+    <value>Не удалось зарегистрировать налог</value>
+  </data>
+  <data name="ErrorReturnNotSupported" xml:space="preserve">
+    <value>Печать чеков возврата не поддерживается</value>
+  </data>
+  <data name="ErrorTimePort" xml:space="preserve">
+    <value>Неверное время ожидания для порта</value>
+  </data>
+  <data name="ErrorTimeStable" xml:space="preserve">
+    <value>Неверное время ожидания для получения стабильного веса</value>
+  </data>
+  <data name="ErrorStableWeight" xml:space="preserve">
+    <value>Стабильный вес не может быть рассчитан</value>
+  </data>
+  <data name="ErrorOverweight" xml:space="preserve">
+    <value>Перевес</value>
+  </data>
+  <data name="ErrorWeightNotSupported" xml:space="preserve">
+    <value>Получение веса не поддерживается драйвером</value>
+  </data>
+  <data name="ErrorSendPluNotSupported" xml:space="preserve">
+    <value>Выгрузка товаров не поддерживается весами</value>
+  </data>
+  <data name="ErrorMassaInvalidArg" xml:space="preserve">
+    <value>Неправильные аргументы вызова</value>
+  </data>
+  <data name="ErrorMassaOpenPort" xml:space="preserve">
+    <value>Весы не отвечают либо ошибка открытия COM-порта</value>
+  </data>
+  <data name="ErrorMassaWipNotConnected" xml:space="preserve">
+    <value>Не установлено соединение с весами</value>
+  </data>
+  <data name="ErrorMassaReadWrite" xml:space="preserve">
+    <value>Ошибка обмена данными с весами</value>
+  </data>
+  <data name="ErrorMassaOpenFile" xml:space="preserve">
+    <value>Ошибка открытия файла</value>
+  </data>
+  <data name="ErrorMassaFileFormat" xml:space="preserve">
+    <value>Ошибка чтения файла: неправильный формат файла</value>
+  </data>
+  <data name="ErrorMassaFileDenied" xml:space="preserve">
+    <value>Весы сообщили о невозможности передачи блока файла</value>
+  </data>
+  <data name="ErrorMassaOpenInterface" xml:space="preserve">
+    <value>Ошибка инициализации сетевого интерфейса</value>
+  </data>
+  <data name="ErrorMassaNoAnswer" xml:space="preserve">
+    <value>Ни одни весы не ответили за время таймаута</value>
+  </data>
+  <data name="ErrorMassaCantConnect" xml:space="preserve">
+    <value>Ошибка установки соединения с весами по протоколу TCP. Возможно, неправильно указан TCP порт</value>
+  </data>
+  <data name="ErrorMassaTcpNetworkAfterConnect" xml:space="preserve">
+    <value>TCP соединение с весами было установлено, но произошла ошибка обмена данными</value>
+  </data>
+  <data name="ErrorMassaUnknownError" xml:space="preserve">
+    <value>Недокументированная ошибка (код ошибки {0})</value>
+  </data>
+  <data name="ErrorBadIncrease" xml:space="preserve">
+    <value>Устройство не поддерживает такую надбавку</value>
+  </data>
+  <data name="ErrorUnknownCodepage" xml:space="preserve">
+    <value>Неизвестная кодировка</value>
+  </data>
+  <data name="ErrorInvalidCodepage" xml:space="preserve">
+    <value>Данная кодировка не поддерживается устройством</value>
+  </data>
+  <data name="ErrorSendPLU" xml:space="preserve">
+    <value>Не удалось загрузить номенклатуру товара или данная функция не поддерживается весами</value>
+  </data>
+  <data name="ErrorClearPLU" xml:space="preserve">
+    <value>Не удалось очистить номенклатуру товаров в весах</value>
+  </data>
+  <data name="ErrorPLUDriverAbsent" xml:space="preserve">
+    <value>Невозможно найти драйвер или загрузить функцию из драйвера</value>
+  </data>
+  <data name="ErrorPLUBufferFile" xml:space="preserve">
+    <value>Невозможно создать временный буферный файл</value>
+  </data>
+  <data name="ErrorPLUBufferFileWrite" xml:space="preserve">
+    <value>Невозможно записать единицу номенклатуры во временный буферный файл</value>
+  </data>
+  <data name="ErrorPLUWrongParams" xml:space="preserve">
+    <value>Неверные значения полей единицы номенклатуры</value>
+  </data>
+  <data name="ErrorInitDriver" xml:space="preserve">
+    <value>Невозможно выполнить инициализацию драйвера</value>
+  </data>
+  <data name="ErrorOpenShift" xml:space="preserve">
+    <value>Ошибка при открытии смены</value>
+  </data>
+  <data name="ErrorStartWcfService" xml:space="preserve">
+    <value>Не удалось запустить WCF-сервис</value>
+  </data>
+  <data name="TextPrinted" xml:space="preserve">
+    <value>Текст успешно отослан на печать</value>
+  </data>
+  <data name="DeviceDisabled" xml:space="preserve">
+    <value>Устройство было отключено</value>
+  </data>
+  <data name="DeviceReadyToWork" xml:space="preserve">
+    <value>Устройство готово к работе</value>
+  </data>
+  <data name="DeviceRunning" xml:space="preserve">
+    <value>Устройство было успешно запущено</value>
+  </data>
+  <data name="DeviceSetup" xml:space="preserve">
+    <value>Устройство было успешно настроено</value>
+  </data>
+  <data name="DeviceSetupButDoesntWork" xml:space="preserve">
+    <value>Устройство настроено, но не работает</value>
+  </data>
+  <data name="DeviceStopped" xml:space="preserve">
+    <value>Устройство остановлено</value>
+  </data>
+  <data name="DeviceWorks" xml:space="preserve">
+    <value>Устройство работает</value>
+  </data>
+  <data name="SparkDriverVersionError" xml:space="preserve">
+    <value>Необходима версия драйвера Спарк не ниже 1.16.2.13</value>
+  </data>
+  <data name="ClearPLUResultOk" xml:space="preserve">
+    <value>Список номенклатуры в весах очищен</value>
+  </data>
+  <data name="CreatedAndExpectsSettings" xml:space="preserve">
+    <value>Создано и ожидает настройки</value>
+  </data>
+  <data name="CreatedAndPreparedToWork" xml:space="preserve">
+    <value>Только что создано и подготавливается к работе</value>
+  </data>
+  <data name="DeviceAdded" xml:space="preserve">
+    <value>Устройство успешно добавлено</value>
+  </data>
+  <data name="DeviceListSet" xml:space="preserve">
+    <value>Устройства настроены</value>
+  </data>
+  <data name="DeviceSwitched" xml:space="preserve">
+    <value>Устройство перешло в режим ожидания</value>
+  </data>
+  <data name="DeviceWillBeSwitched" xml:space="preserve">
+    <value>Устройство будет переведено в режим ожидания</value>
+  </data>
+  <data name="ErrorCOMPort" xml:space="preserve">
+    <value>Не удалось настроить COM порт</value>
+  </data>
+  <data name="ErrorCOMPortBaudRate" xml:space="preserve">
+    <value>Не удалось установить скорость COM-порта</value>
+  </data>
+  <data name="ErrorCOMPortNumber" xml:space="preserve">
+    <value>Не удалось установить номер COM-порта</value>
+  </data>
+  <data name="ErrorCOMPortTimeout" xml:space="preserve">
+    <value>Не удалось установить таймаут</value>
+  </data>
+  <data name="ErrorCOMPortWrite" xml:space="preserve">
+    <value>Ошибка записи в COM порт</value>
+  </data>
+  <data name="ErrorConnectPrintServer" xml:space="preserve">
+    <value>Не удалось подключиться к серверу печати</value>
+  </data>
+  <data name="ErrorCreateOPOSLineDisplay" xml:space="preserve">
+    <value>Не удалось создать объект OPOSLineDisplay</value>
+  </data>
+  <data name="ErrorDevice" xml:space="preserve">
+    <value>Не удалось получить доступ к устройству</value>
+  </data>
+  <data name="ErrorDeviceCreate" xml:space="preserve">
+    <value>Устройство не создано</value>
+  </data>
+  <data name="ErrorDeviceOpen" xml:space="preserve">
+    <value>Не удалось открыть устройство</value>
+  </data>
+  <data name="ErrorDeviceSwitchOn" xml:space="preserve">
+    <value>Не удалось включить устройство</value>
+  </data>
+  <data name="ErrorDocPrint" xml:space="preserve">
+    <value>Не удалось начать печать документа</value>
+  </data>
+  <data name="ErrorGetDefaultSettings" xml:space="preserve">
+    <value>Не удалось получить настройки по умолчанию</value>
+  </data>
+  <data name="ErrorGetPortStatus" xml:space="preserve">
+    <value>Не удалось получить состояние порта</value>
+  </data>
+  <data name="ErrorGetPrintServerAddr" xml:space="preserve">
+    <value>Не удалось получить адрес сервера печати</value>
+  </data>
+  <data name="ErrorOPOSPrint" xml:space="preserve">
+    <value>Печать на OPOS-принтере не удалась</value>
+  </data>
+  <data name="ErrorPagePrint" xml:space="preserve">
+    <value>Не удалось начать печать страницы</value>
+  </data>
+  <data name="ErrorPasswordSet" xml:space="preserve">
+    <value>Не удалось установить пароль</value>
+  </data>
+  <data name="ErrorPrinterCapture" xml:space="preserve">
+    <value>Ошибка захвата принтера</value>
+  </data>
+  <data name="ErrorPrinterCreate" xml:space="preserve">
+    <value>Не удалось создать объект принтера</value>
+  </data>
+  <data name="ErrorPrinterInitialization" xml:space="preserve">
+    <value>Ошибка инициализации принтера</value>
+  </data>
+  <data name="ErrorPrinterOpen" xml:space="preserve">
+    <value>Ошибка при открытии принтера</value>
+  </data>
+  <data name="ErrorPrinterSwitchOn" xml:space="preserve">
+    <value>Убедитесь, что принтер подключен и проверьте его кабель</value>
+  </data>
+  <data name="ErrorPrinterWriteAllData" xml:space="preserve">
+    <value>Не удалось записать все данные в принтер</value>
+  </data>
+  <data name="ErrorPrinterWriteData" xml:space="preserve">
+    <value>Не удалось записать данные в принтер</value>
+  </data>
+  <data name="ErrorReadFile" xml:space="preserve">
+    <value>Не удалось получить результат записи данных в порт</value>
+  </data>
+  <data name="ErrorSendDataPrintServer" xml:space="preserve">
+    <value>Не удалось послать данные на сервер печати</value>
+  </data>
+  <data name="ErrorSetPortStatus" xml:space="preserve">
+    <value>Не удалось установить состояние порта</value>
+  </data>
+  <data name="ErrorTimeExceeded" xml:space="preserve">
+    <value>Превышено время ожидания</value>
+  </data>
+  <data name="FunctionUnsupported" xml:space="preserve">
+    <value>Функция не поддерживается</value>
+  </data>
+  <data name="Gm" xml:space="preserve">
+    <value>гр.</value>
+  </data>
+  <data name="Kg" xml:space="preserve">
+    <value>кг.</value>
+  </data>
+  <data name="Lb" xml:space="preserve">
+    <value>фунт(а/ов)</value>
+  </data>
+  <data name="MessageDisplayed" xml:space="preserve">
+    <value>Сообщение с текстом выведено</value>
+  </data>
+  <data name="NoDetails" xml:space="preserve">
+    <value>Нет данных</value>
+  </data>
+  <data name="Oz" xml:space="preserve">
+    <value>унция(и)</value>
+  </data>
+  <data name="SendPLUBuffered" xml:space="preserve">
+    <value>Единица номенклатуры помещена в буферный файл</value>
+  </data>
+  <data name="SendPLUFinalOk" xml:space="preserve">
+    <value>Номенклатура из буферного файла загружена в весы</value>
+  </data>
+  <data name="SendPLUResultOk" xml:space="preserve">
+    <value>Единица номенклатуры загружена в весы</value>
+  </data>
+  <data name="SendPLUResultOkWarningMsg" xml:space="preserve">
+    <value>Единица номенклатуры загружена в весы без дополнительного текста (состав, калорийность)</value>
+  </data>
+  <data name="SendPLUResultOkWarningMsgPart" xml:space="preserve">
+    <value>Единица номенклатуры загружена в весы с частью дополнительного текста (состав, калорийность)</value>
+  </data>
+  <data name="Setup" xml:space="preserve">
+    <value>Производится настройка</value>
+  </data>
+  <data name="Shutdown" xml:space="preserve">
+    <value>Завершает работу</value>
+  </data>
+  <data name="Starting" xml:space="preserve">
+    <value>Производится запуск</value>
+  </data>
+  <data name="Stopped" xml:space="preserve">
+    <value>Остановлено</value>
+  </data>
+  <data name="DeviceStartOk" xml:space="preserve">
+    <value>Устройство приведено в рабочее состояние</value>
+  </data>
+  <data name="UnknownMeasurement" xml:space="preserve">
+    <value>Неизвестная величина измерения</value>
+  </data>
+  <data name="ScalesStartResultOk" xml:space="preserve">
+    <value>Весы приведены в рабочее состояние</value>
+  </data>
+  <data name="ScalesConnectError" xml:space="preserve">
+    <value>Не удалось подключиться к весам</value>
+  </data>
+  <data name="ScalesStateError" xml:space="preserve">
+    <value>Не удалось получить состояние весов</value>
+  </data>
+  <data name="ScalesStopResultOk" xml:space="preserve">
+    <value>Весы были отключены</value>
+  </data>
+  <data name="ScalesTaskUnitResultOk" xml:space="preserve">
+    <value>Получаем единицу веса</value>
+  </data>
+  <data name="ScalesTaskWeightResultOk" xml:space="preserve">
+    <value>Получаем стабильный вес</value>
+  </data>
+  <data name="WeightStateError" xml:space="preserve">
+    <value>Не удалось получить состояние веса</value>
+  </data>
+  <data name="WorkCompleted" xml:space="preserve">
+    <value>Завершило работу</value>
+  </data>
+  <data name="WorkPaused" xml:space="preserve">
+    <value>Работа приостановлена</value>
+  </data>
+  <data name="Works" xml:space="preserve">
+    <value>Работает</value>
+  </data>
+  <data name="ErrorFRBlock" xml:space="preserve">
+    <value>ЭККР блокирован по техническим причинам: неисправность часов реального времени/ошибки при работе с фискальной памятью/падение напряжения питания ниже допустимого предела.</value>
+  </data>
+  <data name="ErrorIncorrectBlockLength" xml:space="preserve">
+    <value>Неверная длина блока</value>
+  </data>
+  <data name="ErrorFRCreate" xml:space="preserve">
+    <value>Не удалось создать объект ФР</value>
+  </data>
+  <data name="ErrorFROpen" xml:space="preserve">
+    <value>Ошибка при открытии ФР</value>
+  </data>
+  <data name="ErrorControlObjectVersion" xml:space="preserve">
+    <value>Установите версию OPOS Control Object не ниже 1.13</value>
+  </data>
+  <data name="ErrorGetCash" xml:space="preserve">
+    <value>Не удалось получить сумму в кассе</value>
+  </data>
+  <data name="VideoDisabled" xml:space="preserve">
+    <value>Видеокамера отключена</value>
+  </data>
+  <data name="VideoReadyStart" xml:space="preserve">
+    <value>Видеокамера подготовлена к работе</value>
+  </data>
+  <data name="VideoStarted" xml:space="preserve">
+    <value>Видеокамера работает</value>
+  </data>
+  <data name="VideoStartError" xml:space="preserve">
+    <value>Произошла неизвестная ошибка во время запуска видеокамеры</value>
+  </data>
+  <data name="VideoStartResultOk" xml:space="preserve">
+    <value>Видеокамера переведена в рабочее состояние</value>
+  </data>
+  <data name="VideoSubsystemError" xml:space="preserve">
+    <value>Не работает подсистема видеонаблюдения</value>
+  </data>
+  <data name="ErrorWriteFileTimeout" xml:space="preserve">
+    <value>Таймаут записи данных в порт</value>
+  </data>
+  <data name="ErrorFirmwareNotSupported" xml:space="preserve">
+    <value>Данная версия ПО оборудования не поддерживается</value>
+  </data>
+  <data name="ErrorSetPosNumber" xml:space="preserve">
+    <value>Ошибка установки номера кассы</value>
+  </data>
+  <data name="NoncashPaymentFormat" xml:space="preserve">
+    <value>Безналичный тип оплаты</value>
+  </data>
+  <data name="TaxItemFormat" xml:space="preserve">
+    <value>Налоговая ставка</value>
+  </data>
+  <data name="Tax1" xml:space="preserve">
+    <value>Налог 1</value>
+  </data>
+  <data name="Tax2" xml:space="preserve">
+    <value>Налог 2</value>
+  </data>
+  <data name="NoTaxable" xml:space="preserve">
+    <value>Без НДС</value>
+  </data>
+  <data name="ErrorVatNotConfiguredFormat" xml:space="preserve">
+    <value>Не настроена налоговая категория:</value>
+  </data>
+  <data name="IksResultStatusM1" xml:space="preserve">
+    <value>Ошибка при вызове</value>
+  </data>
+  <data name="IksResultStatus0" xml:space="preserve">
+    <value>Печатающее устройство не готово</value>
+  </data>
+  <data name="IksResultStatus1" xml:space="preserve">
+    <value>Нет бумаги</value>
+  </data>
+  <data name="IksResultStatus2" xml:space="preserve">
+    <value>Закончилась фискальная память</value>
+  </data>
+  <data name="IksResultStatus3" xml:space="preserve">
+    <value>Неправильная дата или неисправные часы</value>
+  </data>
+  <data name="IksResultStatus5" xml:space="preserve">
+    <value>Недостаточно памяти или ошибка электронного журнала. Распечатайте Z отчет.</value>
+  </data>
+  <data name="IksResultStatus6" xml:space="preserve">
+    <value>Спад напряжения питания. Проверьте источник питания.</value>
+  </data>
+  <data name="IksResultStatus7" xml:space="preserve">
+    <value>Недопустимая операция в данном состоянии</value>
+  </data>
+  <data name="IksResultStatusUnknown" xml:space="preserve">
+    <value>Неизвестный статус</value>
+  </data>
+  <data name="IksResultCode0" xml:space="preserve">
+    <value>Нормальное завершение. Ошибки нет</value>
+  </data>
+  <data name="IksResultCode01" xml:space="preserve">
+    <value>Ошибка печатающего устройства</value>
+  </data>
+  <data name="IksResultCode02" xml:space="preserve">
+    <value>Конец бумаги</value>
+  </data>
+  <data name="IksResultCode04" xml:space="preserve">
+    <value>Ошибка фискальной памяти</value>
+  </data>
+  <data name="IksResultCode06" xml:space="preserve">
+    <value>Спад напряжения питания</value>
+  </data>
+  <data name="IksResultCode08" xml:space="preserve">
+    <value>Фискальная память заполнена</value>
+  </data>
+  <data name="IksResultCode10" xml:space="preserve">
+    <value>Ошибка записи электронного журнала</value>
+  </data>
+  <data name="IksResultCode16" xml:space="preserve">
+    <value>В текущем состоянии выполнение функции не разрешается</value>
+  </data>
+  <data name="IksResultCode18" xml:space="preserve">
+    <value>Ошибка CRC32</value>
+  </data>
+  <data name="IksResultCode19" xml:space="preserve">
+    <value>Ошибка загрузки графического логотипа</value>
+  </data>
+  <data name="IksResultCode20" xml:space="preserve">
+    <value>Неправильная длина строки</value>
+  </data>
+  <data name="IksResultCode21" xml:space="preserve">
+    <value>Неправильный PIN код</value>
+  </data>
+  <data name="IksResultCode22" xml:space="preserve">
+    <value>Несуществующий номер (PIN или строки)</value>
+  </data>
+  <data name="IksResultCode23" xml:space="preserve">
+    <value>Несуществующий тип налога или еще не установленные тарифы налогов</value>
+  </data>
+  <data name="IksResultCode24" xml:space="preserve">
+    <value>Несуществующий вид оплаты</value>
+  </data>
+  <data name="IksResultCode25" xml:space="preserve">
+    <value>В строке присутствуют неразрешенные символы</value>
+  </data>
+  <data name="IksResultCode26" xml:space="preserve">
+    <value>Превышено количество тарифов налогов</value>
+  </data>
+  <data name="IksResultCode27" xml:space="preserve">
+    <value>Исправляемая сумма превышает сумму чека</value>
+  </data>
+  <data name="IksResultCode30" xml:space="preserve">
+    <value>Неправильный формат даты или времени</value>
+  </data>
+  <data name="IksResultCode31" xml:space="preserve">
+    <value>Превышено количество строк в чеке</value>
+  </data>
+  <data name="IksResultCode32" xml:space="preserve">
+    <value>Превышена максимальная сумма</value>
+  </data>
+  <data name="IksResultCode33" xml:space="preserve">
+    <value>Превышена максимальная сумма дневного оборота</value>
+  </data>
+  <data name="IksResultCode34" xml:space="preserve">
+    <value>Превышена максимальная сумма оплат</value>
+  </data>
+  <data name="IksResultCode35" xml:space="preserve">
+    <value>Указанная сумма больше чем сумма в денежном ящике</value>
+  </data>
+  <data name="IksResultCode36" xml:space="preserve">
+    <value>Указанная дата меньше даты последнего Z отчета</value>
+  </data>
+  <data name="IksResultCode37" xml:space="preserve">
+    <value>Начат чек возврата, продажа невозможна</value>
+  </data>
+  <data name="IksResultCode38" xml:space="preserve">
+    <value>Начат чек продаж, возврат не возможен</value>
+  </data>
+  <data name="IksResultCode39" xml:space="preserve">
+    <value>Функция не возможна, чек не начат</value>
+  </data>
+  <data name="IksResultCode41" xml:space="preserve">
+    <value>Функция разрешена только после Z отчета</value>
+  </data>
+  <data name="IksResultCode42" xml:space="preserve">
+    <value>Функция не разрешена, нет чеков</value>
+  </data>
+  <data name="IksResultCode43" xml:space="preserve">
+    <value>При оплате этим видом сдача не разрешается</value>
+  </data>
+  <data name="IksResultCode44" xml:space="preserve">
+    <value>Функция не разрешается, начат чек</value>
+  </data>
+  <data name="IksResultCode45" xml:space="preserve">
+    <value>Скидки/надбавки не разрешаются, чек не начат</value>
+  </data>
+  <data name="IksResultCode46" xml:space="preserve">
+    <value>Функция не разрешается, начатa оплата</value>
+  </data>
+  <data name="IksResultCodeUnknown" xml:space="preserve">
+    <value>Неизвестная ошибка</value>
+  </data>
+  <data name="ResultCodeUnknown" xml:space="preserve">
+    <value>Неизвестная ошибка</value>
+  </data>
+  <data name="ErrorCommandCodeUnknown" xml:space="preserve">
+    <value>Неизвестная команда</value>
+  </data>
+  <data name="ErrorPrintCRNotSupported" xml:space="preserve">
+    <value>Печать буфера контрольной ленты не поддерживается</value>
+  </data>
+  <data name="ErrorIncorrectResponse" xml:space="preserve">
+    <value>Получен некорректный ответ</value>
+  </data>
+  <data name="ErrorNonCashPaymentRegisterId" xml:space="preserve">
+    <value>Некорректный идентификатор безналичной оплаты</value>
+  </data>
+  <data name="ErrorBadItemNumber" xml:space="preserve">
+    <value>Недопустимое значение артикула товара</value>
+  </data>
+  <data name="ErrorPeripheralDeviceCommandSettings" xml:space="preserve">
+    <value>Применяемая команда управления периферийным оборудованием не соответствует настройкам этого оборудования.</value>
+  </data>
+  <data name="ErrorBigItemNumber" xml:space="preserve">
+    <value>Переполнение номера артикула. Требуется снять Z-отчет</value>
+  </data>
+  <data name="ErrorChangedItemNumber" xml:space="preserve">
+    <value>Обнаружено изменение наименования или схем налогообложения или признака делимости товара по активизированному ранее номеру артикула.</value>
+  </data>
+  <data name="ErrorQueryCRNotSupported" xml:space="preserve">
+    <value>Запрос буфера контрольной ленты не поддерживается</value>
+  </data>
+  <data name="ErrorReportNotSupported" xml:space="preserve">
+    <value>Печать данного типа отчета не поддерживается</value>
+  </data>
+  <data name="ErrorOfdNotSupported" xml:space="preserve">
+    <value>Выбранная модель ФР не поддерживает работу с ОФД</value>
+  </data>
+  <data name="ErrorOfdNeeded" xml:space="preserve">
+    <value>Выбранная модель ФР требует поддержки ОФД</value>
+  </data>
+  <data name="ErrorWrongKkmResponse" xml:space="preserve">
+    <value>Некорректный ответ от ККМ</value>
+  </data>
+  <data name="ErrorCrFull" xml:space="preserve">
+    <value>Буфер контрольной ленты переполнен. Снимите контрольную ленту</value>
+  </data>
+  <data name="ErrorGtin" xml:space="preserve">
+    <value>Некорректный GTIN: </value>
+    <comment>GTIN - Global Trade Item Number</comment>
+  </data>
+  <data name="ErrorArticleMissing" xml:space="preserve">
+    <value>Не указан артикул товара</value>
+  </data>
+  <data name="BuildCashResultSucceeded" xml:space="preserve">
+    <value>Состояние кассового аппарата получено</value>
+  </data>
+  <data name="CashDrawerCheck" xml:space="preserve">
+    <value>Проверяем состояние денежного ящика</value>
+  </data>
+  <data name="CashDrawerOpened" xml:space="preserve">
+    <value>Денежный ящик открыт</value>
+  </data>
+  <data name="CashInSucceeded" xml:space="preserve">
+    <value>Операция внесения успешно завершена</value>
+  </data>
+  <data name="CashOutSucceeded" xml:space="preserve">
+    <value>Операция изъятия успешно завершена</value>
+  </data>
+  <data name="CustomerDisplayTextDisplayed" xml:space="preserve">
+    <value>Текст выведен на экране покупателя</value>
+  </data>
+  <data name="CustomerDisplayTextQueued" xml:space="preserve">
+    <value>Команда вывода текста на экране покупателя поставлена в очередь</value>
+  </data>
+  <data name="ErrorCustomerDisplayStatus" xml:space="preserve">
+    <value>Неисправность встроенного дисплея покупателя</value>
+  </data>
+  <data name="ErrorCustomerDisplayOffline" xml:space="preserve">
+    <value>Неисправность встроенного дисплея покупателя</value>
+  </data>
+  <data name="ErrorBeginFiscalReceipt" xml:space="preserve">
+    <value>Не удалось открыть чек</value>
+  </data>
+  <data name="ErrorBeginBill" xml:space="preserve">
+    <value>Не удалось открыть пречек</value>
+  </data>
+  <data name="ErrorBeginFiscalDocument" xml:space="preserve">
+    <value>Не удалось открыть фискальный документ</value>
+  </data>
+  <data name="ErrorBeginNonFiscalDocument" xml:space="preserve">
+    <value>Не удалось открыть нефискальный чек</value>
+  </data>
+  <data name="ErrorEndFiscalDocument" xml:space="preserve">
+    <value>Не удалось закрыть фискальный документ</value>
+  </data>
+  <data name="ErrorCashIn" xml:space="preserve">
+    <value>Не удалось выполнить внесение</value>
+  </data>
+  <data name="ErrorCashOut" xml:space="preserve">
+    <value>Не удалось выполнить изъятие</value>
+  </data>
+  <data name="ErrorCustomerDisplayText" xml:space="preserve">
+    <value>Ошибка отображения текста на экране покупателя</value>
+  </data>
+  <data name="ErrorDiscount" xml:space="preserve">
+    <value>Не удалось применить скидку</value>
+  </data>
+  <data name="ErrorDiscountTooBig" xml:space="preserve">
+    <value>Сумма скидки больше суммы оборота по соответствующей фискальной позиции</value>
+  </data>
+  <data name="ErrorEndFiscalReceipt" xml:space="preserve">
+    <value>Не удалось закрыть чек</value>
+  </data>
+  <data name="ErrorEndBill" xml:space="preserve">
+    <value>Не удалось закрыть пречек</value>
+  </data>
+  <data name="ErrorEndNonFiscalDocument" xml:space="preserve">
+    <value>Не удалось закрыть нефискальный чек</value>
+  </data>
+  <data name="ErrorOpenCashDrawer" xml:space="preserve">
+    <value>Ошибка открытия денежного ящика</value>
+  </data>
+  <data name="ErrorSetTaxationSystem" xml:space="preserve">
+    <value>Не удалось установить систему налогообложения</value>
+  </data>
+  <data name="ErrorCheckCashDrawer" xml:space="preserve">
+    <value>Ошибка получения состояния денежного ящика</value>
+  </data>
+  <data name="ErrorPayment" xml:space="preserve">
+    <value>Не удалось зарегистрировать оплату</value>
+  </data>
+  <data name="ErrorNonCashPayment" xml:space="preserve">
+    <value>Не удалось выполнить безналичную оплату</value>
+  </data>
+  <data name="ErrorPrintRecItem" xml:space="preserve">
+    <value>Не удалось зарегистрировать позицию</value>
+  </data>
+  <data name="ErrorPrintRecItemRefund" xml:space="preserve">
+    <value>Не удалось зарегистрировать возврат покупки</value>
+  </data>
+  <data name="ErrorArticleMissingFormat" xml:space="preserve">
+    <value>Не задан артикул у позиции: </value>
+  </data>
+  <data name="ErrorSurcharge" xml:space="preserve">
+    <value>Не удалось применить надбавку</value>
+  </data>
+  <data name="ErrorSubtotal" xml:space="preserve">
+    <value>Не удалось напечатать подытог</value>
+  </data>
+  <data name="ErrorSubtotalDiscount" xml:space="preserve">
+    <value>Не удалось применить скидку на итог</value>
+  </data>
+  <data name="ErrorSubtotalSurcharge" xml:space="preserve">
+    <value>Не удалось применить надбавку на итог</value>
+  </data>
+  <data name="ErrorApplyTax" xml:space="preserve">
+    <value>Не удалось применить налог</value>
+  </data>
+  <data name="ErrorXReport" xml:space="preserve">
+    <value>Не удалось распечатать X-отчет</value>
+  </data>
+  <data name="ErrorZReport" xml:space="preserve">
+    <value>Не удалось распечатать Z-отчет</value>
+  </data>
+  <data name="ErrorZReportRequired" xml:space="preserve">
+    <value>Требуется Z-отчет</value>
+  </data>
+  <data name="ErrorZReportZero" xml:space="preserve">
+    <value>Ошибка печати нулевого Z-отчета</value>
+  </data>
+  <data name="FiscalReceiptCompleted" xml:space="preserve">
+    <value>Печать чека успешно завершена</value>
+  </data>
+  <data name="CancellationReceiptCompleted" xml:space="preserve">
+    <value>Чек аннулирования успешно распечатан</value>
+  </data>
+  <data name="BillPrinted" xml:space="preserve">
+    <value>Счет успешно распечатан</value>
+  </data>
+  <data name="BillNotSupported" xml:space="preserve">
+    <value>Печать счета не поддерживается</value>
+  </data>
+  <data name="RefundBillNotSupported" xml:space="preserve">
+    <value>Печать возврата счета не поддерживается</value>
+  </data>
+  <data name="XReportPrinted" xml:space="preserve">
+    <value>X-отчет был успешно распечатан</value>
+  </data>
+  <data name="ZReportPrinted" xml:space="preserve">
+    <value>Z-отчет был успешно распечатан</value>
+  </data>
+  <data name="ShiftAlreadyClosed" xml:space="preserve">
+    <value>Смена уже закрыта</value>
+  </data>
+  <data name="BillToRoomPayment" xml:space="preserve">
+    <value>Оплата счета на комнату</value>
+  </data>
+  <data name="ErrorSetCashier" xml:space="preserve">
+    <value>Не удалось установить имя кассира</value>
+  </data>
+  <data name="ErrorPrintDoc" xml:space="preserve">
+    <value>Ошибка печати документа</value>
+  </data>
+  <data name="ErrorResetFiscalPrinter" xml:space="preserve">
+    <value>Не удалось сбросить состояние ККМ</value>
+  </data>
+  <data name="ErrorExitTestMode" xml:space="preserve">
+    <value>Не удалось выйти из режима тестового прогона</value>
+  </data>
+  <data name="ErrorGetFPStatus" xml:space="preserve">
+    <value>Не удалось получить состояние ККМ</value>
+  </data>
+  <data name="TaxationSystemCommon" xml:space="preserve">
+    <value>Общая</value>
+  </data>
+  <data name="TaxationSystemSimplified1" xml:space="preserve">
+    <value>Упрощенная - доход</value>
+  </data>
+  <data name="TaxationSystemSimplified2" xml:space="preserve">
+    <value>Упрощенная - доход минус расход</value>
+  </data>
+  <data name="TaxationSystemSingleTaxOnImputedIncome" xml:space="preserve">
+    <value>ЕНДВ</value>
+  </data>
+  <data name="TaxationSystemSingleAgriculturalTax" xml:space="preserve">
+    <value>Единый сельскохозяйственный налог</value>
+  </data>
+  <data name="TaxationSystemPatent" xml:space="preserve">
+    <value>Патентная система налогообложения</value>
+  </data>
+  <data name="ErrorIncompatibleDriverVersion" xml:space="preserve">
+    <value>Для подключения данной модели ФР необходима версия драйвера не ниже </value>
+  </data>
+  <data name="CurrentDriverVersion" xml:space="preserve">
+    <value>Установлена версия: </value>
+  </data>
+  <data name="WarningLinesModified" xml:space="preserve">
+    <value>При печати чека были модифицированы некоторые строки</value>
+  </data>
+  <data name="ErrorPiritFnLibLoad" xml:space="preserve">
+    <value>Не удалось загрузить библиотеку PiritFnLib.dll</value>
+  </data>
+  <data name="CashPaymentTypeNotConfigured" xml:space="preserve">
+    <value>Оплата наличными не настроена</value>
+  </data>
+  <data name="NonCashPaymentTypeNotConfigured" xml:space="preserve">
+    <value>Оплата электронным типом платежа не настроена</value>
+  </data>
+  <data name="PrepaymentTypeNotConfigured" xml:space="preserve">
+    <value>Предоплата не настроена</value>
+  </data>
+  <data name="CreditPaymentTypeNotConfigured" xml:space="preserve">
+    <value>Оплата в кредит не настроена</value>
+  </data>
+  <data name="ConsiderationPaymentTypeNotConfigured" xml:space="preserve">
+    <value>Оплата встречным представлением не настроена</value>
+  </data>
+  <data name="ErrorWrong100PaymentTypes" xml:space="preserve">
+    <value>Следующие типы оплат недоступны в ФФД 1.0: предоплата, оплата в кредит, оплата встречным представлением</value>
+  </data>
+  <data name="ErrorPrepayment" xml:space="preserve">
+    <value>Не удалось добавить предоплату</value>
+  </data>
+  <data name="ErrorCashPayment" xml:space="preserve">
+    <value>Не удалось добавить оплату наличными</value>
+  </data>
+  <data name="ErrorCardPayment" xml:space="preserve">
+    <value>Не удалось добавить оплату картой</value>
+  </data>
+  <data name="ErrorCreditPayment" xml:space="preserve">
+    <value>Не удалось добавить оплату в кредит</value>
+  </data>
+  <data name="ErrorConsiderationPayment" xml:space="preserve">
+    <value>Не удалось добавить оплату встречным представлением</value>
+  </data>
+  <data name="ErrorUnknownCategory" xml:space="preserve">
+    <value>Неизвестный признак предмета расчета:</value>
+  </data>
+  <data name="ErrorUnknownTransferType" xml:space="preserve">
+    <value>Неизвестный признак способа расчета:</value>
+  </data>
+  <data name="ErrorPaymentsConfiguration" xml:space="preserve">
+    <value>Ошибка настройки типов оплат</value>
+  </data>
+  <data name="ErrorFnRoundFunctionality" xml:space="preserve">
+    <value>Округление не реализовано в данной версии оборудования</value>
+  </data>
+  <data name="ErrorFnRound" xml:space="preserve">
+    <value>Не удалось выполнить округление суммы чека</value>
+  </data>
+  <data name="ErrorPrintCrTape" xml:space="preserve">
+    <value>Не удалось распечатать контрольную ленту</value>
+  </data>
+  <data name="ErrorExtendedTestFail" xml:space="preserve">
+    <value>Не удалось выполнить операцию расширенного тестирования</value>
+  </data>
+  <data name="ErrorPrintDuplicate" xml:space="preserve">
+    <value>Не удалось выполнить операцию печати дубликата чека</value>
+  </data>
+  <data name="OperationComplete" xml:space="preserve">
+    <value>Операция успешно выполнена</value>
+  </data>
+  <data name="OperationNotPerformed" xml:space="preserve">
+    <value>Операция не была выполнена</value>
+  </data>
+  <data name="ErrorConvert" xml:space="preserve">
+    <value>Произошла ошибка преобразования параметра</value>
+  </data>
+  <data name="ExtFiscalCommandExtendedTest" xml:space="preserve">
+    <value>Расширенный тест ФР</value>
+  </data>
+  <data name="ExtFiscalCommandPrintDuplicate" xml:space="preserve">
+    <value>Печать дубликата</value>
+  </data>
+  <data name="ExtFiscalQueryElectronicJournalContent" xml:space="preserve">
+    <value>Электронный журнал.</value>
+  </data>
+  <data name="ExtFiscalParameterPrint" xml:space="preserve">
+    <value>Распечатать отчет?</value>
+  </data>
+  <data name="ExtFiscalParameterPrintTip" xml:space="preserve">
+    <value>Для отображения отчета на мониторе нажмите "Нет"</value>
+  </data>
+  <data name="ExtFiscalCommandViewXReport" xml:space="preserve">
+    <value>Просмотр X-отчета</value>
+  </data>
+  <data name="ExtFiscalCommandViewEJ" xml:space="preserve">
+    <value>Просмотр электронного журнала</value>
+  </data>
+  <data name="ExtFiscalCommandPrintTaxReport" xml:space="preserve">
+    <value>Отчет по налогам</value>
+  </data>
+  <data name="ErrorCancellationNotSupported" xml:space="preserve">
+    <value>Операция аннулирования не поддерживается</value>
+  </data>
+  <data name="ErrorGetTotalSum" xml:space="preserve">
+    <value>Не удалось получить итоговую сумму чека с ФР</value>
+  </data>
+  <data name="ErrorPrintBarcode" xml:space="preserve">
+    <value>Ошибка печати штрихкода</value>
+  </data>
+  <data name="ErrorTotalSumRetry" xml:space="preserve">
+    <value>Некорректная итоговая сумма чека, необходимо распечатать документ повторно</value>
+  </data>
+  <data name="ErrorPrintQrCode" xml:space="preserve">
+    <value>Ошибка печати QR-кода</value>
+  </data>
+  <data name="ErrorSessionOpen" xml:space="preserve">
+    <value>Не удалось открыть чек</value>
+  </data>
+  <data name="ErrorZReportDueSession" xml:space="preserve">
+    <value>Z-отчет распечатан не будет, т.к. смена в ККМ закрыта</value>
+  </data>
+  <data name="ErrorReturnTenderType" xml:space="preserve">
+    <value>Операция возврата для одного или нескольких типов платежей запрещена. Проверьте настройки ФР</value>
+  </data>
+  <data name="ErrorComboPay" xml:space="preserve">
+    <value>Невозможно вернуть чек при комбинированной оплате (наличными и банковской картой)</value>
+  </data>
+  <data name="ErrorTenderOperation" xml:space="preserve">
+    <value>Произошла ошибка во время регистрации оплаты</value>
+  </data>
+  <data name="ErrorSellOperation" xml:space="preserve">
+    <value>Произошла ошибка во время регистрации продажи</value>
+  </data>
+  <data name="ErrorPrintSubtotal" xml:space="preserve">
+    <value>Ошибка печати подытога</value>
+  </data>
+  <data name="ErrorSetVat" xml:space="preserve">
+    <value>Ошибка установки НДС</value>
+  </data>
+  <data name="ShiftAlreadyOpened" xml:space="preserve">
+    <value>Смена уже открыта</value>
+  </data>
+  <data name="Warning24H" xml:space="preserve">
+    <value>Смена уже открыта (истекли 24 часа)</value>
+  </data>
+  <data name="ErrorShiftIsClosed" xml:space="preserve">
+    <value>Необходимо открыть смену</value>
+    <comment>Device session must be open</comment>
+  </data>
+  <data name="ErrorVatSection" xml:space="preserve">
+    <value>Налоговая ставка не соответствует номеру отделения</value>
+  </data>
+  <data name="ErrorNonTaxableNotSupported" xml:space="preserve">
+    <value>Налоговая ставка "без НДС" не поддерживается</value>
+  </data>
+  <data name="ErrorUnknownTaxationSystemFormat" xml:space="preserve">
+    <value>Неизвестная система налогообложения:</value>
+  </data>
+  <data name="ErrorNotRegisteredTaxationSystemFormat" xml:space="preserve">
+    <value>ФР не зарегистрирован для данной системы налогообложения:</value>
+  </data>
+  <data name="ErrorReadTaxationSystem" xml:space="preserve">
+    <value>Не удалось считать систему налогообложения</value>
+  </data>
+  <data name="ErrorFractionalParameter" xml:space="preserve">
+    <value>Текущая версия драйвера поддерживает только целые числа</value>
+  </data>
+  <data name="ErrorParameterNotSupported" xml:space="preserve">
+    <value>Текущая версия драйвера или прошивки не поддерживает часть параметров</value>
+  </data>
+  <data name="ErrorZeroParametersCorrection" xml:space="preserve">
+    <value>Нельзя пробить нулевой чек коррекции</value>
+  </data>
+  <data name="CorrectionReceiptCompleted" xml:space="preserve">
+    <value>Чек коррекции напечатан</value>
+  </data>
+  <data name="ErrorCorrectionTypeNotSupported" xml:space="preserve">
+    <value>Используемая версия драйвера поддерживает только самостоятельные чеки прихода</value>
+  </data>
+  <data name="ErrorWriteAttribute1008" xml:space="preserve">
+    <value>Ошибка записи реквизита 1008 (адрес покупателя)</value>
+  </data>
+  <data name="ErrorWriteAttribute1174" xml:space="preserve">
+    <value>Ошибка записи реквизита 1174 - Основание для коррекции</value>
+  </data>
+  <data name="ErrorWriteAttribute1177" xml:space="preserve">
+    <value>Ошибка записи реквизита 1177 - наименование основания для коррекции</value>
+  </data>
+  <data name="ErrorWriteAttribute1178" xml:space="preserve">
+    <value>Ошибка записи реквизита 1178 - дата документа основания для коррекции</value>
+  </data>
+  <data name="ErrorWriteAttribute1179" xml:space="preserve">
+    <value>Ошибка записи реквизита 1179 - номер документа основания для коррекции</value>
+  </data>
+  <data name="ErrorWriteAttribute1187" xml:space="preserve">
+    <value>Ошибка записи реквизита 1187 - место расчета</value>
+  </data>
+  <data name="ErrorWriteAttribute1162" xml:space="preserve">
+    <value>Ошибка записи реквизита 1162 - код товара</value>
+  </data>
+  <data name="AttributeWarning" xml:space="preserve">
+    <value>Не удалось записать некоторые атрибуты</value>
+  </data>
+  <data name="ErrorMixedPaymentInCorrectionCheque" xml:space="preserve">
+    <value>Данная версия оборудования не поддерживает комбинированную оплату в чеках коррекции</value>
+  </data>
+  <data name="ErrorMixedRegistrationInCorrectionCheque" xml:space="preserve">
+    <value>Данная версия оборудования не поддерживает различные ставки НДС в чеке коррекции</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>Нет</value>
+  </data>
+  <data name="ErrorVatTableNotInited" xml:space="preserve">
+    <value>Не удалось инициализировать таблицу налогов</value>
+  </data>
+  <data name="ErrorMixedContractorNotSupported" xml:space="preserve">
+    <value>Данная модель не поддерживает печать различных реквизитов агента в одном чеке</value>
+  </data>
+  <data name="ErrorSubtotalIncreaseOrDiscountNotSupported" xml:space="preserve">
+    <value>Данная модель не поддерживает скидки/надбавки на подытог чека</value>
+  </data>
+  <data name="ErrorUnexpectedChequeSum" xml:space="preserve">
+    <value>Фактическая сумма чека не совпала с рассчитаной</value>
+  </data>
+  <data name="ErrorVatSumMustBeEqualToPayments" xml:space="preserve">
+    <value>Сумма расчета налога должна быть равна сумме оплат</value>
+  </data>
+  <data name="ShiftOpened" xml:space="preserve">
+    <value>Смена открыта</value>
+  </data>
+  <data name="ErrorWrongCommodityCode" xml:space="preserve">
+    <value>Неверный формат данных маркировки</value>
+  </data>
+  <data name="ErrorWriteAttribute1227" xml:space="preserve">
+    <value>Ошибка записи реквизита 1227 - Наименование покупателя</value>
+  </data>
+  <data name="ErrorWriteAttribute1228" xml:space="preserve">
+    <value>Ошибка записи реквизита 1228 - ИНН покупателя</value>
+  </data>
+  <data name="ErrorNeedFfd12Version" xml:space="preserve">
+    <value>Операция доступна только для версии ФФД 1.2</value>
+  </data>
+  <data name="ErrorNoMarkingCode" xml:space="preserve">
+    <value>Код маркировки не указан</value>
+  </data>
+  <data name="ErrorDocumentOpen" xml:space="preserve">
+    <value>Идет печать предыдущего документа. Убедитесь что на ФР нет ошибок и дождитесь окончания печати</value>
+  </data>
+  <data name="ErrorConfigureAgentDevicesFormat" xml:space="preserve">
+    <value>Ошибка при настройке устройств: {0}</value>
+  </data>
+  <data name="ErrorUnknownDiscountVat" xml:space="preserve">
+    <value>Неизвестное значение НДС скидки</value>
+  </data>
+  <data name="ErrorUnknownVat" xml:space="preserve">
+    <value>Неизвестное значение НДС</value>
+  </data>
+  <data name="ErrorIncorrectVat" xml:space="preserve">
+    <value>Недопустимое значение НДС</value>
+  </data>
+  <data name="ErrorDatexLibraryLoad" xml:space="preserve">
+    <value>Не удалось загрузить библиотеку DATEX</value>
+  </data>
+  <data name="ErrorDatexConnectionPort" xml:space="preserve">
+    <value>Не удалось подключиться к DATEX. (Номер порта может быть либо 1, либо 2)</value>
+  </data>
+  <data name="ErrorBillPrintMode" xml:space="preserve">
+    <value>Не удалось установить режим печати чеков</value>
+  </data>
+  <data name="ErrorNotImlemented" xml:space="preserve">
+    <value>Не реализовано</value>
+  </data>
+  <data name="ChannelState" xml:space="preserve">
+    <value>Установка состояния канала</value>
+  </data>
+  <data name="ErrorChannelParity" xml:space="preserve">
+    <value>Ошибки канала связи: контроль по четности</value>
+  </data>
+  <data name="ErrorMoneyRegisterValue" xml:space="preserve">
+    <value>Не удалось получить значение денежного регистра</value>
+  </data>
+  <data name="ErrorPrintHeadVoltage" xml:space="preserve">
+    <value>Отсутствует напряжение питания нагревательных элементов пе-чатающей головки.</value>
+  </data>
+  <data name="ErrorPrintHeadTemperature" xml:space="preserve">
+    <value>Недопустимый температурный режим печатающей головки.</value>
+  </data>
+  <data name="ErrorSystemKeyPosition" xml:space="preserve">
+    <value>Недопустимое положение системного ключа 'ОТКЛЮЧЕН' для данной комманды</value>
+  </data>
+  <data name="ErrorSystemKeyPositionWork" xml:space="preserve">
+    <value>Для выполнения этой команды тре-буется положение системного ключа 'РАБОТА'</value>
+  </data>
+  <data name="ErrorSystemKeyPositionProgramming" xml:space="preserve">
+    <value>Для выполнения этой команды требуется положение системного ключа 'ПРОГРАММИРОВАНИЕ'</value>
+  </data>
+  <data name="ErrorSystemKeyPositionX" xml:space="preserve">
+    <value>Для выполнения этой команды требуется положение системного ключа 'X-ОТЧЕТ'</value>
+  </data>
+  <data name="ErrorSystemKeyPositionZ" xml:space="preserve">
+    <value>Для выполнения этой команды nребуется положение сис-темного ключа 'Z-ОТЧЕТ'</value>
+  </data>
+  <data name="ErrorCheckSumm" xml:space="preserve">
+    <value>В режиме проверки контрольной суммы блока данных обнаружено несовпадение вычисленной и принятой контрольных сумм</value>
+  </data>
+  <data name="ErrorAlreadyInMemomy" xml:space="preserve">
+    <value>Программируемое значение уже есть в фискальной памяти</value>
+  </data>
+  <data name="ErrorArticulTable" xml:space="preserve">
+    <value>Некорректный режим работы артикульной таблицы</value>
+  </data>
+  <data name="ErrorOutOfPaper" xml:space="preserve">
+    <value>Закончилась бумага</value>
+  </data>
+  <data name="ErrorSystemClock" xml:space="preserve">
+    <value>Ошибки обработки данных системных часов реального времени</value>
+  </data>
+  <data name="ErrorFiscalMemory" xml:space="preserve">
+    <value>Ошибки контроля данных в фискальной памяти</value>
+  </data>
+  <data name="ErrorFiscalMemoryDataControll" xml:space="preserve">
+    <value>Ошибки контроля данных в фискальной памяти</value>
+  </data>
+  <data name="ErrorFiscalMemoryOverflow" xml:space="preserve">
+    <value>Переполнение фискальной памяти</value>
+  </data>
+  <data name="ErrorFiscalMemoryError" xml:space="preserve">
+    <value>Ошибки фискальной памяти</value>
+  </data>
+  <data name="ErrorLowVoltage" xml:space="preserve">
+    <value>Низкое напряжение питания</value>
+  </data>
+  <data name="DeviceNameDeletedFormat" xml:space="preserve">
+    <value>{0} (Удален)</value>
+  </data>
+</root>

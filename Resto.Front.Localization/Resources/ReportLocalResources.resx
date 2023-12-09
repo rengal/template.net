@@ -1,0 +1,1314 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Card" xml:space="preserve">
+    <value>Банковские карты</value>
+  </data>
+  <data name="Cash" xml:space="preserve">
+    <value>Наличные</value>
+  </data>
+  <data name="CashRegisterCategoryName" xml:space="preserve">
+    <value>04 Отчеты по кассе</value>
+  </data>
+  <data name="CategoryPattern" xml:space="preserve">
+    <value>Категория: {0}</value>
+  </data>
+  <data name="Cheques" xml:space="preserve">
+    <value>Чеков</value>
+  </data>
+  <data name="CodeTitle" xml:space="preserve">
+    <value>Код</value>
+  </data>
+  <data name="CountTitle" xml:space="preserve">
+    <value>К-во</value>
+  </data>
+  <data name="CreatingCancelledReport" xml:space="preserve">
+    <value>Формирование отчета отменено</value>
+  </data>
+  <data name="CreatingErrorReport" xml:space="preserve">
+    <value>Ошибка при формировании отчета</value>
+  </data>
+  <data name="CreatingProgressText" xml:space="preserve">
+    <value>Пожалуйста, подождите. Выполняется формирование отчета...</value>
+  </data>
+  <data name="DishExpenseCategoryName" xml:space="preserve">
+    <value>02 Отчеты по расходу блюд</value>
+  </data>
+  <data name="DishExpenseByCatReportName" xml:space="preserve">
+    <value>022 Общий расход блюд по категориям</value>
+  </data>
+  <data name="DishExpenseReportName" xml:space="preserve">
+    <value>021 Общий расход блюд</value>
+  </data>
+  <data name="DishTitle" xml:space="preserve">
+    <value>Блюдо</value>
+  </data>
+  <data name="PriceListDocumentTitle" xml:space="preserve">
+    <value>Прейскурант</value>
+  </data>
+  <data name="EmployeeTitle" xml:space="preserve">
+    <value>Сотрудник</value>
+  </data>
+  <data name="Clients" xml:space="preserve">
+    <value>Клиентов</value>
+  </data>
+  <data name="HeadCashier" xml:space="preserve">
+    <value>Кассир:</value>
+  </data>
+  <data name="HeadTerminal" xml:space="preserve">
+    <value>Терминал:</value>
+  </data>
+  <data name="TerminalNumberNamePattern" xml:space="preserve">
+    <value>№{0} ({1})</value>
+  </data>
+  <data name="HeadCashRegisterShiftOpened" xml:space="preserve">
+    <value>Смена открыта:</value>
+  </data>
+  <data name="HeadCashRegisterShift" xml:space="preserve">
+    <value>Кассовая смена:</value>
+  </data>
+  <data name="HeadCurrentTime" xml:space="preserve">
+    <value>Текущее время:</value>
+  </data>
+  <data name="HeadOperationalDayOpened" xml:space="preserve">
+    <value>День открыт:</value>
+  </data>
+  <data name="HeadOperationalDay" xml:space="preserve">
+    <value>Операционный день:</value>
+  </data>
+  <data name="ServerHourlyReportName" xml:space="preserve">
+    <value>012 Общая выручка почасовая</value>
+  </data>
+  <data name="SessionHourlyReportName" xml:space="preserve">
+    <value>042 Выручка почасовая</value>
+  </data>
+  <data name="InitialReport" xml:space="preserve">
+    <value>Выберите отчет</value>
+  </data>
+  <data name="NoCategory" xml:space="preserve">
+    <value>Без категории</value>
+  </data>
+  <data name="Orders" xml:space="preserve">
+    <value>Заказов</value>
+  </data>
+  <data name="Period" xml:space="preserve">
+    <value>Период</value>
+  </data>
+  <data name="PrintingErrorLogMessagePattern" xml:space="preserve">
+    <value>Ошибка при печати: {0}</value>
+  </data>
+  <data name="Rescue" xml:space="preserve">
+    <value>Выручка</value>
+  </data>
+  <data name="RescueCategoryName" xml:space="preserve">
+    <value>01 Отчеты по выручке</value>
+  </data>
+  <data name="SalesByWaitersReportName" xml:space="preserve">
+    <value>013 Общая выручка по официантам</value>
+  </data>
+  <data name="SaleTax" xml:space="preserve">
+    <value>Налог с продаж</value>
+  </data>
+  <data name="SessionExpenseByCatReportName" xml:space="preserve">
+    <value>045 Расход блюд по категориям</value>
+  </data>
+  <data name="SessionExpenseReportName" xml:space="preserve">
+    <value>044 Расход блюд</value>
+  </data>
+  <data name="SpecialCategoryName" xml:space="preserve">
+    <value>03 Специальные отчеты</value>
+  </data>
+  <data name="Sum" xml:space="preserve">
+    <value>Сумма</value>
+  </data>
+  <data name="SumTitle" xml:space="preserve">
+    <value>Сумма</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>Итого</value>
+  </data>
+  <data name="TotalByCategory" xml:space="preserve">
+    <value>Всего по категории:</value>
+  </data>
+  <data name="TotalPattern" xml:space="preserve">
+    <value>Итого: {0}</value>
+  </data>
+  <data name="TotalForCategoryPattern" xml:space="preserve">
+    <value>Итого {0}:</value>
+  </data>
+  <data name="UnaccessibleReport" xml:space="preserve">
+    <value>Отчет недоступен</value>
+  </data>
+  <data name="PrinterCut" xml:space="preserve">
+    <value>разрез принтера</value>
+  </data>
+  <data name="AllSumsInFormat" xml:space="preserve">
+    <value>ВСЕ СУММЫ В {0}</value>
+  </data>
+  <data name="Credit" xml:space="preserve">
+    <value>В кредит</value>
+  </data>
+  <data name="XReportName" xml:space="preserve">
+    <value>X-отчет</value>
+  </data>
+  <data name="XZReportBuy" xml:space="preserve">
+    <value>Покупка</value>
+  </data>
+  <data name="XZReportOperationsDoneTitle" xml:space="preserve">
+    <value>ВЫПОЛНЕНО ОПЕРАЦИЙ</value>
+  </data>
+  <data name="XZReportPayIn" xml:space="preserve">
+    <value>Подкрепление</value>
+  </data>
+  <data name="XZReportPayOut" xml:space="preserve">
+    <value>Инкассация</value>
+  </data>
+  <data name="XZReportSell" xml:space="preserve">
+    <value>Продажа</value>
+  </data>
+  <data name="XZReportStornBuy" xml:space="preserve">
+    <value>Возвр. покупки</value>
+  </data>
+  <data name="XZReportStorno" xml:space="preserve">
+    <value>Возврат</value>
+  </data>
+  <data name="XZReportStornSell" xml:space="preserve">
+    <value>Сторн. продажа</value>
+  </data>
+  <data name="XZReportVirtualReportWarning" xml:space="preserve">
+    <value>Внимание! Приведенные суммы могут отличаться от сумм фискального регистратора!</value>
+  </data>
+  <data name="ZReportName" xml:space="preserve">
+    <value>Z-отчет</value>
+  </data>
+  <data name="TimeColumn" xml:space="preserve">
+    <value>Время</value>
+  </data>
+  <data name="OrderColumn" xml:space="preserve">
+    <value>Заказ</value>
+  </data>
+  <data name="NumberColumn" xml:space="preserve">
+    <value>№</value>
+  </data>
+  <data name="CustomerFromBlackListColumn" xml:space="preserve">
+    <value>Высокий риск</value>
+  </data>
+  <data name="WaiterColumn" xml:space="preserve">
+    <value>Официант</value>
+  </data>
+  <data name="CourierColumn" xml:space="preserve">
+    <value>Курьер</value>
+  </data>
+  <data name="AuthTitle" xml:space="preserve">
+    <value>АВТОРИЗ</value>
+  </data>
+  <data name="AuthTitleWithSubstitutionCardRecipientNameFormat" xml:space="preserve">
+    <value>АВТОРИЗ {0}</value>
+    <comment>{0} – имя сотрудника</comment>
+  </data>
+  <data name="TotalProblemOperationsCount" xml:space="preserve">
+    <value>Итого проблемных операций:</value>
+  </data>
+  <data name="TheSumOf" xml:space="preserve">
+    <value>на сумму:</value>
+  </data>
+  <data name="ProblemOperationsReportName" xml:space="preserve">
+    <value>037 Опасные операции</value>
+  </data>
+  <data name="PreviewCut" xml:space="preserve">
+    <value> разрез </value>
+  </data>
+  <data name="SummaryReportName" xml:space="preserve">
+    <value>031 Сводный отчет</value>
+  </data>
+  <data name="ErrorCalculate" xml:space="preserve">
+    <value>Ошибка при расчете отчета.</value>
+  </data>
+  <data name="ErrorGetMarkup" xml:space="preserve">
+    <value>Ошибка при получении текста отчета.</value>
+  </data>
+  <data name="ErrorInitializeParameters" xml:space="preserve">
+    <value>Ошибка при инициализации параметров отчета.</value>
+  </data>
+  <data name="ErrorMessageFormat" xml:space="preserve">
+    <value>{0}</value>
+  </data>
+  <data name="UnknownUser" xml:space="preserve">
+    <value>---</value>
+  </data>
+  <data name="HeadCurrentUser" xml:space="preserve">
+    <value>Текущий пользователь:</value>
+  </data>
+  <data name="Discount" xml:space="preserve">
+    <value>Скидка:</value>
+  </data>
+  <data name="Increase" xml:space="preserve">
+    <value>Надбавка:</value>
+  </data>
+  <data name="PlainSum" xml:space="preserve">
+    <value>Подытог:</value>
+  </data>
+  <data name="TerminalNamePattern" xml:space="preserve">
+    <value>{0} ({1})</value>
+  </data>
+  <data name="GainPerHourReportName" xml:space="preserve">
+    <value>Почасовая выручка</value>
+  </data>
+  <data name="SummaryReportEmpty" xml:space="preserve">
+    <value>Не выбраны отчеты</value>
+  </data>
+  <data name="EmployeeAttendanceReportName" xml:space="preserve">
+    <value>035 Явки сотрудников</value>
+  </data>
+  <data name="AttendanceAccountedHeader" xml:space="preserve">
+    <value>Зачтено</value>
+  </data>
+  <data name="AttendanceAccountedTotal" xml:space="preserve">
+    <value>    Итого:</value>
+  </data>
+  <data name="AttendanceTime" xml:space="preserve">
+    <value>    {0} - {1}</value>
+  </data>
+  <data name="AttendanceTimeHeader" xml:space="preserve">
+    <value>    Явка: приход - уход</value>
+  </data>
+  <data name="EmployeeName" xml:space="preserve">
+    <value>ФИО сотрудника</value>
+  </data>
+  <data name="OpDayFrom" xml:space="preserve">
+    <value>С:</value>
+  </data>
+  <data name="OpDayTimeFormat" xml:space="preserve">
+    <value>dd.MM.yyyy HH.mm</value>
+  </data>
+  <data name="OpDayTitle" xml:space="preserve">
+    <value>Операционный день</value>
+  </data>
+  <data name="OpDayTo" xml:space="preserve">
+    <value>По:</value>
+  </data>
+  <data name="OneTimeReportWarning" xml:space="preserve">
+    <value>Отчет не может быть получен снова. Продолжить?</value>
+  </data>
+  <data name="ReportCopyFormat" xml:space="preserve">
+    <value>(КОПИЯ) {0}</value>
+  </data>
+  <data name="AverageTime" xml:space="preserve">
+    <value>Среднее время:</value>
+  </data>
+  <data name="Interval" xml:space="preserve">
+    <value>Интервал</value>
+  </data>
+  <data name="IntervalsDescription" xml:space="preserve">
+    <value>Интервалы в часах:минутах:секундах</value>
+  </data>
+  <data name="MaximalTime" xml:space="preserve">
+    <value>Максимальное время:</value>
+  </data>
+  <data name="OrderGapReportName" xml:space="preserve">
+    <value>033 Время от пречека до оплаты</value>
+  </data>
+  <data name="Payment" xml:space="preserve">
+    <value>Оплата</value>
+  </data>
+  <data name="PrechequeTime" xml:space="preserve">
+    <value>Время пречека</value>
+  </data>
+  <data name="TableNumber" xml:space="preserve">
+    <value>№ стола</value>
+  </data>
+  <data name="DeletedProduct" xml:space="preserve">
+    <value>Удаленный продукт</value>
+  </data>
+  <data name="ProblemOperationsPartHeader" xml:space="preserve">
+    <value>ОПАСНЫЕ ОПЕРАЦИИ:</value>
+  </data>
+  <data name="SalesReportName" xml:space="preserve">
+    <value>043 Продажи блюд</value>
+  </data>
+  <data name="ServerSalesReportName" xml:space="preserve">
+    <value>023 Общие продажи блюд</value>
+  </data>
+  <data name="AdvancePays" xml:space="preserve">
+    <value>Услуги по авансовым платежам</value>
+  </data>
+  <data name="NameTitle" xml:space="preserve">
+    <value>Наименование</value>
+  </data>
+  <data name="Activation" xml:space="preserve">
+    <value>Активация</value>
+  </data>
+  <data name="AdditionalSettings" xml:space="preserve">
+    <value>Параметры</value>
+  </data>
+  <data name="GroupDishes" xml:space="preserve">
+    <value>Группировать блюда</value>
+  </data>
+  <data name="Replenish" xml:space="preserve">
+    <value>Пополнение</value>
+  </data>
+  <data name="ShowAdvancePays" xml:space="preserve">
+    <value>Включать услуги по авансовым платежам</value>
+  </data>
+  <data name="ShowOneDishPrice" xml:space="preserve">
+    <value>Отображать стоимость одного блюда</value>
+  </data>
+  <data name="SpecifyPeriod" xml:space="preserve">
+    <value>Укажите период для формирования отчета</value>
+  </data>
+  <data name="SpecifyAdditionalSettings" xml:space="preserve">
+    <value>Установите дополнительные параметры</value>
+  </data>
+  <data name="AmountXPrice" xml:space="preserve">
+    <value>Кол-во x цена</value>
+  </data>
+  <data name="DishName" xml:space="preserve">
+    <value>Наименование</value>
+  </data>
+  <data name="ResponsibleUser" xml:space="preserve">
+    <value>Ответственный: </value>
+  </data>
+  <data name="TotalByWholeReport" xml:space="preserve">
+    <value>Итого по отчету</value>
+  </data>
+  <data name="TotalByOrdersDiffSumReport" xml:space="preserve">
+    <value>Итого разница сумм:</value>
+  </data>
+  <data name="UserSignature" xml:space="preserve">
+    <value>подпись</value>
+  </data>
+  <data name="WithoutCategory" xml:space="preserve">
+    <value>Без категории</value>
+  </data>
+  <data name="WriteoffReportCaption" xml:space="preserve">
+    <value>034 Списания блюд</value>
+  </data>
+  <data name="ServerWriteoffReportCaption" xml:space="preserve">
+    <value>024 Общие списания блюд</value>
+  </data>
+  <data name="AmountWithPriceTitle" xml:space="preserve">
+    <value>К-во x Цена</value>
+  </data>
+  <data name="From" xml:space="preserve">
+    <value>С</value>
+  </data>
+  <data name="To" xml:space="preserve">
+    <value>По</value>
+  </data>
+  <data name="FiscalPaymentTypeList" xml:space="preserve">
+    <value>Фискальные типы оплат:</value>
+  </data>
+  <data name="NonFiscalPaymentTypeList" xml:space="preserve">
+    <value>Нефискальные типы оплат:</value>
+  </data>
+  <data name="SalesByTypeWithTaxReportName" xml:space="preserve">
+    <value>011 Общая выручка по типам с налогами</value>
+  </data>
+  <data name="Vat" xml:space="preserve">
+    <value>НДС {0}</value>
+  </data>
+  <data name="VatList" xml:space="preserve">
+    <value>В том числе НДС:</value>
+  </data>
+  <data name="VatVatSum" xml:space="preserve">
+    <value>Сумма налога</value>
+  </data>
+  <data name="VatPercent" xml:space="preserve">
+    <value>Ставка</value>
+  </data>
+  <data name="NonCash" xml:space="preserve">
+    <value>Безналичный расчет</value>
+  </data>
+  <data name="Writeoff" xml:space="preserve">
+    <value>Удаление блюд со списанием</value>
+  </data>
+  <data name="Sales" xml:space="preserve">
+    <value>Продажи</value>
+  </data>
+  <data name="Writeoffs" xml:space="preserve">
+    <value>Списания</value>
+  </data>
+  <data name="PaymentType" xml:space="preserve">
+    <value>Тип оплаты</value>
+  </data>
+  <data name="SalesByTypeWithTaxSessionReportName" xml:space="preserve">
+    <value>041 Выручка по типам с налогами</value>
+  </data>
+  <data name="TotalAllPaymentTypes" xml:space="preserve">
+    <value>Итого (Все типы оплат)</value>
+  </data>
+  <data name="TotalFiscal" xml:space="preserve">
+    <value>Итого (Фискальные типы)</value>
+  </data>
+  <data name="TotalNonFiscal" xml:space="preserve">
+    <value>Итого (Нефискальные типы)</value>
+  </data>
+  <data name="TotalSub" xml:space="preserve">
+    <value>Итого ({0})</value>
+  </data>
+  <data name="TotalVat" xml:space="preserve">
+    <value>Итого НДС</value>
+  </data>
+  <data name="VatSum" xml:space="preserve">
+    <value>Оборот</value>
+  </data>
+  <data name="IntervalBegin" xml:space="preserve">
+    <value>Начало периода</value>
+  </data>
+  <data name="IntervalEnd" xml:space="preserve">
+    <value>Конец периода</value>
+  </data>
+  <data name="Dishes" xml:space="preserve">
+    <value>Блюда</value>
+  </data>
+  <data name="EmployeesNutritionReportTitle" xml:space="preserve">
+    <value>032 Питание персонала</value>
+  </data>
+  <data name="IncludeOpenAttendances" xml:space="preserve">
+    <value>Включать незакрытые явки</value>
+  </data>
+  <data name="IncludeAttendancesOpenedBeforePeriodBegin" xml:space="preserve">
+    <value>Включать явки, которые начались до начала периода</value>
+  </data>
+  <data name="IncludeAttendancesClosedAfterPeriodEnd" xml:space="preserve">
+    <value>Включать явки, которые закончились после окончания периода</value>
+  </data>
+  <data name="EmployeeNutrionReportAsterisk" xml:space="preserve">
+    <value>* - оценочное время</value>
+  </data>
+  <data name="SessionInHoursAndMinutes" xml:space="preserve">
+    <value>Смена часов:минут</value>
+  </data>
+  <data name="WithoutUserAuthorization" xml:space="preserve">
+    <value>Без прокатки карты сотрудника</value>
+  </data>
+  <data name="NeedConnectForGettingAttendances" xml:space="preserve">
+    <value>Для получений данных по явкам необходимо подключение к серверу</value>
+  </data>
+  <data name="ShowAverage" xml:space="preserve">
+    <value>Показывать средние значения</value>
+  </data>
+  <data name="TakeIntoAccountHoursWithZeroSells" xml:space="preserve">
+    <value>Учитывать часы, в которых не было продаж</value>
+  </data>
+  <data name="OrdersAvg" xml:space="preserve">
+    <value>Среднее число заказов</value>
+  </data>
+  <data name="RescueAvg" xml:space="preserve">
+    <value>Средняя выручка</value>
+  </data>
+  <data name="NoSales" xml:space="preserve">
+    <value>Нет продаж</value>
+  </data>
+  <data name="OrdersSummaryReportTitle" xml:space="preserve">
+    <value>015 Краткий отчет по открытым заказам и продажам в разрезе залов</value>
+  </data>
+  <data name="OrdersSummaryReportSection1Title" xml:space="preserve">
+    <value>ОТКРЫТО ЗАКАЗОВ ПО ЗАЛАМ</value>
+  </data>
+  <data name="OrdersSummaryReportSection1Subtitle" xml:space="preserve">
+    <value>(кроме будущих банкетов)</value>
+  </data>
+  <data name="Section" xml:space="preserve">
+    <value>Зал</value>
+  </data>
+  <data name="SectionTotal" xml:space="preserve">
+    <value>ИТОГО:</value>
+  </data>
+  <data name="OrdersSummaryReportSection2Title" xml:space="preserve">
+    <value>ОПЛАЧЕНО ЗАКАЗОВ ПО ЗАЛАМ</value>
+  </data>
+  <data name="AverageSumPerCheque" xml:space="preserve">
+    <value>Ср.чек</value>
+  </data>
+  <data name="AverageSumPerClient" xml:space="preserve">
+    <value>Ср.клиент</value>
+  </data>
+  <data name="OrdersSummaryReportSection3Title" xml:space="preserve">
+    <value>ВСЕГО ОТКРЫТЫХ ПЛЮС ОПЛАЧЕННЫХ ЗАКАЗОВ ПО ЗАЛАМ</value>
+  </data>
+  <data name="OrdersSummaryReportSection4Title" xml:space="preserve">
+    <value>УДАЛЕНО ИЗ ЗАКАЗА</value>
+  </data>
+  <data name="OrdersSummaryReportSection4Subtitle" xml:space="preserve">
+    <value>({0}/блюд)</value>
+  </data>
+  <data name="PrintedDishes" xml:space="preserve">
+    <value>Отпечат.</value>
+  </data>
+  <data name="NonPrintedDishes" xml:space="preserve">
+    <value>Неотпечат.</value>
+  </data>
+  <data name="Average" xml:space="preserve">
+    <value>СРЕДНЕЕ:</value>
+  </data>
+  <data name="OrdersSummaryReportSection5Title" xml:space="preserve">
+    <value>ПРИМЕНЕНО СКИДОК В ЗАКАЗАХ</value>
+  </data>
+  <data name="OrdersSummaryReportSection5Subtitle" xml:space="preserve">
+    <value>(заказы со скидкой/всего заказов)</value>
+  </data>
+  <data name="AverageDiscount" xml:space="preserve">
+    <value>Сред.скид.</value>
+  </data>
+  <data name="Section5Summary" xml:space="preserve">
+    <value>СРЕДНЯЯ СКИДКА ПО ВСЕМ ЗАКАЗАМ:</value>
+  </data>
+  <data name="DiscountsReportName" xml:space="preserve">
+    <value>036 Отчет по скидкам и надбавкам</value>
+  </data>
+  <data name="TotalSalesWithoutDiscount" xml:space="preserve">
+    <value>Всего продаж (без скид.)</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>Тип</value>
+  </data>
+  <data name="DiscountsPart" xml:space="preserve">
+    <value>Скидки:</value>
+  </data>
+  <data name="IncreasesPart" xml:space="preserve">
+    <value>Надбавки:</value>
+  </data>
+  <data name="TotalSumWithIncreases" xml:space="preserve">
+    <value>= Итого (Продажи с надб-ой):</value>
+  </data>
+  <data name="TotalSumWithIncreasesAndDiscounts" xml:space="preserve">
+    <value>= Итого (продажи с ндб./скид.)</value>
+  </data>
+  <data name="TotalIncreases" xml:space="preserve">
+    <value>Всего надбавок</value>
+  </data>
+  <data name="TotalDiscounts" xml:space="preserve">
+    <value>Всего скидок</value>
+  </data>
+  <data name="AvgDiscountPercentOnOrdersWithDiscount" xml:space="preserve">
+    <value>Средняя скидка по заказам со скидкой:</value>
+  </data>
+  <data name="AvgDiscountPercentOnAllOrders" xml:space="preserve">
+    <value>Средняя скидка по всем заказам:</value>
+  </data>
+  <data name="DiscountNamePattern" xml:space="preserve">
+    <value>- {0}</value>
+  </data>
+  <data name="IncreaseNamePattern" xml:space="preserve">
+    <value>+ {0}</value>
+  </data>
+  <data name="FullReportName" xml:space="preserve">
+    <value>Полный отчет</value>
+  </data>
+  <data name="SalesByPaymentTypeServerReportName" xml:space="preserve">
+    <value>016 Чеки по типам оплаты</value>
+  </data>
+  <data name="CardPaymentType" xml:space="preserve">
+    <value>Карта</value>
+  </data>
+  <data name="OrderAndTableNumbersFormat" xml:space="preserve">
+    <value>{0}-{1}</value>
+    <comment>{0} - номер заказа, {1} - номер стола</comment>
+  </data>
+  <data name="OrderAndTableNumbersTitle" xml:space="preserve">
+    <value>Заказ-Стол</value>
+  </data>
+  <data name="OrderCloseType" xml:space="preserve">
+    <value>Операция</value>
+  </data>
+  <data name="SumCorrectionFormat" xml:space="preserve">
+    <value>   {0} ({1:n1}%)</value>
+    <comment>{0} - Название скидки или надбавки, {1} - процент изменения</comment>
+  </data>
+  <data name="AuthUserFormat" xml:space="preserve">
+    <value>   Авт-рз: {0}</value>
+    <comment>{0} - AuthUser name</comment>
+  </data>
+  <data name="DiscountTypeAuto" xml:space="preserve">
+    <value>Тип: Автоматический</value>
+  </data>
+  <data name="DiscountTypeCard" xml:space="preserve">
+    <value>По карте</value>
+  </data>
+  <data name="DiscountTypeManual" xml:space="preserve">
+    <value>Тип: Ручной</value>
+  </data>
+  <data name="GuestNameFormat" xml:space="preserve">
+    <value>Гость: {0} {1}</value>
+    <comment>{0} - GuestName, {1} - GuestCardTrack</comment>
+  </data>
+  <data name="GuestNameWithoutCardFormat" xml:space="preserve">
+    <value>Гость: {0}</value>
+    <comment>{0} - GuestName</comment>
+  </data>
+  <data name="GuestCardMaskFormat" xml:space="preserve">
+    <value>(*{0})</value>
+    <comment>{0} - последние цифры номера карты</comment>
+  </data>
+  <data name="GuestCardFormat" xml:space="preserve">
+    <value>({0})</value>
+    <comment>{0} - все цифры номера карты</comment>
+  </data>
+  <data name="OrderCloseTypePrepay" xml:space="preserve">
+    <value>Предоплата</value>
+  </data>
+  <data name="OrderCloseTypePrepayReturn" xml:space="preserve">
+    <value>Возв. предопл.</value>
+  </data>
+  <data name="OrderCloseTypeReplenishment" xml:space="preserve">
+    <value>Пополн. счета</value>
+  </data>
+  <data name="OrderCloseTypeSell" xml:space="preserve">
+    <value>Продажа</value>
+  </data>
+  <data name="OrderCloseTypeStorno" xml:space="preserve">
+    <value>Возврат зак.</value>
+  </data>
+  <data name="OrderCloseTypeSummaryPrepay" xml:space="preserve">
+    <value>Внесения предоплат</value>
+  </data>
+  <data name="OrderCloseTypeSummaryPrepayReturn" xml:space="preserve">
+    <value>Возвраты предоплат</value>
+  </data>
+  <data name="OrderCloseTypeSummaryReplenishment" xml:space="preserve">
+    <value>Пополнения счета</value>
+  </data>
+  <data name="OrderCloseTypeSummarySell" xml:space="preserve">
+    <value>Продажи</value>
+  </data>
+  <data name="OrderCloseTypeSummaryStorno" xml:space="preserve">
+    <value>Возвраты заказов</value>
+  </data>
+  <data name="PaymentTypeGroupCardSummaryName" xml:space="preserve">
+    <value>Опл. по картам</value>
+  </data>
+  <data name="PaymentTypeGroupCashSummaryName" xml:space="preserve">
+    <value>Оплач. за наличные</value>
+  </data>
+  <data name="PaymentTypeGroupSummary" xml:space="preserve">
+    <value>ИТОГО ({0}):</value>
+    <comment>{0} - отображаемое имя для PaymentGroup</comment>
+  </data>
+  <data name="CreditPaymentTypeNameFormat" xml:space="preserve">
+    <value>   Тип: {0}</value>
+    <comment>{0} - payment type name</comment>
+  </data>
+  <data name="CreditPaymentTypesSummaryName" xml:space="preserve">
+    <value>Тип</value>
+  </data>
+  <data name="CreditUserNameFormat" xml:space="preserve">
+    <value>Контрагент: {0}</value>
+    <comment>{0} - имя контрагента</comment>
+  </data>
+  <data name="ItemAmountAndNameFormat" xml:space="preserve">
+    <value>{0} x {1}</value>
+    <comment>{0} - item amount, {1} - item name</comment>
+  </data>
+  <data name="PaymentTypeGroupCardTitle" xml:space="preserve">
+    <value>ВЫРУЧКА ПО КАРТАМ</value>
+  </data>
+  <data name="PaymentTypeGroupCashTitle" xml:space="preserve">
+    <value>ОПЛАЧЕНО ЗА НАЛИЧНЫЕ</value>
+  </data>
+  <data name="PaymentTypeGroupCreditSummaryName" xml:space="preserve">
+    <value>Оплачено в кредит</value>
+  </data>
+  <data name="PaymentTypeGroupCreditTitle" xml:space="preserve">
+    <value>ОПЛАЧЕНО В КРЕДИТ
+(Безналичный расчет -&gt;
+безналичная оплата контрагентом)</value>
+  </data>
+  <data name="PaymentTypeGroupWriteoffSummaryName" xml:space="preserve">
+    <value>за счет заведения</value>
+  </data>
+  <data name="CreditUsersSummaryName" xml:space="preserve">
+    <value>Контрагент</value>
+  </data>
+  <data name="PaymentTypeGroupWriteoffTitle" xml:space="preserve">
+    <value>ОПЛАЧЕНО ЗА СЧЕТ ЗАВЕДЕНИЯ
+(Без выручки)</value>
+  </data>
+  <data name="PaymentTypeGroupNonCashTitle" xml:space="preserve">
+    <value>ОПЛАЧЕНО БЕЗНАЛИЧНЫМИ ТИПАМИ
+(Безналичный расчет -&gt; прочие типы)</value>
+  </data>
+  <data name="CombinedPaymentTypeNameFormat" xml:space="preserve">
+    <value>   Комбин: {0}</value>
+    <comment>{0} - combined payment type name</comment>
+  </data>
+  <data name="NonCashPaymentTypesSummaryName" xml:space="preserve">
+    <value>Тип</value>
+  </data>
+  <data name="WriteoffPaymentTypesSummaryName" xml:space="preserve">
+    <value>Тип</value>
+  </data>
+  <data name="PaymentNameAndCardNumber" xml:space="preserve">
+    <value>   Карта: {0} {1}</value>
+    <comment>{0} - название карты (типа оплаты), {1} - номер карты</comment>
+  </data>
+  <data name="PaymentTypeAccountName" xml:space="preserve">
+    <value>   Счет: {0}</value>
+    <comment>{0} - payment type account name</comment>
+  </data>
+  <data name="PaymentTypeGroupNonCashSummaryName" xml:space="preserve">
+    <value>Безналичные типы</value>
+  </data>
+  <data name="WriteoffReasonFormat" xml:space="preserve">
+    <value>   Ком-ий: {0}</value>
+    <comment>{0} - комментарий, указанный при списании</comment>
+  </data>
+  <data name="CommentFormat" xml:space="preserve">
+    <value>Ком-ий: {0}</value>
+    <comment>{0} - комментарий (используется, например, в разделе закрытых доставочных заказов в отчете 050)</comment>
+  </data>
+  <data name="CafeSessionSummaryReportName" xml:space="preserve">
+    <value>048 Итого по смене</value>
+  </data>
+  <data name="OpenOrdersTitle" xml:space="preserve">
+    <value>Открытые заказы</value>
+  </data>
+  <data name="CafeSessionFullReportName" xml:space="preserve">
+    <value>045 Полный отчет кассовой смены</value>
+  </data>
+  <data name="CafeSessionStatisticsCashPrepayReturnTitle" xml:space="preserve">
+    <value>- возвратов предоплат</value>
+  </data>
+  <data name="CafeSessionStatisticsCashPrepayTitle" xml:space="preserve">
+    <value>+ предоплаты наличные</value>
+  </data>
+  <data name="CafeSessionStatisticsCashSaleTitle" xml:space="preserve">
+    <value>+ продажи наличные</value>
+  </data>
+  <data name="CafeSessionStatisticsCashStornoTitle" xml:space="preserve">
+    <value>- возвратов наличные</value>
+  </data>
+  <data name="CafeSessionStatisticsCurrentCash" xml:space="preserve">
+    <value>= в кассе должно быть</value>
+  </data>
+  <data name="CafeSessionStatisticsPayInTitleFormat" xml:space="preserve">
+    <value>+ {0}</value>
+  </data>
+  <data name="CafeSessionStatisticsPayOutTitleFormat" xml:space="preserve">
+    <value>- {0}</value>
+  </data>
+  <data name="CafeSessionStatisticsTitle" xml:space="preserve">
+    <value>в течение смены</value>
+  </data>
+  <data name="CafeSessionSummaryTitle" xml:space="preserve">
+    <value>Движение наличных средств</value>
+  </data>
+  <data name="SessionOpeningCashSum" xml:space="preserve">
+    <value>Наличные в кассе на начало смены:</value>
+  </data>
+  <data name="SalesByPaymentTypeReportName" xml:space="preserve">
+    <value>047 Чеки по типам оплаты за смену</value>
+  </data>
+  <data name="CafeSessionFullReportFooterFormat" xml:space="preserve">
+    <value>Все суммы в {0}. Суммы выше указаны после применения скидок и надбавок и включают налоги</value>
+    <comment>{0} - название валюты во множественном числе</comment>
+  </data>
+  <data name="HeadCashRegisterShiftOpenedByResponsibleManager" xml:space="preserve">
+    <value>Менеджером</value>
+  </data>
+  <data name="ReportCreatedByEmployeeName" xml:space="preserve">
+    <value>Сотрудником</value>
+  </data>
+  <data name="ReportCreatedTimestampName" xml:space="preserve">
+    <value>Отчет сформирован:</value>
+  </data>
+  <data name="CafeSessionSummaryChapterName" xml:space="preserve">
+    <value>Итого по смене</value>
+  </data>
+  <data name="SalesByPaymentTypeChapterName" xml:space="preserve">
+    <value>Чеки по типам оплаты</value>
+  </data>
+  <data name="DeletedItems" xml:space="preserve">
+    <value> Удаления блюд</value>
+  </data>
+  <data name="PaymentTypeGroupWriteoffName" xml:space="preserve">
+    <value> За счет заведения</value>
+  </data>
+  <data name="CorrectionIsCategorisedFormat" xml:space="preserve">
+    <value>  {0} (на кат.)</value>
+  </data>
+  <data name="ClientNameFormat" xml:space="preserve">
+    <value>  Клиент: {0}</value>
+  </data>
+  <data name="CloseTypesByPaymentTypesHeader" xml:space="preserve">
+    <value>ПРОЧИЕ ТИПЫ ОПЛАТ</value>
+  </data>
+  <data name="ChequeTapeReportName" xml:space="preserve">
+    <value>049 Кассовая лента</value>
+  </data>
+  <data name="DeliveriesReportTitle" xml:space="preserve">
+    <value>050 Отчет по доставкам</value>
+  </data>
+  <data name="SessionSalesRegisterReportName" xml:space="preserve">
+    <value>046 Реестр счетов</value>
+  </data>
+  <data name="SessionSalesExctendedRegisterReportName" xml:space="preserve">
+    <value>051 Расширенный реестр счетов</value>
+  </data>
+  <data name="WaitingDeliveriesTitle" xml:space="preserve">
+    <value>ЖДУТ ОТПРАВКИ</value>
+  </data>
+  <data name="OnWayDeliveriesTitle" xml:space="preserve">
+    <value>ЗАКАЗЫ В ПУТИ</value>
+  </data>
+  <data name="ClosedDeliveriesTitle" xml:space="preserve">
+    <value>ЗАКРЫТЫЕ ЗАКАЗЫ</value>
+  </data>
+  <data name="CancelledDeliveriesTitle" xml:space="preserve">
+    <value>ОТМЕНЕННЫЕ ЗАКАЗЫ ДОСТАВКИ</value>
+  </data>
+  <data name="DeliveryDishesDeletionsTitle" xml:space="preserve">
+    <value>УДАЛЕНИЯ БЛЮД ДОСТАВКИ</value>
+  </data>
+  <data name="PlanTimeColumn" xml:space="preserve">
+    <value>План</value>
+  </data>
+  <data name="ActualTimeColumn" xml:space="preserve">
+    <value>Факт</value>
+  </data>
+  <data name="AverageLateColumn" xml:space="preserve">
+    <value>Ср. опозд</value>
+  </data>
+  <data name="CancelCause" xml:space="preserve">
+    <value>Причина отмены</value>
+  </data>
+  <data name="DeliveryDishesDeletionsColumn" xml:space="preserve">
+    <value>Удаления блюд доставки</value>
+  </data>
+  <data name="RemovalTypeColumn" xml:space="preserve">
+    <value>Причина удаления</value>
+  </data>
+  <data name="DishesColumn" xml:space="preserve">
+    <value>Блюд</value>
+  </data>
+  <data name="WithNoWriteoff" xml:space="preserve">
+    <value>Без списания ингред.</value>
+  </data>
+  <data name="WithWriteoff" xml:space="preserve">
+    <value>Со списанием ингред.</value>
+  </data>
+  <data name="ShowClosedDeliveries" xml:space="preserve">
+    <value>Показывать закрытые заказы</value>
+  </data>
+  <data name="ShowCancelledDeliveries" xml:space="preserve">
+    <value>Показывать отмененные заказы</value>
+  </data>
+  <data name="FinalCalculation" xml:space="preserve">
+    <value>  Итоговый подсчет:</value>
+  </data>
+  <data name="MoneyDeficit" xml:space="preserve">
+    <value>  Недостача:</value>
+  </data>
+  <data name="MoneyProficit" xml:space="preserve">
+    <value>  Излишек:</value>
+  </data>
+  <data name="PreliminaryCalculation" xml:space="preserve">
+    <value>  Первый подсчет:</value>
+  </data>
+  <data name="ReferenceRecalculations" xml:space="preserve">
+    <value>КОНТРОЛЬНЫЕ ПЕРЕСЧЕТЫ</value>
+  </data>
+  <data name="ReferenceSum" xml:space="preserve">
+    <value>  Должно остаться в кассе:</value>
+  </data>
+  <data name="TableColumn" xml:space="preserve">
+    <value>Стол</value>
+  </data>
+  <data name="XReportAuthorizedBy" xml:space="preserve">
+    <value>  АВТОРИЗАЦИЯ</value>
+  </data>
+  <data name="XReportInitedBy" xml:space="preserve">
+    <value>  ИНИЦИАТОР</value>
+  </data>
+  <data name="ReportPrinterNotSetWarningMessage" xml:space="preserve">
+    <value>Не настроен принтер отчетов, отчет выведен в файл virtual-printer.log.</value>
+  </data>
+  <data name="ProblemOperationsChapterName" xml:space="preserve">
+    <value>Опасные операции</value>
+  </data>
+  <data name="AllTerminals" xml:space="preserve">
+    <value>Все терминалы</value>
+  </data>
+  <data name="ThisTerminalFormat" xml:space="preserve">
+    <value>Терминал {0}</value>
+  </data>
+  <data name="ProblemOperationsSettingsStepName" xml:space="preserve">
+    <value>Терминалы и период</value>
+  </data>
+  <data name="ProblemOperationsSettingsStepHint" xml:space="preserve">
+    <value>Выберите терминалы и период</value>
+  </data>
+  <data name="Terminals" xml:space="preserve">
+    <value>Терминалы</value>
+  </data>
+  <data name="Group" xml:space="preserve">
+    <value>Группировать:</value>
+  </data>
+  <data name="GroupByDishes" xml:space="preserve">
+    <value>По блюдам</value>
+  </data>
+  <data name="GroupByCategories" xml:space="preserve">
+    <value>По категориям блюд</value>
+  </data>
+  <data name="GroupByWaiters" xml:space="preserve">
+    <value>По официантам</value>
+  </data>
+  <data name="AuthCellNoAuthText" xml:space="preserve">
+    <value>---</value>
+  </data>
+  <data name="AuthCellNoCardFormat" xml:space="preserve">
+    <value>{0}(no card)</value>
+  </data>
+  <data name="AuthCellFormat" xml:space="preserve">
+    <value>{0}(Crd**{1})</value>
+  </data>
+  <data name="FontFamilyName" xml:space="preserve">
+    <value>Courier New</value>
+    <comment>Поскольку отчеты выводятся на экран через Glyph, необходимо явно использовать шрифт с поддержкой локальных символов</comment>
+  </data>
+  <data name="TemplateHasErrorsFormat" xml:space="preserve">
+    <value>В шаблоне {0} имеются ошибки. Подробнее смотрите в cash-server.log.</value>
+  </data>
+  <data name="ChequeNumColumn" xml:space="preserve">
+    <value>№ чека</value>
+  </data>
+  <data name="Cashier" xml:space="preserve">
+    <value>Кассир</value>
+  </data>
+  <data name="SubstitutionCardRecipientNameAndRoleFormat" xml:space="preserve">
+    <value>{0} ({1})</value>
+    <comment>{0} – имя сотрудника, {1} – должность сотрудника</comment>
+  </data>
+  <data name="SubstitutionCardNumber" xml:space="preserve">
+    <value>Карта</value>
+  </data>
+  <data name="DiscountsReportChapterName" xml:space="preserve">
+    <value>Скидки и надбавки</value>
+  </data>
+  <data name="DishSalesReportChapterName" xml:space="preserve">
+    <value>Выручка за смену по категориям блюд</value>
+  </data>
+  <data name="SelfService" xml:space="preserve">
+    <value>Самовывоз</value>
+  </data>
+  <data name="PayInHeader" xml:space="preserve">
+    <value>ВНЕСЕНИЯ НАЛИЧНЫХ</value>
+  </data>
+  <data name="PayInSummary" xml:space="preserve">
+    <value>Итого операций внесения:</value>
+  </data>
+  <data name="PayOutHeader" xml:space="preserve">
+    <value>ИЗЪЯТИЯ НАЛИЧНЫХ</value>
+  </data>
+  <data name="PayOutSummary" xml:space="preserve">
+    <value>Итого операций изъятия:</value>
+  </data>
+  <data name="PayInOutReportName" xml:space="preserve">
+    <value>052 Отчет по внесениям и изъятиям</value>
+  </data>
+  <data name="PayInOutChapterName" xml:space="preserve">
+    <value>Внесения и изъятия</value>
+  </data>
+  <data name="DeliveryDishesReportTitle" xml:space="preserve">
+    <value>053 Блюда для приготовления доставок</value>
+  </data>
+  <data name="Amount" xml:space="preserve">
+    <value>Количество</value>
+  </data>
+  <data name="PaymentGroupNameCash" xml:space="preserve">
+    <value>Оплата наличными</value>
+  </data>
+  <data name="PaymentGroupNameWriteoff" xml:space="preserve">
+    <value>Без выручки</value>
+  </data>
+  <data name="OrderLabelFormat" xml:space="preserve">
+    <value>Заказ: {0}</value>
+  </data>
+  <data name="PriceListDocumentNameFormat" xml:space="preserve">
+    <value>Прейскурант: {0}</value>
+  </data>
+  <data name="AuthNameFormat" xml:space="preserve">
+    <value>Авториз.: {0}</value>
+  </data>
+  <data name="OrderDiffSum" xml:space="preserve">
+    <value>Разница сумм по заказу:</value>
+  </data>
+  <data name="ExternalPayment" xml:space="preserve">
+    <value>Внешн. опл.</value>
+  </data>
+  <data name="PrePayment" xml:space="preserve">
+    <value>Пред. оплата</value>
+  </data>
+  <data name="TotalAllCouriers" xml:space="preserve">
+    <value>ИТОГО ВСЕ КУРЬЕРЫ:</value>
+  </data>
+  <data name="CashDrawersReportName" xml:space="preserve">
+    <value>Отчет по выручке по сотрудникам и по денежным ящикам</value>
+  </data>
+  <data name="CashDrawerNameFormat" xml:space="preserve">
+    <value>Денежный ящик: {0}</value>
+  </data>
+  <data name="SumList" xml:space="preserve">
+    <value>В том числе:</value>
+  </data>
+  <data name="CashierNameFormat" xml:space="preserve">
+    <value>Кассир: {0}</value>
+  </data>
+  <data name="TotalByCashDrawer" xml:space="preserve">
+    <value>Итого по денежному ящику:</value>
+  </data>
+  <data name="TotalByCashRegister" xml:space="preserve">
+    <value>Итого по терминалу:</value>
+  </data>
+  <data name="Guests" xml:space="preserve">
+    <value>Гости</value>
+  </data>
+  <data name="Reserve" xml:space="preserve">
+    <value>Резерв</value>
+  </data>
+  <data name="TotalOperations" xml:space="preserve">
+    <value>Итого операций</value>
+  </data>
+  <data name="CookedByColumn" xml:space="preserve">
+    <value>Приготовил</value>
+  </data>
+  <data name="EditedByColumn" xml:space="preserve">
+    <value>Отредактировал</value>
+  </data>
+  <data name="CounteragentChoosingListTitle" xml:space="preserve">
+    <value>Выберите контрагента</value>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>Все</value>
+  </data>
+  <data name="SelectOne" xml:space="preserve">
+    <value>Выбрать одного</value>
+  </data>
+  <data name="EmployeeDebtsReportName" xml:space="preserve">
+    <value>038 Расчет сотрудникам</value>
+  </data>
+  <data name="DetailByOrders" xml:space="preserve">
+    <value>Детализация по заказам</value>
+  </data>
+  <data name="Employees" xml:space="preserve">
+    <value>Сотрудники</value>
+  </data>
+  <data name="OnlyNonZeroDebt" xml:space="preserve">
+    <value>Только ненулевая задолженность</value>
+  </data>
+  <data name="Debt" xml:space="preserve">
+    <value>Долг</value>
+  </data>
+  <data name="InitialDebt" xml:space="preserve">
+    <value>Начальный долг</value>
+  </data>
+  <data name="OrderNumberFormat" xml:space="preserve">
+    <value>Заказ № {0}</value>
+    <comment>{0} - номер заказа</comment>
+  </data>
+  <data name="TotalDebts" xml:space="preserve">
+    <value>ИТОГО (общий долг):</value>
+  </data>
+  <data name="TotalSales" xml:space="preserve">
+    <value>ИТОГО (общие продажи):</value>
+  </data>
+  <data name="EmployeeHasNoDebt" xml:space="preserve">
+    <value>Выбранному сотруднику ({0}) расчет не проводился.</value>
+    <comment>{0} - имя сотрудника</comment>
+  </data>
+  <data name="EmployeeHasZeroDebt" xml:space="preserve">
+    <value>Выбранный сотрудник ({0}) имеет нулевую задолженность.</value>
+    <comment>{0} - имя сотрудника</comment>
+  </data>
+  <data name="CafeSessionStatisticsPayInTitle" xml:space="preserve">
+    <value>+ внесений наличных</value>
+  </data>
+  <data name="CafeSessionStatisticsPayOutTitle" xml:space="preserve">
+    <value>- изъятий наличных</value>
+  </data>
+  <data name="CafeSessionStatisticsCashAfterPayCollection" xml:space="preserve">
+    <value>= осталось в кассе</value>
+  </data>
+  <data name="CafeSessionStatisticsPayCollectionTitle" xml:space="preserve">
+    <value>- изъято при закрытии кассовой смены</value>
+  </data>
+  <data name="PayIn" xml:space="preserve">
+    <value>Внесение наличных</value>
+  </data>
+  <data name="PayOut" xml:space="preserve">
+    <value>Изъятие наличных</value>
+  </data>
+  <data name="Precheque" xml:space="preserve">
+    <value>Пречек</value>
+  </data>
+  <data name="GroupByCookingPlaces" xml:space="preserve">
+    <value>Группировать по типу места приготовления</value>
+  </data>
+  <data name="WithoutCookingPlace" xml:space="preserve">
+    <value>Без места приготовления</value>
+  </data>
+  <data name="ReportSettings" xml:space="preserve">
+    <value>НАСТРОЙКА ОТЧЕТА</value>
+  </data>
+  <data name="CashRegisterShiftOpened" xml:space="preserve">
+    <value>Смена ФР открыта</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Настройки</value>
+  </data>
+  <data name="EgaisProductUnsealReportName" xml:space="preserve">
+    <value>039 Отчет по вскрытиям тары</value>
+  </data>
+  <data name="EgaisAlcCodeFormat" xml:space="preserve">
+    <value>Алкокод: {0}</value>
+  </data>
+  <data name="EgaisOpenTimeFormat" xml:space="preserve">
+    <value>Время вскрытия: {0}</value>
+  </data>
+  <data name="EgaisProductFullName" xml:space="preserve">
+    <value>{0} {1}</value>
+  </data>
+  <data name="EgaisProductCapacityFormat" xml:space="preserve">
+    <value>{0} л.</value>
+  </data>
+  <data name="EgaisShopWriteoffFormat" xml:space="preserve">
+    <value>Причина: {0}</value>
+  </data>
+  <data name="CafeSessionIsClosed" xml:space="preserve">
+    <value>Кассовая смена закрыта</value>
+  </data>
+  <data name="DeliveryNumberFormat" xml:space="preserve">
+    <value>Доставка № {0}</value>
+  </data>
+  <data name="ChangeMoney" xml:space="preserve">
+    <value>Сдача</value>
+  </data>
+  <data name="DonationsReportName" xml:space="preserve">
+    <value>054 Отчет по чаевым</value>
+  </data>
+  <data name="GroupByCookingPlaceTypes" xml:space="preserve">
+    <value>По типам мест приготовления</value>
+  </data>
+  <data name="Donations" xml:space="preserve">
+    <value>Чаевые</value>
+  </data>
+  <data name="PrintingErrorLogMessagePatternLong" xml:space="preserve">
+    <value>Ошибка при печати заказа {0} на принтере {1}: {2}</value>
+  </data>
+</root>

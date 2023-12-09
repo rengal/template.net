@@ -1,0 +1,260 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="SwitchSendAttendancesInfoToServerFlagMessageTitle" xml:space="preserve">
+    <value>Учет рабочего времени</value>
+  </data>
+  <data name="SwitchSendAttendancesInfoToServerOnMessage" xml:space="preserve">
+    <value>Данный терминал будет использоваться для учета рабочего времени.
+Если в этом режиме пользователь открывает или закрывает личную смену
+на данном терминале, изменения сохраняются на сервере.
+
+Эти личные смены будут участвовать в формировании явок, учете отработанного
+времени, расчете заработной платы и т.п.
+
+При включении режима все личные смены, открытые ранее на данном терминале,
+будут автоматически закрыты. Эти личные смены не сохранятся на сервере.
+
+Чтобы включить учет рабочего времени, прокатайте карту пользователя с правом
+«F_KIS Принудительно закрывать личные смены».</value>
+  </data>
+  <data name="SwitchSendAttendancesInfoToServerOffMessage" xml:space="preserve">
+    <value>Данный терминал не будет использоваться для учета рабочего времени.
+Если в этом режиме пользователь открывает или закрывает личную смену
+на данном терминале, изменения не сохраняются на сервере.
+
+Эти личные смены не будут участвовать в формировании явок, учете отработанного
+времени, расчете заработной платы и т.п.
+
+При выключении режима все личные смены, открытые ранее на данном терминале,
+будут автоматически закрыты. Эти личные смены сохранятся на сервере.
+
+Чтобы отключить учет рабочего времени, прокатайте карту пользователя с правом
+«F_KIS Принудительно закрывать личные смены».</value>
+  </data>
+  <data name="SwitchSendAttendancesInfoToServerFlagOnButtonText" xml:space="preserve">
+    <value>Использовать терминал для учета рабочего времени</value>
+  </data>
+  <data name="SwitchSendAttendancesInfoToServerFlagOffButtonText" xml:space="preserve">
+    <value>Не использовать терминал для учета рабочего времени</value>
+  </data>
+  <data name="ManualResetLocks" xml:space="preserve">
+    <value>Ручной сброс блокировок</value>
+  </data>
+  <data name="CafeSessionCloseOperationName" xml:space="preserve">
+    <value>Закрытие кассовой смены</value>
+  </data>
+  <data name="AgentAddressColumnHeader" xml:space="preserve">
+    <value>Адрес</value>
+  </data>
+  <data name="LocksListIsEmptyText" xml:space="preserve">
+    <value>Заблокированных объектов нет</value>
+  </data>
+  <data name="ManualResetLocksHeader" xml:space="preserve">
+    <value>Выберите терминал, чтобы сбросить его блокировки</value>
+  </data>
+  <data name="ManualResetLocksHint" xml:space="preserve">
+    <value>При выходе из строя терминала некоторые объекты могут остаться заблокированными и быть недоступными на других терминалах.
+В этом случае можно применить ручной сброс блокировок.</value>
+  </data>
+  <data name="TerminalNameColumnHeader" xml:space="preserve">
+    <value>Терминал</value>
+  </data>
+  <data name="LockedBanquetDescriptionFormat" xml:space="preserve">
+    <value>Банкет №{0} на стол {1} ({2}) на {3}</value>
+    <comment>{0} - номер банкета, {1} - номер стола, {2} - название отделения, {3} - время начала банкета</comment>
+  </data>
+  <data name="LockedDeliveryDescriptionFormat" xml:space="preserve">
+    <value>Доставка №{0} на {1} для клиента {2}</value>
+    <comment>{0} - номер доставки, {1} - время доставки, {2} - ФИО заказчика</comment>
+  </data>
+  <data name="LockedDocumentDescriptionFormat" xml:space="preserve">
+    <value>Документ №{0} «{1}»</value>
+    <comment>{0} - номер документа, {1} - тип документа</comment>
+  </data>
+  <data name="LockedEntitiesCountColumnHeader" xml:space="preserve">
+    <value>Кол-во</value>
+  </data>
+  <data name="LockedEntityDescriptionsColumnHeader" xml:space="preserve">
+    <value>Заблокированные объекты</value>
+  </data>
+  <data name="LockedOrderDescriptionFormat" xml:space="preserve">
+    <value>Заказ №{0} на столе {1} ({2})</value>
+    <comment>{0} - номер заказа, {1} - номер стола, {2} - название отделения</comment>
+  </data>
+  <data name="LockedReserveDescriptionFormat" xml:space="preserve">
+    <value>Резерв №{0} на стол {1} ({2}) на {3}</value>
+    <comment>{0} - номер резерва, {1} - номер стола, {2} - название отделения, {3} - время начала резерва</comment>
+  </data>
+  <data name="ManualResetLocksConfirmation" xml:space="preserve">
+    <value>Будьте осторожны!
+Принудительный сброс блокировок может нарушить работу системы и привести к потере данных.
+Безопасный способ – нажать «Отмена» и корректно завершить работу с заблокированными объектами.
+Если вы сомневаетесь, обратитесь к системному администратору или в службу техподдержки.
+Продолжайте, только если вы уверены в необходимости этой операции
+и понимаете, к каким последствиям она может привести.
+
+Сбросить блокировки терминала «{0}»?</value>
+  </data>
+  <data name="TerminalIsMainCashHint" xml:space="preserve">
+    <value>(главная касса)</value>
+  </data>
+  <data name="ResetTerminalSynchronization" xml:space="preserve">
+    <value>Восстановление данных с главной кассы</value>
+  </data>
+  <data name="ResetTerminalSynchronizationConfirmation" xml:space="preserve">
+    <value>Будьте осторожны!
+Кассовые данные (заказы, документы, доставки и т.д.) будут загружены с главной кассы.
+Если введенные на терминале данные отсутствуют на главной кассе, то они будут утеряны.
+Продолжить?</value>
+  </data>
+  <data name="TerminalSynchronizationResetRequired" xml:space="preserve">
+    <value>Внимание!
+Кассовые данные устарели, для их восстановления необходима перезагрузка.
+Кассовые данные (заказы, документы, доставки и т.д.) будут загружены с главной кассы.
+Если введенные на терминале данные отсутствуют на главной кассе, то они будут утеряны.</value>
+  </data>
+  <data name="ApplicationRestartRequiredDueToMainCashChange" xml:space="preserve">
+    <value>Внимание!
+Обновлены настройки главной кассы, для их применения необходима перезагрузка.</value>
+  </data>
+  <data name="AutoRestartWarningMessage" xml:space="preserve">
+    <value>{0}
+
+Автоматическая перезагрузка будет выполнена через {1} секунд.</value>
+    <comment>{0} - описание причины автоматического перезапуска, {1} - время показа сообщения</comment>
+  </data>
+  <data name="MainCashSynchronizationResetRequired" xml:space="preserve">
+    <value>Внимание!
+Кассовые данные повреждены. Для продолжения работы необходима перезагрузка.
+Некоторые кассовые данные (заказы, документы и т.д.) будут утеряны.</value>
+  </data>
+  <data name="ForCloseCafeSessionNeedClosePaidDeliveries" xml:space="preserve">
+    <value>Для закрытия кассовой смены необходимо закрыть все оплаченные доставки.</value>
+  </data>
+  <data name="ForCloseCafeSessionNeedCloseOutdatedYesterdayDeliveries" xml:space="preserve">
+    <value>Для закрытия кассовой смены необходимо закрыть все доставки, обещанное время приготовления которых меньше времени окончания предыдущего учетного дня.</value>
+  </data>
+  <data name="ForCloseCafeSessionNeedClosePrepaidDeliveries" xml:space="preserve">
+    <value>Для закрытия кассовой смены необходимо закрыть все доставки с фискальной предоплатой.</value>
+  </data>
+  <data name="ForCloseCafeSessionNeedCloseOutdatedTodayDeliveries" xml:space="preserve">
+    <value>Для закрытия кассовой смены необходимо закрыть все доставки, обещанное время приготовления которых меньше времени окончания текущего учетного дня.</value>
+  </data>
+</root>

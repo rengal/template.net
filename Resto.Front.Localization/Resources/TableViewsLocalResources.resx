@@ -1,0 +1,513 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AdditionalOperations" xml:space="preserve">
+    <value>Доп</value>
+  </data>
+  <data name="BlockUI" xml:space="preserve">
+    <value>Блокировка</value>
+  </data>
+  <data name="UnblockUI" xml:space="preserve">
+    <value>Введите PIN</value>
+  </data>
+  <data name="CarryOverTableMessageBoxTitle" xml:space="preserve">
+    <value>Перенос заказа</value>
+  </data>
+  <data name="DeleteTable" xml:space="preserve">
+    <value>Удаление</value>
+  </data>
+  <data name="BanquetsReservesTextFormat" xml:space="preserve">
+    <value>РЕЗЕРВОВ: {0}</value>
+  </data>
+  <data name="ViewAllTables" xml:space="preserve">
+    <value>Все столы</value>
+  </data>
+  <data name="SessionCashAmountColon" xml:space="preserve">
+    <value>Сумма:</value>
+  </data>
+  <data name="SessionStartDate" xml:space="preserve">
+    <value>Смена открыта: {0:dd.MM.yyyy HH:mm}</value>
+  </data>
+  <data name="ViewBySectionSchema" xml:space="preserve">
+    <value>Схема зала</value>
+  </data>
+  <data name="ViewByWaiter" xml:space="preserve">
+    <value>По официантам</value>
+  </data>
+  <data name="GuestCountViewTitle" xml:space="preserve">
+    <value>Укажите количество гостей</value>
+  </data>
+  <data name="OrdersByAllTablesOpenTables" xml:space="preserve">
+    <value>Открытых официант-столов: {0}</value>
+  </data>
+  <data name="RemovalType" xml:space="preserve">
+    <value>Причина удаления</value>
+  </data>
+  <data name="RemovalTypeComment" xml:space="preserve">
+    <value>Комментарий</value>
+  </data>
+  <data name="RemovalTypePleaseSpecifyComment" xml:space="preserve">
+    <value>Укажите обязательный комментарий</value>
+  </data>
+  <data name="ConfirmDeleteOrderMessagePattern" xml:space="preserve">
+    <value>Подтвердите удаление заказа со стола №{0}.</value>
+  </data>
+  <data name="ConfirmDeleteOrderMessage" xml:space="preserve">
+    <value>Подтвердите удаление заказа.</value>
+  </data>
+  <data name="SelectOrderForDeletion" xml:space="preserve">
+    <value>Выберите заказ для удаления</value>
+  </data>
+  <data name="ConfirmDeleteOrderTitle" xml:space="preserve">
+    <value>Удаление заказа</value>
+  </data>
+  <data name="SelectWaiter" xml:space="preserve">
+    <value>Выберите официанта</value>
+  </data>
+  <data name="SelectTableTitle" xml:space="preserve">
+    <value>Выберите стол для заказа</value>
+  </data>
+  <data name="SelectOrderForCarryOver" xml:space="preserve">
+    <value>Выберите заказ для переноса</value>
+  </data>
+  <data name="SelectPlaceForCarryOverFromTable" xml:space="preserve">
+    <value>Перенос заказа со стола №{0}. Куда перенести?</value>
+  </data>
+  <data name="CarryOverOrderToAnotherWaiter" xml:space="preserve">
+    <value>Заказ переносится на другого официанта.</value>
+  </data>
+  <data name="CantMergeOrdersInBillStateWarningPattern" xml:space="preserve">
+    <value>Объединение заказа со стола №{0} с заказом со стола №{1} невозможно:
+один или оба заказа находятся в состоянии пречека.</value>
+  </data>
+  <data name="AutomaticDiscountAndMarkupAdditionWarning" xml:space="preserve">
+    <value>К заказу автоматически применены скидки или надбавки.
+Пожалуйста, убедитесь, что они применены корректно.</value>
+  </data>
+  <data name="DiscountAndMarkupInfoLostWarning" xml:space="preserve">
+    <value>Информация о скидках и надбавках у заказа на столе №{0} будет утеряна.</value>
+  </data>
+  <data name="BothOrdersDiscountAndMarkupInfoLostWarning" xml:space="preserve">
+    <value>Информация о скидках и надбавках у заказов на столах №{0} и №{1} будет утеряна.</value>
+  </data>
+  <data name="BothOrdersOnSameTableDiscountAndMarkupInfoLostWarning" xml:space="preserve">
+    <value>Информация о скидках и надбавках у заказов на столе №{0} будет утеряна.</value>
+  </data>
+  <data name="FlyersAmountViewTitle" xml:space="preserve">
+    <value>Укажите количество флаеров</value>
+  </data>
+  <data name="MaxFlyersAmountViolationMessageTemplate" xml:space="preserve">
+    <value>Максимальное количество флаеров — {0}</value>
+  </data>
+  <data name="DeleteOrderWithPrepayConfirm" xml:space="preserve">
+    <value>В заказе были предоплаты. Полное удаление невозможно. Закрыть заказ без оплаты?</value>
+  </data>
+  <data name="NotAllowedToAccessOwersTables" xml:space="preserve">
+    <value>У вас нет права доступа к заказам других официантов</value>
+  </data>
+  <data name="UnableToDeleteOrderWithPrepay" xml:space="preserve">
+    <value>Невозможно удалить заказ с предоплатой. Сначала удалите предоплату.</value>
+  </data>
+  <data name="UnableToMergeOrderWithPrepay" xml:space="preserve">
+    <value>Невозможно объединить заказ с предоплатой. Сначала удалите предоплату.</value>
+  </data>
+  <data name="UnableToCreateOrderOnDeletedTable" xml:space="preserve">
+    <value>Невозможно создать заказ на удаленном столе.</value>
+  </data>
+  <data name="UnableToCreateOrderOnDeletedSection" xml:space="preserve">
+    <value>Невозможно создать заказ в удаленном зале.</value>
+  </data>
+  <data name="UnableToDeleteOrderWithProcessedPayment" xml:space="preserve">
+    <value>Невозможно удалить заказ с проведенными или внешними платежами. Удалите платежи с экрана кассы.</value>
+  </data>
+  <data name="ConfirmMergeOrderTitle" xml:space="preserve">
+    <value>Объединение заказов</value>
+  </data>
+  <data name="BothOrdersAreBanquetsError" xml:space="preserve">
+    <value>Оба заказа являются банкетными. Объединить два банкетных заказа нельзя.</value>
+  </data>
+  <data name="LoginPopupTitle" xml:space="preserve">
+    <value>Введите PIN-код</value>
+  </data>
+  <data name="CantMoveOrderToWaiterWithClosedPersonalSessionMessageTemplate" xml:space="preserve">
+    <value>У официанта {0} закрыта личная смена,
+перенести заказ невозможно.</value>
+  </data>
+  <data name="CantCreateOrderForWaiterWithClosedPersonalSessionMessageTemplate" xml:space="preserve">
+    <value>У официанта {0} закрыта личная смена,
+создать заказ невозможно.</value>
+  </data>
+  <data name="ConfirmOpenOthersOrder" xml:space="preserve">
+    <value>Все доступные заказы на столе принадлежат другим пользователям. Открыть чужой заказ?</value>
+  </data>
+  <data name="BanquetLabel" xml:space="preserve">
+    <value>Б</value>
+    <comment>(B) stands for Banquet.</comment>
+  </data>
+  <data name="ReserveLabel" xml:space="preserve">
+    <value>Р</value>
+    <comment>(R) stands for Reservation.</comment>
+  </data>
+  <data name="DeleteOrderWithNewPayments" xml:space="preserve">
+    <value>В заказе есть новые непроведенные платежи. Удалить платежи и продолжить удаление?</value>
+  </data>
+  <data name="CannotMergeOrdersMaxGuestCountExceedFormat" xml:space="preserve">
+    <value>Количество гостей в заказе не может превышать {0}.
+В объединяемых заказах суммарное количество гостей = {1} + {2} = {3}.
+Выполнение операции невозможно. Пожалуйста, уменьшите количество гостей.</value>
+  </data>
+  <data name="AllWaiterOrdersTitle" xml:space="preserve">
+    <value>Все заказы официанта</value>
+  </data>
+  <data name="UnableToMergeOrdersWithStartedTimePayServices" xml:space="preserve">
+    <value>Объединение заказов с запущенными тарифицируемыми услугами невозможно.
+Остановите тарифицируемую услугу в одном из заказов.</value>
+  </data>
+  <data name="FastChequeButtonText" xml:space="preserve">
+    <value>Быстрый чек</value>
+  </data>
+  <data name="UnableToMergeReserveOrders" xml:space="preserve">
+    <value>Объединение двух банкетных заказов невозможно.</value>
+  </data>
+  <data name="ChangeReserveOrderToMergeFormat" xml:space="preserve">
+    <value>Перенос банкетного заказа со стола №{0} в заказ со стола №{1} невозможен.
+Поменять их местами и перенести заказ со стола №{1} в банкетный заказ со стола №{0}?</value>
+  </data>
+  <data name="BillOrder" xml:space="preserve">
+    <value>Пречек</value>
+  </data>
+  <data name="SelectOrderForBill" xml:space="preserve">
+    <value>Выберите заказ для печати пречека</value>
+  </data>
+  <data name="SelectOrderForPayOnWaiter" xml:space="preserve">
+    <value>Выберите заказ для оплаты с расчетом официанту</value>
+  </data>
+  <data name="PayOnWaiterOrder" xml:space="preserve">
+    <value>Расчет официанту</value>
+  </data>
+  <data name="OrderIsPayingOnWaiterProgress" xml:space="preserve">
+    <value>Заказ оплачивается с расчетом официанту...</value>
+  </data>
+  <data name="OrderPayOnWaiterProcessedSumOverflow" xml:space="preserve">
+    <value>Дистанционная оплата заказа невозможна.
+Сумма проведенных оплат превышает итоговую стоимость заказа.</value>
+  </data>
+  <data name="OrderPayOnWaiterEnoughProcessedSum" xml:space="preserve">
+    <value>Сумма проведенных оплат равна итоговой стоимости заказа.
+Закрыть заказ на главной кассе?</value>
+  </data>
+  <data name="OrderPayOnWaiterProductsForPurchase" xml:space="preserve">
+    <value>Это заказ покупки через ${POS_APP}.
+Закрыть заказ на главной кассе и выплатить клиенту {0}?</value>
+  </data>
+  <data name="PayToCustomerFormat" xml:space="preserve">
+    <value>Выплатить клиенту: {0}</value>
+  </data>
+  <data name="MultipleTablesSelection" xml:space="preserve">
+    <value>Выбрать несколько</value>
+  </data>
+  <data name="SelectAllTables" xml:space="preserve">
+    <value>Выбрать все</value>
+  </data>
+  <data name="CancelCause" xml:space="preserve">
+    <value>Причина отмены</value>
+  </data>
+  <data name="CancelCauseComment" xml:space="preserve">
+    <value>Комментарий</value>
+  </data>
+  <data name="ColorTableButtonText" xml:space="preserve">
+    <value>Цвет стола</value>
+  </data>
+  <data name="NewOrder" xml:space="preserve">
+    <value>Новый заказ</value>
+  </data>
+  <data name="OrderInPrecheque" xml:space="preserve">
+    <value>Заказ в пречеке</value>
+  </data>
+  <data name="PrintedDishes" xml:space="preserve">
+    <value>Блюда отпечатаны</value>
+  </data>
+  <data name="ReadyDishes" xml:space="preserve">
+    <value>Блюда готовы</value>
+  </data>
+  <data name="ServedDishes" xml:space="preserve">
+    <value>Блюда поданы</value>
+  </data>
+  <data name="VacantTable" xml:space="preserve">
+    <value>Свободный стол</value>
+  </data>
+  <data name="InfoColorTable" xml:space="preserve">
+    <value>СПРАВКА ПО ЦВЕТАМ СТОЛОВ</value>
+  </data>
+  <data name="WaiterSlotGroupNumberTextFormat" xml:space="preserve">
+    <value>#{0}</value>
+    <comment>{0} - номер группы</comment>
+  </data>
+  <data name="UnableToMergeOrderWithDonation" xml:space="preserve">
+    <value>Невозможно объединить заказ с чаевыми. Сначала удалите чаевые.</value>
+  </data>
+  <data name="CarryOverTable" xml:space="preserve">
+    <value>Перенос</value>
+  </data>
+  <data name="ElapsedDaysAndHoursTemplate" xml:space="preserve">
+    <value>{0}д {1}ч</value>
+  </data>
+  <data name="ElapsedHoursAndMinutesTemplate" xml:space="preserve">
+    <value>{0}ч {1}мин</value>
+  </data>
+  <data name="ElapsedMinutesTemplate" xml:space="preserve">
+    <value>{0}мин</value>
+  </data>
+  <data name="NumberOfOrders" xml:space="preserve">
+    <value>{0} {1}</value>
+    <comment>{0} - digital, stands for number of orders on a table. {1} - plural form of word "order", which in Russian differs for numbers, ending with 1-4 and 5-0.</comment>
+  </data>
+  <data name="Courses" xml:space="preserve">
+    <value>КУРСЫ:</value>
+  </data>
+  <data name="Guest" xml:space="preserve">
+    <value>ГОСТЬ:</value>
+  </data>
+  <data name="GuestAndSeatsAmount" xml:space="preserve">
+    <value>КОЛИЧЕСТВО ГОСТЕЙ (МЕСТ):</value>
+  </data>
+  <data name="GuestAndSeatsAmountFormat" xml:space="preserve">
+    <value>{0} ({1})</value>
+    <comment>{0} - количество гостей, {1} - количество мест стола</comment>
+  </data>
+  <data name="OrderOpenTime" xml:space="preserve">
+    <value>ЗАКАЗ ОТКРЫТ:</value>
+    <comment>после двоеточия будет время с открытия заказа.</comment>
+  </data>
+  <data name="OrderTotalSum" xml:space="preserve">
+    <value>СУММА ЗАКАЗА:</value>
+  </data>
+  <data name="Reserve" xml:space="preserve">
+    <value>РЕЗЕРВ:</value>
+  </data>
+  <data name="TableNumber" xml:space="preserve">
+    <value>СТОЛ {0}</value>
+    <comment>{0} - номер стола</comment>
+  </data>
+  <data name="Waiter" xml:space="preserve">
+    <value>ОФИЦИАНТ:</value>
+  </data>
+  <data name="CookingLateForDish" xml:space="preserve">
+    <value>Опоздание приготовления: {0}</value>
+    <comment>{0} - название блюда</comment>
+  </data>
+  <data name="ServingLateForDish" xml:space="preserve">
+    <value>Опоздание подачи: {0}</value>
+    <comment>{0} - название блюда</comment>
+  </data>
+  <data name="SumPerGuestAlreadyIs" xml:space="preserve">
+    <value>Сумма на 1 гостя уже {0}</value>
+    <comment>{0} - сумма заказа в пересчете на одного гостя</comment>
+  </data>
+  <data name="TimeOrderInPrechequeAlreadyIs" xml:space="preserve">
+    <value>Заказ в пречеке уже {0}</value>
+    <comment>{0} - время в формате Х д. Y ч. Z мин.</comment>
+  </data>
+  <data name="TimeOrderIsOpenAlreadyIs" xml:space="preserve">
+    <value>Заказ открыт уже {0}</value>
+    <comment>{0} - время в формате Х д. Y ч. Z мин.</comment>
+  </data>
+  <data name="TimeWaiterNotAttendedTableAlreadyIs" xml:space="preserve">
+    <value>Официант не подходил к столу уже {0}</value>
+    <comment>{0} - время</comment>
+  </data>
+  <data name="ElapsedDaysAndHoursWithWhitespaceTemplate" xml:space="preserve">
+    <value>{0} д. {1} ч.</value>
+  </data>
+  <data name="ElapsedHoursAndMinutesWithWhitespaceTemplate" xml:space="preserve">
+    <value>{0} ч. {1} мин.</value>
+  </data>
+  <data name="ElapsedMinutesWithWhitespaceTemplate" xml:space="preserve">
+    <value>{0} мин.</value>
+  </data>
+  <data name="BanquetAt" xml:space="preserve">
+    <value>Банкет в {0:t}</value>
+    <comment>{0} - время</comment>
+  </data>
+  <data name="GuestWithoutSeatsAmount" xml:space="preserve">
+    <value>КОЛИЧЕСТВО ГОСТЕЙ:</value>
+  </data>
+  <data name="GuestWithoutSeatsAmountFormat" xml:space="preserve">
+    <value>{0}</value>
+    <comment>{0} - количество гостей</comment>
+  </data>
+  <data name="NoCourses" xml:space="preserve">
+    <value>Не используются</value>
+    <comment>В значении "Курсы: Не используются"</comment>
+  </data>
+  <data name="NoGuest" xml:space="preserve">
+    <value>Не выбран</value>
+    <comment>В значении "Гость: Не выбран"</comment>
+  </data>
+  <data name="NoAlerts" xml:space="preserve">
+    <value>С заказом все хорошо.</value>
+  </data>
+  <data name="NoReserve" xml:space="preserve">
+    <value>Нет</value>
+    <comment>В значении прочерка, когда на столе нет резерва. "РЕЗЕРВ: Нет"</comment>
+  </data>
+  <data name="OrderNumber" xml:space="preserve">
+    <value>Заказ {0}</value>
+    <comment>{0} - номер заказа</comment>
+  </data>
+  <data name="ReserveAt" xml:space="preserve">
+    <value>Резерв в {0:t}</value>
+    <comment>{0} - время</comment>
+  </data>
+  <data name="ReserveTomorrowAt" xml:space="preserve">
+    <value>Резерв завтра в {0:t}</value>
+    <comment>{0} - время</comment>
+  </data>
+  <data name="BanquetTomorrowAt" xml:space="preserve">
+    <value>Банкет завтра в {0:t}</value>
+    <comment>{0} - время</comment>
+  </data>
+  <data name="BanquetYesterdayAt" xml:space="preserve">
+    <value>Банкет вчера в {0:t}</value>
+    <comment>{0} - время</comment>
+  </data>
+  <data name="ReserveYesterdayAt" xml:space="preserve">
+    <value>Резерв вчера в {0:t}</value>
+    <comment>{0} - время</comment>
+  </data>
+  <data name="AlertsPopupTitle" xml:space="preserve">
+    <value>Информация о заказах на столе</value>
+  </data>
+  <data name="AllWaiterTabsTitle" xml:space="preserve">
+    <value>Все Табы официанта</value>
+  </data>
+  <data name="SelectPlaceForCarryOverFromTab" xml:space="preserve">
+    <value>Перенос Таба "{0}". Куда перенести?</value>
+    <comment>{0} - название Таба</comment>
+  </data>
+  <data name="SelectTabForCarryOver" xml:space="preserve">
+    <value>Выберите Таб для переноса</value>
+  </data>
+  <data name="NotAllowedToOrderEdit" xml:space="preserve">
+    <value>У вас нет права на редактирование заказа</value>
+  </data>
+  <data name="WaiterTeam" xml:space="preserve">
+    <value>Бригада:</value>
+  </data>
+</root>

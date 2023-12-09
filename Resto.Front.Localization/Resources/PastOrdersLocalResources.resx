@@ -1,0 +1,269 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="SearchPastOrderWindowHint" xml:space="preserve">
+    <value>Пожалуйста, введите номер заказа или фискального чека.</value>
+  </data>
+  <data name="RetrievingPastOrdersFromServer" xml:space="preserve">
+    <value>Получение данных с сервера...</value>
+  </data>
+  <data name="ServerIsUnavailableErrorMessage" xml:space="preserve">
+    <value>Сервер недоступен.</value>
+  </data>
+  <data name="PastOrdersScreenTitle" xml:space="preserve">
+    <value>Поиск закрытых заказов</value>
+  </data>
+  <data name="PrintCashMemoChequeButtonText" xml:space="preserve">
+    <value>Товарный чек</value>
+  </data>
+  <data name="IfToPrintCashMemoChequeQuestion" xml:space="preserve">
+    <value>Распечатать товарный чек для заказа №{0} от {1}?</value>
+    <comment>{0} - номер заказа, {1} - дата оплаты заказа</comment>
+  </data>
+  <data name="IfToPrintCashMemoChequeQuestionTitle" xml:space="preserve">
+    <value>Печать</value>
+  </data>
+  <data name="SearchAnotherPastOrderButtonText" xml:space="preserve">
+    <value>Искать по другому номеру чека</value>
+  </data>
+  <data name="SearchResultSummaryTextFormat" xml:space="preserve">
+    <value>По номеру {0} {1} {2} {3} в текущей и {4} {5} в закрытых кассовых сменах.</value>
+    <comment>По номеру 42 найден 1 заказ в текущей и 5 заказов в закрытых кассовых сменах.</comment>
+  </data>
+  <data name="SearchResultSummaryNoLocalHasRemoteTextFormat" xml:space="preserve">
+    <value>По номеру {0} {1} {2} {3} в закрытых кассовых сменах.</value>
+    <comment>По номеру 42 найдено 5 заказов в закрытых кассовых сменах.</comment>
+  </data>
+  <data name="SearchResultSummaryHasLocalNoConnectionTextFormat" xml:space="preserve">
+    <value>По номеру {0} {1} {2} {3} в текущей кассовой смене. Поиск в закрытых кассовых сменах невозможен, сервер недоступен.</value>
+    <comment>По номеру 42 найден 1 заказ в текущей кассовой смене. Поиск в закрытых кассовых сменах невозможен, сервер недоступен.</comment>
+  </data>
+  <data name="TerminalNameColumnTitle" xml:space="preserve">
+    <value>Терминал</value>
+  </data>
+  <data name="AggregatedDiscountNameFormat" xml:space="preserve">
+    <value>Скидка {0}%</value>
+  </data>
+  <data name="AggregatedIncreaseNameFormat" xml:space="preserve">
+    <value>Надбавка {0}%</value>
+  </data>
+  <data name="PastOrdersPopupTitle" xml:space="preserve">
+    <value>Поиск</value>
+  </data>
+  <data name="PastOrdersOnWaiterStationWarning" xml:space="preserve">
+    <value>Печать товарного чека для заказов закрытых кассовых смен возможна только на кассовом терминале.</value>
+  </data>
+  <data name="ProductNameHeader" xml:space="preserve">
+    <value>Позиция</value>
+  </data>
+  <data name="AmountHeader" xml:space="preserve">
+    <value>Кол-во</value>
+  </data>
+  <data name="PriceHeader" xml:space="preserve">
+    <value>Цена</value>
+  </data>
+  <data name="EditPriceHeader" xml:space="preserve">
+    <value>Введите цену</value>
+  </data>
+  <data name="VatHeader" xml:space="preserve">
+    <value>НДС</value>
+  </data>
+  <data name="ReturnProducts" xml:space="preserve">
+    <value>Вернуть</value>
+  </data>
+  <data name="ReturnProductsInProcess" xml:space="preserve">
+    <value>Выполняется операция возврата...</value>
+  </data>
+  <data name="ReturnProductsError" xml:space="preserve">
+    <value>Операция возврата завершилась ошибкой. {0}</value>
+  </data>
+  <data name="ReturnProductComment" xml:space="preserve">
+    <value>Возврат товара</value>
+  </data>
+  <data name="AdditionalOperations" xml:space="preserve">
+    <value>Дополнительно</value>
+  </data>
+  <data name="AdditionalOperationsTitle" xml:space="preserve">
+    <value>Дополнительные операции</value>
+  </data>
+  <data name="RestaurantSection" xml:space="preserve">
+    <value>Отделение</value>
+  </data>
+  <data name="ChooseRestaurantSectionTitle" xml:space="preserve">
+    <value>Выберите отделение</value>
+  </data>
+  <data name="OrderType" xml:space="preserve">
+    <value>Тип заказа</value>
+  </data>
+  <data name="UnableReturnProductsNotEnoughCashDrawersMoney" xml:space="preserve">
+    <value>Невозможно вернуть товар:
+недостаточно наличности в денежном ящике.</value>
+  </data>
+  <data name="UnableReturnProductsNotEnoughCashRegistersMoney" xml:space="preserve">
+    <value>Невозможно вернуть товар:
+недостаточно наличности в кассе.</value>
+  </data>
+  <data name="ReturnOrderButtonText" xml:space="preserve">
+    <value>Возврат заказа</value>
+  </data>
+  <data name="PaymentTypeNotSelected" xml:space="preserve">
+    <value>Не задан</value>
+  </data>
+  <data name="ReturnProductsNoRemovalType" xml:space="preserve">
+    <value>Нет подходящей причины удаления.</value>
+  </data>
+  <data name="ReturnProductsNoWriteOfPaymentType" xml:space="preserve">
+    <value>Нет подходящего настраиваемого типа оплаты.</value>
+  </data>
+  <data name="ReturnProductsWithWriteOff" xml:space="preserve">
+    <value>На склад</value>
+  </data>
+  <data name="ReturnOrderComment" xml:space="preserve">
+    <value>Возврат заказа № {0}. Заказ был оплачен {1} в кассовой смене № {2}.</value>
+  </data>
+  <data name="ModifierShort" xml:space="preserve">
+    <value>Мод.</value>
+  </data>
+  <data name="UnableReturnProductsWithTobaccoMark" xml:space="preserve">
+    <value>Невозможно вернуть товар «{0}»:
+в чеке не должно быть маркированных позиций.</value>
+  </data>
+  <data name="UnableReturnProductsWithNegativeSum" xml:space="preserve">
+    <value>Невозможно вернуть товар «{0}»:
+в чеке не должно быть позиций с отрицательной суммой.</value>
+  </data>
+  <data name="PastOrdersWithPrepayWarning" xml:space="preserve">
+    <value>Возврат заказов закрытых кассовых смен с предоплатами не поддерживается.</value>
+  </data>
+  <data name="UnableReturnProductsForPurchaseWithWriteOff" xml:space="preserve">
+    <value>Невозможно вернуть товар для покупки «{0}», если не указан склад.</value>
+  </data>
+  <data name="ReturnType" xml:space="preserve">
+    <value>Способ возврата</value>
+  </data>
+  <data name="TotalSumToReturn" xml:space="preserve">
+    <value>Итого к возврату:</value>
+  </data>
+  <data name="ChangePrice" xml:space="preserve">
+    <value>Изменить цену</value>
+  </data>
+  <data name="SelectDishesForReturn" xml:space="preserve">
+    <value>Выберите блюда, которые нужно вернуть</value>
+  </data>
+</root>

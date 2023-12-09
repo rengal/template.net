@@ -1,0 +1,353 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AllDeliveries" xml:space="preserve">
+    <value>Все доставки</value>
+  </data>
+  <data name="CancelWizardConfirm" xml:space="preserve">
+    <value>Вы уверены, что хотите выйти из мастера закрытия кассовой смены?</value>
+  </data>
+  <data name="CashRegisterPaperWarning" xml:space="preserve">
+    <value>Внимание! Убедитесь в наличии бумаги в фискальном регистраторе.
+Если бумага закончится во время печати Z-отчета, то необходимо будет обратиться в ЦТО.</value>
+  </data>
+  <data name="GoToClosePaidDeliveries" xml:space="preserve">
+    <value>Кассовую смену нельзя закрыть, если есть  оплаченные доставки. Перейти к списку доставок?</value>
+  </data>
+  <data name="EncashmentCancelled" xml:space="preserve">
+    <value>Инкассация отменена. Убедитесь, что деньги из кассы не изъяты.</value>
+  </data>
+  <data name="EncashmentDone" xml:space="preserve">
+    <value>Была проведена инкассация.  Наличные должны быть изъяты из кассы.</value>
+  </data>
+  <data name="EncashmentInsufficientRightsClosingImpossible" xml:space="preserve">
+    <value>Недостаточно прав для проведения инкассации. Настроена полная инкассация, поэтому закрытие кассовой смены невозможно.</value>
+  </data>
+  <data name="EncashmentInsufficientRightsZeroSum" xml:space="preserve">
+    <value>Недостаточно прав для проведения инкассации. Установите нулевую изымаемую сумму.</value>
+  </data>
+  <data name="EncashmentNotDone" xml:space="preserve">
+    <value>Инкассация не была проведена. Убедитесь, что деньги не изъяты из кассы.</value>
+  </data>
+  <data name="EncashmentNotEnoughMoney" xml:space="preserve">
+    <value>Невозможно произвести изъятие: сумма денег в кассе меньше, чем {0}</value>
+  </data>
+  <data name="EncashmentPayInError" xml:space="preserve">
+    <value>Не удалось произвести внесение. Убедитесь, что все деньги изъяты из кассы.
+Ошибка: {0}</value>
+  </data>
+  <data name="EncashmentPayOutError" xml:space="preserve">
+    <value>Не удалось произвести изъятие. Смена будет закрыта без инкассации.
+Убедитесь, что деньги не изъяты из кассы.
+Ошибка: {0}</value>
+  </data>
+  <data name="EncashmentWouldBeOnZReport" xml:space="preserve">
+    <value>При закрытии смены инкассация будет проведена автоматически.
+После печати Z-отчета убедитесь, что деньги изъяты из кассы.</value>
+  </data>
+  <data name="EnterCloseDate" xml:space="preserve">
+    <value>Укажите дату закрытия смены</value>
+  </data>
+  <data name="NoSales" xml:space="preserve">
+    <value>Не зафиксировано ни одной продажи.
+Z-отчет может не напечататься.</value>
+  </data>
+  <data name="PreliminaryOrderDelete" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="OrderClose" xml:space="preserve">
+    <value>Закрыть</value>
+  </data>
+  <data name="OrderCorrupted" xml:space="preserve">
+    <value>(Поврежден)</value>
+  </data>
+  <data name="PayInAfterCloseNotSupported" xml:space="preserve">
+    <value>ФР не поддерживает частичную инкассацию. Пожалуйста, введите точную сумму в кассе. Рекомендуется настроить систему на полную инкассацию при закрытии кассовой смены.</value>
+  </data>
+  <data name="PayOutErrorRetryIgnore" xml:space="preserve">
+    <value>Не удалось произвести изъятие.
+Ошибка: {0}
+Повторить попытку изъятия или закрыть смену без инкассации?</value>
+  </data>
+  <data name="PersonalSessionCloseError" xml:space="preserve">
+    <value>Невозможно закрыть личную смену.</value>
+  </data>
+  <data name="ProcessClosing" xml:space="preserve">
+    <value>Закрываем смену</value>
+  </data>
+  <data name="ProcessOpenCashDrawer" xml:space="preserve">
+    <value>Открывается денежный ящик</value>
+  </data>
+  <data name="ProcessOrdersClosing" xml:space="preserve">
+    <value>Закрываем заказы</value>
+  </data>
+  <data name="ProcessRecalculating" xml:space="preserve">
+    <value>Идет контрольный пересчет</value>
+  </data>
+  <data name="ProcessReports" xml:space="preserve">
+    <value>Идет распечатка отчетов</value>
+  </data>
+  <data name="ProcessSessionsClosing" xml:space="preserve">
+    <value>Закрываем личные смены</value>
+  </data>
+  <data name="RecalculateLess" xml:space="preserve">
+    <value>Введенная вами сумма меньше значения, которое должно остаться в кассе.
+Пересчитайте деньги еще раз.</value>
+  </data>
+  <data name="RecalculateMore" xml:space="preserve">
+    <value>Введенная вами сумма превышает значение, которое должно остаться в кассе.
+Пересчитайте деньги еще раз.</value>
+  </data>
+  <data name="RecalculateResult" xml:space="preserve">
+    <value>Контрольный пересчет произведен.
+</value>
+  </data>
+  <data name="RecalculateResultClose" xml:space="preserve">
+    <value>Расхождение в пределах нормы.</value>
+  </data>
+  <data name="RecalculateResultExact" xml:space="preserve">
+    <value>Суммы в точности совпадают.</value>
+  </data>
+  <data name="RecalculateResultLess" xml:space="preserve">
+    <value>В кассе обнаружена недостача в размере {0}
+Пожалуйста, доложите указанную сумму в кассу.
+Факт недостачи будет доведен до руководства вашего ресторана.</value>
+  </data>
+  <data name="RecalculateResultMore" xml:space="preserve">
+    <value>В кассе обнаружен излишек в размере {0}</value>
+  </data>
+  <data name="ReportsError" xml:space="preserve">
+    <value>Печать отчета завершилась ошибкой. {0}</value>
+  </data>
+  <data name="ReportsNotSelected" xml:space="preserve">
+    <value>Не выбрано ни одного отчета.</value>
+  </data>
+  <data name="ReportsSkip" xml:space="preserve">
+    <value>Выбранные отчеты не были распечатаны. Пропустить распечатку?</value>
+  </data>
+  <data name="SessionClosedDateCannotBeLessThanStartedDate" xml:space="preserve">
+    <value>Время закрытия смены не может быть раньше времени ее открытия ({0}).</value>
+    <comment>{0} is Session.StartedDate</comment>
+  </data>
+  <data name="TryPrintRequiredReports" xml:space="preserve">
+    <value>Убедитесь, что необходимые отчеты успешно распечатаны.</value>
+  </data>
+  <data name="SessionClose" xml:space="preserve">
+    <value>Закрыть</value>
+  </data>
+  <data name="NameColumnHeaderText" xml:space="preserve">
+    <value>Имя</value>
+  </data>
+  <data name="SessionBeginHeaderText" xml:space="preserve">
+    <value>Начало смены</value>
+  </data>
+  <data name="SessionEndHeaderText" xml:space="preserve">
+    <value>Конец смены</value>
+  </data>
+  <data name="SessionLengthHeaderText" xml:space="preserve">
+    <value>Продолжительность</value>
+  </data>
+  <data name="ShouldCloseHeaderText" xml:space="preserve">
+    <value>Закрыть?</value>
+  </data>
+  <data name="ShouldDeleteHeaderText" xml:space="preserve">
+    <value>Удалить?</value>
+  </data>
+  <data name="TimeColumnHeaderText" xml:space="preserve">
+    <value>Время</value>
+  </data>
+  <data name="TableHeaderText" xml:space="preserve">
+    <value>Стол</value>
+  </data>
+  <data name="NumberHeaderText" xml:space="preserve">
+    <value>Номер</value>
+  </data>
+  <data name="WaiterHeaderText" xml:space="preserve">
+    <value>Официант</value>
+  </data>
+  <data name="SumHeaderText" xml:space="preserve">
+    <value>Сумма</value>
+  </data>
+  <data name="ShutdownTerminal" xml:space="preserve">
+    <value>Выключить терминал</value>
+  </data>
+  <data name="NoWaitersDebts" xml:space="preserve">
+    <value>Задолженностей сотрудников нет.</value>
+  </data>
+  <data name="WaitersDebtsWarningFormat" xml:space="preserve">
+    <value>У сотрудников накопились{0}
+Надо сдать выручку до закрытия кассовой смены. Несданная выручка при закрытии смены вычитается из заработной платы сотрудника. При этом на кассе производится фискальное изъятие.</value>
+  </data>
+  <data name="WaitersDebtsFormat" xml:space="preserve">
+    <value> задолженности в размере {0}</value>
+  </data>
+  <data name="WaitersSurplusFormat" xml:space="preserve">
+    <value> излишки в размере {0}</value>
+  </data>
+  <data name="AndFormat" xml:space="preserve">
+    <value>{0} и{1}</value>
+  </data>
+  <data name="WaitersDebtsMessage" xml:space="preserve">
+    <value>У сотрудников в текущей кассовой смене имеются задолженности.
+Продолжить закрытие кассовой смены, несмотря на это?</value>
+  </data>
+  <data name="AutoIncassationOnZReport" xml:space="preserve">
+    <value>На ФР настроена автоинкассация, частичная инкассация не поддерживается. Пожалуйста, введите точную сумму в кассе. Рекомендуется настроить систему на полную инкассацию при закрытии кассовой смены.</value>
+  </data>
+  <data name="PayOutByFact" xml:space="preserve">
+    <value>ИНКАССАЦИЯ ПО ФАКТУ</value>
+  </data>
+  <data name="CashRegisterTape" xml:space="preserve">
+    <value>КОНТРОЛЬНАЯ ЛЕНТА</value>
+  </data>
+  <data name="PaidHeaderText" xml:space="preserve">
+    <value>Оплачено</value>
+  </data>
+  <data name="GoToCloseOutdatedTodayDeliveries" xml:space="preserve">
+    <value>Кассовую смену нельзя закрыть, если есть доставки, обещанное время приготовления которых меньше времени окончания текущего учетного дня. Перейти к списку доставок?"</value>
+  </data>
+  <data name="GoToCloseOutdatedYesterdayDeliveries" xml:space="preserve">
+    <value>Кассовую смену нельзя закрыть, если есть доставки, обещанное время приготовления которых меньше времени окончания предыдущего учетного дня. Перейти к списку доставок?"</value>
+  </data>
+  <data name="GoToClosePrepaidDeliveries" xml:space="preserve">
+    <value>Кассовую смену нельзя закрыть, если есть доставки с фискальной предоплатой. Перейти к списку доставок?</value>
+  </data>
+  <data name="TimeFormat" xml:space="preserve">
+    <value>{0:g}</value>
+  </data>
+  <data name="WaitersDebtsErrorFormat" xml:space="preserve">
+    <value>Закрытие кассовой смены запрещено.
+У сотрудников накопились{0}
+Надо сдать выручку до закрытия кассовой смены.</value>
+  </data>
+  <data name="CashRegisterCloseEncashmentSetupAutoAndPayInError" xml:space="preserve">
+    <value>После печати Z-отчета обнуления наличности фискального регистратора не произошло. Проверьте настройки фискального регистратора.</value>
+  </data>
+  <data name="CashRegisterCloseEncashmentSetupPartialError" xml:space="preserve">
+    <value>Суммы наличности фискального регистратора до и после печати Z отчета не совпадают. Проверьте настройки фискального регистратора.</value>
+  </data>
+  <data name="ComboAutoCollectProcessing" xml:space="preserve">
+    <value>Выполняется автоматическая сборка комбо</value>
+  </data>
+  <data name="ComboAutoCollectErrorFormat" xml:space="preserve">
+    <value>Возникла ошибка автосборки комбо заказа {0}:
+ {1}.
+Продолжить закрытие заказа без автосборки комбо?</value>
+  </data>
+</root>

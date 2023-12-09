@@ -1,0 +1,1785 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Number" xml:space="preserve">
+    <value>№</value>
+  </data>
+  <data name="ActiveOnly" xml:space="preserve">
+    <value>Только активные</value>
+  </data>
+  <data name="ActivityType" xml:space="preserve">
+    <value>Тип
+события</value>
+  </data>
+  <data name="AdditionalInfo" xml:space="preserve">
+    <value>Прочее</value>
+  </data>
+  <data name="Banquet" xml:space="preserve">
+    <value>Банкет</value>
+  </data>
+  <data name="BanquetStarted" xml:space="preserve">
+    <value>Банкет начался</value>
+  </data>
+  <data name="BrType" xml:space="preserve">
+    <value>Тип</value>
+  </data>
+  <data name="CancelBanquet" xml:space="preserve">
+    <value>Отменить банкет</value>
+  </data>
+  <data name="CancelReserve" xml:space="preserve">
+    <value>Отменить резерв</value>
+  </data>
+  <data name="Card" xml:space="preserve">
+    <value>Карта</value>
+  </data>
+  <data name="WithoutDiscountOrPriceCategory" xml:space="preserve">
+    <value>Без скидки/
+цен. катег.</value>
+  </data>
+  <data name="CardType" xml:space="preserve">
+    <value>Скидка/надбавка</value>
+  </data>
+  <data name="PriceCategory" xml:space="preserve">
+    <value>Це­но­вая ка­те­го­рия</value>
+  </data>
+  <data name="Client" xml:space="preserve">
+    <value>Клиент</value>
+  </data>
+  <data name="ColonFormat" xml:space="preserve">
+    <value>{0}: </value>
+  </data>
+  <data name="Comments" xml:space="preserve">
+    <value>Коммент.</value>
+  </data>
+  <data name="AddressComments" xml:space="preserve">
+    <value>Примеч.
+к адресу</value>
+  </data>
+  <data name="AddressCommentsKeyboardTitle" xml:space="preserve">
+    <value>Примечания к адресу</value>
+  </data>
+  <data name="DeliveryProcessingComments" xml:space="preserve">
+    <value>Комм.
+к заказу</value>
+  </data>
+  <data name="DeliveryProcessingCommentsKeyboardTitle" xml:space="preserve">
+    <value>Комментарий к заказу</value>
+  </data>
+  <data name="ConvertReserveToBanquet" xml:space="preserve">
+    <value>Сделать заказ банкетным</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>Дата</value>
+  </data>
+  <data name="DateAndTime" xml:space="preserve">
+    <value>Время</value>
+  </data>
+  <data name="DateFormat" xml:space="preserve">
+    <value>{0:D}</value>
+  </data>
+  <data name="Duration" xml:space="preserve">
+    <value>Длительность</value>
+  </data>
+  <data name="DurationFormat" xml:space="preserve">
+    <value>{0:t}</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
+  <data name="EmailFormat" xml:space="preserve">
+    <value>e-mail {0}</value>
+  </data>
+  <data name="CardNumberFormat" xml:space="preserve">
+    <value>номер карты {0}</value>
+  </data>
+  <data name="GuestCount" xml:space="preserve">
+    <value>Гостей</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Имя
+Отчество</value>
+  </data>
+  <data name="NewBanquet" xml:space="preserve">
+    <value>НОВЫЙ БАНКЕТ</value>
+  </data>
+  <data name="NewCustomer" xml:space="preserve">
+    <value>Новый гость</value>
+  </data>
+  <data name="NewReserve" xml:space="preserve">
+    <value>НОВЫЙ РЕЗЕРВ</value>
+  </data>
+  <data name="Nickname" xml:space="preserve">
+    <value>Ник</value>
+  </data>
+  <data name="PeriodEnd" xml:space="preserve">
+    <value>Конец периода:</value>
+  </data>
+  <data name="PeriodStart" xml:space="preserve">
+    <value>Начало периода:</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>Телефон</value>
+  </data>
+  <data name="HouseAsterisk" xml:space="preserve">
+    <value>Дом*</value>
+  </data>
+  <data name="HouseAsteriskKeyboardTitle" xml:space="preserve">
+    <value>Дом*</value>
+  </data>
+  <data name="StreetAsterisk" xml:space="preserve">
+    <value>Улица*</value>
+  </data>
+  <data name="CityAsterisk" xml:space="preserve">
+    <value>Город*</value>
+  </data>
+  <data name="City" xml:space="preserve">
+    <value>Город</value>
+  </data>
+  <data name="Building" xml:space="preserve">
+    <value>Корпус
+строение</value>
+  </data>
+  <data name="BuildingKeyboardTitle" xml:space="preserve">
+    <value>Корпус/строение</value>
+  </data>
+  <data name="Flat" xml:space="preserve">
+    <value>Квартира</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>Адрес</value>
+  </data>
+  <data name="PrintPreliminaryOrder" xml:space="preserve">
+    <value>Печать предварительного заказа
+(без отсчета времени)</value>
+  </data>
+  <data name="PrintServiceCheque" xml:space="preserve">
+    <value>Печать заказа на кухню
+(начать отсчет времени)</value>
+  </data>
+  <data name="ShouldRemind" xml:space="preserve">
+    <value>НАПОМНИТЬ ЗАРАНЕЕ</value>
+  </data>
+  <data name="Reserve" xml:space="preserve">
+    <value>Резерв</value>
+  </data>
+  <data name="ReserveNumberFormat" xml:space="preserve">
+    <value>Резерв № {0}</value>
+  </data>
+  <data name="BanquetNumberFormat" xml:space="preserve">
+    <value>Банкет № {0}</value>
+  </data>
+  <data name="SearchClient" xml:space="preserve">
+    <value>Поиск клиента</value>
+  </data>
+  <data name="SelectTableTitle" xml:space="preserve">
+    <value>ВЫБЕРИТЕ ДАТУ И РЕЗЕРВИРУЕМЫЙ СТОЛ</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Статус</value>
+  </data>
+  <data name="StatusClosed" xml:space="preserve">
+    <value>Снят</value>
+  </data>
+  <data name="ReserveStatusEating" xml:space="preserve">
+    <value>Гость пришел</value>
+  </data>
+  <data name="BanquetStatusEating" xml:space="preserve">
+    <value>Начался</value>
+  </data>
+  <data name="StatusNew" xml:space="preserve">
+    <value>Действует</value>
+  </data>
+  <data name="Surname" xml:space="preserve">
+    <value>Фамилия</value>
+  </data>
+  <data name="Tables" xml:space="preserve">
+    <value>Залы
+Столы</value>
+  </data>
+  <data name="TablesColumnHeader" xml:space="preserve">
+    <value>Залы, столы</value>
+  </data>
+  <data name="Time" xml:space="preserve">
+    <value>Время</value>
+  </data>
+  <data name="TimeFormat" xml:space="preserve">
+    <value>{0:t}</value>
+  </data>
+  <data name="PlusFormat" xml:space="preserve">
+    <value>+{0}</value>
+  </data>
+  <data name="OpenOrderIgnoreReserve" xml:space="preserve">
+    <value>Открыть заказ
+(игнорировать резерв)</value>
+  </data>
+  <data name="OpenOrderIgnoreBanquet" xml:space="preserve">
+    <value>Открыть заказ
+(игнорировать банкет)</value>
+  </data>
+  <data name="CloseReserveOnGuestComing" xml:space="preserve">
+    <value>Гость пришел
+(закрыть резерв)</value>
+  </data>
+  <data name="DeleteReserveOnGuestNotArrived" xml:space="preserve">
+    <value>Снять резерв
+(гость не придет)</value>
+  </data>
+  <data name="DeleteBanquetOnGuestNotArrived" xml:space="preserve">
+    <value>Снять банкет
+(гость не придет)</value>
+  </data>
+  <data name="OpenOrderAction" xml:space="preserve">
+    <value>Открыть заказ</value>
+  </data>
+  <data name="ConvertReserveToBanquetAction" xml:space="preserve">
+    <value>Создать банкет</value>
+  </data>
+  <data name="GuestComesAction" xml:space="preserve">
+    <value>Гость пришел</value>
+  </data>
+  <data name="DeleteReserveAction" xml:space="preserve">
+    <value>Снять резерв</value>
+  </data>
+  <data name="TableReserveInfoFormat" xml:space="preserve">
+    <value>Стол зарезервирован
+с {0:t} по {1:t}.
+Резерв №{2}.</value>
+  </data>
+  <data name="TableBanquetInfoFormat" xml:space="preserve">
+    <value>Стол зарезервирован
+с {0:t} по {1:t}.
+Банкет №{2}.</value>
+  </data>
+  <data name="ReserveGuestLeft" xml:space="preserve">
+    <value>Резерв проведен</value>
+  </data>
+  <data name="BanquetGuestLeft" xml:space="preserve">
+    <value>Банкет проведен</value>
+  </data>
+  <data name="GuestNotArrived" xml:space="preserve">
+    <value>Гость не пришел</value>
+  </data>
+  <data name="GuestRefused" xml:space="preserve">
+    <value>Гость отказался</value>
+  </data>
+  <data name="OtherReserveCancelCause" xml:space="preserve">
+    <value>Другое</value>
+  </data>
+  <data name="DeleteReserveTitle" xml:space="preserve">
+    <value>Снять резерв</value>
+  </data>
+  <data name="DeleteBanquetTitle" xml:space="preserve">
+    <value>Снять банкет</value>
+  </data>
+  <data name="DeleteReserveHelpMessage" xml:space="preserve">
+    <value>Укажите причину снятия резерва</value>
+  </data>
+  <data name="DeleteBanquetHelpMessage" xml:space="preserve">
+    <value>Укажите причину снятия банкета</value>
+  </data>
+  <data name="ConfirmChanges" xml:space="preserve">
+    <value>{0} был изменен. Сохранить изменения?</value>
+  </data>
+  <data name="StatusCreating" xml:space="preserve">
+    <value>Новый</value>
+  </data>
+  <data name="GuestsLate" xml:space="preserve">
+    <value>Опаздывают!</value>
+  </data>
+  <data name="GuestsLateWarningTemplate" xml:space="preserve">
+    <value>Внимание! Опаздывают на {0}</value>
+  </data>
+  <data name="GuestsLateNotificationTemplate" xml:space="preserve">
+    <value>Опаз­ды­ва­ют на {0}!</value>
+  </data>
+  <data name="HourAbbreviation" xml:space="preserve">
+    <value>ч.</value>
+  </data>
+  <data name="MinuteAbbreviation" xml:space="preserve">
+    <value>мин.</value>
+  </data>
+  <data name="TableIsBusy" xml:space="preserve">
+    <value>Стол занят!</value>
+  </data>
+  <data name="TableIsBusyWarningTemplate" xml:space="preserve">
+    <value>Внимание! Стол «{0}» занят.</value>
+  </data>
+  <data name="IntersectionWithBanquetWarningTemplate" xml:space="preserve">
+    <value>Пересечение с банкетом №{0} ({1:HH:mm}—{2:HH:mm})!</value>
+  </data>
+  <data name="IntersectionWithReserveWarningTemplate" xml:space="preserve">
+    <value>Пересечение с резервом №{0} ({1:HH:mm}—{2:HH:mm})!</value>
+  </data>
+  <data name="TimeIsComing" xml:space="preserve">
+    <value>Время подходит.</value>
+  </data>
+  <data name="TimeToPrepareTable" xml:space="preserve">
+    <value>Пора готовить стол!</value>
+  </data>
+  <data name="BanquetOrderHasPrepay" xml:space="preserve">
+    <value>В банкетном заказе внесена предоплата. Удаление банкета невозможно.
+Удалите предоплату и закройте заказ без оплаты.</value>
+  </data>
+  <data name="BanquetOrderHasPrintedItems" xml:space="preserve">
+    <value>В банкетном заказе есть отпечатанные блюда. Удаление банкета невозможно.
+Удалите все отпечатанные блюда и закройте заказ без оплаты.</value>
+  </data>
+  <data name="BanquetIntersection" xml:space="preserve">
+    <value>Обнаружено пересечение с банкетом №{0}:
+Дата: {1:f}
+Продолжительность: {2}
+Клиент: {3}
+Залы, столы: {4}</value>
+  </data>
+  <data name="ReserveIntersection" xml:space="preserve">
+    <value>Обнаружено пересечение с резервом №{0}:
+Дата: {1:f}
+Продолжительность: {2}
+Клиент: {3}
+Залы, столы: {4}</value>
+  </data>
+  <data name="ChooseBanquetCloseReason" xml:space="preserve">
+    <value>Заказ является банкетным.
+Пожалуйста, укажите, что делать с банкетом.</value>
+  </data>
+  <data name="StartBanquet" xml:space="preserve">
+    <value>Заказ является банкетным. Указать, что банкет начался?</value>
+  </data>
+  <data name="ChooseCancelCause" xml:space="preserve">
+    <value>Указать причину</value>
+  </data>
+  <data name="CloseBanquet" xml:space="preserve">
+    <value>Закрыть банкет</value>
+  </data>
+  <data name="ChooseBanquetDeleteReason" xml:space="preserve">
+    <value>Заказ не содержит элементов.
+Пожалуйста, укажите, что делать с банкетом.</value>
+  </data>
+  <data name="BanquetCorruptedTitle" xml:space="preserve">
+    <value>Банкет поврежден</value>
+  </data>
+  <data name="RecoverCorruptedBanquetMessage" xml:space="preserve">
+    <value>Информация о банкетном заказе утеряна.
+Это могло произойти в результате удаления файлов программы.
+Нажмите «ОК» для восстановления банкета.</value>
+  </data>
+  <data name="RecoverReserve" xml:space="preserve">
+    <value>Восстановить резерв</value>
+  </data>
+  <data name="TooSmallBanquetDurationTemplate" xml:space="preserve">
+    <value>Длительность банкета не может быть меньше {0} минут.
+Пожалуйста, увеличьте длительность банкета.</value>
+  </data>
+  <data name="TooSmallReserveDurationTemplate" xml:space="preserve">
+    <value>Длительность резерва не может быть меньше {0} минут.
+Пожалуйста, увеличьте длительность резерва.</value>
+  </data>
+  <data name="TooLongBanquetDurationTemplate" xml:space="preserve">
+    <value>Длительность банкета превышает установленный лимит {0:00}:{1:00}.
+Пожалуйста, уменьшите длительность банкета.</value>
+  </data>
+  <data name="TooLongReserveDurationTemplate" xml:space="preserve">
+    <value>Длительность резерва превышает установленный лимит {0:00}:{1:00}.
+Пожалуйста, уменьшите длительность резерва.</value>
+  </data>
+  <data name="GuestCountCannotBeMoreThanOrderGuestCountPattern" xml:space="preserve">
+    <value>Заказ разделен на {0} гостей.
+Количество гостей не может быть меньше {0}.
+Выберите количество гостей не меньше {0}.</value>
+  </data>
+  <data name="CannotCreatePastTimeReserve" xml:space="preserve">
+    <value>Создать резерв на прошедшее время нельзя.
+Пожалуйста, выберите время резерва в будущем.</value>
+  </data>
+  <data name="CannotCreatePastTimeBanquet" xml:space="preserve">
+    <value>Создать банкет на прошедшее время нельзя.
+Пожалуйста, выберите время банкета в будущем.</value>
+  </data>
+  <data name="OnResetOrderWaiterInformationMessage" xml:space="preserve">
+    <value>Данный заказ перенесен в список банкетных заказов.
+Список доступен по кнопке Банкеты и резервы.</value>
+  </data>
+  <data name="PhoneFormatString" xml:space="preserve">
+    <value>т. {0}</value>
+  </data>
+  <data name="AddressFormat" xml:space="preserve">
+    <value>Адрес: {0}</value>
+  </data>
+  <data name="ClientNameFormat" xml:space="preserve">
+    <value>Клиент: {0}</value>
+  </data>
+  <data name="CourierNameFormat" xml:space="preserve">
+    <value>Курьер: {0}</value>
+  </data>
+  <data name="CourierColon" xml:space="preserve">
+    <value>Курьер:</value>
+  </data>
+  <data name="Courier" xml:space="preserve">
+    <value>Курьер</value>
+  </data>
+  <data name="New" xml:space="preserve">
+    <value>Новые</value>
+  </data>
+  <data name="CookingStarted" xml:space="preserve">
+    <value>Готовится</value>
+  </data>
+  <data name="CookingCompleted" xml:space="preserve">
+    <value>Готовы</value>
+  </data>
+  <data name="OnWay" xml:space="preserve">
+    <value>В пути</value>
+  </data>
+  <data name="Closed" xml:space="preserve">
+    <value>Закр-е</value>
+  </data>
+  <data name="Cancelled" xml:space="preserve">
+    <value>Отмена</value>
+  </data>
+  <data name="CourierDelivery" xml:space="preserve">
+    <value>Доставка</value>
+  </data>
+  <data name="DeliveryNumberFormat" xml:space="preserve">
+    <value>Доставка № {0}</value>
+  </data>
+  <data name="DeliveryNumberFormatShort" xml:space="preserve">
+    <value>№ {0}</value>
+  </data>
+  <data name="DeliveryClosedColon" xml:space="preserve">
+    <value>Закрыт:</value>
+  </data>
+  <data name="DeliveryCancelledColon" xml:space="preserve">
+    <value>Отменен:</value>
+  </data>
+  <data name="DeliveryConfirmedTimeColon" xml:space="preserve">
+    <value>Подтвержден:</value>
+  </data>
+  <data name="DeliveryOrderPrintedTimeColon" xml:space="preserve">
+    <value>Отпечатан:</value>
+  </data>
+  <data name="DeliveryCookingFinishTimeColon" xml:space="preserve">
+    <value>Приготовлен:</value>
+  </data>
+  <data name="DeliveryRegisteredTimeColon" xml:space="preserve">
+    <value>Заказ принят:</value>
+  </data>
+  <data name="DeliverySentColon" xml:space="preserve">
+    <value>Отправлен:</value>
+  </data>
+  <data name="DeliveryDeliveredColon" xml:space="preserve">
+    <value>Доставлен:</value>
+  </data>
+  <data name="DeliveryRegistered" xml:space="preserve">
+    <value>Принят</value>
+  </data>
+  <data name="DeliveryConfirmed" xml:space="preserve">
+    <value>Подтвержден</value>
+  </data>
+  <data name="DeliveryOrderPrinted" xml:space="preserve">
+    <value>Отпечатан</value>
+  </data>
+  <data name="DeliverySent" xml:space="preserve">
+    <value>Отправлен</value>
+  </data>
+  <data name="DeliveryDelivered" xml:space="preserve">
+    <value>Доставлен</value>
+  </data>
+  <data name="DeliveryClosed" xml:space="preserve">
+    <value>Закрыт</value>
+  </data>
+  <data name="DeliveryCancelled" xml:space="preserve">
+    <value>Отменен</value>
+  </data>
+  <data name="PrintOrder" xml:space="preserve">
+    <value>Печать заказа</value>
+  </data>
+  <data name="PrintDeliveryBill" xml:space="preserve">
+    <value>НАКЛАДНАЯ</value>
+  </data>
+  <data name="RepeatPrintDeliveryBill" xml:space="preserve">
+    <value>КОПИЯ НАКЛАДНОЙ</value>
+  </data>
+  <data name="CancelDeliveryBill" xml:space="preserve">
+    <value>Отмена накладной</value>
+  </data>
+  <data name="SendDelivery" xml:space="preserve">
+    <value>Отправить заказ</value>
+  </data>
+  <data name="SendDeliveryCash" xml:space="preserve">
+    <value>Отправить (касса)</value>
+  </data>
+  <data name="CloseDelivery" xml:space="preserve">
+    <value>Доставлено</value>
+  </data>
+  <data name="CancelCloseDelivery" xml:space="preserve">
+    <value>НЕ ЗАКРЫТ</value>
+  </data>
+  <data name="Delivered" xml:space="preserve">
+    <value>Доставлено</value>
+  </data>
+  <data name="DeliveryDateTimeSwitchToIntervals" xml:space="preserve">
+    <value>Интервалы времени доставки</value>
+  </data>
+  <data name="DeliveryDateTimeSwitchToSimple" xml:space="preserve">
+    <value>Точное время</value>
+  </data>
+  <data name="DeliveryDateTimeIntervalsColumnSummaryHeader" xml:space="preserve">
+    <value>Заказы</value>
+  </data>
+  <data name="DeliveryDateTime" xml:space="preserve">
+    <value>Время и дата доставки</value>
+  </data>
+  <data name="DeliveryTime" xml:space="preserve">
+    <value>Время доставки</value>
+  </data>
+  <data name="DeliveryActualDateTime" xml:space="preserve">
+    <value>Фактическое время доставки</value>
+  </data>
+  <data name="DeliverySaveChangesConfirm" xml:space="preserve">
+    <value>Доставка была изменена. Сохранить изменения?</value>
+  </data>
+  <data name="PhoneNumberFormat" xml:space="preserve">
+    <value>тел. {0}</value>
+  </data>
+  <data name="Customers" xml:space="preserve">
+    <value>Список гостей</value>
+  </data>
+  <data name="CardNumerSearchResultFormat" xml:space="preserve">
+    <value>Карта № {0}</value>
+  </data>
+  <data name="ChooseCourier" xml:space="preserve">
+    <value>Выберите курьера</value>
+  </data>
+  <data name="CommentsColon" xml:space="preserve">
+    <value>Комментарий:</value>
+  </data>
+  <data name="CommentsColonFormat" xml:space="preserve">
+    <value>Комментарий: {0}</value>
+  </data>
+  <data name="TimeUndefined" xml:space="preserve">
+    <value>--:--</value>
+  </data>
+  <data name="DeleteEmptyDeliveryQuestion" xml:space="preserve">
+    <value>Заказ доставки не введен или является пустым, удалить доставку?</value>
+  </data>
+  <data name="PhoneSearchResultFormat" xml:space="preserve">
+    <value>т. {0}</value>
+  </data>
+  <data name="CreateNewAddress" xml:space="preserve">
+    <value>Новый адрес</value>
+  </data>
+  <data name="EditAddress" xml:space="preserve">
+    <value>Отредактировать адрес</value>
+  </data>
+  <data name="AddNewAddress" xml:space="preserve">
+    <value>Добавить адрес</value>
+  </data>
+  <data name="AddNewAddressManually" xml:space="preserve">
+    <value>Добавить вручную</value>
+  </data>
+  <data name="AddNewAddressManuallyCaption" xml:space="preserve">
+    <value>Добавить новый адрес</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Добавить</value>
+  </data>
+  <data name="ChooseAddress" xml:space="preserve">
+    <value>Выберите адрес</value>
+  </data>
+  <data name="CustomerAddressesFormat" xml:space="preserve">
+    <value>Адреса гостя {0}</value>
+  </data>
+  <data name="ChooseStreet" xml:space="preserve">
+    <value>Выберите улицу</value>
+  </data>
+  <data name="ChooseIndexAndStreet" xml:space="preserve">
+    <value>Выберите индекс и улицу</value>
+  </data>
+  <data name="CreateNewStreet" xml:space="preserve">
+    <value>Новая улица</value>
+  </data>
+  <data name="ChooseEmail" xml:space="preserve">
+    <value>Выберите e-mail</value>
+  </data>
+  <data name="ChoosePhone" xml:space="preserve">
+    <value>Выберите телефон</value>
+  </data>
+  <data name="CorrectExistingAddress" xml:space="preserve">
+    <value>Исправить адрес</value>
+  </data>
+  <data name="CorrectExistingEmail" xml:space="preserve">
+    <value>Исправить e-mail</value>
+  </data>
+  <data name="CorrectExistingPhone" xml:space="preserve">
+    <value>Исправить телефон</value>
+  </data>
+  <data name="FindClient" xml:space="preserve">
+    <value>Найти клиента</value>
+  </data>
+  <data name="CancelCause" xml:space="preserve">
+    <value>Причина отмены</value>
+  </data>
+  <data name="CancelDeliveryCancelBillQuestion" xml:space="preserve">
+    <value>Заказ в пречеке, отменить пречек?</value>
+  </data>
+  <data name="CancelDeliveryCloseEmptyOrder" xml:space="preserve">
+    <value>В заказе были предоплаты.
+При отмене доставки заказ будет закрыт с нулевой оплатой.
+Продолжить?</value>
+  </data>
+  <data name="CancelDeliveryDeleteEmptyOrder" xml:space="preserve">
+    <value>В заказе есть блюда. Удалить заказ и отменить доставку?</value>
+  </data>
+  <data name="CancelDeliveryWithOrderPrepayGoToCash" xml:space="preserve">
+    <value>В заказе есть предоплата.
+Для отмены доставки ее необходимо удалить.
+Перейти на экран кассы для удаления предоплаты?</value>
+  </data>
+  <data name="CancelDeliveryWithOrderPrepayGoToOpenCafeSession" xml:space="preserve">
+    <value>В заказе есть предоплата. Для отмены доставки необходимо
+открыть кассовую смену и удалить предоплату.
+Перейти к открытию кассовой смены?</value>
+  </data>
+  <data name="DeliveryOrderStatusCancelled" xml:space="preserve">
+    <value>ОТМЕНЕН</value>
+  </data>
+  <data name="DeliveryOrderStatusClosed" xml:space="preserve">
+    <value>ЗАКРЫТ</value>
+  </data>
+  <data name="DeliveryOrderStatusCookingCompleted" xml:space="preserve">
+    <value>ПРИГОТОВЛЕН</value>
+  </data>
+  <data name="DeliveryOrderStatusCookingStarted" xml:space="preserve">
+    <value>ГОТОВИТСЯ</value>
+  </data>
+  <data name="DeliveryOrderStatusWaitingToCook" xml:space="preserve">
+    <value>ОЖИДАЕТ</value>
+  </data>
+  <data name="DeliveryOrderStatusTimeToCook" xml:space="preserve">
+    <value>ПОРА ГОТОВИТЬ</value>
+  </data>
+  <data name="DeliveryOrderStatusWaiting" xml:space="preserve">
+    <value>ЖДЕТ ОТПРАВКИ</value>
+  </data>
+  <data name="GenderFemale" xml:space="preserve">
+    <value>Женский</value>
+  </data>
+  <data name="GenderMale" xml:space="preserve">
+    <value>Мужской</value>
+  </data>
+  <data name="GenderNotSelected" xml:space="preserve">
+    <value>Не задан</value>
+  </data>
+  <data name="LongDatePattern" xml:space="preserve">
+    <value>d MMMM 
+ yyyy г.</value>
+  </data>
+  <data name="DeliveryWorkflowStepOne" xml:space="preserve">
+    <value>Ввести, править, приготовить заказ</value>
+  </data>
+  <data name="DeliveryWorkflowStepThree" xml:space="preserve">
+    <value>Доставлено</value>
+  </data>
+  <data name="DeliveryWorkflowStepTwo" xml:space="preserve">
+    <value>ОТПРАВИТЬ</value>
+  </data>
+  <data name="ManualDeliveryPrint" xml:space="preserve">
+    <value>Ручная печать накладной</value>
+  </data>
+  <data name="PrintDeliveryOrderToKitchen" xml:space="preserve">
+    <value>ГОТОВИТЬ</value>
+  </data>
+  <data name="CookedDeliveryOrder" xml:space="preserve">
+    <value>ПРИГОТОВЛЕН</value>
+  </data>
+  <data name="DeliveryCancelClose" xml:space="preserve">
+    <value>Отмена закрытия доставки</value>
+  </data>
+  <data name="DeliveryCancelCloseQuestion" xml:space="preserve">
+    <value>Отменить закрытие доставки?</value>
+  </data>
+  <data name="CancelDelivery" xml:space="preserve">
+    <value>Отменить заказ</value>
+  </data>
+  <data name="RegionAddressStringViewFormat" xml:space="preserve">
+    <value>{0}, {1}</value>
+  </data>
+  <data name="ShortAddressFormat" xml:space="preserve">
+    <value>{0}</value>
+  </data>
+  <data name="DeliveryCorruptedTitle" xml:space="preserve">
+    <value>Доставка повреждена</value>
+  </data>
+  <data name="RecoverCorruptedDeliveryMessage" xml:space="preserve">
+    <value>Информация о заказе доставки утеряна. Это могло произойти в результате удаления файлов программы.
+Нажмите «ОК» для восстановления заказа доставки.</value>
+  </data>
+  <data name="HasNoDeliveryCancelCauses" xml:space="preserve">
+    <value>Не задано ни одной причины отмены доставки.
+В мастере настройки ресторана для данной группы
+необходимо настроить список причин отмены доставок.</value>
+  </data>
+  <data name="ChooseRegion" xml:space="preserve">
+    <value>Выберите район</value>
+  </data>
+  <data name="ChooseUaeStreet" xml:space="preserve">
+    <value>Выберите район</value>
+  </data>
+  <data name="Region" xml:space="preserve">
+    <value>Район</value>
+  </data>
+  <data name="UaeStreet" xml:space="preserve">
+    <value>Район</value>
+  </data>
+  <data name="CourierListEmpty" xml:space="preserve">
+    <value>В настоящий момент нет курьеров доставки с открытыми личными сменами.</value>
+  </data>
+  <data name="DiscountsAndIncreasesTitle" xml:space="preserve">
+    <value>Скидки и надбавки</value>
+  </data>
+  <data name="NameSurnameFormat" xml:space="preserve">
+    <value>{1} {0}</value>
+  </data>
+  <data name="NameWithEmptySurnameFormat" xml:space="preserve">
+    <value>{0}</value>
+  </data>
+  <data name="SurnameWithEmptyNameFormat" xml:space="preserve">
+    <value>{0}</value>
+  </data>
+  <data name="IncorrectStartDateMessage" xml:space="preserve">
+    <value>Внимание! Время начала банкета или резерва меньше настоящего времени.</value>
+  </data>
+  <data name="UnassignedWaitingDeliveriesFormat" xml:space="preserve">
+    <value>Готово к отправке:</value>
+  </data>
+  <data name="AssignCourierToDeliveryQuestion" xml:space="preserve">
+    <value>Назначить пользователя
+{0}
+курьером для доставки №{1} и отправить доставку?</value>
+  </data>
+  <data name="NavigateToOpenCourierPersonalSessionQuestion" xml:space="preserve">
+    <value>Личная смена курьера
+{0} не открыта.
+Перейти на личную страницу, чтобы открыть личную смену?</value>
+  </data>
+  <data name="WaiterStationNotSupportDeletionOrdersWithPrintedItems" xml:space="preserve">
+    <value>Удаление заказа с отпечатанными блюдами невозможно.
+Удалите заказ на кассовом терминале.</value>
+  </data>
+  <data name="CantCloseDeliveryNotConfirmedPayments" xml:space="preserve">
+    <value>При закрытии доставки не удалось подтвердить все платежи.
+Закрытие доставки невозможно.</value>
+  </data>
+  <data name="CustomerWithDeliveriesCountSearchDisplayNameFormat" xml:space="preserve">
+    <value>{0}
+  Заказов: {1}</value>
+    <comment>Формат отображения курьера в результатах поиска курьера. Включает в себя информацию о незакрытых доставках, которые в момент открытия окна поиска на курьере.</comment>
+  </data>
+  <data name="FullAddressFormat" xml:space="preserve">
+    <value>{0:city}{1:index}{2:street}{3:house}{4:building}{5:flat}{6:entrance}{7:floor}{8:doorphone}{9:additionalInfo}</value>
+    <comment>Разделитель между полями адреса - AddressPartsDelimiter, 
+    {0:city}{1:index}{2:street}{3:house}{4:building}{5:flat}{6:entrance}{7:floor}{8:doorphone}{9:additionalInfo}</comment>
+  </data>
+  <data name="Line12AddressFormat" xml:space="preserve">
+    <value>{0:line1}{1:line2}</value>
+    <comment>Разделитель между полями адреса - AddressPartsDelimiter, 
+    {0:line1}{1:line2}</comment>
+  </data>
+  <data name="AddressPartsDelimiter" xml:space="preserve">
+    <value>, </value>
+  </data>
+  <data name="ShortAddressIndexFormat" xml:space="preserve">
+    <value> {0}</value>
+  </data>
+  <data name="ShortAddressStreetFormat" xml:space="preserve">
+    <value>ул. {0}</value>
+  </data>
+  <data name="ShortAddressLine1Format" xml:space="preserve">
+    <value>{0}</value>
+  </data>
+  <data name="ShortAddressLine2Format" xml:space="preserve">
+    <value>{0}</value>
+  </data>
+  <data name="AddressLine1FromStreetFormat" xml:space="preserve">
+    <value>{0:city}{1:index}{2:street}{3:house}{4:building}</value>
+    <comment>Разделитель между полями адреса - AddressPartsDelimiter, 
+    {0:city}{1:index}{2:street}{3:house}{4:building}
+	&lt;&lt;mandatory-translation&gt;&gt;</comment>
+  </data>
+  <data name="AddressLine2FromStreetFormat" xml:space="preserve">
+    <value>{0:entrance}{1:floor}{2:flat}{3:doorphone}</value>
+    <comment>Разделитель между полями адреса - AddressPartsDelimiter, 
+    {0:entrance}{1:floor}{2:flat}{3:doorphone}
+	&lt;&lt;mandatory-translation&gt;&gt;</comment>
+  </data>
+  <data name="ShortAddressHouseFormat" xml:space="preserve">
+    <value>д. {0}</value>
+  </data>
+  <data name="ShortAddressBuildingFormat" xml:space="preserve">
+    <value>кор. {0}</value>
+  </data>
+  <data name="ShortAddressFlatFormat" xml:space="preserve">
+    <value>кв. {0}</value>
+  </data>
+  <data name="PrintTablesReserveInfoButtonText" xml:space="preserve">
+    <value>ПЕЧАТЬ ТАБЛИЧКИ
+"RESERVED"</value>
+  </data>
+  <data name="DeliveryProblemButtonCaption" xml:space="preserve">
+    <value>ПРОБЛЕМА</value>
+  </data>
+  <data name="SwitchOnDeliveryProblemFlag" xml:space="preserve">
+    <value>Пометить доставку как проблемную</value>
+  </data>
+  <data name="DeliveryProblemPopupCaption" xml:space="preserve">
+    <value>ПРОБЛЕМА</value>
+  </data>
+  <data name="DeliveryHasNoProblemComment" xml:space="preserve">
+    <value>(нет комментария).</value>
+  </data>
+  <data name="DeliveryProblemCommentFormat" xml:space="preserve">
+    <value>Проблема: {0}</value>
+  </data>
+  <data name="ConfirmSaveProblemDelivery" xml:space="preserve">
+    <value>Доставка отмечена флагом "проблемная". Вы уверены, что хотите сохранить доставку, не снимая флаг?</value>
+  </data>
+  <data name="VatCustomerTitle" xml:space="preserve">
+    <value>ДАННЫЕ КЛИЕНТА ДЛЯ ПЕЧАТИ НА ТОВАРНОМ ЧЕКЕ</value>
+  </data>
+  <data name="OrganizationDetailsTitle" xml:space="preserve">
+    <value>РЕКВИЗИТЫ ОРГАНИЗАЦИИ</value>
+  </data>
+  <data name="VatCounteragentName" xml:space="preserve">
+    <value>Организация</value>
+  </data>
+  <data name="VatCounteragentCode" xml:space="preserve">
+    <value>ИНН</value>
+  </data>
+  <data name="VatCounteragentAddress" xml:space="preserve">
+    <value>Адрес</value>
+  </data>
+  <data name="VatChequeNumber" xml:space="preserve">
+    <value>№ чека</value>
+  </data>
+  <data name="CounteragentSearchResultFormat" xml:space="preserve">
+    <value>Организация: {0}</value>
+  </data>
+  <data name="CounteragentCodeSearchResultFormat" xml:space="preserve">
+    <value>ИНН: {0}</value>
+  </data>
+  <data name="CounteragentAddressSearchResultFormat" xml:space="preserve">
+    <value>Адрес орг.: {0}</value>
+  </data>
+  <data name="DiscountTypeSearchResultFormat" xml:space="preserve">
+    <value>Скидка: {0}</value>
+  </data>
+  <data name="PriceCategorySearchResultFormat" xml:space="preserve">
+    <value>Ценовая категория: {0}</value>
+  </data>
+  <data name="ApplyCustomerRecommendedDiscountToOrderFormat" xml:space="preserve">
+    <value>Для данного клиента установлена рекомендованная скидка «{0}».{1}Применить скидку гостя {2} к заказу?</value>
+  </data>
+  <data name="ApplyCustomerRecommendedPriceCategoryToOrderFormat" xml:space="preserve">
+    <value>Для данного клиента установлена рекомендованная ценовая категория «{0}».{1}Применить ценовую категорию гостя {2} к заказу?</value>
+  </data>
+  <data name="NeedStartDeliveryCook" xml:space="preserve">
+    <value>Доставку давно пора готовить.</value>
+  </data>
+  <data name="NeedStartDeliveryCookNotificationMessageFormat" xml:space="preserve">
+    <value>Доставка № {0} на {1:H\:mm dd.MM.yyyy}. Доставку давно пора готовить.</value>
+  </data>
+  <data name="PreliminaryPayments" xml:space="preserve">
+    <value>ПЛАТЕЖИ</value>
+  </data>
+  <data name="TotalSum" xml:space="preserve">
+    <value>Сумма</value>
+  </data>
+  <data name="ChooseCity" xml:space="preserve">
+    <value>Выберите город</value>
+  </data>
+  <data name="InputCity" xml:space="preserve">
+    <value>Город:</value>
+  </data>
+  <data name="ShortAddressCityFormat" xml:space="preserve">
+    <value>г. {0}</value>
+  </data>
+  <data name="TotalSumWithCurrency" xml:space="preserve">
+    <value>Сумма, {0}</value>
+  </data>
+  <data name="DeliveryAndOrderAreInvalidBeforeSave" xml:space="preserve">
+    <value>Необходимо заполнить заказ и обязательные поля доставки.</value>
+  </data>
+  <data name="GoToOrderToFixQuestion" xml:space="preserve">
+    <value>Перейти на экран заказа?</value>
+  </data>
+  <data name="GoToDeliveryToFixQuestion" xml:space="preserve">
+    <value>Перейти на экран доставки?</value>
+  </data>
+  <data name="DeliveryOrderIsInvalidBeforeSave" xml:space="preserve">
+    <value>Заказ доставки пуст, необходимо заполнить заказ.</value>
+  </data>
+  <data name="DeliveryOrderExternalPaymentsAreInvalidBeforeSaveFormat" xml:space="preserve">
+    <value>В заказе есть платежи на сумму {0}. Ручное редактирование этих платежей запрещено. Сумма заказа должна превышать сумму платежей. Добавьте в заказ блюда.</value>
+  </data>
+  <data name="DeliveryIsInvalidBeforeSave" xml:space="preserve">
+    <value>Не заполнены обязательные поля доставки.</value>
+  </data>
+  <data name="DeliveryLengthExceededBeforeSave" xml:space="preserve">
+    <value>Превышена максимальная длина поля.</value>
+  </data>
+  <data name="DeliveryAddressLengthExceededBeforeSave" xml:space="preserve">
+    <value>Превышена максимальная длина поля доставки.</value>
+  </data>
+  <data name="DeliveryPhoneIsInvalidBeforeSave" xml:space="preserve">
+    <value>Введите телефон в правильном формате
+(например: 89991112233).</value>
+  </data>
+  <data name="Delivery" xml:space="preserve">
+    <value>Доставка</value>
+  </data>
+  <data name="DeliveryMessagesCaption" xml:space="preserve">
+    <value>Доставка</value>
+  </data>
+  <data name="DeliveryOrderMessagesCaption" xml:space="preserve">
+    <value>Заказ доставки</value>
+  </data>
+  <data name="SwitchToDeliveryDataEditButtonCaption" xml:space="preserve">
+    <value>Клиент</value>
+  </data>
+  <data name="SwitchToDeliveryOrderEditButtonCaption" xml:space="preserve">
+    <value>Заказ</value>
+  </data>
+  <data name="SaveOrFixInvalidDeliveryDataOnDeletePrintedOrderItemsPopupCaption" xml:space="preserve">
+    <value>Удаление блюд</value>
+  </data>
+  <data name="DeliveryWillBeSavedOnDeletePrintedOrderItemsConfirmMessage" xml:space="preserve">
+    <value>При удалении отпечатанных блюд доставка будет сохранена.</value>
+  </data>
+  <data name="NeedFixDeliveryDataBeforeDeletePrintedItemsInfoMessage" xml:space="preserve">
+    <value>Для удаления отпечатанных блюд необходимо сохранить изменения в данных доставки.
+Сохранение невозможно из-за того, что не заполнены обязательные поля доставки.
+Заполните обязательные поля и повторите попытку удаления.</value>
+  </data>
+  <data name="CustomerInBlackListButtonCaption" xml:space="preserve">
+    <value>Высокий риск</value>
+  </data>
+  <data name="CustomerAdditionalInfoButtonCaption" xml:space="preserve">
+    <value>Доп. инфо</value>
+  </data>
+  <data name="CustomerNotInBlackListButtonCaption" xml:space="preserve">
+    <value>Не в статусе
+"высокий риск"</value>
+  </data>
+  <data name="CustomerBlackListInfoEditViewCustomerInBlackList" xml:space="preserve">
+    <value>Клиент в статусе "высокий риск"</value>
+  </data>
+  <data name="BlackListViewsCaption" xml:space="preserve">
+    <value>ВЫСОКИЙ РИСК</value>
+  </data>
+  <data name="AdditionalInfoViewsCaption" xml:space="preserve">
+    <value>Дополнительная информация</value>
+  </data>
+  <data name="CustomerAddressIsInBlackList" xml:space="preserve">
+    <value>Адрес принадлежит клиенту «{0}» в статусе "высокий риск".</value>
+  </data>
+  <data name="CustomerCardNumberIsInBlackList" xml:space="preserve">
+    <value>Номер карты принадлежит клиенту «{0}» в статусе "высокий риск".</value>
+  </data>
+  <data name="CustomerPhoneIsInBlackList" xml:space="preserve">
+    <value>Телефон принадлежит клиенту «{0}» в статусе "высокий риск".</value>
+  </data>
+  <data name="CustomerIsInBlackListFormat" xml:space="preserve">
+    <value>Клиент «{0}» находится в статусе "высокий риск".</value>
+  </data>
+  <data name="CustomerInBlackListWarningViewContinueConfirmation" xml:space="preserve">
+    <value>Вы уверены, что хотите продолжить?</value>
+  </data>
+  <data name="StreetFormat" xml:space="preserve">
+    <value>{0} ({1})</value>
+  </data>
+  <data name="EditStreet" xml:space="preserve">
+    <value>редактирование улицы</value>
+  </data>
+  <data name="StreetAsteriskDotted" xml:space="preserve">
+    <value>Улица:*</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Ошибка</value>
+  </data>
+  <data name="ShortAddressFloorFormat" xml:space="preserve">
+    <value>эт. {0}</value>
+  </data>
+  <data name="ShortAddressDoorphoneFormat" xml:space="preserve">
+    <value>домофон {0}</value>
+  </data>
+  <data name="ShortAddressEntranceFormat" xml:space="preserve">
+    <value>под. {0}</value>
+  </data>
+  <data name="Advertisement" xml:space="preserve">
+    <value>Реклама</value>
+  </data>
+  <data name="DeliveryOrderType" xml:space="preserve">
+    <value>Тип заказа</value>
+  </data>
+  <data name="Doorphone" xml:space="preserve">
+    <value>Домофон</value>
+  </data>
+  <data name="DoorphoneKeyboardTitle" xml:space="preserve">
+    <value>Домофон</value>
+  </data>
+  <data name="Entrance" xml:space="preserve">
+    <value>Подъезд</value>
+  </data>
+  <data name="EntranceKeyboardTitle" xml:space="preserve">
+    <value>Подъезд</value>
+  </data>
+  <data name="Floor" xml:space="preserve">
+    <value>Этаж</value>
+  </data>
+  <data name="FloorKeyboardTitle" xml:space="preserve">
+    <value>Этаж</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>ЗАКРЫТЬ</value>
+  </data>
+  <data name="DeliveredShort" xml:space="preserve">
+    <value>ДОСТАВЛ.</value>
+  </data>
+  <data name="DeliveryOrderStatusDelivered" xml:space="preserve">
+    <value>ДОСТАВЛЕН</value>
+  </data>
+  <data name="DeliveryOrderStatusOnWay" xml:space="preserve">
+    <value>ОТПРАВЛЕН</value>
+  </data>
+  <data name="DeliveryCancelDeliver" xml:space="preserve">
+    <value>Отмена доставления доставки</value>
+  </data>
+  <data name="DeliveryCancelDeliverQuestion" xml:space="preserve">
+    <value>Отменить доставление доставки?</value>
+  </data>
+  <data name="CancelDeliverDelivery" xml:space="preserve">
+    <value>НЕДОСТАВЛ.</value>
+  </data>
+  <data name="DeliveryStickersPrintAgainQuestion" xml:space="preserve">
+    <value>Распечатать комплект стикеров повторно?</value>
+  </data>
+  <data name="AsteriskLine" xml:space="preserve">
+    <value>*********</value>
+  </data>
+  <data name="DeliveryServiceTypeSelfService" xml:space="preserve">
+    <value>Самовывоз</value>
+  </data>
+  <data name="PbxCallToCustomer" xml:space="preserve">
+    <value>ПОЗВОНИТЬ КЛИЕНТУ</value>
+  </data>
+  <data name="PbxCallToCourier" xml:space="preserve">
+    <value>ПОЗВОНИТЬ КУРЬЕРУ</value>
+  </data>
+  <data name="DeliveryPhoneIsInvalid" xml:space="preserve">
+    <value>Номер телефона имеет неверный формат.</value>
+  </data>
+  <data name="DeliveryCourierIsNotSelected" xml:space="preserve">
+    <value>Курьер не задан.</value>
+  </data>
+  <data name="DeliveryCourierPhoneIsEmpty" xml:space="preserve">
+    <value>У курьера не задан номер телефона.</value>
+  </data>
+  <data name="House" xml:space="preserve">
+    <value>Дом</value>
+  </data>
+  <data name="Street" xml:space="preserve">
+    <value>Улица</value>
+  </data>
+  <data name="IndexAndStreet" xml:space="preserve">
+    <value>Индекс и улица</value>
+  </data>
+  <data name="Line1" xml:space="preserve">
+    <value>Куда везти</value>
+  </data>
+  <data name="EnterTheAddress" xml:space="preserve">
+    <value>Введите адрес</value>
+  </data>
+  <data name="BrdCreationActionTitle" xml:space="preserve">
+    <value>Услуги</value>
+  </data>
+  <data name="SplitBetweenPersons" xml:space="preserve">
+    <value>Разбить по
+персонам</value>
+  </data>
+  <data name="PersonsCountFormat" xml:space="preserve">
+    <value>Персон: {0}</value>
+  </data>
+  <data name="OrderSumWasChanged" xml:space="preserve">
+    <value>Сумма заказа изменилась.</value>
+  </data>
+  <data name="DeliveryTimeWasChangedAccordingToSettings" xml:space="preserve">
+    <value>Время доставки было изменено в соответствии с настройками работы ресторана.</value>
+  </data>
+  <data name="WarningMessageFormat" xml:space="preserve">
+    <value>Внимание! {0}
+Не забудьте сообщить об этом клиенту.</value>
+  </data>
+  <data name="DeliveryOrderStatusUnconfirmed" xml:space="preserve">
+    <value>НЕПОДТВЕРЖДЕН</value>
+  </data>
+  <data name="UnconfirmedFilter" xml:space="preserve">
+    <value>Неподтв.</value>
+  </data>
+  <data name="DeliveryConfirmWillBeAllowedAtTimeFormat" xml:space="preserve">
+    <value>Подтверждение разрешено не ранее, чем за {0} до времени доставки. Доставку можно будет подтвердить начиная с {1}.</value>
+  </data>
+  <data name="DeliveryOrderContainsPrintedNotDeletedItems" xml:space="preserve">
+    <value>Невозможно отменить подтверждение: заказ содержит отпечатанные блюда.</value>
+  </data>
+  <data name="DeliveryIsSavedAsUnconfirmedDueToEarlyTimeFormat" xml:space="preserve">
+    <value>Подтверждение разрешено не ранее, чем за {0} до времени доставки. Доставка сохранена как неподтвержденная.</value>
+  </data>
+  <data name="DeliveryOrderIsNotNew" xml:space="preserve">
+    <value>Невозможно отменить подтверждение: заказ не новый.</value>
+  </data>
+  <data name="DeliveryConfirmationIsNotEnabled" xml:space="preserve">
+    <value>Подтверждение доставок отключено. Для включения перейдите в экран настроек доставки (Доставка -&gt; Настройка -&gt; Подтверждение доставок).</value>
+  </data>
+  <data name="DeliveryShouldBeConfirmedBeforeActionFormat" xml:space="preserve">
+    <value>Не удалось перевести в приготовление заблаговременный заказ. Для приготовления необходимо его подтвердить, подтверждение возможно не ранее чем за {0} до времени доставки.</value>
+  </data>
+  <data name="NeedConfirmDeliveryNotificationMessageFormat" xml:space="preserve">
+    <value>Доставка № {0} на {1:H\:mm dd.MM.yyyy}. Доставку необходимо подтвердить.</value>
+  </data>
+  <data name="ReserveIsInvalidBeforeSave" xml:space="preserve">
+    <value>Не заполнены обязательные поля.</value>
+  </data>
+  <data name="DeliveryEstimatedTimeColon" xml:space="preserve">
+    <value>Расчетное время прибытия курьера:</value>
+  </data>
+  <data name="ErrorInDestributionOfDeliveriesFormat" xml:space="preserve">
+    <value>Ошибка при автоматическом распределение доставок: {0}</value>
+  </data>
+  <data name="CanNotDestribureObsoleteDeliveryFormat" xml:space="preserve">
+    <value>доставки с номерами {0} устарели (их необходимо было доставить значительно раньше).</value>
+  </data>
+  <data name="AboveMaxOrderCount" xml:space="preserve">
+    <value>При распределении заказа превышено максимальное количество заказов для одного курьера.</value>
+  </data>
+  <data name="CanNotGeocodingOrderAddress" xml:space="preserve">
+    <value>Адрес заказа не отгеокодирован.</value>
+  </data>
+  <data name="CanNotDistributeOrder" xml:space="preserve">
+    <value>Заказ не может быть распределен.</value>
+  </data>
+  <data name="Couriers" xml:space="preserve">
+    <value>Курьеры</value>
+  </data>
+  <data name="CourierWordPluralForms" xml:space="preserve">
+    <value>курьер;курьера;курьеров</value>
+  </data>
+  <data name="CourierInfoFormat" xml:space="preserve">
+    <value>{0} {1}</value>
+  </data>
+  <data name="MeanWaitingTimeColon" xml:space="preserve">
+    <value>Среднее время ожидания:</value>
+  </data>
+  <data name="CourierOnWay" xml:space="preserve">
+    <value>в пути</value>
+  </data>
+  <data name="DoubleToPercentFormat" xml:space="preserve">
+    <value>({0:P1})</value>
+  </data>
+  <data name="TimeSinceSessionOpenFormat" xml:space="preserve">
+    <value>Смена {0}</value>
+  </data>
+  <data name="CourierShiftInformationFormat" xml:space="preserve">
+    <value>Ожидание {0} {1}</value>
+  </data>
+  <data name="SaveDeliveryConfirmation" xml:space="preserve">
+    <value>{0}.{1}Сохранить заказ?</value>
+  </data>
+  <data name="SaveDeliveryConfirmationWithPermission" xml:space="preserve">
+    <value>{0}.{1}Для сохранения заказа требуется право '{2}'.</value>
+  </data>
+  <data name="InputMarketingSource" xml:space="preserve">
+    <value>Задайте рекламу.</value>
+  </data>
+  <data name="DeliveryCustomerIsSimilarShouldReplaceQuestionFormat" xml:space="preserve">
+    <value>Внимание, в базе клиентов существует клиент {0} ({1}). 
+Использовать его вместо создания нового клиента?</value>
+  </data>
+  <data name="UnableToCancelBanquetStartMessage" xml:space="preserve">
+    <value>Невозможно отменить начало банкета: в банкетном заказе есть отпечатанные блюда.</value>
+  </data>
+  <data name="DeliveryStatusUnconfirmed" xml:space="preserve">
+    <value>Не подтверждена</value>
+  </data>
+  <data name="DeliveryStatusNew" xml:space="preserve">
+    <value>Новая</value>
+  </data>
+  <data name="DeliveryStatusWaiting" xml:space="preserve">
+    <value>Ждет отправки</value>
+  </data>
+  <data name="DeliveryStatusOnWay" xml:space="preserve">
+    <value>В пути к клиенту</value>
+  </data>
+  <data name="DeliveryStatusDelivered" xml:space="preserve">
+    <value>Доставлена</value>
+  </data>
+  <data name="DeliveryStatusClosed" xml:space="preserve">
+    <value>Закрыта</value>
+  </data>
+  <data name="DeliveryStatusCancelled" xml:space="preserve">
+    <value>Отменена</value>
+  </data>
+  <data name="CorruptedDeliveriesSavedToFileAndCancelledFormat" xml:space="preserve">
+    <value>Поврежденные доставки были сохранены в файл '{0}' и отменены.</value>
+  </data>
+  <data name="DeliverySplitByCashRegistersCancelAdditionalMessage" xml:space="preserve">
+    <value>Доставка разбита по фискальным регистраторам.
+Не забудьте отменить связанные доставки.</value>
+  </data>
+  <data name="CannotCloseDeliveryBecauseOrderClosedOnAnotherTerminal" xml:space="preserve">
+    <value>Заказ был оплачен на другом кассовом терминале. Закрытие доставки на терминале невозможно.</value>
+  </data>
+  <data name="CheckDeliveryRestrictions" xml:space="preserve">
+    <value>Проверка ограничений графика работы и картографии...</value>
+  </data>
+  <data name="DeliveryBillWasPrinted" xml:space="preserve">
+    <value>Для данной доставки уже была отпечатана накладная. Пожалуйста, убедитесь, что курьер получит новую накладную.</value>
+  </data>
+  <data name="DeliveryBill" xml:space="preserve">
+    <value>Накладная</value>
+  </data>
+  <data name="AnotherCookingStartedDeliveriesAssignedOnCourierFormat" xml:space="preserve">
+    <value>На курьера назначены еще доставки в статусе {0}. Они будут готовы через {1}. 
+Вы можете отправить курьера в путь или подождать, пока доставки будут готовы.</value>
+  </data>
+  <data name="CouriersAssignmentCaption" xml:space="preserve">
+    <value>Назначение курьеров</value>
+  </data>
+  <data name="SendButtonCaption" xml:space="preserve">
+    <value>Отправить</value>
+  </data>
+  <data name="WaitButtonCaption" xml:space="preserve">
+    <value>Подождать</value>
+  </data>
+  <data name="CheckingGuestHasPhoto" xml:space="preserve">
+    <value>Проверяется наличие фотографии у гостя</value>
+  </data>
+  <data name="GettingFindFaceIdFromPhoto" xml:space="preserve">
+    <value>Идентификация гостя на фото</value>
+  </data>
+  <data name="AddingGuestPhoto" xml:space="preserve">
+    <value>Фотография привязывается к гостю</value>
+  </data>
+  <data name="ConfirmGuestPhotoReplacement" xml:space="preserve">
+    <value>Для гостя уже добавлена фотография. Заменить?</value>
+  </data>
+  <data name="GuestPhotoHasBeenAddedSucessfully" xml:space="preserve">
+    <value>Фотография успешно добавлена</value>
+  </data>
+  <data name="GuestPhotoAdditionFailed" xml:space="preserve">
+    <value>Фотография не найдена. Попробуйте сфотографировать гостя еще раз.</value>
+  </data>
+  <data name="GuestWasntFoundByPhoto" xml:space="preserve">
+    <value>Не удалось найти гостя на фото.</value>
+  </data>
+  <data name="GettingFindFaceIdFromPhotoFailed" xml:space="preserve">
+    <value>Не удалось идентифицировать гостя на фото</value>
+  </data>
+  <data name="PhotoCaptureFailed" xml:space="preserve">
+    <value>Ошибка работы с камерой. Проверьте, что камера подключена и корректно настроена.</value>
+  </data>
+  <data name="IikoNetWizardStepAuthorizationTitle" xml:space="preserve">
+    <value>Авторизация клиента</value>
+  </data>
+  <data name="IikoNetWizardStepFreeProductsTitle" xml:space="preserve">
+    <value>Подарки</value>
+  </data>
+  <data name="IikoNetWizardStepDiscountsTitle" xml:space="preserve">
+    <value>Скидки</value>
+  </data>
+  <data name="IikoNetWizardStepPaymentTitle" xml:space="preserve">
+    <value>Оплата бонусами</value>
+  </data>
+  <data name="IikoNetWizardClosedBecauseNoCampaignsAreActiveFormat" xml:space="preserve">
+    <value>Для данного гостя и состава заказа максимальная сумма оплаты {0} равна нулю.</value>
+    <comment>{0} - название типа оплаты Plazius</comment>
+  </data>
+  <data name="IikoNetWizardCancelConfirm" xml:space="preserve">
+    <value>Вы уверены, что хотите выйти из мастера Plazius без сохранения изменений?</value>
+  </data>
+  <data name="IikoNetWizardChangedTheOrder" xml:space="preserve">
+    <value>Внимание! В заказ внесены изменения. Не забудьте сообщить об этом клиенту.</value>
+  </data>
+  <data name="CustomerOpinionColon" xml:space="preserve">
+    <value>Отзыв клиента:</value>
+  </data>
+  <data name="OpinionComment" xml:space="preserve">
+    <value>Комментарий</value>
+  </data>
+  <data name="OpinionCommentColon" xml:space="preserve">
+    <value>Комментарий:</value>
+  </data>
+  <data name="CustomersOpinionMarks" xml:space="preserve">
+    <value>Оценки клиента</value>
+  </data>
+  <data name="CustomerTitle" xml:space="preserve">
+    <value>ГОСТЬ</value>
+  </data>
+  <data name="CustomerInfoTitle" xml:space="preserve">
+    <value>О ГОСТЕ</value>
+  </data>
+  <data name="CustomerWalletsTitle" xml:space="preserve">
+    <value>СЧЕТА ГОСТЯ</value>
+  </data>
+  <data name="CustomerEditWindowHint" xml:space="preserve">
+    <value>Карточка гостя</value>
+  </data>
+  <data name="ChooseCardDiscountType" xml:space="preserve">
+    <value>Выберите скидку</value>
+  </data>
+  <data name="ChoosePriceCategory" xml:space="preserve">
+    <value>Выберите ценовую категорию</value>
+  </data>
+  <data name="CustomerCardNumberIsAlreadyInUse" xml:space="preserve">
+    <value>Номер карты «{0}» принадлежит гостю «{1}». Пожалуйста, введите другой номер карты.</value>
+  </data>
+  <data name="BrdUpdateFailedFormat" xml:space="preserve">
+    <value>При получении списков клиентов, банкетов и резервов произошла ошибка. Данные с сервера не получены. 
+{0}</value>
+  </data>
+  <data name="Telephone" xml:space="preserve">
+    <value>Телефон</value>
+  </data>
+  <data name="PleaseEnterAdditionalCustomerInfo" xml:space="preserve">
+    <value>Пожалуйста, введите дополнительную информацию.</value>
+  </data>
+  <data name="PleaseEnterCustomerBirthday" xml:space="preserve">
+    <value>Пожалуйста, введите дату рождения</value>
+  </data>
+  <data name="Birthdate" xml:space="preserve">
+    <value>Дата рождения</value>
+  </data>
+  <data name="Gender" xml:space="preserve">
+    <value>Пол</value>
+  </data>
+  <data name="ReceivesOrderStatusNotifications" xml:space="preserve">
+    <value>Получает уведомления о статусе заказов</value>
+  </data>
+  <data name="PersonalDataProcessing" xml:space="preserve">
+    <value>Согласен на обработку персональных данных</value>
+  </data>
+  <data name="CustomerHeader" xml:space="preserve">
+    <value>КЛИЕНТ</value>
+  </data>
+  <data name="BanqueteHeader" xml:space="preserve">
+    <value>БАНКЕТ</value>
+  </data>
+  <data name="ReserveHeader" xml:space="preserve">
+    <value>РЕЗЕРВ</value>
+  </data>
+  <data name="AddressHeader" xml:space="preserve">
+    <value>АДРЕС</value>
+  </data>
+  <data name="CourierHeader" xml:space="preserve">
+    <value>КУРЬЕР</value>
+  </data>
+  <data name="CourierPersonalSessionIsClosed" xml:space="preserve">
+    <value>У курьера «{0}» закрыта личная смена.</value>
+  </data>
+  <data name="AllOrders" xml:space="preserve">
+    <value>Все заказы</value>
+  </data>
+  <data name="OrderTypes" xml:space="preserve">
+    <value>Типы заказов</value>
+  </data>
+  <data name="FilterByOrderTypesTitle" xml:space="preserve">
+    <value>ФИЛЬТР ПО ТИПАМ ЗАКАЗОВ</value>
+  </data>
+  <data name="ResetAll" xml:space="preserve">
+    <value>Сбросить все</value>
+  </data>
+  <data name="AllCourierDeliveries" xml:space="preserve">
+    <value>Все доставки</value>
+  </data>
+  <data name="AllSelfServiceDeliveries" xml:space="preserve">
+    <value>Все самовывозы</value>
+  </data>
+  <data name="CustomerCreationDateFormat" xml:space="preserve">
+    <value>Дата создания гостя: {0}</value>
+  </data>
+  <data name="CustomerLastOrderDateFormat" xml:space="preserve">
+    <value>Дата последнего заказа: {0}</value>
+  </data>
+  <data name="Houses" xml:space="preserve">
+    <value>Дома:</value>
+  </data>
+  <data name="OnlyEven" xml:space="preserve">
+    <value>только четные</value>
+  </data>
+  <data name="OnlyOdd" xml:space="preserve">
+    <value>только нечетные</value>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>все</value>
+  </data>
+  <data name="StringIsNotACorrectEmail" xml:space="preserve">
+    <value>Введенный e-mail некорректен</value>
+  </data>
+  <data name="IsPaid" xml:space="preserve">
+    <value>ОПЛАЧЕНО</value>
+  </data>
+  <data name="ForceClose" xml:space="preserve">
+    <value>Закрыть заказ</value>
+  </data>
+  <data name="ChangeDeliveryTimeOnPlannedTime" xml:space="preserve">
+    <value>В соответствии c настройками  работы ресторана предполагаемое время доставки {0}.
+Изменить время доставки заказа?</value>
+  </data>
+  <data name="DeliveryOrderStatusMustBeConformed" xml:space="preserve">
+    <value>ПОДТВЕРДИТЬ</value>
+  </data>
+  <data name="CheckCustomerInBlackList" xml:space="preserve">
+    <value>Проверка наличия клиента в статусе "высокий риск"...</value>
+  </data>
+  <data name="VatCounteragentAccountingReasonCode" xml:space="preserve">
+    <value>КПП</value>
+  </data>
+  <data name="CounteragentAccountingReasonCodeSearchResultFormat" xml:space="preserve">
+    <value>КПП: {0}</value>
+  </data>
+  <data name="CounteragentFiscalCodeSearchResultFormat" xml:space="preserve">
+    <value>Фискальный код: {0}</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Назад</value>
+  </data>
+  <data name="DeliveryCantBeFastClosed" xml:space="preserve">
+    <value>Быстрое закрытие доставки невозможно. Проверьте данные доставки и заказа.</value>
+  </data>
+  <data name="ProductNameWithSizeFormat" xml:space="preserve">
+    <value>{0} {1}</value>
+  </data>
+  <data name="CantChangeOrderTypeToReadonlyOrder" xml:space="preserve">
+    <value>Нельзя изменить тип заказа. Заказ недоступен для редактирования.</value>
+  </data>
+  <data name="CantChangeOrderTypeToDevidedDeliveries" xml:space="preserve">
+    <value>Нельзя изменить тип заказа. Доставка была разделена по фискальным регистраторам.</value>
+  </data>
+  <data name="UaeAddressDetails" xml:space="preserve">
+    <value>Детали адреса</value>
+  </data>
+  <data name="UaeAddressDetailsAsteriskKeyboardTitle" xml:space="preserve">
+    <value>Детали адреса*</value>
+  </data>
+  <data name="CreateNewUaeStreet" xml:space="preserve">
+    <value>Новый район</value>
+  </data>
+  <data name="EditUaeStreet" xml:space="preserve">
+    <value>редактирование района</value>
+  </data>
+  <data name="ShortAddressUaeStreetFormat" xml:space="preserve">
+    <value>{0}</value>
+  </data>
+  <data name="ShortUaeAddressDetailsFormat" xml:space="preserve">
+    <value>{0}</value>
+  </data>
+  <data name="SetTerminalDurationHeader" xml:space="preserve">
+    <value>Настроить продолжительность</value>
+  </data>
+  <data name="ConfirmCheckinReserveCustomerIntoOrder" xml:space="preserve">
+    <value>Назначить заказу гостя {0}?</value>
+  </data>
+  <data name="ReceivesLoyaltySystemNotifications" xml:space="preserve">
+    <value>Получает уведомления от системы лояльности</value>
+  </data>
+  <data name="ReceivesPromotionalMailing" xml:space="preserve">
+    <value>Получает рекламную рассылку</value>
+  </data>
+  <data name="SubscribedTo" xml:space="preserve">
+    <value>Подписан на:</value>
+  </data>
+  <data name="LoyaltySystemNotifications" xml:space="preserve">
+    <value>Уведомления от системы лояльности</value>
+  </data>
+  <data name="OrderStatusNotifications" xml:space="preserve">
+    <value>Уведомления о статусе заказов</value>
+  </data>
+  <data name="PromotionalMailing" xml:space="preserve">
+    <value>Рекламную рассылку</value>
+  </data>
+  <data name="DeliveryDurationChanged" xml:space="preserve">
+    <value>Продолжительность доставки изменена менеджером. Время доставки: {0}. Время самовывоза: {1}.</value>
+  </data>
+  <data name="DeliveryDurationResetToDefault" xml:space="preserve">
+    <value>Корректировка продолжительности доставки отменена.</value>
+  </data>
+  <data name="DeliveryDurationShouldExceedPickupDelivery" xml:space="preserve">
+    <value>Продолжительность самовывоза: '{0} минут' не может превышать продолжительность доставки курьером: '{1} минут'.</value>
+  </data>
+  <data name="EventTerminalDeliveryDurationChangedCourier" xml:space="preserve">
+    <value>Продолжительность доставки курьером, заданная на терминале, изменена на {0} минут.</value>
+  </data>
+  <data name="EventTerminalDeliveryDurationChangedSelfService" xml:space="preserve">
+    <value>Продолжительность доставки самовывозом, заданная на терминале, изменена на {0} минут.</value>
+  </data>
+  <data name="EventTerminalDeliveryDurationResetToDefault" xml:space="preserve">
+    <value>Продолжительность доставки, заданная на терминале, сброшена на значение по умолчанию.</value>
+  </data>
+  <data name="DeliveryCancelIsNotPossible" xml:space="preserve">
+    <value>Доставку невозможно отменить, так как оплата была проведена через фискальный регистратор.</value>
+  </data>
+  <data name="OrderDoesntHaveProcessedExternallyPaymentForEcsQuestionFormat" xml:space="preserve">
+    <value>Заказ не оплачен онлайн. Вы действительно хотите назначить курьера {0}?</value>
+  </data>
+  <data name="DeliveryCancelSend" xml:space="preserve">
+    <value>Отмена отправки доставки</value>
+  </data>
+  <data name="DeliveryCancelSendQuestion" xml:space="preserve">
+    <value>Отменить отправку доставки?</value>
+  </data>
+  <data name="NewOrganization" xml:space="preserve">
+    <value>Новая организация</value>
+  </data>
+  <data name="Organizations" xml:space="preserve">
+    <value>Список организаций</value>
+  </data>
+  <data name="CounteragentFullAddressCitySearchResultFormat" xml:space="preserve">
+    <value>Город: {0}</value>
+  </data>
+  <data name="CounteragentFullAddressCountrySearchResultFormat" xml:space="preserve">
+    <value>Страна: {0}</value>
+  </data>
+  <data name="CounteragentFullAddressHouseSearchResultFormat" xml:space="preserve">
+    <value>Дом: {0}</value>
+  </data>
+  <data name="CounteragentFullAddressPostCodeSearchResultFormat" xml:space="preserve">
+    <value>Индекс: {0}</value>
+  </data>
+  <data name="CounteragentFullAddressRegionSearchResultFormat" xml:space="preserve">
+    <value>Регион: {0}</value>
+  </data>
+  <data name="CounteragentFullAddressStreetSearchResultFormat" xml:space="preserve">
+    <value>Улица: {0}</value>
+  </data>
+  <data name="ContinueOrDelayCookingOnDeliveryTimeChangeQuestion" xml:space="preserve">
+    <value>Продолжить приготовление блюд?</value>
+  </data>
+  <data name="ContinueCookingOnDeliveryTimeChange" xml:space="preserve">
+    <value>Продолжить</value>
+  </data>
+  <data name="DelayCookingOnDeliveryTimeChange" xml:space="preserve">
+    <value>Отложить приготовление</value>
+  </data>
+  <data name="YandexDelivery" xml:space="preserve">
+    <value>Яндекс</value>
+  </data>
+  <data name="EcsNameDashRideStatusFormat" xml:space="preserve">
+    <value>{0} - {1}</value>
+    <comment>0 - Name of an External Courier Service. 1 - Current status of a delivery Ride.</comment>
+  </data>
+  <data name="RideStatusAccepted" xml:space="preserve">
+    <value>Поездка подтверждена</value>
+  </data>
+  <data name="RideStatusCancelled" xml:space="preserve">
+    <value>Поездка отменена</value>
+  </data>
+  <data name="RideStatusCancelledByTaxi" xml:space="preserve">
+    <value>Отмена курьером</value>
+  </data>
+  <data name="RideStatusCancelledWithPayment" xml:space="preserve">
+    <value>Поездка отменена со штрафом</value>
+  </data>
+  <data name="RideStatusClaimCreated" xml:space="preserve">
+    <value>Поездка создана</value>
+  </data>
+  <data name="RideStatusClaimDraft" xml:space="preserve">
+    <value>Создание поездки</value>
+  </data>
+  <data name="RideStatusClaimWaiting" xml:space="preserve">
+    <value>Отсрочка отправки</value>
+  </data>
+  <data name="RideStatusDelivered" xml:space="preserve">
+    <value>Завершение поездки</value>
+  </data>
+  <data name="RideStatusEstimating" xml:space="preserve">
+    <value>Оценка поездки</value>
+  </data>
+  <data name="RideStatusEstimatingFailed" xml:space="preserve">
+    <value>Невозможно оценить</value>
+  </data>
+  <data name="RideStatusFailed" xml:space="preserve">
+    <value>Ошибка</value>
+  </data>
+  <data name="RideStatusError" xml:space="preserve">
+    <value>Ошибка</value>
+  </data>
+  <data name="RideStatusPayWaiting" xml:space="preserve">
+    <value>Заказ ожидает оплаты</value>
+  </data>
+  <data name="RideStatusPerformerFound" xml:space="preserve">
+    <value>Курьер найден</value>
+  </data>
+  <data name="RideStatusPerformerLookup" xml:space="preserve">
+    <value>Поиск курьера</value>
+  </data>
+  <data name="RideStatusPerformerNotFound" xml:space="preserve">
+    <value>Курьер не найден</value>
+  </data>
+  <data name="RideStatusPickupArrived" xml:space="preserve">
+    <value>Курьер прибыл</value>
+  </data>
+  <data name="RideStatusPickuped" xml:space="preserve">
+    <value>Курьер в пути</value>
+  </data>
+  <data name="RideStatusReadyForApproval" xml:space="preserve">
+    <value>Ожидание подтверждения</value>
+  </data>
+  <data name="RideStatusReturned" xml:space="preserve">
+    <value>Возврат завершен</value>
+  </data>
+  <data name="RideStatusReturning" xml:space="preserve">
+    <value>Возврат заказа</value>
+  </data>
+  <data name="RideStatusCancelledWithItemsOnHands" xml:space="preserve">
+    <value>Заказ отменен с оплатой и оставлен у клиента</value>
+  </data>
+  <data name="RideStatusProblemCommentFormat" xml:space="preserve">
+    <value>Проблема с поездкой: {0}</value>
+  </data>
+  <data name="RideToBeCanceledAndRecreated" xml:space="preserve">
+    <value>Текущая поездка будет отменена. Возможно, отмена будет платной. Будет создана новая поездка, с новыми параметрами.</value>
+  </data>
+  <data name="CurrentRideToBeDeleted" xml:space="preserve">
+    <value>Текущая поездка будет отменена. Возможно, отмена будет платной.</value>
+  </data>
+  <data name="CourierArrivedAndRideToBeCanceledWithFine" xml:space="preserve">
+    <value>Курьер прибыл в ресторан, поездка будет отменена платно.</value>
+  </data>
+  <data name="DeliveryConnectionProblem" xml:space="preserve">
+    <value>Доставка № {0}. Проблема с сетью.</value>
+  </data>
+  <data name="CancelEInvoice" xml:space="preserve">
+    <value>Не выбрано</value>
+  </data>
+  <data name="KitchenWorkload" xml:space="preserve">
+    <value>Загруженность кухни</value>
+  </data>
+  <data name="ExternalAddressSearchError" xml:space="preserve">
+    <value>Ошибка выполнения поиска.</value>
+  </data>
+
+</root>

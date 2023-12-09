@@ -1,0 +1,358 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="NewDocumentWindowCaption" xml:space="preserve">
+    <value>Новый документ</value>
+  </data>
+  <data name="PaymentType" xml:space="preserve">
+    <value>Тип оплаты:</value>
+  </data>
+  <data name="SourceStore" xml:space="preserve">
+    <value>Со склада:</value>
+  </data>
+  <data name="TargetStore" xml:space="preserve">
+    <value>На склад:</value>
+  </data>
+  <data name="StoreDefinedByCookingPlaceTypeText" xml:space="preserve">
+    <value>Склад назначается согласно типу места приготовления блюд и заготовок.</value>
+  </data>
+  <data name="PaymentTypeConfigurationRequired" xml:space="preserve">
+    <value>В справочнике контрагентов нет покупателей для данной операции. Требуется настройка типа оплаты.</value>
+  </data>
+  <data name="NewDocumentWindowHelpTitle" xml:space="preserve">
+    <value>Выберите:</value>
+  </data>
+  <data name="ChoosePaymentTypeHint" xml:space="preserve">
+    <value>&#8226; Тип оплаты.</value>
+  </data>
+  <data name="ChooseSourceStoreHint" xml:space="preserve">
+    <value>&#8226; Склад, с которого списываются товары и ингредиенты приготовленных блюд и заготовок.</value>
+  </data>
+  <data name="ChooseDestinationStoreHint" xml:space="preserve">
+    <value>&#8226; Склад, на который приходуются товары, приготовленные блюда и заготовки.</value>
+  </data>
+  <data name="ChooseDestinationCustomerHint" xml:space="preserve">
+    <value>&#8226; Покупателя.</value>
+  </data>
+  <data name="FormDocument" xml:space="preserve">
+    <value>Сформировать документ</value>
+  </data>
+  <data name="FindTargetCustomer" xml:space="preserve">
+    <value>Найти покупателя</value>
+  </data>
+  <data name="AmountEditButtonText" xml:space="preserve">
+    <value>123</value>
+  </data>
+  <data name="SaveButtonText" xml:space="preserve">
+    <value>Сохранить</value>
+  </data>
+  <data name="OrderItemsCountFormat" xml:space="preserve">
+    <value>Всего: {0}</value>
+  </data>
+  <data name="DestinationStoreNameFormat" xml:space="preserve">
+    <value>на склад: {0}</value>
+  </data>
+  <data name="DocumentNumberFormat" xml:space="preserve">
+    <value>Документ № {0}</value>
+  </data>
+  <data name="DocumentTimestampFormat" xml:space="preserve">
+    <value>от {0}</value>
+  </data>
+  <data name="ForwarderUserTitle" xml:space="preserve">
+    <value>Отпустил:</value>
+  </data>
+  <data name="ReceiverUserTitle" xml:space="preserve">
+    <value>Принял:</value>
+  </data>
+  <data name="AuthorizedUserTitle" xml:space="preserve">
+    <value>Авторизовал:</value>
+  </data>
+  <data name="SourceStoreNameFormat" xml:space="preserve">
+    <value>со склада: {0}</value>
+  </data>
+  <data name="RepeatPrintButtonText" xml:space="preserve">
+    <value>Повторная печать документа</value>
+  </data>
+  <data name="FromStorePrefix" xml:space="preserve">
+    <value>с </value>
+  </data>
+  <data name="ToStorePrefix" xml:space="preserve">
+    <value>на </value>
+  </data>
+  <data name="SupplierPrefix" xml:space="preserve">
+    <value>Передал: </value>
+  </data>
+  <data name="AcceptorPrefix" xml:space="preserve">
+    <value>Принял: </value>
+  </data>
+  <data name="ProductsWithRequiredModifiersAreDisallowedErrorMsgFormat" xml:space="preserve">
+    <value>Для блюда {0} заданы обязательные модификаторы. Блюда с обязательными модификаторами нельзя добавлять в документ.</value>
+  </data>
+  <data name="ProductWithoutCookingPlaceTypeMsgFormat" xml:space="preserve">
+    <value>Для товара {0} не настроен тип места приготовления.
+Согласно настройкам данного типа документа,
+склад выбирается по карте приготовления.
+Товар {0} нельзя добавить в документ.</value>
+  </data>
+  <data name="ServiceProductsAreDisallowedErrorMsgFormat" xml:space="preserve">
+    <value>{0} является услугой. Услуги нельзя добавлять в документ.</value>
+  </data>
+  <data name="CounterAgentCardRollupRequired" xml:space="preserve">
+    <value>Требуется прокатка карты принимающего контрагента</value>
+  </data>
+  <data name="IfToSaveChangesQuestion" xml:space="preserve">
+    <value>В состав документа внесены изменения. Сохранить изменения?</value>
+  </data>
+  <data name="TerminalNotLinkedToAnyPointOfDocumentCreation" xml:space="preserve">
+    <value>Терминал не привязан ни к одной точке формирования документов (отделению).
+Создание документа невозможно.</value>
+  </data>
+  <data name="SelectedStoreAndCustomerReferToSameDepartment" xml:space="preserve">
+    <value>Выбранный склад «{0}» и привязанный к покупателю «{1}» склад «{2}» принадлежат одному и тому же предприятию.
+Невозможно создать расходную накладную для складов одного предприятия.</value>
+    <comment>{0} — название склада-источника, {1} — имя покупателя, {2} — название склада-получателя</comment>
+  </data>
+  <data name="SelectedProductAndCustomerReferToSameDepartment" xml:space="preserve">
+    <value>Месту приготовления товара «{0}» соответствует склад «{1}», принадлежащий тому же предприятию, что и склад «{2}», привязанный к покупателю «{3}».
+Не допускается формирование расходной накладной для складов одного предприятия.</value>
+    <comment>{0} — название добавляемого в документ товара, {1} — название склада, привязанного к месту приготовления товара, {2} — название склада-получателя, {3} — имя покупателя</comment>
+  </data>
+  <data name="SavingDocumentProgressText" xml:space="preserve">
+    <value>Сохранение документа...</value>
+  </data>
+  <data name="ProductCategoryIsIncompatibleWithDocumentTypeMsgFormat" xml:space="preserve">
+    <value>{0} категории {1} нельзя добавить в документ типа {2}.</value>
+  </data>
+  <data name="CancelButtonText" xml:space="preserve">
+    <value>Отмена</value>
+  </data>
+  <data name="SearchProductButtonText" xml:space="preserve">
+    <value>Поиск</value>
+  </data>
+  <data name="TargetCustomer" xml:space="preserve">
+    <value>Покупатель:</value>
+  </data>
+  <data name="TargetCustomerSearchTitle" xml:space="preserve">
+    <value>Выберите покупателя</value>
+  </data>
+  <data name="DestinationCustomerNameFormat" xml:space="preserve">
+    <value>покупатель: {0}</value>
+  </data>
+  <data name="ToCustomerPrefix" xml:space="preserve">
+    <value>для </value>
+  </data>
+  <data name="ProductWithoutCategoryIsIncompatibleWithDocumentTypeMsgFormat" xml:space="preserve">
+    <value>Товар {0}, для которого не указана категория, нельзя добавить в документ типа {1}.</value>
+  </data>
+  <data name="ShowAllProductsButtonText" xml:space="preserve">
+    <value>Вся номенкл.</value>
+  </data>
+  <data name="ShowOnOfferProductsButtonText" xml:space="preserve">
+    <value>В продаже</value>
+  </data>
+  <data name="NoDocumentPaymentTypes" xml:space="preserve">
+    <value>Не настроен ни один тип оплаты для создания документов.</value>
+  </data>
+  <data name="IncomingInventoryDocumentTypeName" xml:space="preserve">
+    <value>Инвентаризация</value>
+  </data>
+  <data name="InternalTransferDocumentTypeName" xml:space="preserve">
+    <value>Внутреннее перемещение</value>
+  </data>
+  <data name="OutgoingInvoiceDocumentTypeName" xml:space="preserve">
+    <value>Расходная накладная</value>
+  </data>
+  <data name="ProductionDocumentTypeName" xml:space="preserve">
+    <value>Акт приготовления</value>
+  </data>
+  <data name="TransformationDocumentTypeName" xml:space="preserve">
+    <value>Акт переработки</value>
+  </data>
+  <data name="WriteoffDocumentTypeName" xml:space="preserve">
+    <value>Акт списания</value>
+  </data>
+  <data name="CannotTransferProductFromTheSameStore" xml:space="preserve">
+    <value>Согласно настройкам типа места приготовления
+«{0}» приходуется на склад {1}.
+Этот склад является складом-источником для текущего документа.
+Перемещение внутри одного склада запрещено.
+Пожалуйста, создайте для этой позиции отдельный документ с правильным складом-источником.</value>
+  </data>
+  <data name="CannotTransferProductToTheSameStore" xml:space="preserve">
+    <value>Согласно настройкам типа места приготовления
+«{0}» списывается со склада {1}.
+Этот склад является складом-получателем для текущего документа.
+Перемещение внутри одного склада запрещено.
+Пожалуйста, создайте для этой позиции отдельный документ с правильным складом-получателем.</value>
+  </data>
+  <data name="TransformationResultProductWithoutCookingPlaceTypeMsgFormat" xml:space="preserve">
+    <value>Согласно настройкам документа {0}
+склад-получатель выбирается по карте приготовления продукта переработки.
+Для «{1}» не настроен тип места приготовления.
+Документ данного типа создать невозможно.</value>
+  </data>
+  <data name="ContainersCountingModeName" xml:space="preserve">
+    <value>Ввод количества полных фасовок</value>
+  </data>
+  <data name="ContainerWeightingModeName" xml:space="preserve">
+    <value>Взвешивание с вычетом веса тары</value>
+  </data>
+  <data name="UnitsCalculatingModeName" xml:space="preserve">
+    <value>Ввод количества в базовой единице</value>
+  </data>
+  <data name="ContainersCountingTypeName" xml:space="preserve">
+    <value>Фасовка:</value>
+  </data>
+  <data name="ContainerWeightingTypeName" xml:space="preserve">
+    <value>Брутто:</value>
+  </data>
+  <data name="UnitsCalculatingTypeName" xml:space="preserve">
+    <value>Баз. ед.:</value>
+  </data>
+  <data name="KilogramUnitName" xml:space="preserve">
+    <value>кг</value>
+  </data>
+  <data name="PieceUnitName" xml:space="preserve">
+    <value>шт</value>
+  </data>
+  <data name="MeasuringUnitsAmountFormat" xml:space="preserve">
+    <value>{0} {1}</value>
+    <comment>{0} — количество базовых единиц измерения товара, {1} — название базовой единицы измерения (например, 1.5 кг)</comment>
+  </data>
+  <data name="SendToServerButtonText" xml:space="preserve">
+    <value>Отправить на сервер</value>
+  </data>
+  <data name="CannotDeleteSentToServerDocumentMessageText" xml:space="preserve">
+    <value>Данный документ уже отправлен на сервер, удалить его с помощью приложения невозможно.</value>
+  </data>
+  <data name="ConfirmDocumentDeletionMessageFormat" xml:space="preserve">
+    <value>Подтвердите удаление документа №{0}.</value>
+    <comment>{0} — номер документа</comment>
+  </data>
+  <data name="DeleteDocument" xml:space="preserve">
+    <value>Удалить документ</value>
+  </data>
+  <data name="DeleteDocumentMessageTitle" xml:space="preserve">
+    <value>Удаление документа</value>
+  </data>
+  <data name="CannotCreateDocumentUsingInvalidPaymentType" xml:space="preserve">
+    <value>Тип оплаты «{0}» настроен некорректно. Создание документа невозможно.</value>
+    <comment>{0} — название типа оплаты</comment>
+  </data>
+</root>

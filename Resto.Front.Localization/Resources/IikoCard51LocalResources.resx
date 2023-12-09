@@ -1,0 +1,529 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AuthTitle" xml:space="preserve">
+    <value>Авторизация</value>
+  </data>
+  <data name="AuthCardHint" xml:space="preserve">
+    <value>Введите номер</value>
+  </data>
+  <data name="AuthByPhotoHint" xml:space="preserve">
+    <value>Или сделайте фото</value>
+  </data>
+  <data name="IikoCard5PosServerIsNotAvailable" xml:space="preserve">
+    <value>POS-сервер недоступен.</value>
+  </data>
+  <data name="IikoCard5PosServerIsOnline" xml:space="preserve">
+    <value>POS-сервер в режиме онлайн.</value>
+  </data>
+  <data name="IikoCard5PosServerIsOfflineFormat" xml:space="preserve">
+    <value>POS-сервер в автономном режиме. Овердрафт доступен. Последний обмен: {0}.{1}</value>
+    <comment>{0} - время последнего обмена, {1} - информация об ошибке обмена.</comment>
+  </data>
+  <data name="IikoCard5PosServerIsOfflineNotSupportedFormat" xml:space="preserve">
+    <value>POS-сервер в автономном режиме. Овердрафт недоступен. Последний обмен: {0}.{1}</value>
+    <comment>{0} - время последнего обмена, {1} - информация об ошибке обмена.</comment>
+  </data>
+  <data name="BindCardToPhoneButtonTitle" xml:space="preserve">
+    <value>${LOYALTY_APP}: Привязать карту к телефону</value>
+  </data>
+  <data name="ShowWalletsBalancesButtonTitle" xml:space="preserve">
+    <value>${LOYALTY_APP}: Запрос баланса</value>
+  </data>
+  <data name="ForceSynchronizeButtonTitle" xml:space="preserve">
+    <value>${LOYALTY_APP}: Принудительная синхронизация</value>
+  </data>
+  <data name="DiagnosticsButtonTitle" xml:space="preserve">
+    <value>${LOYALTY_APP}: Диагностика подключения к {0}</value>
+  </data>
+  <data name="CertificateActivationTitle" xml:space="preserve">
+    <value>${LOYALTY_APP}: Активация сертификата</value>
+  </data>
+  <data name="FaultReasonCardNotFound" xml:space="preserve">
+    <value>Карта не найдена.</value>
+  </data>
+  <data name="FaultReasonInsufficientFunds" xml:space="preserve">
+    <value>Баланс счета гостя недостаточен для оплаты данного заказа.</value>
+  </data>
+  <data name="ConnectionFailedError" xml:space="preserve">
+    <value>Ошибка соединения с POS-сервером.</value>
+  </data>
+  <data name="ServiceTimeoutError" xml:space="preserve">
+    <value>Превышено время ожидания запроса к POS-серверу.</value>
+  </data>
+  <data name="WrongProtocolVersion" xml:space="preserve">
+    <value>Версия протокола не поддерживается на POS-сервере. Обмен данными с POS-сервером отключен.</value>
+  </data>
+  <data name="PosBindedToAnotherOrganization" xml:space="preserve">
+    <value>Внимание, POS-сервер уже привязан к другой организации. Если Вы хотите привязать POS-сервер к заданной организации необходимо зайти на ${CLOUD_API_LEGACY} в раздел Администрирование -&gt; Мониторинг POS-серверов и выполнить удаление данных POS-сервера</value>
+  </data>
+  <data name="DataExchangeWithPosDisabled" xml:space="preserve">
+    <value>Обмен данными с POS-сервером отключен.</value>
+  </data>
+  <data name="PayOperationFailedSumIsLessThenMinLimit" xml:space="preserve">
+    <value>Сумма оплаты {0} меньше минимально допустимой ({1}).</value>
+    <comment>{0} - введенная сумма оплаты (с валютой), {1} - минимально допустимая сумма оплаты (с валютой)</comment>
+  </data>
+  <data name="PayOperationFailedSumIsGreaterThenMaxLimit" xml:space="preserve">
+    <value>Сумма оплаты {0} больше максимально допустимой ({1}).</value>
+    <comment>{0} - введенная сумма оплаты (с валютой), {1} - максимально допустимая сумма оплаты (с валютой)</comment>
+  </data>
+  <data name="PaymentViewTitle" xml:space="preserve">
+    <value>Оплата</value>
+  </data>
+  <data name="MaxPaymentSumFormat" xml:space="preserve">
+    <value>Можно оплатить до {0}</value>
+    <comment>{0} - сумма оплаты (с валютой)</comment>
+  </data>
+  <data name="BonusesSumShortFormat" xml:space="preserve">
+    <value>({0} бон.)</value>
+  </data>
+  <data name="MaxPaymentSumIsZero" xml:space="preserve">
+    <value>Для данного гостя и состава заказа максимальная сумма оплаты равна нулю.</value>
+  </data>
+  <data name="GuestDoesNotBelongToAnyProgram" xml:space="preserve">
+    <value>Гость не включен ни в одну программу.</value>
+  </data>
+  <data name="PayOperationFailedCanNotSpreadPaymentWithGivenLimits" xml:space="preserve">
+    <value>Невозможно распределить сумму оплаты по кошелькам с указанными лимитами. Пожалуйста, отредактируйте оплату '{0}', чтобы установить новые лимиты.</value>
+    <comment>{0} - название типа оплаты.</comment>
+  </data>
+  <data name="CardNumberHint" xml:space="preserve">
+    <value>Номер карты</value>
+  </data>
+  <data name="BindCardEnterPhone" xml:space="preserve">
+    <value>Введите номер телефона</value>
+  </data>
+  <data name="BindCardEnterPhoneHint" xml:space="preserve">
+    <value>Номер телефона</value>
+  </data>
+  <data name="BindCardCompletedSuccessfully" xml:space="preserve">
+    <value>Карта успешно привязана к номеру телефона.</value>
+  </data>
+  <data name="BindCardError" xml:space="preserve">
+    <value>Ошибка при привязке карты.{0}{1}</value>
+    <comment>{0} - перенос строки, {1} - информация об ошибке.</comment>
+  </data>
+  <data name="BindCardToPhoneInProgress" xml:space="preserve">
+    <value>Привязка карты к телефону...</value>
+  </data>
+  <data name="GetWalletsBalancesInProgress" xml:space="preserve">
+    <value>Получение информации о кошельках гостя...</value>
+  </data>
+  <data name="GetPosStateInProgress" xml:space="preserve">
+    <value>Получение информации о состоянии поса...</value>
+  </data>
+  <data name="ForceSyncRequestInProgress" xml:space="preserve">
+    <value>Запрос принудительной синхронизации...</value>
+  </data>
+  <data name="RegisterGuestInProgress" xml:space="preserve">
+    <value>Регистрация гостя...</value>
+  </data>
+  <data name="UpdateOrderInProgress" xml:space="preserve">
+    <value>Обновление заказа...</value>
+  </data>
+  <data name="GetCustomerReferrerInfoInProgress" xml:space="preserve">
+    <value>Получение информации о рекомендателе...</value>
+  </data>
+  <data name="FixDiscounts" xml:space="preserve">
+    <value>Фиксация скидок...</value>
+  </data>
+  <data name="GetComboPriceInProgress" xml:space="preserve">
+    <value>Обновление стоимости комбо...</value>
+  </data>
+  <data name="BindCertificateInProgress" xml:space="preserve">
+    <value>Привязка сертификата...</value>
+  </data>
+  <data name="AdditionalOperationsNotAvailable" xml:space="preserve">
+    <value>Дополнительные операции недоступны, так как нет лицензии на ${LOYALTY_APP}.</value>
+  </data>
+  <data name="UserWalletsHintFormat" xml:space="preserve">
+    <value>Кошельки гостя {0}</value>
+    <comment>{0} - имя гостя.</comment>
+  </data>
+  <data name="DiagnosticsLastExchangeHintFormat" xml:space="preserve">
+    <value>Время обмена: {0}</value>
+    <comment>{0} - время последнего обмена.</comment>
+  </data>
+  <data name="UserWalletNameHeaderTitle" xml:space="preserve">
+    <value>Кошелек</value>
+  </data>
+  <data name="UserWalletBalanceHeaderTitle" xml:space="preserve">
+    <value>Баланс</value>
+  </data>
+  <data name="LastExchangedDateUnknown" xml:space="preserve">
+    <value>неизвестно</value>
+  </data>
+  <data name="DiagnosticsTitle" xml:space="preserve">
+    <value>Диагностика подключения ${LOYALTY_APP}</value>
+  </data>
+  <data name="DiagnosticsNameHeaderTitle" xml:space="preserve">
+    <value>Название</value>
+  </data>
+  <data name="DiagnosticsValueHeaderTitle" xml:space="preserve">
+    <value>Состояние</value>
+  </data>
+  <data name="DiagnosticsInfoHeaderTitle" xml:space="preserve">
+    <value>Информация</value>
+  </data>
+  <data name="DiagnosticsPosAvailable" xml:space="preserve">
+    <value>Доступен</value>
+  </data>
+  <data name="DiagnosticsPosOnline" xml:space="preserve">
+    <value>Обмен был меньше 10 минут назад</value>
+  </data>
+  <data name="DiagnosticsRabbitMQAvailable" xml:space="preserve">
+    <value>Доступен RabbitMQ</value>
+  </data>
+  <data name="DiagnosticsIsLastVersion" xml:space="preserve">
+    <value>Установлена последняя версия</value>
+  </data>
+  <data name="DiagnosticsSuccess" xml:space="preserve">
+    <value>Да</value>
+  </data>
+  <data name="DiagnosticsFail" xml:space="preserve">
+    <value>Нет</value>
+  </data>
+  <data name="ForceSyncStartedSuccessfully" xml:space="preserve">
+    <value>Принудительная синхронизация запущена.</value>
+  </data>
+  <data name="ForceSyncError" xml:space="preserve">
+    <value>Не удалось запустить принудительную синхронизацию.</value>
+  </data>
+  <data name="ExchangeWithIikoBizError" xml:space="preserve">
+    <value> Ошибка обработки в ${CLOUD_API_LEGACY}.</value>
+  </data>
+  <data name="CloseOperationFailed" xml:space="preserve">
+    <value>Не удалось закрыть заказ на POS-сервере.</value>
+  </data>
+  <data name="RefundOperationFailed" xml:space="preserve">
+    <value>Не удалось вернуть заказ на POS-сервере.</value>
+  </data>
+  <data name="ResetOperationFailed" xml:space="preserve">
+    <value>Не удалось отменить заказ на POS-сервере.</value>
+  </data>
+  <data name="AbortOperationFailed" xml:space="preserve">
+    <value>Не удалось отменить заказ на POS-сервере.</value>
+  </data>
+  <data name="CouponTitle" xml:space="preserve">
+    <value>Купон</value>
+  </data>
+  <data name="CustomerReferrerTitle" xml:space="preserve">
+    <value>Рекомендатель</value>
+  </data>
+  <data name="CouponInvalidOrUnappliedFormat" xml:space="preserve">
+    <value>Купон '{0}' более не действителен или не выполнены все условия акции.</value>
+  </data>
+  <data name="CouponApplyingError" xml:space="preserve">
+    <value>Ошибка при обращении к POS-серверу.</value>
+  </data>
+  <data name="SetCustomerReferrerFailed" xml:space="preserve">
+    <value>Не удалось присвоить рекомендателя гостю.</value>
+  </data>
+  <data name="CustomerReferrerWasNotFoundByPhone" xml:space="preserve">
+    <value>Рекомендатель с номером телефона {0} не найден. Попробуйте ввести другой номер.</value>
+  </data>
+  <data name="CustomerReferrerWasNotFoundByEmail" xml:space="preserve">
+    <value>Рекомендатель с e-mail {0} не найден. Попробуйте ввести другой e-mail.</value>
+  </data>
+  <data name="CustomerReferrerHasBeenSet" xml:space="preserve">
+    <value>Рекомендатель {0} успешно присвоен гостю.</value>
+  </data>
+  <data name="ChooseAnotherComboGroupProduct" xml:space="preserve">
+    <value>Выбрать другое</value>
+  </data>
+  <data name="ComboNotExistsOnIikoCardFormat" xml:space="preserve">
+    <value>Комбо '{0}' более не активно для редактируемого заказа.</value>
+  </data>
+  <data name="ComboSpecificationNotValidFormat" xml:space="preserve">
+    <value>Спецификация комбо '{0}' была изменена. Комбо более не доступно для редактирования.</value>
+  </data>
+  <data name="CanNotCollectComboFormat" xml:space="preserve">
+    <value>Невозможно собрать '{0}'.</value>
+  </data>
+  <data name="ComboDynamicRegionButtonTitle" xml:space="preserve">
+    <value>Комбо</value>
+  </data>
+  <data name="BuildComboFormat" xml:space="preserve">
+    <value>Соберите '{0}'</value>
+  </data>
+  <data name="ComboSummarizeStepTitle" xml:space="preserve">
+    <value>ПОКАЗАТЬ СОБРАННОЕ КОМБО</value>
+  </data>
+  <data name="OfferProductAndBuildComboFormat" xml:space="preserve">
+    <value>Предложите добавить блюдо и соберите комбо '{0}'</value>
+  </data>
+  <data name="FreeProductGroupName" xml:space="preserve">
+    <value>ДОБАВЬТЕ ПОДАРОК</value>
+  </data>
+  <data name="UpsaleGroupName" xml:space="preserve">
+    <value>ПРЕДЛОЖИТЕ ГОСТЮ</value>
+  </data>
+  <data name="ComboGroupName" xml:space="preserve">
+    <value>СОБЕРИТЕ КОМБО-БЛЮДО</value>
+  </data>
+  <data name="AddProductAndCollectComboGroupName" xml:space="preserve">
+    <value>ДОБАВЬТЕ БЛЮДО ДЛЯ КОМБО</value>
+  </data>
+  <data name="InformationGroupName" xml:space="preserve">
+    <value>ИНФОРМАЦИЯ</value>
+  </data>
+  <data name="ActionNameFormat" xml:space="preserve">
+    <value>Акция: {0}</value>
+  </data>
+  <data name="ManualConditionApplyError" xml:space="preserve">
+    <value>Не удалось применить условие ручного подтверждения. Пожалуйста, повторите попытку.</value>
+  </data>
+  <data name="IikoCard51IsNotActiveForOrderBecauseOfLicense" xml:space="preserve">
+    <value>Лицензионное ограничение: оплата ${LOYALTY_APP} недоступна.</value>
+  </data>
+  <data name="IikoCard51SettingsNotSpecifiedForCurrentDepartment" xml:space="preserve">
+    <value>${LOYALTY_APP} не настроен для работы в текущем ресторане.</value>
+  </data>
+  <data name="IikoCard51SettingsNotExists" xml:space="preserve">
+    <value>${LOYALTY_APP} не настроен для работы в текущем ресторане. Обратитесь к администратору системы для настройки ${LOYALTY_APP} и выполните обмен данными с ЦО.</value>
+  </data>
+  <data name="AmountShortFormat" xml:space="preserve">
+    <value>{0:N0} шт.</value>
+  </data>
+  <data name="NoPromts" xml:space="preserve">
+    <value>Подсказок нет</value>
+  </data>
+  <data name="NoAvailableCombos" xml:space="preserve">
+    <value>Доступных для продажи комбо-блюд нет</value>
+  </data>
+  <data name="MobileAuthorizationCodeFormat" xml:space="preserve">
+    <value>ПРОМО-КОД: {0}</value>
+  </data>
+  <data name="OrderContainsFullOrderPayments" xml:space="preserve">
+    <value>В заказ уже добавлена оплата на максимально возможную сумму.</value>
+  </data>
+  <data name="ActivateCertificateTitle" xml:space="preserve">
+    <value>Активация сертификата</value>
+  </data>
+  <data name="SetCertificateNumberTitle" xml:space="preserve">
+    <value>Введите номер сертификата</value>
+  </data>
+  <data name="BindCertificateTitle" xml:space="preserve">
+    <value>Привязка сертификата</value>
+  </data>
+  <data name="ActivateCertificateButton" xml:space="preserve">
+    <value>Активировать</value>
+  </data>
+  <data name="SetGuestButton" xml:space="preserve">
+    <value>Указать гостя</value>
+  </data>
+  <data name="CertificateActivatedSuccessfully" xml:space="preserve">
+    <value>Сертификат успешно активирован</value>
+  </data>
+  <data name="CertificateActivationProgress" xml:space="preserve">
+    <value>Активация сертификата...</value>
+  </data>
+  <data name="CertificateWillBeBindedToGuestFormat" xml:space="preserve">
+    <value>Сертификату будет привязан гость '{0}'</value>
+  </data>
+  <data name="GuestByCardNumberNotFoundFormat" xml:space="preserve">
+    <value>Гость с номером карты '{0}' не найден</value>
+  </data>
+  <data name="GuestByTrackNotFoundFormat" xml:space="preserve">
+    <value>Гость с трэком '{0}' не найден</value>
+  </data>
+  <data name="IncorrectPaymentTypeFormat" xml:space="preserve">
+    <value>Тип оплаты '{0}' настроен не правильно.</value>
+  </data>
+  <data name="VerifyGuestTitle" xml:space="preserve">
+    <value>Верификация</value>
+  </data>
+  <data name="SetVerificationCode" xml:space="preserve">
+    <value>Введите код подтверждения</value>
+  </data>
+  <data name="SendVerificationCode" xml:space="preserve">
+    <value>Отправить снова</value>
+  </data>
+  <data name="CanNotSendGuestVerificationSmsBecauseOfRmsError" xml:space="preserve">
+    <value>Не получилось отправить SMS с кодом подтверждения. Ошибка на сервере.</value>
+  </data>
+  <data name="CanNotSendGuestVerificationSmsBecauseRmsIsNotAvailable" xml:space="preserve">
+    <value>Не получилось отправить SMS с кодом подтверждения. Сервер недоступен.</value>
+  </data>
+  <data name="GuestVerificationCodeSending" xml:space="preserve">
+    <value>Отправка кода верификации.</value>
+  </data>
+  <data name="IncorrectCodeTryAgain" xml:space="preserve">
+    <value>Код введен неверно. Попробуйте ввести код еще раз.</value>
+  </data>
+  <data name="NumberOfSentVerificationMesagesExceeded" xml:space="preserve">
+    <value>Превышено кол-во попыток отправки кода.</value>
+  </data>
+  <data name="NumberOfAttemptsToEnterTheCurrentVerirficationCodeExceeded" xml:space="preserve">
+    <value>Код введен неверно. Превышено кол-во попыток ввода текущего кода.</value>
+  </data>
+  <data name="VerificationGuestMessage" xml:space="preserve">
+    <value>{0} - Ваш код подтверждения.</value>
+  </data>
+  <data name="CanNotSendGuestVerificationSmsBecauseOfZeroSmsBalance" xml:space="preserve">
+    <value>Не получилось отправить SMS с кодом подтверждения. 
+У Вашей организации недостаточный баланс SMS.</value>
+  </data>
+  <data name="DiagnosticsDataExchangeWithPosEnabled" xml:space="preserve">
+    <value>Обмен данными с POS включен</value>
+  </data>
+  <data name="CertificateActivatedAndBindedToGuestSuccessfully" xml:space="preserve">
+    <value>Сертификат успешно активирован и добавлен гостю</value>
+  </data>
+  <data name="GetOptimalComboErrorFormat" xml:space="preserve">
+    <value>Автоматическая сборка комбо не выполнена: {0}</value>
+  </data>
+  <data name="CertificateInfoHintFormat" xml:space="preserve">
+    <value>Информация по подарочному сертификату</value>
+  </data>
+  <data name="GetCertificateInfoInProgress" xml:space="preserve">
+    <value>Получение информации по подарочному сертификату...</value>
+  </data>
+  <data name="CertificateNotFoundWarning" xml:space="preserve">
+    <value>Не удалось найти сертификат '{0}'.</value>
+  </data>
+  <data name="Certificate" xml:space="preserve">
+    <value>Подарочный сертификат</value>
+  </data>
+  <data name="ChooseWalletType" xml:space="preserve">
+    <value>Выберите тип</value>
+  </data>
+  <data name="GuestBalance" xml:space="preserve">
+    <value>Баланс гостя</value>
+  </data>
+  <data name="CertificateIsBlocked" xml:space="preserve">
+    <value>Сертификат заблокирован. Причина: {0}.</value>
+  </data>
+  <data name="CertificateIsDeleted" xml:space="preserve">
+    <value>Сертификат удален.</value>
+  </data>
+  <data name="CertificateIsExpired" xml:space="preserve">
+    <value>Срок действия сертификата истек.</value>
+  </data>
+  <data name="IsActivе" xml:space="preserve">
+    <value>Активирован</value>
+  </data>
+  <data name="CouponInvalidFormat" xml:space="preserve">
+    <value>Указан неправильный купон '{0}'.</value>
+  </data>
+  <data name="CouponUnappliedFormat" xml:space="preserve">
+    <value>Не удалось применить купон '{0}', не выполнены все условия акции.</value>
+  </data>
+</root>

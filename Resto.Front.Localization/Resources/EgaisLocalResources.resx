@@ -1,0 +1,332 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CancelingEgaisProduct" xml:space="preserve">
+    <value>Отмена вскрытия тары...</value>
+  </data>
+  <data name="CantCancelEgaisProduct" xml:space="preserve">
+    <value>Отменять операцию можно только для вскрытых бутылок, еще не списанных в ЕГАИС.</value>
+  </data>
+  <data name="CantCancelServerUnavailable" xml:space="preserve">
+    <value>Сервер недоступен. Убедитесь, что информация об отмене вскрытия зафиксирована в документе.</value>
+  </data>
+  <data name="CantFindAlcCode" xml:space="preserve">
+    <value>Не удалось найти алкокод для товара, который был отсканирован.</value>
+  </data>
+  <data name="CantFindEgaisProduct" xml:space="preserve">
+    <value>Товар с алкокодом {0} не найден в системе.</value>
+  </data>
+  <data name="EgaisAlcCode" xml:space="preserve">
+    <value>АЛКОКОД  {0}</value>
+  </data>
+  <data name="EgaisCountOperations" xml:space="preserve">
+    <value>ВЫПОЛНЕНО ОПЕРАЦИЙ</value>
+  </data>
+  <data name="EgaisMarkCancelSuccessful" xml:space="preserve">
+    <value>Отмена вскрытия тары успешно зафиксирована.</value>
+  </data>
+  <data name="EgaisMarkUnsealViewTitle" xml:space="preserve">
+    <value>ПРОСКАНИРУЙТЕ АКЦИЗНУЮ МАРКУ ИЛИ ШК ТАРЫ</value>
+  </data>
+  <data name="EgaisMarkUnsealSuccessful" xml:space="preserve">
+    <value>Вскрытие тары успешно зафиксировано.</value>
+  </data>
+  <data name="EgaisOperation" xml:space="preserve">
+    <value>ОПЕРАЦИЯ</value>
+  </data>
+  <data name="EgaisOrganization" xml:space="preserve">
+    <value>ОРГАНИЗАЦИЯ</value>
+  </data>
+  <data name="EgaisReturnTare" xml:space="preserve">
+    <value>Возврат тары</value>
+  </data>
+  <data name="EgaisTareAlreadyUnsealed" xml:space="preserve">
+    <value>Эту тару вы уже открывали.</value>
+  </data>
+  <data name="EgaisTareNotYetUnsealed" xml:space="preserve">
+    <value>Эту тару вы еще не открывали.</value>
+  </data>
+  <data name="EgaisUnsealTare" xml:space="preserve">
+    <value>Вскрытие тары</value>
+  </data>
+  <data name="EgaisWriteoffType" xml:space="preserve">
+    <value>ПРИЧИНА СПИСАНИЯ</value>
+  </data>
+  <data name="ErrorReadBarcodeFormat" xml:space="preserve">
+    <value>Ошибка при считывании штрихкода: {0}.</value>
+  </data>
+  <data name="ReadingBarCode" xml:space="preserve">
+    <value>Считывание штрихкода...</value>
+  </data>
+  <data name="UnsealingEgaisProduct" xml:space="preserve">
+    <value>Вскрытие тары...</value>
+  </data>
+  <data name="EgaisIsNotConfigured" xml:space="preserve">
+    <value>Необходимо провести настройку ЕГАИС в РМС.</value>
+  </data>
+  <data name="DataExchangeWithServer" xml:space="preserve">
+    <value>Обмен данными с сервером РМС...</value>
+  </data>
+  <data name="ServerIsUnavailableErrorMessage" xml:space="preserve">
+    <value>Сервер недоступен.</value>
+  </data>
+  <data name="EditUnpeackedAmountHeaderText" xml:space="preserve">
+    <value>Введите объем отпускаемой продукции в литрах</value>
+  </data>
+  <data name="UnpeackedAmountIsNotSet" xml:space="preserve">
+    <value>Не указан объем отпускаемой продукции</value>
+  </data>
+  <data name="IncomingInvoicesTabTitle" xml:space="preserve">
+    <value>Приходные накладные ЕГАИС</value>
+  </data>
+  <data name="DocumentNumberColumnTitle" xml:space="preserve">
+    <value>Номер входящего
+документа</value>
+  </data>
+  <data name="CreationDateColumnTitle" xml:space="preserve">
+    <value>Дата составления</value>
+  </data>
+  <data name="SupplierColumnTitle" xml:space="preserve">
+    <value>Поставщик</value>
+  </data>
+  <data name="EgaisInvoiceItemsConfirmStatusColumnTitle" xml:space="preserve">
+    <value>Статус подтверждения</value>
+  </data>
+  <data name="StatusColumnTitle" xml:space="preserve">
+    <value>Статус накладной</value>
+  </data>
+  <data name="IncomingInvoiceHeader" xml:space="preserve">
+    <value>Приходная накладная ЕГАИС</value>
+  </data>
+  <data name="IncomingInvoiceProblemButtonCaption" xml:space="preserve">
+    <value>Ошибка</value>
+  </data>
+  <data name="IncomingInvoiceConfirmButtonCaption" xml:space="preserve">
+    <value>Подтвердить</value>
+  </data>
+  <data name="EgaisDocumentNumberHeaderColon" xml:space="preserve">
+    <value>Номер входящего документа: </value>
+  </data>
+  <data name="EgaisCreationDateHeaderColon" xml:space="preserve">
+    <value>Дата составления: </value>
+  </data>
+  <data name="SupplierHeaderColon" xml:space="preserve">
+    <value>Поставщик: </value>
+  </data>
+  <data name="NumColumnTitle" xml:space="preserve">
+    <value>№</value>
+  </data>
+  <data name="BRegIdColumnTitle" xml:space="preserve">
+    <value>Справка 2</value>
+  </data>
+  <data name="EgaisProductFullNameColumnTitle" xml:space="preserve">
+    <value>Наименование товара в ЕГАИС</value>
+  </data>
+  <data name="CapacityColumnTitle" xml:space="preserve">
+    <value>Количество
+в фасовке</value>
+  </data>
+  <data name="AmountColumnTitle" xml:space="preserve">
+    <value>Присланное
+количество</value>
+  </data>
+  <data name="ActualAmountColumnTitle" xml:space="preserve">
+    <value>Подтвержд.
+количество</value>
+  </data>
+  <data name="NotPacked" xml:space="preserve">
+    <value>н/ф</value>
+  </data>
+  <data name="EgaisInvoiceStatusInfoTitle" xml:space="preserve">
+    <value>Информация о статусе накладной</value>
+  </data>
+  <data name="EgaisSentErrorMessageHeader" xml:space="preserve">
+    <value>Ошибка отправки</value>
+  </data>
+  <data name="InvoiceConfirmDataHeader" xml:space="preserve">
+    <value>Данные о подтверждении накладной в ЕГАИС</value>
+  </data>
+  <data name="TicketActReceiveDataHeader" xml:space="preserve">
+    <value>Данные о приеме акта расхождений в ЕГАИС</value>
+  </data>
+  <data name="InvoiceSupplierConfirmDataHeader" xml:space="preserve">
+    <value>Данные о подтверждении накладной у грузоотправителя</value>
+  </data>
+  <data name="TicketActProcessDataHeader" xml:space="preserve">
+    <value>Данные о проведении накладной в ЕГАИС</value>
+  </data>
+  <data name="EgaisInvoiceStatusInfoEmptyDescription" xml:space="preserve">
+    <value>Нет дополнительной информации по накладной.</value>
+  </data>
+  <data name="EgaisInvoiceItemsConfirmStatusNew" xml:space="preserve">
+    <value>Новая</value>
+  </data>
+  <data name="EgaisInvoiceItemsConfirmStatusConfirmed" xml:space="preserve">
+    <value>Подтверждены все позиции</value>
+  </data>
+  <data name="EgaisInvoiceItemsConfirmStatusConfirmedWithChanges" xml:space="preserve">
+    <value>Позиции подтверждены с расхождениями</value>
+  </data>
+  <data name="EditBeerActualAmountHeaderText" xml:space="preserve">
+    <value>Введите подтвержденное количество</value>
+  </data>
+  <data name="AmountHeaderColon" xml:space="preserve">
+    <value>Присланное количество: </value>
+  </data>
+  <data name="ScanMarkForConfirmHeaderMessage" xml:space="preserve">
+    <value>Просканируйте марку для ее подтверждения</value>
+  </data>
+  <data name="ActualAmountHeader" xml:space="preserve">
+    <value>Подтвержденное количество: </value>
+  </data>
+  <data name="MarkConfirmSuccessFormat" xml:space="preserve">
+    <value>Марка {0} успешно подтверждена</value>
+  </data>
+  <data name="MarkConfirmRepeatedFormat" xml:space="preserve">
+    <value>Марка {0} подтверждена повторно</value>
+  </data>
+  <data name="MarkConfirmNotFoundFormat" xml:space="preserve">
+    <value>Марка {0} не найдена</value>
+  </data>
+  <data name="BoxColumnTitle" xml:space="preserve">
+    <value>Коробка</value>
+  </data>
+  <data name="MarkColumnTitle" xml:space="preserve">
+    <value>Марка</value>
+  </data>
+  <data name="ConfirmedColumnTitle" xml:space="preserve">
+    <value>Подтверждена</value>
+  </data>
+  <data name="ConfirmCountColumnTitle" xml:space="preserve">
+    <value>Считана раз</value>
+  </data>
+  <data name="PackedItemAmountShouldBeIntegerHint" xml:space="preserve">
+    <value>Для фасованного товара количество должно быть целым числом</value>
+  </data>
+  <data name="CantFindEgaisMark" xml:space="preserve">
+    <value>Марка не найдена в системе.</value>
+  </data>
+  <data name="CantCancelTareUnsealedOutFront" xml:space="preserve">
+    <value>Отменять операцию можно только для тар, вскрытых на терминалах данной группы.</value>
+  </data>
+  <data name="MarkUnsealErrorReadBarcodeFormat" xml:space="preserve">
+    <value>Ошибка при считывании штрихкода:
+{0}.</value>
+  </data>
+</root>

@@ -1,0 +1,313 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="WaitersDebts" xml:space="preserve">
+    <value>Задолженность сотрудников</value>
+  </data>
+  <data name="WaiterTitle" xml:space="preserve">
+    <value>Сотрудник</value>
+  </data>
+  <data name="CashRegisterTitle" xml:space="preserve">
+    <value>Фискальный регистратор</value>
+  </data>
+  <data name="DebtTitle" xml:space="preserve">
+    <value>Задолженность</value>
+  </data>
+  <data name="UpdateDebts" xml:space="preserve">
+    <value>ОБНОВИТЬ</value>
+  </data>
+  <data name="NoDefaultCafeSession" xml:space="preserve">
+    <value>Кассовая смена закрыта.</value>
+  </data>
+  <data name="NoPayIn" xml:space="preserve">
+    <value>Нет подходящего типа внесения.</value>
+  </data>
+  <data name="NoPayOutWarning" xml:space="preserve">
+    <value>Нет подходящего типа изъятия.</value>
+  </data>
+  <data name="WarningFormat" xml:space="preserve">
+    <value>{0}
+Операции по управлению задолженностями сотрудников невозможны.</value>
+  </data>
+  <data name="NoDedtOnWaiterInfoFormat" xml:space="preserve">
+    <value>У сотрудника {0} нет задолженности.</value>
+  </data>
+  <data name="PayInOnWaiterYesNoFormat" xml:space="preserve">
+    <value>Задолженность сотрудника {0} на {1} составляет {2}
+Хотите осуществить внесение?</value>
+    <comment>{0} - имя сотрудника;{1} - название ФРа;{2} - сумма</comment>
+  </data>
+  <data name="PayOutOnWaiterYesNoFormat" xml:space="preserve">
+    <value>Излишек у сотрудника {0} на {1} составляет {2}
+Хотите осуществить изъятие?</value>
+    <comment>{0} - имя сотрудника;{1} - название ФРа;{2} - сумма</comment>
+  </data>
+  <data name="PayOutDebtRemoteCashRegisterFormat" xml:space="preserve">
+    <value>Задолженность сотрудника {0} на {1} составляет {2}
+{3}</value>
+    <comment>{0} - имя сотрудника;{1} - название ФРа;{2} - сумма; {3} - дополнительная информация</comment>
+  </data>
+  <data name="DebtRemoteCashRegisterFormat" xml:space="preserve">
+    <value>Изменение задолженности возможно только на терминале «{0}».</value>
+    <comment>{0} - терминал</comment>
+  </data>
+  <data name="NoPaymentType" xml:space="preserve">
+    <value>Нет подходящего типа оплаты.</value>
+  </data>
+  <data name="NoOrder" xml:space="preserve">
+    <value>Заказ не найден.</value>
+  </data>
+  <data name="NoPermissionsToPayAsWaiter" xml:space="preserve">
+    <value>У сотрудника недостаточно прав для оплаты в качестве официанта.</value>
+  </data>
+  <data name="TimePayProductsInOrder" xml:space="preserve">
+    <value>В заказе есть повременные услуги.</value>
+  </data>
+  <data name="PaymentSumNotEnough" xml:space="preserve">
+    <value>Введенной суммы недостаточно для оплаты.</value>
+  </data>
+  <data name="PaymentSumNotIntegral" xml:space="preserve">
+    <value>Введенная сумма для оплаты не может быть дробной.</value>
+  </data>
+  <data name="PaymentSumTooLarge" xml:space="preserve">
+    <value>Введенная сумма слишком большая.</value>
+  </data>
+  <data name="PaymentItemsInOrder" xml:space="preserve">
+    <value>В заказе уже есть элементы оплаты.</value>
+  </data>
+  <data name="RemotePaymentUnableFormat" xml:space="preserve">
+    <value>{0} Дистанционная оплата невозможна.</value>
+  </data>
+  <data name="NotAllowedToPayNotBillOrder" xml:space="preserve">
+    <value>Оплата заказа невозможна без пречека.</value>
+  </data>
+  <data name="CannotPayBanquetOrder" xml:space="preserve">
+    <value>Оплата банкета не поддерживается.</value>
+  </data>
+  <data name="OrderAlreadyLocked" xml:space="preserve">
+    <value>Заказ редактируется на другом терминале.</value>
+  </data>
+  <data name="OrderIsNotOpened" xml:space="preserve">
+    <value>Заказ уже закрыт.</value>
+  </data>
+  <data name="PaymentTypeNotSelected" xml:space="preserve">
+    <value>Не выбран тип оплаты.</value>
+  </data>
+  <data name="NoUserError" xml:space="preserve">
+    <value>Сотрудник не найден.</value>
+  </data>
+  <data name="NoUserPermissionsToAcceptingPayments" xml:space="preserve">
+    <value>У сотрудника недостаточно прав для принятия платежей.</value>
+  </data> 
+  <data name="NoUserPermissionsToPayOthersOrder" xml:space="preserve">
+    <value>У Вас нет доступа к чужим заказам.</value>
+  </data>
+  <data name="NoUserOpenedPersonalSession" xml:space="preserve">
+    <value>У Вас не открыта личная смена.</value>
+  </data>
+  <data name="NoUserWithCashDrawer" xml:space="preserve">
+    <value>Операция запрещена. Сотруднику необходимо назначить денежный ящик ФРа.</value>
+  </data>
+  <data name="MustSplitOrderQuestion" xml:space="preserve">
+    <value>До оплаты заказ должен быть разделен по местам приготовления. Разделить заказ?</value>
+  </data>
+  <data name="CanSplitOrderQuestion" xml:space="preserve">
+    <value>До оплаты заказ может быть разделен по местам приготовления. Разделить заказ?</value>
+  </data>
+  <data name="DebtSumFormat" xml:space="preserve">
+    <value>Сумма долга: {0}</value>
+  </data>
+  <data name="OverpaymentSumFormat" xml:space="preserve">
+    <value>Сумма переплаты: {0}</value>
+  </data>
+  <data name="CookingPlacesWithEmptyStores" xml:space="preserve">
+    <value>В данном заказе присутствуют позиции из отделения, для которого не задан склад.</value>
+  </data>
+  <data name="NoPermissionsToApprovePointsAccural" xml:space="preserve">
+    <value>У сотрудника недостаточно прав для начисления бонусных баллов.</value>
+  </data>
+  <data name="UncombinablePaymentTypes" xml:space="preserve">
+    <value>В заказе присутствуют некомбинируемые типы оплаты.</value>
+  </data>
+  <data name="OrderSumFormat" xml:space="preserve">
+    <value>Сумма заказа: {0}</value>
+  </data>
+  <data name="OverpaymentFormat" xml:space="preserve">
+    <value>{0}
+переплата</value>
+    <comment>{0} - сумма переплаты</comment>
+  </data>
+  <data name="PaySumFormat" xml:space="preserve">
+    <value>Сумма к оплате: {0}</value>
+  </data>
+  <data name="PrepaySumFormat" xml:space="preserve">
+    <value>Сумма предоплаты: {0}</value>
+  </data>
+  <data name="PayOutOnCourierFormat" xml:space="preserve">
+    <value>Изъятия на курьера за доставку {0}</value>
+    <comment>{0} - номер доставки</comment>
+  </data>
+  <data name="NotChangedCourierDebtWarningFormat" xml:space="preserve">
+    <value>Изъятие на курьера {0} на сумму {1} не сделано. Проделайте эту операцию вручную.</value>
+    <comment>{0} - имя курьера; {1} - сумма операции</comment>
+  </data>
+  <data name="NotChangeCourierDebtAfterStorno" xml:space="preserve">
+    <value>Автоматическое внесение на курьера после возврата чека не сделано. Проделайте эту операцию вручную.</value>
+  </data>
+  <data name="AutoPayInOnCourierFormat" xml:space="preserve">
+    <value>Автоматическое внесение на курьера за доставку {0}.</value>
+  </data>
+  <data name="AutoPayOutOnCourierFormat" xml:space="preserve">
+    <value>Автоматическое изъятие на курьера за доставку {0}.</value>
+  </data>
+  <data name="WarningThresholdOfDebtSumForCourier" xml:space="preserve">
+    <value>У курьера {0} сумма задолженности больше допустимой {1}</value>
+  </data>
+  <data name="BlockingThresholdOfDebtSumForCourier" xml:space="preserve">
+    <value>У курьера {0} сумма задолженности больше максимальной {1} 
+Необходимо сдать выручку.
+Продолжить?</value>
+  </data>
+  <data name="PayInOnCourierWarningFormat" xml:space="preserve">
+    <value>Внесение на курьера {0} на сумму {1} не сделано. Проделайте эту операцию вручную.</value>
+  </data>
+  <data name="BlockingThresholdOfDebtSumForCashier" xml:space="preserve">
+    <value>У текущего сотрудника сумма задолженности больше максимальной {0}
+Необходимо сдать выручку. 
+Оплатить и назначить курьером текущего сотрудника?</value>
+  </data>
+  <data name="WarningThresholdOfDebtSumForCurrentUser" xml:space="preserve">
+    <value>У текущего сотрудника сумма задолженности больше допустимой {0}</value>
+  </data>
+  <data name="PaymentTypeNotConfigured" xml:space="preserve">
+    <value>Не настроен тип оплаты.</value>
+  </data>
+  <data name="DeliveryOrderPrepayAndCloseOnDifferentTerminal" xml:space="preserve">
+    <value>Предоплата и закрытие доставки на разных терминалах запрещены.</value>
+  </data>
+  <data name="DeliveryOrderPurchases" xml:space="preserve">
+    <value>Покупка позиций заказа не поддерживается в доставках.</value>
+  </data>
+  <data name="DeliveryOrderUnconfirmedStatus" xml:space="preserve">
+    <value>Доставка в статусе «Не подтверждена».</value>
+  </data>
+  <data name="NoCashRegister" xml:space="preserve">
+    <value>Отсутствует фискальный регистратор.</value>
+  </data>
+</root>

@@ -1,0 +1,515 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AcceptedTime" xml:space="preserve">
+    <value>ПРИНЯТО</value>
+  </data>
+  <data name="AcceptedHoursTotal" xml:space="preserve">
+    <value>ИТОГО ЗАЧТЕНО ЧАСОВ</value>
+  </data>
+  <data name="AccountedTime" xml:space="preserve">
+    <value>Зачтено</value>
+  </data>
+  <data name="AddAttendance" xml:space="preserve">
+    <value>Добавить явку</value>
+  </data>
+  <data name="AllAttendancesFilter" xml:space="preserve">
+    <value>Все явки</value>
+  </data>
+  <data name="AllEmployeePositions" xml:space="preserve">
+    <value>Все должности</value>
+  </data>
+  <data name="AttendancesView" xml:space="preserve">
+    <value>Просмотр явок</value>
+  </data>
+  <data name="ButtonsInstruction" xml:space="preserve">
+    <value>«В рамках расписания» —  засчитывается пересечение принятого времени и расписания.
+
+«По времени» —  засчитывается все принятое время вне зависимости от расписания.
+
+«Не засчитывать» —  явка не засчитывается.</value>
+  </data>
+  <data name="BySchedule" xml:space="preserve">
+    <value>ПО РАСПИСАНИЮ</value>
+  </data>
+  <data name="ClosedAttendancesFilter" xml:space="preserve">
+    <value>Закрытые явки</value>
+  </data>
+  <data name="CloseOpenAttendances" xml:space="preserve">
+    <value>Закрыть открытые явки</value>
+  </data>
+  <data name="Coming" xml:space="preserve">
+    <value>Приход</value>
+  </data>
+  <data name="EditAttendances" xml:space="preserve">
+    <value>Редактирование явок</value>
+  </data>
+  <data name="GrayZoneFilter" xml:space="preserve">
+    <value>Серая зона</value>
+  </data>
+  <data name="GroupEmployees" xml:space="preserve">
+    <value>ГРУППИРОВАТЬ</value>
+  </data>
+  <data name="HasAttendanceFilter" xml:space="preserve">
+    <value>Есть явки</value>
+  </data>
+  <data name="HasShiftInScheduleFilter" xml:space="preserve">
+    <value>Есть смены в расписании</value>
+  </data>
+  <data name="EmployeesFromAllDepartments" xml:space="preserve">
+    <value>Сотрудники всех предприятий</value>
+  </data>
+  <data name="Leaving" xml:space="preserve">
+    <value>Уход</value>
+  </data>
+  <data name="Note" xml:space="preserve">
+    <value>Примечание</value>
+  </data>
+  <data name="OpenedAttendancesFilter" xml:space="preserve">
+    <value>Открытые явки</value>
+  </data>
+  <data name="Time" xml:space="preserve">
+    <value>Время</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>Тип</value>
+  </data>
+  <data name="Absence" xml:space="preserve">
+    <value>прогул</value>
+  </data>
+  <data name="ComingLate" xml:space="preserve">
+    <value>опоздание</value>
+  </data>
+  <data name="EarlyEnd" xml:space="preserve">
+    <value>ранний уход</value>
+  </data>
+  <data name="NoAttendances" xml:space="preserve">
+    <value>нет явок</value>
+  </data>
+  <data name="NoShiftsInSchedule" xml:space="preserve">
+    <value>нет смен в расписании</value>
+  </data>
+  <data name="RetrievingServerData" xml:space="preserve">
+    <value>Получение данных с сервера...</value>
+  </data>
+  <data name="ChooseAccountingDate" xml:space="preserve">
+    <value>Выберите дату</value>
+  </data>
+  <data name="NoDate" xml:space="preserve">
+    <value>--:--</value>
+  </data>
+  <data name="ServerUnavailable" xml:space="preserve">
+    <value>Получение информации о явках невозможно: недоступен сервер.</value>
+  </data>
+  <data name="RetrieveServerDataError" xml:space="preserve">
+    <value>При получении с сервера информации о явках произошла ошибка.</value>
+  </data>
+  <data name="ExistOpenCafeSession" xml:space="preserve">
+    <value>Верификация явок проводиться не будет: есть другие открытые кассовые смены.
+
+Открытые кассовые смены:
+    
+{0}</value>
+  </data>
+  <data name="AttendancesAreAlreadyVerified" xml:space="preserve">
+    <value>Верификация явок проводиться не будет: операция уже проводилась на одной из касс.</value>
+  </data>
+  <data name="UnableGetCafeSessionsInfo" xml:space="preserve">
+    <value>Не удалось получить информацию о кассовых сменах с главной кассы.
+Повторите попытку позже.</value>
+  </data>
+  <data name="NotConfirmed" xml:space="preserve">
+    <value>Не подтверждена</value>
+  </data>
+  <data name="NotConfirmedShortText" xml:space="preserve">
+    <value>Не подтв.</value>
+  </data>
+  <data name="AcceptedHours" xml:space="preserve">
+    <value>ЗАЧТЕНО ЧАСОВ</value>
+  </data>
+  <data name="AccountMode" xml:space="preserve">
+    <value>ЗАСЧИТЫВАТЬ</value>
+  </data>
+  <data name="AccountModeFull" xml:space="preserve">
+    <value>По времени</value>
+  </data>
+  <data name="AccountModeNone" xml:space="preserve">
+    <value>Не засчитывать</value>
+  </data>
+  <data name="AccountModeSchedule" xml:space="preserve">
+    <value>В рамках расписания</value>
+  </data>
+  <data name="AccountModeFullShortText" xml:space="preserve">
+    <value>По врем.</value>
+  </data>
+  <data name="AccountModeNoneShortText" xml:space="preserve">
+    <value>Не зачт.</value>
+  </data>
+  <data name="AccountModeScheduleShortText" xml:space="preserve">
+    <value>По расп.</value>
+  </data>
+  <data name="Attendances" xml:space="preserve">
+    <value>Явки</value>
+  </data>
+  <data name="EffectiveTime" xml:space="preserve">
+    <value>ФАКТИЧЕСКИ</value>
+  </data>
+  <data name="Schedule" xml:space="preserve">
+    <value>Расписание</value>
+  </data>
+  <data name="SetAttendancesEffective" xml:space="preserve">
+    <value>Установить по факту</value>
+  </data>
+  <data name="SetAttendancesSchedule" xml:space="preserve">
+    <value>Установить по расписанию</value>
+  </data>
+  <data name="SendingServerData" xml:space="preserve">
+    <value>Отправка данных на сервер...</value>
+  </data>
+  <data name="ClosingPersonalSession" xml:space="preserve">
+    <value>Закрывается личная смена...</value>
+  </data>
+  <data name="ClosingPersonalSessions" xml:space="preserve">
+    <value>Закрываются личные смены...</value>
+  </data>
+  <data name="ConfirmChangingDateIfAttendancesChanged" xml:space="preserve">
+    <value>Явки были отредактированы. Все равно изменить текущую дату?</value>
+  </data>
+  <data name="ConfirmClosingSessionIfAttendancesChanged" xml:space="preserve">
+    <value>Явки были изменены. Отменить изменения и закрыть личную смену?</value>
+  </data>
+  <data name="ConfirmClosingSessionIfServerUnavailable" xml:space="preserve">
+    <value>Отсутствует подключение к серверу.
+Смена может быть закрыта, но при невозможности получить
+обновленные данные с сервера вы будете возвращены
+в меню дополнительных операций. Продолжить?</value>
+  </data>
+  <data name="ErrorClosingPersonalSession" xml:space="preserve">
+    <value>Ошибка при закрытии личной смены.</value>
+  </data>
+  <data name="ErrorRetrieveServerDataCannotContinueEdit" xml:space="preserve">
+    <value>Ошибка при получении обновления с сервера. Дальнейшее редактирование явок невозможно.</value>
+  </data>
+  <data name="ErrorSendingDataToServer" xml:space="preserve">
+    <value>При отправке данных на сервер возникла ошибка.</value>
+  </data>
+  <data name="ErrorSessionAlreadyClosed" xml:space="preserve">
+    <value>Личная смена пользователя уже закрыта.</value>
+  </data>
+  <data name="EditAttendance" xml:space="preserve">
+    <value>Редактирование явки</value>
+  </data>
+  <data name="AttendanceAddition" xml:space="preserve">
+    <value>Добавление явки</value>
+  </data>
+  <data name="DeleteAttendance" xml:space="preserve">
+    <value>Удаление явки</value>
+  </data>
+  <data name="AttendanceDeletionConfirmation" xml:space="preserve">
+    <value>Удалить явку?</value>
+  </data>
+  <data name="AttendanceTooLongTemplate" xml:space="preserve">
+    <value>Длительность явки превышает установленный лимит ({0:00}:{1:00}).
+Пожалуйста, уменьшите длительность явки.</value>
+  </data>
+  <data name="SomeAttendancesTooLongTemplate" xml:space="preserve">
+    <value>Длительность одной или нескольких явок
+превышает установленный лимит ({0:00}:{1:00}).
+Пожалуйста, уменьшите длительность явки.</value>
+  </data>
+  <data name="SomeOpenAttendancesOfEmployeeTooLongTemplate" xml:space="preserve">
+    <value>Длительность одной или нескольких открытых явок сотрудника {0}
+превышает установленный лимит ({1:00}:{2:00}).
+Пожалуйста, закройте явки.</value>
+  </data>
+  <data name="SomeCloseAttendancesOfEmployeeTooLongTemplate" xml:space="preserve">
+    <value>Длительность одной или нескольких явок сотрудника {0}
+превышает установленный лимит ({1:00}:{2:00}).
+Пожалуйста, уменьшите длительность явки.</value>
+  </data>
+  <data name="TotalAttendancesLengthTooLongForPositionTemplate" xml:space="preserve">
+    <value>Суммарная длительность явок превышает установленный
+для должности «{0}» лимит ({1:00}:{2:00}).
+Пожалуйста, уменьшите длительность явки.</value>
+  </data>
+  <data name="TotalAttendancesLengthOfEmployeeTooLongForPositionTemplate" xml:space="preserve">
+    <value>Суммарная длительность явок сотрудника {0} превышает установленный
+для должности «{1}» лимит ({2:00}:{3:00}).
+Пожалуйста, уменьшите длительность явки.</value>
+  </data>
+  <data name="ServerUnavailableOpenOperationalDay" xml:space="preserve">
+    <value>Открытие операционного дня невозможно: недоступен сервер.</value>
+  </data>
+  <data name="ServerUnavailableCloseOperationalDay" xml:space="preserve">
+    <value>Закрытие операционного дня невозможно: недоступен сервер.</value>
+  </data>
+  <data name="NoShifts" xml:space="preserve">
+    <value>Нет смен</value>
+  </data>
+  <data name="ViolationDisplayFormatMinutesOnly" xml:space="preserve">
+    <value>{0} {1} мин.</value>
+    <comment>{0} — название нарушения, {1} — минуты</comment>
+  </data>
+  <data name="ViolationDisplayFormatHoursMinutes" xml:space="preserve">
+    <value>{0} {1} ч. {2} мин.</value>
+    <comment>{0} — название нарушения, {1} — часы, {2} — минуты</comment>
+  </data>
+  <data name="ConfirmInactiveEmployeeAttendanceCreation" xml:space="preserve">
+    <value>Сотрудник неактивен. Вы уверены, что хотите создать явку?</value>
+  </data>
+  <data name="ViolationsDisplayFormat" xml:space="preserve">
+    <value>({0})</value>
+    <comment>{0} is all violations string</comment>
+  </data>
+  <data name="UnableToEditConfirmedAttendance" xml:space="preserve">
+    <value>Нельзя редактировать явку, которая уже была подтверждена.</value>
+  </data>
+  <data name="UnableToEditOpenAttendance" xml:space="preserve">
+    <value>Нельзя редактировать открытую явку.
+Закройте явку, чтобы отредактировать ее.</value>
+  </data>
+  <data name="CloseOperationalDayConfirmation" xml:space="preserve">
+    <value>Операционный день будет закрыт.
+Нажмите «OK» для продолжения.</value>
+  </data>
+  <data name="AttendancesEditInstructions" xml:space="preserve">
+    <value>Чтобы создать или отредактировать явки сотрудника, найдите его в таблице
+и нажмите на ячейку явки напротив его фамилии.</value>
+  </data>
+  <data name="Hint" xml:space="preserve">
+    <value>Подсказка</value>
+  </data>
+  <data name="OperationalDayOpenWizardStepTemplate" xml:space="preserve">
+    <value>Открытие операционного дня Шаг {0}.</value>
+  </data>
+  <data name="OperationalDayCloseWizardStepTemplate" xml:space="preserve">
+    <value>Закрытие операционного дня Шаг {0}.</value>
+  </data>
+  <data name="Backward" xml:space="preserve">
+    <value>&lt; Назад</value>
+  </data>
+  <data name="Forward" xml:space="preserve">
+    <value>Далее &gt;</value>
+  </data>
+  <data name="OperationalDayWizardStep1Instructions" xml:space="preserve">
+    <value>Проверьте открытые явки и закройте явки сотрудников, которые
+закончили работу. Принятое время вы сможете отредактировать позднее.</value>
+  </data>
+  <data name="OperationalDayWizardStep2Instructions" xml:space="preserve">
+    <value>Убедитесь, что все сотрудники с незакрытыми явками продолжают работу.</value>
+  </data>
+  <data name="OperationalDayWizardStep3Instructions" xml:space="preserve">
+    <value>Проверьте закрытые явки и проставьте время работы сотрудников принятое к оплате.
+По умолчанию явки принимаются по фактическому времени.</value>
+  </data>
+  <data name="OperationalDayWizardStep4Instructions" xml:space="preserve">
+    <value>Проверьте правильность отчета по явкам.
+Если отчет верен, нажмите «Дальше» для его печати.</value>
+  </data>
+  <data name="CloseOpenAttendancesButtonText" xml:space="preserve">
+    <value>ЗАКРЫТЬ ВСЕ ОТКРЫТЫЕ ЯВКИ
+ТЕКУЩИМ ВРЕМЕНЕМ
+(все сотрудники закончили работу)</value>
+  </data>
+  <data name="OperationalDayWizardStep2WarningPart1" xml:space="preserve">
+    <value>Явки {0} {1} остаются незакрытыми. Пожалуйста, убедитесь, что эти сотрудники продолжают работу.</value>
+  </data>
+  <data name="EmployeeWordPluralForms" xml:space="preserve">
+    <value>сотрудника;сотрудников</value>
+  </data>
+  <data name="OperationalDayWizardStep2WarningPart2" xml:space="preserve">
+    <value>Чтобы вернуться и закрыть эти явки, нажмите «Назад».</value>
+  </data>
+  <data name="OperationalDayWizardStep2WarningPart3" xml:space="preserve">
+    <value>Если явки проверены и должны остаться открытыми, нажмите «Далее».</value>
+  </data>
+  <data name="Attention" xml:space="preserve">
+    <value>Внимание!</value>
+  </data>
+  <data name="AttendancesCloseServerUnavailable" xml:space="preserve">
+    <value>Закрытие явок невозможно: недоступен сервер</value>
+  </data>
+  <data name="ConfirmAttendanceCloseTitle" xml:space="preserve">
+    <value>Закрытие явки</value>
+  </data>
+  <data name="ConfirmEmployeeAttendancesClose" xml:space="preserve">
+    <value>Закрыть открытую явку сотрудника {0}?
+Внимание! Отменить закрытие явки невозможно.</value>
+  </data>
+  <data name="ConfirmAlEmloyeesAttendancesClose" xml:space="preserve">
+    <value>Закрыть открытые явки всех сотрудников?
+Внимание! Отменить закрытие явок невозможно.</value>
+  </data>
+  <data name="Begin" xml:space="preserve">
+    <value>НАЧАЛО</value>
+  </data>
+  <data name="End" xml:space="preserve">
+    <value>КОНЕЦ</value>
+  </data>
+  <data name="Length" xml:space="preserve">
+    <value>ПРОДОЛЖИТЕЛЬНОСТЬ</value>
+  </data>
+  <data name="WholeDayWordPluralForms" xml:space="preserve">
+    <value>сутки;суток</value>
+  </data>
+  <data name="MoreThanSomeDaysTemplate" xml:space="preserve">
+    <value>более {0} суток</value>
+  </data>
+  <data name="CantNavigateForwardServerUnavailable" xml:space="preserve">
+    <value>Переход к следующему шагу верификации явок невозможен:
+    недоступен сервер.
+    Пропустить шаги верификации явок?
+    </value>
+  </data>
+  <data name="CantNavigateBackwardServerUnavailable" xml:space="preserve">
+    <value>Переход к предыдущему шагу верификации явок невозможен:
+недоступен сервер.</value>
+  </data>
+  <data name="IncorrectAttendanceLowerStartTimeLimit_CurrentCafeSession" xml:space="preserve">
+    <value>Время начала явки задано раньше времени начала текущей кассовой смены {0:g}.
+Пожалуйста, исправьте время.</value>
+  </data>
+  <data name="IncorrectAttendanceLowerStartTimeLimit_PreviousCafeSession" xml:space="preserve">
+    <value>Время начала явки задано раньше времени начала прошлой кассовой смены {0:g}.
+Пожалуйста, исправьте время.</value>
+  </data>
+  <data name="IncorrectAttendanceUpperStartTimeLimit" xml:space="preserve">
+    <value>Время начала явки задано позже текущего времени. Пожалуйста, исправьте время.</value>
+  </data>
+  <data name="IncorrectAttendanceLowerEndTimeLimit" xml:space="preserve">
+    <value>Время окончания явки задано раньше времени ее начала. Пожалуйста, исправьте время.</value>
+  </data>
+  <data name="IncorrectAttendanceUpperEndTimeLimit" xml:space="preserve">
+    <value>Время окончания явки задано позже допустимого времени закрытия явки {0:g}.
+Пожалуйста, исправьте время.</value>
+  </data>
+  <data name="IntersectingAttendancesTime" xml:space="preserve">
+    <value>Сотрудник {0} имеет пересекающиеся по времени явки.
+    Пожалуйста, исправьте время или удалите одну из явок.</value>
+  </data>
+  <data name="Attendance" xml:space="preserve">
+    <value>Явка</value>
+  </data>
+  <data name="ServerUnavailableEmployeeAttendancesReport" xml:space="preserve">
+    <value>Отсутствует подключение к серверу. Верификация явок сотрудников невозможна.</value>
+  </data>
+  <data name="CantNavigateVerificationAttendanceDisabled" xml:space="preserve">
+    <value>Переход к следующему шагу верификации явок невозможен: верификация явок отключена.</value>
+  </data>
+</root>

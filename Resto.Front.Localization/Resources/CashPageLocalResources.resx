@@ -1,0 +1,473 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CashSessionInfo" xml:space="preserve">
+    <value>Смена #{1:n0} открыта: {0:g}
+Менеджер:
+{2}
+</value>
+  </data>
+  <data name="CashSessionOpened" xml:space="preserve">
+    <value>Смена открыта: {0:g}</value>
+  </data>
+  <data name="CloseCafeSessionError" xml:space="preserve">
+    <value>Не удалось закрыть кассовую смену</value>
+  </data>
+  <data name="ClosedOrders" xml:space="preserve">
+    <value>Закрытые заказы</value>
+  </data>
+  <data name="ClosingSessionN" xml:space="preserve">
+    <value>Закрытие смены № {0:n0}</value>
+  </data>
+  <data name="EnterSearchStringTitle" xml:space="preserve">
+    <value>Введите строку для поиска</value>
+  </data>
+  <data name="NonProcessedItemsConfirmation" xml:space="preserve">
+    <value>Будут удалены все непроведенные оплаты.</value>
+  </data>
+  <data name="NoUnclosedOrders" xml:space="preserve">
+    <value>Незакрытых заказов нет</value>
+  </data>
+  <data name="NoPreliminaryOrders" xml:space="preserve">
+    <value>Предзаказов нет</value>
+  </data>
+  <data name="OrderStornFailedWindowTitle" xml:space="preserve">
+    <value>Ошибка при возврате чека</value>
+  </data>
+  <data name="PayInButtonLabel" xml:space="preserve">
+    <value>Внести деньги</value>
+  </data>
+  <data name="PayOutButtonLabel" xml:space="preserve">
+    <value>Изъять деньги</value>
+  </data>
+  <data name="Reports" xml:space="preserve">
+    <value>Отчеты</value>
+  </data>
+  <data name="Step1NullXReport" xml:space="preserve">
+    <value>Для открытия смены необходимо убедиться
+в корректной печати X-отчета и отсутствии пробитых чеков.</value>
+  </data>
+  <data name="Step1NullXReportNextPrompt" xml:space="preserve">
+    <value>Нажмите «ДАЛЕЕ» для печати нулевого X-отчета.</value>
+  </data>
+  <data name="Step1NullXReportCancelPrompt" xml:space="preserve">
+    <value>Нажмите «НАЗАД» для отмены открытия кассового терминала.</value>
+  </data>
+  <data name="Step1PrintXReport" xml:space="preserve">
+    <value>Печать нулевого X-отчета</value>
+  </data>
+  <data name="Step0WaitersDebts" xml:space="preserve">
+    <value>Задолженность сотрудников</value>
+  </data>
+  <data name="StepPreliminaryOrders" xml:space="preserve">
+    <value>Предзаказы</value>
+  </data>
+  <data name="Step1UnclosedOrders" xml:space="preserve">
+    <value>Проверка незакрытых заказов</value>
+  </data>
+  <data name="Step2CheckXReport" xml:space="preserve">
+    <value>Проверка корректности X-отчета</value>
+  </data>
+  <data name="Step3TakingCash" xml:space="preserve">
+    <value>Изъятие наличных</value>
+  </data>
+  <data name="Step5ZReport" xml:space="preserve">
+    <value>Z-отчет</value>
+  </data>
+  <data name="StepClosingSession" xml:space="preserve">
+    <value>Закрытие смены</value>
+  </data>
+  <data name="TakingCash" xml:space="preserve">
+    <value>Инкассация</value>
+  </data>
+  <data name="TakingCashStepLabel" xml:space="preserve">
+    <value>Изымите деньги из ящика крупными купюрами, укажите изымаемую сумму и подтвердите действие.</value>
+  </data>
+  <data name="PrintXReport" xml:space="preserve">
+    <value>Печать X-отчета</value>
+  </data>
+  <data name="UnableToPrintXReport" xml:space="preserve">
+    <value>Не удалось напечатать X-отчет</value>
+  </data>
+  <data name="OpenCashDrawer" xml:space="preserve">
+    <value>Открыть денежный ящик</value>
+  </data>
+  <data name="Plugins" xml:space="preserve">
+    <value>Плагины</value>
+  </data>
+  <data name="UnableToPayOutOnSessionClose" xml:space="preserve">
+    <value>Не удалось произвести изъятие</value>
+  </data>
+  <data name="CashRegisterSumDifersWithBookSum" xml:space="preserve">
+    <value>Сумма наличных в ФРе расходится с суммой в приложении. Произвести инкассацию в размере суммы на ФРе? В противном случае будет произведена инкассация в размере суммы в приложении.</value>
+  </data>
+  <data name="CloseCafeSessionOrdersInProcessing" xml:space="preserve">
+    <value>В данный момент производится закрытие одного или нескольких заказов.
+Закрытие кассовой смены невозможно. Пожалуйста, подождите окончания оплаты заказов.
+Если закрыть заказы невозможно, воспользуйтесь аварийным закрытием кассовой смены.</value>
+  </data>
+  <data name="PaymentOrdersInProcessing" xml:space="preserve">
+    <value>В данный момент производится закрытие одного или нескольких заказов.
+Пожалуйста, подождите окончания оплаты и повторите попытку.</value>
+  </data>
+  <data name="Step2Recalculate" xml:space="preserve">
+    <value>Контрольный пересчет</value>
+  </data>
+  <data name="Step4VerifyPersonal" xml:space="preserve">
+    <value>Верификация личных смен</value>
+  </data>
+  <data name="Step6Reports" xml:space="preserve">
+    <value>Отчеты</value>
+  </data>
+  <data name="TakingAllCashStepLabel" xml:space="preserve">
+    <value>Изымите все деньги из ящика и подтвердите действие.</value>
+  </data>
+  <data name="NotTakingCashStepLabel" xml:space="preserve">
+    <value>К денежному ящику привязаны другие сотрудники. Полное изъятие произойдет при отвязке последнего сотрудника. Сейчас изъятие происходить не будет.</value>
+  </data>
+  <data name="Step2EnterRestAmount" xml:space="preserve">
+    <value>Пересчитайте и укажите сумму, оставшуюся в кассе.</value>
+  </data>
+  <data name="Step11Shutdown" xml:space="preserve">
+    <value>Выключить терминал?</value>
+  </data>
+  <data name="RecalculateResult" xml:space="preserve">
+    <value>Результат контрольного пересчета</value>
+  </data>
+  <data name="StorningOrder" xml:space="preserve">
+    <value>Производится отмена оплаты заказа</value>
+  </data>
+  <data name="InsufficientRightsSessionClose" xml:space="preserve">
+    <value>Недостаточно прав для закрытия кассовой смены</value>
+  </data>
+  <data name="CloseSession" xml:space="preserve">
+    <value>Закрыть смену</value>
+  </data>
+  <data name="DeletingPayments" xml:space="preserve">
+    <value>Удаляем оплаты</value>
+  </data>
+  <data name="ExitFromCashPage" xml:space="preserve">
+    <value>Выйти с экрана кассы?</value>
+  </data>
+  <data name="OrderItemsCanceling" xml:space="preserve">
+    <value>Отменяется проведение элементов заказа</value>
+  </data>
+  <data name="Step7CloseEmployeeAttendances" xml:space="preserve">
+    <value>Верификация явок</value>
+  </data>
+  <data name="Step10EmployeeAttendancesReport" xml:space="preserve">
+    <value>Верификация явок</value>
+  </data>
+  <data name="Step8CheckEmployeeAttendances" xml:space="preserve">
+    <value>Верификация явок</value>
+  </data>
+  <data name="Step9SetTimeEmployeeAttendances" xml:space="preserve">
+    <value>Верификация явок</value>
+  </data>
+  <data name="RecalculateCashDrawerForUserLabel" xml:space="preserve">
+    <value>Пересчет для сотрудника:</value>
+  </data>
+  <data name="LinkedUsersToCashDrawerLabel" xml:space="preserve">
+    <value>К денежному ящику привязаны сотрудники:</value>
+  </data>
+  <data name="CashDrawerRecalculateInfo" xml:space="preserve">
+    <value>Проведите контрольный пересчет и введите сумму</value>
+  </data>
+  <data name="CorrectionChequeOperation" xml:space="preserve">
+    <value>Операция</value>
+  </data>
+  <data name="CorrectionChequeDocumentType" xml:space="preserve">
+    <value>Признак расчета</value>
+  </data>
+  <data name="CorrectionChequeTitle" xml:space="preserve">
+    <value>Чек коррекции</value>
+  </data>
+  <data name="CorrectionChequeType" xml:space="preserve">
+    <value>Тип коррекции</value>
+  </data>
+  <data name="CorrectionChequePaymentType" xml:space="preserve">
+    <value>Тип оплаты</value>
+  </data>
+  <data name="CorrectionChequeTaxRate" xml:space="preserve">
+    <value>Ставка НДС</value>
+  </data>
+  <data name="CorrectionChequeAdvancedMode" xml:space="preserve">
+    <value>Расширенный</value>
+  </data>
+  <data name="CorrectionChequeOperationSelectionPopupTitle" xml:space="preserve">
+    <value>Выберите операцию</value>
+  </data>
+  <data name="CorrectionChequePaymentTypeSelectionPopupTitle" xml:space="preserve">
+    <value>Выберите тип операции</value>
+  </data>
+  <data name="CorrectionChequeTaxRateSelectionPopupTitle" xml:space="preserve">
+    <value>Выберите налоговую ставку</value>
+  </data>
+  <data name="CorrectionChequeTypeSelectionPopupTitle" xml:space="preserve">
+    <value>Выберите тип коррекции</value>
+  </data>
+  <data name="CorrectionChequeDocumentBuy" xml:space="preserve">
+    <value>Коррекция расхода</value>
+  </data>
+  <data name="CorrectionChequeDocumentBuyRefund" xml:space="preserve">
+    <value>Коррекция возврата расхода</value>
+  </data>
+  <data name="CorrectionChequeDocumentTypeSale" xml:space="preserve">
+    <value>Коррекция прихода</value>
+  </data>
+  <data name="CorrectionChequeDocumentTypeSaleRefund" xml:space="preserve">
+    <value>Коррекция возврата прихода</value>
+  </data>
+  <data name="CorrectionChequePaymentTaxSystemTypeSelectionPopupTitle" xml:space="preserve">
+    <value>Выберите тип
+ системы налогообложения</value>
+  </data>
+  <data name="CorrectionChequePaymentTypeCashPayment" xml:space="preserve">
+    <value>Наличная оплата</value>
+  </data>
+  <data name="CorrectionChequePaymentTypeElectronicPayment" xml:space="preserve">
+    <value>Электронные средства</value>
+  </data>
+  <data name="CorrectionChequePrintNotSupported" xml:space="preserve">
+    <value>Текущий ФР не поддерживает печать чека коррекции.</value>
+  </data>
+  <data name="CorrectionChequeTaxRateNoVat" xml:space="preserve">
+    <value>Без НДС</value>
+  </data>
+  <data name="CorrectionChequeTaxRateVat0" xml:space="preserve">
+    <value>НДС 0%</value>
+  </data>
+  <data name="CorrectionChequeTaxRateVat10" xml:space="preserve">
+    <value>НДС 10%</value>
+  </data>
+  <data name="CorrectionChequeTaxRateVat10To110" xml:space="preserve">
+    <value>НДС 10/110</value>
+  </data>
+  <data name="CorrectionChequeTaxRateVat18" xml:space="preserve">
+    <value>НДС 18%</value>
+  </data>
+  <data name="CorrectionChequeTaxRateVat18To118" xml:space="preserve">
+    <value>НДС 18/118</value>
+  </data>
+  <data name="CorrectionChequeTaxRateVat20" xml:space="preserve">
+    <value>НДС 20%</value>
+  </data>
+  <data name="CorrectionChequeTaxRateVat20To120" xml:space="preserve">
+    <value>НДС 20/120</value>
+  </data>
+  <data name="CorrectionChequeTaxSystemType" xml:space="preserve">
+    <value>Тип системы налогообложения</value>
+  </data>
+  <data name="CorrectionChequeTaxSystemTypeCommon" xml:space="preserve">
+    <value>Общая</value>
+  </data>
+  <data name="CorrectionChequeTaxSystemTypePatent" xml:space="preserve">
+    <value>Патентная система налогообложения</value>
+  </data>
+  <data name="CorrectionChequeTaxSystemTypeSimplified1" xml:space="preserve">
+    <value>Упрощенная - доход</value>
+  </data>
+  <data name="CorrectionChequeTaxSystemTypeSimplified2" xml:space="preserve">
+    <value>Упрощенная - доход минус расход</value>
+  </data>
+  <data name="CorrectionChequeTaxSystemTypeSingleAgriculturalTax" xml:space="preserve">
+    <value>Единый сельскохозяйственный налог</value>
+  </data>
+  <data name="CorrectionChequeTaxSystemTypeSingleTaxOnImputedIncome" xml:space="preserve">
+    <value>Единый налог на вмененный доход</value>
+  </data>
+  <data name="CorrectionChequeTypeByInstruction" xml:space="preserve">
+    <value>По предписанию</value>
+  </data>
+  <data name="CorrectionChequeTypeIndependently" xml:space="preserve">
+    <value>Самостоятельная</value>
+  </data>
+  <data name="CorrectionChequeSimpleMode" xml:space="preserve">
+    <value>Обычный</value>
+  </data>
+  <data name="CorrectionChequeCalculationSum" xml:space="preserve">
+    <value>Сумма расчета</value>
+  </data>
+  <data name="CorrectionChequeCashSum" xml:space="preserve">
+    <value>Наличная оплата</value>
+  </data>
+  <data name="CorrectionChequeConsiderationSum" xml:space="preserve">
+    <value>Встречное предложение</value>
+  </data>
+  <data name="CorrectionChequeCorrectionReason" xml:space="preserve">
+    <value>Основание коррекции</value>
+  </data>
+  <data name="CorrectionChequeDocumentDate" xml:space="preserve">
+    <value>Дата документа</value>
+  </data>
+  <data name="CorrectionChequeDocumentNumber" xml:space="preserve">
+    <value>Номер документа</value>
+  </data>
+  <data name="CorrectionChequeElectronicSum" xml:space="preserve">
+    <value>Электронные средства</value>
+  </data>
+  <data name="CorrectionChequePostpaySum" xml:space="preserve">
+    <value>Кредит</value>
+  </data>
+  <data name="CorrectionChequePrepaySum" xml:space="preserve">
+    <value>Предоплата</value>
+  </data>
+  <data name="CorrectionChequePaymentTypeEletronicPayment" xml:space="preserve">
+    <value>Электронные средства</value>
+  </data>
+  <data name="CorrectionChequePrintInProgress" xml:space="preserve">
+    <value>Идет печать чека коррекции...</value>
+  </data>
+  <data name="StepPayIn" xml:space="preserve">
+    <value>Внесение наличных</value>
+  </data>
+  <data name="StepPayInNonZeroSumRequired" xml:space="preserve">
+    <value>Необходимо выполнить внесение на ненулевую сумму.</value>
+  </data>
+  <data name="StepPayInCompleted" xml:space="preserve">
+    <value>Внесение на {0} выполнено.</value>
+  </data>
+  <data name="StepPayInTypeError" xml:space="preserve">
+    <value>Тип внесения {0} не поддерживается. Внесение не выполнено.</value>
+  </data>
+  <data name="StepPayInFail" xml:space="preserve">
+    <value>Не удалось выполнить внесение.
+{0}</value>
+  </data>
+  <data name="CorrectionChequeFpd" xml:space="preserve">
+    <value>ФПД</value>
+  </data>
+  <data name="GuestDiscountsDeletingConfirmation" xml:space="preserve">
+    <value>Будут удалены гостевые скидки у неоплаченных гостей.</value>
+  </data>
+  <data name="GuestDiscountsDeleting" xml:space="preserve">
+    <value>Удаление гостевых скидок</value>
+  </data>
+  <data name="CannotSplitByPriceItemsFrom1To3Format" xml:space="preserve">
+    <value>Оплата заказа в режиме "По сумме" невозможна: заказ содержит позиции, которые нельзя разделить ({0}).</value>
+    <comment>{0} - products</comment>
+  </data>
+  <data name="ProductPluralForms" xml:space="preserve">
+    <value>продукт;продукта;продуктов</value>
+  </data>
+  <data name="CannotSplitByPriceItemsMoreThan3Format" xml:space="preserve">
+    <value>Оплата заказа в режиме "По сумме" невозможна: заказ содержит позиции, которые нельзя разделить ({0} и еще {1} {2}).</value>
+    <comment>{0} - products, {1} - products count, {2} - product(s)</comment>
+  </data>
+</root>

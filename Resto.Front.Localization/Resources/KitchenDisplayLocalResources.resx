@@ -1,0 +1,405 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AllSectionsFilterLabel" xml:space="preserve">
+    <value>Все цеха</value>
+  </data>
+  <data name="AllStatusesFilterLabel" xml:space="preserve">
+    <value>Все статусы</value>
+  </data>
+  <data name="CancelledStatusFilterLabel" xml:space="preserve">
+    <value>Удалено</value>
+  </data>
+  <data name="CancelledStatusName" xml:space="preserve">
+    <value>Удалено</value>
+  </data>
+  <data name="CookingCompletedStatusFilterLabel" xml:space="preserve">
+    <value>Приготовлено</value>
+  </data>
+  <data name="ServedStatusFilterLabel" xml:space="preserve">
+    <value>Подано</value>
+  </data>
+  <data name="CookingCompletedStatusName" xml:space="preserve">
+    <value>Приготовлено</value>
+  </data>
+  <data name="CookingStartedStatusFilterLabel" xml:space="preserve">
+    <value>Готовится</value>
+  </data>
+  <data name="CookingStartedStatusName" xml:space="preserve">
+    <value>Готовится</value>
+  </data>
+  <data name="KitchenProductActionsDialogTitle" xml:space="preserve">
+    <value>Действия</value>
+  </data>
+  <data name="KitchenProductsFilterEditDialogTitle" xml:space="preserve">
+    <value>Фильтры</value>
+  </data>
+  <data name="NavigateToProductsByOrderButtonText" xml:space="preserve">
+    <value>заказы</value>
+  </data>
+  <data name="NavigateToProductsByServeButtonText" xml:space="preserve">
+    <value>подачи</value>
+  </data>
+  <data name="ProductDetailsOrderNumber" xml:space="preserve">
+    <value>Заказ:</value>
+  </data>
+  <data name="ProductDetailsSectionAndTable" xml:space="preserve">
+    <value>Зал-стол:</value>
+  </data>
+  <data name="ProductDetailsSectionAndTableFormat" xml:space="preserve">
+    <value>{0}-{1}</value>
+    <comment>{0} - отделение, {1} - стол</comment>
+  </data>
+  <data name="ProductDetailsWaiter" xml:space="preserve">
+    <value>Официант:</value>
+  </data>
+  <data name="QueuedStatusFilterLabel" xml:space="preserve">
+    <value>Ожидает</value>
+  </data>
+  <data name="ReadyForCookingStatusFilterLabel" xml:space="preserve">
+    <value>Пора готовить</value>
+  </data>
+  <data name="ReadyForCookingStatusName" xml:space="preserve">
+    <value>Пора готовить</value>
+  </data>
+  <data name="SectionsFilterHeader" xml:space="preserve">
+    <value>Цеха</value>
+  </data>
+  <data name="KitchenTimeModeHeader" xml:space="preserve">
+    <value>Режим кухни</value>
+  </data>
+  <data name="TimePeakScheduleModeLabel" xml:space="preserve">
+    <value>По расписанию</value>
+  </data>
+  <data name="TimePeakModeLabel" xml:space="preserve">
+    <value>Час пик</value>
+  </data>
+  <data name="TimeNormalModeLabel" xml:space="preserve">
+    <value>Норма</value>
+  </data>
+  <data name="ErrorKitchenTimeModeSet" xml:space="preserve">
+    <value>Не удалось установить режим кухни.</value>
+  </data>
+  <data name="AmountAll" xml:space="preserve">
+    <value>Все</value>
+    <comment>AmountAll - название кнопки для переключения (на максимально возможное) количества блюд для разделения на кдс</comment>
+  </data>
+  <data name="ProcessingStatusIdleName" xml:space="preserve">
+    <value>Еще не готовится</value>
+  </data>
+  <data name="ProcessingStatusProcessedName" xml:space="preserve">
+    <value>Приготовлено</value>
+  </data>
+  <data name="ProcessingStatusServedName" xml:space="preserve">
+    <value>Подано</value>
+  </data>
+  <data name="ShowFilterEditPopupButtonText" xml:space="preserve">
+    <value>настройки</value>
+  </data>
+  <data name="TimePeakLabel" xml:space="preserve">
+    <value>ПИК</value>
+  </data>
+  <data name="TimeNormalLabel" xml:space="preserve">
+    <value>НОРМ</value>
+  </data>
+  <data name="HandTimePeakModeLabel" xml:space="preserve">
+    <value>РУЧН</value>
+  </data>
+  <data name="TimePeakModeChangeWarningTemplate" xml:space="preserve">
+    <value>Внимание! Через {0}:{1:D2} мин. включится режим работы «{2}».</value>
+  </data>
+  <data name="CurrentTimePeakMode" xml:space="preserve">
+    <value>Включен режим работы «{0}».</value>
+  </data>
+  <data name="StatusesFilterHeader" xml:space="preserve">
+    <value>Статусы</value>
+  </data>
+  <data name="TimeLeftToServeFormat" xml:space="preserve">
+    <value>{0}:{1:D2}</value>
+  </data>
+  <data name="TimeLeftToCookingStartUpToHourFormat" xml:space="preserve">
+    <value>{0} мин.</value>
+  </data>
+  <data name="ReadyForServingStatusFilterLabel" xml:space="preserve">
+    <value>Приготовлено</value>
+  </data>
+  <data name="QueuedStatusName" xml:space="preserve">
+    <value>Ожидает</value>
+  </data>
+  <data name="ProductDetailsKitchen" xml:space="preserve">
+    <value>Цех:</value>
+  </data>
+  <data name="NavigateToProductsByProductsButtonText" xml:space="preserve">
+    <value>блюда</value>
+  </data>
+  <data name="ItemStatusUpdatingProgressText" xml:space="preserve">
+    <value>Сохранение...</value>
+  </data>
+  <data name="ProcessingStatusSaveFailed" xml:space="preserve">
+    <value>Не удалось сохранить статус блюда. Повторите попытку позднее.</value>
+  </data>
+  <data name="ItemAmountUpdateFailed" xml:space="preserve">
+    <value>Не удалось обновить количество блюда. Повторите попытку позднее.</value>
+  </data>
+  <data name="ItemsAmountUpdateFailed" xml:space="preserve">
+    <value>Не удалось обновить количество для блюд: {0}. Повторите попытку позднее.</value>
+  </data>
+  <data name="ServeBlockHeaderGuestsCountFormat" xml:space="preserve">
+    <value>Гст: {0}</value>
+  </data>
+  <data name="ServeBlockHeaderTableNumberFormat" xml:space="preserve">
+    <value>Стол: {0}</value>
+  </data>
+  <data name="ServeBlockHeaderDeliveryLabel" xml:space="preserve">
+    <value>Доставка</value>
+  </data>
+  <data name="DeliveryCommentMessageBoxTitle" xml:space="preserve">
+    <value>Комментарий доставки</value>
+  </data>
+  <data name="ServedStatusName" xml:space="preserve">
+    <value>Подано</value>
+  </data>
+  <data name="ProductDetailsProductsList" xml:space="preserve">
+    <value>Блюда:</value>
+  </data>
+  <data name="ProductDetailsNameAndAmountFormat" xml:space="preserve">
+    <value>{0} × {1}</value>
+  </data>
+  <data name="ProductAndModifierAmountsFormat" xml:space="preserve">
+    <value>{0} × {1}</value>
+  </data>
+  <data name="ProductDetailsProductAndModifiersFormat" xml:space="preserve">
+    <value>{0} ({1})</value>
+    <comment>{0} - продукт, {1} - список модификаторов</comment>
+  </data>
+  <data name="OrderNumberAndServeGroupNumberFormat" xml:space="preserve">
+    <value>{0}-{1}</value>
+    <comment>{0} - номер заказа, {1} - номер подачи в заказе</comment>
+  </data>
+  <data name="DeleteWindowTitle" xml:space="preserve">
+    <value>Удаление</value>
+  </data>
+  <data name="OrderNumberWithServeGroupNumberTextTemplate" xml:space="preserve">
+    <value>{0}-{1}</value>
+  </data>
+  <data name="SectionAndTableTextTemplate" xml:space="preserve">
+    <value>{0}: {1}</value>
+  </data>
+  <data name="WaiterTextTemplate" xml:space="preserve">
+    <value>Официант: {0}</value>
+  </data>
+  <data name="DeleteAuthUserTextTemplate" xml:space="preserve">
+    <value>Авторизовал: {0}</value>
+  </data>
+  <data name="DeletedProductStatusInfoTextTemplate" xml:space="preserve">
+    <value>Удалено блюдо в статусе
+"{0}"</value>
+  </data>
+  <data name="DeletedModifierStatusInfoTextTemplate" xml:space="preserve">
+    <value>Удален модификатор в статусе
+"{0}"</value>
+  </data>
+  <data name="AddedModifierInfoTextTemplate" xml:space="preserve">
+    <value>Добавлен модификатор</value>
+  </data>
+  <data name="UpdatedCommentStatusInfoTextTemplate" xml:space="preserve">
+    <value>Обновлен комментарий в статусе
+"{0}"</value>
+  </data>
+  <data name="DeletedCommentStatusInfoTextTemplate" xml:space="preserve">
+    <value>Удален комментарий в статусе
+"{0}"</value>
+  </data>
+  <data name="SectionAndTableLabel" xml:space="preserve">
+    <value>Зал: стол</value>
+  </data>
+  <data name="OrderLabel" xml:space="preserve">
+    <value>Заказ:</value>
+  </data>
+  <data name="WaiterLabel" xml:space="preserve">
+    <value>Официант:</value>
+  </data>
+  <data name="KitchenLabel" xml:space="preserve">
+    <value>Цех:</value>
+  </data>
+  <data name="DishLabel" xml:space="preserve">
+    <value>Блюдо:</value>
+  </data>
+  <data name="TimeLeftMoreThanHour" xml:space="preserve">
+    <value>1ч…</value>
+  </data>
+  <data name="RecallButtonText" xml:space="preserve">
+    <value>вернуть</value>
+  </data>
+  <data name="ConfirmHeterogeneousStatusChange" xml:space="preserve">
+    <value>Внимание! Блюда в заказе/подаче имеют разные статусы.
+Вы уверены, что хотите перевести блюда в статус «{0}»?</value>
+    <comment>{0} — название статуса, в который пользователь пытается переключить группу блюд</comment>
+  </data>
+  <data name="ConfirmJumpStatusChange" xml:space="preserve">
+    <value>Внимание! Некоторые из блюд переключаются в статус «{0}» минуя промежуточный статус.
+Вы уверены, что хотите перевести блюда в статус «{0}»?</value>
+  </data>
+  <data name="DisplayRemainingCookingTime" xml:space="preserve">
+    <value>Обратный отсчет</value>
+  </data>
+  <data name="SelectProductAndShowAsemblyChartButtonText" xml:space="preserve">
+    <value>тех. карта</value>
+    <comment>ТК — технологическая карта (блюда). Текст на кнопке, по нажатию на которую вызывается диалог выбора блюда, а затем показ технологической карты выбранного блюда.</comment>
+  </data>
+  <data name="DeliveryType" xml:space="preserve">
+    <value>Тип доставки:</value>
+  </data>
+  <data name="CurrentTimePeakModeNormal" xml:space="preserve">
+    <value>Включен стандартный режим работы.</value>
+  </data>
+  <data name="CurrentTimePeakModePeak" xml:space="preserve">
+    <value>Включен режим работы "час пик".</value>
+  </data>
+  <data name="AdjacentSectionsLabel" xml:space="preserve">
+    <value>Другие цеха</value>
+  </data>
+  <data name="CommonServiceTypeFilterLabel" xml:space="preserve">
+    <value>В зале</value>
+  </data>
+  <data name="DeliveryByCourierServiceTypeFilterLabel" xml:space="preserve">
+    <value>Доставка</value>
+  </data>
+  <data name="DeliveryPickupServiceTypeFilterLabel" xml:space="preserve">
+    <value>Самовывоз</value>
+  </data>
+  <data name="DeliveryCommentDataFilterLabel" xml:space="preserve">
+    <value>Комментарий к доставке</value>
+  </data>
+  <data name="ExternalNumberDataFilterLabel" xml:space="preserve">
+    <value>Внешний номер заказа</value>
+  </data>
+  <data name="SourceOrderDataFilterLabel" xml:space="preserve">
+    <value>Источник заказа</value>
+  </data>
+  <data name="TabNameDataFilterLabel" xml:space="preserve">
+    <value>Название таба</value>
+  </data>
+  <data name="OrderDataFilterTitle" xml:space="preserve">
+    <value>Данные в заказе</value>
+  </data>
+  <data name="OrderServiceTypeFilterTitle" xml:space="preserve">
+    <value>Режим обслуживания</value>
+  </data>
+</root>

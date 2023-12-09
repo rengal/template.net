@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Resto.Framework", "Resto.Fr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RenderWebApi", "RenderWebApi\RenderWebApi.csproj", "{56719EC0-0D9A-4C9F-BAD9-2B61E1BEDC85}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Resto.Front.Localization", "Resto.Front.Localization\Resto.Front.Localization.csproj", "{9077A3CF-F9A5-44C1-B0E3-6EA0F002EF76}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{56719EC0-0D9A-4C9F-BAD9-2B61E1BEDC85}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{56719EC0-0D9A-4C9F-BAD9-2B61E1BEDC85}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{56719EC0-0D9A-4C9F-BAD9-2B61E1BEDC85}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9077A3CF-F9A5-44C1-B0E3-6EA0F002EF76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9077A3CF-F9A5-44C1-B0E3-6EA0F002EF76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9077A3CF-F9A5-44C1-B0E3-6EA0F002EF76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9077A3CF-F9A5-44C1-B0E3-6EA0F002EF76}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

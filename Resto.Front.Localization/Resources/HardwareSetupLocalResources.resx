@@ -1,0 +1,810 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CommonChangeModel" xml:space="preserve">
+    <value>Изменить модель</value>
+  </data>
+  <data name="PrinterAddress" xml:space="preserve">
+    <value>Адрес</value>
+  </data>
+  <data name="ConnectionCom" xml:space="preserve">
+    <value>COM</value>
+  </data>
+  <data name="ConnectionLpt" xml:space="preserve">
+    <value>LPT</value>
+  </data>
+  <data name="PrinterPortTimeout" xml:space="preserve">
+    <value>Время ожидания порта, мс</value>
+  </data>
+  <data name="ConnectionTcpip" xml:space="preserve">
+    <value>TCP/IP</value>
+  </data>
+  <data name="ConnectionWindows" xml:space="preserve">
+    <value>Windows</value>
+  </data>
+  <data name="HardwareTypeCashRegister" xml:space="preserve">
+    <value>Фискальный регистратор</value>
+  </data>
+  <data name="HardwareTypePrinter" xml:space="preserve">
+    <value>Принтер</value>
+  </data>
+  <data name="HardwareTypeScales" xml:space="preserve">
+    <value>Весы</value>
+  </data>
+  <data name="Autorun" xml:space="preserve">
+    <value>Запускать автоматически</value>
+  </data>
+  <data name="PrinterCodepage" xml:space="preserve">
+    <value>Кодовая страница</value>
+  </data>
+  <data name="PrinterDpi" xml:space="preserve">
+    <value>Разрешение (dpi)</value>
+  </data>
+  <data name="PrinterEmptyLines" xml:space="preserve">
+    <value>Пустые строки</value>
+  </data>
+  <data name="PrinterFlowControl" xml:space="preserve">
+    <value>Контроль потока</value>
+  </data>
+  <data name="PrinterLabelHeight" xml:space="preserve">
+    <value>Высота этикетки (точки)</value>
+  </data>
+  <data name="PrinterLabelWidth" xml:space="preserve">
+    <value>Ширина этикетки (точки)</value>
+  </data>
+  <data name="SpoolerEnabled" xml:space="preserve">
+    <value>Включить спулер печати</value>
+  </data>
+  <data name="PrinterLinesCount" xml:space="preserve">
+    <value>Количество строк</value>
+  </data>
+  <data name="PrinterLtpPort" xml:space="preserve">
+    <value>Порт периферийных устройств</value>
+  </data>
+  <data name="PrinterMarginHorizontal" xml:space="preserve">
+    <value>Отступ горизонтальный (точки)</value>
+  </data>
+  <data name="PrinterMarginVertical" xml:space="preserve">
+    <value>Отступ вертикальный (точки)</value>
+  </data>
+  <data name="PrinterModel" xml:space="preserve">
+    <value>Модель</value>
+  </data>
+  <data name="PrinterName" xml:space="preserve">
+    <value>Название принтера</value>
+  </data>
+  <data name="PrinterPortNumber" xml:space="preserve">
+    <value>Номер порта</value>
+  </data>
+  <data name="PrinterPulsePort" xml:space="preserve">
+    <value>Порт периферийных устройств</value>
+  </data>
+  <data name="PrinterSpeed" xml:space="preserve">
+    <value>Скорость обмена</value>
+  </data>
+  <data name="PrinterWindowsName" xml:space="preserve">
+    <value>Название принтера</value>
+  </data>
+  <data name="PrinterWindowsUpdateList" xml:space="preserve">
+    <value>Обновить список принтеров</value>
+  </data>
+  <data name="ScalesAddress" xml:space="preserve">
+    <value>Адрес</value>
+  </data>
+  <data name="ScalesBaud" xml:space="preserve">
+    <value>Скорость обмена</value>
+  </data>
+  <data name="ScalesDescriptionWidth" xml:space="preserve">
+    <value>Ширина этикетки, символов</value>
+  </data>
+  <data name="ScalesDriver" xml:space="preserve">
+    <value>Драйвер весов</value>
+  </data>
+  <data name="ScaleSheetCasDriverMapGramm" xml:space="preserve">
+    <value>AD(H), AP, ED(H), EMR, ER, ND, DB-H, EB (г.)</value>
+  </data>
+  <data name="ScaleSheetCasDriverMapKg" xml:space="preserve">
+    <value>AD(H), AP, ED(H), EMR, ER, ND, DB-H, EB (кг.)</value>
+  </data>
+  <data name="ScaleSheetCasDriver_AD" xml:space="preserve">
+    <value>AD, AD-H</value>
+  </data>
+  <data name="ScaleSheetCasDriver_LP15" xml:space="preserve">
+    <value>LP 1.5</value>
+  </data>
+  <data name="ScaleSheetCasDriver_LP16" xml:space="preserve">
+    <value>LP 1.6, LP-II</value>
+  </data>
+  <data name="ScaleSheetCasDriver_CL5000J_SM" xml:space="preserve">
+    <value>CL5000J Static memory</value>
+  </data>
+  <data name="ScaleSheetCasDriver_CL5000J_DM" xml:space="preserve">
+    <value>CL5000J Dynamic memory</value>
+  </data>
+  <data name="ScaleSheetCasDriver_CL5000" xml:space="preserve">
+    <value>CL5000</value>
+  </data>
+  <data name="ScaleSheetCasDriver_CWM4000" xml:space="preserve">
+    <value>CWM-4000</value>
+  </data>
+  <data name="ScaleSheetCasDriver_WMNano" xml:space="preserve">
+    <value>CAS WM-Nano</value>
+  </data>
+  <data name="ScaleSheetCasDriver_Primer5" xml:space="preserve">
+    <value>CAS Primer 5+</value>
+  </data>
+  <data name="ScaleSheetCasDriver_CL3000" xml:space="preserve">
+    <value>CL3000/CL5000-D</value>
+  </data>
+  <data name="ScaleSheetDigiDriver_SM" xml:space="preserve">
+    <value>DIGI SM</value>
+  </data>
+  <data name="ScaleSheetMassaDriverMapVpm" xml:space="preserve">
+    <value>Весы серий ВПМ и ТВ_Р3 (модификация MF)</value>
+  </data>
+  <data name="ScaleSheetShtrihDriverMapShtrihPos2" xml:space="preserve">
+    <value>Драйвер POS2 (Штрих-Слим, ВМ100)</value>
+  </data>
+  <data name="ScaleSheetShtrihDriverMapShtrihUniversal" xml:space="preserve">
+    <value>Универсальный драйверов весов (Штрих МI, МII, МIII, М5, ВП, Весовая ячейка ВМ100)</value>
+  </data>
+  <data name="ScalesLocalUpd" xml:space="preserve">
+    <value>UDP-порт отправителя</value>
+  </data>
+  <data name="ScalesPaperWidth" xml:space="preserve">
+    <value>Ширина этикетки, символов</value>
+  </data>
+  <data name="ScalesPassword" xml:space="preserve">
+    <value>Пароль доступа</value>
+  </data>
+  <data name="ScalesPortNumber" xml:space="preserve">
+    <value>Номер порта</value>
+  </data>
+  <data name="ScalesPortTimeout" xml:space="preserve">
+    <value>Время ожидания порта, мс</value>
+  </data>
+  <data name="PriceFormat" xml:space="preserve">
+    <value>Формат цены</value>
+  </data>
+  <data name="ScalesRemoteTcp" xml:space="preserve">
+    <value>TCP-порт получателя</value>
+  </data>
+  <data name="ScalesRemoteUpd" xml:space="preserve">
+    <value>UDP-порт получателя</value>
+  </data>
+  <data name="ScalesStabilizationTime" xml:space="preserve">
+    <value>Время стабилизации, мс</value>
+  </data>
+  <data name="ScalesTerminal" xml:space="preserve">
+    <value>Терминал</value>
+  </data>
+  <data name="ScalesTimeStable" xml:space="preserve">
+    <value>Время ожидания для получения стабильного веса, мс</value>
+  </data>
+  <data name="SelectTerminalPopupTitle" xml:space="preserve">
+    <value>Выберите терминал</value>
+  </data>
+  <data name="ZebraSetupInfoLine1" xml:space="preserve">
+    <value>Совет: Если Вы не знаете параметров этикетки, то можно воспользоваться функцией автоматического определения. Для этого:</value>
+  </data>
+  <data name="ZebraSetupInfoLine2" xml:space="preserve">
+    <value>1. Выключите принтер;</value>
+  </data>
+  <data name="ZebraSetupInfoLine3" xml:space="preserve">
+    <value>2. Нажмите и удерживайте кнопку FEED и включите принтер;</value>
+  </data>
+  <data name="ZebraSetupInfoLine4" xml:space="preserve">
+    <value>3. После трех звуковых сигналов отпустите кнопку FEED.</value>
+  </data>
+  <data name="ZebraSetupInfoLine5" xml:space="preserve">
+    <value>Принтер автоматически определит длину этикетки и напечатает чек с параметрами: q-ширина этикетки, Q-длина этикетки и длина линии отрыва (через запятую).</value>
+  </data>
+  <data name="PrinterCommonSelectPopupTitle" xml:space="preserve">
+    <value>Выберите значение из списка</value>
+  </data>
+  <data name="PrinterFlowControlSelectPopupTitle" xml:space="preserve">
+    <value>Выберите тип контроля потока</value>
+  </data>
+  <data name="PrinterProductIdSelectPopupTitle" xml:space="preserve">
+    <value>Выберите модель принтера</value>
+  </data>
+  <data name="ScalesDriverSelectPopupTitle" xml:space="preserve">
+    <value>Выберите драйвер весов</value>
+  </data>
+  <data name="CommonBaudSelectPopupTitle" xml:space="preserve">
+    <value>Выберите скорость обмена</value>
+  </data>
+  <data name="CommonSelectionPopupTitle" xml:space="preserve">
+    <value>Выберите значение из списка</value>
+  </data>
+  <data name="PrinterDpiSelectPopupTitle" xml:space="preserve">
+    <value>Выберите DPI</value>
+  </data>
+  <data name="PrinterFlowControlSelectionPopupTitle" xml:space="preserve">
+    <value>Выберите тип контроля потока</value>
+  </data>
+  <data name="PrinterNameSelectionPopupTitle" xml:space="preserve">
+    <value>Выберите принтер</value>
+  </data>
+  <data name="CommandPopupTitle" xml:space="preserve">
+    <value>Выберите команду</value>
+  </data>
+  <data name="PrinterProductIdSelectionPopupTitle" xml:space="preserve">
+    <value>Выберите модель принтера</value>
+  </data>
+  <data name="CashRegisterAdditionalSettings" xml:space="preserve">
+    <value>Дополнительные настройки</value>
+  </data>
+  <data name="CashRegisterMainSettings" xml:space="preserve">
+    <value>Основные настройки</value>
+  </data>
+  <data name="CashRegisterPaymentTypesSettings" xml:space="preserve">
+    <value>Типы оплат и регистры</value>
+  </data>
+  <data name="CashRegisterTaxTypesSettings" xml:space="preserve">
+    <value>Налоговые категории</value>
+  </data>
+  <data name="CashRegisterBaudRate" xml:space="preserve">
+    <value>Скорость обмена</value>
+  </data>
+  <data name="CashRegisterCashNumber" xml:space="preserve">
+    <value>Номер кассы</value>
+  </data>
+  <data name="CashRegisterCourierDeliveryTitle" xml:space="preserve">
+    <value>Режим обслуживания: доставка курьером</value>
+  </data>
+  <data name="CashRegisterDeliverySettlementAddress" xml:space="preserve">
+    <value>Адрес расчета</value>
+  </data>
+  <data name="CashRegisterDeliverySettlementPlace" xml:space="preserve">
+    <value>Место расчета</value>
+  </data>
+  <data name="CashRegisterDrawerSettings" xml:space="preserve">
+    <value>Настройки д/я</value>
+  </data>
+  <data name="CashRegisterHostAddress" xml:space="preserve">
+    <value>Адрес</value>
+  </data>
+  <data name="CashRegisterHostPort" xml:space="preserve">
+    <value>Порт</value>
+  </data>
+  <data name="CashRegisterInformationSettings" xml:space="preserve">
+    <value>Дополнительная информация</value>
+  </data>
+  <data name="CashRegisterModel" xml:space="preserve">
+    <value>Модель ФР</value>
+  </data>
+  <data name="CashRegisterOfdVersion" xml:space="preserve">
+    <value>Версия ОФД</value>
+  </data>
+  <data name="CashRegisterOposName" xml:space="preserve">
+    <value>OPOS имя</value>
+  </data>
+  <data name="CashRegisterPassword" xml:space="preserve">
+    <value>Пароль доступа</value>
+  </data>
+  <data name="CashRegisterPickupDeliveryTitle" xml:space="preserve">
+    <value>Режим обслуживания: обычный заказ и доставка самовывоз</value>
+  </data>
+  <data name="CashRegisterPortNumber" xml:space="preserve">
+    <value>Номер порта</value>
+  </data>
+  <data name="CashRegisterPortType" xml:space="preserve">
+    <value>Тип порта</value>
+  </data>
+  <data name="CashRegisterPrintFullCheque" xml:space="preserve">
+    <value>Печатать блюда на чеке</value>
+  </data>
+  <data name="CashRegisterPrintOrderNumber" xml:space="preserve">
+    <value>Печатать номер заказа</value>
+  </data>
+  <data name="CashRegisterPrintVat" xml:space="preserve">
+    <value>Печатать НДС</value>
+  </data>
+  <data name="CashRegisterSlipDocument" xml:space="preserve">
+    <value>Подкладной документ</value>
+  </data>
+  <data name="CourierSettlementTypeActualAddress" xml:space="preserve">
+    <value>Фактический адрес доставки</value>
+  </data>
+  <data name="CourierSettlementTypeFromCashRegister" xml:space="preserve">
+    <value>Адрес из настроек ФР</value>
+  </data>
+  <data name="CashRegisterCashDrawer" xml:space="preserve">
+    <value>Денежный ящик</value>
+  </data>
+  <data name="CashRegisterCashDrawerComPort" xml:space="preserve">
+    <value>COM порт ден. ящика</value>
+  </data>
+  <data name="CashRegisterCashDrawerCrPort" xml:space="preserve">
+    <value>CR порт ден. ящика</value>
+  </data>
+  <data name="CashRegisterCashDrawerDenyIfOpen" xml:space="preserve">
+    <value>Запретить работать с кассой при открытом денежном ящике</value>
+  </data>
+  <data name="CashRegisterChequeText" xml:space="preserve">
+    <value>Текст в чеке</value>
+  </data>
+  <data name="CashRegisterChequeTextAttributes" xml:space="preserve">
+    <value>Атрибуты</value>
+  </data>
+  <data name="CashRegisterChequeTextChars" xml:space="preserve">
+    <value>Символов в строке</value>
+  </data>
+  <data name="CashRegisterChequeTextPrintChange" xml:space="preserve">
+    <value>Печатать сдачу</value>
+  </data>
+  <data name="CashRegisterCodePage" xml:space="preserve">
+    <value>Кодовая страница</value>
+  </data>
+  <data name="CashRegisterCustomerDisplay" xml:space="preserve">
+    <value>Экран покупателя</value>
+  </data>
+  <data name="CashRegisterCustomerDisplayChars" xml:space="preserve">
+    <value>Символов в строке</value>
+  </data>
+  <data name="CashRegisterCustomerDisplayIdleText" xml:space="preserve">
+    <value>Текст ожидания</value>
+  </data>
+  <data name="CashRegisterCustomerDisplayRows" xml:space="preserve">
+    <value>Строк</value>
+  </data>
+  <data name="CashRegisterRestaurantPrintOption" xml:space="preserve">
+    <value>Режим печати (Спарк-115ТФ)</value>
+  </data>
+  <data name="CashRegisterTaxationSystem" xml:space="preserve">
+    <value>Система налогообложения</value>
+  </data>
+  <data name="CashRegisterUploadScheme" xml:space="preserve">
+    <value>Где выгружать данные о заказе</value>
+  </data>
+  <data name="UploadSchemeFirstTerminal" xml:space="preserve">
+    <value>На терминале, где была первая печать заказа</value>
+  </data>
+  <data name="UploadSchemeMainCash" xml:space="preserve">
+    <value>На главной кассе</value>
+  </data>
+  <data name="OfdVersionNone" xml:space="preserve">
+    <value>Без ФФД</value>
+  </data>
+  <data name="OfdVersion_1_0" xml:space="preserve">
+    <value>1.0</value>
+  </data>
+  <data name="OfdVersion_1_05" xml:space="preserve">
+    <value>1.05</value>
+  </data>
+  <data name="OfdVersion_1_1" xml:space="preserve">
+    <value>1.1</value>
+  </data>
+  <data name="CashDrawerOptionsIBM" xml:space="preserve">
+    <value>IBM</value>
+  </data>
+  <data name="CashDrawerOptionsMercury" xml:space="preserve">
+    <value>Меркурий</value>
+  </data>
+  <data name="CashDrawerOptionsShtrih" xml:space="preserve">
+    <value>Штрих</value>
+  </data>
+  <data name="ManageCashDrawersTitle" xml:space="preserve">
+    <value>Управление денежными ящиками</value>
+  </data>
+  <data name="CashRegisterChooseRegister" xml:space="preserve">
+    <value>Выберите регистр</value>
+  </data>
+  <data name="DefaultValue" xml:space="preserve">
+    <value>По умолчанию</value>
+  </data>
+  <data name="CashRegisterPaymentType" xml:space="preserve">
+    <value>Тип оплаты</value>
+  </data>
+  <data name="CashRegisterRegister" xml:space="preserve">
+    <value>Регистр ФР</value>
+  </data>
+  <data name="CashRegisterTaxCategory" xml:space="preserve">
+    <value>Налоговая категория</value>
+  </data>
+  <data name="CashRegisterWithoutVat" xml:space="preserve">
+    <value>Без НДС</value>
+  </data>
+  <data name="HardwareSetupDeviceModel" xml:space="preserve">
+    <value>Модель</value>
+  </data>
+  <data name="HardwareSetupDeviceName" xml:space="preserve">
+    <value>Название</value>
+  </data>
+  <data name="HardwareSetupDeviceStatus" xml:space="preserve">
+    <value>Статус</value>
+  </data>
+  <data name="HardwareSetupDeviceType" xml:space="preserve">
+    <value>Тип устройства</value>
+  </data>
+  <data name="HardwareSetupDeviceAdd" xml:space="preserve">
+    <value>Добавить устройство</value>
+  </data>
+  <data name="HardwareGetPrinterNamesError" xml:space="preserve">
+    <value>Не удалось получить список принтеров. {0}</value>
+  </data>
+  <data name="HardwareNoConnectionToRmsServer" xml:space="preserve">
+    <value>Не удалось выполнить операцию. Нет подключения к серверу RMS.</value>
+  </data>
+  <data name="HardwarePrintersLoadingMessage" xml:space="preserve">
+    <value>Получение списка принтеров..</value>
+  </data>
+  <data name="HardwareSaveError" xml:space="preserve">
+    <value>Не удалось сохранить оборудование. {0}</value>
+  </data>
+  <data name="HardwareSavingMessage" xml:space="preserve">
+    <value>Выполняется сохранение устройства...</value>
+  </data>
+  <data name="ScalesInvalidDriverType" xml:space="preserve">
+    <value>Выбранный драйвер весов не поддерживает указанный тип подключения</value>
+  </data>
+  <data name="PrinterBaudRate" xml:space="preserve">
+    <value>Скорость обмена</value>
+  </data>
+  <data name="ConnectionType" xml:space="preserve">
+    <value>Тип подключения</value>
+  </data>
+  <data name="Activate" xml:space="preserve">
+    <value>Активировать</value>
+  </data>
+  <data name="CashRegisterPrepayRegisterId" xml:space="preserve">
+    <value>Регистр предоплат</value>
+  </data>
+  <data name="CashRegisterRestaurantPrintOptionNone" xml:space="preserve">
+    <value>Без печати и занесения в буфер КЛ</value>
+  </data>
+  <data name="CashRegisterRestaurantPrintOptionTape" xml:space="preserve">
+    <value>Печать без занесения в буфер КЛ</value>
+  </data>
+  <data name="CashRegisterRestaurantPrintOptionTapeAndCr" xml:space="preserve">
+    <value>Печать и занесение в буфер КЛ</value>
+  </data>
+  <data name="CashRegisterCashNumberAlreadyInUse" xml:space="preserve">
+    <value>Номер кассы уже используется</value>
+  </data>
+  <data name="CashRegisterCloseEncashmentSetup" xml:space="preserve">
+    <value>Перенос остатка денежных средств в новую смену</value>
+  </data>
+  <data name="CashRegisterCloseEncashmentSetupAutoAndPayIn" xml:space="preserve">
+    <value>Автоинкассация + внесение</value>
+  </data>
+  <data name="CashRegisterCloseEncashmentSetupFullAndPayIn" xml:space="preserve">
+    <value>Полная инкассация + внесение</value>
+  </data>
+  <data name="CashRegisterCloseEncashmentSetupPartial" xml:space="preserve">
+    <value>Частичная инкассация</value>
+  </data>
+  <data name="HardwareSetupDeviceActions" xml:space="preserve">
+    <value>Действия</value>
+  </data>
+  <data name="HardwareStartingMessage" xml:space="preserve">
+    <value>Выполняется запуск устройства...</value>
+  </data>
+  <data name="HardwareStoppingMessage" xml:space="preserve">
+    <value>Выполняется остановка устройства...</value>
+  </data>
+  <data name="HardwareTestingMessage" xml:space="preserve">
+    <value>Выполняется тестирование устройства...</value>
+  </data>
+  <data name="HardwareStartErrorMessage" xml:space="preserve">
+    <value>Не удалось запустить устройство</value>
+  </data>
+  <data name="HardwareStopErrorMessage" xml:space="preserve">
+    <value>Не удалось остановить устройство</value>
+  </data>
+  <data name="HardwareTestErrorMessage" xml:space="preserve">
+    <value>Не удалось протестировать устройство</value>
+  </data>
+  <data name="PrinterWithoutModel" xml:space="preserve">
+    <value>Принтер без модели</value>
+  </data>
+  <data name="ScalesWithoutModel" xml:space="preserve">
+    <value>Весы без модели</value>
+  </data>
+  <data name="HardwareSetupDeviceList" xml:space="preserve">
+    <value>Список устройств</value>
+  </data>
+  <data name="ExternalCashRegisterModelName" xml:space="preserve">
+    <value>Внешний фискальный регистратор</value>
+  </data>
+  <data name="CashRegisterChooseValue" xml:space="preserve">
+    <value>Выберите значение</value>
+  </data>
+  <data name="CashRegisterEnterValue" xml:space="preserve">
+    <value>Введите значение</value>
+  </data>
+  <data name="ExternalPrinterModelName" xml:space="preserve">
+    <value>Внешний принтер</value>
+  </data>
+  <data name="ExternalScalesModelName" xml:space="preserve">
+    <value>Внешние весы</value>
+  </data>
+  <data name="DeviceControlChangeDeviceModelFailed" xml:space="preserve">
+    <value>Не удалось изменить модель устройства. Проверьте, что нет открытых кассовых смен, привязанных к выбранному устройству.</value>
+  </data>
+  <data name="CashRegisterWithoutModel" xml:space="preserve">
+    <value>ФР без модели</value>
+  </data>
+  <data name="InvalidValueRange" xml:space="preserve">
+    <value>Значение должно находиться в диапазоне от {0} до {1}</value>
+  </data>
+  <data name="HardwareTestSuccessMessage" xml:space="preserve">
+    <value>Тестирование завершено успешно</value>
+  </data>
+  <data name="DeviceStateAdded" xml:space="preserve">
+    <value>Устройство успешно добавлено</value>
+  </data>
+  <data name="DeviceStateErrorNoDevice" xml:space="preserve">
+    <value>Неизвестный тип устройства</value>
+  </data>
+  <data name="DeviceStatePaused" xml:space="preserve">
+    <value>Устройство приостановлено</value>
+  </data>
+  <data name="DeviceStateRunning" xml:space="preserve">
+    <value>Устройство работает</value>
+  </data>
+  <data name="DeviceStateSetup" xml:space="preserve">
+    <value>Устройство было успешно настроено</value>
+  </data>
+  <data name="DeviceStateShutdown" xml:space="preserve">
+    <value>Устройство завершает работу</value>
+  </data>
+  <data name="DeviceStateStarting" xml:space="preserve">
+    <value>Устройство запускается</value>
+  </data>
+  <data name="DeviceStateStopped" xml:space="preserve">
+    <value>Устройство остановлено</value>
+  </data>
+  <data name="DeviceStateStopping" xml:space="preserve">
+    <value>Устройство останавливается</value>
+  </data>
+  <data name="PrinterDefaultCodePage" xml:space="preserve">
+    <value>cp866</value>
+  </data>
+  <data name="PrinterDefaultWinCodePage" xml:space="preserve">
+    <value>Unicode</value>
+  </data>
+  <data name="DevicePortType_COM" xml:space="preserve">
+    <value>COM</value>
+  </data>
+  <data name="DevicePortType_LPT" xml:space="preserve">
+    <value>LPT</value>
+  </data>
+  <data name="DevicePortType_TCP" xml:space="preserve">
+    <value>TCP</value>
+  </data>
+  <data name="DevicePortType_WIN" xml:space="preserve">
+    <value>WIN</value>
+  </data>
+  <data name="CashRegisterEmulateDayShift" xml:space="preserve">
+    <value>Эмулировать 24-часовую смену</value>
+  </data>
+  <data name="CashRegisterEmulateFiscalCheques" xml:space="preserve">
+    <value>Эмулировать печать чеков</value>
+  </data>
+  <data name="CashRegisterEmulateFiscalReports" xml:space="preserve">
+    <value>Эмулировать печать X и Z отчетов</value>
+  </data>
+  <data name="HardwareNotStartedErrorMessage" xml:space="preserve">
+    <value>Устройство не запущено</value>
+  </data>
+  <data name="PrinterFontBold" xml:space="preserve">
+    <value>Жирный шрифт</value>
+  </data>
+  <data name="AutoWidth" xml:space="preserve">
+    <value>Автоопределение</value>
+  </data>
+  <data name="PrinterFontFamily" xml:space="preserve">
+    <value>Имя шрифта</value>
+  </data>
+  <data name="PrinterFontSize" xml:space="preserve">
+    <value>Размер шрифта</value>
+  </data>
+  <data name="DefaultFontFamilyText" xml:space="preserve">
+    <value>[Стандартный шрифт]</value>
+  </data>
+  <data name="PrinterTextCommand" xml:space="preserve">
+    <value>Печать текста</value>
+  </data>
+  <data name="PrinterLogoCommand" xml:space="preserve">
+    <value>Команда logo</value>
+  </data>
+  <data name="PrinterBarcodeCommand" xml:space="preserve">
+    <value>Команда barcode</value>
+  </data>
+  <data name="PrinterQrCodeCommand" xml:space="preserve">
+    <value>Команда qrcode</value>
+  </data>
+  <data name="OfdVersion_1_2" xml:space="preserve">
+    <value>1.2</value>
+  </data>
+  <data name="OfdVersion_Webkassa" xml:space="preserve">
+    <value>webkassa.kz</value>
+  </data>
+  <data name="CorrectionChequeSearchOrder" xml:space="preserve">
+    <value>Поиск заказа</value>
+  </data>
+  <data name="SpoolerPingInterval" xml:space="preserve">
+    <value>Интервал опроса (сек.)</value>
+  </data>
+  <data name="SpoolerTaskExpiryDuration" xml:space="preserve">
+    <value>Максимальное время задания в спулере (сек.)</value>
+  </data>
+  <data name="PrinterTestTextRow1" xml:space="preserve">
+    <value>!!! Если этот текст распечатан !!!</value>
+  </data>
+  <data name="PrinterTestTextRow10" xml:space="preserve">
+    <value>АБВГДЕЁЖЗИКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ</value>
+  </data>
+  <data name="PrinterTestTextRow11" xml:space="preserve">
+    <value>абвгдеёжзиклмнопрстуфхцчшщъыьэюя</value>
+  </data>
+  <data name="PrinterTestTextRow2" xml:space="preserve">
+    <value>!!! без ошибок, то принтер !!!</value>
+  </data>
+  <data name="PrinterTestTextRow3" xml:space="preserve">
+    <value>!!! работает исправно. !!!</value>
+  </data>
+  <data name="PrinterTestTextRow4" xml:space="preserve">
+    <value>Тест 1</value>
+  </data>
+  <data name="PrinterTestTextRow5" xml:space="preserve">
+    <value>Тест 2</value>
+  </data>
+  <data name="PrinterTestTextRow6" xml:space="preserve">
+    <value>Тест 3</value>
+  </data>
+  <data name="PrinterTestTextRow7" xml:space="preserve">
+    <value>012345678901234567890123456789012345678901</value>
+  </data>
+  <data name="PrinterTestTextRow8" xml:space="preserve">
+    <value>ABCDEFGHIJKLMNOPQRSTUVWXYZ</value>
+  </data>
+  <data name="PrinterTestTextRow9" xml:space="preserve">
+    <value>abcdefghijklmnopqrstuvwxyz</value>
+  </data>
+  <data name="PrinterTestTextRowSeparator" xml:space="preserve">
+    <value>==========================================</value>
+  </data>
+  <data name="ScalesWeightFormat" xml:space="preserve">
+    <value>Масса: {0:0.###}</value>
+  </data>
+  <data name="DeviceControlRemoveFailedFormat" xml:space="preserve">
+    <value>Не удалось удалить устройство: {0}</value>
+  </data>
+  <data name="DeviceControlRemoveConfirmation" xml:space="preserve">
+    <value>Удалить устройство?</value>
+  </data>
+  <data name="DeviceControlRemoveConfirmationTitle" xml:space="preserve">
+    <value>Удаление</value>
+  </data>
+  <data name="SelectDeviceType" xml:space="preserve">
+    <value>Выберите тип устройства</value>
+  </data>
+  <data name="SelectModel" xml:space="preserve">
+    <value>Выберите модель</value>
+  </data>
+  <data name="InvalidDeviceName" xml:space="preserve">
+    <value>Укажите корректное имя устройства.</value>
+  </data>
+  <data name="InvalidHostAddress" xml:space="preserve">
+    <value>Введите правильный сетевой адрес.</value>
+  </data>
+</root>

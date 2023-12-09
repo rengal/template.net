@@ -1,0 +1,301 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="MoveToAnotherTable" xml:space="preserve">
+    <value>Сменить № стола</value>
+  </data>
+  <data name="MoveToAnotherRestoranSectionFormat" xml:space="preserve">
+    <value>Ошибка смены зала на «{0}».</value>
+  </data>
+  <data name="ChangeWaiter" xml:space="preserve">
+    <value>Сменить официанта</value>
+  </data>
+  <data name="MoveToAnotherGuest" xml:space="preserve">
+    <value>На другого гостя в пределах заказа</value>
+  </data>
+  <data name="MergeOrders" xml:space="preserve">
+    <value>Объединить заказы</value>
+  </data>
+  <data name="SplitOrder" xml:space="preserve">
+    <value>Разделить заказ</value>
+  </data>
+  <data name="ChangeGuestCount" xml:space="preserve">
+    <value>Изменить количество гостей</value>
+  </data>
+  <data name="ShowDishPrices" xml:space="preserve">
+    <value>Показать цены блюд</value>
+  </data>
+  <data name="StopList" xml:space="preserve">
+    <value>Стоп-лист</value>
+  </data>
+  <data name="EnterTableNumberQuery" xml:space="preserve">
+    <value>Введите номер стола</value>
+  </data>
+  <data name="InvalidTableNumberMessage" xml:space="preserve">
+    <value>Номер стола неверен.</value>
+  </data>
+  <data name="SplitOrderWithoutTableNumberAndWaiterChangeQuestion" xml:space="preserve">
+    <value>Разделить заказ на две части, не меняя номер стола и официанта?</value>
+  </data>
+  <data name="MoveDishesToAnotherGuestInstructions" xml:space="preserve">
+    <value>Для того чтобы перенести одно или несколько блюд на другого гостя,
+необходимо выделить их и нажать на имя гостя в счете.</value>
+  </data>
+  <data name="MoveToAnotherGuestTitle" xml:space="preserve">
+    <value>Перенос на другого гостя</value>
+  </data>
+  <data name="SplitOrderTitle" xml:space="preserve">
+    <value>Разделение заказа</value>
+  </data>
+  <data name="ChangeGuestCountTitle" xml:space="preserve">
+    <value>Изменение количества гостей</value>
+  </data>
+  <data name="ChangeTableForOrderTitle" xml:space="preserve">
+    <value>Смена № стола</value>
+  </data>
+  <data name="ChangeGuestCountInvalidGuestCountMessage" xml:space="preserve">
+    <value>Нельзя уменьшить количество гостей.</value>
+  </data>
+  <data name="MoveToTheSameTableMessage" xml:space="preserve">
+    <value>Заказ уже находится на этом столе.</value>
+  </data>
+  <data name="StopListMultipleSelectionContainsNoProductsMessage" xml:space="preserve">
+    <value>Пожалуйста, выделите блюда, которые необходимо внести в стоп-лист.</value>
+  </data>
+  <data name="StopListEditNotAllowedMessage" xml:space="preserve">
+    <value>У Вас нет прав для редактирования стоп-листа.</value>
+  </data>
+  <data name="MovedOrderItemGuestNameFormat" xml:space="preserve">
+    <value>{0} (из зак. {1} на столе {2})</value>
+    <comment>{0} is guest name, {1} is his first order number, {2} is his previous table number</comment>
+  </data>
+  <data name="OrderOperations" xml:space="preserve">
+    <value>ДЕЙСТВИЯ С ЗАКАЗОМ</value>
+  </data>
+  <data name="OrderSelectedProductsOperations" xml:space="preserve">
+    <value>ПЕРЕНОС ПОЗИЦИЙ</value>
+  </data>
+  <data name="MoveDishesToOtherOrderOfSameWaiter" xml:space="preserve">
+    <value>В другой заказ того же официанта</value>
+  </data>
+  <data name="MoveDishesToNewOrderOfOtherWaiter" xml:space="preserve">
+    <value>В новый заказ другого официанта</value>
+  </data>
+  <data name="AdditionalInfo" xml:space="preserve">
+    <value>ПРОЧЕЕ</value>
+  </data>
+  <data name="OrderSelectionTitle" xml:space="preserve">
+    <value>Выбор заказа</value>
+  </data>
+  <data name="CannotMovePositionsToPrechequeOrder" xml:space="preserve">
+    <value>Перенос позиций в заказ, находящийся в состоянии пречека, невозможен.</value>
+  </data>
+  <data name="AllPositionsAreAtCurrentWaiterOrder" xml:space="preserve">
+    <value>Все позиции уже находятся в заказе данного официанта.</value>
+  </data>
+  <data name="NoPositionSelectedPleaseSelectPositions" xml:space="preserve">
+    <value>Не выделено ни одной позиции. Пожалуйста, выделите позиции, которые хотите перенести, нажатием на поле количества.</value>
+  </data>
+  <data name="PositionsAreAtThisOrder" xml:space="preserve">
+    <value>Позиции уже находятся в этом заказе.</value>
+  </data>
+  <data name="DiscountAndMarkupInfoLostConfirmationFormat" xml:space="preserve">
+    <value>При переносе позиций информация о скидках и надбавках на столе №{0} будет утеряна. 
+Продолжить перенос?</value>
+  </data>
+  <data name="CannotMoveDishesToOrderWithNullWaiter" xml:space="preserve">
+    <value>Перенос блюд невозможен, так как у заказа не назначен официант.</value>
+  </data>
+  <data name="CannotMoveAllPositionsOfNotStartedBanquet" xml:space="preserve">
+    <value>Нельзя переносить все позиции у неначавшегося банкета.</value>
+  </data>
+  <data name="NotSingleTableNumberMessage" xml:space="preserve">
+    <value>В системе есть несколько столов с таким номером. Пожалуйста, уточните зал, в который производится перенос, с помощью схемы зала.</value>
+  </data>
+  <data name="CannotMoveDishesToOrderMaxGuestCountExceedFormat" xml:space="preserve">
+    <value>Количество гостей в заказе не может превышать {0}.
+После переноса блюд суммарное количество гостей будет {1} + {2} = {3}.
+Выполнение операции невозможно.
+Пожалуйста, уменьшите количество гостей.</value>
+  </data>
+  <data name="MoveOrderIgnoreReserve" xml:space="preserve">
+    <value>Перенести заказ (игнорировать резерв)</value>
+  </data>
+  <data name="MoveOrderCancelReserve" xml:space="preserve">
+    <value>Снять резерв (гость не придет)</value>
+  </data>
+  <data name="MoveOrderGuestCameReserve" xml:space="preserve">
+    <value>Гость пришел (открыть заказ для резерва)</value>
+  </data>
+  <data name="MoveOrderIgnoreBanquet" xml:space="preserve">
+    <value>Перенести заказ (игнорировать банкет)</value>
+  </data>
+  <data name="MoveOrderCancelBanquet" xml:space="preserve">
+    <value>Снять банкет (гость не придет)</value>
+  </data>
+  <data name="CannotMoveStartedTimePayServiceToOrderWithStartedTimePayService" xml:space="preserve">
+    <value>Перенос запущенной тарифицируемой услуги в заказ
+с запущенной тарифицируемой услугой невозможен.
+Остановите тарифицируемую услугу в одном из заказов.</value>
+  </data>
+  <data name="BindToClientCard" xml:space="preserve">
+    <value>Привязать заказ к карте клиента</value>
+  </data>
+  <data name="UnbindFromClientCard" xml:space="preserve">
+    <value>Отвязать заказ от карты клиента</value>
+  </data>
+  <data name="CardSlidePromptPopupMessage" xml:space="preserve">
+    <value>Карта клиента</value>
+  </data>
+  <data name="CardSlidePromptPopupTitle" xml:space="preserve">
+    <value>Привязка заказа</value>
+  </data>
+  <data name="ClientCardBindingConflictMessageFormat" xml:space="preserve">
+    <value>К данной карте уже привязан заказ №{0}.
+Привязать к карте еще один заказ?</value>
+  </data>
+  <data name="ClientCardBindingConflictMessageTitle" xml:space="preserve">
+    <value>Карта</value>
+  </data>
+  <data name="OrderItemsMoveOperationTitle" xml:space="preserve">
+    <value>Перенос позиций заказа</value>
+  </data>
+  <data name="CannotMovePositionsToFullSumPrepaidOrder" xml:space="preserve">
+    <value>Перенос позиций в заказ, для которого внесена полная предоплата, невозможен.</value>
+  </data>
+  <data name="UnsealTare" xml:space="preserve">
+    <value>Вскрытие тары</value>
+  </data>
+  <data name="DeliveryRePrint" xml:space="preserve">
+    <value>Готовить</value>
+  </data>
+  <data name="CannotMoveTimePayProductToTab" xml:space="preserve">
+    <value>Перенос тарифицируемой услуги в Таб невозможен.
+Для выполнения операции необходимо исключить услугу из списка выделенных позиций.</value>
+  </data>
+  <data name="MoveDishesToTab" xml:space="preserve">
+    <value>В Таб</value>
+  </data>
+  <data name="TabSelectionTitle" xml:space="preserve">
+    <value>Выбор Таба</value>
+  </data>
+  <data name="MoveOrderWithTimePayProductToTab" xml:space="preserve">
+    <value>Перенос заказа с тарифицируемой услугой в Таб невозможен.</value>
+  </data>
+</root>

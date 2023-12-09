@@ -1,0 +1,374 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddPrepay" xml:space="preserve">
+    <value>Внести предоплату</value>
+  </data>
+  <data name="Depositing" xml:space="preserve">
+    <value>Выполняется внесение предоплаты</value>
+  </data>
+  <data name="PrepayWelcomeHeader" xml:space="preserve">
+    <value>Пожалуйста, введите предоплату</value>
+  </data>
+  <data name="ErrorPrepay" xml:space="preserve">
+    <value>Не удалось добавить предоплату. {0}</value>
+  </data>
+  <data name="ErrorDeletePrepay" xml:space="preserve">
+    <value>Не удалось удалить предоплату. {0}</value>
+  </data>
+  <data name="Prepay" xml:space="preserve">
+    <value>Пред­опла­та</value>
+  </data>
+  <data name="Undepositing" xml:space="preserve">
+    <value>Выполняется удаление предоплаты</value>
+  </data>
+  <data name="PaymentTypeNotConfigured" xml:space="preserve">
+    <value>Не настроен тип оплаты «{0}».</value>
+  </data>
+  <data name="PrepayTitle" xml:space="preserve">
+    <value>Предоплата</value>
+  </data>
+  <data name="UnableToAddPrepayToOrderWithPayment" xml:space="preserve">
+    <value>Невозможно добавить предоплату, так как в заказе есть тип оплаты «{0}»,
+несовместимый с предоплатой.</value>
+  </data>
+  <data name="UnableToAddPaymentToOrderWithPrepay" xml:space="preserve">
+    <value>Невозможно добавить тип оплаты «{0}» к заказу с предоплатой.</value>
+  </data>
+  <data name="PrepaySumIsGreaterThanMax" xml:space="preserve">
+    <value>Оплата типом оплаты «{0}» для данного заказа не может превышать суммы {1}. Уменьшить сумму оплаты?</value>
+  </data>
+  <data name="PrepaySumIsGreaterThanMaxTitle" xml:space="preserve">
+    <value>Превышена максимальная сумма оплаты</value>
+  </data>
+  <data name="UndepositingCaption" xml:space="preserve">
+    <value>Возврат предоплаты</value>
+  </data>
+  <data name="UnableUndepositNotEnoughCashRegistersMoney" xml:space="preserve">
+    <value>Невозможно вернуть предоплату:
+недостаточно наличности в кассе.</value>
+  </data>
+  <data name="UnableUndepositNotEnoughCashDrawersMoney" xml:space="preserve">
+    <value>Невозможно вернуть предоплату:
+недостаточно наличности в денежном ящике.</value>
+  </data>
+  <data name="ClosePrepayWindow" xml:space="preserve">
+    <value>Закрыть</value>
+  </data>
+  <data name="AddedPrepaysSumLabel" xml:space="preserve">
+    <value>Внесено:</value>
+  </data>
+  <data name="CafeSessionIsClosed" xml:space="preserve">
+    <value>Кассовая смена закрыта.</value>
+  </data>
+  <data name="ShouldPrintCashMemoCheque" xml:space="preserve">
+    <value>То­вар­ный чек</value>
+  </data>
+  <data name="ChangeSumLabel" xml:space="preserve">
+    <value>Сдача:</value>
+  </data>
+  <data name="InitialSumLabel" xml:space="preserve">
+    <value>Внести:</value>
+  </data>
+  <data name="OrderSumFormat" xml:space="preserve">
+    <value>={0}</value>
+  </data>
+  <data name="IfToReducePrepaySumToOrderSum" xml:space="preserve">
+    <value>Сумма заказа {0}
+Сумма предоплаты {1} превышает сумму заказа.
+Внести предоплату на сумму {0}?</value>
+    <comment>{0} - сумма заказа, {1} - сумма предоплаты</comment>
+  </data>
+  <data name="Bonus" xml:space="preserve">
+    <value>Бонус</value>
+  </data>
+  <data name="BonusAdded" xml:space="preserve">
+    <value>Добавлен бонус {0}.</value>
+  </data>
+  <data name="DisabledPaymentTypeFormat" xml:space="preserve">
+    <value>Тип оплаты "{0}" недоступен для предоплаты.</value>
+  </data>
+  <data name="ExternalApiPaymentItemCollectingDataProgressBarMessage" xml:space="preserve">
+    <value>Сбор данных</value>
+  </data>
+  <data name="ProcessExternalPrepay" xml:space="preserve">
+    <value>Провести</value>
+  </data>
+  <data name="AddPreliminaryPayment" xml:space="preserve">
+    <value>Сохранить
+без оплаты</value>
+  </data>
+  <data name="DeleteItem" xml:space="preserve">
+    <value>Уда­лить</value>
+  </data>
+  <data name="PreliminaryPaymentWelcomeHeader" xml:space="preserve">
+    <value>Пожалуйста, введите оплату</value>
+  </data>
+  <data name="PreliminaryPaymentTitle" xml:space="preserve">
+    <value>Сохраненные оплаты</value>
+  </data>
+  <data name="EditPaymentItem" xml:space="preserve">
+    <value>Править</value>
+  </data>
+  <data name="EditPreliminaryPaymentWarning" xml:space="preserve">
+    <value>Вы точно хотите изменить предварительную оплату "{0}" с {1} на {2}?</value>
+  </data>
+  <data name="EditOnAddButton" xml:space="preserve">
+    <value>Редактировать</value>
+  </data>
+  <data name="PayOnWaiterTitle" xml:space="preserve">
+    <value>Оплата в расчет официанту</value>
+  </data>
+  <data name="PayOnWaiter" xml:space="preserve">
+    <value>Оплатить заказ</value>
+  </data>
+  <data name="PayOnWaiterWelcomeHeader" xml:space="preserve">
+    <value>Введите сумму для оплаты заказа</value>
+  </data>
+  <data name="CannotPrintMemoMessage" xml:space="preserve">
+    <value>Сумма предоплаты не совпадает с суммой заказа. Товарный чек не был распечатан.</value>
+  </data>
+  <data name="OrderContainsIncompatibleProductsWarningForPreliminary" xml:space="preserve">
+    <value>В заказе есть блюда, которые запрещено оплачивать типом оплаты «{0}».
+    Максимальная сумма оплаты: {1}
+    Внести оплату?</value>
+  </data>
+  <data name="OrderContainsIncompatibleProductsWarningForPrepay" xml:space="preserve">
+    <value>В заказе есть блюда, которые запрещено оплачивать типом оплаты «{0}».
+    Максимальная сумма оплаты: {1}
+    Внести предоплату?</value>
+  </data>
+  <data name="Pay" xml:space="preserve">
+    <value>Оплатить</value>
+  </data>
+  <data name="PrepaidInActiveCafeSessionOnAnotherTerminal" xml:space="preserve">
+    <value>Предоплата была внесена на другом терминале (Касса: {0}, Фискальный регистратор: {1}).
+Возврат предоплаты на этом терминале будет выполнен нефискально.</value>
+    <comment>{0} - номер кассы, {1} - название ФР</comment>
+  </data>
+  <data name="PrepaidInClosedCafeSession" xml:space="preserve">
+    <value>Предоплата была внесена в другой кассовый день.
+Возврат будет выполнен нефискально.</value>
+  </data>
+  <data name="StrictPrepaidInActiveCafeSessionOnAnotherTerminal" xml:space="preserve">
+    <value>Предоплата была внесена на другом терминале (Касса: {0}, Фискальный регистратор: {1}).
+Возврат предоплаты возможен только на том терминале, где она была внесена.</value>
+    <comment>{0} - номер кассы, {1} - название ФР</comment>
+  </data>
+  <data name="StrictPrepaidInClosedCafeSession" xml:space="preserve">
+    <value>Предоплата была внесена в другой кассовый день.
+Возврат невозможен.</value>
+  </data>
+  <data name="UnableStornoPrepayments" xml:space="preserve">
+    <value>Не все предоплаты удалось вернуть. При необходимости удалите предоплаты вручную.</value>
+  </data>
+  <data name="CanAddPrePaymentOnlyOnSameCashRegisterWherePreviousPrePaymentWasProcessedFormat" xml:space="preserve">
+    <value>В заказе содержится предоплата "{0}", внесенная на точке "{1}". Новую предоплату можно внести только на той точке, где была добавлена предоплата "{0}".</value>
+  </data>
+  <data name="SeclectedType" xml:space="preserve">
+    <value>ВЫБРАННЫЙ ТИП:</value>
+  </data>
+  <data name="EmptySeclectedType" xml:space="preserve">
+    <value>не выбрано</value>
+  </data>
+  <data name="CheckPermissionToPrepayFailedOrderOnOtherCR" xml:space="preserve">
+    <value>Предыдущая предоплата данного заказа не была
+успешно завершена на другом фискальном регистраторе.
+Предоплата данного заказа на текущем фискальном
+регистраторе возможна после подтверждения права
+
+«{0}».</value>
+  </data>
+  <data name="RetryCancelPrepayOnErrorOrMovePrepayToPaymentQuestion" xml:space="preserve">
+    <value>Попытка возврата предоплаты «{0}» завершилась ошибкой:
+«{1}».
+Выполнить операцию возврата повторно?
+
+ВНИМАНИЕ: если вы откажетесь от возврата, данная проведенная предоплата будет перенесена в состав оплат!</value>
+    <comment>{0} - тип оплаты; {1} - текст ошибки</comment>
+  </data>
+  <data name="RetryCancelPrepay" xml:space="preserve">
+    <value>Повтор попытки возврата</value>
+  </data>
+  <data name="MovePrepayToPayment" xml:space="preserve">
+    <value>Перенос 
+в оплаты ⚠</value>
+  </data>
+  <data name="PaymentItemNameFormat" xml:space="preserve">
+    <value>{0}{1}</value>
+  </data>
+  <data name="PrepayNameFormat" xml:space="preserve">
+    <value>Предоплата: {0}{1}</value>
+  </data>
+  <data name="PreliminaryPaymentItemNameFormat" xml:space="preserve">
+    <value>Сохраненный платеж: {0}{1}</value>
+  </data>
+  <data name="ExternalPaymentItemNameFormat" xml:space="preserve">
+    <value>Внеш. непроведенный платеж: {0}{1}</value>
+  </data>
+  <data name="ExternalProcessedPaymentItemNameFormat" xml:space="preserve">
+    <value>Внеш. проведенный платеж: {0}{1}</value>
+  </data>
+  <data name="Donation" xml:space="preserve">
+    <value>Чаевые</value>
+  </data>
+  <data name="DonationTitle" xml:space="preserve">
+    <value>Чаевые</value>
+  </data>
+  <data name="AddButtonText" xml:space="preserve">
+    <value>Внести</value>
+  </data>
+  <data name="Donating" xml:space="preserve">
+    <value>Выполняется внесение чаевых</value>
+  </data>
+  <data name="DonationReturn" xml:space="preserve">
+    <value>Возврат чаевых</value>
+  </data>
+  <data name="DonationWithPaymentChooserText" xml:space="preserve">
+    <value>{0}
+{1}</value>
+    <comment>{0} - название типа чаевых, {1} - название типа оплаты</comment>
+  </data>
+  <data name="ErrorDeleteDonation" xml:space="preserve">
+    <value>Не удалось удалить чаевые. {0}</value>
+  </data>
+  <data name="ErrorDonating" xml:space="preserve">
+    <value>Не удалось добавить чаевые. {0}</value>
+  </data>
+  <data name="UnableToAddDonationToOrderWithPayment" xml:space="preserve">
+    <value>Невозможно добавить чаевые, так как в заказе есть тип оплаты «{0}»,
+несовместимый с чаевыми.</value>
+  </data>
+  <data name="UnableToAddPaymentToOrderWithDonation" xml:space="preserve">
+    <value>Невозможно добавить тип оплаты «{0}» к заказу с чаевыми.</value>
+  </data>
+  <data name="DonationOnWaiterStationError" xml:space="preserve">
+    <value>Работа с чаевыми возможна только на кассовом терминале.</value>
+  </data>
+  <data name="OrganizationDetails" xml:space="preserve">
+    <value>Реквизиты</value>
+  </data>
+  <data name="PrepayStornoNotSupportedByCashRegister" xml:space="preserve">
+    <value>Возврат заказа невозможен, так как в нем содержатся предоплаты, проведенные через фискальный регистратор.</value>
+  </data>
+  <data name="ProcessCreateOrderForGuestAndPay" xml:space="preserve">
+    <value>Выполняется оплата заказа</value>
+    <comment>Текст окна, которое показывается в режимах оплаты деления оплаты заказа между гостями "по блюдам" и "по сумме" в случае, если включен режим создания подзаказа в момент оплаты гостя, а не в момент расчета всех гостей.</comment>
+  </data>
+</root>

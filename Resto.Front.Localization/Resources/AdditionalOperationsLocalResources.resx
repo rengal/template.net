@@ -1,0 +1,414 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Debts" xml:space="preserve">
+    <value>Задолженность сотрудников</value>
+  </data>
+  <data name="Clients" xml:space="preserve">
+    <value>Клиенты</value>
+  </data>
+  <data name="CloseCafeSession" xml:space="preserve">
+    <value>Закрыть кассовую смену</value>
+  </data>
+  <data name="ClosedOrders" xml:space="preserve">
+    <value>Закрытые заказы</value>
+  </data>
+  <data name="CloseOperationalDay" xml:space="preserve">
+    <value>Закрыть операционный день</value>
+  </data>
+  <data name="ClosePersonalSession" xml:space="preserve">
+    <value>Закрыть личную смену</value>
+  </data>
+  <data name="CurrentOrders" xml:space="preserve">
+    <value>Открытые заказы</value>
+  </data>
+  <data name="PreliminaryOrders" xml:space="preserve">
+    <value>Предзаказы</value>
+  </data>
+  <data name="Delivery" xml:space="preserve">
+    <value>Доставка</value>
+  </data>
+  <data name="EditAttendances" xml:space="preserve">
+    <value>Редактировать явки</value>
+  </data>
+  <data name="EmergencyOps" xml:space="preserve">
+    <value>Аварийные операции</value>
+  </data>
+  <data name="NewDocument" xml:space="preserve">
+    <value>Новый документ</value>
+  </data>
+  <data name="OpenCafeSession" xml:space="preserve">
+    <value>Открыть кассовую смену</value>
+  </data>
+  <data name="OpenCashDrawer" xml:space="preserve">
+    <value>Открыть денежный ящик</value>
+  </data>
+  <data name="CashDrawersManagment" xml:space="preserve">
+    <value>Управление денежн. ящиками</value>
+  </data>
+  <data name="OpenOperationalDay" xml:space="preserve">
+    <value>Открыть операционный день</value>
+  </data>
+  <data name="OpenPersonalSession" xml:space="preserve">
+    <value>Открыть личную смену</value>
+  </data>
+  <data name="PayInMoney" xml:space="preserve">
+    <value>Внести деньги</value>
+  </data>
+  <data name="PayOutMoney" xml:space="preserve">
+    <value>Изъять деньги</value>
+  </data>
+  <data name="PersonalSessionOpenFormat" xml:space="preserve">
+    <value>Смена открыта
+{0:g}</value>
+  </data>
+  <data name="SelectLanguageFormat" xml:space="preserve">
+    <value>Language:
+{0}</value>
+    <comment>untranslatable</comment>
+  </data>
+  <data name="PrintXReport" xml:space="preserve">
+    <value>Печать X-отчета</value>
+  </data>
+  <data name="Reports" xml:space="preserve">
+    <value>Отчеты</value>
+  </data>
+  <data name="Reserves" xml:space="preserve">
+    <value>Банкеты и резервы</value>
+  </data>
+  <data name="ScheduleEdit" xml:space="preserve">
+    <value>Редактировать явки</value>
+  </data>
+  <data name="ShutDownTerminal" xml:space="preserve">
+    <value>Выключить терминал</value>
+  </data>
+  <data name="StopList" xml:space="preserve">
+    <value>Стоп-лист</value>
+  </data>
+  <data name="SubstitutionCard" xml:space="preserve">
+    <value>Подменная карта</value>
+  </data>
+  <data name="UserPersonalPage" xml:space="preserve">
+    <value>Личная страница</value>
+  </data>
+  <data name="Cash" xml:space="preserve">
+    <value>КАССА</value>
+  </data>
+  <data name="Documents" xml:space="preserve">
+    <value>ДОКУМЕНТЫ</value>
+  </data>
+  <data name="Personnel" xml:space="preserve">
+    <value>ПЕРСОНАЛ</value>
+  </data>
+  <data name="Service" xml:space="preserve">
+    <value>СЕРВИС</value>
+  </data>
+  <data name="ExitToWindows" xml:space="preserve">
+    <value>Выйти в Windows</value>
+  </data>
+  <data name="OperationalDayOpenedFormat" xml:space="preserve">
+    <value>Операционный день открыт {0:g}</value>
+  </data>
+  <data name="OperationalDayClosed" xml:space="preserve">
+    <value>Операционный день закрыт</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Подробнее...</value>
+  </data>
+  <data name="SessionNumOpenDateFormat" xml:space="preserve">
+    <value>Смена №{0} открыта {1:g}</value>
+  </data>
+  <data name="SessionNumOpenFormat" xml:space="preserve">
+    <value>Смена №{0} открыта</value>
+  </data>
+  <data name="CashRegistersCountFormat" xml:space="preserve">
+    <value>Фискальных регистраторов: {0}</value>
+  </data>
+  <data name="CashSession" xml:space="preserve">
+    <value>Кассовая смена</value>
+  </data>
+  <data name="ClosedOnNumFormat" xml:space="preserve">
+    <value>закрыта на: {0}</value>
+  </data>
+  <data name="OpenedOnNumFormat" xml:space="preserve">
+    <value>открыта на: {0}</value>
+  </data>
+  <data name="CashRegistersList" xml:space="preserve">
+    <value>Список кассовых терминалов</value>
+  </data>
+  <data name="CashRegisterNameClosedSessionFormat" xml:space="preserve">
+    <value>{0}, смена</value>
+  </data>
+  <data name="CashRegisterNameOpenedSessionNumberFormat" xml:space="preserve">
+    <value>{0}, смена №{1}</value>
+  </data>
+  <data name="SessionClosed" xml:space="preserve">
+    <value>закрыта</value>
+  </data>
+  <data name="SessionOpenedDateManagerName" xml:space="preserve">
+    <value>открыта {0:g}, менеджер: {1}, кассир: {2}</value>
+  </data>
+  <data name="ProcessedDocuments" xml:space="preserve">
+    <value>Документы</value>
+  </data>
+  <data name="ManagerFormat" xml:space="preserve">
+    <value>менеджер: {0}</value>
+  </data>
+  <data name="OpeningCafeSession" xml:space="preserve">
+    <value>Открываем смену</value>
+  </data>
+  <data name="PrintXReportError" xml:space="preserve">
+    <value>Не удалось напечатать X-отчет:
+{0}.</value>
+  </data>
+  <data name="Barcodes" xml:space="preserve">
+    <value>Настройка и печать штрихкодов</value>
+  </data>
+  <data name="PastOrders" xml:space="preserve">
+    <value>Заказы закрытых кассовых смен</value>
+  </data>
+  <data name="KitchenProducts" xml:space="preserve">
+    <value>Кухонный экран</value>
+  </data>
+  <data name="ProductStocks" xml:space="preserve">
+    <value>Контроль хранения</value>
+  </data>
+  <data name="FrontStatus" xml:space="preserve">
+    <value>Статус</value>
+  </data>
+  <data name="PerformPluginAction" xml:space="preserve">
+    <value>Выполняется сторонний плагин</value>
+  </data>
+  <data name="PrintCashRegisterTape" xml:space="preserve">
+    <value>Буфер контрольной ленты</value>
+  </data>
+  <data name="ChangeCashier" xml:space="preserve">
+    <value>Сменить кассира</value>
+  </data>
+  <data name="CashRegisterOfdNotFound" xml:space="preserve">
+    <value>Фискальные регистраторы с поддержкой ОФД не найдены.</value>
+  </data>
+  <data name="Messages" xml:space="preserve">
+    <value>Сообщения</value>
+  </data>
+  <data name="MessagesTitle" xml:space="preserve">
+    <value>СООБЩЕНИЯ</value>
+  </data>
+  <data name="Customers" xml:space="preserve">
+    <value>ГОСТИ</value>
+  </data>
+  <data name="CustomerList" xml:space="preserve">
+    <value>Список гостей</value>
+  </data>
+  <data name="DiscountCards" xml:space="preserve">
+    <value>Клубные карты</value>
+  </data>
+  <data name="CashierFormat" xml:space="preserve">
+    <value>кассир: {0}</value>
+  </data>
+  <data name="CurrentCashier" xml:space="preserve">
+    <value>Текущий кассир</value>
+  </data>
+  <data name="EmployeeOpenedCafeSession" xml:space="preserve">
+    <value>Сотрудник открывший кассовую смену</value>
+  </data>
+  <data name="AllEmployees" xml:space="preserve">
+    <value>Все сотрудники</value>
+  </data>
+  <data name="EmployeesWithOpenPersonalSession" xml:space="preserve">
+    <value>Сотрудники с открытой личной сменой</value>
+  </data>
+  <data name="Plugins" xml:space="preserve">
+    <value>ДОПОЛНЕНИЯ</value>
+  </data>
+  <data name="CashRegisterExtendedCommands" xml:space="preserve">
+    <value>Команды фискальному регистратору</value>
+  </data>
+  <data name="GettingCashRegisterExtendedCommands" xml:space="preserve">
+    <value>Получение списка команд фискального регистратора...</value>
+  </data>
+  <data name="ExecutingCashRegisterExtendedCommand" xml:space="preserve">
+    <value>Выполнение команды фискального регистратора...</value>
+  </data>
+  <data name="CashRegisterExtendedCommandParamTypeErrorFormat" xml:space="preserve">
+    <value>Тип параметра '{0}' не поддерживается.</value>
+  </data>
+  <data name="OpenSessionCheckTimeFormat" xml:space="preserve">
+    <value>Текущая дата и время фискального регистратора: {0}.
+Эта дата и время соответствует реальному времени?</value>
+  </data>
+  <data name="IsCorrectCashRegisterTime" xml:space="preserve">
+    <value>Да. Открыть кассовую смену</value>
+  </data>
+  <data name="CheckingTime" xml:space="preserve">
+    <value>Получение текущей даты...</value>
+  </data>
+  <data name="UnsealTare" xml:space="preserve">
+    <value>Вскрытие тары</value>
+  </data>
+  <data name="CorrectionCheque" xml:space="preserve">
+    <value>Чек коррекции</value>
+  </data>
+  <data name="CannotCloseCafeSession" xml:space="preserve">
+    <value>Кассовую смену нельзя закрыть, поскольку на фискальном регистраторе “{0}” выполняется кассовая операция.</value>
+  </data>
+  <data name="CannotOpenCafeSession" xml:space="preserve">
+    <value>Кассовую смену нельзя открыть, поскольку на фискальном регистраторе “{0}” выполняется кассовая операция.</value>
+  </data>
+  <data name="CafeSessionIsClosed" xml:space="preserve">
+    <value>Кассовая смена закрыта.</value>
+  </data>
+  <data name="CafeSessionIsClosedFormat" xml:space="preserve">
+    <value>Кассовая смена №{0} закрыта. Попробуйте выполнить операцию заново.</value>
+  </data>
+  <data name="EgaisIncomingInvoices" xml:space="preserve">
+    <value>Приходные накладные ЕГАИС</value>
+  </data>
+  <data name="ReturnProducts" xml:space="preserve">
+    <value>Возврат товаров</value>
+  </data>
+  <data name="Toolkit" xml:space="preserve">
+    <value>ИНСТРУМЕНТЫ</value>
+  </data>
+  <data name="Theme" xml:space="preserve">
+    <value>Тема</value>
+  </data>
+  <data name="ThemeApplyRequiresReboot" xml:space="preserve">
+    <value>Внимание!
+Для применения темы приложения требуется перезагрузка.</value>
+  </data>
+  <data name="DarkThemeName" xml:space="preserve">
+    <value>Темная</value>
+  </data>
+  <data name="LightThemeName" xml:space="preserve">
+    <value>Светлая</value>
+  </data>
+  <data name="HardwareSetup" xml:space="preserve">
+    <value>Настройка оборудования</value>
+  </data>
+  <data name="TabsByWaiter" xml:space="preserve">
+    <value>Табы</value>
+  </data>
+  <data name="OrganizationList" xml:space="preserve">
+    <value>Список организаций</value>
+  </data>
+  <data name="WaiterTeamNameFormat" xml:space="preserve">
+    <value>Бригада: {0}</value>
+  </data>
+</root>

@@ -1,0 +1,589 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CancelOrderPrinting" xml:space="preserve">
+    <value>Отмена
+(не будет оплачено)</value>
+  </data>
+  <data name="CannotCloseCafeSessionItIsClosed" xml:space="preserve">
+    <value>Невозможно закрыть кассовую смену: смена уже закрыта.</value>
+  </data>
+  <data name="CannotCloseOrderOparationMustBeAuth" xml:space="preserve">
+    <value>Операция закрытия должна быть авторизована менеджером</value>
+  </data>
+  <data name="CannotCloseOrderSessionIsClosed" xml:space="preserve">
+    <value>Невозможно закрыть заказ в закрытой кассовой смене</value>
+  </data>
+  <data name="CannotCloseOrderWrongOrderStatus" xml:space="preserve">
+    <value>Невозможно закрыть заказ(неверный статус заказа)</value>
+  </data>
+  <data name="CannotOpenCafeSessionItIsOpened" xml:space="preserve">
+    <value>Невозможно открыть кассовую смену: уже открыта</value>
+  </data>
+  <data name="CannotOpenCafeSessionNoPermissions" xml:space="preserve">
+    <value>Невозможно открыть кассовую смену: не хватает прав</value>
+  </data>
+  <data name="OrdersRelatedToRemovedGroupesDetected" xml:space="preserve">
+    <value>Обнаружены заказы, связанные с удаленными группами. Восстановите удаленные группы и завершите заказы. Всего заказов: {0}. Номера заказов: {1}.</value>
+  </data>
+  <data name="CashRegisterError" xml:space="preserve">
+    <value>Ошибка фискального регистратора</value>
+  </data>
+  <data name="CashRegisterErrorInfo" xml:space="preserve">
+    <value>При печати фискального чека на "{0}"
+возникла ошибка "{1}"
+
+Возможные причины:
+1. Кончилась бумага.
+2. Фискальный регистратор выключен.
+3. Фискальный регистратор не подключен к компьютеру.
+4. Фискальный регистратор неисправен.
+
+Пожалуйста, проверьте состояние фискального регистратора и устраните проблему.
+Если регистратор неисправен, обратитесь в ЦТО.</value>
+  </data>
+  <data name="ContinueOrderPrinting" xml:space="preserve">
+    <value>OK
+(возобновить печать)</value>
+  </data>
+  <data name="CurrentCashRegisterNotFound" xml:space="preserve">
+    <value>Устройство с заданным идентификатором не найдено</value>
+  </data>
+  <data name="CannotStornoOrderSessionIsNotOpened" xml:space="preserve">
+    <value>Невозможно произвести возврат чека при закрытой кассовой смене.</value>
+  </data>
+  <data name="CannotStornoOrderBadStatus" xml:space="preserve">
+    <value>Нельзя произвести возврат чека для данного заказа. Данный заказ имеет статус {0}</value>
+  </data>
+  <data name="CashRegisterIsBusy" xml:space="preserve">
+    <value>Фискальный регистратор занят.</value>
+  </data>
+  <data name="VirtualFRFriendlyName" xml:space="preserve">
+    <value>Фискальный регистратор кассового сервера</value>
+  </data>
+  <data name="VirtualFRStatus" xml:space="preserve">
+    <value>Активен</value>
+  </data>
+  <data name="VirtualFRState" xml:space="preserve">
+    <value>Работает</value>
+  </data>
+  <data name="RepaymentUnavailableRepaymentSumGreaterThanCashSum" xml:space="preserve">
+    <value>Невозможно произвести возврат. Сумма в кассе меньше суммы возврата.</value>
+  </data>
+  <data name="RepaymentUnavailableRepaymentSumGreaterThanCashDrawerSum" xml:space="preserve">
+    <value>Невозможно произвести возврат. Сумма в денежном ящике меньше суммы возврата.</value>
+  </data>
+  <data name="SaleTextTemplate" xml:space="preserve">
+    <value>Заказ №{0}</value>
+  </data>
+  <data name="CashDrawerIsOpenMessageTemplate" xml:space="preserve">
+    <value>Денежный ящик {0} открыт.</value>
+  </data>
+  <data name="UnableToOpenCashDrawerErrorTemplate" xml:space="preserve">
+    <value>Не удалось открыть денежный ящик {0}, {1}.</value>
+  </data>
+  <data name="PrintErrorTemplate" xml:space="preserve">
+    <value>Ошибка печати на устройство {0}: {1}.</value>
+  </data>
+  <data name="PrintSpoolerTimeout" xml:space="preserve">
+    <value>Ошибка печати на устройство {0}. Таймаут ожидания готовности устройства.</value>
+  </data>
+  <data name="PayInMessageTemplate" xml:space="preserve">
+    <value>Внесено: {0:C}</value>
+  </data>
+  <data name="PayOutMessageTemplate" xml:space="preserve">
+    <value>Изъято: {0:C}</value>
+  </data>
+  <data name="PayInOutCashNumberTemplate" xml:space="preserve">
+    <value>Касса №{0}
+</value>
+  </data>
+  <data name="StornoTransactionCommentTemplate" xml:space="preserve">
+    <value>Отмена чека заказа № {0} от {1}, официант: {2}, кассир: {3}</value>
+  </data>
+  <data name="NoChequeForRepeatPrintError" xml:space="preserve">
+    <value>Нет чека для повторной печати</value>
+  </data>
+  <data name="GuestChequeCancelOperationName" xml:space="preserve">
+    <value>Отмена пречека</value>
+  </data>
+  <data name="CreditPaymentTypeNotExistsError" xml:space="preserve">
+    <value>Не существует типа оплаты «Безналичная оплата контрагентом», в настройках которого указан тип контрагента «Сотрудник».
+Закрытие заказа №{0} невозможно.</value>
+  </data>
+  <data name="NotEnoughMoneyForChangeError" xml:space="preserve">
+    <value>Невозможно выдать сдачу для данного заказа.</value>
+  </data>
+  <data name="CafeDeletionMethodName" xml:space="preserve">
+    <value>Списание за счет заведения</value>
+  </data>
+  <data name="UserDeletionMethodNameTemplate" xml:space="preserve">
+    <value>Списание за счет {0}</value>
+  </data>
+  <data name="RecreateDBAndLoadDataFromFilesQuestion" xml:space="preserve">
+    <value>База данных устарела, но в ней есть продажи. Хотите ли вы удалить БД и загрузить в нее данные из файлов?</value>
+  </data>
+  <data name="PayInOutTransactionReasonAttributeValue" xml:space="preserve">
+    <value>есть</value>
+  </data>
+  <data name="DiscountWord" xml:space="preserve">
+    <value>скидка</value>
+  </data>
+  <data name="IncreaseWord" xml:space="preserve">
+    <value>надбавка</value>
+  </data>
+  <data name="IncreaseDiscountNotConfiguredErrorTemplate" xml:space="preserve">
+    <value>Не настроена {0}: {1}</value>
+  </data>
+  <data name="CardOrderItemProcessOperationName" xml:space="preserve">
+    <value>Процессинг с подтверждением</value>
+  </data>
+  <data name="CloseOrderOperationName" xml:space="preserve">
+    <value>Закрытие заказа</value>
+  </data>
+  <data name="DiscountsValidationOperationName" xml:space="preserve">
+    <value>Валидация корректности скидок и надбавок</value>
+  </data>
+  <data name="DiscountsValidationOperationSucceeded" xml:space="preserve">
+    <value>Скидки и надбавки корректны.</value>
+  </data>
+  <data name="DiscountsValidationOperationStopped" xml:space="preserve">
+    <value>Операция отменена.</value>
+  </data>
+  <data name="OrderItemApprovableOperationNameTemplate" xml:space="preserve">
+    <value>Проведение позиции заказа, требующей подтверждения {0}</value>
+  </data>
+  <data name="OrderItemProcessOperationName" xml:space="preserve">
+    <value>Проведение платежа</value>
+  </data>
+  <data name="OrderItemsValidationOperationName" xml:space="preserve">
+    <value>Валидация корректности блюд</value>
+  </data>
+  <data name="OrderItemsValidationOperationSucceeded" xml:space="preserve">
+    <value>Платежи корректны.</value>
+  </data>
+  <data name="OrderItemsValidationOperationStopped" xml:space="preserve">
+    <value>Операция отменена.</value>
+  </data>
+  <data name="PayBillOperationNameTemplate" xml:space="preserve">
+    <value>Оплата заказа {0}</value>
+  </data>
+  <data name="PaymentApprovableOperationNameTemplate" xml:space="preserve">
+    <value>Проведение платежа, требующее подтверждения: {0}</value>
+  </data>
+  <data name="PaymentProcessOperationName" xml:space="preserve">
+    <value>Проведение платежа</value>
+  </data>
+  <data name="PaymentProcessOperationCancelSucceeded" xml:space="preserve">
+    <value>Операция успешно отменена</value>
+  </data>
+  <data name="PaymentProcessOperationCancelFailed" xml:space="preserve">
+    <value>Отмена операции не удалась</value>
+  </data>
+  <data name="PaymentsValidationOperationName" xml:space="preserve">
+    <value>Валидация корректности платежей</value>
+  </data>
+  <data name="PaymentsValidationOperationSucceeded" xml:space="preserve">
+    <value>Платежи корректны.</value>
+  </data>
+  <data name="PaymentsValidationOperationStopped" xml:space="preserve">
+    <value>Операция отменена.</value>
+  </data>
+  <data name="ProcessBonusesOperationName" xml:space="preserve">
+    <value>Процессинг бонусов</value>
+  </data>
+  <data name="ProcessPaymentsOperationName" xml:space="preserve">
+    <value>Процессинг платежей</value>
+  </data>
+  <data name="RequestApproveOperationNameTemplate" xml:space="preserve">
+    <value>Необходима подпись: {0}</value>
+  </data>
+  <data name="RequestApproveOperationCanceled" xml:space="preserve">
+    <value>Запрос подписи отменен</value>
+  </data>
+  <data name="RequestApproveOperationAlreadyCompleted" xml:space="preserve">
+    <value>Операция уже была выполнена</value>
+  </data>
+  <data name="PaymentProcessingError" xml:space="preserve">
+    <value>Ошибка проведения оплаты</value>
+  </data>
+  <data name="UnknownUserName" xml:space="preserve">
+    <value>НЕИЗВЕСТЕН</value>
+  </data>
+  <data name="PaymentItemUncombinableTypesErrorTemplate" xml:space="preserve">
+    <value>Тип «{0}» некомбинируемый. Заказ не может содержать других типов оплаты.</value>
+  </data>
+  <data name="UsageOfOperationalDayNotConfiguredError" xml:space="preserve">
+    <value>Операционный день не используется.</value>
+  </data>
+  <data name="CannotExecuteOperationTemplate" xml:space="preserve">
+    <value>Невозможно выполнить операцию : {0}.</value>
+  </data>
+  <data name="InsufficientlyRights" xml:space="preserve">
+    <value>недостаточно прав</value>
+  </data>
+  <data name="ServiceNotFoundTemplate" xml:space="preserve">
+    <value>Сервис '{0}' не найден.</value>
+  </data>
+  <data name="NotEnoughPaymentErrorFormat" xml:space="preserve">
+    <value>Невозможно закрыть заказ номер {0}.
+Внесена недостаточная сумма {1}.
+Необходимо внести {2}.</value>
+  </data>
+  <data name="EntitiesUpgradeError" xml:space="preserve">
+    <value>Произошла ошибка при обновлении данных (подробности в журнале обновления).
+Данные предыдущей версии не были изменены, перед обновлением их необходимо исправить.
+Обратитесь в техническую поддержку за помощью специалистов.
+После исправления данных запустите приложение заново.</value>
+  </data>
+  <data name="StornoCommentForEvent" xml:space="preserve">
+    <value>{0} - новый номер заказа.</value>
+  </data>
+  <data name="PayOutCommentFormat" xml:space="preserve">
+    <value>Оплата заказа №{0} с расчетом официанту</value>
+  </data>
+  <data name="NoOrdermanPayOut" xml:space="preserve">
+    <value>Нет подходящего типа изъятия.</value>
+  </data>
+  <data name="CheckPaymentOnTerminalConnectionError" xml:space="preserve">
+    <value>Не удалось подключиться к главной кассе для выполнения оплаты.</value>
+  </data>
+  <data name="OrderPaymentError" xml:space="preserve">
+    <value>Заказ не был оплачен.</value>
+  </data>
+  <data name="WaiterPayOutError" xml:space="preserve">
+    <value>Автоматическое изъятие после дистанционной оплаты не сделано. Проделайте эту операцию вручную.</value>
+  </data>
+  <data name="Error24HDayShiftExpired" xml:space="preserve">
+    <value>Истекли 24 часа, необходимо закрыть смену.</value>
+  </data>
+  <data name="ErrorSerialNumber" xml:space="preserve">
+    <value>Изменился серийный номер фискального регистратора в рамках текущей смены, необходимо закрыть смену.</value>
+  </data>
+  <data name="ErrorUnknownSerialNumber" xml:space="preserve">
+    <value>Невозможно получить серийный номер фискального регистратора. Возможно, устройство не подключено..</value>
+  </data>
+  <data name="OrdersInClosingStatus" xml:space="preserve">
+    <value>Закрытие смены невозможно. Обнаружены заказы с незавершенной операцией оплаты.
+Чтобы заказы вернулись в согласованное состояние и закрытие смены стало возможным, необходимо перезапустить приложение.</value>
+  </data>
+  <data name="CashRegisterSumErrorFormat" xml:space="preserve">
+    <value>{0}. Но фискальная память изменилась на {1} вместо ожидаемого {2}</value>
+  </data>
+  <data name="CashRegisterDocumentNumberError" xml:space="preserve">
+    <value>Номер документа в фискальной памяти не изменился.</value>
+  </data>
+  <data name="CannotLoadPluginDueToInsufficientLicense" xml:space="preserve">
+    <value>Лицензионное ограничение: дополнение «{0}» недоступно.</value>
+  </data>
+  <data name="CannotLoadPluginsDueToInsufficientLicense" xml:space="preserve">
+    <value>Лицензионное ограничение: дополнения «{0}» недоступны.</value>
+  </data>
+  <data name="CannotLoadUnsupportedPlugin" xml:space="preserve">
+    <value>Дополнение «{0}» установлено, но не работает.
+Обратитесь к поставщику этого дополнения.</value>
+    <comment>This message is shown when some plugin doesn't look like a plugin and therefore cannot be loaded. Usually this means that the plugin uses api version which isn't supported anymore.</comment>
+  </data>
+  <data name="CannotLoadUnsupportedPlugins" xml:space="preserve">
+    <value>Некоторые дополнения установлены, но не работают: «{0}». Обратитесь к поставщику этих дополнений.</value>
+    <comment>This message is shown when some plugins don't look like a plugin and therefore cannot be loaded. Usually this means that these plugins use api version which isn't supported anymore.</comment>
+  </data>
+  <data name="CannotLoadPluginDueToUntrustedSecurityZone" xml:space="preserve">
+    <value>Дополнение «{0}» не работает, его файлы были заблокированы при копировании с другого компьютера. Обратитесь к системному администратору.</value>
+    <comment>This message is shown when some plugin cannot be loaded because it's files where copied from untrusted source (usually internet) and blocked by security zone.</comment>
+  </data>
+  <data name="CannotLoadPluginsDueToUntrustedSecurityZone" xml:space="preserve">
+    <value>Дополнения «{0}» не работают, их файлы были заблокированы при копировании с другого компьютера. Обратитесь к системному администратору.</value>
+    <comment>This message is shown when some plugins cannot be loaded because their files where copied from untrusted source (usually internet) and blocked by security zone.</comment>
+  </data>
+  <data name="ItemsForPurchaseError" xml:space="preserve">
+    <value>В заказе №{0} есть товары для покупки.
+Закрытие заказа №{0} невозможно.</value>
+  </data>
+  <data name="SplitBeforePayment" xml:space="preserve">
+    <value>Необходимо разделить заказ по местам приготовления до оплаты.</value>
+  </data>
+  <data name="ProcessSmsError" xml:space="preserve">
+    <value>SMS не отправлено</value>
+  </data>
+  <data name="ProcessEmailError" xml:space="preserve">
+    <value>E-mail не отправлен</value>
+  </data>
+  <data name="OfdOffline" xml:space="preserve">
+    <value>Нет связи с ОФД. </value>
+  </data>
+  <data name="OfdResponseErrorFormat" xml:space="preserve">
+    <value>Ошибка ОФД (код ошибки {0}). </value>
+  </data>
+  <data name="FnResponseErrorFormat" xml:space="preserve">
+    <value>Ошибка фискального накопителя (код ошибки {0}). </value>
+  </data>
+  <data name="OfdQueueCountFormat" xml:space="preserve">
+    <value>Количество неотправленных документов: {0}.</value>
+  </data>
+  <data name="OfdSmsFormat" xml:space="preserve">
+    <value>{0} ({6}): сумма {2}, {3}; чек №{4}, ККТ {1}; подробнее {5}</value>
+    <comment>
+      {0} - название ресторана
+      {1} - номер ККТ
+      {2} - сумма
+      {3} - дата и время
+      {4} - фискальный признак документа
+      {5} - url 
+      {6} - адрес
+    </comment>
+  </data>
+  <data name="OfdEmailSubjFormat" xml:space="preserve">
+    <value>[{0}]: Чек №{1}</value>
+    <comment>
+      {0} - название ресторана
+      {1} - фискальный признак документа
+    </comment>
+  </data>
+  <data name="OfdEmailBodyFormat" xml:space="preserve">
+    <value>Предприятие '{0}' ({6}):
+   
+ Чек №{4}
+ ККТ {1} 
+ Общая сумма {2}
+ Дата {3}
+ Подробнее {5}</value>
+    <comment>
+      {0} - название ресторана
+      {1} - номер ККТ
+      {2} - сумма
+      {3} - дата и время
+      {4} - фискальный признак документа
+      {5} - url 
+      {6} - адрес
+    </comment>
+  </data>
+  <data name="IsCancellationMessage" xml:space="preserve">
+    <value>"Фискальный регистратор поддерживает операцию аннулирования.
+
+Как произвести возврат чека заказа?" </value>
+  </data>
+  <data name="BillTaskErrorFormat" xml:space="preserve">
+    <value>Ошибка при печати пречека: «{0}»
+Подробности: «{1}». </value>
+  </data>
+  <data name="SessionStatusClosed" xml:space="preserve">
+    <value>Смена закрыта</value>
+  </data>
+  <data name="SessionStatusExceed" xml:space="preserve">
+    <value>Смена просрочена</value>
+  </data>
+  <data name="SessionStatusOpen" xml:space="preserve">
+    <value>Смена открыта</value>
+  </data>
+  <data name="StatusBarWarnSign" xml:space="preserve">
+    <value>⚠</value>
+  </data>
+  <data name="FrFastFoodMode" xml:space="preserve">
+    <value>Фастфуд</value>
+    <comment>Fiscal register fast food mode indicator</comment>
+  </data>
+  <data name="FrRestaurantMode" xml:space="preserve">
+    <value>Ресторан</value>
+    <comment>Fiscal register restaurant (table service) mode indicator</comment>
+  </data>
+  <data name="FrModeWrong" xml:space="preserve">
+    <value>Неверный режим ФР</value>
+    <comment>Incorrect fiscal register mode, does not match back office configuration</comment>
+  </data>
+  <data name="CannotGetBillNumber" xml:space="preserve">
+    <value>Ошибка при печати пречека: «Не задан счет».</value>
+  </data>
+  <data name="PayOutForCourierChangeError" xml:space="preserve">
+    <value>Не удалось произвести изъятие. Убедитесь, что деньги не изъяты из кассы.</value>
+  </data>
+  <data name="ApplicationDowngradeIsNotSupportedErrorMessageFormat" xml:space="preserve">
+    <value>На диске обнаружены данные, созданные более новой версией приложения {0}.
+Установленная сейчас версия приложения {1} является более старой и не может использовать эти данные.
+Для продолжения работы необходимо установить версию {0} или новее.</value>
+  </data>
+  <data name="RmsUpdatesListeningStopped" xml:space="preserve">
+    <value>Произошла ошибка при обработке полученных от сервера данных. Обновление справочников приостановлено. Обратитесь за помощью в техническую поддержку.</value>
+  </data>
+  <data name="ClosedOrdersWithReturnedPaymentsWarning" xml:space="preserve">
+    <value>Обнаружены заказы с незавершенной операцией возврата оплаты. Номера заказов: {0}.
+Чтобы заказы вернулись в согласованное состояние и закрытие смены стало возможным, необходимо завершить процедуру возврата заказов.
+В случае продолжения возникнут расхождения, вы хотите закрыть смену?</value>
+  </data>
+  <data name="VirtualCashRegisterEmailSubjFormat" xml:space="preserve">
+    <value>Квитанция от {0}, {1}</value>
+  </data>
+  <data name="CannotStornoOnCashRegister" xml:space="preserve">
+    <value>Возврат оплаты невозможен, так как она была проведена через фискальный регистратор.</value>
+  </data>
+  <data name="OrderHasEmployeesExpensePayment" xml:space="preserve">
+    <value>В заказе есть оплата в кредит на сотрудника.</value>
+    <comment>this order has an employees expense payment</comment>
+  </data>
+  <data name="NoCashRegisterInfoBeforeCashOperation" xml:space="preserve">
+    <value>Невозможно начать оплату на фискальном регистраторе.
+Невозможно получить информацию о состоянии фискального регистратора до начала оплаты.
+{0}</value>
+  </data>
+  <data name="NoCashRegisterSumBeforeCashOperation" xml:space="preserve">
+    <value>Невозможно начать оплату на фискальном регистраторе.
+Невозможно получить информацию о сумме в памяти фискального регистратора до начала оплаты.</value>
+  </data>
+  <data name="CashRegisterErrorInfoWithDetails" xml:space="preserve">
+    <value>При печати фискального чека на "{0}"
+возникла ошибка "{1}"
+Подробности :"{2}"
+
+Возможные причины:
+1. Кончилась бумага.
+2. Фискальный регистратор выключен.
+3. Фискальный регистратор не подключен к компьютеру.
+4. Фискальный регистратор неисправен.
+
+Пожалуйста, проверьте состояние фискального регистратора и устраните проблему.
+Если регистратор неисправен, обратитесь в ЦТО.</value>
+  </data>
+  <data name="FnDocumentNumberNotChanged" xml:space="preserve">
+    <value>Номер документа в ФН не изменился.</value>
+  </data>
+  <data name="CashSumDeviationFormat" xml:space="preserve">
+    <value>Сумма наличности изменилась на {0} вместо ожидаемого {1}.</value>
+  </data>
+  <data name="TotalIncomeDeviationFormat" xml:space="preserve">
+    <value>Сумма выручки изменилась на {0} вместо ожидаемого {1}.</value>
+  </data>
+  <data name="AgentDeviceStateError" xml:space="preserve">
+    <value>Ошибка</value>
+  </data>
+  <data name="AgentDeviceStatusCorrupted" xml:space="preserve">
+    <value>Не настроено (удалить)</value>
+  </data>
+  <data name="ErrorPluginNotLoadedFormat" xml:space="preserve">
+    <value>Плагин "{0}" не загружен</value>
+  </data>
+  <data name="FailedToExtractCommodityCode" xml:space="preserve">
+    <value>Сканер не распознал акцизную марку товара [{0}]. Марка не передана в фискальный регистратор. Проверьте настройки сканера или корректность марки.</value>
+  </data>
+  <data name="CannotNavigateToPayment" xml:space="preserve">
+    <value>Не удается перейти на экран оплаты. Отсутствуют блюда в заказе.</value>
+  </data>
+  <data name="GetSettingsError" xml:space="preserve">
+    <value>Ошибка получения настроек фискального регистратора</value>
+  </data>
+</root>

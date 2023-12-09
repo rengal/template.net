@@ -1,0 +1,387 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ServerUnaviable" xml:space="preserve">
+    <value>Получение информации о сотруднике невозможно: недоступен сервер.</value>
+  </data>
+  <data name="RetrieveServerDataError" xml:space="preserve">
+    <value>При получении с сервера информации о сотруднике произошла ошибка.</value>
+  </data>
+  <data name="WorkResultsByDate" xml:space="preserve">
+    <value>Результат работы по датам:</value>
+  </data>
+  <data name="HeaderDateText" xml:space="preserve">
+    <value>Дата</value>
+  </data>
+  <data name="HeaderTypeText" xml:space="preserve">
+    <value>Тип</value>
+  </data>
+  <data name="HeaderSumText" xml:space="preserve">
+    <value>Сумма</value>
+  </data>
+  <data name="HeaderDetailsText" xml:space="preserve">
+    <value>Подробности</value>
+  </data>
+  <data name="HeaderAuthorizedByText" xml:space="preserve">
+    <value>Авторизовал</value>
+  </data>
+  <data name="MonthHeaderFormatString" xml:space="preserve">
+    <value>{0:MMMM} {0:yyyy}</value>
+  </data>
+  <data name="TotalsHeaderFormatString" xml:space="preserve">
+    <value>Итого: {0}</value>
+  </data>
+  <data name="DefaultAuthByValue" xml:space="preserve">
+    <value>Автоматически</value>
+  </data>
+  <data name="BonusSumLabel" xml:space="preserve">
+    <value>Премии:</value>
+  </data>
+  <data name="HourlyPaySumLabel" xml:space="preserve">
+    <value>Повременная оплата:</value>
+  </data>
+  <data name="IncentiveSumLabel" xml:space="preserve">
+    <value>Бонусы:</value>
+  </data>
+  <data name="PenaltySumLabel" xml:space="preserve">
+    <value>Штрафы:</value>
+  </data>
+  <data name="DeductionsSumLabel" xml:space="preserve">
+    <value>Прочие вычеты:</value>
+  </data>
+  <data name="AddictionsSumLabel" xml:space="preserve">
+    <value>Прочие начисления:</value>
+  </data>
+  <data name="CashSumLabel" xml:space="preserve">
+    <value>Касса &lt;-&gt; сотрудник:</value>
+  </data>
+  <data name="PersonalTotalSumLabel" xml:space="preserve">
+    <value>Итого: </value>
+  </data>
+  <data name="PersonalSalesSumLabel" xml:space="preserve">
+    <value>Личные продажи (ЛП):</value>
+  </data>
+  <data name="AveragePersonalSalesPerHourLabel" xml:space="preserve">
+    <value>Средние продажи в час (СПЧ):</value>
+  </data>
+  <data name="WorkedOffLabel" xml:space="preserve">
+    <value>Отработано:</value>
+  </data>
+  <data name="WorkedOffFormatString" xml:space="preserve">
+    <value>{0:n0} ч. {1:d2} м.</value>
+  </data>
+  <data name="ConfirmIgnoreOpenedOrders_1" xml:space="preserve">
+    <value>У Вас остался {0} незакрытый заказ на сумму {1}
+Заказы надо закрыть или перенести на других официантов.</value>
+  </data>
+  <data name="ConfirmIgnoreOpenedOrders_2to4" xml:space="preserve">
+    <value>У Вас остались {0} незакрытых заказа на сумму {1}
+Заказы надо закрыть или перенести на других официантов.</value>
+  </data>
+  <data name="ConfirmIgnoreOpenedOrders_5to0" xml:space="preserve">
+    <value>У Вас остались {0} незакрытых заказов на сумму {1}
+Заказы надо закрыть или перенести на других официантов.</value>
+  </data>
+  <data name="ConfirmIgnoreOpenedOrdersAnotherUser_1" xml:space="preserve">
+    <value>У пользователя {0} остался {1} незакрытый заказ на сумму {2}
+Заказы надо закрыть или перенести на других официантов.</value>
+  </data>
+  <data name="ConfirmIgnoreOpenedOrdersAnotherUser_2to4" xml:space="preserve">
+    <value>У пользователя {0} остались {1} незакрытых заказа на сумму {2}
+Заказы надо закрыть или перенести на других официантов.</value>
+  </data>
+  <data name="ConfirmIgnoreOpenedOrdersAnotherUser_5to0" xml:space="preserve">
+    <value>У пользователя {0} остались {1} незакрытых заказов на сумму {2}
+Заказы надо закрыть или перенести на других официантов.</value>
+  </data>
+  <data name="SessionClosedMessageFormat" xml:space="preserve">
+    <value>Смена закрыта: {0:g}.
+Продолжительность смены: {1}</value>
+  </data>
+  <data name="PersonalSessionTitle" xml:space="preserve">
+    <value>Личная смена</value>
+  </data>
+  <data name="ConfirmIgnoreLinkUserWithCashDrawer" xml:space="preserve">
+    <value>Закрытие личной смены пользователя {0} невозможно.
+  Для закрытия смены необходимо произвести контрольный пересчет на денежных ящиках: {1}</value>
+  </data>
+  <data name="AnnouncementsTitle" xml:space="preserve">
+    <value>НОВОСТИ</value>
+  </data>
+  <data name="SalaryCurrentMonthTitle" xml:space="preserve">
+    <value>Оплата труда за текущий месяц</value>
+  </data>
+  <data name="SalaryMonthsTitle" xml:space="preserve">
+    <value>Оплата труда по месяцам</value>
+  </data>
+  <data name="CurrentMonthButton" xml:space="preserve">
+    <value>НАЧИСЛЕНИЯ</value>
+  </data>
+  <data name="MonthsButton" xml:space="preserve">
+    <value>ИТОГИ РАБОТЫ</value>
+  </data>
+  <data name="Plan" xml:space="preserve">
+    <value>План</value>
+  </data>
+  <data name="Fact" xml:space="preserve">
+    <value>Факт</value>
+  </data>
+  <data name="PerHourFormat" xml:space="preserve">
+    <value>{0}/час</value>
+  </data>
+  <data name="FormulaFormat" xml:space="preserve">
+    <value>Премия = {0}</value>
+  </data>
+  <data name="WorkedHours" xml:space="preserve">
+    <value>Отработанное время/ с учетом коррекции</value>
+  </data>
+  <data name="WorkedHoursFormat" xml:space="preserve">
+    <value>{0}/ {1}</value>
+  </data>
+  <data name="ByCategories" xml:space="preserve">
+    <value>По категориям</value>
+  </data>
+  <data name="ByGroups" xml:space="preserve">
+    <value>По группам</value>
+  </data>
+  <data name="ByProducts" xml:space="preserve">
+    <value>По продуктам</value>
+  </data>
+  <data name="MainProgramFormat" xml:space="preserve">
+    <value>Начисление бонуса зависит от выполнения программы «{0}»</value>
+  </data>
+  <data name="NameWithSessionFormat" xml:space="preserve">
+    <value>{0} (смена {1})</value>
+    <comment>{1} - имя мотивационной программы, {0} номер кассовой смены</comment>
+  </data>
+  <data name="AnnouncementDateFormat" xml:space="preserve">
+    <value>- {0:d MMMM} -</value>
+  </data>
+  <data name="ActiveIncentivePrograms" xml:space="preserve">
+    <value>ДЕЙСТВУЮЩИЕ
+МОТИВАЦИОННЫЕ ПРОГРАММЫ</value>
+  </data>
+  <data name="DetailSumsHeader" xml:space="preserve">
+    <value>ЗАРАБОТАНО</value>
+  </data>
+  <data name="ConfirmIgnoreDeliveries_1" xml:space="preserve">
+    <value>На Вас назначена {0} доставка на сумму {1}
+Доставку надо закрыть или перенести на другого курьера.</value>
+  </data>
+  <data name="ConfirmIgnoreDeliveries_2to4" xml:space="preserve">
+    <value>На Вас назначено {0} доставки на сумму {1}
+Доставки надо закрыть или перенести на других курьеров.</value>
+  </data>
+  <data name="ConfirmIgnoreDeliveries_5to0" xml:space="preserve">
+    <value>На Вас назначено {0} доставок на сумму {1}
+Доставки надо закрыть или перенести на других курьеров.</value>
+  </data>
+  <data name="ConfirmIgnoreDeliveriesAnotherUser_1" xml:space="preserve">
+    <value>На пользователя {0} назначено {1} доставка на сумму {2}
+Доставку надо закрыть или перенести на другого курьера.</value>
+  </data>
+  <data name="ConfirmIgnoreDeliveriesAnotherUser_2to4" xml:space="preserve">
+    <value>На пользователя {0} назначено {1} доставки на сумму {2}
+Доставки надо закрыть или перенести на других курьеров.</value>
+  </data>
+  <data name="ConfirmIgnoreDeliveriesAnotherUser_5to0" xml:space="preserve">
+    <value>На пользователя {0} назначено {0} доставок на сумму {1}
+Доставки надо закрыть или перенести на других курьеров.</value>
+  </data>
+  <data name="ChooseRoleTitle" xml:space="preserve">
+    <value>Выберите должность</value>
+  </data>
+  <data name="ChoosingRoleTitle" xml:space="preserve">
+    <value>Выбор должности</value>
+  </data>
+  <data name="NoRolesAvailable" xml:space="preserve">
+    <value>Нет доступных должностей</value>
+  </data>
+  <data name="ChangingRoleTitle" xml:space="preserve">
+    <value>Смена должности</value>
+  </data>
+  <data name="OnlyCurrentRoleAvailable" xml:space="preserve">
+    <value>Вы можете работать только в текущей должности «{0}»</value>
+  </data>
+  <data name="RoleAlreadyUsed" xml:space="preserve">
+    <value>Вы уже работаете в должности «{0}»</value>
+  </data>
+  <data name="RoleChanged" xml:space="preserve">
+    <value>Должность изменена на «{0}»</value>
+  </data>
+  <data name="ChangeRole" xml:space="preserve">
+    <value>СМЕНИТЬ ДОЛЖНОСТЬ</value>
+  </data>
+  <data name="ConfirmIgnoreDeliveries" xml:space="preserve">
+    <value>Закрыть смену, игнорируя доставки?</value>
+  </data>
+  <data name="ConfirmIgnoreOrders" xml:space="preserve">
+    <value>Закрыть смену, игнорируя заказы?</value>
+  </data>
+  <data name="SessionCloseDeleteOrdersFastFoodQuestion" xml:space="preserve">
+    <value>У Вас остался {0} незакрытый заказ на сумму {1}
+Закрыть заказы?</value>
+  </data>
+  <data name="SessionCloseGoToOrderFastFoodQuestion" xml:space="preserve">
+    <value>У Вас остался {0} незакрытый заказ на сумму {1}
+Необходимо войти в заказ и указать причину удаления для блюд.</value>
+  </data>
+  <data name="SessionCloseDeleteOrdersFastFoodQuestionTwoTreeFour" xml:space="preserve">
+    <value>У Вас осталось {0} незакрытых заказа на сумму {1}
+Закрыть заказы?</value>
+  </data>
+  <data name="SessionCloseGoToOrderFastFoodQuestionTwoTreeFour" xml:space="preserve">
+    <value>У Вас осталось {0} незакрытых заказа на сумму {1}
+Необходимо войти в заказ и указать причину удаления для блюд.</value>
+  </data>
+  <data name="SessionCloseDeleteOrdersFastFoodQuestionPlural" xml:space="preserve">
+    <value>У Вас осталось {0} незакрытых заказов на сумму {1}
+Закрыть заказы?</value>
+  </data>
+  <data name="SessionCloseGoToOrderFastFoodQuestionPlural" xml:space="preserve">
+    <value>У Вас осталось {0} незакрытых заказов на сумму {1}
+Необходимо войти в заказ и указать причину удаления для блюд.</value>
+  </data>
+  <data name="ExternalPin" xml:space="preserve">
+    <value>${MOBILE_APP} PIN</value>
+  </data>
+  <data name="ExternalPinHint" xml:space="preserve">
+    <value>Введите этот PIN-код на стартовой странице
+мобильного приложения ${MOBILE_APP}</value>
+  </data>
+  <data name="NoRoleWarning" xml:space="preserve">
+    <value>Внимание! У вас не выбрана должность!</value>
+  </data>
+  <data name="ConfirmIgnoreDebt" xml:space="preserve">
+    <value>У вас накопилась задолженность в размере {0}
+Закрыть смену, игнорируя задолженность?</value>
+  </data>
+  <data name="ConfirmIgnoreDebtAnotherUser" xml:space="preserve">
+    <value>У пользователя {0} накопилась задолженность в размере {0}
+Закрыть смену, игнорируя задолженность?</value>
+  </data>
+  <data name="ConfirmIgnoreSurplus" xml:space="preserve">
+    <value>У вас накопились излишки в размере {0}
+Закрыть смену, игнорируя излишки?</value>
+  </data>
+  <data name="ConfirmIgnoreSurplusAnotherUser" xml:space="preserve">
+    <value>У пользователя {0} накопились излишки в размере {0}
+Закрыть смену, игнорируя излишки?</value>
+  </data>
+</root>

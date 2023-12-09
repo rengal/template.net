@@ -1,0 +1,926 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CashButtonLabel" xml:space="preserve">
+    <value>Касса</value>
+  </data>
+  <data name="CashPaymentInfoFormat" xml:space="preserve">
+    <value>{0} ({1}): {2}</value>
+  </data>
+  <data name="ChangeFormat" xml:space="preserve">
+    <value>Сдача: {0:f2} {1}</value>
+  </data>
+  <data name="Change" xml:space="preserve">
+    <value>Сдача:</value>
+  </data>
+  <data name="ChooseDishToSetAmountLabel" xml:space="preserve">
+    <value>Выберите блюдо для указания остатков на кухне, помещения в стоп-лист или удаления из стоп-листа.</value>
+  </data>
+  <data name="ClosedOrdersListButton" xml:space="preserve">
+    <value>Перейти к списку закрытых заказов</value>
+  </data>
+  <data name="DecreaseLabel" xml:space="preserve">
+    <value>Скидка:</value>
+  </data>
+  <data name="DeleteProduct" xml:space="preserve">
+    <value>Удалить товар</value>
+  </data>
+  <data name="DeletingOrderItem" xml:space="preserve">
+    <value>Производится отмена элемента заказа</value>
+  </data>
+  <data name="DiscountViewTitle" xml:space="preserve">
+    <value>Скидка/Надбавка</value>
+  </data>
+  <data name="PleaseSlideClientDiscountCardOrInputItsNumber" xml:space="preserve">
+    <value>Пожалуйста, прокатайте карту гостя или введите ее номер:</value>
+  </data>
+  <data name="DishWithDotsFormat" xml:space="preserve">
+    <value>Блюдо: {0}</value>
+  </data>
+  <data name="DivideOrderItem" xml:space="preserve">
+    <value>Вы хотите применить модификатор ко всем {0} блюдам?</value>
+  </data>
+  <data name="FirstGuestLabel" xml:space="preserve">
+    <value>Первый гость</value>
+  </data>
+  <data name="FullSumLabel" xml:space="preserve">
+    <value>Итого:</value>
+  </data>
+  <data name="GroupModifierComment" xml:space="preserve">
+    <value>Минимум: {0}, максимум: {1}, выбрано: {2}</value>
+  </data>
+  <data name="GroupModifierHeader" xml:space="preserve">
+    <value>Введите количество модификаторов из группы «{0}»</value>
+  </data>
+  <data name="IncreaseLabel" xml:space="preserve">
+    <value>Надбавка:</value>
+  </data>
+  <data name="InsufficientRights" xml:space="preserve">
+    <value>Недостаточно прав</value>
+  </data>
+  <data name="MaximumQuantityExceededMessageFormat" xml:space="preserve">
+    <value>Введено: «{0}», максимальное допустимое значение: «{1}».</value>
+  </data>
+  <data name="MaximumQuantityExceededTitle" xml:space="preserve">
+    <value>Введенное значение больше допустимого</value>
+  </data>
+  <data name="MinimumQuantityExceededMessageFormat" xml:space="preserve">
+    <value>Введено: «{0}», минимальное допустимое значение: «{1}».</value>
+  </data>
+  <data name="MinimumQuantityExceededTitle" xml:space="preserve">
+    <value>Введенное значение меньше допустимого</value>
+  </data>
+  <data name="ModifiersLabel" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="MoveToStopList" xml:space="preserve">
+    <value>Поместить в стоп-лист</value>
+  </data>
+  <data name="NoDecreaseIncrease" xml:space="preserve">
+    <value>Нет</value>
+  </data>
+  <data name="NonCashPaymentInfoFormat" xml:space="preserve">
+    <value>{0} ({1}): {2}</value>
+  </data>
+  <data name="OpenOrder" xml:space="preserve">
+    <value>Открыть</value>
+  </data>
+  <data name="OrderClosed" xml:space="preserve">
+    <value>Заказ закрыт: {0}</value>
+  </data>
+  <data name="OrderNumber" xml:space="preserve">
+    <value>Номер заказа: {0}</value>
+  </data>
+  <data name="OrderOpened" xml:space="preserve">
+    <value>Заказ открыт: {0}</value>
+  </data>
+  <data name="RemoveFromStopList" xml:space="preserve">
+    <value>Удалить из стоп-листа
+/ очистить остатки</value>
+  </data>
+  <data name="ReturnCheque" xml:space="preserve">
+    <value>Возврат чека</value>
+  </data>
+  <data name="SetCurrentDishAmountHelp" xml:space="preserve">
+    <value>Укажите оставшееся количество блюда либо поместите его в стоп-лист.</value>
+  </data>
+  <data name="SetCurrentDishesAmountLabel" xml:space="preserve">
+    <value>Укажите сколько осталось этого блюда на кухне:</value>
+  </data>
+  <data name="StopListAmountTitle" xml:space="preserve">
+    <value>Стоп-лист / Остатки</value>
+  </data>
+  <data name="SubsumLabel" xml:space="preserve">
+    <value>Подытог</value>
+  </data>
+  <data name="Prepay" xml:space="preserve">
+    <value>Предоплата</value>
+  </data>
+  <data name="Payment" xml:space="preserve">
+    <value>Оплата</value>
+  </data>
+  <data name="UnknownCard" xml:space="preserve">
+    <value>Карта не зарегистрирована в системе</value>
+  </data>
+  <data name="UnknownKey" xml:space="preserve">
+    <value>Ключ не зарегистрирован в системе</value>
+  </data>
+  <data name="ErrorKeyLockDevice" xml:space="preserve">
+    <value>Ошибка при подключении к считывателю магнитных ключей.</value>
+  </data>
+  <data name="Waiter" xml:space="preserve">
+    <value>Официант: {0}</value>
+  </data>
+  <data name="TabName" xml:space="preserve">
+    <value>Таб: {0}</value>
+  </data>
+  <data name="ExternalNumber" xml:space="preserve">
+    <value>Внешний номер заказа: {0}</value>
+  </data>
+  <data name="TaxationSystem" xml:space="preserve">
+    <value>Система налогообложения</value>
+  </data>
+  <data name="VatInvoiceNumber" xml:space="preserve">
+    <value>Счет-фактура: {0}</value>
+  </data>
+  <data name="WantToReturnCheque" xml:space="preserve">
+    <value>Хотите вернуть оплату?</value>
+  </data>
+  <data name="WantToStornoInvoice" xml:space="preserve">
+    <value>При отмене оплаты эл. счет будет отменен.
+    Хотите вернуть оплату?</value>
+  </data>
+  <data name="WantToStornoInvoices" xml:space="preserve">
+    <value>При отмене оплаты эл. счета будут отменены.
+    Хотите вернуть оплату?</value>
+  </data>
+  <data name="GuestNumFormat" xml:space="preserve">
+    <value>Гость {0}</value>
+  </data>
+  <data name="WrongUserType" xml:space="preserve">
+    <value>Неверный тип пользователя</value>
+  </data>
+  <data name="GuestsCountLabel" xml:space="preserve">
+    <value>Гостей:</value>
+  </data>
+  <data name="GuestsCountLabelFormat" xml:space="preserve">
+    <value>Гостей: {0}</value>
+  </data>
+  <data name="TableNumberLabel" xml:space="preserve">
+    <value>Стол: {0}</value>
+  </data>
+  <data name="OrderNumberLabel" xml:space="preserve">
+    <value>Зак: {0}</value>
+  </data>
+  <data name="Precheque" xml:space="preserve">
+    <value>Пречек</value>
+  </data>
+  <data name="Print" xml:space="preserve">
+    <value>Печать</value>
+  </data>
+  <data name="EmployeChoosingListTitle" xml:space="preserve">
+    <value>Выберите сотрудника</value>
+  </data>
+  <data name="CafeDeletionMethod" xml:space="preserve">
+    <value>Списание за счет заведения</value>
+  </data>
+  <data name="WaiterDeletionMethod" xml:space="preserve">
+    <value>Списание за счет сотрудника, открывшего заказ</value>
+  </data>
+  <data name="UserDeletionMethod" xml:space="preserve">
+    <value>Списание за счет другого сотрудника...</value>
+  </data>
+  <data name="CafeDeletionMethodWindowText" xml:space="preserve">
+    <value>За счет заведения</value>
+  </data>
+  <data name="UserDeletionMethodWindowText" xml:space="preserve">
+    <value>С личного счета сотрудника</value>
+  </data>
+  <data name="WriteoffSumFormatString" xml:space="preserve">
+    <value>будет списано товаров на сумму {0}</value>
+  </data>
+  <data name="WriteoffDishCountFormatString" xml:space="preserve">
+    <value>Удаляются {0} товаров, со списанием</value>
+  </data>
+  <data name="RemovalTypeFormatString" xml:space="preserve">
+    <value>Причина: {0}</value>
+  </data>
+  <data name="RemovalTypeCommentFormatString" xml:space="preserve">
+    <value>Комментарий: {0}</value>
+  </data>
+  <data name="RemovingDishesList" xml:space="preserve">
+    <value>Список товаров</value>
+  </data>
+  <data name="AddGuestTopBar" xml:space="preserve">
+    <value>Гость</value>
+  </data>
+  <data name="WriteoffTypeChooseWindowTitle" xml:space="preserve">
+    <value>Выберите тип списания</value>
+  </data>
+  <data name="RemovalTypeChooseWindowTitle" xml:space="preserve">
+    <value>Выберите причину удаления</value>
+  </data>
+  <data name="GroupModifierTitle" xml:space="preserve">
+    <value>Модификаторы</value>
+  </data>
+  <data name="MinimumLabelFormat" xml:space="preserve">
+    <value>Минимум: {0}</value>
+  </data>
+  <data name="MaximumLabelFormat" xml:space="preserve">
+    <value>Максимум: {0}</value>
+  </data>
+  <data name="SelectedLabelFormat" xml:space="preserve">
+    <value>Введено: {0}</value>
+  </data>
+  <data name="SetCount" xml:space="preserve">
+    <value>Установить количество</value>
+  </data>
+  <data name="NewOrder" xml:space="preserve">
+    <value>Новый заказ</value>
+  </data>
+  <data name="Guests" xml:space="preserve">
+    <value>ГОСТИ</value>
+  </data>
+  <data name="Courses" xml:space="preserve">
+    <value>КУРСЫ</value>
+  </data>
+  <data name="CourseVip" xml:space="preserve">
+    <value>VIP</value>
+  </data>
+  <data name="CourseFormat" xml:space="preserve">
+    <value>Курс {0}</value>
+  </data>
+  <data name="PrintAllCourse" xml:space="preserve">
+    <value>Подавать весь курс</value>
+  </data>
+  <data name="PrintAllCourseOrSingleItemQuestion" xml:space="preserve">
+    <value>Пора подавать блюда?</value>
+  </data>
+  <data name="PrintCurrentProduct" xml:space="preserve">
+    <value>Подавать это блюдо</value>
+  </data>
+  <data name="PriceFormat" xml:space="preserve">
+    <value>Цена: {0}</value>
+  </data>
+  <data name="PriceListDocumentNameFormat" xml:space="preserve">
+    <value>({0})</value>
+  </data>
+  <data name="PriceWithModifiersFormat" xml:space="preserve">
+    <value>Цена с модификаторами: {0}</value>
+  </data>
+  <data name="CookingStartTimeFormat" xml:space="preserve">
+    <value>Время с момента начала готовки: {0}</value>
+  </data>
+  <data name="CookingServeTimeFormat" xml:space="preserve">
+    <value>Время с момента подачи: {0}</value>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>Все</value>
+  </data>
+  <data name="Selected" xml:space="preserve">
+    <value>Выделенные</value>
+  </data>
+  <data name="PrintAllOrderOrSelectedOnlyQuestion" xml:space="preserve">
+    <value>Распечатать весь заказ или только выделенные блюда?</value>
+  </data>
+  <data name="CantPrintModifiersPrintAllOrderQuestion" xml:space="preserve">
+    <value>Распечатать модификаторы нельзя. Распечатать весь заказ?</value>
+  </data>
+  <data name="StopListEditHelp" xml:space="preserve">
+    <value>Выберите блюдо для указания остатков на кухне, помещения в стоп-лист или удаления из стоп-листа.</value>
+  </data>
+  <data name="CafeSessionClosedTitle" xml:space="preserve">
+    <value>Кассовая смена закрыта</value>
+  </data>
+  <data name="CafeSessionClosedWarning" xml:space="preserve">
+    <value>Перейти на экран дополнительных операций для открытия кассовой смены?</value>
+  </data>
+  <data name="CannotDeleteOrderWithWriteoffMultipleCashRegistersCafeSessionClosed" xml:space="preserve">
+    <value>Удаление заказа невозможно.
+Перейти на экран дополнительных операций для открытия кассовой смены?</value>
+  </data>
+  <data name="ChooseContainerTitle" xml:space="preserve">
+    <value>Список контейнеров</value>
+  </data>
+  <data name="CannotPrintPrechequeForEmptyOrder" xml:space="preserve">
+    <value>Невозможно распечатать пречек для заказа без блюд.
+Добавьте блюда или выберите другой заказ.</value>
+  </data>
+  <data name="WriteoffAccountFormatString" xml:space="preserve">
+    <value>Списывается на счет "{0}"</value>
+  </data>
+  <data name="ModifierTitle" xml:space="preserve">
+    <value>Модификатор</value>
+  </data>
+  <data name="CafeSessionClosedNeedOpenSessionQuestion" xml:space="preserve">
+    <value>Перейти на экран открытия кассовой смены?</value>
+  </data>
+  <data name="DiscountViewCardDiscount" xml:space="preserve">
+    <value>Гость: {0}</value>
+  </data>
+  <data name="DiscountViewLuckyTicketDiscount" xml:space="preserve">
+    <value>Скидка по LuckyTicket: {0}%</value>
+  </data>
+  <data name="DiscountViewWorseDiscountWarning" xml:space="preserve">
+    <value>К заказу уже применена скидка {0} более выгодная для клиента. Применить скидку?</value>
+  </data>
+  <data name="DeleteOrder" xml:space="preserve">
+    <value>Удалить заказ</value>
+  </data>
+  <data name="GuestNumFormatRegex" xml:space="preserve">
+    <value>Гость (\d+)</value>
+  </data>
+  <data name="LastClosedOrder" xml:space="preserve">
+    <value>ЗАКРЫТЫЕ ЗАКАЗЫ</value>
+  </data>
+  <data name="FlyersCount" xml:space="preserve">
+    <value>Количество внесенных флаеров: {0}</value>
+  </data>
+  <data name="ExecutingDeleteOperation" xml:space="preserve">
+    <value>Выполняется операция удаления</value>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>Категория</value>
+  </data>
+  <data name="DeleteDiscountItem" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="ItemDeletionErrorPattern" xml:space="preserve">
+    <value>Невозможно удалить блюдо: {0}</value>
+  </data>
+  <data name="FliersCountNotSelected" xml:space="preserve">
+    <value>Не указано количество флаеров</value>
+  </data>
+  <data name="ProductServed" xml:space="preserve">
+    <value>Блюдо подано</value>
+  </data>
+  <data name="CardRollToServeProductFormat" xml:space="preserve">
+    <value>Чтобы отметить блюдо {0} как поданное, необходимо прокатать карту официанта {1} или другого сотрудника с правом Редактировать заказы других официантов.</value>
+  </data>
+  <data name="DoMoveFliers" xml:space="preserve">
+    <value>Перенести флаеры в новый заказ?</value>
+  </data>
+  <data name="Fliers" xml:space="preserve">
+    <value>Флаеры</value>
+  </data>
+  <data name="NonDeletableModifier" xml:space="preserve">
+    <value>Модификатор является обязательным.
+Минимальное количество равно {0}.
+Такой модификатор можно удалить
+только вместе с основным блюдом.</value>
+  </data>
+  <data name="DiscountFormatString" xml:space="preserve">
+    <value>{0} = {1:n2}% х {2}</value>
+  </data>
+  <data name="TotalDiscount" xml:space="preserve">
+    <value>Итого</value>
+  </data>
+  <data name="PrintBarcodeLabelButtonText" xml:space="preserve">
+    <value>Печатать этикетку со штрихкодом</value>
+  </data>
+  <data name="DefaultContainerButtonTextFormat" xml:space="preserve">
+    <value>Стандартная тара
+({0})</value>
+    <comment>{0} - название тары</comment>
+  </data>
+  <data name="QuantityViewTitle" xml:space="preserve">
+    <value>Количество</value>
+  </data>
+  <data name="TimePayServiceTimeLimitViewTitle" xml:space="preserve">
+    <value>Лимит</value>
+  </data>
+  <data name="WeightingContainerButtonText" xml:space="preserve">
+    <value>Тара</value>
+  </data>
+  <data name="StandardWeightingContainerButtonText" xml:space="preserve">
+    <value>Стандартная тара</value>
+  </data>
+  <data name="InvalidContainerSelectedMessageCaption" xml:space="preserve">
+    <value>Тара</value>
+  </data>
+  <data name="ContainerWeightIsGreaterThanCurrentAmount" xml:space="preserve">
+    <value>Вес выбранной тары превышает вес брутто.
+Пожалуйста, выберите другую тару.</value>
+  </data>
+  <data name="UpdateWeightButtonText" xml:space="preserve">
+    <value>Весы</value>
+  </data>
+  <data name="InvalidProductWeight" xml:space="preserve">
+    <value>Количество товара не должно превышать {0}.</value>
+  </data>
+  <data name="BarcodeExceededMessageFormat" xml:space="preserve">
+    <value>Введено: «{0}», по стандарту штрихкод может быть напечатан только для двухзначного количества блюда.</value>
+  </data>
+  <data name="ReprintBarcodeLabelError" xml:space="preserve">
+    <value>Нельзя отменить печать этикетки для уже напечатанного товара</value>
+  </data>
+  <data name="BarcodeDishNumberWarning" xml:space="preserve">
+    <value>Неверный артикул блюда.
+Для печати блюдо должно иметь пятизначный артикул.</value>
+  </data>
+  <data name="BillPrintConfirmQuestion" xml:space="preserve">
+    <value>Распечатать пречек для данного заказа?</value>
+  </data>
+  <data name="BillPrintConfirmQuestionForDeliveryOrder" xml:space="preserve">
+    <value>Распечатать накладную?</value>
+  </data>
+  <data name="Delivery" xml:space="preserve">
+    <value>Доставка</value>
+  </data>
+  <data name="ItemDeletionErrorServiceIsNotStopped" xml:space="preserve">
+    <value>Отсчет времени для данной услуги продолжается. Для выполнения операции необходимо остановить отсчет времени. Остановить отсчет?</value>
+  </data>
+  <data name="ItemDeletionErrorServiceIsNotStoppedTitle" xml:space="preserve">
+    <value>Отсчет времени</value>
+  </data>
+  <data name="SelectDeletionMethodWindowText" xml:space="preserve">
+    <value>Выберите способ списания.</value>
+  </data>
+  <data name="BillCancel" xml:space="preserve">
+    <value>Отмена пречека</value>
+  </data>
+  <data name="WeightUpdateMessage" xml:space="preserve">
+    <value>Получение данных с весов</value>
+  </data>
+  <data name="StopTimePayProductForPaymentTitle" xml:space="preserve">
+    <value>Переход к оплате заказа</value>
+  </data>
+  <data name="StopTimePayProductFormat" xml:space="preserve">
+    <value>В составе заказа есть услуга с повременной тарификацией «{0}».
+Для выполнения операции тарификацию необходимо остановить.
+Остановить тарификацию?</value>
+  </data>
+  <data name="HideDeleted" xml:space="preserve">
+    <value>Скрыть
+удален­ные</value>
+  </data>
+  <data name="HideServed" xml:space="preserve">
+    <value>Скрыть
+поданные</value>
+  </data>
+  <data name="ShowServed" xml:space="preserve">
+    <value>Показать
+все</value>
+  </data>
+  <data name="StartTimePayService" xml:space="preserve">
+    <value>Пуск</value>
+  </data>
+  <data name="StopTimePayService" xml:space="preserve">
+    <value>Стоп</value>
+  </data>
+  <data name="ChangeTimePayServiceTimeLimit" xml:space="preserve">
+    <value>Лимит</value>
+  </data>
+  <data name="MaxTimePayServiceTimeLimitMessage" xml:space="preserve">
+    <value>Лимит времени не может превышать 12 часов.</value>
+  </data>
+  <data name="TimePayServiceTimeLimitLessThanActualTimeMessageTemplate" xml:space="preserve">
+    <value>Прошло {0}:{1:D2}, это превышает заданный лимит. Пожалуйста выберите другой лимит.</value>
+  </data>
+  <data name="TimePayServiceTimeLimitEditTipText" xml:space="preserve">
+    <value>Укажите лимит времени (ЧЧ:ММ)</value>
+  </data>
+  <data name="TimePayServiceElapsedTimeLabel" xml:space="preserve">
+    <value>Прошло:</value>
+  </data>
+  <data name="TimePayServiceNewLengthLabel" xml:space="preserve">
+    <value>Лимит:</value>
+  </data>
+  <data name="TimePayServiceUnitMeasureLabel" xml:space="preserve">
+    <value>часов:мин</value>
+  </data>
+  <data name="TimePayServiceTimeLimitByEffectiveTimeButtonText" xml:space="preserve">
+    <value>По факту</value>
+  </data>
+  <data name="KitchenChequeDeletionReasonFormat" xml:space="preserve">
+    <value>{0} ({1})</value>
+  </data>
+  <data name="CannotAddDiscountOrIncreaseBecauseItIsAlreadyExistsInOrder" xml:space="preserve">
+    <value>Невозможно добавить скидку или надбавку, потому что она уже существует в заказе.</value>
+  </data>
+  <data name="OpenOrderSelectPopupTitle" xml:space="preserve">
+    <value>Выбор заказа</value>
+  </data>
+  <data name="OpenOrderSelectPopupDescription" xml:space="preserve">
+    <value>К карте привязано несколько заказов.</value>
+  </data>
+  <data name="OpenOrderSelectPopupHint" xml:space="preserve">
+    <value>Выберите нужный заказ.</value>
+  </data>
+  <data name="IrrelevantClientCardErrorMessage" xml:space="preserve">
+    <value>Заказ привязан к другой карте</value>
+  </data>
+  <data name="TimeLimitFormat" xml:space="preserve">
+    <value>Лимит {0}</value>
+  </data>
+  <data name="EditProductCommentButtonText" xml:space="preserve">
+    <value>Коммент.</value>
+  </data>
+  <data name="EditProductOpenPriceButtonText" xml:space="preserve">
+    <value>Цена</value>
+  </data>
+  <data name="OrderItemProductCommentLabel" xml:space="preserve">
+    <value>Комм.</value>
+  </data>
+  <data name="ProductCommentEditTitle" xml:space="preserve">
+    <value>Комментарий к блюду</value>
+  </data>
+  <data name="ProductOpenPriceEditTitle" xml:space="preserve">
+    <value>Цена</value>
+  </data>
+  <data name="OrderItemProductOpenPriceHeaderFormat" xml:space="preserve">
+    <value>Введите цену за 1 {0}. блюда</value>
+  </data>
+  <data name="DefaultPriceProductFormat" xml:space="preserve">
+    <value>Стандартная цена {0}</value>
+  </data>
+  <data name="ProductCommentDeleteButtonText" xml:space="preserve">
+    <value>Удалить комментарий</value>
+  </data>
+  <data name="CantAddProductWithRequiredInvalidModifierMessageTemplate" xml:space="preserve">
+    <value>Продажа запрещена.
+«{0}» имеет обязательный модификатор
+«{1}», который запрещен к продаже.
+Пожалуйста настройте модификатор как необязательный
+или включите его в продажу.</value>
+  </data>
+  <data name="CountingContainerButtonText" xml:space="preserve">
+    <value>Фасовка</value>
+  </data>
+  <data name="StandardCountingContainerButtonText" xml:space="preserve">
+    <value>Стандартная фасовка</value>
+  </data>
+  <data name="ContainerGrossIsLessThanCurrentAmount" xml:space="preserve">
+    <value>Вес брутто превышает вес полной тары.
+Пожалуйста, выберите другую тару.</value>
+  </data>
+  <data name="RemotePrepayWarningFormat" xml:space="preserve">
+    <value>В заказе есть предоплаты, внесенные на другом кассовом терминале. Настройки разделения заказа по точкам продаж для этого терминала отличаются от настроек текущего. Разделение заказа невозможно. Оплата заказа возможна только целиком на «{0}». Перейти к оплате?</value>
+  </data>
+  <data name="TotalNds" xml:space="preserve">
+    <value>НДС:</value>
+  </data>
+  <data name="OrderDeleteSuggestion" xml:space="preserve">
+    <value>Из заказа удалены все блюда. Удалить заказ?</value>
+  </data>
+  <data name="OrderDeleteSuggestionTitle" xml:space="preserve">
+    <value>Удаление заказа</value>
+  </data>
+  <data name="DiscountName" xml:space="preserve">
+    <value>{0}:</value>
+  </data>
+  <data name="AmbiguousCard" xml:space="preserve">
+    <value>В системе зарегистрировано несколько сотрудников
+с данным номером карты или пин-кодом.
+Невозможно определить, о каком сотруднике идет речь.
+Для авторизации необходимо привязать одного сотрудника к подразделению.</value>
+  </data>
+  <data name="GuestName" xml:space="preserve">
+    <value>Имя гостя</value>
+  </data>
+  <data name="OrderTypeSelectionPopupTitle" xml:space="preserve">
+    <value>Выберите тип заказа</value>
+  </data>
+  <data name="GenderSelectionPopupTitle" xml:space="preserve">
+    <value>Выберите пол гостя</value>
+  </data>
+  <data name="UnspecifiedOrderTypeLabel" xml:space="preserve">
+    <value>Не задан</value>
+  </data>
+  <data name="OrderTypesNotDefinedMessage" xml:space="preserve">
+    <value>Не задано ни одного типа заказа.
+Задайте тип заказа или отключите настройку предприятия «Требовать выбор типа заказа».</value>
+  </data>
+  <data name="SelectivelyAppliedDiscountTooltipFormat" xml:space="preserve">
+    <value>Скидка: {0} = {1}</value>
+    <comment>{0} — название скидки, {1} — сумма скидки</comment>
+  </data>
+  <data name="SelectivelyAppliedDiscountSign" xml:space="preserve">
+    <value>%</value>
+    <comment>Символ отображается рядом с названием продукта в списке элементов заказа</comment>
+  </data>
+  <data name="PriceListNames" xml:space="preserve">
+    <value>Прейскурант: {0}</value>
+  </data>
+  <data name="SelectedPriceListDocumentName" xml:space="preserve">
+    <value>{0}*</value>
+    <comment>Наименование приказа изменения цен блюд, выбранного вручную</comment>
+  </data>
+  <data name="ChangePriceListDocument" xml:space="preserve">
+    <value>Прейскурант 
+для блюда</value>
+  </data>
+  <data name="CantDeleteItemsForPurchase" xml:space="preserve">
+    <value>Нельзя удалить со списанием блюда для покупки.</value>
+  </data>
+  <data name="ProductsIsNotIncludedInMenuWarningFormat" xml:space="preserve">
+    <value>В заказе есть позиции: {0}.
+В данный момент действует прейскурант, который запрещает продажу этих позиций.
+Пожалуйста, подтвердите продажу правом «{1}» или удалите их из заказа.</value>
+    <comment>{0} — продукты, {1} — название права</comment>
+  </data>
+  <data name="ProductsIsNotIncludedInMenuErrorFormat" xml:space="preserve">
+    <value>В заказе есть позиции: {0}.
+В данный момент действует прейскурант, который запрещает продажу этих позиций.
+Необходимо удалить позиции, запрещенные к продаже.</value>
+  </data>
+  <data name="ClearOrderCustomers" xml:space="preserve">
+    <value>Заказ не содержит ни одной позиции. Назначенные заказу гости будут удалены.</value>
+  </data>
+  <data name="CancelCauseChooseWindowTitle" xml:space="preserve">
+    <value>Выберите причину отмены заказа</value>
+  </data>
+  <data name="HideOrders" xml:space="preserve">
+    <value>СКРЫТЬ
+ЗАКАЗЫ</value>
+  </data>
+  <data name="Discount" xml:space="preserve">
+    <value>СКИДКА</value>
+  </data>
+  <data name="ProductSizeChooserTitle" xml:space="preserve">
+    <value>Выбор размера</value>
+  </data>
+  <data name="CannotAddScaledProductWithoutCompatibleSizesMessageFormat" xml:space="preserve">
+    <value>Для блюда «{0}» задана шкала «{1}»,
+все размеры которой несовместимы с данным блюдом.
+Для добавления этого блюда в заказ необходимо
+настроить хотя бы один доступный размер.</value>
+  </data>
+  <data name="CannotChangeProductSizeMessageFormat" xml:space="preserve">
+    <value>Для блюда «{0}» другие размеры недоступны.</value>
+  </data>
+  <data name="Size" xml:space="preserve">
+    <value>размер</value>
+  </data>
+  <data name="ProductNameWithSizeFormat" xml:space="preserve">
+    <value>{0} {1}</value>
+    <comment>{0} — наименование блюда, {1} — размер блюда</comment>
+  </data>
+  <data name="SelectCompoundOrderItemComponentQuestion" xml:space="preserve">
+    <value>Какую половинку оставить?</value>
+  </data>
+  <data name="SelectCompoundOrderItemComponentTitle" xml:space="preserve">
+    <value>Объединить половинки</value>
+  </data>
+  <data name="SelectLeftCompoundOrderItemComponentAnswer" xml:space="preserve">
+    <value>Левую («{0}»)</value>
+    <comment>{0} — название продукта левой половинки составного блюда.</comment>
+  </data>
+  <data name="SelectRightCompoundOrderItemComponentAnswer" xml:space="preserve">
+    <value>Правую («{0}»)</value>
+    <comment>{0} — название продукта правой половинки составного блюда.</comment>
+  </data>
+  <data name="PizzaBuilderCaption" xml:space="preserve">
+    <value>МОДИФИКАТОРЫ</value>
+  </data>
+  <data name="ModifiersGroupAmountLimitViolatedErrorMessage" xml:space="preserve">
+    <value>Общее количество модификаторов в группе «{0}» составляет {1}.
+Для данной группы установлено ограничение от {2} до {3}.</value>
+  </data>
+  <data name="ModifierAmountLimitViolatedErrorMessage" xml:space="preserve">
+    <value>Количество модификатора «{0}» составляет {1}.
+Для данного модификатора установлено ограничение от {2} до {3}.</value>
+  </data>
+  <data name="ProductSizeMustBeSelected" xml:space="preserve">
+    <value>Необходимо выбрать размер.</value>
+  </data>
+  <data name="ComboBuilderCaption" xml:space="preserve">
+    <value>КОМБО</value>
+  </data>
+  <data name="ModifierForbiddenInComboErrorMessgae" xml:space="preserve">
+    <value>Модификатор «{0}» является запрещенным в составе комбо для продукта «{1}».</value>
+  </data>
+  <data name="ProductNotSelectedForComboGroupFormat" xml:space="preserve">
+    <value>Для группы комбо «{0}» не выбран продукт.</value>
+  </data>
+  <data name="SizeNotSelectedForComboGroupFormat" xml:space="preserve">
+    <value>Для позиции «{0}» из группы комбо «{1}» не выбран размер.</value>
+  </data>
+  <data name="ComponentsNamesFormat" xml:space="preserve">
+    <value>{0}/{1}</value>
+    <comment>{0} - название левой половинки, {1} - название правой половинки</comment>
+  </data>
+  <data name="CashWithCurrencyPaymentInfoFormat" xml:space="preserve">
+    <value>{0} ({1}): {2} ({3})</value>
+  </data>
+  <data name="AmountWithPriceFormat" xml:space="preserve">
+    <value>{0:0.###} × {1}</value>
+    <comment>{0} - количество, {1} - цена блюда</comment>
+  </data>
+  <data name="ServicePrintAbortedProductsInStopList" xml:space="preserve">
+    <value>В заказе есть блюда, которые находятся в стоп-листе: {0}.</value>
+  </data>
+  <data name="ServicePrintAbortedProductsExcludedFromMenuFormat" xml:space="preserve">
+    <value>В заказе есть блюда, исключенные из продажи: {0}.</value>
+  </data>
+  <data name="ServicePrintAbortedRepeatedPrintIsNotPermitted" xml:space="preserve">
+    <value>Недостаточно прав для повторной печати.</value>
+  </data>
+  <data name="CantPrintComponentsPrintAllOrderQuestion" xml:space="preserve">
+    <value>Распечатать половинки нельзя. Распечатать весь заказ?</value>
+  </data>
+  <data name="RemovalTypeChooseInFastCancelWindowTitle" xml:space="preserve">
+    <value>В заказе есть отпечатанные блюда, выберите причину удаления всех блюд</value>
+  </data>
+  <data name="TopCookingPriorityButtonLabel" xml:space="preserve">
+    <value>Вне очереди</value>
+  </data>
+  <data name="CannotServeOrderItemWhileEditingThatOrder" xml:space="preserve">
+    <value>Невозможно отметить поданными блюда заказа, который в данный момент редактируется.
+Завершите начатую операцию с заказом, а затем отметьте блюда поданными.</value>
+  </data>
+  <data name="CannotAddDiscountOrIncreaseBecauseItContainsInServiceFeeWhichIsAlreadyExistsInOrder" xml:space="preserve">
+    <value>Невозможно добавить скидку или надбавку, потому что сервисный сбор, которому она принадлежит, уже существует в заказе.</value>
+  </data>
+  <data name="MakeTab" xml:space="preserve">
+    <value>Сделать Таб</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Добавить</value>
+  </data>
+  <data name="AddProduct" xml:space="preserve">
+    <value>Добавить товар</value>
+  </data>
+  <data name="OrderItemHasBarcodeInfoFormat" xml:space="preserve">
+    <value>[K] - {0}</value>
+  </data>
+  <data name="AddProductWithoutBarcode" xml:space="preserve">
+    <value>Добавить товар без штрих-кода</value>
+  </data>
+  <data name="NoProductWithBarcodeFormat" xml:space="preserve">
+    <value>Товара «{0}» с таким штрих-кодом нет в заказе</value>
+    <comment>{0} - Название товара</comment>
+  </data>
+  <data name="ScanBarcode" xml:space="preserve">
+    <value>Просканируйте штрих-код</value>
+  </data>
+  <data name="ChangeProductAmount" xml:space="preserve">
+    <value>Изменить количество</value>
+  </data>
+  <data name="DeleteProductWithoutBarcode" xml:space="preserve">
+    <value>Удалить товар без штрих-кода</value>
+  </data>
+  <data name="ScanBarcodeToChangeAmountWithBarcode" xml:space="preserve">
+    <value>Просканируйте штрих-код товара, количество которого вы хотите изменить.</value>
+  </data>
+  <data name="ScanBarcodeToChangeAmountWithOrWithoutBarcode" xml:space="preserve">
+    <value>Просканируйте штрих-код товара, количество которого вы хотите изменить.
+
+Если товар без штрих-кода, нажмите "Пропустить".</value>
+  </data>
+  <data name="Skip" xml:space="preserve">
+    <value>Пропустить</value>
+  </data>
+  <data name="DecreaseProductAmount" xml:space="preserve">
+    <value>Уменьшить количество товара на 1</value>
+  </data>
+  <data name="IncreaseProductAmount" xml:space="preserve">
+    <value>Увеличить количество товара на 1</value>
+  </data>
+  <data name="OperationCanceledDueToConflictingChanges" xml:space="preserve">
+    <value>Не удалось выполнить данную операцию из-за изменений, сделанных плагином.</value>
+  </data>
+  <data name="Course" xml:space="preserve">
+    <value>курс</value>
+  </data>
+  <data name="ProductCourseChooserTitle" xml:space="preserve">
+    <value>Выбор курса</value>
+  </data>
+  <data name="ProductGuestChooserTitle" xml:space="preserve">
+    <value>Выбор гостя</value>
+  </data>
+  <data name="ShouldSplitProductOnSizeChangeQuestionFormat" xml:space="preserve">
+    <value>Вы хотите изменить размер у {0} блюд?</value>
+  </data>
+  <data name="ShouldSplitProductOnCourseChangeQuestionFormat" xml:space="preserve">
+    <value>Вы хотите изменить курс у {0} блюд?</value>
+  </data>
+  <data name="ShouldSplitProductOnGuestChangeQuestionFormat" xml:space="preserve">
+    <value>Вы хотите изменить гостя у {0} блюд?</value>
+  </data>
+  <data name="NewTab" xml:space="preserve">
+    <value>Новый Таб</value>
+  </data>
+  <data name="Hold" xml:space="preserve">
+    <value>Отложить</value>
+  </data>
+  <data name="AddPrepayForOrderWithDetailedVatInvoice" xml:space="preserve">
+    <value>При разделении оплаты между гостями были выставлены эл. счета. При внесении предоплаты режим деления оплаты между гостями и выставление эл. счетов будут недоступны. Продолжить внесение предоплаты?</value>
+  </data>
+</root>

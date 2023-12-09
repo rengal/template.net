@@ -1,0 +1,757 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AreYouSureDeletePaymentFormat" xml:space="preserve">
+    <value>Вы уверены, что хотите удалить платеж «{0}» на сумму {1}?</value>
+  </data>
+  <data name="AreYouSureDeletePaymentTitle" xml:space="preserve">
+    <value>Предупреждение</value>
+  </data>
+  <data name="Change" xml:space="preserve">
+    <value>СДАЧА</value>
+  </data>
+  <data name="ChangeLabel" xml:space="preserve">
+    <value>Сдача:</value>
+  </data>
+  <data name="ChoosePaymentTypeTitle" xml:space="preserve">
+    <value>Выберите способ оплаты</value>
+  </data>
+  <data name="ChoosePaymentTypeWindowHeader" xml:space="preserve">
+    <value>Выберите тип оплаты:</value>
+  </data>
+  <data name="DepositedSum" xml:space="preserve">
+    <value>Внесено:</value>
+  </data>
+  <data name="EnterWriteoffReason" xml:space="preserve">
+    <value>Введите причину списания</value>
+  </data>
+  <data name="ExactSumButton" xml:space="preserve">
+    <value>Точная сумма</value>
+  </data>
+  <data name="OrderPaymentFailed" xml:space="preserve">
+    <value>Ошибка</value>
+  </data>
+  <data name="PaymentTypesNotConfigured" xml:space="preserve">
+    <value>Не настроены типы оплаты</value>
+  </data>
+  <data name="UnableToAddNotCombinablePaymentType" xml:space="preserve">
+    <value>Невозможно добавить некомбинируемый тип оплаты. Вы хотите удалить все оплаты?</value>
+  </data>
+  <data name="UnableToAddPaymentTypeToNotCombinableType" xml:space="preserve">
+    <value>Невозможно добавить тип оплаты к некомбинируемому типу. Вы хотите удалить оплату?</value>
+  </data>
+  <data name="ExecutingPaymentOperation" xml:space="preserve">
+    <value>Выполняется операция оплаты</value>
+  </data>
+  <data name="UnableToCloseOrder" xml:space="preserve">
+    <value>Невозможно оплатить заказ.</value>
+  </data>
+  <data name="NoRequiredComment" xml:space="preserve">
+    <value>Не введен обязательный комментарий.</value>
+  </data>
+  <data name="SlideLuckyTicketCard" xml:space="preserve">
+    <value>Прокатайте карту LuckyTicket</value>
+  </data>
+  <data name="PutIn" xml:space="preserve">
+    <value>Внесите</value>
+  </data>
+  <data name="Rest" xml:space="preserve">
+    <value>Остаток</value>
+  </data>
+  <data name="SignatureDenied" xml:space="preserve">
+    <value>Подпись не получена.</value>
+  </data>
+  <data name="GoToOrdersPage" xml:space="preserve">
+    <value>Заказы</value>
+  </data>
+  <data name="ConfirmSignature" xml:space="preserve">
+    <value>Подтвердите получение подписи.</value>
+  </data>
+  <data name="AreYouSureDeleteBonus" xml:space="preserve">
+    <value>Вы уверены, что хотите удалить бонус?</value>
+  </data>
+  <data name="AreYouSureDeletePreliminaryItem" xml:space="preserve">
+    <value>Вы уверены, что хотите удалить платеж?</value>
+  </data>
+  <data name="MovingFromProductionToSale" xml:space="preserve">
+    <value>Перемещение из производства в продажу</value>
+  </data>
+  <data name="MovingFromSaleToProduction" xml:space="preserve">
+    <value>Возврат из продажи в производство</value>
+  </data>
+  <data name="OperationTypeTitle" xml:space="preserve">
+    <value>Выберите тип операции</value>
+  </data>
+  <data name="OrderWillBeDeleted" xml:space="preserve">
+    <value>Заказ будет удален. Вы уверены?</value>
+  </data>
+  <data name="ToDepositLabel" xml:space="preserve">
+    <value>внести:</value>
+  </data>
+  <data name="Client_s" xml:space="preserve">
+    <value>клиента</value>
+  </data>
+  <data name="EmployeesTitle" xml:space="preserve">
+    <value>Сотрудник</value>
+  </data>
+  <data name="Employee_s" xml:space="preserve">
+    <value>сотрудника</value>
+  </data>
+  <data name="SlideCardForCreditPayment" xml:space="preserve">
+    <value>Прокатайте карту ({0}) для оплаты в кредит</value>
+  </data>
+  <data name="Supplier_s" xml:space="preserve">
+    <value>поставщика</value>
+  </data>
+  <data name="_OR_" xml:space="preserve">
+    <value>/</value>
+  </data>
+  <data name="GoToOrderPage" xml:space="preserve">
+    <value>Заказ</value>
+  </data>
+  <data name="GoToProblemOrder" xml:space="preserve">
+    <value>Перейти к ошибочному заказу?</value>
+  </data>
+  <data name="SlideCardForWriteOff" xml:space="preserve">
+    <value>Оплата заказа без выручки «{0}». Требуется прокатка карты {1}.</value>
+  </data>
+  <data name="SelectCounteragentForCreditPayment" xml:space="preserve">
+    <value>Выберите {0} для оплаты в кредит или прокатайте его карту</value>
+  </data>
+  <data name="Counteragent_s" xml:space="preserve">
+    <value>контрагента</value>
+  </data>
+  <data name="PrepayIsGreaterThanResultSum" xml:space="preserve">
+    <value>Предоплата превышает сумму заказа. Для оплаты заказа удалите сначала предоплату.</value>
+  </data>
+  <data name="GoToOrders" xml:space="preserve">
+    <value>Заказы</value>
+  </data>
+  <data name="ReturnMoney" xml:space="preserve">
+    <value>Операция не завершена. Верните деньги клиенту.</value>
+  </data>
+  <data name="DoPay" xml:space="preserve">
+    <value>Оплатить</value>
+  </data>
+  <data name="PrepayItemNameTemplate" xml:space="preserve">
+    <value>Предоплата: {0} ({1}){2}</value>
+  </data>
+  <data name="FailToCancelServiceItem" xml:space="preserve">
+    <value>Не удалось отменить сервисный элемент</value>
+  </data>
+  <data name="TransactionOperationError" xml:space="preserve">
+    <value>Возникла ошибка при отмене транзакционной операции.
+Данное действие невозможно.</value>
+  </data>
+  <data name="EmptyPaymentItemFormat" xml:space="preserve">
+    <value>Оплата «{0}» имеет нулевую сумму.</value>
+  </data>
+  <data name="EmptyPaymentItemAndFullDiscountFormat" xml:space="preserve">
+    <value>Оплата «{0}» имеет нулевую сумму. Оплатить заказ?</value>
+  </data>
+  <data name="PaymentItemsSeparator" xml:space="preserve">
+    <value>», «</value>
+  </data>
+  <data name="DontRemoveEmptyPaymentItem" xml:space="preserve">
+    <value>Оплатить заказ с нулевой оплатой</value>
+  </data>
+  <data name="RemoveEmptyPaymentItem" xml:space="preserve">
+    <value>Удалить оплату и оплатить заказ</value>
+  </data>
+  <data name="EmptyPaymentItemTitle" xml:space="preserve">
+    <value>Нулевая сумма оплаты</value>
+  </data>
+  <data name="ErrorOrderDoesnotExist" xml:space="preserve">
+    <value>Невозможно открыть данный заказ для редактирования.</value>
+  </data>
+  <data name="OrderContainsProductsOfIncompatibleCategoryWithPaymentFormat" xml:space="preserve">
+    <value>В заказе есть блюда, которые запрещено оплачивать типом оплаты «{0}». Максимальная сумма оплаты: {1}</value>
+  </data>
+  <data name="OrderContainsProductsOfIncompatibleCategoryTitle" xml:space="preserve">
+    <value>Тип оплаты</value>
+  </data>
+  <data name="ChangeSumEqualToCashSumMessage" xml:space="preserve">
+    <value>При выбранных типах оплаты сумма оплаты наличными равна нулю.
+Пожалуйста, измените выбранные типы оплат или удалите оплату наличными.</value>
+  </data>
+  <data name="PaymentItemWrapperFormat" xml:space="preserve">
+    <value>{0}{1}</value>
+  </data>
+  <data name="PrepaymentItemWrapperFormat" xml:space="preserve">
+    <value>Предоплата: {0}{1}</value>
+  </data>
+  <data name="PreliminaryPaymentItemWrapperFormat" xml:space="preserve">
+    <value>Сохр. опл.: {0}{1}</value>
+  </data>
+  <data name="ExternalPaymentItemWrapperFormat" xml:space="preserve">
+    <value>{0}{1}</value>
+  </data>
+  <data name="ExternalProcessedPaymentItemWrapperFormat" xml:space="preserve">
+    <value>Проведенная опл.: {0}{1}</value>
+  </data>
+  <data name="GoToDeliveriesList" xml:space="preserve">
+    <value>Список доставок</value>
+  </data>
+  <data name="ClosingOrder" xml:space="preserve">
+    <value>Оплата заказа</value>
+  </data>
+  <data name="EditPrepaysButtonText" xml:space="preserve">
+    <value>Открыть предоплаты</value>
+  </data>
+  <data name="PrepaySumExceedsTotalSumAndSuggestionToEditPrepays" xml:space="preserve">
+    <value>В заказ внесена предоплата на сумму {0}
+Сумма заказа {1} и меньше суммы предоплаты.
+Для оплаты заказа предоплату необходимо вернуть.</value>
+  </data>
+  <data name="InAdditionOfFiscalCheque" xml:space="preserve">
+    <value>(в дополнение к чеку оплаты)</value>
+  </data>
+  <data name="NonCashPaymentIsMoreThanChequeSum" xml:space="preserve">
+    <value>Вносимая безналичной оплатой сумма больше суммы чека.
+Удалите избыточную оплату или предоплату.</value>
+  </data>
+  <data name="PaymentFailedDuringShutdownFormat" xml:space="preserve">
+    <value>При предыдущей оплате данного заказа №{0} на текущем терминале произошла ошибка.
+
+Продолжить оплату автоматически?</value>
+  </data>
+  <data name="NoCreditPaymentCounteragentChecked" xml:space="preserve">
+    <value>В настройках типа оплаты «{0}» не указан тип контрагента.
+Проверьте соответствующие настройки в ${OFFICE_APP_WIN}.</value>
+  </data>
+  <data name="NotEditableOrderCantBeDeleted" xml:space="preserve">
+    <value>Оплата данного заказа не была завершена успешно.
+В заказе имеются проведенные оплаты. Рекомендуется
+вернуться к заказу после устранения проблем.</value>
+  </data>
+  <data name="NotDeletableBonusFormat" xml:space="preserve">
+    <value>Невозможно заменить бонус «{0}» новым, т.к. данный бонус неудаляемый.</value>
+  </data>
+  <data name="CheckStoreErrorFormat" xml:space="preserve">
+    <value>В данном заказе присутствуют позиции из отделения «{0}».
+Для данного отделения не задан склад.
+Оплата заказа невозможна.</value>
+  </data>
+  <data name="CashDrawerCheckTitle" xml:space="preserve">
+    <value>Денежный ящик</value>
+  </data>
+  <data name="ManualLinkCashDrawersTitle" xml:space="preserve">
+    <value>Управление денежными ящиками</value>
+  </data>
+  <data name="CashDrawerTitle" xml:space="preserve">
+    <value>Денежный ящик</value>
+  </data>
+  <data name="CashRegisterTitle" xml:space="preserve">
+    <value>Фискальный регистратор</value>
+  </data>
+  <data name="CashDrawerWarning" xml:space="preserve">
+    <value>Закройте денежный ящик</value>
+  </data>
+  <data name="CashDrawerPermissionWarning" xml:space="preserve">
+    <value>или прокатайте карту с правом
+{0}</value>
+  </data>
+  <data name="CashDrawerCheckProgress" xml:space="preserve">
+    <value>Проверка состояния денежного ящика</value>
+  </data>
+  <data name="VatInfoiceGeneralErrorFormat" xml:space="preserve">
+    <value>Счет-фактура не может быть напечатана. {0}Повторная печать счета-фактуры при необходимости может быть произведена для закрытого заказа.</value>
+  </data>
+  <data name="VatInfoiceTempErrorFormat" xml:space="preserve">
+    <value>В шаблоне {0} имеются ошибки. Подробнее смотрите в cash-server.log. </value>
+  </data>
+  <data name="PreliminaryItemWarningFormat" xml:space="preserve">
+    <value>В заказе уже есть сохраненная оплата типа «{0}» на сумму {1}
+Выбрать тип оплаты «{0}» можно будет
+после удаления сохраненной оплаты.</value>
+  </data>
+  <data name="PreliminaryItemWarningDeleteItem" xml:space="preserve">
+    <value>Удалить оплату</value>
+  </data>
+  <data name="PreliminaryItemWarningEditItem" xml:space="preserve">
+    <value>Изменить оплату</value>
+  </data>
+  <data name="ExternalItemWarningFormat" xml:space="preserve">
+    <value>В заказе уже есть внешняя оплата типа «{0}» на сумму {1}
+Выбрать тип оплаты «{0}» можно будет
+после удаления внешней оплаты. Удалить оплату?</value>
+  </data>
+  <data name="PaymentTypeIsNotConfigured" xml:space="preserve">
+    <value>Не настроен тип оплаты «{0}».</value>
+    <comment>{0} — название типа оплаты</comment>
+  </data>
+  <data name="PrepayIsNotCombinableDeleteZeroPaymentFormat" xml:space="preserve">
+    <value>Некомбинируемой предоплаты «{0}» достаточно, чтобы оплатить заказ. Удалить нулевую оплату типом «{1}» и продолжить?</value>
+  </data>
+  <data name="MoreThanOnePaymentsWithChange" xml:space="preserve">
+    <value>В заказе более одного типа оплаты, разрешающего расчет сдачи. Невозможно определить сумму оплаты. Установите точную сумму заказа или удалите один из типов оплаты.</value>
+  </data>
+  <data name="PreliminaryItemsSumWarning" xml:space="preserve">
+    <value>В заказе есть сохраненные оплаты на сумму {0}
+Откорректировать сохраненные оплаты,
+чтобы стала возможна оплата заказа?</value>
+  </data>
+  <data name="PreliminaryItemSumWarningFormat" xml:space="preserve">
+    <value>В заказе есть сохраненная оплата типа «{0}» на сумму {1} превышающая сумму заказа. Оплатить заказ можно будет после изменения сохраненной оплаты.</value>
+  </data>
+  <data name="CheckPermissionToSkipFailedPaymentDurationFormat" xml:space="preserve">
+    <value>Отмена продолжения предыдущей оплаты данного заказа возможна после подтверждения права «{0}».</value>
+  </data>
+  <data name="ProblemOrdersFoundFormat" xml:space="preserve">
+    <value>На терминале обнаружен заказ №{0}, у которого произошел сбой оплаты.
+Это может привести к формированию некорректных отчетов по выручке.
+Необходимо оплатить его до оплаты нового заказа.
+
+Перейти к оплате заказа №{0}?</value>
+  </data>
+  <data name="ProblemPrepayOrdersFoundFormat" xml:space="preserve">
+    <value>На терминале обнаружен заказ №{0}, у которого произошел сбой предоплаты.
+Это может привести к формированию некорректных отчетов по выручке.
+Необходимо повторить операцию предоплаты до оплаты нового заказа.
+
+Перейти к предоплате заказа №{0}?</value>
+  </data>
+  <data name="CheckPermissionToPayFailedOrderOnOtherCR" xml:space="preserve">
+    <value>Предыдущая оплата данного заказа не была
+успешно завершена на другом фискальном регистраторе.
+Оплата данного заказа на текущем фискальном
+регистраторе возможна после подтверждения права
+
+«{0}».</value>
+  </data>
+  <data name="ExternalApiPaymentTypeProcessingErrorFormat" xml:space="preserve">
+    <value>При {0} оплаты {1}типом оплаты «{2}» (платежная система «{3}») возникла ошибка. 
+ «{4}»
+ Обратитесь к администратору для выяснения причины проблемы.</value>
+    <comment>{0} - обозначение операции (см. ресурсы CollectDataActionTypeGen; PaymentActionTypeGen; CancelPaymentActionTypeGen; ReturnPaymentActionTypeGen, ReturnPaymentWithoutOrderActionTypeGen);
+    {1} - формат сообщения о сумме оплаты (см. ресурс ExternalApiPaymentOnSumFormat);
+    {2} - название типа оплаты;
+    {3} - код внешней платежной системы;
+    {4} - сообщение об ошибке, пришедшее из внешней платежной системы.</comment>
+  </data>
+  <data name="ExternalApiPaymentOnSumFormat" xml:space="preserve">
+    <value>на сумму {0} </value>
+    <comment>{0} - сумма оплаты</comment>
+  </data>
+  <data name="CollectDataActionTypeGen" xml:space="preserve">
+    <value>инициализации</value>
+  </data>
+  <data name="PaymentActionTypeGen" xml:space="preserve">
+    <value>проведении</value>
+  </data>
+  <data name="CancelPaymentActionTypeGen" xml:space="preserve">
+    <value>отмене</value>
+  </data>
+  <data name="ReturnPaymentActionTypeGen" xml:space="preserve">
+    <value>сторнировании</value>
+  </data>
+  <data name="ReturnPaymentWithoutOrderActionTypeGen" xml:space="preserve">
+    <value>возврате</value>
+  </data>
+  <data name="ExternalApiPaymentTypeProcessingDefaultMessage" xml:space="preserve">
+    <value>На стороне внешней платежной системы возникла ошибка.</value>
+  </data>
+  <data name="CannotRemoveDiscountFormat" xml:space="preserve">
+    <value>При удалении скидки «{0}» возникла ошибка. Она останется в составе заказа.</value>
+  </data>
+  <data name="ProductCategoryCannotBePaidWithPaymentsFormat" xml:space="preserve">
+    <value>Блюда категории «{0}» невозможно оплатить выбранными типами оплат.</value>
+  </data>
+  <data name="ProductCategorySumExceedsOfCompatiblePaymentsFormat" xml:space="preserve">
+    <value>Стоимость блюд категории «{0}» превосходит сумму совместимых с ней оплат.</value>
+  </data>
+  <data name="DiscountPaymentTypeAndZeroOrderSumWarningFormat" xml:space="preserve">
+    <value>Оплата «{0}» проводится как скидка.
+Закрыть заказ на нулевую сумму такой оплатой невозможно.</value>
+  </data>
+  <data name="AutomaticPaymentItemWrapperFormat" xml:space="preserve">
+    <value>Auto: {0}{1}</value>
+  </data>
+  <data name="UnableToAddPaymentToOrderWithAutomaticPayments" xml:space="preserve">
+    <value>Невозможно добавить некомбинируемый тип оплаты "{0}" к заказу с продажами.</value>
+  </data>
+  <data name="UnableToAddAutomaticPayment" xml:space="preserve">
+    <value>Невозможно добавить тип оплаты наличными к заказу с продажами.</value>
+  </data>
+  <data name="OnlyVirtualCashRegisterForPurchases" xml:space="preserve">
+    <value>Покупка позиций заказа возможна только на виртуальном фискальном регистраторе.</value>
+  </data>
+  <data name="OrderDeletionUnavailable" xml:space="preserve">
+    <value>Удаление заказа с предоплатой невозможно. Сначала удалите предоплату.</value>
+  </data>
+  <data name="MaxPaymentSumLimitOverrun" xml:space="preserve">
+    <value>Для оплаты «{0}» установлен лимит {1}</value>
+    <comment>{0} — название типа оплаты, {1} — максимально допустимая сумма для этой оплаты</comment>
+  </data>
+  <data name="MinPaymentSumLimitOverrun" xml:space="preserve">
+    <value>Для оплаты «{0}» установлен минимальный порог {1}</value>
+    <comment>{0} — название типа оплаты, {1} — минимально допустимая сумма для этой оплаты</comment>
+  </data>
+  <data name="CanCloseOrderOnlyOnSameCashRegisterWherePrePaymentWasProcessedFormat" xml:space="preserve">
+    <value>В заказе содержится предоплата "{0}", внесенная на точке "{1}". Заказ можно закрыть только на той точке, где была внесена предоплата.</value>
+  </data>
+  <data name="WithCashMemo" xml:space="preserve">
+    <value>С товарным чеком</value>
+  </data>
+  <data name="OrganizationDetailsEdit" xml:space="preserve">
+    <value>Реквизиты</value>
+  </data>
+  <data name="DenominationFormat" xml:space="preserve">
+    <value>+{0}</value>
+  </data>
+  <data name="PaymentTypeAndCurrencyFormat" xml:space="preserve">
+    <value>{0} ({1})</value>
+  </data>
+  <data name="AdditionalAndCurrentCurrencySumFormat" xml:space="preserve">
+    <value>{0} ({1})</value>
+  </data>
+  <data name="ChequeAdditionalInfoTitle" xml:space="preserve">
+    <value>ФЗ-54</value>
+  </data>
+  <data name="ChequeAdditionalInfoHint" xml:space="preserve">
+    <value>Способ выдачи кассового чека</value>
+  </data>
+  <data name="ChequeAdditionalReceipt" xml:space="preserve">
+    <value>Распечатать</value>
+  </data>
+  <data name="ChequeAdditionalSms" xml:space="preserve">
+    <value>Отправить по SMS</value>
+  </data>
+  <data name="ChequeAdditionalEmail" xml:space="preserve">
+    <value>Отправить на e-mail</value>
+  </data>
+  <data name="FastDeliveryPaymentFailed" xml:space="preserve">
+    <value>Не удалось оплатить доставку. Перейти на экран кассы?</value>
+  </data>
+  <data name="ConfigurePointOfSaleFormat" xml:space="preserve">
+    <value>Не настроена точка продаж для фискального регистратора «{0}».</value>
+  </data>
+  <data name="VatInvoiceNotNdsAccount" xml:space="preserve">
+    <value>Не настроен учет НДС с продажи. </value>
+  </data>
+  <data name="PreliminaryItemAddingWarningFormat" xml:space="preserve">
+    <value>Невозможно сохранить оплату. В заказе уже есть оплата типом «{0}».</value>
+  </data>
+  <data name="VatInvoiceCanNotPrint" xml:space="preserve">
+    <value>Счет-фактура не может быть напечатана. {0}</value>
+  </data>
+  <data name="NoPaymentsWithAllowedChange" xml:space="preserve">
+    <value>В заказе присутствует ненулевая сумма сдачи, но нет ни одного типа оплаты, разрешающего расчет сдачи. Установите точную сумму заказа или удалите один из типов оплаты.</value>
+  </data>
+  <data name="OrderInfoUpdating" xml:space="preserve">
+    <value>Обновляется информация о заказе</value>
+  </data>
+  <data name="PaymentFailedWhileClosingOrder" xml:space="preserve">
+    <value>При оплате заказа произошла ошибка.</value>
+  </data>
+  <data name="PaymentSumValidationError" xml:space="preserve">
+    <value>Сумма платежей с учетом скидки не совпадает со стоимостью заказа. Необходимо отменить пречек и повторно оплатить заказ.</value>
+  </data>
+  <data name="ProductWithoutCategoryCannotBePaidWithPaymentsFormat" xml:space="preserve">
+    <value>Блюда без категории невозможно оплатить выбранными типами оплат.</value>
+  </data>
+  <data name="ProductWithoutCategorySumExceedsOfCompatiblePaymentsFormat" xml:space="preserve">
+    <value>Стоимость блюд, не имеющих категорию, превосходит сумму совместимых оплат.</value>
+  </data>
+  <data name="SendChequeMethodButton" xml:space="preserve">
+    <value>Отправка чека</value>
+  </data>
+  <data name="ChooseDonationTypeTitle" xml:space="preserve">
+    <value>Выберите тип чаевых</value>
+  </data>
+  <data name="DonationItemWrapperFormat" xml:space="preserve">
+    <value>Чаевые: {0}{1}</value>
+  </data>
+  <data name="PaymentTypeAndDonationFormat" xml:space="preserve">
+    <value>{0} {1}</value>
+  </data>
+  <data name="ChangeDonationOption" xml:space="preserve">
+    <value>Сдача</value>
+    <comment>Название кнопки с вариантом вернуть излишек денег в виде сдачи (как альтернатива чаевым или пожертвованиям)</comment>
+  </data>
+  <data name="WrongPaymentTypeCombination" xml:space="preserve">
+    <value>Заказ не может содержать и фискальные, и нефискальные платежи.</value>
+  </data>
+  <data name="WrongPaymentTypeAndEInvoceCombination" xml:space="preserve">
+    <value>Заказ c эл. счетом не может содержать нефискальные платежи.</value>
+  </data>
+  <data name="UnableToAddEInvoceToOrderWithNonFiscalPayments" xml:space="preserve">
+    <value>Нельзя создать эл. счет для заказа c нефискальными платежами.</value>
+  </data>
+  <data name="UnableToAddPaymentToOrderWithEInvice" xml:space="preserve">
+    <value>Невозможно добавить нефискальный тип оплаты «{0}» к заказу с эл. счетом.</value>
+  </data>
+  <data name="UnableToAddFiscalPaymentToNonFiscal" xml:space="preserve">
+    <value>В заказ добавлена нефискальная оплата. Добавление фискальной оплаты невозможно.
+Вы хотите удалить данные оплаты?
+{0}</value>
+  </data>
+  <data name="UnableToAddNonFiscalPaymentToFiscal" xml:space="preserve">
+    <value>В заказ добавлена фискальная оплата. Добавление нефискальной оплаты невозможно.
+Вы хотите удалить данные оплаты?
+{0}</value>
+  </data>
+  <data name="NeedToRepeatPayment" xml:space="preserve">
+    <value>{0}
+Повторить оплату?</value>
+    <comment>{0} — текст ошибки, возникшей во время оплаты</comment>
+  </data>
+  <data name="ChequeAdditionalEmailNotSupportedOnCashRegister" xml:space="preserve">
+    <value>Отправка чека на e-mail не поддерживается данным фискальным регистратором.</value>
+  </data>
+  <data name="ChequeAdditionalSettlementPlaceNotSupportedOnCashRegister" xml:space="preserve">
+    <value>Указание места расчета не поддерживается данным фискальным регистратором.</value>
+  </data>
+  <data name="ChequeAdditionalSmsNotSupportedOnCashRegister" xml:space="preserve">
+    <value>Отправка чека по SMS не поддерживается данным фискальным регистратором.</value>
+  </data>
+  <data name="UnableToAddIikoCardPaymentTypeForAnonymousGuest" xml:space="preserve">
+    <value>Для доставок с анонимным гостем нельзя добавить тип оплаты ${LOYALTY_APP}.</value>
+  </data>
+  <data name="EInvoiceEdit" xml:space="preserve">
+    <value>ЭЛ. СЧЕТ</value>
+  </data>
+  <data name="PaymentGroupCards" xml:space="preserve">
+    <value>банковские карты</value>
+  </data>
+  <data name="PaymentGroupCash" xml:space="preserve">
+    <value>наличные</value>
+  </data>
+  <data name="PaymentGroupNonCash" xml:space="preserve">
+    <value>безнал. расчет</value>
+  </data>
+  <data name="PaymentGroupWriteOff" xml:space="preserve">
+    <value>без выручки</value>
+  </data>
+  <data name="OrderOpenTimeHeaderLabel" xml:space="preserve">
+    <value>Открыт: {0}</value>
+  </data>
+  <data name="OrderPaymentHeaderLabel" xml:space="preserve">
+    <value>ОПЛАТА ЗАКАЗА #{0}</value>
+    <comment>The string must be translated in uppercase.</comment>
+  </data>
+  <data name="OrderTableHeaderLabel" xml:space="preserve">
+    <value>Стол #{0}</value>
+  </data>
+  <data name="OrderTotalLabel" xml:space="preserve">
+    <value>итого:</value>
+  </data>
+  <data name="OrderWaiterHeaderLabel" xml:space="preserve">
+    <value>Официант: {0}</value>
+  </data>
+  <data name="PrepayLabel" xml:space="preserve">
+    <value>предоплата:</value>
+  </data>
+  <data name="SubsumLabel" xml:space="preserve">
+    <value>подытог:</value>
+  </data>
+  <data name="ToPayLabel" xml:space="preserve">
+    <value>к оплате:</value>
+  </data>
+  <data name="PaymentNameFormat" xml:space="preserve">
+    <value>{0}
+{1}</value>
+  </data>
+  <data name="DoSplitPay" xml:space="preserve">
+    <value>Рассчитать</value>
+  </data>
+  <data name="PaymentSplitModeByDish" xml:space="preserve">
+    <value>по блюдам</value>
+  </data>
+  <data name="PaymentSplitModeByPrice" xml:space="preserve">
+    <value>по сумме</value>
+  </data>
+  <data name="PaymentSplitModeWholeOrder" xml:space="preserve">
+    <value>целиком</value>
+  </data>
+  <data name="NoPaymentsToSplitGuestPay" xml:space="preserve">
+    <value>Нет ни одной оплаты, которая позволила бы рассчитать гостя отдельным чеком.</value>
+  </data>
+  <data name="NotEnoughPaymentsToSplitGuestPay" xml:space="preserve">
+    <value>Суммы оплат, которые позволили бы рассчитать гостя отдельным чеком, не хватает для полного покрытия чека.</value>
+  </data>
+  <data name="GuestPriceToPayIntervalFormat" xml:space="preserve">
+    <value>Cумма оплаты {0}
+Мин.: {1}, Макс.: {2}</value>
+    <comment>{0} - имя гостя
+{1} - минимально возможная сумма оплаты гостя
+{2} - максимально возможная сумма оплаты гостя</comment>
+  </data>
+  <data name="EInvoiceDeletionSwitchToPaymentSplitModeByDishWarning" xml:space="preserve">
+    <value>При переходе в режим деления оплат по блюдам эл. счета не будут удалены автоматически. Эл. счета будет необходимо отменить вручную. Сообщите об этом менеджеру.</value>
+  </data>
+  <data name="EInvoiceDeletionSwitchToPaymentSplitModeByPriceWarning" xml:space="preserve">
+    <value>При переходе в режим деления оплат по сумме эл. счета не будут удалены автоматически. Эл. счета будет необходимо отменить вручную. Сообщите об этом менеджеру.</value>
+  </data>
+  <data name="GuestCountFormat" xml:space="preserve">
+    <value>Количество гостей: {0}</value>
+  </data>
+  <data name="UnableToDeleteGuestSplitByPriceFormat" xml:space="preserve">
+    <value>У всех гостей сумма к оплате изменена вручную. Необходимо перераспределить сумму к оплате у {0} между другими гостями.</value>
+  </data>
+  <data name="UnableToDeleteGuestSplitByPriceTitleFormat" xml:space="preserve">
+    <value>Невозможно удалить {0}</value>
+  </data>
+  <data name="SplitByDishesButtonCaption" xml:space="preserve">
+    <value>Перенос</value>
+  </data>
+  <data name="EInvoiceDeletionSwitchToPaymentSplitModeNoneWarning" xml:space="preserve">
+    <value>При переходе в режим оплаты целиком эл. счета не будут отменены автоматически. Эл. счета будет необходимо отменить вручную. Сообщите об этом менеджеру.</value>
+  </data>
+  <data name="EInvoiceDeletionSplitPaymentByDishChangeGuestsFormat" xml:space="preserve">
+    <value>Будут удалены эл. счета нерассчитанных гостей {0}. Продолжить?</value>
+  </data>
+  <data name="EInvoiceDeletionSplitPaymentByDishChangeGuestFormat" xml:space="preserve">
+    <value>Эл. счет гостя «{0}» будет удален. Продолжить?</value>
+  </data>
+  <data name="UnableToRemoveVatInvoiceOnRemovingPayment" xml:space="preserve">
+    <value>Эл. счет, созданный при оплате, не будет отменен автоматически. Эл. счет будет необходимо отменить вручную. Сообщите об этом менеджеру. Вы хотите удалить оплату?</value>
+  </data>
+  <data name="RemovingGuestPaymentWithVatInvoice" xml:space="preserve">
+    <value>Для оплаченной части заказа был выставлен эл. счет. При удалении оплаты эл. счет будет отменен. Продолжить?</value>
+  </data>
+  <data name="NonProcessedEInvoiceDeletionWarning" xml:space="preserve">
+    <value>Эл. счета нерассчитанных гостей будут удалены. Продолжить?</value>
+  </data>
+  <data name="EInvoiceDeletionWarning" xml:space="preserve">
+    <value>Эл. счет будет удален. Продолжить?</value>
+  </data>
+  <data name="ChangeSumEqualToPaymentsWithChangeSum" xml:space="preserve">
+    <value>При выбранных типах оплаты сумма оплат со сдачей равна нулю.
+Пожалуйста, измените выбранные типы оплат или удалите оплаты со сдачей.</value>
+  </data>
+  <data name="ChangeSumGreaterThanPaymentsWithChangeSum" xml:space="preserve">
+    <value>При выбранных типах оплаты сумма оплат со сдачей меньше сдачи.
+Пожалуйста, измените выбранные типы оплат или удалите оплаты без сдачи.</value>
+  </data>
+  <data name="UnableToSplitPaymentBetweenGuestsSeveralOrdersProblemFormat" xml:space="preserve">
+    <value>Невозможно оплатить заказ {0}. Возникла проблема при оплате отделенных заказов: {1}. Необходимо закрыть все заказы вручную.</value>
+  </data>
+  <data name="UnableToSplitPaymentBetweenGuestsSingleOrderProblemFormat" xml:space="preserve">
+    <value>Невозможно оплатить заказ {0}. Возникла проблема при оплате отделенного заказа {1} гостя {2}. Заказ необходимо закрыть вручную.</value>
+  </data>
+  <data name="OrderNumberAndGuestNameFormat" xml:space="preserve">
+    <value>заказ {0} гостя «{1}»</value>
+    <comment>Used in UnableToSplitPaymentBetweenGuestsSeveralOrdersProblemFormat, place 1</comment>
+  </data>
+  <data name="SplitPaymentBetweenGuestsErrorFormat" xml:space="preserve">
+    <value>Произошла ошибка при разделении заказа №{0}. {1}</value>
+    <comment>{1} - текст ошибки</comment>
+  </data>
+</root>

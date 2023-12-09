@@ -1,0 +1,677 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CantCancellCurrentOperation" xml:space="preserve">
+    <value>Невозможно отменить текущую операцию</value>
+  </data>
+  <data name="CardBlock" xml:space="preserve">
+    <value>БЛОКИРОВКА</value>
+  </data>
+  <data name="CardCancel" xml:space="preserve">
+    <value>АВАРИЙНАЯ ОТМЕНА</value>
+  </data>
+  <data name="CardReplenishment" xml:space="preserve">
+    <value>ПОПОЛНЕНИЕ</value>
+  </data>
+  <data name="CardStorno" xml:space="preserve">
+    <value>ВОЗВРАТ</value>
+  </data>
+  <data name="CardAuth" xml:space="preserve">
+    <value>АВТОРИЗАЦИЯ</value>
+  </data>
+  <data name="CardCancelAuth" xml:space="preserve">
+    <value>ОТМЕНА АВТОРИЗАЦИИ</value>
+  </data>
+  <data name="Sum" xml:space="preserve">
+    <value>СУММА</value>
+  </data>
+  <data name="CardUnblock" xml:space="preserve">
+    <value>РАЗБЛОКИРОВКА</value>
+  </data>
+  <data name="CardWriteoff" xml:space="preserve">
+    <value>ОПЛАТА</value>
+  </data>
+  <data name="CashRegisterAccountNotDefined" xml:space="preserve">
+    <value>Не создан счет для кассового регистратора</value>
+  </data>
+  <data name="ChangeServer" xml:space="preserve">
+    <value>Сменить
+сервер</value>
+  </data>
+  <data name="ChoosePayInOutType" xml:space="preserve">
+    <value>Выберите тип</value>
+  </data>
+  <data name="ConnectionError" xml:space="preserve">
+    <value>Не удалось установить соединение</value>
+  </data>
+  <data name="CounteragentNotSelected" xml:space="preserve">
+    <value>Не выбран контрагент</value>
+  </data>
+  <data name="CustomerDisplayChargeText" xml:space="preserve">
+    <value>НАДБАВКА</value>
+  </data>
+  <data name="CustomerDisplayDeliveryText" xml:space="preserve">
+    <value>СДАЧА</value>
+  </data>
+  <data name="CustomerDisplayDiscountText" xml:space="preserve">
+    <value>СКИДКА</value>
+  </data>
+  <data name="CustomerDisplayChargeShortText" xml:space="preserve">
+    <value>НАДБ</value>
+  </data>
+  <data name="CustomerDisplayDiscountShortText" xml:space="preserve">
+    <value>СКИД</value>
+  </data>
+  <data name="CustomerDisplayTotalText" xml:space="preserve">
+    <value>ИТОГО</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Ошибка</value>
+  </data>
+  <data name="ExitApplication" xml:space="preserve">
+    <value>Выйти из
+программы</value>
+  </data>
+  <data name="DefaultTableNotDefined" xml:space="preserve">
+    <value>Не настроен стол по умолчанию</value>
+  </data>
+  <data name="FailLockUI" xml:space="preserve">
+    <value>Для блокировки терминала отключите магнитный ключ.</value>
+  </data>
+  <data name="GroupNotDefine" xml:space="preserve">
+    <value>Не настроена группа</value>
+  </data>
+  <data name="CashServerStartup_LoadingDataFromServer" xml:space="preserve">
+    <value>Загрузка данных с сервера</value>
+  </data>
+  <data name="CashServerStartup_LocalDataProcessing" xml:space="preserve">
+    <value>Загрузка локальных данных</value>
+  </data>
+  <data name="CashServerStartup_LocalDataReading" xml:space="preserve">
+    <value>Чтение локальных данных</value>
+  </data>
+  <data name="MandatoryPayInOutComment" xml:space="preserve">
+    <value>Не набран обязательный комментарий</value>
+  </data>
+  <data name="OperationAlreadyCancelled" xml:space="preserve">
+    <value>Операция уже отменена</value>
+  </data>
+  <data name="OperationAlreadyExecuted" xml:space="preserve">
+    <value>Операция уже была выполнена</value>
+  </data>
+  <data name="OperationCanBeExecutedOnlyOneTime" xml:space="preserve">
+    <value>Операция может быть запущена только один раз</value>
+  </data>
+  <data name="OperationCanceled" xml:space="preserve">
+    <value>Операция отменена</value>
+  </data>
+  <data name="OperationSuccessfullyCancelled" xml:space="preserve">
+    <value>Операция успешно отменена</value>
+  </data>
+  <data name="PayInHelpContent" xml:space="preserve">
+    <value>Введите сумму внесения. Не забудьте указать причину.</value>
+  </data>
+  <data name="CommentLabel" xml:space="preserve">
+    <value>Комментарий:</value>
+  </data>
+  <data name="PayInOutContragent" xml:space="preserve">
+    <value>Контрагент:</value>
+  </data>
+  <data name="PayInOutContragentFormat" xml:space="preserve">
+    <value>Контрагент: {0}</value>
+  </data>
+  <data name="PayInWithCounteragentHelpContent" xml:space="preserve">
+    <value>Выберите контрагента и введите сумму внесения. Не забудьте указать причину.</value>
+  </data>
+  <data name="PayInAction" xml:space="preserve">
+    <value>Внести</value>
+  </data>
+  <data name="PayOutHelpContent" xml:space="preserve">
+    <value>Введите сумму изъятия. Не забудьте указать причину.</value>
+  </data>
+  <data name="PayOutWithCounteragentHelpContent" xml:space="preserve">
+    <value>Выберите контрагента и введите сумму изъятия. Не забудьте указать причину.</value>
+  </data>
+  <data name="PayOutAction" xml:space="preserve">
+    <value>Изъять</value>
+  </data>
+  <data name="RepeatTryConnect" xml:space="preserve">
+    <value>Повторить
+попытку</value>
+  </data>
+  <data name="RequireRightConfirmation" xml:space="preserve">
+    <value>Требуется подтверждение права</value>
+  </data>
+  <data name="RequireRightsConfirmation" xml:space="preserve">
+    <value>Требуется подтверждение прав</value>
+  </data>
+  <data name="RequireRightsOperation" xml:space="preserve">
+    <value>Требуется подтверждение операции</value>
+  </data>
+  <data name="ContinueConfirm" xml:space="preserve">
+    <value>Вы уверены, что хотите выполнить операцию?</value>
+  </data>
+  <data name="RollUpCard" xml:space="preserve">
+    <value>Прокатайте карту</value>
+  </data>
+  <data name="RollUpEmployeeCard" xml:space="preserve">
+    <value>Прокатайте карту сотрудника</value>
+  </data>
+  <data name="ServerAddressWasChanged" xml:space="preserve">
+    <value>Адрес сервера был изменен</value>
+  </data>
+  <data name="ServerDataRequest" xml:space="preserve">
+    <value>Запрос данных с сервера</value>
+  </data>
+  <data name="ServerIsWaitingForALicence" xml:space="preserve">
+    <value>Сервер ожидает ввода лицензии</value>
+  </data>
+  <data name="ServerVersionIsOutOfDate" xml:space="preserve">
+    <value>Данная программа не может соединиться с сервером более старой версии</value>
+  </data>
+  <data name="SoftwareInternalError" xml:space="preserve">
+    <value>Внутренняя ошибка программы</value>
+  </data>
+  <data name="SoftwareVersionIsOutOfDate" xml:space="preserve">
+    <value>Версия программного обеспечения устарела, необходимо произвести обновление</value>
+  </data>
+  <data name="UnableToConnectToServer" xml:space="preserve">
+    <value>Не удалось установить подключение к серверу {0}:
+{1}</value>
+  </data>
+  <data name="UnableToNavigateToMainPage" xml:space="preserve">
+    <value>Не удалось перейти на стартовую страницу:
+{0}</value>
+  </data>
+  <data name="UnknownErrorOcured" xml:space="preserve">
+    <value>Произошла неизвестная ошибка</value>
+  </data>
+  <data name="UnknownError" xml:space="preserve">
+    <value>Неизвестная ошибка</value>
+  </data>
+  <data name="WrongSum" xml:space="preserve">
+    <value>Неверная сумма</value>
+  </data>
+  <data name="WrongUsernameOrPassword" xml:space="preserve">
+    <value>Неверное имя пользователя или пароль</value>
+  </data>
+  <data name="ApprovePermissionFormat" xml:space="preserve">
+    <value>Подтвердите право {0}</value>
+  </data>
+  <data name="SerialOperationFinished" xml:space="preserve">
+    <value>Выполнение операций закончено</value>
+  </data>
+  <data name="PersonalSessionOpenDateLaterThanCloseDate" xml:space="preserve">
+    <value>Время открытия личной смены больше, чем время закрытия.</value>
+  </data>
+  <data name="PersonalSessionOpenDateLaterThanRoleChangeDate" xml:space="preserve">
+    <value>Время открытия личной смены больше, чем время смены должности.</value>
+  </data>
+  <data name="PersonalSessionLastRoleChangeDateLaterThanCloseDate" xml:space="preserve">
+    <value>Время последней смены должности больше, чем время закрытия.</value>
+  </data>
+  <data name="PersonalSessionLastRoleChangeDateLaterThanRoleChangeDate" xml:space="preserve">
+    <value>Время предыдущей смены должности больше, чем время текущей смены должности.</value>
+  </data>
+  <data name="AgentCommunicationError" xml:space="preserve">
+    <value>Ошибка при отсылке задания удаленному устройству.</value>
+  </data>
+  <data name="AgentTimeoutError" xml:space="preserve">
+    <value>Превышен интервал ожидания ответа от удаленного устройства.</value>
+  </data>
+  <data name="CustomerDisplayPayIn" xml:space="preserve">
+    <value>ВНЕСЕНО</value>
+  </data>
+  <data name="IncompatibleAssemblyVersionTempate" xml:space="preserve">
+    <value>Обнаружены несовместимые версии программных модулей! Запуск невозможен.
+
+Основная версия: {0}
+
+Несовместимые модули:
+{1}</value>
+  </data>
+  <data name="IncompatibleWithMainCashPluginsSet" xml:space="preserve">
+    <value>Набор установленных плагинов не совпадает с набором плагинов главной кассы.
+Продолжение работы невозможно.
+
+Различия:
+{0}</value>
+  </data>
+  <data name="IncompatibleWithMainCashSoftwareVersion" xml:space="preserve">
+    <value>Версия программы не совпадает с версией на главной кассе.
+Продолжение работы невозможно.
+
+Версия на главной кассе: {0}
+Локальная версия: {1}</value>
+  </data>
+  <data name="IncompatibleWithMainCashRoutine" xml:space="preserve">
+    <value>Тип обслуживания не совпадает с типом обслуживания на главной кассе.
+Продолжение работы невозможно.</value>
+  </data>
+  <data name="CardAlreadySubstituted" xml:space="preserve">
+    <value>Подменная карта с номером {0} уже привязана к сотруднику {1}.
+Чтобы отвязать карту, закройте личную смену сотрудника {1}</value>
+  </data>
+  <data name="KeyAlreadySubstituted" xml:space="preserve">
+    <value>Подменный магнитный ключ с номером {0} уже привязан к сотруднику {1}.
+    Чтобы отвязать ключ, закройте личную смену сотрудника {1}.</value>
+  </data>
+  <data name="CardIsLocal" xml:space="preserve">
+    <value>Номер карты уже используется для сотрудника {0}. Возьмите другую карту.</value>
+  </data>
+  <data name="KeyIsBusy" xml:space="preserve">
+    <value>Магнитный ключ уже используется для сотрудника {0}. Возьмите другой ключ.</value>
+  </data>
+  <data name="ChooseEmployeeForSubstitution" xml:space="preserve">
+    <value>ВЫБЕРИТЕ СОТРУДНИКА ДЛЯ ЗАМЕНЫ</value>
+  </data>
+  <data name="ChooseEmployeeForCashDrawerLink" xml:space="preserve">
+    <value>ВЫБЕРИТЕ СОТРУДНИКА, ОТВЕЧАЮЩЕГО ЗА ДЕНЕЖНЫЙ ЯЩИК</value>
+  </data>
+  <data name="ChooseEmployeeForCashDrawerUnlink" xml:space="preserve">
+    <value>Выберите сотрудника, отвязываемого от денежного ящика</value>
+  </data>
+  <data name="SubstitutionCardCommentString" xml:space="preserve">
+    <value>Сотрудник работал по подменной карте  №{0}. Комментарий: {1}</value>
+  </data>
+  <data name="Warning" xml:space="preserve">
+    <value>Предупреждение</value>
+  </data>
+  <data name="ServerLicenseIsExpired" xml:space="preserve">
+    <value>Срок действия лицензии истек</value>
+  </data>
+  <data name="DateTimeDialogMaxDateCheckFailed" xml:space="preserve">
+    <value>Введенное значение должно быть раньше, чем {0}</value>
+  </data>
+  <data name="DateTimeDialogMinDateCheckFailed" xml:space="preserve">
+    <value>Введенное значение должно быть позже, чем {0}</value>
+  </data>
+  <data name="DateTimeDialogDateIsInIntervalCheckFailed" xml:space="preserve">
+    <value>Введенное значение должно быть в интервале между {0} и {1}.</value>
+  </data>
+  <data name="PaymentItemInProcessingStatus" xml:space="preserve">
+    <value>Предыдущая попытка проведения оплаты "{0}" не была завершена корректно. Удалите оплату вручную.</value>
+  </data>
+  <data name="ConfirmAssignNewSubstCard" xml:space="preserve">
+    <value>К сотруднику {0} уже привязана подменная карта. Привязать новую карту?</value>
+  </data>
+  <data name="EmployeeAlreadyWorkWithSubstCard" xml:space="preserve">
+    <value>Сотрудник {0} уже работает по подменной карте. Чтобы отвязать карту закройте личную смену сотрудника {0}.</value>
+  </data>
+  <data name="FailedToDeleteSubstitutionCard" xml:space="preserve">
+    <value>Не удалось удалить подменную карту</value>
+  </data>
+  <data name="Attention" xml:space="preserve">
+    <value>Внимание</value>
+  </data>
+  <data name="CannotClosePersonalSession" xml:space="preserve">
+    <value>Не удалось закрыть личную смену сотрудника {0}</value>
+  </data>
+  <data name="CashServerStartup_AgentStarting" xml:space="preserve">
+    <value>Запуск агента</value>
+  </data>
+  <data name="CashServerStartup_CheckVersion" xml:space="preserve">
+    <value>Проверка версии</value>
+  </data>
+  <data name="CashServerStartup_DBInitializing" xml:space="preserve">
+    <value>Инициализация базы данных</value>
+  </data>
+  <data name="CashServerStartup_FirstPersonalSessionsSynchronization_Terminal" xml:space="preserve">
+    <value>Установка соединения с главной кассой</value>
+  </data>
+  <data name="CashServerStartup_FirstPersonalSessionsSynchronization_MainCash" xml:space="preserve">
+    <value>Запуск главной кассы</value>
+  </data>
+  <data name="CashServerStartup_PluginsLoading" xml:space="preserve">
+    <value>Загрузка плагинов</value>
+  </data>
+  <data name="CashServerStartup_TerminalRegistering" xml:space="preserve">
+    <value>Регистрация терминала</value>
+  </data>
+  <data name="CashServerStartup_UpdateQueueInitializing" xml:space="preserve">
+    <value>Инициализация очереди обновлений</value>
+  </data>
+  <data name="CashServerStartup_ValidateExistingOrders" xml:space="preserve">
+    <value>Проверка открытых заказов</value>
+  </data>
+  <data name="CashServerStartup_WCFServicesInit" xml:space="preserve">
+    <value>Инициализация WCF-сервисов</value>
+  </data>
+  <data name="CashServerStartup_WCFServicesStarting" xml:space="preserve">
+    <value>Запуск WCF-сервисов</value>
+  </data>
+  <data name="NoTablesDefined" xml:space="preserve">
+    <value>В группе нет столов</value>
+  </data>
+  <data name="ClosingPersonalSession" xml:space="preserve">
+    <value>Закрытие личной смены...</value>
+  </data>
+  <data name="OpeningPersonalSession" xml:space="preserve">
+    <value>Открытие личной смены...</value>
+  </data>
+  <data name="DbUpgrading" xml:space="preserve">
+    <value>Выполняется обновление базы данных</value>
+  </data>
+  <data name="ServerStartingUp" xml:space="preserve">
+    <value>Производится запуск сервера</value>
+  </data>
+  <data name="TerminalNotRegistered" xml:space="preserve">
+    <value>Терминал не зарегистрирован</value>
+  </data>
+  <data name="WrongEdition" xml:space="preserve">
+    <value>Невозможно подключиться к серверу ${CHAIN_APP_WIN}</value>
+  </data>
+  <data name="AgentCommunicationErrorDetails" xml:space="preserve">
+    <value>
+Компьютер: '{0}' Устройство: '{1}'</value>
+  </data>
+  <data name="SystemUserName" xml:space="preserve">
+    <value>System</value>
+  </data>
+  <data name="AgentCrashedError" xml:space="preserve">
+    <value>Процесс агента неожиданно прерван</value>
+  </data>
+  <data name="ProgramError" xml:space="preserve">
+    <value>Ошибка в программе</value>
+  </data>
+  <data name="ChooseCardToRollMessage" xml:space="preserve">
+    <value>Выберите прокатываемую карту</value>
+  </data>
+  <data name="CashSessionNotOpenErrorTemplate" xml:space="preserve">
+    <value>Кассовая смена для {0} еще не открыта</value>
+  </data>
+  <data name="CashSessionAlreadyOpenErrorTemplate" xml:space="preserve">
+    <value>Кассовая смена для {0} уже открыта</value>
+  </data>
+  <data name="UnableToCancelPrintOfNonprintedGuestCheque" xml:space="preserve">
+    <value>Невозможно отменить печать пречека, если пречек не отпечатан.</value>
+  </data>
+  <data name="ScaleErrorFormat" xml:space="preserve">
+    <value>{0}
+Подробности: {1}.</value>
+  </data>
+  <data name="AgentUnhandledException" xml:space="preserve">
+    <value>Ошибка при обращении к агенту</value>
+  </data>
+  <data name="ConfigFileRestoreConfirmation" xml:space="preserve">
+    <value>Конфигурационный файл поврежден. Создать новый?</value>
+  </data>
+  <data name="ConfigFileIsBrokenError" xml:space="preserve">
+    <value>Конфигурационный файл {0} поврежден. Запуск невозможен. Восстановите или удалите конфигурационный файл.</value>
+  </data>
+  <data name="CashServerStartup_SyncServerBackup" xml:space="preserve">
+    <value>Загрузка банкетов, резервов, доставок и клиентов</value>
+  </data>
+  <data name="LoadingCorporateSettings" xml:space="preserve">
+    <value>Загрузка настроек корпорации</value>
+  </data>
+  <data name="CashServerStartup_iikoFrontStartUp" xml:space="preserve">
+    <value>Запуск приложения</value>
+  </data>
+  <data name="CashServerStartup_Started" xml:space="preserve">
+    <value>Сервер запущен</value>
+  </data>
+  <data name="CashServerStartup_Stopped" xml:space="preserve">
+    <value>Сервер остановлен</value>
+  </data>
+  <data name="CashServerStartup_PosError" xml:space="preserve">
+    <value>Ошибка в настройках предприятия. Одна и та же касса привязана к нескольким точкам продаж. Запуск приложения невозможен.</value>
+  </data>
+  <data name="CardActivation" xml:space="preserve">
+    <value>АКТИВАЦИЯ</value>
+    <comment>ИМХО, эти ресурсы не здесь должны быть</comment>
+  </data>
+  <data name="LicenseNotVaid" xml:space="preserve">
+    <value>Лицензия недействительна. Продолжение работы невозможно.</value>
+  </data>
+  <data name="LoadingLicenseInformationFromServer" xml:space="preserve">
+    <value>Получение лицензионной информации с сервера</value>
+  </data>
+  <data name="WaitForUpdateLicenseInformationFromServer" xml:space="preserve">
+    <value>Лицензионная информация устарела. Ожидается обновление с сервера</value>
+  </data>
+  <data name="GetLicenseConnectionProgressBarMessage" xml:space="preserve">
+    <value>Запрос подключения для модуля: {0}</value>
+  </data>
+  <data name="DefaultTaxName" xml:space="preserve">
+    <value>По умолчанию</value>
+  </data>
+  <data name="CashServerName" xml:space="preserve">
+    <value>Кассовый сервер</value>
+  </data>
+  <data name="DishesMovedFromFormat" xml:space="preserve">
+    <value>{0} - номер заказа-источника блюд</value>
+  </data>
+  <data name="DishesMovedToFormat" xml:space="preserve">
+    <value>{0} - номер нового заказа для блюд</value>
+  </data>
+  <data name="NewOrderNumbersOnSplittingFormat" xml:space="preserve">
+    <value>{0} - номера новых заказов</value>
+  </data>
+  <data name="CashServerStartup_Restarting" xml:space="preserve">
+    <value>Сервер перезапускается...</value>
+  </data>
+  <data name="ServerError" xml:space="preserve">
+    <value>На сервере произошла ошибка</value>
+  </data>
+  <data name="NotFoundLinkUserWithCashDrawer" xml:space="preserve">
+    <value>Операция запрещена. Необходимо сотруднику назначить денежный ящик ФРа 
+    «{0}».</value>
+  </data>
+  <data name="NotFoundTaxationSystems" xml:space="preserve">
+    <value>Операция запрещена. Необходимо заполнить справочник систем налогообложения.</value>
+  </data>
+  <data name="OldGuestCount" xml:space="preserve">
+    <value>Старое к-во гостей: {0}</value>
+  </data>
+  <data name="UninitializedEntitiesExistAfterLoadingError" xml:space="preserve">
+    <value>Ошибка загрузки локальных данных. Запуск приложения невозможен.</value>
+  </data>
+  <data name="ConfigFileWaiterLockError" xml:space="preserve">
+    <value>Некорректные настройки WaiterLock в конфигурационном файле</value>
+  </data>
+  <data name="ImpossibleRegisterTerminal" xml:space="preserve">
+    <value>Невозможно зарегистрировать терминал. Повторите попытку позже</value>
+  </data>
+  <data name="GetLicenseConnectionsProgressBarMessage" xml:space="preserve">
+    <value>Запрос подключения для модулей: {0}</value>
+  </data>
+  <data name="ExceededModuleIdMessage" xml:space="preserve">
+    <value>Достигнут лимит подключений для модуля {0}.
+Для использования данного функционала необходимо
+остановить работу с ним на одном из других терминалов,
+либо приобрести лицензии на дополнительные рабочие места.</value>
+  </data>
+  <data name="ExpiredModuleIdMessage" xml:space="preserve">
+    <value>Истекла лицензия для модуля {0}.
+Для использования данного функционала необходимо продлить лицензию.</value>
+  </data>
+  <data name="InsufficientLicenseMessageTitle" xml:space="preserve">
+    <value>Лицензионное ограничение</value>
+  </data>
+  <data name="UnlicensedModuleIdMessage" xml:space="preserve">
+    <value>Отсутствует лицензия для модуля {0}.
+Для использования данного функционала необходимо приобрести лицензию.</value>
+  </data>
+  <data name="WithoutTaxCategory" xml:space="preserve">
+    <value>Без налоговой категории</value>
+  </data>
+  <data name="SimplePaymentTypeNotFound" xml:space="preserve">
+    <value>Нет подходящего типа оплаты.</value>
+  </data>
+  <data name="SelectedPaymentTypeIsIncompatibleWithCategory" xml:space="preserve">
+    <value>Выбранный тип оплаты несовместим с категориями блюд заказа.</value>
+  </data>
+  <data name="OldItemSize" xml:space="preserve">
+    <value>Старое значение размера: {0}</value>
+  </data>
+  <data name="DeviceIsNotConnected" xml:space="preserve">
+    <value>Не удалось подключиться к устройству</value>
+  </data>
+  <data name="WaiterLockDefaultname" xml:space="preserve">
+    <value>Считыватель WaiterLock</value>
+  </data>
+  <data name="OrderServiceTypeCommon" xml:space="preserve">
+    <value>Обычный заказ</value>
+  </data>
+  <data name="OrderServiceTypeDeliveryByCourier" xml:space="preserve">
+    <value>Доставка курьером</value>
+  </data>
+  <data name="OrderServiceTypeDeliveryPickup" xml:space="preserve">
+    <value>Доставка самовывоз</value>
+  </data>
+  <data name="NullDriverDeviceNeedSetupMessage" xml:space="preserve">
+    <value>Для настройки устройства обратитесь к администратору.</value>
+  </data>
+  <data name="NullDriverDeviceNeedSetupTitle" xml:space="preserve">
+    <value>Устройство не настроено.</value>
+  </data>
+  <data name="AllergenGroupsWarningMessage" xml:space="preserve">
+    <value>{0} содержит:</value>
+  </data>
+  <data name="AllergenGroupsPopupTitle" xml:space="preserve">
+    <value>Информация об аллергенах</value>
+  </data>
+  <data name="CreatingBackupBeforeUpgrade" xml:space="preserve">
+    <value>Создание резервной копии перед обновлением</value>
+  </data>
+  <data name="UpgradingData" xml:space="preserve">
+    <value>Обновление данных</value>
+  </data>
+  <data name="TechSupportQrCodePopupText" xml:space="preserve">
+    <value>Нет соединения с интернетом. Отсканируйте QR-код телефоном, чтобы узнать контакты техподдержки</value>
+  </data>
+  <data name="TechSupportPopupTitle" xml:space="preserve">
+    <value>Контакты техподдержки</value>
+  </data>
+  <data name="TechSupportQrCodePopupLoading" xml:space="preserve">
+    <value>Загрузка...</value>
+  </data>
+  <data name="CorruptedAppShutdownInfo" xml:space="preserve">
+    <value>Приложение повреждено и не может быть запущено.
+Обратитесь к системному администратору</value>
+  </data>
+  <data name="CashServerStartup_LongSyncServerBackup" xml:space="preserve">
+    <value>В ходе загрузки банкетов, резервов, доставок и клиентов не была получена часть данных. 
+Идет попытка синхронизации данных с сервером</value>
+  </data>
+  <data name="NoSyncStateForAgentFormat" xml:space="preserve">
+    <value>Не удалось синхронизировать агент {0}. Не удалось получить состояние синхронизации. Возможно, поврежден файл config.xml.</value>
+  </data>
+</root>

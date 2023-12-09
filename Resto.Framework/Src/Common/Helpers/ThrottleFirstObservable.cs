@@ -1,5 +1,4 @@
-﻿using System;
-using System.Reactive.Concurrency;
+﻿using System.Reactive.Concurrency;
 using System.Reactive.Disposables;
 using Resto.Framework.Attributes.JetBrains;
 using Resto.Framework.Src;

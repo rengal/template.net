@@ -161,16 +161,6 @@ namespace Resto.Framework.Common
             return ((MemberExpression)expr.Body).Member.Name;
         }
 
-        public static string GetCommandName(Expression<Func<RoutedCommand>> expr)
-        {
-            return RemoveSuffix(GetPropertyName(expr), CommandSuffix);
-        }
-
-        public static string GetEventName(Expression<Func<RoutedEvent>> expr)
-        {
-            return RemoveSuffix(GetPropertyName(expr), EventSuffix);
-        }
-
         #endregion
 
         #region Private Functions

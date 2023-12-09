@@ -106,28 +106,5 @@ namespace Resto.Framework.Common
                         throw exception.PrepareForRethrow();
                     });
         }
-
-        /// <summary>
-        /// Ignores elements from an observable sequence which are followed by another element within a specified relative time duration.
-        /// </summary>
-        /// <typeparam name="T">The type of the elements in the source sequence.</typeparam>
-        /// <param name="source">Source sequence to throttle.</param>
-        /// <param name="dueTime">Throttling duration for each element.</param>
-        /// <returns>The throttled sequence.</returns>
-        /// <exception cref="T:System.ArgumentNullException"><paramref name="source" /> is null.</exception>
-        /// <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="dueTime" /> is less than TimeSpan.Zero.</exception>
-        /// <remarks>
-        /// В отличие от штатного <see cref="Observable.Throttle{TSource}(System.IObservable{TSource},System.TimeSpan)"/>,
-        /// немедленно пробрасывает дальше, если после предыдущего проброшенного элемента прошло более <paramref name="dueTime"/>.
-        /// Таким образом, первый элемент будет проброшен немедленно, в то время как Throttle задержал бы первый элемент на <paramref name="dueTime"/>.
-        /// </remarks>
-        [NotNull]
-        public static IObservable<T> ThrottleFirst<T>([NotNull] this IObservable<T> source, TimeSpan dueTime)
-        {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
-
-            return new ThrottleFirstObservable<T>(source, dueTime, DefaultScheduler.Instance);
-        }
     }
 }

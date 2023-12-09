@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Reflection;
+﻿using System.Reflection;
 using Resto.Framework.Attributes.JetBrains;
 
 namespace Resto.Framework.Common
@@ -16,7 +12,6 @@ namespace Resto.Framework.Common
         #endregion Shared Members
 
         #region Methods
-
 
         /// <summary>
         /// Получить пользовательский атрибут для сборки
@@ -60,29 +55,6 @@ namespace Resto.Framework.Common
         public static T GetInstanceFrom<T>(string assemblyName, string typeName)
         {
             return GetInstanceFrom<T>(assemblyName, typeName, AppDomain.CurrentDomain);
-        }
-
-        /// <summary>
-        /// Создать новый домен, загрузить в него указанную сборку и создать в экземпляр указанного типа экземпляр типа из заданой сборки
-        /// </summary>
-        /// <typeparam name="T">Тип объекта</typeparam>
-        /// <param name="assemblyNameOrPath">Имя сборки (в этом случае будет браться из одного каталога с исполняемым модулем) 
-        /// или полный путь к ней</param>
-        /// <param name="typeName">Имя типа</param>
-        /// <param name="probingPaths">true - сборка будет загружена в отдельный домен / false - в текущий</param>
-        /// <param name="domain">AppDomain, куда загружена сборка</param>
-        /// <param name="args">Аргументы, которые будут переданы в конструктор <see cref="typeName"/>.</param>
-        /// <returns>Типизированный экземпляр объекта</returns>
-        public static T CreateAppDomainAndGetInstanceFrom<T>(string assemblyNameOrPath, string typeName,
-            [NotNull] IReadOnlyCollection<string> probingPaths, out AppDomain domain, params object[] args)
-        {
-            var appDomainSetup = new AppDomainSetup
-            {
-                ApplicationBase = AppDomain.CurrentDomain.BaseDirectory,
-                PrivateBinPath = probingPaths.Join(";")
-            };
-            domain = AppDomain.CreateDomain(assemblyNameOrPath, null, appDomainSetup);
-            return GetInstanceFrom<T>(assemblyNameOrPath, typeName, domain, args);
         }
 
         private static T GetInstanceFrom<T>(string assemblyNameOrPath, string typeName, AppDomain domain, params object[] args)

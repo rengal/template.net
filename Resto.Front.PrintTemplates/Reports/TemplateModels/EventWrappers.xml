@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Root
+    xmlns="http://iiko.ru/XmlSchemas/TemplateModels.xsd"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://iiko.ru/XmlSchemas/TemplateModels.xsd ..\..\TemplateModels.xsd">
+
+  <Model Name="ItemSaleEvent" Comment="Событие продажи позиции заказа" CommentEn="Order item sale event">
+    <Property Name="Order" Type="Order" Nullness="CanBeNull" Comment="Заказ, которому принадлежит позиция" CommentEn="Item’s order" />
+    <Property Name="Vat" Type="decimal" Comment="Ставка НДС" CommentEn="VAT rate" />
+    <Property Name="VatSum" Type="decimal" Comment="Сумма НДС" CommentEn="VAT amount" />
+    <Property Name="RemovalType" Type="RemovalType" Nullness="CanBeNull" Comment="Причина удаления блюда" CommentEn="Reason for deletion of item" />
+    <Property Name="DeletedWithWriteoff" Type="bool?" Comment="Признак того, что блюдо было удалено из заказа со списанием: null — блюдо не было удалено, true — блюдо было удалено со списанием, false — блюдо было удалено без списания." CommentEn="An attribute implying item’s removal from an order with write-off: null - an item has not been removed, true - an item has been removed and written off, false - an item has been removed w/o write-off." />
+    <Property Name="Dish" Type="Product" Nullness="NotNull" Comment="Блюдо позиции заказа" CommentEn="Dish in order item" />
+    <Property Name="Amount" Type="decimal" Comment="Количество блюда" CommentEn="Item's quantity" />
+    <Property Name="Sum" Type="decimal" Comment="Сумма по позиции заказа" CommentEn="Order item amount" />
+    <Property Name="SumAfterDiscount" Type="decimal" Comment="Сумма по позиции заказа с учетом скидки и наценки" CommentEn="Order item amount after discounts and surcharges" />
+    <Property Name="Waiter" Type="User" Nullness="CanBeNull" Comment="Официант заказа" CommentEn="Waiter handling the order" />
+    <Property Name="CookingPlaceType" Type="CookingPlaceType" Nullness="CanBeNull" Comment="Тип места приготовления блюда" CommentEn="Production place type of item" />
+    <Property Name="OrderId" Type="Guid" Comment="ID заказа, которому принадлежит позиция" CommentEn="Item’s order ID" />
+  </Model>
+
+  <Model Name="PayInOutEvent" Comment="Событие внесения/изъятия" CommentEn="Pay in/out event">
+    <Property Name="Date" Type="DateTime" Comment="Дата" CommentEn="Date" />
+    <Property Name="Account" Type="Account" Nullness="CanBeNull" Comment="Счёт" CommentEn="Account" />
+    <Property Name="Comment" Type="string" Nullness="CanBeNull" Comment="Комментарий" CommentEn="Comment" />
+    <Property Name="PayInOutType" Type="PayInOutType" Nullness="CanBeNull" Comment="Тип внесения/изъятия. При автоматических внесениях/изъятиях в процессе закрытия смены свойство равно null" CommentEn="Pay in/out type. In case of auto pay in/out at closing a shift, the attribute is null" />
+    <Property Name="PaymentSum" Type="decimal" Comment="Сумма внесения/изъятия" CommentEn="Pay in/out amount" />
+    <Property Name="Auth" Type="AuthData" Nullness="CanBeNull" Comment="Аутентификационные данные пользователя, подтвердившего внесение/изъятие" CommentEn="User authentication data who confirmed pay in/out" />
+    <Property Name="User" Type="User" Comment="Залогиненный на момент события пользователь" CommentEn="User that was signed in at the time of event" />
+    <Property Name="CounterAgent" Type="User" Comment="Контрагент" CommentEn="Counterparty" />
+    <Property Name="TransactionType" Type="PayInOutTransactionType" Comment="Тип транзакции события внесения/изъятия" CommentEn="Pay in/out transaction type" />
+    <Property Name="IsWaiterDebt" Type="bool" Comment="Признак того, что внесение/изъятие было произведено за счет официанта" CommentEn="Attribute signaling that a pay in/out has been carried out on account of waiter" />
+    <Property Name="OrderId" Type="Guid?" Comment="Идентификатор заказа. Обязательное поле при оплате заказа на сотрудника." CommentEn="Order ID." />
+    <Property Name="IsPayOutForCourierChange" Type="bool" Comment="Признак того, что было произведено изъятие денег, выданных курьеру на сдачу." CommentEn="Attribute signaling that a pay out has been carried out for courier change." />
+  </Model>
+</Root>

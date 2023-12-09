@@ -1,0 +1,189 @@
+﻿@using System
+@using System.Collections.Generic
+@using System.Diagnostics
+@using System.Linq
+@using Resto.Front.PrintTemplates.Reports
+@using Resto.Front.PrintTemplates.Reports.TemplateModels
+@using Resto.Front.PrintTemplates.RmsEntityWrappers
+
+@* 052 Отчет по внесениям и изъятиям *@
+@inherits TemplateBase
+@{
+    if (Model.CafeSession == null)
+    {
+        <doc><center>@Resources.CafeSessionIsClosed</center></doc>
+        return;
+    }
+    FillData();
+}
+
+@if (!Model.IsOnlyBodyMarkupRequired)
+{
+    <doc formatter="split">
+        @Header()
+        @Body()
+        @Footer()
+    </doc>
+}
+else
+{
+    <doc formatter="split">
+        @Body()
+    </doc>
+}
+
+@helper Header()
+{
+    var terminalName = Model.CashRegister != null
+        ? string.Format(Resources.TerminalNumberNamePattern, Model.CashRegister.Number, Model.Group.Name)
+        : string.Format(Resources.TerminalNamePattern, Model.CurrentTerminal, Model.Group.Name);
+        
+    foreach (var headerLine in Model.CafeSetup.ReportHeader.Split(Environment.NewLine.ToCharArray()))
+    {
+        <left>
+            <whitespace-preserve>@headerLine</whitespace-preserve>
+        </left>
+    }
+    
+    <np />
+    <center>@Model.Name</center>
+    <np />
+    <pair fit="left" left="@Resources.HeadTerminal" right="@terminalName" /> 
+    
+    if (Model.CafeSession != null)
+    {
+        <pair left="@Resources.HeadCashRegisterShift" right="@Model.CafeSession.Number" />
+        <pair left="@Resources.HeadCashRegisterShiftOpened" right="@FormatLongDateTime(Model.CafeSession.OpenTime)" />
+    } 
+    
+    <pair left="@Resources.HeadCurrentTime" right="@FormatLongDateTime(Model.CurrentTime)" />
+    <table>
+        <columns>
+            <column autowidth=""/>
+            <column align="right"/>
+        </columns>
+        <cells>
+            <ct>@Resources.HeadCurrentUser</ct>
+            <ct>@(Model.CurrentUser == null ? string.Empty : Model.CurrentUser.Name)</ct>
+        </cells>
+    </table> 
+}
+
+@helper Body()
+{
+    @GetMarkup(payInOutEvents.Where(t => t.TransactionType.Equals(PayInOutTransactionType.PayIn)).ToList(), Resources.PayInSummary, Resources.PayInHeader, Resources.PayIn)
+    @GetMarkup(payInOutEvents.Where(t => t.TransactionType.Equals(PayInOutTransactionType.PayOut)).ToList(), Resources.PayOutSummary, Resources.PayOutHeader, Resources.PayOut)
+}
+
+@helper GetMarkup(IList<IPayInOutEvent> events, string typeSummaryName, string groupTypeTitle, string typeName)
+{
+    if (events.Count == 0)
+    {
+        return;
+    }
+    @GetHeader(groupTypeTitle)
+    foreach (var eventsGrouping in events.OrderBy(x => x.Date).GroupBy(x => x.Date.Date))
+    {
+        <table>
+            <columns>
+                <column autowidth="" />
+                <column formatter="split" />
+                <column align="right" autowidth="" />
+            </columns>
+            <cells>
+                <linecell symbols="-" />
+                <c colspan="3">@eventsGrouping.Key.Date.ToShortDateString()</c>
+                <linecell symbols="-" />
+                <ct>@Resources.TimeColumn</ct>
+                <ct>@Resources.Type</ct>
+                <ct>@Resources.SumTitle</ct>
+                <linecell symbols="-" />
+                @foreach (var evnt in eventsGrouping)
+                {
+                    @GetItem(evnt, typeName)
+                }
+            </cells>
+        </table>
+    }
+    @GetFooter(events, typeSummaryName)
+}
+
+@helper GetHeader(string groupTypeTitle)
+{
+    <table>
+        <columns>
+            <column formatter="split" />
+        </columns>
+        <cells>
+            <linecell symbols=" " />
+            <ct>@groupTypeTitle</ct>
+        </cells>
+    </table>
+}
+
+@helper GetItem(IPayInOutEvent evnt, string typeName)
+{
+    <ct>@FormatTime(evnt.Date)</ct>
+    <ct>@(evnt.PayInOutType != null ? evnt.PayInOutType.Name : typeName)</ct>
+    <ct>@FormatPrice(Math.Abs(evnt.PaymentSum))</ct>
+    if (evnt.Account != null)
+    {
+        <whitespace-preserve><c colspan="3">@string.Format(Resources.PaymentTypeAccountName, evnt.Account.Name)</c></whitespace-preserve>
+    }
+    if (evnt.Auth != null)
+    {
+        <whitespace-preserve><c colspan="3">@string.Format(Resources.AuthUserFormat, evnt.Auth.InfoText)</c></whitespace-preserve>
+    }
+    if (evnt.User != null)
+    {
+        <whitespace-preserve><c colspan="3">@string.Format("   {0}", string.Format(Resources.CashierNameFormat, evnt.User.Name))</c></whitespace-preserve>
+    }
+    if (evnt.CounterAgent != null)
+    {
+        <whitespace-preserve><c colspan="3">@string.Format("   {0}", string.Format(Resources.CreditUserNameFormat, evnt.CounterAgent.Name))</c></whitespace-preserve>
+    }
+    if (!string.IsNullOrEmpty(evnt.Comment))
+    {
+        <whitespace-preserve><c colspan="3">@string.Format("   {0}", string.Format(Resources.CommentFormat, evnt.Comment))</c></whitespace-preserve>
+    }
+    <linecell symbols=" " />
+}
+
+@helper GetFooter(IList<IPayInOutEvent> events, string typeSummaryName)
+{
+    <table>
+        <columns>
+            <column formatter="split" />
+            <column align="right" autowidth="" />
+        </columns>
+        <cells>
+            <linecell symbols="-" />
+            <ct>@typeSummaryName</ct>
+            <ct>@FormatAmount(events.Count)</ct>
+            <ct>@Resources.TheSumOf</ct>
+            <ct>@FormatPrice(events.Sum(p => Math.Abs(p.PaymentSum)))</ct>
+        </cells>
+    </table>
+}
+
+@helper Footer()
+{
+    <np />
+    <center>
+        @string.Format(Resources.AllSumsInFormat, Model.CafeSetup.CurrencyName)
+    </center>
+    <np />
+}
+
+@functions
+{
+    private IList<IPayInOutEvent> payInOutEvents; 
+    
+    private void FillData()
+    {
+        var session = Model.CafeSession;
+        Debug.Assert(session != null);
+
+        payInOutEvents = Model.Events.GetAllPayInOutEventsBySession(session).ToList();
+    }
+}

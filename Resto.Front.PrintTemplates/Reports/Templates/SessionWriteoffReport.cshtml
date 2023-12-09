@@ -1,0 +1,328 @@
+﻿@using System
+@using System.Collections.Generic
+@using System.Linq
+@using Resto.Front.PrintTemplates.Reports
+@using Resto.Front.PrintTemplates.Reports.TemplateModels
+@using Resto.Front.PrintTemplates.RmsEntityWrappers
+
+@* 034 Списания блюд *@
+@* Парный к 024-му отчет по кассовым данным *@
+@inherits TemplateBase
+@{
+    var session = Model.CafeSession;
+    if (session == null)
+    {
+        <doc><center>@Resources.CafeSessionIsClosed</center></doc>
+        return;
+    }
+
+    settings = Model.ReportSettings;
+    allEvents = Model.Events.GetItemSaleEventsBySession(session).ToList();
+
+    FillData();
+    ClearZeroData();
+}
+
+@if (!Model.IsOnlyBodyMarkupRequired)
+{
+    <doc formatter="split">
+        @Header()
+        @Body()
+        @Footer()
+    </doc>
+}
+else
+{
+    <doc formatter="split">
+        @Body()
+    </doc>
+}
+
+@helper Header()
+{
+    var terminalName = Model.CashRegister != null
+        ? string.Format(Resources.TerminalNumberNamePattern, Model.CashRegister.Number, Model.Group.Name)
+        : string.Format(Resources.TerminalNamePattern, Model.CurrentTerminal, Model.Group.Name);
+
+    foreach (var headerLine in Model.CafeSetup.ReportHeader.Split(Environment.NewLine.ToCharArray()))
+    {
+        <left>
+            <whitespace-preserve>@headerLine</whitespace-preserve>
+        </left>
+    }
+
+    <np />
+    <center>@Model.Name</center>
+    <np />
+    <pair fit="left" left="@Resources.HeadTerminal" right="@terminalName" />
+
+    if (Model.CafeSession != null)
+    {
+        <pair left="@Resources.HeadCashRegisterShift" right="@Model.CafeSession.Number" />
+        <pair left="@Resources.HeadCashRegisterShiftOpened" right="@FormatLongDateTime(Model.CafeSession.OpenTime)" />
+    }
+
+    <pair left="@Resources.HeadCurrentTime" right="@FormatLongDateTime(Model.CurrentTime)" />
+    <table>
+        <columns>
+            <column autowidth="" />
+            <column align="right" />
+        </columns>
+        <cells>
+            <ct>@Resources.HeadCurrentUser</ct>
+            <ct>@(Model.CurrentUser == null ? string.Empty : Model.CurrentUser.Name)</ct>
+        </cells>
+    </table>
+}
+
+@helper Body()
+{
+    <table>
+        <columns>
+            <column autowidth="" />
+            <column formatter="split" />
+            <column align="right" autowidth="" />
+            <column align="right" autowidth="" />
+        </columns>
+        <cells>
+            <linecell symbols="-" />
+            <ct>@Resources.CodeTitle</ct>
+            <ct>@Resources.NameTitle</ct>
+            <ct>@(settings.GetBool("ShowOneDishPrice") ? Resources.AmountWithPriceTitle : Resources.CountTitle)</ct>
+            <ct>@Resources.SumTitle</ct>
+            <linecell symbols="-" />
+
+            @(settings.GetEnum("GroupDishes") == "GroupByDishes" ? GetWriteoffsWithoutGroupingMarkup() : GetWriteoffsWithGroupingMarkup())
+        </cells>
+    </table>
+    @* Если были списания, добавляем пустую строку *@
+    if (writeoffsData.Any())
+    {
+        <np />
+    }
+    <pair left="@string.Format("{0}:", Resources.Total)" right="@FormatPrice(TotalWriteoffs)" />
+    <line symbols="-" />
+}
+
+@helper Footer()
+{
+    <np />
+    <center>
+        @string.Format(Resources.AllSumsInFormat, Model.CafeSetup.CurrencyName)
+    </center>
+    <np />
+}
+
+@helper GetWriteoffsWithoutGroupingMarkup()
+{
+    var c = 0;
+    foreach (var writeoff in writeoffsData)
+    {
+        // Если несколько групп списаний, то между ними вставляем пустую строку
+        if (c++ > 0)
+        {
+            <c colspan="0"><np /></c>
+        }
+        <c colspan="0">@writeoff.Key</c>
+        <linecell symbols="-" />
+
+        foreach (var product in writeoff.Value.SelectMany(i => i.Value).GroupBy(prod => prod.Key).OrderBy(prod => prod.Key.Name).ThenBy(prod => prod.Key.FastCode, fastCodeComparer))
+        {
+            var amount = product.Sum(i => i.Value.Amount);
+            var sum = product.Sum(i => i.Value.Sum);
+            var price = amount == 0 ? 0 : sum / amount;
+
+            <ct>@product.Key.FastCode</ct>
+            <ct>@product.Key.Name</ct>
+            @GetAmountCell(amount, price)
+            <ct>@FormatPrice(sum)</ct>
+        }
+        <linecell symbols="-" />
+        <c colspan="3">@string.Format(Resources.TotalForCategoryPattern, writeoff.Key)</c>
+        <ct>@FormatPrice(writeoff.Value.Sum(group => group.Value.Sum(prod => prod.Value.Sum)))</ct>
+    }
+}
+
+@helper GetWriteoffsWithGroupingMarkup()
+{
+    var c = 0;
+    foreach (var writeoff in writeoffsData)
+    {
+        // Если несколько групп списаний, то между ними вставляем пустую строку
+        if (c++ > 0)
+        {
+            <c colspan="0"><np /></c>
+        }
+        <c colspan="0">@writeoff.Key</c>
+        <linecell symbols="-" />
+
+        var k = 0;
+        foreach (var group in writeoff.Value.OrderBy(prod => prod.Key))
+        {
+            // Если несколько групп списаний, то между ними вставляем пустую строку
+            if (k++ > 0)
+            {
+                <c colspan="0"><np /></c>
+            }
+            <c colspan="0">@group.Key</c>
+
+            foreach (var product in group.Value.OrderBy(prod => prod.Key.Name).ThenBy(prod => prod.Key.FastCode, fastCodeComparer))
+            {
+                var amount = product.Value.Amount;
+                var sum = product.Value.Sum;
+                var price = amount != 0 ? sum / amount : 0;
+
+                <ct>@product.Key.FastCode</ct>
+                <ct>@product.Key.Name</ct>
+                @GetAmountCell(amount, price)
+                <ct>@FormatPrice(sum)</ct>
+            }
+
+            <c colspan="3">@string.Format(Resources.TotalForCategoryPattern, group.Key)</c>
+            <ct>@FormatPrice(group.Value.Sum(prod => prod.Value.Sum))</ct>
+        }
+
+        <linecell symbols="-" />
+        <c colspan="3">@string.Format(Resources.TotalForCategoryPattern, writeoff.Key)</c>
+        <ct>@FormatPrice(writeoff.Value.Sum(group => group.Value.Sum(prod => prod.Value.Sum)))</ct>
+    }
+}
+
+@helper GetAmountCell(decimal amount, decimal price)
+{
+    <ct>@(settings.GetBool("ShowOneDishPrice") ? FormatAmountAndPrice(amount, price) : FormatAmount(amount))</ct>
+}
+
+@functions
+{
+    private ISettings settings;
+    private List<IItemSaleEvent> allEvents;
+
+    private static readonly FastCodeComparer fastCodeComparer = new FastCodeComparer();
+
+    /// <summary>
+    /// Списания
+    /// </summary>
+    private readonly SortedDictionary<string, SortedDictionary<string, SortedDictionary<IProduct, SaleInfo>>> writeoffsData =
+        new SortedDictionary<string, SortedDictionary<string, SortedDictionary<IProduct, SaleInfo>>>();
+
+    private decimal TotalWriteoffs { get; set; }
+
+    private sealed class SaleInfo
+    {
+        public decimal Amount { get; private set; }
+        public decimal Sum { get; private set; }
+
+        public decimal Price
+        {
+            get { return Amount == 0 ? 0 : Sum / Amount; }
+        }
+
+        public void AddExpense(decimal amount, decimal sum)
+        {
+            Amount += amount;
+            Sum += sum;
+        }
+    }
+
+    private void FillData()
+    {
+        foreach (var evnt in allEvents)
+        {
+            // Блюда, удаленные "Со списанием", сгруппированные по счету удаления типа удаления
+            if (evnt.DeletedWithWriteoff.HasValue && evnt.DeletedWithWriteoff.Value && evnt.RemovalType != null && evnt.RemovalType.Account != null)
+            {
+                AddWriteoff(evnt, evnt.RemovalType.Account.Name);
+                continue;
+            }
+            // Блюда, оплаченные типом оплаты "Без выручки", сгруппированные по типу списания
+            if (evnt.Order != null && evnt.Order.CloseInfo != null && evnt.Order.CloseInfo.WriteoffItem != null && !evnt.DeletedWithWriteoff.HasValue)
+            {
+                AddWriteoff(evnt, evnt.Order.CloseInfo.WriteoffType.Name);
+            }
+        }
+    }
+
+    private void AddWriteoff(IItemSaleEvent evnt, string firstGroupKey)
+    {
+        string secondGroupKey;
+        // В зависимости от настроек, выбираем ключ, по которому будем группировать данные
+        switch (settings.GetEnum("GroupDishes"))
+        {
+            case "GroupByDishes":
+                secondGroupKey = string.Empty;
+                break;
+            case "GroupByCategories":
+                secondGroupKey = evnt.Dish.Category != null
+                    ? evnt.Dish.Category.Name
+                    : Resources.NoCategory;
+                break;
+            case "GroupByWaiters":
+                secondGroupKey = evnt.Waiter != null
+                    ? evnt.Waiter.Name
+                    : Resources.UnknownUser;
+                break;
+            case "GroupByCookingPlaceTypes":
+                secondGroupKey = evnt.CookingPlaceType != null
+                    ? evnt.CookingPlaceType.Name
+                    : evnt.Dish.CookingPlaceType != null
+                        ? evnt.Dish.CookingPlaceType.Name
+                        : Resources.WithoutCookingPlace;
+                break;
+            default:
+                throw new NotSupportedException();
+        }
+
+        if (!writeoffsData.ContainsKey(firstGroupKey))
+            writeoffsData[firstGroupKey] = new SortedDictionary<string, SortedDictionary<IProduct, SaleInfo>>();
+        if (!writeoffsData[firstGroupKey].ContainsKey(secondGroupKey))
+            writeoffsData[firstGroupKey][secondGroupKey] = new SortedDictionary<IProduct, SaleInfo>(new ProductComparer());
+
+        var writeoffsInGroup = writeoffsData[firstGroupKey][secondGroupKey];
+        if (!writeoffsInGroup.ContainsKey(evnt.Dish))
+            writeoffsInGroup[evnt.Dish] = new SaleInfo();
+
+        writeoffsInGroup[evnt.Dish].AddExpense(evnt.Amount, evnt.Sum);
+        TotalWriteoffs += evnt.Sum;
+    }
+
+    /// <summary>
+    /// Удаление пустых данных (возникают при сторнировании)
+    /// </summary>
+    private void ClearZeroData()
+    {
+        // Удаление списаний с кол-вом 0
+        foreach (var writeoffInFirstGroup in writeoffsData.Values)
+            foreach (var writeoffInSecondGroup in writeoffInFirstGroup.Values)
+                foreach (var product in writeoffInSecondGroup.Where(w => w.Value.Amount == 0).Select(w => w.Key).ToList())
+                    writeoffInSecondGroup.Remove(product);
+
+        // Удаление пустых группировок списаний
+        foreach (var writeoffInFirstGroup in writeoffsData.Values)
+            foreach (var writeoffInSecondGroup in writeoffInFirstGroup.Where(wg => wg.Value.Count == 0).Select(wg => wg.Key).ToList())
+                writeoffInFirstGroup.Remove(writeoffInSecondGroup);
+        foreach (var writeoffInFirstGroup in writeoffsData.Where(wg => wg.Value.Count == 0).Select(wg => wg.Key).ToList())
+            writeoffsData.Remove(writeoffInFirstGroup);
+    }
+
+    private sealed class ProductComparer : IComparer<IProduct>
+    {
+        public int Compare(IProduct x, IProduct y)
+        {
+            var res = StringComparer.CurrentCulture.Compare(x.Name, y.Name);
+            return res != 0 ? res : fastCodeComparer.Compare(x.FastCode, y.FastCode);
+        }
+    }
+
+    private sealed class FastCodeComparer : IComparer<string>
+    {
+        public int Compare(string x, string y)
+        {
+            int intX, intY;
+            var res = 0;
+            if (int.TryParse(x, out intX) && int.TryParse(y, out intY))
+                res = intX.CompareTo(intY);
+            return res != 0 ? res : StringComparer.CurrentCulture.Compare(x, y);
+        }
+    }
+}

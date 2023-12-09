@@ -1,0 +1,377 @@
+﻿@using System
+@using System.Collections
+@using System.Collections.Generic
+@using System.Globalization
+@using System.Linq
+@using Resto.Front.PrintTemplates.Reports
+@using Resto.Front.PrintTemplates.Reports.TemplateModels
+@using Resto.Front.PrintTemplates.RmsEntityWrappers
+
+@* X-Z-отчет *@
+@inherits TemplateBase
+@{
+    var operationsCount = new OperationsCounter();
+    var payInOutData = new PayInOutData();
+    var useNonFiscalCash = Model.UseNonFiscalCash;
+
+    var payments = Model.Entities.GetAllPaymentTypes()
+        .ToDictionary(pt => pt, _ => new PaymentData());
+
+    var session = Model.CafeSession;
+    if (session != null)
+    {
+        var closedOrders = new HashSet<IOrder>(session.ClosedOrders.Where(order => order.CloseInfo != null));
+        var stornedOrders = new HashSet<IOrder>(session.StornedOrders.Where(order => order.CloseInfo != null));
+
+        var allFiscalTransactions = Model.Transactions.GetOrderPaymentTransactionsBySession(session)
+            .Where(transaction =>
+            {
+                if (transaction is ICashPaymentTransaction)
+                    return (useNonFiscalCash || transaction.IsFiscal) && !(transaction is IOrderPrepayClosedTransaction);
+                return transaction.IsFiscal && !(transaction is IOrderPrepayClosedTransaction);
+            }).ToList();
+
+        // Транзакции возврата заказов
+        foreach (var transaction in allFiscalTransactions.Where(transaction => transaction.TransactionType == OrderPaymentTransactionType.RevenueReturn))
+        {
+            if (transaction.IsPurchase)
+            {
+                payments[transaction.PaymentType].StornBuy += transaction.Sum;
+                operationsCount.StornBuy++;
+            }
+            else
+            {
+                payments[transaction.PaymentType].Storn += -transaction.Sum;
+                operationsCount.Storn++;
+            }
+        }
+
+        // Транзакции предоплат и удаления предоплат
+        foreach (var transaction in allFiscalTransactions.Where(transaction => transaction is IOrderPrepayTransaction))
+        {
+            // Здесь не смотрим, содержится ли заказ транзакции в ClosedOrders или StornedOrders, т.к. заказ может быть null
+            // В случае, когда удалили предоплаты до разделения заказа на 2 ФР-а, в транзакции будет лежать Id старого еще неразделенного заказа, который уже нельзя восстановить в сущность
+            if (transaction.Sum > 0)
+            {
+                payments[transaction.PaymentType].Sell += transaction.Sum;
+                operationsCount.Sell++;
+            }
+            else
+            {
+                payments[transaction.PaymentType].Storn += -transaction.Sum;
+                operationsCount.Storn++;
+            }
+        }
+
+        // Транзакции оплаты, сгруппированные по заказам
+        var transactionsByOrders = allFiscalTransactions
+            .Where(transaction => !(transaction is IOrderPrepayTransaction))
+            .Where(transaction => closedOrders.Contains(transaction.Order) || stornedOrders.Contains(transaction.Order))
+            .GroupBy(transaction => transaction.Order);
+
+        // Отсеиваем заказы, у которых всего лишь одна транзакция на нулевую сумму
+        foreach (var transactionsByOrder in transactionsByOrders.Where(transactionsByOrder => transactionsByOrder.Count() != 1 || transactionsByOrder.First().Sum != 0m))
+        {
+            // Если в заказе есть хоть 1 продажа, увеличиваем кол-во продаж
+            // Если заказ был сторнирован, то увеличиваем еще и кол-во возвратов
+            if (transactionsByOrder.Any(transaction => !transaction.IsPurchase))
+            {
+                operationsCount.Sell++;
+                if (stornedOrders.Contains(transactionsByOrder.Key))
+                {
+                    operationsCount.Storn++;
+                }
+            }
+
+            // Если в заказе есть хоть 1 покупка, увеличиваем кол-во покупок
+            // Если заказ был сторнирован, то увеличиваем еще и кол-во возвратов покупок
+            if (transactionsByOrder.Any(transaction => transaction.IsPurchase))
+            {
+                operationsCount.Buy++;
+                if (stornedOrders.Contains(transactionsByOrder.Key))
+                {
+                    operationsCount.StornBuy++;
+                }
+            }
+
+            foreach (var transaction in transactionsByOrder)
+            {
+                if (transaction.IsPurchase)
+                {
+                    if (transaction.Sum > 0m && stornedOrders.Contains(transaction.Order))
+                    {
+                        payments[transaction.PaymentType].StornBuy += transaction.Sum;
+                    }
+                    else
+                    {
+                        payments[transaction.PaymentType].Buy += -transaction.Sum;
+                    }
+                }
+                else
+                {
+                    if (transaction.Sum < 0m && stornedOrders.Contains(transaction.Order))
+                    {
+                        payments[transaction.PaymentType].Storn += -transaction.Sum;
+                    }
+                    else
+                    {
+                        payments[transaction.PaymentType].Sell += transaction.Sum;
+                    }
+                }
+            }
+        }
+
+        foreach (var transaction in Model.Transactions.GetPayInOutFiscalTransactionsBySession(session))
+        {
+            if (transaction.IsPayIn)
+            {
+                payInOutData.PayIn += transaction.Sum;
+                operationsCount.PayIn++;
+            }
+            else
+            {
+                payInOutData.PayOut += -transaction.Sum;
+                operationsCount.PayOut++;
+            }
+        }
+    }
+
+    var paymentsData = payments
+      .Where(kvp =>
+      {
+          if (kvp.Key is ICashPaymentType)
+              return !kvp.Key.Deleted && kvp.Key.Enabled && kvp.Key.ValidForOrders && (useNonFiscalCash || kvp.Key.PrintCheque) || !kvp.Value.IsEmpty();
+          return !kvp.Key.Deleted && kvp.Key.Enabled && kvp.Key.ValidForOrders && kvp.Key.PrintCheque || !kvp.Value.IsEmpty();
+      }).ToDictionary(kvp => kvp.Key, kvp => kvp.Value);
+
+    var paymentsTotals = new PaymentData
+    {
+        Sell = paymentsData.Sum(kvp => kvp.Value.Sell),
+        Storn = paymentsData.Sum(kvp => kvp.Value.Storn),
+        Buy = paymentsData.Sum(kvp => kvp.Value.Buy),
+        StornBuy = paymentsData.Sum(kvp => kvp.Value.StornBuy)
+    };
+}
+
+<doc formatter="split">
+    @Header()
+    @Body(paymentsData, paymentsTotals, payInOutData, operationsCount)
+    @Footer()
+</doc>
+
+@helper Header()
+{
+    var terminalName = Model.CashRegister != null
+      ? string.Format(Resources.TerminalNumberNamePattern, Model.CashRegister.Number, Model.Group.Name)
+      : string.Format(Resources.TerminalNamePattern, Model.CurrentTerminal, Model.Group.Name);
+
+    foreach (var headerLine in Model.CafeSetup.ReportHeader.Split(Environment.NewLine.ToCharArray()))
+    {
+        <left>
+            <whitespace-preserve>@headerLine</whitespace-preserve>
+        </left>
+    }
+
+    <np />
+    if (Model.IsXReportFinal.GetValueOrDefault())
+    {
+        <center>@Resources.ZReportName</center>
+    }
+    else
+    {
+        <center>@Resources.XReportName</center>
+    }
+    <np />
+    <pair fit="left" left="@Resources.HeadTerminal" right="@terminalName" />
+
+    if (Model.CafeSession != null)
+    {
+        <pair left="@Resources.HeadCashRegisterShift" right="@Model.CafeSession.Number" />
+        <pair left="@Resources.HeadCashRegisterShiftOpened" right="@FormatLongDateTime(Model.CafeSession.OpenTime)" />
+    }
+
+    <pair left="@Resources.HeadCurrentTime" right="@FormatLongDateTime(Model.CurrentTime)" />
+    <table>
+        <columns>
+            <column autowidth="" />
+            <column align="right" />
+        </columns>
+        <cells>
+            <ct>@Resources.HeadCurrentUser</ct>
+            <ct>@(Model.CurrentUser == null ? string.Empty : Model.CurrentUser.Name)</ct>
+        </cells>
+    </table>
+}
+
+@helper Footer()
+{
+    <np />
+    <split>
+        <center>
+            @Resources.XZReportVirtualReportWarning
+        </center>
+    </split>
+}
+
+@helper Body(Dictionary<IPaymentType, PaymentData> paymentsData, PaymentData paymentsTotal, PayInOutData payInOutData, OperationsCounter operationsCount)
+{
+    <np />
+    <table>
+        <columns>
+            <column formatter="split" />
+            <column align="right" autowidth="" minwidth="6" />
+        </columns>
+        <cells>
+            @foreach (var kvp in paymentsData.OrderBy(kvp => !(kvp.Key is ICashPaymentType)).ThenBy(kvp => kvp.Key.Name, StringComparer.Create(CultureInfo.CurrentUICulture, false)))
+            {
+                @PaymentTypeMarkup(kvp.Key, kvp.Value)
+                <c colspan="0">
+                    <np />
+                </c>
+            }
+        </cells>
+    </table>
+    <center>@Resources.Total</center>
+    <np />
+    <table>
+        <columns>
+            <column formatter="split" />
+            <column align="right" />
+        </columns>
+        <cells>
+            <ct>@Resources.XZReportSell</ct>
+            <ct>@FormatPrice(paymentsTotal.Sell)</ct>
+            <ct>@Resources.XZReportStorno</ct>
+            <ct>@FormatPrice(paymentsTotal.Storn)</ct>
+            <ct>@Resources.XZReportBuy</ct>
+            <ct>@FormatPrice(paymentsTotal.Buy)</ct>
+            <ct>@Resources.XZReportStornBuy</ct>
+            <ct>@FormatPrice(paymentsTotal.StornBuy)</ct>
+            <ct>@Resources.XZReportPayIn</ct>
+            <ct>@FormatPrice(payInOutData.PayIn)</ct>
+            <ct>@Resources.XZReportPayOut</ct>
+            <ct>@FormatPrice(payInOutData.PayOut)</ct>
+        </cells>
+    </table>
+    @RecalculatesMarkup()
+    <center>@Resources.XZReportOperationsDoneTitle</center>
+    <np />
+    <table>
+        <columns>
+            <column formatter="split" autowidth="" />
+            <column align="right" />
+        </columns>
+        <cells>
+            <ct>@Resources.XZReportSell</ct>
+            <ct>@operationsCount.Sell</ct>
+            <ct>@Resources.XZReportStorno</ct>
+            <ct>@operationsCount.Storn</ct>
+            <ct>@Resources.XZReportBuy</ct>
+            <ct>@operationsCount.Buy</ct>
+            <ct>@Resources.XZReportStornBuy</ct>
+            <ct>@operationsCount.StornBuy</ct>
+            <ct>@Resources.XZReportPayIn</ct>
+            <ct>@operationsCount.PayIn</ct>
+            <ct>@Resources.XZReportPayOut</ct>
+            <ct>@operationsCount.PayOut</ct>
+        </cells>
+    </table>
+}
+
+@helper PaymentTypeMarkup(IPaymentType paymentType, PaymentData paymentData)
+{
+    <ct>@paymentType.Name</ct>
+    <c />
+    <ct>@Resources.XZReportSell</ct>
+    <ct>@FormatPrice(paymentData.Sell)</ct>
+    <ct>@Resources.XZReportStorno</ct>
+    <ct>@FormatPrice(paymentData.Storn)</ct>
+    if (paymentType.Group == PaymentGroup.Cash)
+    {
+        <ct>@Resources.XZReportBuy</ct>
+        <ct>@FormatPrice(paymentData.Buy)</ct>
+        <ct>@Resources.XZReportStornBuy</ct>
+        <ct>@FormatPrice(paymentData.StornBuy)</ct>
+    }
+}
+
+@helper RecalculatesMarkup()
+{
+    var session = Model.CafeSession;
+
+    if (session != null && session.Recalculations.Any())
+    {
+        <center>@Resources.ReferenceRecalculations</center>
+        <np />
+        <pair left="@Resources.TimeColumn" right="@Resources.SumTitle" />
+        <np />
+        foreach (var recalc in session.Recalculations)
+        {
+            <table>
+                <columns>
+                    <column align="left" formatter="cut" />
+                    <column align="right" autowidth="" />
+                </columns>
+                <cells>
+                    <ct>@recalc.Date.ToString("HH:mm")</ct>
+                    <c />
+                    @RecalculationRow(Resources.ReferenceSum, recalc.RealCashRest)
+                    @RecalculationRow(Resources.PreliminaryCalculation, recalc.PriorCashRest)
+                    @RecalculationRow(Resources.FinalCalculation, recalc.FinalCashRest)
+                    @if (recalc.Difference != 0m)
+                    {
+                        @RecalculationRow(recalc.Difference < 0m ? Resources.MoneyDeficit : Resources.MoneyProficit, Math.Abs(recalc.Difference))
+                    }
+                </cells>
+            </table>
+            <pair fit="left" left="@Resources.XReportInitedBy" right="@recalc.User.Name" />
+            foreach (var auth in recalc.Auths)
+            {
+                <pair fit="left" left="@Resources.XReportAuthorizedBy" right="@auth.InfoText" />
+            }
+        }
+        <np />
+    }
+}
+
+@helper RecalculationRow(string text, decimal value)
+{
+    <ct>@text</ct>
+    <ct>@FormatPrice(value)</ct>
+}
+
+@functions
+{
+    public sealed class PaymentData
+    {
+        // продажа
+        internal decimal Sell;
+        // сторн. продажа
+        internal decimal StornBuy;
+        // возврат
+        internal decimal Storn;
+        // покупка
+        internal decimal Buy;
+
+        internal bool IsEmpty()
+        {
+            return Sell == 0m && Storn == 0m && Buy == 0 && StornBuy == 0;
+        }
+    }
+
+    public sealed class PayInOutData
+    {
+        internal decimal PayIn;
+        internal decimal PayOut;
+    }
+
+    public sealed class OperationsCounter
+    {
+        internal int Sell;
+        internal int Storn;
+        internal int Buy;
+        internal int StornBuy;
+        internal int PayIn;
+        internal int PayOut;
+    }
+}

@@ -1,0 +1,452 @@
+﻿@using System
+@using System.Collections.Generic
+@using System.Linq
+@using Resto.Front.PrintTemplates.Reports
+@using Resto.Front.PrintTemplates.Reports.OlapReports
+@using Resto.Front.PrintTemplates.Reports.TemplateModels
+@using Resto.Front.PrintTemplates.RmsEntityWrappers
+
+@* 023 Общие продажи блюд *@
+@* Парный к 043-му отчет по серверным данным *@
+@inherits TemplateBase
+@{
+    settings = Model.ReportSettings;
+
+    FillAdvancePayProducts();
+    FillSales();
+    ClearZeroSales();
+}
+
+@if (!Model.IsOnlyBodyMarkupRequired)
+{
+    <doc formatter="split">
+        @Header()
+        @Body()
+        @Footer()
+    </doc>
+}
+else
+{
+    <doc formatter="split">
+        @Body()
+    </doc>
+}
+
+@helper Header()
+{
+    var terminalName = Model.CashRegister != null
+        ? string.Format(Resources.TerminalNumberNamePattern, Model.CashRegister.Number, Model.Group.Name)
+        : string.Format(Resources.TerminalNamePattern, Model.CurrentTerminal, Model.Group.Name);
+
+    foreach (var headerLine in Model.CafeSetup.ReportHeader.Split(Environment.NewLine.ToCharArray()))
+    {
+        <left>
+            <whitespace-preserve>@headerLine</whitespace-preserve>
+        </left>
+    }
+
+    <np />
+    <center>@Model.Name</center>
+    <np />
+    <pair fit="left" left="@Resources.HeadTerminal" right="@terminalName" />
+
+    <pair left="@Resources.From" right="@FormatDate(settings.GetPeriodBegin())" />
+    <pair left="@Resources.To" right="@FormatDate(settings.GetPeriodEnd())" />
+
+    <pair left="@Resources.HeadCurrentTime" right="@FormatLongDateTime(Model.CurrentTime)" />
+    <table>
+        <columns>
+            <column autowidth="" />
+            <column align="right" />
+        </columns>
+        <cells>
+            <ct>@Resources.HeadCurrentUser</ct>
+            <ct>@(Model.CurrentUser == null ? string.Empty : Model.CurrentUser.Name)</ct>
+        </cells>
+    </table>
+}
+
+@helper Footer()
+{
+    <np />
+    <center>
+        @string.Format(Resources.AllSumsInFormat, Model.CafeSetup.CurrencyName)
+    </center>
+    <np />
+}
+
+@helper Body()
+{
+    <table>
+        <columns>
+            <column autowidth="" />
+            <column formatter="split" />
+            <column align="right" autowidth="" />
+            <column align="right" autowidth="" />
+        </columns>
+        <cells>
+            <linecell symbols="-" />
+            <ct>@Resources.CodeTitle</ct>
+            <ct>@Resources.NameTitle</ct>
+            <ct>@(settings.GetBool("ShowOneDishPrice") ? Resources.AmountWithPriceTitle : Resources.CountTitle)</ct>
+            <ct>@Resources.SumTitle</ct>
+            <linecell symbols="-" />
+
+            @* Обычные продажи *@
+            @(settings.GetEnum("GroupDishes") == "GroupByDishes" ? GetSalesWithoutGroupingMarkup() : GetSalesWithGroupingMarkup())
+
+            @* Авансовые платежи *@
+            @if (settings.GetBool("ShowAdvancePays") && advanceSalesData.Any())
+            {
+                // Если были продажи, добавляем пустую строку
+                if (salesData.Any())
+                {
+                    <c colspan="0"><np /></c>
+                }
+                @GetAdvancePaysMarkup()
+            }
+        </cells>
+    </table>
+
+    // Если были продажи или показываются авансовые платежи, добавляем линию
+    if (salesData.Any() || (settings.GetBool("ShowAdvancePays") && advanceSalesData.Any()))
+    {
+        <line symbols="-" />
+    }
+    <justify>
+        @(string.Format(Resources.TotalPattern, FormatPrice(settings.GetBool("ShowAdvancePays") && advanceSalesData.Any()
+              ? TotalAdvance + TotalSales
+              : TotalSales)))
+        <br />
+    </justify>
+    <line symbols="-" />
+}
+
+@helper GetSalesWithoutGroupingMarkup()
+{
+    foreach (var product in salesData.SelectMany(item => item.Value.Values).OrderBy(prod => prod.DishName).ThenBy(prod => prod.DishCode, fastCodeComparer))
+    {
+        <ct>@product.DishCode</ct>
+        <ct>@product.DishName</ct>
+        @GetAmountCell(product)
+        <ct>@FormatPrice(product.Sum)</ct>
+    }
+}
+
+@helper GetSalesWithGroupingMarkup()
+{
+    var c = 0;
+    foreach (var sale in salesData)
+    {
+        // Если несколько групп оплаты, то между ними вставляем пустую строку
+        if (c++ > 0)
+        {
+            <c colspan="0"><np /></c>
+        }
+        <c colspan="0">@sale.Key</c>
+
+        foreach (var product in sale.Value.OrderBy(prod => prod.Value.DishName).ThenBy(prod => prod.Value.DishCode, fastCodeComparer))
+        {
+            <ct>@product.Value.DishCode</ct>
+            <ct>@product.Value.DishName</ct>
+            @GetAmountCell(product.Value)
+            <ct>@FormatPrice(product.Value.Sum)</ct>
+        }
+        <c colspan="3">@string.Format(Resources.TotalForCategoryPattern, sale.Key)</c>
+        <ct>@FormatPrice(sale.Value.Sum(s => s.Value.Sum))</ct>
+    }
+}
+
+@helper GetAmountCell(SaleInfo sale)
+{
+    <ct>@(settings.GetBool("ShowOneDishPrice") ? FormatAmountAndPrice(sale.Amount, sale.Price) : FormatAmount(sale.Amount))</ct>
+}
+
+@helper GetAdvancePaysMarkup()
+{
+    <c colspan="0">@Resources.AdvancePays</c>
+    <c colspan="0"><np /></c>
+
+    var c = 0;
+    foreach (var paymentSystemGroup in advanceSalesData.GroupBy(keyPair => keyPair.Key.PaymentSystem))
+    {
+        // Если несколько групп оплаты, то между ними вставляем пустую строку
+        if (c++ > 0)
+        {
+            <c colspan="0"><np /></c>
+        }
+        <c colspan="0">@paymentSystemGroup.Key</c>
+        foreach (var sale in paymentSystemGroup)
+        {
+            <c colspan="0">@(sale.Key.IsActivation ? Resources.Activation : Resources.Replenish)</c>
+            foreach (var product in sale.Value)
+            {
+                <ct>@product.Value.DishCode</ct>
+                <ct>@(string.IsNullOrEmpty(product.Value.GroupKey)
+                          ? product.Value.DishName
+                          : string.Format("{0} ({1})", product.Value.DishName, product.Value.GroupKey))</ct>
+                @GetAmountCell(product.Value)
+                <ct>@FormatPrice(product.Value.Sum)</ct>
+            }
+            <c colspan="3">
+                @(sale.Key.IsActivation
+                      ? string.Format(Resources.TotalForCategoryPattern, Resources.Activation.ToLower())
+                      : string.Format(Resources.TotalForCategoryPattern, Resources.Replenish.ToLower()))</c>
+            <ct>@FormatPrice(sale.Value.Sum(s => s.Value.Sum))</ct>
+        }
+        <c colspan="3">@string.Format(Resources.TotalForCategoryPattern, paymentSystemGroup.Key)</c>
+        <ct>@FormatPrice(paymentSystemGroup.Sum(s => s.Value.Sum(p => p.Value.Sum)))</ct>
+    }
+}
+
+@functions
+{
+    private ISettings settings;
+
+    private static readonly FastCodeComparer fastCodeComparer = new FastCodeComparer();
+
+    /// <summary>
+    /// Обычные продажи
+    /// </summary>
+    private readonly SortedDictionary<string, SortedDictionary<Guid, SaleInfo>> salesData =
+        new SortedDictionary<string, SortedDictionary<Guid, SaleInfo>>();
+
+    /// <summary>
+    /// Авансовые платежи (пополнение, активация платежных систем)
+    /// </summary>
+    private readonly SortedDictionary<AdvancePayProductInfo, SortedDictionary<IProduct, SaleInfo>> advanceSalesData =
+        new SortedDictionary<AdvancePayProductInfo, SortedDictionary<IProduct, SaleInfo>>();
+
+    /// <summary>
+    /// Продукты пополнения и активации
+    /// </summary>
+    private readonly Dictionary<IProduct, AdvancePayProductInfo> advancePayProducts = new Dictionary<IProduct, AdvancePayProductInfo>();
+
+    private decimal TotalSales { get; set; }
+    private decimal TotalAdvance { get; set; }
+
+    public sealed class AdvancePayProductInfo : IComparable<AdvancePayProductInfo>, IEquatable<AdvancePayProductInfo>
+    {
+        public string PaymentSystem { get; private set; }
+        public bool IsActivation { get; private set; }
+
+        public AdvancePayProductInfo(string paymentSystem, bool isActivation)
+        {
+            IsActivation = isActivation;
+            PaymentSystem = paymentSystem;
+        }
+
+        public bool Equals(AdvancePayProductInfo other)
+        {
+            if (ReferenceEquals(null, other)) return false;
+            if (ReferenceEquals(this, other)) return true;
+            return Equals(other.PaymentSystem, PaymentSystem) && other.IsActivation.Equals(IsActivation);
+        }
+
+        public int CompareTo(AdvancePayProductInfo other)
+        {
+            var compare = StringComparer.CurrentCulture.Compare(PaymentSystem, other.PaymentSystem);
+            if (compare != 0)
+                return compare;
+            if (IsActivation == other.IsActivation)
+                return 0;
+            return IsActivation && !other.IsActivation ? 1 : -1;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj)) return false;
+            if (ReferenceEquals(this, obj)) return true;
+            if (obj.GetType() != typeof(AdvancePayProductInfo)) return false;
+            return Equals((AdvancePayProductInfo)obj);
+        }
+
+        public override int GetHashCode()
+        {
+            unchecked
+            {
+                return ((PaymentSystem != null ? PaymentSystem.GetHashCode() : 0) * 397) ^ IsActivation.GetHashCode();
+            }
+        }
+    }
+
+    public sealed class SaleInfo
+    {
+        public string DishName { get; private set; }
+        public string DishCode { get; private set; }
+        public string GroupKey { get; private set; }
+        public decimal Amount { get; private set; }
+        public decimal Sum { get; private set; }
+
+        public decimal Price
+        {
+            get { return Amount == 0 ? 0 : Sum / Amount; }
+        }
+
+        public SaleInfo(string dishName, string dishCode, string groupKey)
+        {
+            DishName = dishName;
+            DishCode = dishCode;
+            GroupKey = groupKey;
+        }
+
+        public void AddExpense(decimal amount, decimal sum)
+        {
+            Amount += amount;
+            Sum += sum;
+        }
+    }
+
+    /// <summary>
+    /// Заполнение списка продуктов пополнения и активации
+    /// </summary>
+    private void FillAdvancePayProducts()
+    {
+        var paymentSystems = Model.Entities.GetAllPaymentSystems();
+        foreach (var paymentSystem in paymentSystems)
+        {
+            foreach (var product in paymentSystem.ActivationProducts.Where(product => !advancePayProducts.ContainsKey(product)))
+                advancePayProducts.Add(product, new AdvancePayProductInfo(paymentSystem.Name, true));
+
+            if (paymentSystem.ReplenishProduct != null && !advancePayProducts.ContainsKey(paymentSystem.ReplenishProduct))
+                advancePayProducts.Add(paymentSystem.ReplenishProduct, new AdvancePayProductInfo(paymentSystem.Name, false));
+        }
+    }
+
+    /// <summary>
+    /// Получение данных о продажах и авансовых платежах и их заполнение
+    /// </summary>
+    private void FillSales()
+    {
+        var report = Model.OlapReports.BuildReport(new OlapReportSettings(OlapReportType.Sales,
+            new List<string> { OlapField.PayTypesId, OlapField.NonCashPaymentTypeId, OlapField.DishId, OlapField.DishCategory, OlapField.DishName, OlapField.DishCodeQuick, OlapField.ItemWaiterName, OlapField.CookingPlaceType },
+            new List<string>(),
+            new List<string> { OlapField.DishAmount, OlapField.DishDiscountSum },
+            new Dictionary<string, OlapReportFilterCriteria>
+            {
+                { OlapField.SessionIdOperDay, new OlapReportFilterRangeCriteria(settings.GetPeriodBegin(), true, settings.GetPeriodEnd(), true) },
+                // Включаем только неудаленные блюда
+                { OlapField.DeletedWithWriteoff, new OlapReportFilterIncludeValuesCriteria(new object[] { Resto.Data.DishDeletionStatus.NOT_DELETED }) },
+            }));
+
+        foreach (var data in report.Data)
+        {
+            var paymentType = data.GetValue<IPaymentType>(OlapField.PayTypesId);
+            var nonCashPaymentType = data.GetValue<IPaymentType>(OlapField.NonCashPaymentTypeId);
+            var dish = data.GetValue<IProduct>(OlapField.DishId);
+            var dishId = data.GetValue<Guid>(OlapField.DishId);
+            var amount = data.GetValue<decimal>(OlapField.DishAmount);
+            var sumWithDiscount = data.GetValue<decimal>(OlapField.DishDiscountSum);
+            var dishCategory = data.GetValue<string>(OlapField.DishCategory) ?? Resources.NoCategory;
+            var dishName = data.GetValue<string>(OlapField.DishName);
+            var waiterName = data.GetValue<string>(OlapField.ItemWaiterName) ?? Resources.UnknownUser;
+            var dishCode = data.GetValue<string>(OlapField.DishCodeQuick) ?? string.Empty;
+            var cookingPlaceType = data.GetValue<string>(OlapField.CookingPlaceType) ?? Resources.WithoutCookingPlace;
+
+            // Если транзакции оплаты не было, но была оплата типом "Без выручки" — пропускаем.
+            if (paymentType == null && nonCashPaymentType.IsWriteoffPaymentType())
+                continue;
+            
+            // Если же не было ни транзакции, ни оплаты типом "Без выручки", то, вероятно, это оплата как скидка.
+
+            AddSale(amount, sumWithDiscount, dish, dishId, dishName, dishCategory, dishCode, waiterName, cookingPlaceType);
+        }
+    }
+
+    private void AddSale(decimal dishAmount, decimal dishSum, IProduct dish, Guid dishId, string dishName, string dishCategoryName, string dishCode, string waiterName, string cookingPlaceType)
+    {
+        string groupKey;
+        // В зависимости от настроек, выбираем ключ, по которому будем группировать данные
+        switch (settings.GetEnum("GroupDishes"))
+        {
+            case "GroupByDishes":
+                groupKey = string.Empty;
+                break;
+            case "GroupByCategories":
+                groupKey = dishCategoryName;
+                break;
+            case "GroupByWaiters":
+                groupKey = waiterName;
+                break;
+            case "GroupByCookingPlaceTypes":
+                groupKey = cookingPlaceType;
+                break;
+            default:
+                throw new NotSupportedException();
+        }
+
+        // Обычные продажи
+        if (dish == null || !advancePayProducts.ContainsKey(dish))
+        {
+            if (!salesData.ContainsKey(groupKey))
+                salesData[groupKey] = new SortedDictionary<Guid, SaleInfo>();
+
+            var salesInGroup = salesData[groupKey];
+            if (!salesInGroup.ContainsKey(dishId))
+                salesInGroup[dishId] = new SaleInfo(dishName, dishCode, groupKey);
+
+            salesInGroup[dishId].AddExpense(dishAmount, dishSum);
+            TotalSales += dishSum;
+        }
+        // Авансовые платежи
+        else
+        {
+            var advancePayProductInfo = advancePayProducts[dish];
+
+            if (!advanceSalesData.ContainsKey(advancePayProductInfo))
+                advanceSalesData[advancePayProductInfo] = new SortedDictionary<IProduct, SaleInfo>(new ProductComparer());
+
+            var advanceSalesInGroup = advanceSalesData[advancePayProductInfo];
+            if (!advanceSalesInGroup.ContainsKey(dish))
+                advanceSalesInGroup[dish] = new SaleInfo(dishName, dishCode, groupKey);
+
+            advanceSalesInGroup[dish].AddExpense(dishAmount, dishSum);
+            TotalAdvance += dishSum;
+        }
+    }
+
+    /// <summary>
+    /// Удаление пустых продаж и авансовых платежей
+    /// </summary>
+    private void ClearZeroSales()
+    {
+        // Удаление продаж с кол-вом 0
+        foreach (var saleInGroup in salesData.Values)
+            foreach (var productId in saleInGroup.Where(sale => sale.Value.Amount == 0).Select(sale => sale.Key).ToList())
+                saleInGroup.Remove(productId);
+
+        // Удаление пустых группировок продаж
+        foreach (var group in salesData.Where(salesGroup => salesGroup.Value.Count == 0).Select(salesGroup => salesGroup.Key).ToList())
+            salesData.Remove(group);
+
+        // Удаление авансовых платежей с кол-вом 0
+        foreach (var advanceSaleInGroup in advanceSalesData.Values)
+            foreach (var product in advanceSaleInGroup.Where(sale => sale.Value.Amount == 0).Select(sale => sale.Key).ToList())
+                advanceSaleInGroup.Remove(product);
+
+        // Удаление пустых группировок авансовых платежей
+        foreach (var group in advanceSalesData.Where(salesGroup => salesGroup.Value.Count == 0).Select(salesGroup => salesGroup.Key).ToList())
+            advanceSalesData.Remove(group);
+    }
+
+    private sealed class ProductComparer : IComparer<IProduct>
+    {
+        public int Compare(IProduct x, IProduct y)
+        {
+            var res = StringComparer.CurrentCulture.Compare(x.Name, y.Name);
+            return res != 0 ? res : fastCodeComparer.Compare(x.FastCode, y.FastCode);
+        }
+    }
+
+    private sealed class FastCodeComparer : IComparer<string>
+    {
+        public int Compare(string x, string y)
+        {
+            int intX, intY;
+            var res = 0;
+            if (int.TryParse(x, out intX) && int.TryParse(y, out intY))
+                res = intX.CompareTo(intY);
+            return res != 0 ? res : StringComparer.CurrentCulture.Compare(x, y);
+        }
+    }
+}

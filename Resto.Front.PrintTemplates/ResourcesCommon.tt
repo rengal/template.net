@@ -1,0 +1,33 @@
+<#@ include file="..\Resto.T4Common\T4Common.tt" #>
+<#+
+    void RenderResources(string resourcesFile, string namespaceName, string templateType, string resourceClassName)
+    {
+        var resources = Root.Load(Host.ResolvePath(resourcesFile));
+#>
+<#= T4Warning #>
+using Resto.Framework.Attributes.JetBrains;
+using Resto.Front.Localization.Resources;
+
+namespace <#= namespaceName #>
+{
+    public abstract partial class <#= templateType #>
+    {
+        protected static class Resources
+        {
+<#+     foreach (RootData data in resources.Datas) { #>
+            /// <summary>
+            /// <#=data.Value.Replace("\n", "<br/>")#>
+            /// </summary>
+            [NotNull]
+            public static string <#=data.Name#>
+            {
+                get { return <#= resourceClassName #>.<#=data.Name#>; }
+            }
+
+<#+     } #>
+        }
+    }
+}
+<#+
+    }
+#>

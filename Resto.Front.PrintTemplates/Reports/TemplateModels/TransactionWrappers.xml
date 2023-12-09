@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Root
+    xmlns="http://iiko.ru/XmlSchemas/TemplateModels.xsd"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://iiko.ru/XmlSchemas/TemplateModels.xsd ..\..\TemplateModels.xsd">
+
+    <Model Name="OrderPaymentTransaction" Comment="Транзакция оплаты заказа" CommentEn="Order payment transaction">
+        <Property Name="OrderId" Type="Guid" Comment="ID заказа, которому принадлежит оплата" CommentEn="Order ID an payment belongs to" />
+        <Property Name="Order" Type="Order" Nullness="CanBeNull" Comment="Заказ, которому принадлежит оплата" CommentEn="Order an payment belongs to" />
+        <Property Name="Cashier" Type="User" Nullness="NotNull" Comment="Кассир" CommentEn="Cashier" />
+        <Property Name="Date" Type="DateTime" Comment="Дата/время транзакции" CommentEn="Transaction date/time" />
+        <Property Name="Sum" Type="decimal" Comment="Сумма транзакции" CommentEn="Transaction amount" />
+        <Property Name="IsFiscal" Type="bool" Comment="Фискальная ли транзакция" CommentEn="Whether the transaction is fiscal" />
+        <Property Name="PaymentType" Type="PaymentType" Nullness="NotNull" Comment="Тип оплаты" CommentEn="Payment type" />
+        <Property Name="DonationType" Type="DonationType" Nullness="CanBeNull" Comment="Тип чаевых" CommentEn="Type of tips" />
+        <Property Name="TransactionType" Type="OrderPaymentTransactionType" Comment="Тип транзакции" CommentEn="Transaction type" />
+        <Property Name="ChequeNumber" Type="int" Comment="Номер чека" CommentEn="Receipt No." />
+        <Property Name="IsPurchase" Type="bool" Comment="Покупка через фронт" CommentEn="A purchase made in iikoFront" />
+        <Property Name="AuthData" Type="AuthData" Nullness="CanBeNull" Comment="Кем авторизована транзакция оплаты" CommentEn="Payment authorized by" />
+        <Property Name="IsWaiterDebt" Type="bool" Comment="Признак того, что транзакция оплаты заказа была произведена за счет официанта" CommentEn="Attribute signaling that a transaction has been carried out on account of waiter" />
+        <Property Name="IsDeliveryOrder" Type="bool" Comment="Флаг доставочного заказа" CommentEn="Delivery order flag" />
+        <Property Name="CurrencyInfo" Type="CurrencyInfo" Nullness="CanBeNull" Comment="Информация об оплате в дополнительной валюте. null, если оплата в основной валюте" CommentEn="Secondary currency information. null if the primary currency used" />
+    </Model>
+
+    <Model Name="CashPaymentTransaction" Comment="Транзакция оплаты заказа наличными" CommentEn="Cash transaction">
+        <Inherit Model="OrderPaymentTransaction" />
+    </Model>
+    
+    <Model Name="CreditPaymentTransaction" Comment="Транзакция оплаты заказа в кредит" CommentEn="On-account transaction" >
+        <Inherit Model="OrderPaymentTransaction" />
+        <Property Name="Counteragent" Type="User" Comment="Контрагент" CommentEn="Counterparty" />
+        <Property Name="CreditCounteragentCardSlided" Type="bool" Comment="Была ли прокатана карта контрагента" CommentEn="Was the counter party's card swiped" />
+    </Model>
+
+    <Model Name="VoucherPaymentTransaction" Comment="Транзакция оплаты заказа ваучерами" CommentEn="Coupon transaction" >
+        <Inherit Model="OrderPaymentTransaction" />
+        <Property Name="Nominal" Type="decimal" Comment="Номинал" CommentEn="Nominal value" />
+        <Property Name="VouchersNum" Type="int" Comment="Количество использованных ваучеров" CommentEn="Number of coupons used" />
+    </Model>
+    
+    <Model Name="OrderPrepayTransaction" Comment="Транзакция предоплаты заказа" CommentEn="Prepayment transaction" >
+        <Inherit Model="OrderPaymentTransaction" />
+    </Model>
+
+    <Model Name="OrderPrepayClosedTransaction" Comment="Транзакция закрытия предоплаты заказа" CommentEn="Prepayment closing transaction" >
+        <Inherit Model="OrderPaymentTransaction" />
+    </Model>
+    
+    <Enum Name="OrderPaymentTransactionType" Comment="Тип транзакции оплаты заказа" CommentEn="Transaction type">
+        <Value Name="Cash" Comment="Продажа за наличные" CommentEn="Cash sales" />
+        <Value Name="Card" Comment="Выручка по картам" CommentEn="Non-cash revenue" />
+        <Value Name="Credit" Comment="Выручка в кредит" CommentEn="On-account revenue" />
+        <Value Name="OnTheHouse" Comment="Оплата заказа за счет заведения" CommentEn="On-the-house" />
+        <Value Name="PrepayClosed" Comment="Продажа с предоплатой" CommentEn="Prepaid sales" />
+        <Value Name="Prepay" Comment="Внесение предоплаты" CommentEn="Making prepayment" />
+        <Value Name="PrepayReturn" Comment="Возврат предоплаты" CommentEn="Prepayment refund" />
+        <Value Name="PrepayClosedReturn" Comment="Возврат продажи с предоплатой" CommentEn="Prepaid sale refund" />
+        <Value Name="RevenueReturn" Comment="Возврат денег покупателю" CommentEn="Revenue money to customer" />
+        <Value Name="Donations" Comment="Чаевые" CommentEn="Donations" />
+    </Enum>
+    
+    <Model Name="PayInOutFiscalTransaction" Comment="Транзакция фискального внесения/изъятия" CommentEn="Fiscal pay in/out transaction">
+        <Property Name="Sum" Type="decimal" Comment="Сумма" CommentEn="Total" />
+        <Property Name="IsPayIn" Type="bool" Comment="Флаг внесения/изъятия" CommentEn="Pay in/out flag" />
+        <Property Name="TransactionType" Type="PayInOutTransactionType" Comment="Тип транзакции внесения/изъятия" CommentEn="Pay in/out transaction type" />
+    </Model>
+</Root>

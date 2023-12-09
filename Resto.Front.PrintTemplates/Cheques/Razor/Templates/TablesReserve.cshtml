@@ -1,0 +1,81 @@
+﻿@using System.Globalization
+@using System.Linq
+@using Resto.Front.PrintTemplates.Cheques.Razor.TemplateModels
+
+@inherits Resto.Front.PrintTemplates.Cheques.Razor.TemplateBase<ITablesReserve>
+            
+@{
+  var reserve = Model.Reserve;
+  var customer = reserve.Customer;
+}
+
+<doc>
+  <center>
+    @Resources.TablesReserveHeaderTitle
+  </center>
+  <np />
+  <center>
+    @string.Format(Resources.ReserveNumberFormat, reserve.IsBanquet ? Resources.BanquetReserveType : Resources.ReserveReserveType, reserve.Number)
+  </center>
+  <np />
+  <pair left="@FormatDate(reserve.StartTime)" right="@CultureInfo.CurrentUICulture.DateTimeFormat.GetDayName(reserve.StartTime.DayOfWeek)" />
+  <f1>
+    <left>
+      @(reserve.StartTime.Date == (reserve.StartTime + reserve.Duration).Date 
+        ? string.Format(Resources.ReserveDurationFormat, FormatTime(reserve.StartTime), FormatTime(reserve.StartTime + reserve.Duration)) 
+        : string.Format(Resources.ReserveDurationFormat, FormatLongDateTime(reserve.StartTime), FormatLongDateTime(reserve.StartTime + reserve.Duration)))
+    </left>
+  </f1>
+  <np />
+
+  @foreach (var group in reserve.Tables.GroupBy(table => table.Section))
+  {
+    <left>
+      @string.Format(Resources.ReservedSectionTablesFormat, group.Key.Name, string.Join(", ", group.Select(table => table.Number)))
+    </left>
+  }
+
+  <np />
+  <left>
+    @string.Format(Resources.GuestsCountFormat, reserve.GuestsCount)
+  </left>
+  @if (!string.IsNullOrWhiteSpace(reserve.ActivityType))
+  {
+    <left>
+      @string.Format(Resources.ActivityTypeFormat, reserve.ActivityType)
+    </left>
+  }
+  @if (!string.IsNullOrWhiteSpace(reserve.Comment))
+  {
+    <left>
+      @string.Format(Resources.ReserveCommentFormat, reserve.Comment)
+    </left>
+  }
+  <np />
+  <np />
+  <line />
+  <np />
+  <np />
+  <left>
+    @string.Format(Resources.ReserveCustomerNameFormat, customer.NameSurname())
+  </left>
+  @foreach (var phone in customer.Phones)
+  {
+    <left>
+      @string.Format(Resources.ReserveCustomerPhoneNumbersFormat, phone.Number)
+    </left>
+  }
+  @if (customer.CardDiscountType != null)
+  {
+    <left>
+      @string.Format(Resources.DiscountCardTypeNameFormat, customer.CardDiscountType.Name)
+    </left>
+  }
+  @if (!string.IsNullOrWhiteSpace(customer.Comment))
+  {
+    <np />
+    <left>
+      @customer.Comment
+    </left>
+  }
+</doc>

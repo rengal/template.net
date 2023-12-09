@@ -1,0 +1,371 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<schema
+    targetNamespace="http://iiko.ru/XmlSchemas/IikoFrontReport.xsd"
+    xmlns:x="http://iiko.ru/XmlSchemas/IikoFrontReport.xsd"
+    xmlns="http://www.w3.org/2001/XMLSchema"
+    elementFormDefault="qualified">
+
+    <simpleType name="bool">
+        <annotation>
+            <documentation>
+                Булев тип. Стандартный boolean не используется для простоты разбора, т.к. помимо литералов допускает использование числовых значений «0» и «1».
+            </documentation>
+        </annotation>
+        <restriction base="string">
+            <enumeration value="true" />
+            <enumeration value="false" />
+        </restriction>
+    </simpleType>
+
+    <simpleType name="NonEmptyText">
+        <restriction base="token">
+            <minLength value="1" />
+        </restriction>
+    </simpleType>
+
+    <simpleType name="Identifier">
+        <annotation>
+            <documentation>
+                Идентификатор для обращения к параметрам и значениям параметров-перечислений из кода шаблона.
+            </documentation>
+        </annotation>
+        <restriction base="string">
+            <pattern value="[_a-zA-Z][_a-zA-Z\d]*" />
+            <maxLength value="255" />
+        </restriction>
+    </simpleType>
+
+    <simpleType name="LabelText">
+        <annotation>
+            <documentation>
+                Текст подписи к параметрам на UI фронта.
+            </documentation>
+        </annotation>
+        <restriction base="x:NonEmptyText">
+            <maxLength value="255" />
+        </restriction>
+    </simpleType>
+
+    <attributeGroup name="ParametersCommonAttributes">
+        <annotation>
+            <documentation>
+                Общие для всех параметров атрибуты.
+            </documentation>
+        </annotation>
+        <attribute name="Name" type="x:Identifier" use="required" />
+        <attribute name="Label" type="x:LabelText" use="required" />
+        <attribute name="Persistent" type="x:bool" use="required" />
+    </attributeGroup>
+
+    <complexType name="BooleanParameter">
+        <annotation>
+            <documentation>
+                Логический (булев) параметр.
+            </documentation>
+        </annotation>
+        <attributeGroup ref="x:ParametersCommonAttributes" />
+        <attribute name="DefaultValue" type="x:bool" use="required" />
+    </complexType>
+
+    <simpleType name="NumberParameterIntegerValue">
+        <annotation>
+            <documentation>
+                Значение числового параметра с типом «целое».
+            </documentation>
+        </annotation>
+        <restriction base="integer">
+            <minInclusive value="0" />
+            <maxInclusive value="9999999999" />
+        </restriction>
+    </simpleType>
+
+    <simpleType name="NumberParameterAmountValue">
+        <annotation>
+            <documentation>
+                Значение числового параметра с типом «количество».
+            </documentation>
+        </annotation>
+        <restriction base="decimal">
+            <minInclusive value="0" />
+            <maxInclusive value="999.999" />
+            <fractionDigits value="3" />
+        </restriction>
+    </simpleType>
+
+    <simpleType name="NumberParameterMoneyValue">
+        <annotation>
+            <documentation>
+                Значение числового параметра с типом «сумма».
+            </documentation>
+        </annotation>
+        <restriction base="decimal">
+            <minInclusive value="0" />
+            <maxInclusive value="9999999999.999" />
+            <fractionDigits value="3" />
+        </restriction>
+    </simpleType>
+
+    <complexType name="NumberParameter">
+        <annotation>
+            <documentation>
+                Числовой параметр.
+            </documentation>
+        </annotation>
+        <choice minOccurs="1" maxOccurs="1">
+            <element name="Integer">
+                <complexType>
+                    <attribute name="MinValue" type="x:NumberParameterIntegerValue" use="required" />
+                    <attribute name="MaxValue" type="x:NumberParameterIntegerValue" use="required" />
+                    <attribute name="DefaultValue" type="x:NumberParameterIntegerValue" use="required" />
+                </complexType>
+            </element>
+            <element name="Amount">
+                <complexType>
+                    <attribute name="MinValue" type="x:NumberParameterAmountValue" use="required" />
+                    <attribute name="MaxValue" type="x:NumberParameterAmountValue" use="required" />
+                    <attribute name="DefaultValue" type="x:NumberParameterAmountValue" use="required" />
+                </complexType>
+            </element>
+            <element name="Money">
+                <complexType>
+                    <attribute name="MinValue" type="x:NumberParameterMoneyValue" use="required" />
+                    <attribute name="MaxValue" type="x:NumberParameterMoneyValue" use="required" />
+                    <attribute name="DefaultValue" type="x:NumberParameterMoneyValue" use="required" />
+                </complexType>
+            </element>
+        </choice>
+        <attributeGroup ref="x:ParametersCommonAttributes" />
+    </complexType>
+
+    <complexType name="StringParameter">
+        <annotation>
+            <documentation>
+                Строковый параметр.
+            </documentation>
+        </annotation>
+        <attributeGroup ref="x:ParametersCommonAttributes" />
+        <attribute name="DefaultValue" use="required">
+            <simpleType>
+                <restriction base="token">
+                    <maxLength value="255" />
+                </restriction>
+            </simpleType>
+        </attribute>
+        <attribute name="MaxLength" use="required">
+            <simpleType>
+                <restriction base="positiveInteger">
+                    <minInclusive value="1" />
+                    <maxInclusive value="255" />
+                </restriction>
+            </simpleType>
+        </attribute>
+    </complexType>
+
+    <complexType name="DateTimePeriodParameter">
+        <annotation>
+            <documentation>
+                Параметр — интервал (период) времени.
+            </documentation>
+        </annotation>
+        <attributeGroup ref="x:ParametersCommonAttributes" />
+        <attribute name="DefaultValue" use="required">
+            <simpleType>
+                <restriction base="string">
+                    <enumeration value="CafeSession">
+                        <annotation>
+                            <documentation>
+                                Кассовая смена.
+                            </documentation>
+                        </annotation>
+                    </enumeration>
+                    <enumeration value="BusinessDay">
+                        <annotation>
+                            <documentation>
+                                Учётный день.
+                            </documentation>
+                        </annotation>
+                    </enumeration>
+                    <enumeration value="CurrentDay" />
+                    <enumeration value="CurrentWeek" />
+                    <enumeration value="CurrentMonth" />
+                    <enumeration value="CurrentYear" />
+                    <enumeration value="PreviousDay" />
+                    <enumeration value="PreviousWeek" />
+                    <enumeration value="PreviousMonth" />
+                    <enumeration value="PreviousYear" />
+                </restriction>
+            </simpleType>
+        </attribute>
+        <attribute name="ShowTimeEditor" type="x:bool" use="required" />
+    </complexType>
+
+    <complexType name="EnumParameter">
+        <annotation>
+            <documentation>
+                Параметр — перечисление.
+            </documentation>
+        </annotation>
+        <sequence>
+            <element name="Value" minOccurs="2" maxOccurs="10">
+                <complexType>
+                    <attribute name="Name" type="x:Identifier" use="required" />
+                    <attribute name="Label" type="x:LabelText" use="required" />
+                </complexType>
+            </element>
+        </sequence>
+        <attributeGroup ref="x:ParametersCommonAttributes" />
+        <attribute name="DefaultValue" type="x:Identifier" use="required" />
+    </complexType>
+
+    <complexType name="TerminalsScopeParameter">
+        <annotation>
+            <documentation>
+                Параметр — ограничение по терминалам.
+            </documentation>
+        </annotation>
+        <attributeGroup ref="x:ParametersCommonAttributes" />
+        <attribute name="DefaultValue" use="required">
+            <simpleType>
+                <restriction base="string">
+                    <enumeration value="AllTerminals">
+                        <annotation>
+                            <documentation>
+                                Все терминалы.
+                            </documentation>
+                        </annotation>
+                    </enumeration>
+                    <enumeration value="CurrentTerminal">
+                        <annotation>
+                            <documentation>
+                                Текущий терминал.
+                            </documentation>
+                        </annotation>
+                    </enumeration>
+                </restriction>
+            </simpleType>
+        </attribute>
+    </complexType>
+
+    <complexType name="CounteragentsParameter">
+        <annotation>
+            <documentation>
+                Параметр — ограничение по контрагентам.
+            </documentation>
+        </annotation>
+        <attributeGroup ref="x:ParametersCommonAttributes" />
+        <attribute name="DefaultKind" use="required">
+            <simpleType>
+                <restriction base="string">
+                    <enumeration value="Employee">
+                        <annotation>
+                            <documentation>
+                                Сотрудник.
+                            </documentation>
+                        </annotation>
+                    </enumeration>
+                    <enumeration value="Client">
+                        <annotation>
+                            <documentation>
+                                Гость.
+                            </documentation>
+                        </annotation>
+                    </enumeration>
+                    <enumeration value="Supplier">
+                        <annotation>
+                            <documentation>
+                                Поставщик.
+                            </documentation>
+                        </annotation>
+                    </enumeration>
+                </restriction>
+            </simpleType>
+        </attribute>
+    </complexType>
+
+    <complexType name="Page">
+        <annotation>
+            <documentation>
+                Страница (закладка) в UI фронта, на которой отображаются параметры.
+            </documentation>
+        </annotation>
+        <choice minOccurs="1" maxOccurs="unbounded">
+            <element name="BooleanParameter" type="x:BooleanParameter" />
+            <element name="NumberParameter" type="x:NumberParameter" />
+            <element name="StringParameter" type="x:StringParameter" />
+            <element name="DateTimePeriodParameter" type="x:DateTimePeriodParameter" />
+            <element name="EnumParameter" type="x:EnumParameter">
+                <key name="EnumValue">
+                    <selector xpath="x:Value" />
+                    <field xpath="@Name" />
+                </key>
+
+                <keyref name="DefaultValue" refer="x:EnumValue">
+                    <selector xpath="." />
+                    <field xpath="@DefaultValue" />
+                </keyref>
+            </element>
+            <element name="TerminalsScopeParameter" type="x:TerminalsScopeParameter" />
+            <element name="CounteragentsParameter" type="x:CounteragentsParameter" />
+        </choice>
+        <attribute name="Name" use="required">
+            <simpleType>
+                <annotation>
+                    <documentation>
+                        Название страницы (закладки) в UI фронта, на которой отображаются параметры.
+                    </documentation>
+                </annotation>
+                <restriction base="x:NonEmptyText">
+                    <maxLength value="50" />
+                </restriction>
+            </simpleType>
+        </attribute>
+        <attribute name="Prompt" use="optional">
+            <simpleType>
+                <annotation>
+                    <documentation>
+                        Поясняющий текст для страницы (закладки) с параметрами.
+                    </documentation>
+                </annotation>
+                <restriction base="x:NonEmptyText">
+                    <maxLength value="70" />
+                </restriction>
+            </simpleType>
+        </attribute>
+    </complexType>
+
+    <element name="IikoFrontReport">
+        <complexType>
+            <sequence>
+                <element name="Page" type="x:Page" minOccurs="0" maxOccurs="5" />
+                <element name="Template" type="string" minOccurs="1" maxOccurs="1" />
+            </sequence>
+            <attribute name="Name" type="x:NonEmptyText" use="optional" />
+            <attribute name="CategoryName" type="x:NonEmptyText" use="optional" />
+            <attribute name="Requirements" use="optional">
+                <simpleType>
+                    <annotation>
+                        <documentation>
+                            Данные, необходимые шаблону для формирования отчёта.
+                        </documentation>
+                    </annotation>
+                    <restriction base="string">
+                        <enumeration value="RequiresServer" />
+                        <enumeration value="RequiresOrders" />
+                        <enumeration value="RequiresEvents" />
+                    </restriction>
+                </simpleType>
+            </attribute>
+        </complexType>
+
+        <unique name="UniquePageName">
+            <selector xpath="x:Page" />
+            <field xpath="@Name" />
+        </unique>
+
+        <unique name="UniqueParameterName">
+            <selector xpath="x:Page/x:BooleanParameter | x:Page/x:NumberParameter | x:Page/x:StringParameter | x:Page/x:DateTimePeriodParameter | x:Page/x:EnumParameter | x:Page/x:TerminalsScopeParameter |  x:Page/x:CounteragentsParameter" />
+            <field xpath="@Name" />
+        </unique>
+    </element>
+
+</schema>

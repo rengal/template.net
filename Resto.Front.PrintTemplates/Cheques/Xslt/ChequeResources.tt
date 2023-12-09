@@ -1,0 +1,23 @@
+﻿<#@ template language="C#" hostspecific="true" debug="true" #>
+<#@ output extension="g.cs" encoding="UTF-8" #>
+<#@ include file="..\..\..\Resto.T4Common\T4Common.tt" #>
+<#@ xsd processor="Resto.CodeGeneration.XsdProcessor" file="..\Resources\ChequeLocalResources.resx" #>
+<#= T4Warning #>
+<# Root res = Root.Load(Host.ResolvePath(@"..\Resources\ChequeLocalResources.resx")); #>
+using System.Xml.Linq;
+using Resto.Front.Localization.Resources;
+
+namespace Resto.Front.PrintTemplates.Cheques.Xslt
+{
+    public static class ChequeResources
+    {
+        internal static void AppendToXml(XContainer parent, string elementName)
+        {
+            var container = new XElement(elementName);
+<#        foreach (RootData data in res.Datas) { #>
+            container.Add(new XAttribute("<#=data.Name#>", ChequeLocalResources.<#=data.Name#>));
+<#        } #>
+            parent.Add(container);
+        }
+    }
+}

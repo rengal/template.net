@@ -1,0 +1,36 @@
+<#@ template language="C#" hostspecific="true" debug="true" #>
+<#@ output extension="cs" encoding="utf-8" #>
+<#@ include file="..\WrappersCommon.tt" #>
+<#@ xsd processor="Resto.CodeGeneration.XsdProcessor" file="..\TemplateModels.xsd" #>
+<#
+    root = Root.Load(Host.ResolvePath("RmsEntityWrappers.xml"));
+    root.Models.ForEach(model => Render(this, () => RenderModel(model), "I" + GetSafeName(model.Name) + ".g.cs"));
+    root.Enums.ForEach(enumeration => Render(this, () => RenderEnum(enumeration, "Resto.Front.PrintTemplates.RmsEntityWrappers"), GetSafeName(enumeration.Name) + ".g.cs"));
+#>
+
+<#+
+    Root root;
+
+    string GetTypeName(string name)
+    {
+        return IsEntity(name, root) ? "I" + name : name;
+    }
+#>
+
+<#+
+    void RenderModel(Model model)
+    {
+#><#= T4Warning #>// ReSharper disable RedundantUsingDirective
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Xml.Linq;
+using Resto.Framework.Attributes.JetBrains;
+
+namespace Resto.Front.PrintTemplates.RmsEntityWrappers
+{
+<#+     RenderModel(model, GetTypeName); #>
+}
+<#+ }
+#>

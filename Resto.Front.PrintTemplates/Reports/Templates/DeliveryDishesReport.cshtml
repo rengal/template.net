@@ -1,0 +1,251 @@
+﻿@using System
+@using System.Collections.Generic
+@using System.Linq
+@using Resto.Front.PrintTemplates.Reports
+@using Resto.Front.PrintTemplates.Reports.TemplateModels
+
+@* 053 Блюда для приготовления доставок *@
+@inherits TemplateBase
+@{
+    settings = Model.ReportSettings;
+    groupByCookingPlaces = settings.GetBool("GroupByCookingPlaces");
+
+    deliveriesInfo.Clear();
+    deliveriesInfoByCookingPlaces.Clear();
+
+    var allNotSendDeliveriesInPeriod = Model.Entities.GetAllNotDeletedDeliveries()
+        .Where(d => (d.Status == DeliveryStatus.Unconfirmed || d.Status == DeliveryStatus.New || d.Status == DeliveryStatus.Waiting) &&
+                    d.DeliverTime >= settings.GetPeriodBegin() &&
+                    d.DeliverTime <= settings.GetPeriodEnd());
+
+    if (!groupByCookingPlaces)
+    {
+        allNotSendDeliveriesInPeriod.OrderBy(d => d.DeliverTime).ForEach(delivery =>
+        {
+            // исключает из выборки блюда, которые уже отпечатаны
+            var notPrintedItems = delivery.Order.GetIncludedEntries().OfType<IOrderItem>().Where(item => !item.Printed).ToList();
+            if (notPrintedItems.Any())
+            {
+                deliveriesInfo.Add(new DeliveryOrderInfo(delivery.DeliverTime, delivery.Number.ToString(), notPrintedItems));
+            }
+        });
+    }
+    else
+    {
+        var deliveriesWithNotPrintedItems = allNotSendDeliveriesInPeriod
+            .ToDictionary(d => d, d => d.Order.GetIncludedEntries().OfType<IOrderItem>().Where(item => !item.Printed).ToList());
+        // Переворачиваем словарь для удобства.
+        var notPrintedItemsWithDeliveries = deliveriesWithNotPrintedItems.SelectMany(p => p.Value.ToDictionary(i => i, _ => p.Key))
+            .ToDictionary(p => p.Key, p => p.Value);
+        notPrintedItemsWithDeliveries.GroupBy(p => p.Key.Product.CookingPlaceType)
+            .OrderBy(g => g.Key != null ? g.Key.Name : null)
+            .ForEach(group =>
+        {
+            var orderItemsByDeliveries = group.GroupBy(pair => pair.Value);
+            var deliveriesInfoForCurrentCookingPlace = orderItemsByDeliveries
+                .OrderBy(p => p.Key.DeliverTime)
+                .Select(g => new DeliveryOrderInfo(g.Key.DeliverTime, g.Key.Number.ToString(), g.Select(p => p.Key).ToList()))
+                .ToList();
+            if (group.Key == null)
+                deliveriesInfoByCookingPlaces.Add(new DeliveriesOrderInfoByCookingPlace(Resources.WithoutCookingPlace, deliveriesInfoForCurrentCookingPlace));
+            else
+                deliveriesInfoByCookingPlaces.Add(new DeliveriesOrderInfoByCookingPlace(group.Key.Name, deliveriesInfoForCurrentCookingPlace));
+        });
+    }
+   
+}
+
+@if (!Model.IsOnlyBodyMarkupRequired)
+{
+    <doc formatter="split">
+        @Header()
+        @Body()
+        @Footer()
+    </doc>
+}
+else
+{
+    <doc formatter="split">
+        @Body()
+    </doc>
+}
+
+@helper Header()
+{
+    var terminalName = Model.CashRegister != null
+        ? string.Format(Resources.TerminalNumberNamePattern, Model.CashRegister.Number, Model.Group.Name)
+        : string.Format(Resources.TerminalNamePattern, Model.CurrentTerminal, Model.Group.Name);
+        
+    foreach (var headerLine in Model.CafeSetup.ReportHeader.Split(Environment.NewLine.ToCharArray()))
+    {
+        <left>
+            <whitespace-preserve>@headerLine</whitespace-preserve>
+        </left>
+    }
+    
+    <np />
+    <center>@Model.Name</center>
+    <np />
+    <pair fit="left" left="@Resources.HeadTerminal" right="@terminalName" /> 
+    
+    <pair left="@Resources.HeadCurrentTime" right="@FormatLongDateTime(Model.CurrentTime)" />
+    <table>
+        <columns>
+            <column autowidth=""/>
+            <column align="right"/>
+        </columns>
+        <cells>
+            <ct>@Resources.HeadCurrentUser</ct>
+            <ct>@(Model.CurrentUser == null ? string.Empty : Model.CurrentUser.Name)</ct>
+        </cells>
+    </table> 
+}
+
+@helper Body()
+{
+    if (!deliveriesInfo.Any() && !deliveriesInfoByCookingPlaces.Any())
+    {
+        return;
+    }
+    <np />
+    <line symbols="=" />
+    <pair left="@Resources.From" right="@FormatLongDateTime(settings.GetPeriodBegin())" />
+    <pair left="@Resources.To" right="@FormatLongDateTime(settings.GetPeriodEnd())" />
+    
+    <table>
+        <columns>
+            <column formatter="split" />
+            <column align="right" autowidth="" />
+        </columns>
+        <cells>
+            <linecell symbols="-" />
+            <ct>@Resources.DishTitle</ct>
+            <ct>@Resources.Amount</ct>
+            <linecell symbols="-"/>
+            @if (!groupByCookingPlaces)
+            {
+                foreach (var orderInfo in deliveriesInfo)
+                {
+                  @DeliveryOrderInfoToString(orderInfo)
+                }
+            }
+            else
+            {
+                var lastDeliveriesInfoByCookingPlace = deliveriesInfoByCookingPlaces.Last();
+                foreach (var deliveriesInfoByCookingPlace in deliveriesInfoByCookingPlaces)
+                {
+                    <ct>@deliveriesInfoByCookingPlace.CookingPlaceName</ct>
+                    <ct />
+                    foreach (var orderInfo in deliveriesInfoByCookingPlace.DeliveriesInfo)
+                    {
+                        @DeliveryOrderInfoToString(orderInfo)
+                    }
+                    if (deliveriesInfoByCookingPlace != lastDeliveriesInfoByCookingPlace)
+                    {
+                        <linecell symbols=" " />   
+                    }
+                }
+            }
+        </cells>
+    </table>
+    <line symbols="-" />
+}
+
+@helper Footer()
+{
+    <np />
+    <center>
+        @string.Format(Resources.AllSumsInFormat, Model.CafeSetup.CurrencyName)
+    </center>
+    <np />
+}
+
+@helper ItemsToString(IEnumerable<IOrderItem> orderItems)
+{
+    foreach (var item in orderItems.OrderBy(i => i.Product.Name))
+    {
+    <ct>@ItemToString(item)</ct>
+    <ct>@item.Amount</ct>
+    }
+}
+
+@helper DeliveryOrderInfoToString(DeliveryOrderInfo orderInfo)
+{
+    <ct>@string.Format("№ {0} {1}", orderInfo.DeliveryNumber, FormatTime(orderInfo.DeliverTime))</ct>
+    <ct />
+        // пары клеток вида "Название блюда" - "Суммарное количество"
+    @ItemsToString(orderInfo.Items)
+    <linecell symbols=" " />
+}
+
+@functions
+{
+    private ISettings settings;
+    private bool groupByCookingPlaces;
+
+    private readonly List<DeliveryOrderInfo> deliveriesInfo = new List<DeliveryOrderInfo>();
+    private readonly List<DeliveriesOrderInfoByCookingPlace> deliveriesInfoByCookingPlaces = new List<DeliveriesOrderInfoByCookingPlace>();
+    // Признак того, что даты отображать в отчёте не нужно (они совпадают у всех блюд в отчёте и ширина интервала - 1 день)
+
+    /// <summary>
+    /// Возвращает строковое представление блюда вида "Пицца (Доп ветчина x 2; Доп сыр x 3)"
+    /// </summary>
+    /// <param name="orderItem">Блюдо</param>
+    private static string ItemToString(IOrderItem orderItem)
+    {
+        var productName = orderItem.Product.Name;
+        var modifiers = orderItem.GetNotDeletedChildren().Any()
+            ? ModifiersToString(orderItem.GetNotDeletedChildren().OfType<IModifierEntry>(), orderItem.Amount)
+            : null;
+        return string.Format("{0}{1}", productName, modifiers);
+    }
+
+    /// <summary>
+    /// Возвращает строковое представление списка модификаторов
+    /// </summary>
+    /// <param name="modifiers">Список модификаторов</param>
+    /// <param name="parentAmount">Количество родительских блюд</param>
+    private static string ModifiersToString(IEnumerable<IModifierEntry> modifiers, decimal parentAmount)
+    {
+        var listModifiers = string.Join("; ", modifiers.OrderBy(mod => mod.Product.Name).Select(mod => ModifierToString(mod, parentAmount)));
+        return string.Format(" ({0})", listModifiers);
+    }
+
+    /// <summary>
+    /// Возвращает строковое представление модификатора вида "Доп ветчина x 2"
+    /// </summary>
+    /// <param name="mod">Модификатор</param>
+    /// <param name="parentAmount">Количество родительских блюд</param>
+    private static string ModifierToString(IOrderEntry mod, decimal parentAmount)
+    {
+        // если продано M блюд с N модификаторами, значит, у каждого блюда - по N/M модификаторов
+        var amount = mod.Amount / parentAmount;
+        return amount == 1m ? mod.Product.Name : string.Format("{0}\u00A0x\u00A0{1}", mod.Product.Name, amount);
+    }
+
+    public sealed class DeliveriesOrderInfoByCookingPlace
+    {
+        public readonly string CookingPlaceName;
+        public readonly List<DeliveryOrderInfo> DeliveriesInfo;
+
+        public DeliveriesOrderInfoByCookingPlace(string cookingPlaceName, List<DeliveryOrderInfo> deliveriesInfo)
+        {
+            CookingPlaceName = cookingPlaceName;
+            DeliveriesInfo = deliveriesInfo;
+        }
+    }
+
+    public sealed class DeliveryOrderInfo
+    {
+        public readonly DateTime DeliverTime;
+        public readonly string DeliveryNumber;
+        public readonly List<IOrderItem> Items;
+
+        public DeliveryOrderInfo(DateTime deliverTime, string deliveryNumber, List<IOrderItem> items)
+        {
+            DeliverTime = deliverTime;
+            DeliveryNumber = deliveryNumber;
+            Items = items;
+        }
+    }
+}

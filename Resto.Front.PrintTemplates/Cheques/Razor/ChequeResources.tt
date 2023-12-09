@@ -1,0 +1,7 @@
+﻿<#@ template language="C#" hostspecific="true" debug="true" #>
+<#@ output extension="g.cs" encoding="UTF-8" #>
+<#@ include file="..\..\ResourcesCommon.tt" #>
+<#@ xsd processor="Resto.CodeGeneration.XsdProcessor" file="..\Resources\ChequeLocalResources.resx" #>
+<#
+    RenderResources(@"..\Resources\ChequeLocalResources.resx", "Resto.Front.PrintTemplates.Cheques.Razor", "TemplateBase<T>", "ChequeLocalResources");
+#>

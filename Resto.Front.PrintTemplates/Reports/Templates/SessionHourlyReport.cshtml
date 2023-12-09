@@ -1,0 +1,280 @@
+﻿@using System
+@using System.Collections.Generic
+@using System.Diagnostics
+@using System.Linq
+@using Resto.Front.PrintTemplates.Reports
+@using Resto.Front.PrintTemplates.Reports.TemplateModels
+
+@* 042 Выручка почасовая *@
+@* Парный к 012-му отчет по кассовым данным *@
+@inherits TemplateBase
+@{
+    if (Model.CafeSession == null)
+    {
+        <doc><center>@Resources.CafeSessionIsClosed</center></doc>
+        return;
+    }
+    settings = Model.ReportSettings;
+
+    FillData();
+}
+
+@if (!Model.IsOnlyBodyMarkupRequired)
+{
+    <doc formatter="split">
+        @Header()
+        @Body()
+        @Footer()
+    </doc>
+}
+else
+{
+    <doc formatter="split">
+        @Body()
+    </doc>
+}
+
+@helper Header()
+{
+    var terminalName = Model.CashRegister != null
+        ? string.Format(Resources.TerminalNumberNamePattern, Model.CashRegister.Number, Model.Group.Name)
+        : string.Format(Resources.TerminalNamePattern, Model.CurrentTerminal, Model.Group.Name);
+        
+    foreach (var headerLine in Model.CafeSetup.ReportHeader.Split(Environment.NewLine.ToCharArray()))
+    {
+        <left>
+            <whitespace-preserve>@headerLine</whitespace-preserve>
+        </left>
+    }
+    
+    <np />
+    <center>@Model.Name</center>
+    <np />
+    <pair fit="left" left="@Resources.HeadTerminal" right="@terminalName" /> 
+    
+    if (Model.CafeSession != null)
+    {
+        <pair left="@Resources.HeadCashRegisterShift" right="@Model.CafeSession.Number" />
+        <pair left="@Resources.HeadCashRegisterShiftOpened" right="@FormatLongDateTime(Model.CafeSession.OpenTime)" />
+    } 
+    
+    <pair left="@Resources.HeadCurrentTime" right="@FormatLongDateTime(Model.CurrentTime)" />
+    <table>
+        <columns>
+            <column autowidth=""/>
+            <column align="right"/>
+        </columns>
+        <cells>
+            <ct>@Resources.HeadCurrentUser</ct>
+            <ct>@(Model.CurrentUser == null ? string.Empty : Model.CurrentUser.Name)</ct>
+        </cells>
+    </table> 
+}
+
+@helper Body()
+{
+    var c = 0;
+    <line symbols="-" />
+    <table>
+        <columns>
+            <column autowidth="" minwidth="11" />
+            <column align="right" formatter="split" />
+            <column align="right" minwidth="5" />
+        </columns>
+        <cells>
+            <ct>@Resources.Period</ct>
+            <ct>@(showAverage ? Resources.OrdersAvg : Resources.Orders)</ct>
+            <ct>@(showAverage ? Resources.RescueAvg : Resources.Rescue)</ct>
+            <linecell symbols="-"/>
+
+            @foreach (var day in sourceItems.GroupBy(i => i.Key.Date))
+            {
+                // Если несколько дней, то между ними вставляем пустую строку
+                if (c++ > 0)
+                {
+                    <c colspan="0"><np /></c>
+                }
+                if (!showAverage)
+                {
+                    <c colspan="3">@FormatDate(day.Key)</c>
+                }
+                if (day.Count() == 1 && day.First().Value.OrdersCount == 0)
+                {
+                    <c colspan="3">@Resources.NoSales</c>
+                }
+                else
+                {
+                    foreach (var item in day)
+                    {
+                        <ct>@string.Format("{0:HH:mm}-{1:HH:mm}", item.Key, GetHourEnd(item.Key))</ct>
+                        <ct>@FormatAverage(item.Value.OrdersCount)</ct>
+                        <ct>@FormatPrice(item.Value.Sum)</ct>
+                    }
+                }
+            }
+
+            <linecell symbols="-" />
+            <ct>@Resources.Total</ct>
+            <ct>@FormatAverage(totalOrdersCount)</ct>
+            <ct>@FormatPrice(totalSum)</ct>
+            <linecell symbols="-" />
+        </cells>
+    </table>
+}
+
+@helper Footer()
+{
+    <np />
+    <center>
+        @string.Format(Resources.AllSumsInFormat, Model.CafeSetup.CurrencyName)
+    </center>
+    <np />
+}
+
+@functions
+{
+    private ISettings settings;
+
+    private readonly SortedDictionary<DateTime, RevenueItem> sourceItems = new SortedDictionary<DateTime, RevenueItem>(new HourComparer());
+    private decimal totalSum;
+    private decimal totalOrdersCount;
+    private bool showAverage;
+
+    private sealed class RevenueItem
+    {
+        public decimal OrdersCount { get; set; }
+        public decimal Sum { get; set; }
+    }
+
+    /// <summary>
+    /// Заполнение данных о выручке
+    /// </summary>
+    private void FillData()
+    {
+        showAverage = settings.GetBool("ShowAverage");
+
+        var session = Model.CafeSession;
+        Debug.Assert(session != null);
+
+        var allTransactions = Model.Transactions.GetOrderPaymentTransactions().ToList();
+        // Возвращенные заказы не учитываем
+        foreach (var closedOrder in session.ClosedOrders.Where(order => order.CloseInfo.WriteoffItem == null))
+        {
+            Debug.Assert(closedOrder.CloseInfo != null);
+
+            var orderTransactions = allTransactions.Where(tr => tr.Order == closedOrder)
+                // Предоплаты учитываем только после оплаты заказа
+                .Where(tr => !(tr is IOrderPrepayTransaction))
+                .ToList();
+            
+            // Если это закрытие заказа без транзакций, пропускаем
+            if (orderTransactions.Count == 0)
+                continue;
+            
+            var closedTime = showAverage ? DateTime.Today.AddHours(closedOrder.CloseInfo.Time.Hour) : GetHourStart(closedOrder.CloseInfo.Time);
+            if (!sourceItems.ContainsKey(closedTime))
+                sourceItems[closedTime] = new RevenueItem();
+
+            sourceItems[closedTime].Sum += orderTransactions.Sum(pi => pi.Sum);
+            sourceItems[closedTime].OrdersCount++;
+        }
+
+        if (settings.GetBool("TakeIntoAccountHoursWithZeroSells"))
+            FillEmptyHours();
+
+        if (showAverage)
+        {
+            totalSum = sourceItems.Count == 0 ? 0 : sourceItems.Average(i => i.Value.Sum);
+            totalOrdersCount = sourceItems.Count == 0 ? 0 : sourceItems.Average(i => i.Value.OrdersCount);
+        }
+        else
+        {
+            FillEmptyDays();
+            totalSum = sourceItems.Sum(i => i.Value.Sum);
+            totalOrdersCount = sourceItems.Sum(i => i.Value.OrdersCount);
+        }
+    }
+
+    /// <summary>
+    /// заполнение пустых часов в дне
+    /// </summary>
+    private void FillEmptyHours()
+    {
+        foreach (var dayItems in sourceItems.GroupBy(i => i.Key.Date).Where(i => i.Any()))
+        {
+            var minDateTime = dayItems.Min(i => i.Key);
+            var maxDateTime = dayItems.Max(i => i.Key);
+
+            for (var time = GetHourStart(minDateTime); time <= maxDateTime; time = time.AddHours(1))
+            {
+                if (!sourceItems.ContainsKey(time))
+                    sourceItems.Add(time, new RevenueItem());
+            }
+        }
+    }
+
+    /// <summary>
+    /// Заполнение пустых дней
+    /// </summary>
+    private void FillEmptyDays()
+    {
+        Debug.Assert(Model.CafeSession != null);
+        if (sourceItems.Count == 0)
+        {
+            for (var date = Model.CafeSession.OpenTime.Date; date <= Model.CurrentTime.Date; date = date.AddDays(1))
+                sourceItems.Add(date, new RevenueItem());
+            return;
+        }
+
+        var minDate = Min(sourceItems.Min(i => i.Key.Date), Model.CafeSession.OpenTime.Date);
+        var maxDate = Max(sourceItems.Max(i => i.Key.Date), Model.CurrentTime.Date);
+
+        var days = new HashSet<DateTime>(sourceItems.Select(i => i.Key.Date).Distinct(), new DateComparer());
+        for (var date = minDate; date <= maxDate; date = date.AddDays(1))
+        {
+            if (!days.Contains(date))
+                sourceItems.Add(date, new RevenueItem());
+        }
+    }
+    
+    private static DateTime GetHourStart(DateTime x)
+    {
+        return new DateTime(x.Year, x.Month, x.Day, x.Hour, 0, 0, 0);
+    }
+
+    private static DateTime GetHourEnd(DateTime x)
+    {
+        return new DateTime(x.Year, x.Month, x.Day, x.Hour, 59, 59, 999);
+    }
+
+    private sealed class DateComparer : IEqualityComparer<DateTime>
+    {
+        public bool Equals(DateTime x, DateTime y)
+        {
+            return x.Date == y.Date;
+        }
+
+        public int GetHashCode(DateTime obj)
+        {
+            return obj.Date.GetHashCode();
+        }
+    }
+
+    private sealed class HourComparer : IComparer<DateTime>
+    {
+        public int Compare(DateTime x, DateTime y)
+        {
+            return DateTime.Compare(GetHourStart(x), GetHourStart(y));
+        }
+    }
+
+    private static DateTime Max(DateTime d1, DateTime d2)
+    {
+        return d1 > d2 ? d1 : d2;
+    }
+
+    private static DateTime Min(DateTime d1, DateTime d2)
+    {
+        return d1 < d2 ? d1 : d2;
+    }
+}

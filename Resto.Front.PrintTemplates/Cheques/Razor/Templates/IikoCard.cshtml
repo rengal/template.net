@@ -1,0 +1,178 @@
+﻿@using Resto.Front.PrintTemplates.Cheques.Razor.TemplateModels
+
+@inherits Resto.Front.PrintTemplates.Cheques.Razor.TemplateBase<IIikoCardCheque>
+
+@{
+  var cardInfo = Model.CardInfo;
+  var order = Model.Order;
+}
+
+<doc>
+  <left>
+    <split>
+      <whitespace-preserve>@Model.CommonInfo.CafeSetup.BillHeader</whitespace-preserve>
+    </split>
+  </left>
+  <np />
+  <left>
+    <split>
+      @FormatFullDateTime(Model.CommonInfo.CurrentTime)
+    </split>
+  </left>
+  <center>
+    @cardInfo.OperationName
+  </center>
+  <np />
+  @if (order != null)
+  {
+    <pair left="@string.Format(Resources.BillHeaderSectionPattern, order.Table.Section.Name)" right="@string.Format(Resources.BillHeaderTablePattern, order.Table.Number)" />
+    <pair left="@string.Format(Resources.BillHeaderOrderOpenPattern, FormatLongDateTime(order.OpenTime))" right="@string.Format(Resources.BillHeaderOrderNumberPattern, order.Number)" />
+    <left>
+      @string.Format(Resources.BillHeaderWaiterPattern, order.Waiter.GetNameOrEmpty())
+    </left>
+    <np />
+  }
+  <left>
+    @string.Format(Resources.BillHeaderCashierPattern, Model.CommonInfo.CurrentUser.Name)
+  </left>
+  <table>
+    <columns>
+      <column autowidth="" />
+      <column align="right" />
+    </columns>
+    <cells>
+      <ct>
+        @Resources.Terminal
+      </ct>
+      <c>
+        <split>
+          @Model.CommonInfo.CurrentTerminal
+        </split>
+      </c>
+    </cells>
+  </table>
+
+  @if (Model.IsSuccessful)
+  {
+    <table>
+      <columns>
+        <column autowidth="" />
+        <column align="right" />
+      </columns>
+      <cells>
+        <ct>
+          @Resources.IikoCardCardNumber
+        </ct>
+        <ct>
+          @cardInfo.CardNumber
+        </ct>
+
+        <ct>
+          @Resources.IikoCardCardOwner
+        </ct>
+        <c>
+          <split>
+            @cardInfo.CardOwner
+          </split>
+        </c>
+
+        <ct>
+          @Resources.IikoCardRowSum
+        </ct>
+        <ct>
+          @FormatMoney(cardInfo.Amount)
+        </ct>
+      </cells>
+    </table>
+    <table>
+      <columns>
+        <column />
+        <column autowidth="" align="right" />
+      </columns>
+      <cells>
+        @foreach (var row in cardInfo.ChequeRows)
+        {
+          <ct>
+            @row.Name
+          </ct>
+          <ct>
+            @FormatMoney(row.Value)
+          </ct>
+          if (!string.IsNullOrWhiteSpace(row.Lines))
+          {
+            <c colspan="2">
+              <split>
+                @row.Lines
+              </split>
+            </c>
+          }
+        }
+      </cells>
+    </table>
+    <table>
+      <columns>
+        <column autowidth="" />
+        <column align="right" />
+      </columns>
+      <cells>
+        @if (!cardInfo.IsPayment && cardInfo.HasOperationIds)
+        {
+          <ct>
+            @cardInfo.OperationNumTitle
+          </ct>
+          <ct>
+            @cardInfo.OperationId
+          </ct>
+
+          <ct>
+            @cardInfo.RequestNumTitle
+          </ct>
+          <ct>
+            @cardInfo.RequestId
+          </ct>
+        }
+
+        @* Дата хоста *@
+        @if (cardInfo.HostTime.HasValue)
+        {
+          <ct>
+            @Resources.IikoCardFooterOperationDate
+          </ct>
+          <ct>
+            @FormatFullDateTime(cardInfo.HostTime.Value)
+          </ct>
+        }
+      </cells>
+    </table>
+  }
+  else
+  {
+    <split>
+      @cardInfo.Error
+    </split>
+  }
+  <np />
+  <np />
+  <center>
+    @(Model.IsSuccessful ? Resources.IikoCardOperationSuccessful : Resources.IikoCardOperationFailed)
+  </center>
+
+  <np />
+  <center>
+    <split>
+      <whitespace-preserve>@Model.CommonInfo.CafeSetup.BillFooter</whitespace-preserve>
+    </split>
+  </center>
+  <np />
+  <np />
+  @if (cardInfo.HasSignature)
+  {
+    <np />
+    <line />
+    <center>
+      @Resources.Signature
+    </center>
+  }
+
+  <np />
+</doc>

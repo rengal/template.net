@@ -1,0 +1,260 @@
+<#@ template language="C#" hostspecific="true" debug="true" #>
+<#@ output extension="cs" encoding="utf-8" #>
+<#@ include file="..\..\..\..\Resto.T4Common\T4Common.tt" #>
+<#@ xsd processor="Resto.CodeGeneration.XsdProcessor" file="Documents.xsd" #>
+<#
+    self = this;
+    docs = Root.Load(Host.ResolvePath("Documents.xml"));
+    docs.Documents.ForEach(doc => Render(this, () => RenderDocument(doc), GetSafeName(doc.Name) + ".g.cs"));
+#>
+
+<#+
+    static TextTransformation self;
+    Root docs;
+
+    readonly string[] primitiveTypes = new[] { "bool", "string", "decimal", "int", "DateTime", "TimeSpan", "Guid" };
+    readonly string[] elementTypes = new[] { "ChequeResources", "XElement" };
+
+    bool IsPrimitiveNullableType(string primitiveTypeName)
+    {
+        if (!primitiveTypes.Contains(primitiveTypeName))
+            throw new ArgumentOutOfRangeException("primitiveTypeName", primitiveTypeName, "primitiveTypeName must be one of primitiveTypes values");
+            
+        return primitiveTypeName == "string";
+    }
+    
+    string GetPrimitiveTypeValueAccessorPostfix(string primitiveTypeName)
+    {
+        if (!primitiveTypes.Contains(primitiveTypeName))
+            throw new ArgumentOutOfRangeException("primitiveTypeName", primitiveTypeName, "primitiveTypeName must be one of primitiveTypes values");
+        
+        return primitiveTypeName == "TimeSpan" ? ".ToString()" : string.Empty;
+    }
+    
+    string GetPropertyDeclarationTypeString(Property prop)
+    {
+        return prop.Collection ? "IEnumerable<" + GetPropertyDeclarationType(prop) + ">" : GetPropertyDeclarationType(prop);
+    }
+    
+    string GetPropertyDeclarationType(Property prop)
+    {
+        return primitiveTypes.Contains(prop.Type) || elementTypes.Contains(prop.Type) ? prop.Type : "I" + prop.Type;
+    }
+    
+    string GetContainerName(Property prop)
+    {
+        return prop.Name[0].ToString().ToLower() + prop.Name.Substring(1) + "Container";
+    }
+    
+    Type GetRootType(Document doc)
+    {
+        return doc.Types.Single(t => t.Root);
+    }
+//----------------------------------------------------------------------------------------------------
+    void RenderDocument(Document doc)
+    {
+#><#=T4Warning#>// ReSharper disable RedundantUsingDirective
+// ReSharper disable PartialTypeWithSinglePart
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Xml.Linq;
+using Resto.Framework.Attributes.JetBrains;
+
+namespace Resto.Front.PrintTemplates.Cheques.Xslt.TemplateModels
+{
+<#+ 
+        foreach (var type in doc.Types) {
+#>
+<#+            if (!string.IsNullOrEmpty(type.Comment)) { #>
+    /// <summary>
+    /// <#= type.Comment #>
+    /// </summary>
+<#+            } #>
+    public interface I<#= type.Name #>
+    {
+<#+ 
+            foreach (var prop in type.Properties) {
+#>
+<#+                if (!string.IsNullOrEmpty(prop.Comment)) { #>
+        /// <summary>
+        /// <#= prop.Comment #>
+        /// </summary>
+<#+                } #>
+        <#= GetPropertyDeclarationTypeString(prop) #> <#= prop.Name #> { get; }
+<#+
+            }
+#>
+    }
+
+<#+
+        }
+#>
+    public static class <#= doc.Name #>ToXmlConverterExtensions
+    {
+<#+        if (doc.Types.Any(t => t.Root)) { #>
+        [NotNull]
+        public static XDocument ToXml([NotNull] this I<#= GetRootType(doc).Name #> obj)
+        {
+            if (obj == null)
+                throw new ArgumentNullException("obj");
+        
+            var document = new XDocument();
+            
+            obj.AppendToXml(document, "<#= GetRootType(doc).Name #>");
+            
+            return document;
+        }
+        
+<#+        } #>
+<#+ 
+        foreach (var type in doc.Types) {
+#>
+        internal static void AppendToXml(this I<#= type.Name #> obj, XContainer parent, string elementName)
+        {
+            var container = new XElement(elementName);
+            
+<#+
+            foreach (var prop in type.Properties) {
+                RenderPropertyToXmlCode(prop);
+            }
+            
+            foreach(var res in type.Resources) {
+                RenderResourceToXmlCode(res);
+            }
+#>
+            parent.Add(container);
+        }
+        
+<#+
+        }
+#>        
+    }
+}
+<#+ 
+    } // RenderDocument
+//----------------------------------------------------------------------------------------------------
+    void RenderPropertyToXmlCode(Property prop)
+    {
+        if (primitiveTypes.Contains(prop.Type))
+        {
+            if (IsPrimitiveNullableType(prop.Type))
+            {
+                if (prop.Collection)
+                    RenderPrimitiveCollectionNullablePropertyToXmlCode(prop);
+                else
+                    RenderPrimitiveScalarNullablePropertyToXmlCode(prop);
+            }
+            else
+            {
+                if (prop.Collection)
+                    RenderPrimitiveCollectionNotNullPropertyToXmlCode(prop);
+                else
+                    RenderPrimitiveScalarNotNullPropertyToXmlCode(prop);
+            }
+        }
+        else if (prop.Type == "XElement")
+        {
+            if (prop.Collection)
+                RenderXElementCollectionPropertyToXmlCode(prop);
+            else
+                RenderXElementScalarPropertyToXmlCode(prop);
+        }
+        else
+        {
+            if (prop.Collection)
+                RenderObjectCollectionPropertyToXmlCode(prop);
+            else
+                RenderObjectScalarPropertyToXmlCode(prop);
+        }
+    }
+    
+    void RenderResourceToXmlCode(Resource res)
+    {
+#>			<#= res.Type #>.AppendToXml(container, "<#= res.Name #>");
+<#+ }
+    
+    void RenderPrimitiveScalarNullablePropertyToXmlCode(Property prop) {
+#>
+            if (obj.<#= prop.Name #> != null)
+                container.Add(new XAttribute("<#= prop.Name #>", obj.<#= prop.Name #><#= GetPrimitiveTypeValueAccessorPostfix(prop.Type) #>));
+                
+<#+
+    }
+
+    void RenderPrimitiveScalarNotNullPropertyToXmlCode(Property prop) {
+#>
+            container.Add(new XAttribute("<#= prop.Name #>", obj.<#= prop.Name #><#= GetPrimitiveTypeValueAccessorPostfix(prop.Type) #>));
+                
+<#+
+    }
+    
+    void RenderObjectScalarPropertyToXmlCode(Property prop) {
+#>
+            if (obj.<#= prop.Name #> != null)
+                obj.<#= prop.Name #>.AppendToXml(container, "<#= prop.Name #>");
+            
+<#+
+    }
+    
+    void RenderXElementScalarPropertyToXmlCode(Property prop) {
+#>
+            if (obj.<#= prop.Name #> != null)
+                container.Add(obj.<#= prop.Name #>);
+            
+<#+
+    }
+    
+    void RenderPrimitiveCollectionNullablePropertyToXmlCode(Property prop) {
+#>
+            if (obj.<#= prop.Name #> != null && obj.<#= prop.Name #>.Any(o => o != null))
+            {
+                var <#= GetContainerName(prop) #> = new XElement("<#= prop.Name #>");
+                foreach (var item in obj.<#= prop.Name #>.Where(o => o != null))
+                    <#= GetContainerName(prop) #>.Add(new XElement("Value", item<#= GetPrimitiveTypeValueAccessorPostfix(prop.Type) #>));
+                container.Add(<#= GetContainerName(prop) #>);
+            }
+            
+<#+
+    }
+    
+    void RenderPrimitiveCollectionNotNullPropertyToXmlCode(Property prop) {
+#>
+            if (obj.<#= prop.Name #> != null && obj.<#= prop.Name #>.Any())
+            {
+                var <#= GetContainerName(prop) #> = new XElement("<#= prop.Name #>");
+                foreach (var item in obj.<#= prop.Name #>)
+                    <#= GetContainerName(prop) #>.Add(new XElement("Value", item<#= GetPrimitiveTypeValueAccessorPostfix(prop.Type) #>));
+                container.Add(<#= GetContainerName(prop) #>);
+            }
+            
+<#+
+    }
+    
+    void RenderObjectCollectionPropertyToXmlCode(Property prop) {
+#>
+            if (obj.<#= prop.Name #> != null && obj.<#= prop.Name #>.Any(o => o != null))
+            {
+                var <#= GetContainerName(prop) #> = new XElement("<#= prop.Name #>");
+                foreach (var item in obj.<#= prop.Name #>)
+                    item.AppendToXml(<#= GetContainerName(prop) #>, "<#= prop.ItemName ?? docs.DocumentTypeByName[prop.Type].ItemName ?? prop.Type #>");
+                container.Add(<#= GetContainerName(prop) #>);
+            }
+            
+<#+
+    }
+    
+    void RenderXElementCollectionPropertyToXmlCode(Property prop) {
+#>
+            if (obj.<#= prop.Name #> != null && obj.<#= prop.Name #>.Any(o => o != null))
+            {
+                var <#= GetContainerName(prop) #> = new XElement("<#= prop.Name #>");
+                foreach (var item in obj.<#= prop.Name #>)
+                    <#= GetContainerName(prop) #>.Add(item);
+                container.Add(<#= GetContainerName(prop) #>);
+            }
+            
+<#+
+    }
+#>

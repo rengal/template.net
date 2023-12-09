@@ -1,0 +1,692 @@
+﻿@using System
+@using System.Collections.Generic
+@using System.Linq
+@using Resto.Front.PrintTemplates.Reports.TemplateModels
+@using Resto.Front.PrintTemplates.RmsEntityWrappers
+
+@* 050 Отчет по доставкам *@
+@inherits Resto.Front.PrintTemplates.Reports.TemplateBase
+@{
+    settings = Model.ReportSettings;
+
+    FillData();
+}
+
+@if (!Model.IsOnlyBodyMarkupRequired)
+{
+    <doc formatter="split">
+        @Header()
+        @Body()
+        @Footer()
+    </doc>
+}
+else
+{
+    <doc formatter="split">
+        @Body()
+    </doc>
+}
+
+@helper Header()
+{
+    var terminalName = Model.CashRegister != null
+        ? string.Format(Resources.TerminalNumberNamePattern, Model.CashRegister.Number, Model.Group.Name)
+        : string.Format(Resources.TerminalNamePattern, Model.CurrentTerminal, Model.Group.Name);
+
+    foreach (var headerLine in Model.CafeSetup.ReportHeader.Split(Environment.NewLine.ToCharArray()))
+    {
+        <left>
+            <whitespace-preserve>@headerLine</whitespace-preserve>
+        </left>
+    }
+
+    <np />
+    <center>@Model.Name</center>
+    <np />
+    <pair fit="left" left="@Resources.HeadTerminal" right="@terminalName" />
+
+    <pair left="@Resources.HeadCurrentTime" right="@FormatLongDateTime(Model.CurrentTime)" />
+    <table>
+        <columns>
+            <column autowidth="" />
+            <column align="right" />
+        </columns>
+        <cells>
+            <ct>@Resources.HeadCurrentUser</ct>
+            <ct>@(Model.CurrentUser == null ? string.Empty : Model.CurrentUser.Name)</ct>
+        </cells>
+    </table>
+}
+
+@helper Body()
+{
+    <np />
+    @GetWaitingDeliveriesMarkup()
+    @GetOnWayDeliveriesMarkup()
+    @GetClosedDeliveriesMarkup()
+    @GetCancelledDeliveriesMarkup()
+    @GetAllDeliveriesDeletedEntriesMarkup()
+    <np />
+}
+
+@helper Footer()
+{
+    <np />
+    <center>@string.Format(Resources.AllSumsInFormat, Model.CafeSetup.CurrencyName)</center>
+    <np />
+}
+
+@helper GetWaitingDeliveriesMarkup()
+{
+    <left>@Resources.WaitingDeliveriesTitle</left>
+
+    @GetWaitingOrOnWayDelMarkupInternal(waitingDeliveries)
+    <line symbols="-" />
+    <pair left="@Resources.SectionTotal" right="@FormatPrice(waitingDeliveries.Sum(d => d.OrderSum))" />
+}
+
+@helper GetOnWayDeliveriesMarkup()
+{
+    @SeparatePart()
+    <left>@Resources.OnWayDeliveriesTitle</left>
+
+    @GetWaitingOrOnWayDelMarkupInternal(onWayDeliveries)
+    <line symbols="-" />
+    <pair left="@Resources.SectionTotal" right="@FormatPrice(onWayDeliveries.Sum(d => d.OrderSum))" />
+    @GetPaymentsInfoByOnWayCouriersMarkup()
+}
+
+@helper GetWaitingOrOnWayDelMarkupInternal(ICollection<WaitingOrOnWayDeliveryInfo> waitingOrOnWayDeliveryInfos)
+{
+    if (waitingOrOnWayDeliveryInfos.Count == 0)
+    {
+        return;
+    }
+
+    <table>
+        <columns>
+            <column align="right" autowidth="" />
+            <column formatter="split" />
+            <column autowidth="" />
+            <column align="right" autowidth="" />
+        </columns>
+        <cells>
+            <linecell symbols="-" />
+            <ct>@Resources.OrderColumn</ct>
+            <ct>@Resources.CourierColumn</ct>
+            <ct>@Resources.TimeColumn</ct>
+            <ct>@Resources.Sum</ct>
+            <linecell symbols="-" />
+            @foreach (var d in waitingOrOnWayDeliveryInfos)
+            {
+                <ct>@d.Number</ct>
+                <ct>@(d.Courier != null ? d.Courier.Name : string.Empty)</ct>
+                <ct>@FormatTime(d.DateTime)</ct>
+                <ct>@FormatPrice(d.OrderSum)</ct>
+            }
+        </cells>
+    </table>
+}
+
+@helper GetPaymentsInfoByOnWayCouriersMarkup()
+{
+    if (couriersInfoFromOnWayDeliveries.Count == 0)
+    {
+        return;
+    }
+
+    <table>
+        <columns>
+            <column align="right" autowidth="" />
+            <column formatter="split" />
+            <column align="right" autowidth="" />
+            <column align="right" autowidth="" />
+        </columns>
+        <cells>
+            <linecell symbols="-" />
+            @foreach (var courierPaymentsInfo in couriersInfoFromOnWayDeliveries)
+            {
+                <c colspan="3">@string.Format("{0}  {1}", Resources.Total, courierPaymentsInfo.Name)</c>
+                <ct>@FormatPrice(courierPaymentsInfo.TotalSum)</ct>
+                @GetPaymentsInfoMarkup(courierPaymentsInfo.GroupedPaymentsInfo)
+            }
+            <linecell symbols="-" />
+
+            <c colspan="3">@Resources.TotalAllCouriers</c>
+            <ct>@FormatPrice(paymentsInfoFromOnWayDeliveries.Sum(d => d.Sum))</ct>
+
+            @GetPaymentsInfoMarkup(paymentsInfoFromOnWayDeliveries)
+        </cells>
+    </table>
+}
+
+
+@helper GetClosedDeliveriesMarkup()
+{
+    if (!settings.GetBool("ShowClosedDeliveries") || closedDeliveries.Count == 0)
+    {
+        return;
+    }
+
+    @SeparatePart()
+    <left>@Resources.ClosedDeliveriesTitle</left>
+
+    //Курьер | Планируемое время доставки | Фактическое время доставки
+    <table>
+        <columns>
+            <column autowidth="" />
+            <column formatter="split" />
+            <column autowidth="" />
+            <column autowidth="" />
+        </columns>
+        <cells>
+            <linecell symbols="-" />
+            <ct>@Resources.OrderColumn</ct>
+            <ct>@Resources.CourierColumn</ct>
+            <ct>@Resources.PlanTimeColumn</ct>
+            <ct>@Resources.ActualTimeColumn</ct>
+            <linecell symbols="-" />
+            @foreach (var cd in closedDeliveries)
+            {
+                <ct>@cd.Number</ct>
+                <ct>@(cd.Courier == null ? Resources.SelfService : cd.Courier.Name)</ct>
+                <ct>@FormatTime(cd.DateTime)</ct>
+                <ct>@FormatTime(cd.ActualTime)</ct>
+                if (!string.IsNullOrWhiteSpace(cd.Comment))
+                {
+                    <c colspan="0"><left>@("  " + String.Format(Resources.CommentFormat, cd.Comment))</left></c>
+                }
+            }
+        </cells>
+    </table>
+
+    //Курьер | Ср. опозд | Заказов | Сумма
+    <table>
+        <columns>
+            <column formatter="split" />
+            <column autowidth="" />
+            <column align="right" autowidth="" />
+            <column align="right" autowidth="" />
+        </columns>
+        <cells>
+            <linecell symbols="-" />
+            <ct>@Resources.CourierColumn</ct>
+            <ct>@Resources.AverageLateColumn</ct>
+            <ct>@Resources.Orders</ct>
+            <ct>@Resources.Sum</ct>
+            <linecell symbols="-" />
+            @foreach (var courierInfo in couriersInfoFromClosedDeliveries)
+            {
+                <ct>@string.Format("{0}  {1}", Resources.Total, courierInfo.Name)</ct>
+                <ct>@FormatTimeSpan(courierInfo.AverageTimeDelay, false)</ct>
+                <ct>@courierInfo.ClosedDeliveriesCount</ct>
+                <ct>@FormatPrice(courierInfo.TotalSum)</ct>
+                @GetPaymentsInfoMarkup(courierInfo.GroupedPaymentsInfo)
+            }
+            <linecell symbols="-" />
+            <ct>@Resources.SectionTotal</ct>
+            <ct>@FormatTimeSpan(TimeSpan.FromMinutes(couriersInfoFromClosedDeliveries.Average(cd => cd.AverageTimeDelay.TotalMinutes)), false)</ct>
+            <ct>@couriersInfoFromClosedDeliveries.Sum(cd => cd.ClosedDeliveriesCount)</ct>
+            <ct>@FormatPrice(couriersInfoFromClosedDeliveries.Sum(cd => cd.TotalSum))</ct>
+            @GetPaymentsInfoMarkup(paymentsInfoFromClosedDeliveries)
+        </cells>
+    </table>
+}
+
+@helper GetPaymentsInfoMarkup(ICollection<PaymentInfo> groupedPaymentsInfos)
+{
+    //Тип оплаты | Была ли оплата проведена извне | Сумма
+    var hasMultiCurrencyPayment = groupedPaymentsInfos.Any(d => !string.IsNullOrWhiteSpace(d.CurrencyName));
+    foreach (var paymentsInfo in groupedPaymentsInfos.OrderBy(p => p.DonationType != null))
+    {
+        if (paymentsInfo.DonationType != null)
+        {
+            <c colspan="2"><whitespace-preserve>@string.Format("  {0} {1}", paymentsInfo.PaymentType.Name, paymentsInfo.DonationType.Name)</whitespace-preserve></c>
+            <ct>@string.Format("({0})", Resources.Donations)</ct>
+        }
+        else if (paymentsInfo.IsProcessedExternally)
+        {
+            <c colspan="2"><whitespace-preserve>@string.Format("  {0}", paymentsInfo.PaymentType.Name)</whitespace-preserve></c>
+            <ct>@string.Format("({0})", Resources.ExternalPayment)</ct>
+        }
+        else if (paymentsInfo.IsPrepay)
+        {
+            <c colspan="2"><whitespace-preserve>@string.Format("  {0}", paymentsInfo.PaymentType.Name)</whitespace-preserve></c>
+            <ct>@string.Format("({0})", Resources.PrePayment)</ct>
+        }
+        else
+        {
+            <c colspan="2"><whitespace-preserve>@string.Format("  {0}", paymentsInfo.PaymentType.Name)</whitespace-preserve></c>
+            <ct>@string.Empty</ct>
+        }
+
+        if (hasMultiCurrencyPayment)
+        {
+            <ct>@string.Format("{0} {1}", FormatPrice(paymentsInfo.Sum), string.IsNullOrWhiteSpace(paymentsInfo.CurrencyName) ? Model.CafeSetup.ShortCurrencyName : paymentsInfo.CurrencyName)</ct>
+        }
+        else
+        {
+            <ct>@FormatPrice(paymentsInfo.Sum)</ct>
+        }
+    }
+}
+
+@helper GetCancelledDeliveriesMarkup()
+{
+    if (!settings.GetBool("ShowCancelledDeliveries") || canceledDeliveriesByCancelCause.Count == 0)
+    {
+        return;
+    }
+
+    @SeparatePart()
+    <left>@Resources.CancelledDeliveriesTitle</left>
+
+    //Причина отмены | Заказов | Сумма
+    <table>
+        <columns>
+            <column formatter="split" />
+            <column align="right" autowidth="" />
+            <column align="right" autowidth="" />
+        </columns>
+        <cells>
+            <linecell symbols="-" />
+            <ct>@Resources.CancelCause</ct>
+            <ct>@Resources.Orders</ct>
+            <ct>@Resources.Sum</ct>
+            <linecell symbols="-" />
+            @foreach (var cd in canceledDeliveriesByCancelCause)
+            {
+                <ct>@cd.CancelCause</ct>
+                <ct>@cd.OrdersCount</ct>
+                <ct>@FormatPrice(cd.Sum)</ct>
+            }
+        </cells>
+    </table>
+
+    <line symbols="-" />
+    <np />
+
+    //Удаления блюд доставки (Со списанием или без) | Кол-во блюд | Сумма
+    @GetDeliveriesDishesDeletionMarkup(Resources.DeliveryDishesDeletionsColumn, canceledDeliveriesDeletedEntriesWithNoWriteoffInfo, canceledDeliveriesDeletedEntriesWithWriteoffInfo)
+}
+
+@helper GetAllDeliveriesDeletedEntriesMarkup()
+{
+    @SeparatePart()
+    <left>@Resources.DeliveryDishesDeletionsTitle</left>
+
+    <line symbols="-" />
+    @GetDeliveriesDishesDeletionMarkup(Resources.RemovalTypeColumn, allDeliveriesDeletedEntriesWithNoWriteoffInfo, alldDeliveriesDeletedEntriesWithWriteoffInfo)
+}
+
+@helper GetDeliveriesDishesDeletionMarkup(string deletionTypeCaption, DeletedEntriesInfo entriesWithNoWriteoffInfo, DeletedEntriesInfo entriesWithWriteoffInfo)
+{
+    <table>
+        <columns>
+            <column formatter="split" />
+            <column align="right" autowidth="" />
+            <column align="right" autowidth="" />
+        </columns>
+        <cells>
+            <ct>@deletionTypeCaption</ct>
+            <ct>@Resources.DishesColumn</ct>
+            <ct>@Resources.Sum</ct>
+            <linecell symbols="-" />
+
+            @*No writeoff row*@
+            <ct>@Resources.WithNoWriteoff</ct>
+            <ct>@FormatAmount(entriesWithNoWriteoffInfo.Amount)</ct>
+            <ct>@FormatPrice(entriesWithNoWriteoffInfo.Sum)</ct>
+
+            @*With writeoff row*@
+            <ct>@Resources.WithWriteoff</ct>
+            <ct>@FormatAmount(entriesWithWriteoffInfo.Amount)</ct>
+            <ct>@FormatPrice(entriesWithWriteoffInfo.Sum)</ct>
+
+            <linecell symbols="-" />
+            <ct>@Resources.SectionTotal</ct>
+            <ct>@FormatAmount(entriesWithNoWriteoffInfo.Amount + entriesWithWriteoffInfo.Amount)</ct>
+            <ct>@FormatPrice(entriesWithNoWriteoffInfo.Sum + entriesWithWriteoffInfo.Sum)</ct>
+        </cells>
+    </table>
+}
+
+@helper SeparatePart()
+{
+    <np />
+    <line symbols="=" />
+    <np />
+}
+
+@functions
+{
+    private ISettings settings;
+
+    private ICollection<WaitingOrOnWayDeliveryInfo> waitingDeliveries;
+
+    private ICollection<WaitingOrOnWayDeliveryInfo> onWayDeliveries;
+    private ICollection<BaseCourierInfo> couriersInfoFromOnWayDeliveries;
+    private ICollection<PaymentInfo> paymentsInfoFromOnWayDeliveries;
+
+    private ICollection<ClosedDeliveryInfo> closedDeliveries;
+    private ICollection<CourierInfo> couriersInfoFromClosedDeliveries;
+    private ICollection<PaymentInfo> paymentsInfoFromClosedDeliveries;
+
+    private ICollection<CanceledDeliveryInfo> canceledDeliveriesByCancelCause;
+    private DeletedEntriesInfo canceledDeliveriesDeletedEntriesWithWriteoffInfo;
+    private DeletedEntriesInfo canceledDeliveriesDeletedEntriesWithNoWriteoffInfo;
+
+    private DeletedEntriesInfo alldDeliveriesDeletedEntriesWithWriteoffInfo;
+    private DeletedEntriesInfo allDeliveriesDeletedEntriesWithNoWriteoffInfo;
+
+    private void FillData()
+    {
+        var allDeliveriesWithOrder = Model.Entities.GetAllNotDeletedDeliveries().Where(d => !d.Order.IsStorned).ToList();
+
+        FillWaitingDeliveriesData(allDeliveriesWithOrder);
+        FillOnWayDeliveriesData(allDeliveriesWithOrder);
+        FillClosedDeliveriesData(allDeliveriesWithOrder);
+        FillCanceledDeliveriesData(allDeliveriesWithOrder);
+        FillDeletedEntriesData(allDeliveriesWithOrder);
+    }
+
+    private void FillWaitingDeliveriesData(IReadOnlyCollection<IDelivery> allDeliveriesWithOrder)
+    {
+        waitingDeliveries = allDeliveriesWithOrder
+            .Where(d => d.Status == DeliveryStatus.Waiting)
+            .Select(d => new WaitingOrOnWayDeliveryInfo(d.Number, d.Courier, d.DeliverTime, d.Order.GetResultSum()))
+            .OrderBy(d => d.Courier == null ? string.Empty : d.Courier.Name)
+            .ToList();
+    }
+
+    private void FillOnWayDeliveriesData(IReadOnlyCollection<IDelivery> allDeliveriesWithOrder)
+    {
+        onWayDeliveries = allDeliveriesWithOrder
+            .Where(d => d.Status == DeliveryStatus.OnWay || d.Status == DeliveryStatus.Delivered)
+            .Select(d => new WaitingOrOnWayDeliveryInfo(d.Number, d.Courier, d.DeliverTime, d.Order.GetResultSum()))
+            .OrderBy(d => d.Courier == null ? string.Empty : d.Courier.Name)
+            .ThenBy(d => d.Number)
+            .ToList();
+
+        var allPaymentsByOnWayCouriers = allDeliveriesWithOrder
+            .Where(d => d.Status == DeliveryStatus.OnWay || d.Status == DeliveryStatus.Delivered)
+            .GroupBy(d => d.Courier)
+            .ToDictionary(g => g.Key, g => g.SelectMany(d => GetPaymentsInfoWithoutChange(d.Order)));
+
+        couriersInfoFromOnWayDeliveries = allPaymentsByOnWayCouriers
+            .ToDictionary(d => d.Key, d => d.Value.GroupBy(p => new { p.PaymentType, p.IsProcessedExternally, p.IsPrepay, p.DonationType, p.CurrencyName }))
+            .Select(d => new BaseCourierInfo(d.Key == null ? Resources.SelfService : d.Key.Name, d.Value.Concat().Sum(p => p.Sum),
+                d.Value.Select(g => new PaymentInfo(g.Key.PaymentType, g.Key.IsProcessedExternally, g.Sum(p => p.Sum), g.Key.IsPrepay, g.Key.DonationType, g.Key.CurrencyName)).OrderBy(p => p.PaymentType.Name).ToList()))
+            .OrderBy(courierInfo => courierInfo.Name)
+            .ToList();
+
+        paymentsInfoFromOnWayDeliveries = allPaymentsByOnWayCouriers
+            .SelectMany(d => d.Value)
+            .GroupBy(p => new { p.PaymentType, p.IsProcessedExternally, p.IsPrepay, p.DonationType, p.CurrencyName })
+            .Select(g => new PaymentInfo(g.Key.PaymentType, g.Key.IsProcessedExternally, g.Sum(p => p.Sum), g.Key.IsPrepay, g.Key.DonationType, g.Key.CurrencyName))
+            .OrderBy(courierInfo => courierInfo.PaymentType.Name)
+            .ToList();
+    }
+
+    private void FillClosedDeliveriesData(IReadOnlyCollection<IDelivery> allDeliveriesWithOrder)
+    {
+        if (!settings.GetBool("ShowClosedDeliveries"))
+        {
+            return;
+        }
+
+        closedDeliveries = allDeliveriesWithOrder
+            .Where(d => d.Status == DeliveryStatus.Closed)
+            .Select(d => new ClosedDeliveryInfo(d.Number, d.Courier, d.DeliverTime, d.Order.GetResultSum(), d.ActualTime.Value, d.Comment))
+            .OrderBy(d => d.ActualTime)
+            .ToList();
+
+        var allPaymentsFromClosedDeliveriesByCouriers = allDeliveriesWithOrder
+            .Where(d => d.Status == DeliveryStatus.Closed)
+            .GroupBy(cd => cd.Courier)
+            .ToDictionary(g => new
+            {
+                Name = g.Key == null ? Resources.SelfService : g.Key.Name,
+                AverageTimeDelay = TimeSpan.FromMinutes(g.Average(di => ClosedDeliveryInfo.GetCourierTimeDelay(di.ActualTime.Value, di.DeliverTime).TotalMinutes)),
+                ClosedDeliveriesCount = g.Count(),
+                TotalSum = g.Sum(di => di.Order.GetResultSum())
+            }, g => g.SelectMany(d => GetPaymentsInfoWithoutChange(d.Order)));
+
+        couriersInfoFromClosedDeliveries = allPaymentsFromClosedDeliveriesByCouriers
+            .ToDictionary(d => d.Key, d => d.Value.GroupBy(p => new { p.PaymentType, p.IsProcessedExternally, p.IsPrepay, p.DonationType, p.CurrencyName }))
+            .Select(d => new CourierInfo(d.Key.Name, d.Key.TotalSum, d.Key.ClosedDeliveriesCount, d.Key.AverageTimeDelay,
+                d.Value.Select(g => new PaymentInfo(g.Key.PaymentType, g.Key.IsProcessedExternally, g.Sum(p => p.Sum), g.Key.IsPrepay, g.Key.DonationType, g.Key.CurrencyName)).OrderBy(p => p.PaymentType.Name).ToList()))
+            .OrderBy(courierInfo => courierInfo.Name)
+            .ToList();
+
+        paymentsInfoFromClosedDeliveries = allPaymentsFromClosedDeliveriesByCouriers
+            .Select(d => d.Value).Concat()
+            .GroupBy(p => new { p.PaymentType, p.IsProcessedExternally, p.IsPrepay, p.DonationType, p.CurrencyName })
+            .Select(g => new PaymentInfo(g.Key.PaymentType, g.Key.IsProcessedExternally, g.Sum(p => p.Sum), g.Key.IsPrepay, g.Key.DonationType, g.Key.CurrencyName))
+            .OrderBy(courierInfo => courierInfo.PaymentType.Name)
+            .ToList();
+    }
+
+    private void FillCanceledDeliveriesData(IReadOnlyCollection<IDelivery> allDeliveriesWithOrder)
+    {
+        if (!settings.GetBool("ShowCancelledDeliveries"))
+        {
+            return;
+        }
+
+        var canceledDeliveriesInfo = allDeliveriesWithOrder
+            .Where(d => d.Status == DeliveryStatus.Cancelled)
+            .Select(di => new { di.CancelCause, ClosedOrder = di.Order })
+            .ToList();
+
+        canceledDeliveriesByCancelCause = canceledDeliveriesInfo
+            .GroupBy(di => di.CancelCause)
+            .OrderBy(g => g.Key)
+            .Select(g => new CanceledDeliveryInfo(g.Key, g.Count(), g.Select(di => di.ClosedOrder)
+                .Where(order => order != null)
+                .Sum(order => order.GetAllEntries()
+                    .Where(item => item.DeletionInfo != null)
+                        .Sum(item => item.Cost))))
+            .ToList();
+
+        var allCanceledDeliveriesEntries = canceledDeliveriesInfo
+            .Where(cdi => cdi.ClosedOrder != null)
+            .SelectMany(cdi => cdi.ClosedOrder.GetAllEntries().Where(item => item.DeletionInfo != null))
+            .ToList();
+
+        canceledDeliveriesDeletedEntriesWithWriteoffInfo = new DeletedEntriesInfo(
+            allCanceledDeliveriesEntries.Where(e => e.DeletionInfo.DeletionType != OrderEntryDeletionType.WithoutWriteoff).Sum(e => e.Amount),
+            allCanceledDeliveriesEntries.Where(e => e.DeletionInfo.DeletionType != OrderEntryDeletionType.WithoutWriteoff).Sum(e => e.Cost));
+
+        canceledDeliveriesDeletedEntriesWithNoWriteoffInfo = new DeletedEntriesInfo(
+            allCanceledDeliveriesEntries.Where(e => e.DeletionInfo.DeletionType == OrderEntryDeletionType.WithoutWriteoff).Sum(e => e.Amount),
+            allCanceledDeliveriesEntries.Where(e => e.DeletionInfo.DeletionType == OrderEntryDeletionType.WithoutWriteoff).Sum(e => e.Cost));
+    }
+
+    private void FillDeletedEntriesData(IReadOnlyCollection<IDelivery> allDeliveriesWithOrder)
+    {
+        var allDeliveriesAllDeletedEntries = allDeliveriesWithOrder
+            .Where(d => d.Status != DeliveryStatus.Cancelled)
+            .SelectMany(o => o.Order.GetAllEntries()
+                .Where(entry => entry.DeletionInfo != null)
+                .Select(entry => new
+                {
+                    WithWriteoff = entry.DeletionInfo.DeletionType != OrderEntryDeletionType.WithoutWriteoff,
+                    entry.Amount,
+                    Sum = entry.ExcludedVat + entry.Cost
+                }))
+            .ToList();
+
+        alldDeliveriesDeletedEntriesWithWriteoffInfo = new DeletedEntriesInfo(
+            allDeliveriesAllDeletedEntries.Where(e => e.WithWriteoff).Sum(e => e.Amount),
+            allDeliveriesAllDeletedEntries.Where(e => e.WithWriteoff).Sum(e => e.Sum));
+
+        allDeliveriesDeletedEntriesWithNoWriteoffInfo = new DeletedEntriesInfo(
+            allDeliveriesAllDeletedEntries.Where(e => !e.WithWriteoff).Sum(e => e.Amount),
+            allDeliveriesAllDeletedEntries.Where(e => !e.WithWriteoff).Sum(e => e.Sum));
+    }
+
+    private static decimal GetChangeSum(IOrder order)
+    {
+        if (!order.PaymentItems.Any(p => p.Type.CanDisplayChange))
+            return 0;
+
+        var paymentsWithChangeSum = order.PaymentItems.Where(p => p.Type.CanDisplayChange).Sum(p => p.Sum);
+        var paymentsWithoutChangeSum = order.PaymentItems.Where(p => !p.Type.CanDisplayChange).Sum(p => p.Sum);
+        return Math.Max(paymentsWithChangeSum - (order.GetResultSum() - order.PrePaymentItems.Sum(p => p.Sum) - paymentsWithoutChangeSum), 0);
+    }
+
+    private static IEnumerable<PaymentInfo> GetPaymentsInfoWithoutChange(IOrder order)
+    {
+        var change = GetChangeSum(order);
+        var paymentInfos = new List<PaymentInfo>();
+
+        if (change == 0)
+        {
+            paymentInfos.AddRange(order.PaymentItems.Select(p => new PaymentInfo(p.Type, p.IsProcessedExternally, p.CurrencyInfo != null ? p.CurrencyInfo.Sum : p.Sum, false, p.DonationType, p.CurrencyInfo != null ? p.CurrencyInfo.Currency.ShortNameForGui : null)));
+            paymentInfos.AddRange(order.PrePaymentItems.Select(p => new PaymentInfo(p.Type, p.IsProcessedExternally, p.CurrencyInfo != null ? p.CurrencyInfo.Sum : p.Sum, true, p.DonationType, p.CurrencyInfo != null ? p.CurrencyInfo.Currency.ShortNameForGui : null)));
+            paymentInfos.AddRange(order.Donations.Select(p => new PaymentInfo(p.Type, p.IsProcessedExternally, p.CurrencyInfo != null ? p.CurrencyInfo.Sum : p.Sum, false, p.DonationType, p.CurrencyInfo != null ? p.CurrencyInfo.Currency.ShortNameForGui : null)));
+            return paymentInfos;
+        }
+
+        // у предоплат нет сдачи
+        paymentInfos.AddRange(order.PrePaymentItems.Select(p => new PaymentInfo(p.Type, p.IsProcessedExternally, p.CurrencyInfo != null ? p.CurrencyInfo.Sum : p.Sum, true, p.DonationType, p.CurrencyInfo != null ? p.CurrencyInfo.Currency.ShortNameForGui : null)));
+        paymentInfos.AddRange(order.Donations.Select(p => new PaymentInfo(p.Type, p.IsProcessedExternally, p.CurrencyInfo != null ? p.CurrencyInfo.Sum : p.Sum, false, p.DonationType, p.CurrencyInfo != null ? p.CurrencyInfo.Currency.ShortNameForGui : null)));
+
+        var paymentWithChangeSum = order.PaymentItems.Where(p => p.Type.CanDisplayChange)
+            .Aggregate((pItem1, pItem2) => pItem1.Sum > pItem2.Sum ? pItem1 : pItem2);
+
+        paymentInfos.AddRange(order.PaymentItems.Select(p => p != paymentWithChangeSum
+            ? new PaymentInfo(
+                p.Type,
+                p.IsProcessedExternally,
+                p.CurrencyInfo != null
+                    ? p.CurrencyInfo.Sum
+                    : p.Sum,
+                false,
+                p.DonationType,
+                p.CurrencyInfo != null
+                    ? p.CurrencyInfo.Currency.ShortNameForGui
+                    : null)
+            : new PaymentInfo(
+                p.Type,
+                p.IsProcessedExternally,
+                p.CurrencyInfo != null
+                    ? GetSumInAdditionalCurrency(p.CurrencyInfo.Currency, p.CurrencyInfo.Rate, Math.Max(p.Sum - change, 0))
+                    : Math.Max(p.Sum - change, 0),
+                false,
+                p.DonationType,
+                p.CurrencyInfo != null
+                    ? p.CurrencyInfo.Currency.ShortNameForGui
+                    : null)));
+        return paymentInfos;
+    }
+
+    private class BaseCourierInfo
+    {
+        public readonly string Name;
+        public readonly decimal TotalSum;
+        public readonly ICollection<PaymentInfo> GroupedPaymentsInfo;
+
+        public BaseCourierInfo(string name, decimal totalSum, ICollection<PaymentInfo> groupedPaymentsInfo)
+        {
+            Name = name;
+            TotalSum = totalSum;
+            GroupedPaymentsInfo = groupedPaymentsInfo;
+        }
+    }
+
+    private sealed class CourierInfo : BaseCourierInfo
+    {
+        public readonly TimeSpan AverageTimeDelay;
+        public readonly int ClosedDeliveriesCount;
+
+        public CourierInfo(string name, decimal totalSum, int closedDeliveriesCount, TimeSpan averageTimeDelay, ICollection<PaymentInfo> groupedPaymentsInfo)
+            : base(name, totalSum, groupedPaymentsInfo)
+        {
+            ClosedDeliveriesCount = closedDeliveriesCount;
+            AverageTimeDelay = averageTimeDelay;
+        }
+    }
+
+    public class WaitingOrOnWayDeliveryInfo
+    {
+        public readonly int Number;
+        public readonly IUser Courier;
+        public readonly DateTime DateTime;
+        public readonly decimal OrderSum;
+
+        public WaitingOrOnWayDeliveryInfo(int number, IUser courier, DateTime dateTime, decimal orderSum)
+        {
+            Number = number;
+            Courier = courier;
+            OrderSum = orderSum;
+            DateTime = dateTime;
+        }
+    }
+
+    private sealed class ClosedDeliveryInfo : WaitingOrOnWayDeliveryInfo
+    {
+        public readonly DateTime ActualTime;
+        public readonly string Comment;
+
+        public ClosedDeliveryInfo(int deliveryNumber, IUser courier, DateTime dateTime, decimal orderSum, DateTime actualTime, string comment)
+            : base(deliveryNumber, courier, dateTime, orderSum)
+        {
+            ActualTime = actualTime;
+            Comment = comment;
+        }
+
+        public static TimeSpan GetCourierTimeDelay(DateTime actualTime, DateTime dateTime)
+        {
+            var timeSpan = actualTime - dateTime;
+            return timeSpan < TimeSpan.Zero ? TimeSpan.Zero : timeSpan;
+        }
+    }
+
+    private sealed class CanceledDeliveryInfo
+    {
+        public readonly string CancelCause;
+        public readonly int OrdersCount;
+        public readonly decimal Sum;
+
+        public CanceledDeliveryInfo(string cancelCause, int ordersCount, decimal sum)
+        {
+            Sum = sum;
+            OrdersCount = ordersCount;
+            CancelCause = cancelCause;
+        }
+    }
+
+    public sealed class DeletedEntriesInfo
+    {
+        public readonly decimal Amount;
+        public readonly decimal Sum;
+
+        public DeletedEntriesInfo(decimal amount, decimal sum)
+        {
+            Amount = amount;
+            Sum = sum;
+        }
+    }
+
+    public sealed class PaymentInfo
+    {
+        public readonly IPaymentType PaymentType;
+        public readonly bool IsProcessedExternally;
+        public readonly bool IsPrepay;
+        public readonly decimal Sum;
+        public readonly IDonationType DonationType;
+        public readonly string CurrencyName;
+
+        public PaymentInfo(IPaymentType paymentType, bool isExternal, decimal sum, bool isPrepay, IDonationType donationType, string currencyName)
+        {
+            PaymentType = paymentType;
+            IsProcessedExternally = isExternal;
+            Sum = sum;
+            IsPrepay = isPrepay;
+            DonationType = donationType;
+            CurrencyName = currencyName;
+        }
+    }
+}

@@ -1,0 +1,653 @@
+﻿@using System
+@using System.Collections.Generic
+@using System.Diagnostics
+@using System.Linq
+@using Resto.Front.PrintTemplates.Reports.TemplateModels
+@using Resto.Front.PrintTemplates.RmsEntityWrappers
+@using IOrder = Resto.Front.PrintTemplates.Reports.TemplateModels.IOrder
+
+@* 037 Опасные операции *@
+@inherits Resto.Front.PrintTemplates.Reports.TemplateBase
+@{
+    settings = Model.ReportSettings;
+    Debug.Assert(settings != null);
+    allEvents = Model.Entities.GetProblemOperationsEvents(settings.GetEnum("Scope") == "AllTerminals", settings.GetPeriodBegin(), settings.GetPeriodEnd()).ToList();
+}
+
+@if (!Model.IsOnlyBodyMarkupRequired)
+{
+    <doc formatter="split">
+        @Header()
+        @Body()
+        @Footer()
+    </doc>
+}
+else
+{
+    <doc formatter="split">
+        @Body()
+    </doc>
+}
+
+@helper Header()
+{
+    var terminalName = Model.CashRegister != null
+        ? string.Format(Resources.TerminalNumberNamePattern, Model.CashRegister.Number, Model.Group.Name)
+        : string.Format(Resources.TerminalNamePattern, Model.CurrentTerminal, Model.Group.Name);
+        
+    foreach (var headerLine in Model.CafeSetup.ReportHeader.Split(Environment.NewLine.ToCharArray()))
+    {
+        <left>
+            <whitespace-preserve>@headerLine</whitespace-preserve>
+        </left>
+    }
+    
+    <np />
+    <center>@Model.Name</center>
+    <np />
+    <pair fit="left" left="@Resources.HeadTerminal" right="@terminalName" /> 
+    
+    <pair left="@Resources.From" right="@FormatLongDateTime(settings.GetPeriodBegin())" />
+    <pair left="@Resources.To" right="@FormatLongDateTime(settings.GetPeriodEnd())" />
+    
+    <pair left="@Resources.HeadCurrentTime" right="@FormatLongDateTime(Model.CurrentTime)" />
+    <table>
+        <columns>
+            <column autowidth=""/>
+            <column align="right"/>
+        </columns>
+        <cells>
+            <ct>@Resources.HeadCurrentUser</ct>
+            <ct>@(Model.CurrentUser == null ? string.Empty : Model.CurrentUser.Name)</ct>
+        </cells>
+    </table> 
+}
+
+@helper Body()
+{
+    <np />
+    @GetMarkupForEvents()
+    <line symbols="-" />
+    <table>
+        <columns>
+            <column autowidth="" />
+            <column align="right" />
+        </columns>
+        <cells>
+            <ct>@Resources.TotalProblemOperationsCount</ct>
+            <ct>@allEvents.Count</ct>
+            <ct>@Resources.TheSumOf</ct>
+            <ct>@FormatPrice(TotalSum)</ct>
+        </cells>
+    </table>
+    <line symbols="-" />
+    <np />
+}
+
+@helper Footer()
+{
+    <np />
+    <center>
+        @string.Format(Resources.AllSumsInFormat, Model.CafeSetup.CurrencyName)
+    </center>
+    <np />
+}
+
+@helper GetMarkupForEvents()
+{
+    var deletedPrintedItems = GetEventsOfType<IDeletedPrintedItems>();
+    if (deletedPrintedItems.Any())
+    {
+        var sum = deletedPrintedItems.Sum(ev => ev.Sum.GetValueOrDefault());
+        TotalSum += sum;
+        @EventsGroupHeader(deletedPrintedItems.First().DisplayName)
+        @TableForDeletedItemsEvent(deletedPrintedItems, sum)
+        @EventsGroupFooter()
+    }
+
+    var deletedNewItems = GetEventsOfType<IDeletedNewItems>();
+    if (deletedNewItems.Any())
+    {
+        var sum = deletedNewItems.Sum(ev => ev.Sum.GetValueOrDefault());
+        TotalSum += sum;
+        @EventsGroupHeader(deletedNewItems.First().DisplayName)
+        @TableForDeletedItemsEvent(deletedNewItems, sum)
+        @EventsGroupFooter()
+    }
+
+    var deletedExternalPayment = GetEventsOfType<IDeletedExternalPayment>();
+    if (deletedExternalPayment.Any())
+    {
+        var sum = deletedExternalPayment.Sum(ev => ev.Sum.GetValueOrDefault());
+        TotalSum += sum;
+        @EventsGroupHeader(deletedExternalPayment.First().DisplayName)
+        @TableForDeletedExternalPaymentEvent(deletedExternalPayment, sum)
+        @EventsGroupFooter()
+    }
+
+    var orderReturned = GetEventsOfType<IOrderReturned>();
+    if (orderReturned.Any())
+    {
+        var sum = orderReturned.Sum(ev => ev.OrderSumAfterDiscount.GetValueOrDefault());
+        TotalSum += sum;
+        @EventsGroupHeader(orderReturned.First().DisplayName)
+        @TableForOrderEvents(orderReturned, sum)
+        @EventsGroupFooter()
+    }
+
+    var exceedLimit = GetEventsOfType<IExceedLimit>();
+    if (exceedLimit.Any())
+    {
+        var sum = exceedLimit.Sum(ev => ev.Sum.GetValueOrDefault());
+        TotalSum += sum;
+        @EventsGroupHeader(exceedLimit.First().DisplayName)
+        @TableForOrderEvents(exceedLimit, sum)
+        @EventsGroupFooter()
+    }
+    
+    var lessThanLimit = GetEventsOfType<ILessThanLimit>();
+    if (lessThanLimit.Any())
+    {
+        var sum = lessThanLimit.Sum(ev => ev.Sum.GetValueOrDefault());
+        TotalSum += sum;
+        @EventsGroupHeader(lessThanLimit.First().DisplayName)
+        @TableForOrderEvents(lessThanLimit, sum)
+        @EventsGroupFooter()
+    }
+    
+    var orderCancelPrecheque = GetEventsOfType<IOrderCancelPrecheque>();
+    if (orderCancelPrecheque.Any())
+    {
+        var sum = orderCancelPrecheque.Sum(ev => ev.Sum.GetValueOrDefault());
+        TotalSum += sum;
+        @EventsGroupHeader(orderCancelPrecheque.First().DisplayName)
+        @TableForOrderEvents(orderCancelPrecheque, sum)
+        @EventsGroupFooter()
+    }
+
+    var substitutionCardRegistered = GetEventsOfType<ISubstitutionCardRegistered>();
+    if (substitutionCardRegistered.Any())
+    {
+        @EventsGroupHeader(substitutionCardRegistered.First().DisplayName)
+        @TableForSubstitutionCards(substitutionCardRegistered)
+        @EventsGroupFooter()
+    }
+
+    var deliveryOrderCreatedToBlackListUser = GetEventsOfType<IDeliveryOrderCreatedToBlackListUser>();
+    if (deliveryOrderCreatedToBlackListUser.Any())
+    {
+        var sum = deliveryOrderCreatedToBlackListUser.Sum(ev => ev.DeliverySum.GetValueOrDefault());
+        TotalSum += sum;
+        @EventsGroupHeader(deliveryOrderCreatedToBlackListUser.First().DisplayName)
+        @TableForDeliveryEvents(deliveryOrderCreatedToBlackListUser, sum)
+        @EventsGroupFooter()
+    }
+
+    var inactivePriceListDocumentApplied = GetEventsOfType<IInactivePriceListDocumentApplied>();
+    if (inactivePriceListDocumentApplied.Any())
+    {
+        var sum = inactivePriceListDocumentApplied.Sum(ev => ev.Sum.GetValueOrDefault());
+        TotalSum += sum;
+        @EventsGroupHeader(inactivePriceListDocumentApplied.First().DisplayName)
+        @TableForInactivePriceListDocumentApplied(inactivePriceListDocumentApplied)
+        @EventsGroupFooter()
+    }
+
+    var changedOrderGuestCount = GetEventsOfType<IChangedOrderGuestCount>();
+    if (changedOrderGuestCount.Any())
+    {
+        @EventsGroupHeader(changedOrderGuestCount.First().DisplayName)
+        @TableForChangedOrderGuestCount(changedOrderGuestCount)
+        @EventsGroupFooter()
+    }
+
+    var changedReserveGuestCount = GetEventsOfType<IChangedReserveGuestCount>();
+    if (changedReserveGuestCount.Any())
+    {
+        @EventsGroupHeader(changedReserveGuestCount.First().DisplayName)
+        @TableForChangedReserveGuestCount(changedReserveGuestCount)
+        @EventsGroupFooter()
+    }
+
+    var productCookEdit = GetEventsOfType<IProductCookEdit>();
+    if (productCookEdit.Any())
+    {
+        @EventsGroupHeader(productCookEdit.First().DisplayName)
+        @TableForProductCookEdit(productCookEdit)
+        @EventsGroupFooter()
+    }
+
+    var returnProductsChequePrint = GetEventsOfType<IReturnProductsChequePrint>();
+    if (returnProductsChequePrint.Any())
+    {
+        var sum = returnProductsChequePrint.Sum(ev => ev.OrderSumAfterDiscount.GetValueOrDefault());
+        TotalSum += sum;
+        @EventsGroupHeader(returnProductsChequePrint.First().DisplayName)
+        @TableForReturnProductsChequePrintEvents(returnProductsChequePrint, sum)
+        @EventsGroupFooter()
+    }
+}
+
+@helper EventsGroupHeader(string groupName)
+{
+  <left>@groupName</left>
+  <line symbols="-" />
+}
+
+@helper EventsGroupFooter()
+{
+  <np />
+  <np />
+}
+
+@helper TableForDeletedItemsEvent(IEnumerable<IDishesGroup> events, decimal sum)
+{
+    <table>
+        <columns>
+            <column autowidth="" />
+            <column autowidth="" />
+            <column formatter="split"/>
+            <column align="right" autowidth="" />
+        </columns>
+        <cells>
+            <ct>@Resources.TimeColumn</ct>
+            <ct>@Resources.OrderColumn</ct>
+            <ct>@Resources.EmployeeTitle</ct>
+            <ct>@Resources.SumTitle</ct>
+            <linecell symbols="-" />
+            @foreach (var ev in events.OrderBy(e => e.DateTime))
+            {
+                <ct>@FormatTime(ev.DateTime)</ct>
+                <ct>@(ev.OrderNum ?? 0)</ct>
+                <ct>@(ev.Waiter != null ? ev.Waiter.Name : Resources.UnknownUser)</ct>
+                <ct>@FormatPrice(ev.Sum ?? 0)</ct>
+                if (!string.IsNullOrEmpty(ev.Comment))
+                {
+                    <c />
+                    <c colspan="3">@ev.Comment</c>
+                }
+                <c />
+                <c colspan="3">@ev.Reason</c>
+                <c />
+                <c colspan="3">@ev.Dishes</c>
+            }
+            <linecell symbols="-" />
+            <c colspan="3">@Resources.Total</c>
+            <ct>@FormatPrice(sum)</ct>
+        </cells>
+    </table>    
+}
+
+@helper TableForDeletedExternalPaymentEvent(IEnumerable<IDeletedExternalPayment> events, decimal sum)
+{
+    <table>
+        <columns>
+            <column autowidth="" />
+            <column autowidth="" />
+            <column formatter="split"/>
+            <column align="right" autowidth="" />
+        </columns>
+        <cells>
+            <ct>@Resources.TimeColumn</ct>
+            <ct>@Resources.OrderColumn</ct>
+            <ct>@Resources.EmployeeTitle</ct>
+            <ct>@Resources.SumTitle</ct>
+            <linecell symbols="-" />
+            @foreach (var ev in events.OrderBy(e => e.DateTime))
+            {
+                <ct>@FormatTime(ev.DateTime)</ct>
+                <ct>@(ev.OrderNum ?? 0)</ct>
+                <ct>@(ev.Waiter != null ? ev.Waiter.Name : Resources.UnknownUser)</ct>
+                <ct>@FormatPrice(ev.Sum ?? 0)</ct>
+            }
+            <linecell symbols="-" />
+            <c colspan="3">@Resources.Total</c>
+            <ct>@FormatPrice(sum)</ct>
+        </cells>
+    </table>
+}
+
+@helper TableForOrderEvents(IEnumerable<IOrdersGroup> events, decimal sum)
+{
+    <table>
+        <columns>
+            <column autowidth="" />
+            <column autowidth="" />
+            <column formatter="split"/>
+            <column align="right" autowidth="" />
+        </columns>
+        <cells>
+            <ct>@Resources.TimeColumn</ct>
+            <ct>@Resources.OrderColumn</ct>
+            <ct>@Resources.EmployeeTitle</ct>
+            <ct>@Resources.SumTitle</ct>
+            <linecell symbols="-" />
+            @foreach (var ev in events.OrderBy(e => e.DateTime))
+            {
+                <ct>@FormatTime(ev.DateTime)</ct>
+                <ct>@(ev.OrderNum ?? 0)</ct>
+                <ct>@(ev.Waiter != null ? ev.Waiter.Name : Resources.UnknownUser)</ct>
+                <ct>@FormatPrice(ev.OrderSumAfterDiscount ?? 0)</ct>
+                <c />
+                <ct>@Resources.AuthTitle</ct>
+                @GetAuthCell(ev.Auth)
+                @GetPercentMarkupIfExists(ev)
+                <linecell symbols=" " />
+            }
+            <linecell symbols="-" />
+            <c colspan="3">@Resources.Total</c>
+            <ct>@FormatPrice(sum)</ct>
+        </cells>
+    </table>
+}
+
+@helper TableForReturnProductsChequePrintEvents(IEnumerable<IReturnProductsChequePrint> events, decimal sum)
+{
+    <table>
+        <columns>
+            <column autowidth="" />
+            <column autowidth="" />
+            <column formatter="split"/>
+            <column align="right" autowidth="" />
+        </columns>
+        <cells>
+            <ct>@Resources.TimeColumn</ct>
+            <ct>@Resources.OrderColumn</ct>
+            <ct>@Resources.EmployeeTitle</ct>
+            <ct>@Resources.SumTitle</ct>
+            <linecell symbols="-" />
+            @foreach (var ev in events.OrderBy(e => e.DateTime))
+            {
+                <ct>@FormatTime(ev.DateTime)</ct>
+                <ct>@(ev.OrderNum ?? 0)</ct>
+                <ct>@(ev.Waiter != null ? ev.Waiter.Name : Resources.UnknownUser)</ct>
+                <ct>@FormatPrice(ev.OrderSumAfterDiscount ?? 0)</ct>
+                <c />
+                <ct>@Resources.AuthTitle</ct>
+                @GetAuthCell(ev.Auth)
+                @GetPercentMarkupIfExists(ev)
+                if (!string.IsNullOrEmpty(ev.Comment))
+                {
+                    <c />
+                    <c colspan="3">@ev.Comment</c>
+                }
+				<linecell symbols=" " />
+            }
+            <linecell symbols="-" />
+            <c colspan="3">@Resources.Total</c>
+            <ct>@FormatPrice(sum)</ct>
+        </cells>
+    </table>
+}
+
+@helper TableForSubstitutionCards(IEnumerable<ISubstitutionCardRegistered> events)
+{
+    <table>
+        <columns>
+            <column autowidth="" />
+            <column autowidth="" />
+            <column formatter="split"/>
+            <column autowidth="" />
+        </columns>
+        <cells>
+            <ct>@Resources.TimeColumn</ct>
+            <c colspan="2">@Resources.EmployeeTitle</c>
+            <ct>@Resources.SubstitutionCardNumber</ct>
+            <linecell symbols="-" />
+            @foreach (var ev in events.OrderBy(op => op.DateTime))
+            {
+                <ct>@FormatTime(ev.DateTime)</ct>
+                <c colspan="2">@string.Format(Resources.SubstitutionCardRecipientNameAndRoleFormat, ev.Employee.Name, ev.RoleName)</c>
+                <ct>@ev.CardNumber</ct>
+                <c />
+                <c colspan="3">@string.Format(Resources.AuthTitleWithSubstitutionCardRecipientNameFormat, ev.Auth.Name)</c>
+                if (!string.IsNullOrEmpty(ev.Reason))
+                {
+                    <c />
+                    <c colspan="3">@ev.Reason</c>
+                }
+            }
+        </cells>
+    </table>
+}
+
+@helper TableForDeliveryEvents(IEnumerable<IDeliveryOrderCreatedToBlackListUser> events, decimal sum)
+{
+    <table>
+        <columns>
+            <column autowidth="" />
+            <column autowidth="" />
+            <column formatter="split"/>
+            <column formatter="split"/>
+            <column align="right" autowidth="" />
+        </columns>
+        <cells>
+            <ct>@Resources.TimeColumn</ct>
+            <ct>@Resources.NumberColumn</ct>
+            <ct>@Resources.EmployeeTitle</ct>
+            <ct>@Resources.CustomerFromBlackListColumn</ct>
+            <ct>@Resources.SumTitle</ct>
+            <linecell symbols="-" />
+            @foreach (var ev in events.OrderBy(op => op.DateTime))
+            {
+                <ct>@FormatTime(ev.DateTime)</ct>
+                <ct>@ev.DeliveryNumber</ct>
+                <ct>@ev.DeliveryOperator</ct>
+                <ct>@ev.DeliveryCustomer</ct>
+                <ct>@FormatPrice(ev.DeliverySum ?? 0)</ct>
+            }
+            <linecell symbols="-" />
+            <c colspan="4">@Resources.Total</c>
+            <ct>@FormatPrice(sum)</ct>
+        </cells>
+    </table>
+}
+
+@helper TableForInactivePriceListDocumentApplied(IEnumerable<IInactivePriceListDocumentApplied> events)
+{
+    events = events.Where(ev => ev.Order != null).ToList();
+    var orderDiffSumByEvent = CollectOrdersDiffSum(events);
+    
+    <table>
+        <columns>
+            <column formatter="split"/>
+            <column align="right" autowidth="" />
+            <column align="right" autowidth="" />
+        </columns>
+        <cells>
+            @foreach (var orderGroup in events.GroupBy(op => op.Order))
+            {
+                <c colspan="2">@(orderGroup.Key.CloseInfo != null ? FormatLongDateTime(orderGroup.Key.CloseInfo.Time) : string.Empty)</c>
+                <ct>@string.Format(Resources.OrderLabelFormat, orderGroup.Key.Number)</ct>
+                <linecell symbols="-" />
+                <ct>@Resources.DishTitle</ct>
+                <ct>@Resources.AmountWithPriceTitle</ct>
+                <ct>@Resources.SumTitle</ct>
+                <linecell symbols="-" />
+
+                foreach (var priceListName in orderGroup.GroupBy(o => o.InactivePriceListDocumentName))
+                {
+                    foreach (var user in priceListName.GroupBy(p => p.User))
+                    {
+                        <c colspan="2">@string.Format(Resources.PriceListDocumentNameFormat, priceListName.Key)</c>
+                        <ct>@string.Format(Resources.AuthNameFormat, user.Key.Name)</ct>
+                        foreach (var e in user.Where(e => e.Sum.HasValue && e.RowCount.HasValue))
+                        {
+                            <ct>@e.Dishes</ct>
+                            <ct>@FormatAmountAndPrice(e.RowCount.Value, e.Sum.Value / e.RowCount.Value)</ct>
+                            <ct>@FormatPrice(e.Sum.Value)</ct>
+                        }
+                        <linecell symbols="-" />
+                    }
+                }
+                <c colspan="2">@Resources.OrderDiffSum</c>
+                <ct>@FormatPrice(orderDiffSumByEvent[orderGroup.Key])</ct>
+                <linecell symbols="-" />
+            }
+            <c colspan="2">@Resources.TotalByOrdersDiffSumReport</c>
+            <ct>@FormatPrice(orderDiffSumByEvent.Values.Sum())</ct>
+        </cells>
+    </table>
+}
+
+@helper TableForChangedOrderGuestCount(IEnumerable<IChangedOrderGuestCount> events)
+{
+    <table>
+        <columns>
+            <column autowidth="" />
+            <column autowidth="" />
+            <column formatter="split"/>
+            <column align="right" autowidth="" />
+        </columns>
+        <cells>
+            <ct>@Resources.TimeColumn</ct>
+            <ct>@Resources.OrderColumn</ct>
+            <ct>@Resources.EmployeeTitle</ct>
+            <ct>@Resources.Guests</ct>
+            <linecell symbols="-" />
+            @foreach (var ev in events.OrderBy(e => e.DateTime))
+            {
+                <ct>@FormatTime(ev.DateTime)</ct>
+                <ct>@(ev.OrderNum ?? 0)</ct>
+                <ct>@(ev.Waiter != null ? ev.Waiter.Name : Resources.UnknownUser)</ct>
+                <ct>@(ev.NumGuests ?? 0)</ct>
+                <c />
+                <ct>@Resources.AuthTitle</ct>
+                @GetAuthCell(ev.Auth)
+                <c />
+                <c colspan="3">@ev.Comment</c>
+            }
+        </cells>
+    </table>
+}
+
+@helper TableForChangedReserveGuestCount(IEnumerable<IChangedReserveGuestCount> events)
+{
+    <table>
+        <columns>
+            <column autowidth="" />
+            <column autowidth="" />
+            <column formatter="split"/>
+            <column align="right" autowidth="" />
+        </columns>
+        <cells>
+            <ct>@Resources.TimeColumn</ct>
+            <ct>@Resources.Reserve</ct>
+            <ct>@Resources.EmployeeTitle</ct>
+            <ct>@Resources.Guests</ct>
+            <linecell symbols="-" />
+            @foreach (var ev in events.OrderBy(e => e.DateTime))
+            {
+                <ct>@FormatTime(ev.DateTime)</ct>
+                <ct>@(ev.Reserve != null ? ev.Reserve.Number : 0)</ct>
+                <c />
+                <ct>@(ev.NumGuests ?? 0)</ct>
+                <c />
+                <ct>@Resources.AuthTitle</ct>
+                @GetAuthCell(ev.Auth)
+                <c />
+                <c colspan="3">@ev.Comment</c>
+            }
+        </cells>
+    </table>
+}
+
+@helper TableForProductCookEdit(IEnumerable<IProductCookEdit> events)
+{
+    <table>
+        <columns>
+            <column align="left" formatter="split"/>
+            <column align="right" formatter="split"/>
+        </columns>
+        <cells>
+            <ct>@Resources.CookedByColumn</ct>
+            <ct>@Resources.EditedByColumn</ct>
+            <linecell />
+            @foreach (var cookEdit in events)
+            {
+                <ct>@cookEdit.CookedBy.Name</ct>
+                <ct>@cookEdit.User.Name</ct>
+                <ct>@string.Format("{0} {1}", FormatTime(cookEdit.CookTime), FormatDate(cookEdit.CookTime))</ct>
+                <ct>@string.Format("{0} {1}", FormatTime(cookEdit.DateTime), FormatDate(cookEdit.DateTime))</ct>
+                <c colspan="2"><center>@cookEdit.Product.Name</center></c>
+                <ct>@string.Format("{0} {1}.", FormatAmount(cookEdit.OldAmount), cookEdit.Product.MeasuringUnit.Name)</ct>
+                <ct>
+                    @string.Format("{0} {1} {2}. = {3} {2}.",
+                    cookEdit.OldAmount > cookEdit.NewAmount ? "-" : "+",
+                    Math.Abs(cookEdit.OldAmount - cookEdit.NewAmount),
+                    cookEdit.Product.MeasuringUnit.Name,
+                    cookEdit.NewAmount)
+                </ct>
+                <linecell />
+            }
+            <ct>@Resources.TotalOperations</ct>
+            <ct>@events.Count()</ct>
+        </cells>
+    </table>
+}
+
+@helper GetPercentMarkupIfExists(IOrdersGroup orderEvent)
+{
+    var percent = 0m;
+    if (orderEvent is IOrderReturned || orderEvent is IOrderCancelPrecheque || orderEvent is IExceedLimit)
+    {
+        percent = orderEvent.Percent.GetValueOrDefault();
+    }
+    if (percent != 0m)
+    {
+        <c></c>
+        <c>@Resources.PlainSum</c>
+        <c colspan="2">@FormatPrice(Math.Abs(orderEvent.Sum.GetValueOrDefault()))</c>
+        <c></c>
+        <c>@(percent > 0 ? Resources.Discount : Resources.Increase)</c>
+        <c colspan="2">@FormatPercent(Math.Abs(percent))</c>
+    }
+}
+
+@helper GetAuthCell(IUser user)
+{
+    if (user == null)
+    {
+        <c colspan="2">@Resources.AuthCellNoAuthText</c>
+        return;
+    }
+    if (string.IsNullOrEmpty(user.Card))
+    {
+        <c colspan="2">@string.Format(Resources.AuthCellNoCardFormat, user.Name)</c>
+        return;
+    }
+    <c colspan="2">@string.Format(Resources.AuthCellFormat, user.Name, GetMaskedCardNumber(user.Card))</c>
+}
+
+@functions
+{
+    private ISettings settings;
+    private List<ICommonGroup> allEvents;
+    private decimal TotalSum;
+
+    private List<T> GetEventsOfType<T>() where T : ICommonGroup
+    {
+        return allEvents.OfType<T>().ToList();
+    }
+
+    private static string GetMaskedCardNumber(string card)
+    {
+        if (string.IsNullOrEmpty(card))
+            return string.Empty;
+        return card.Length > 3 ? card.Substring(card.Length - 3) : card;
+    }
+
+    private static IDictionary<IOrder, decimal> CollectOrdersDiffSum(IEnumerable<IInactivePriceListDocumentApplied> events)
+    {
+        if (events == null)
+            throw new ArgumentNullException("events");
+
+        return events
+            .GroupBy(ev => ev.Order)
+            .ToDictionary(
+                group => group.Key,
+                group => group
+                    .Where(ev => ev.Sum.HasValue && ev.RowCount.HasValue && ev.PriceBefore.HasValue)
+                    .Sum(ev => (ev.Sum.Value / ev.RowCount.Value - ev.PriceBefore.Value) * ev.RowCount.Value));
+    }
+}

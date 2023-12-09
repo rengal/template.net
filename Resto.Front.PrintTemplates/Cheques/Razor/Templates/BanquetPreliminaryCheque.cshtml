@@ -1,0 +1,455 @@
+﻿@using System
+@using System.Collections.Generic
+@using System.Linq
+@using Resto.Front.PrintTemplates.Cheques.Razor
+@using Resto.Front.PrintTemplates.Cheques.Razor.TemplateModels
+
+@inherits TemplateBase<IBanquetPreliminaryCheque>
+@{
+    var banquet = Model.Banquet;
+    var order = banquet.Order;
+    if (order == null)
+    {
+        throw new InvalidOperationException("Banquet's order cannot be null.");
+    }
+}
+
+<doc>
+    <f2><center>@string.Format(Resources.BanquetNumberServiceChequeHeaderTemplate, banquet.Number)</center></f2>
+    <np />
+
+    @if (!string.IsNullOrWhiteSpace(order.ExternalNumber))
+    {
+        <left>@string.Format(Resources.BillHeaderOrderExternalNumberPattern, order.ExternalNumber)</left>
+    }
+
+    <pair left="@Resources.BanquetStartDate" right="@string.Format(Resources.BanquetStartDateFormat, banquet.StartTime)" />
+    <left>@Capitalize(string.Format(Resources.BanquetStartDayOfWeekFormat, banquet.StartTime))</left>
+    <pair left="@Resources.BanquetStartTime" right="@string.Format(Resources.BanquetStartTimeFormat, banquet.StartTime)" />
+    <np />
+
+    <table>
+        <columns>
+            <column align="left" autowidth="" />
+            <column align="left" />
+        </columns>
+        <cells>
+            <ct>@Resources.CreatedColon</ct>
+            <ct>@order.OpenTime.ToString("HH:mm dd.MM.yyyy")</ct>
+            <ct>@Resources.ModifiedColon</ct>
+            <ct>@((banquet.LastModifiedTime > order.LastModifiedTime ? banquet.LastModifiedTime : order.LastModifiedTime).ToString("HH:mm dd.MM.yyyy"))</ct>
+        </cells>
+    </table>
+    <np />
+    <pair fit="left" left="@Resources.ClientFullName" right="@banquet.Customer.NameSurname()" />
+    <pair fit="left" left="@Resources.ClientPhone" right="@banquet.Phone" />
+    <pair left="@Resources.BanquetEndTime" right="@string.Format(Resources.BanquetEndTimeFormat, banquet.StartTime + banquet.Duration)" />
+    <pair left="@Resources.BanquetGuestCount" right="@banquet.GuestsCount" />
+    <pair fit="left" left="@Resources.BanquetTables" right="@GetTablesText(banquet)" />
+    
+    @if (!string.IsNullOrWhiteSpace(banquet.ActivityType))
+    {
+        <pair fit="left" left="@Resources.BanquetType" right="@banquet.ActivityType" />
+    }
+    @if (!string.IsNullOrWhiteSpace(banquet.Comment))
+    {
+        <left>@Resources.BanquetComments</left>
+        <left>@banquet.Comment</left>
+    }
+    <np />
+
+    <left>@Resources.PreliminaryOrder</left>
+    <line symbols="-" />
+    <table>
+        <columns>
+            <column autowidth="" />
+            <column width="3" />
+            <column />
+            <column width="1" />
+            <column align="right" autowidth="" />
+        </columns>
+        <cells>
+            @Guests(order)
+        </cells>
+    </table>
+
+    <line symbols="-" />
+    @Summaries(order)
+    <np />
+</doc>
+
+@helper Guests(IOrder order)
+{
+    var guestsWithItems = order.Table.Section.DisplayGuests
+        ? order.Guests
+            .Select(guest => new { Guest = guest, Items = guest.Items.Where(orderItem => orderItem.DeletionInfo == null) })
+            .Where(guestWithItems => guestWithItems.Items.Any())
+            .ToList()
+        : EnumerableEx.Return(new { Guest = order.Guests.FirstOrDefault(), Items = order.Guests.SelectMany(g => g.Items.Where(orderItem => orderItem.DeletionInfo == null)) })
+            .Where(guestWithItems => guestWithItems.Items.Any())
+            .ToList();
+
+    foreach (var guestWithItems in guestsWithItems)
+    {
+        if (guestsWithItems.Count > 1)
+        {
+            <c colspan="3">@guestWithItems.Guest.Name</c>
+            <c colspan="2" />
+        }
+        
+        foreach (var orderItemGroup in guestWithItems.Items.GroupBy(_ => _, CreateComparer<IOrderItem>(AreOrderItemsEqual)))
+        {
+            var productItem = orderItemGroup.Key as IProductItem;
+            if (productItem != null && productItem.CompoundsInfo != null && productItem.CompoundsInfo.IsPrimaryComponent)
+            {
+                <c colspan="2"/>
+                <c colspan="3">@string.Format("{0} {1}", productItem.CompoundsInfo.ModifierSchemaName, productItem.ProductSize == null ? string.Empty : productItem.ProductSize.Name)</c>
+
+                // для разделенной пиццы комменты печатаем под схемой
+                if (order.Table.Section.PrintProductItemCommentInCheque && productItem.Comment != null && !productItem.Comment.Deleted)
+                {
+                    <c colspan="2" />
+                    <c>
+                        <table cellspacing="0">
+                            <columns>
+                                <column width="2" />
+                                <column />
+                            </columns>
+                            <cells>
+                                <c />
+                                <c><split>@productItem.Comment.Text</split></c>
+                            </cells>
+                        </table>
+                    </c>
+                    <c colspan="2" />
+                }
+
+                // у пиццы не может быть удаленных модификаторов, поэтому берем весь список
+                foreach (var orderEntry in productItem.ModifierEntries.Where(orderEntry => ModifiersFilter(orderEntry, productItem, true)))
+                {
+                    var productName = orderEntry.ProductCustomName ?? orderEntry.Product.Name;
+                    @Item(productName, orderEntry.Amount, orderEntry.Cost)
+                    @CategorizedDiscountsForOrderEntryGroup(order, new[] { orderEntry })
+                }
+            }
+            
+            @Item(GetOrderEntryNameWithProductSize(orderItemGroup.Key), orderItemGroup.Sum(orderItem => orderItem.Amount), orderItemGroup.Sum(orderItem => orderItem.Cost))
+            @CategorizedDiscountsForOrderEntryGroup(order, orderItemGroup.ToList<IOrderEntry>())
+
+            // здесь комменты для обычных блюд и целых пицц
+            if (order.Table.Section.PrintProductItemCommentInCheque && productItem != null && productItem.Comment != null && !productItem.Comment.Deleted && productItem.CompoundsInfo == null)
+            {
+                <c colspan="2" />
+                <c>
+                    <table cellspacing="0">
+                        <columns>
+                            <column width="2" />
+                            <column />
+                        </columns>
+                        <cells>
+                            <c />
+                            <c><split>@productItem.Comment.Text</split></c>
+                        </cells>
+                    </table>
+                </c>
+                <c colspan="2" />
+            }
+
+            foreach (var child in orderItemGroup.Key.GetNotDeletedChildren().Where(child => ModifiersFilter(child, orderItemGroup.Key)).ToList())
+            {
+                var productName = child.ProductCustomName ?? child.Product.Name;
+                @Item(productName, child.Amount, child.Cost)
+                @CategorizedDiscountsForOrderEntryGroup(order, new[] { child })
+            }
+        }
+        
+        if (guestsWithItems.Count > 1)
+        {
+            <c colspan="4" />
+            <c><line /></c>
+
+            var includedEntries = guestWithItems.Items.SelectMany(item => item.ExpandIncludedEntries()).ToList();
+
+            var total = includedEntries.Sum(orderEntry => orderEntry.Cost);
+            var totalWithoutCategorizedDiscounts = total - (from orderEntry in includedEntries
+                                                            from discountItem in order.DiscountItems
+                                                            where discountItem.IsCategorized
+                                                            select discountItem.GetDiscountSumFor(orderEntry)).Sum();
+                                                            
+            var totalWithoutDiscounts = totalWithoutCategorizedDiscounts - (from orderEntry in includedEntries
+                                                                            from discountItem in order.DiscountItems
+                                                                            where !discountItem.IsCategorized
+                                                                            select discountItem.GetDiscountSumFor(orderEntry)).Sum();
+
+            if (totalWithoutCategorizedDiscounts != totalWithoutDiscounts)
+            {
+                <c colspan="4">@Resources.BillFooterTotalPlain</c>
+                <ct>@FormatMoney(totalWithoutCategorizedDiscounts)</ct>
+  
+                var nonCategorizedDiscounts = from discountItem in order.DiscountItems
+                                              where !discountItem.IsCategorized
+                                              let discountSum = includedEntries.Sum(orderEntry => discountItem.GetDiscountSumFor(orderEntry))
+                                              select new
+                                              {
+                                                  IsDiscount = discountSum > 0m,
+                                                  Sum = Math.Abs(discountSum),
+                                                  Percent = Math.Abs(CalculatePercent(includedEntries.Sum(entry => entry.Cost), discountSum)),
+                                                  Name = discountItem.Type.PrintableName,
+                                                  discountItem.Type.DiscountBySum
+                                              } into discount
+                                              orderby discount.IsDiscount descending
+                                              select discount;
+
+                foreach (var nonCategorizedDiscount in nonCategorizedDiscounts)
+                {
+                    <c colspan="4">
+                        @(nonCategorizedDiscount.DiscountBySum
+                            ? GetFormattedDiscountDescriptionShort(nonCategorizedDiscount.IsDiscount, nonCategorizedDiscount.Name)
+                            : GetFormattedDiscountDescriptionDetailed(nonCategorizedDiscount.IsDiscount, nonCategorizedDiscount.Name, nonCategorizedDiscount.Percent))
+                    </c>
+                    <ct>@GetFormattedDiscountSum(nonCategorizedDiscount.IsDiscount, nonCategorizedDiscount.Sum)</ct>
+                }
+            }
+
+            <c colspan="4">@string.Format(Resources.BillFooterTotalGuestPattern, guestWithItems.Guest.Name)</c>
+            <ct>@FormatMoney(totalWithoutDiscounts)</ct>
+            <linecell symbols=" " />
+        }
+    }
+}
+
+@helper Item(string name, decimal amount, decimal cost)
+{
+    <ct>@FormatAmount(amount)</ct>
+    <c><whitespace-preserve>@Resources.BillMultiplier</whitespace-preserve></c>
+    <c><split>@name</split></c>
+    <c />
+    <ct>@(cost == 0m ? string.Empty : FormatMoney(cost))</ct>
+}
+
+@helper CategorizedDiscountsForOrderEntryGroup(IOrder order, ICollection<IOrderEntry> entries)
+{
+    var orderEntry = entries.First();
+    if (orderEntry.Price != 0m)
+    {
+        var categorizedDiscounts = from discountItem in order.DiscountItems
+                                   where discountItem.IsCategorized &&
+                                   discountItem.PrintDetailedInPrecheque
+                                   let discountSum = entries.Sum(entry => discountItem.GetDiscountSumFor(entry))
+                                   where discountSum != 0m
+                                   select new
+                                   {
+                                       IsDiscount = discountSum > 0m,
+                                       Sum = Math.Abs(discountSum),
+                                       Percent = Math.Abs(CalculatePercent(entries.Sum(entry => entry.Cost), discountSum)),
+                                       Name = discountItem.Type.PrintableName,
+                                       discountItem.Type.DiscountBySum
+                                   } into discount
+                                   orderby discount.IsDiscount descending
+                                   select discount;
+
+        foreach (var categorizedDiscount in categorizedDiscounts)
+        {
+            <ct />
+            <c colspan="3"><whitespace-preserve>@GetFormattedDiscountDescriptionForOrderItem(categorizedDiscount.IsDiscount, categorizedDiscount.Name, categorizedDiscount.DiscountBySum, categorizedDiscount.Percent)</whitespace-preserve></c>
+            <ct>@GetFormattedDiscountSum(categorizedDiscount.IsDiscount, categorizedDiscount.Sum)</ct>
+        }
+    }
+}
+
+@helper Summaries(IOrder order)
+{
+    var fullSum = order.GetFullSum();
+
+    var categorizedDiscountItems = new List<IDiscountItem>();
+    var nonCategorizedDiscountItems = new List<IDiscountItem>();
+    foreach (var discountItem in order.DiscountItems.Where(di => di.DiscountSums.Count > 0))
+    {
+        if (discountItem.IsCategorized)
+        {
+            categorizedDiscountItems.Add(discountItem);
+        }
+        else
+        {
+            nonCategorizedDiscountItems.Add(discountItem);
+        }
+    }
+
+    var fullSumWithoutCategorizedDiscounts = fullSum - categorizedDiscountItems.Sum(di => di.GetDiscountSum());
+    var fullSumWithoutDiscounts = fullSumWithoutCategorizedDiscounts - nonCategorizedDiscountItems.Sum(di => di.GetDiscountSum());
+    var prepay = order.PrePayments.Sum(prepayItem => prepayItem.Sum);
+    var vatSum = order.GetVatSumExcludedFromPrice();
+    var total = Math.Max(fullSumWithoutDiscounts + vatSum - prepay, 0m);
+
+    if (prepay != 0m || fullSum != total)
+    {
+        <pair left="@Resources.BillFooterFullSum" right="@FormatMoney(fullSum)" />
+    }
+    @PrintOrderDiscounts(categorizedDiscountItems, fullSum)
+    
+    if (categorizedDiscountItems.Any())
+    {
+        <pair left="@Resources.BillFooterTotalPlain" right="@FormatMoney(fullSumWithoutCategorizedDiscounts)" />
+    }
+    @PrintOrderDiscounts(nonCategorizedDiscountItems, fullSum)
+            
+    if (prepay != 0m && (categorizedDiscountItems.Any() || nonCategorizedDiscountItems.Any()))
+    {
+        <pair left="@Resources.BillFooterTotalWithoutDiscounts" right="@FormatMoney(fullSumWithoutDiscounts)" />
+    }
+    if (vatSum != 0m)
+    {
+        <pair left="@Resources.VatSum" right="@FormatMoney(vatSum)" />
+    }
+    if (prepay != 0m)
+    {
+        @PrePayments(order, prepay)
+    }
+    <pair left="@Resources.FooterTotalUpper" right="@FormatMoney(total)" />
+}
+
+@helper PrePayments(IOrder order, decimal prepaySum)
+{
+    <pair left="@Resources.Prepay" right="@FormatMoney(prepaySum)" />
+    foreach (var paymentItem in order.PrePayments)
+    {
+        <whitespace-preserve><pair left="@string.Format("  {0}", paymentItem.Type.Name)" right="@FormatMoney(paymentItem.Sum)" /></whitespace-preserve>
+    }
+}
+
+@helper PrintOrderDiscounts(IEnumerable<IDiscountItem> discountItems, decimal fullSum)
+{
+    foreach (var discountItem in discountItems.OrderByDescending(discountItem => discountItem.IsDiscount()))
+    {
+        <pair left="@((!discountItem.IsCategorized || discountItem.PrintDetailedInPrecheque) && !discountItem.Type.DiscountBySum
+            ? GetFormattedDiscountDescriptionDetailed(discountItem.IsDiscount(), discountItem.Type.PrintableName, Math.Abs(CalculatePercent(fullSum, discountItem.GetDiscountSum())))
+            : GetFormattedDiscountDescriptionShort(discountItem.IsDiscount(), discountItem.Type.PrintableName))" 
+              right="@GetFormattedDiscountSum(discountItem.IsDiscount(), Math.Abs(discountItem.GetDiscountSum()))" />
+    }
+}
+
+@functions
+{
+    private static string Capitalize(string input)
+    {
+        if (input == null)
+            throw new ArgumentNullException("input");
+
+        if (input.Length == 0)
+            return string.Empty;
+
+        return char.ToUpper(input[0]) + input.Substring(1);
+    }
+
+    private static string GetTablesText(IReserve banquet)
+    {
+        var tablesBySection = banquet.Tables
+            .GroupBy(table => table.Section)
+            .OrderBy(group => group.Key.Name)
+            .Select(group => string.Format("{0} - {1}", group.Key.Name, string.Join(", ", group.OrderBy(table => table.Number).Select(t => t.Number.ToString()))));
+        return string.Join("; ", tablesBySection);
+    }
+
+    private static bool AreOrderItemsEqual(IOrderItem x, IOrderItem y)
+    {
+        if (ReferenceEquals(x, y))
+            return true;
+        if (x == null)
+            return y == null;
+        if (y == null)
+            return false;
+        
+        var xProductItem = x as IProductItem;
+        var yProductItem = y as IProductItem;
+
+        if (xProductItem == null || yProductItem == null || !ProductItemCanBeMerged(xProductItem) || !ProductItemCanBeMerged(yProductItem))
+            return false;
+
+        return x.Product == y.Product && x.Price == y.Price;
+    }
+
+    private static bool ProductItemCanBeMerged(IProductItem productItem)
+    {
+        return productItem.CompoundsInfo == null &&
+            productItem.Amount - Math.Truncate(productItem.Amount) == 0m &&
+            productItem.GetNotDeletedChildren().Where(orderEntry => ModifiersFilter(orderEntry, productItem)).IsEmpty();
+    }
+
+    private static bool CommonModifiersFilter(bool isCommonModifier, IProductItem parent, bool onlyCommonModifiers)
+    {
+        if (parent.CompoundsInfo != null && parent.CompoundsInfo.IsPrimaryComponent)
+        {
+            if (onlyCommonModifiers && !isCommonModifier)
+                return false;
+            if (!onlyCommonModifiers && isCommonModifier)
+                return false;
+            return true;
+        }
+        return true;
+    }
+
+    private static bool ModifiersFilter(IOrderEntry orderEntry, IOrderItem parent, bool onlyCommonModifiers = false)
+    {
+        var parentProductItem = parent as IProductItem;
+        if (parentProductItem != null && !CommonModifiersFilter(((IModifierEntry)orderEntry).IsCommonModifier, parentProductItem, onlyCommonModifiers))
+            return false;
+        
+        if (orderEntry.Cost > 0m)
+            return true;
+
+        if (!orderEntry.Product.PrechequePrintable)
+            return false;
+
+        var modifierEntry = orderEntry as IModifierEntry;
+        if (modifierEntry == null)
+            return true;
+
+        if (modifierEntry.ChildModifier == null)
+            return true;
+        
+        if (!modifierEntry.ChildModifier.HideIfDefaultAmount)
+            return true;
+
+        var amountPerItem = modifierEntry.ChildModifier.AmountIndependentOfParentAmount
+            ? modifierEntry.Amount
+            : modifierEntry.Amount / GetParentAmount(parent, onlyCommonModifiers);
+
+        return amountPerItem != modifierEntry.ChildModifier.DefaultAmount;
+    }
+
+    private static string GetFormattedDiscountDescriptionForOrderItem(bool isDiscount, string discountName, bool discountBySum, decimal absolutePercent)
+    {
+        return discountBySum
+          ? discountName
+          : string.Format(isDiscount ? "{0} (-{1})" : "{0} (+{1})", discountName, FormatPercent(absolutePercent));
+    }
+
+    private static string GetFormattedDiscountDescriptionShort(bool isDiscount, string discountName)
+    {
+        return string.Format(isDiscount ? Resources.BillFooterDiscountNamePatternShort : Resources.BillFooterIncreaseNamePatternShort, discountName);
+    }
+
+    private static string GetFormattedDiscountDescriptionDetailed(bool isDiscount, string discountName, decimal absolutePercent)
+    {
+        return string.Format(isDiscount ? Resources.BillFooterDiscountNamePatternDetailed : Resources.BillFooterIncreaseNamePatternDetailed, discountName, FormatPercent(absolutePercent));
+    }
+
+    private static string GetFormattedDiscountSum(bool isDiscount, decimal absoluteSum)
+    {
+        return (isDiscount ? "-" : "+") + FormatMoney(absoluteSum);
+    }
+
+    private static string GetOrderEntryNameWithProductSize(IOrderEntry orderEntry)
+    {
+        var productName = orderEntry.ProductCustomName ?? orderEntry.Product.Name;
+        var productItem = orderEntry as IProductItem;
+        return productItem == null || productItem.ProductSize == null || productItem.CompoundsInfo != null
+            ? productName
+            : string.Format(Resources.ProductNameWithSizeFormat, productName, productItem.ProductSize.Name);
+    }
+
+    private static decimal GetParentAmount(IOrderItem parent, bool onlyCommonModifiers)
+    {
+        return onlyCommonModifiers ? parent.Amount * 2 : parent.Amount;
+    }
+}

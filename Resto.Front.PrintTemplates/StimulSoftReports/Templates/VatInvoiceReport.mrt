@@ -1,0 +1,1316 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StiSerializer version="1.02" type="Net" application="StiReport">
+  <Dictionary Ref="1" type="Dictionary" isKey="true">
+    <BusinessObjects isList="true" count="0" />
+    <Databases isList="true" count="0" />
+    <DataSources isList="true" count="4">
+      <GeneralInfo Ref="2" type="Stimulsoft.Report.Dictionary.StiBusinessObjectSource" isKey="true">
+        <Alias>GeneralInfo</Alias>
+        <Columns isList="true" count="7">
+          <value>PaymentItems,System.String</value>
+          <value>LeaderName,System.String</value>
+          <value>Number,System.String</value>
+          <value>DocumentInfo,System.String</value>
+          <value>OrderCloseDates,System.String</value>
+          <value>ActualAddress,System.String</value>
+          <value>IssueDate,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>GeneralInfo</Name>
+        <NameInSource>GeneralInfo</NameInSource>
+      </GeneralInfo>
+      <CustomerInfo Ref="3" type="Stimulsoft.Report.Dictionary.StiBusinessObjectSource" isKey="true">
+        <Alias>CustomerInfo</Alias>
+        <Columns isList="true" count="25">
+          <value>Name,System.String</value>
+          <value>ShortAddress,System.String</value>
+          <value>City,System.String</value>
+          <value>Code,System.String</value>
+          <value>CounteragentName,System.String</value>
+          <value>CounteragentDefaultLocalAddress,System.String</value>
+          <value>CounteragentHouse,System.String</value>
+          <value>CounteragentBuilding,System.String</value>
+          <value>CounteragentStreet,System.String</value>
+          <value>CounteragentCity,System.String</value>
+          <value>CounteragentCountry,System.String</value>
+          <value>CounteragentInn,System.String</value>
+          <value>CounteragentCode,System.String</value>
+          <value>CounteragentPhone,System.String</value>
+          <value>ChequeNumber,System.String</value>
+          <value>OrderNumber,System.String</value>
+          <value>OpenTime,System.DateTime</value>
+          <value>Sum,System.Decimal</value>
+          <value>VatSum,System.Decimal</value>
+          <value>TotalSum,System.Decimal</value>
+          <value>TotalSumWithCurrency,System.String</value>
+          <value>TotalSumWords,System.String</value>
+          <value>RoundTotalSumWords,System.String</value>
+          <value>Ampersand,System.String</value>
+          <value>Cents,System.Int32</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>CustomerInfo</Name>
+        <NameInSource>CustomerInfo</NameInSource>
+      </CustomerInfo>
+      <OrderItemInfo Ref="4" type="Stimulsoft.Report.Dictionary.StiBusinessObjectSource" isKey="true">
+        <Alias>OrderItemInfo</Alias>
+        <Columns isList="true" count="6">
+          <value>Iterator,System.Int32</value>
+          <value>Name,System.String</value>
+          <value>Amount,System.Decimal</value>
+          <value>Price,System.Decimal</value>
+          <value>Sum,System.Decimal</value>
+          <value>MeasuringUnitName,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>OrderItemInfo</Name>
+        <NameInSource>OrderItemInfo</NameInSource>
+      </OrderItemInfo>
+      <ConsolidatedOrderItemInfo Ref="5" type="Stimulsoft.Report.Dictionary.StiBusinessObjectSource" isKey="true">
+        <Alias>ConsolidatedOrderItemInfo</Alias>
+        <Columns isList="true" count="6">
+          <value>Iterator,System.Decimal</value>
+          <value>Name,System.String</value>
+          <value>SumWithoutVat,System.Decimal</value>
+          <value>VatPercent,System.Decimal</value>
+          <value>VatSum,System.Decimal</value>
+          <value>SumWithVat,System.Decimal</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>ConsolidatedOrderItemInfo</Name>
+        <NameInSource>ConsolidatedOrderItemInfo</NameInSource>
+      </ConsolidatedOrderItemInfo>
+    </DataSources>
+    <Relations isList="true" count="0" />
+    <Report isRef="0" />
+    <Variables isList="true" count="0" />
+  </Dictionary>
+  <EngineVersion>EngineV2</EngineVersion>
+  <GlobalizationStrings isList="true" count="0" />
+  <MetaTags isList="true" count="0" />
+  <Pages isList="true" count="1">
+    <Page1 Ref="6" type="Page" isKey="true">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components isList="true" count="9">
+        <ReportTitle Ref="7" type="ReportTitleBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,0.4,28.7,1.2</ClientRectangle>
+          <Components isList="true" count="3">
+            <Text34 Ref="8" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>19.4,0,3.6,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Calibri,11,Bold</Font>
+              <GlobalizedName>VatInvoice_Invoice</GlobalizedName>
+              <Guid>f7f276d94c144ee6915620a0e0881cda</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text34</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Text>Invoice:</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text34>
+            <Text35 Ref="9" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>23.2,0,5,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <Guid>4fdc4cc083ea4dc3beadb38287c500cd</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text35</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Text>{GeneralInfo.Number}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="10" type="DateFormat" isKey="true">
+                <StringFormat>yy.MM.dd</StringFormat>
+              </TextFormat>
+              <VertAlignment>Center</VertAlignment>
+            </Text35>
+            <Text52 Ref="11" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>23.8,0.6,4.4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <Guid>d5eb69f9a625484ba888c6566fb63f9a</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text52</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Text>{GeneralInfo.DocumentInfo}</Text>
+              <TextBrush>GlassBrush,Gray,True,0.2</TextBrush>
+              <TextFormat Ref="12" type="DateFormat" isKey="true">
+                <StringFormat>MM/dd/yyyy</StringFormat>
+              </TextFormat>
+              <VertAlignment>Center</VertAlignment>
+            </Text52>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Name>ReportTitle</Name>
+          <Page isRef="6" />
+          <Parent isRef="6" />
+        </ReportTitle>
+        <HeaderBand2 Ref="13" type="HeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,2.4,28.7,1.8</ClientRectangle>
+          <Components isList="true" count="6">
+            <Text27 Ref="14" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>27.6,0,0,3.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10</Font>
+              <Guid>3d2ec7a37cf64136b9f075ca9fb22462</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text27</Name>
+              <Page isRef="6" />
+              <Parent isRef="13" />
+              <Text>Name</Text>
+              <TextBrush>Black</TextBrush>
+            </Text27>
+            <Text28 Ref="15" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>22.4,0.6,3.6,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Calibri,11</Font>
+              <GlobalizedName>VatInvoice_DateOfIssue</GlobalizedName>
+              <Guid>9d75e266c2e348b68cb4fd7c07d769c4</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text28</Name>
+              <Page isRef="6" />
+              <Parent isRef="13" />
+              <Text>Date of issue:</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text28>
+            <Text23 Ref="16" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>26,0.6,2.2,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <Guid>7bb201e681594ed3b86aaa279f438c8c</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text23</Name>
+              <Page isRef="6" />
+              <Parent isRef="13" />
+              <Text>{GeneralInfo.IssueDate}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="17" type="DateFormat" isKey="true">
+                <StringFormat>MM/dd/yyyy</StringFormat>
+              </TextFormat>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text23>
+            <Text21 Ref="18" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>22.4,1.2,3.6,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Calibri,11</Font>
+              <GlobalizedName>VatInvoice_DateOfDelivery</GlobalizedName>
+              <Guid>e1124fbbf34f472ab9d0b37cf8da2e93</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text21</Name>
+              <Page isRef="6" />
+              <Parent isRef="13" />
+              <Text>Date of delivery:</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text21>
+            <Text24 Ref="19" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>26,1.2,2.2,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <Guid>32a9573a3134425b98428b5f0a2fdeda</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text24</Name>
+              <Page isRef="6" />
+              <Parent isRef="13" />
+              <Text>{GeneralInfo.OrderCloseDates}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="20" type="DateFormat" isKey="true">
+                <StringFormat>MM/dd/yyyy</StringFormat>
+              </TextFormat>
+              <VertAlignment>Center</VertAlignment>
+            </Text24>
+            <Text20 Ref="21" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>17.8,0,10.4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <Guid>8bd2ae004a8e4110a97b2c9dfc7883bd</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text20</Name>
+              <Page isRef="6" />
+              <Parent isRef="13" />
+              <Text>{GeneralInfo.ActualAddress}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="22" type="DateFormat" isKey="true">
+                <StringFormat>MM/dd/yyyy</StringFormat>
+              </TextFormat>
+              <VertAlignment>Center</VertAlignment>
+            </Text20>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Guid>2408688acf8f41c7bfccf8cb05f3cd91</Guid>
+          <Name>HeaderBand2</Name>
+          <Page isRef="6" />
+          <Parent isRef="6" />
+          <PrintIfEmpty>True</PrintIfEmpty>
+          <PrintOnAllPages>False</PrintOnAllPages>
+        </HeaderBand2>
+        <HeaderBand1 Ref="23" type="HeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,5,28.7,4.4</ClientRectangle>
+          <Components isList="true" count="14">
+            <Text1 Ref="24" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>14.2,0.6,14,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text1</Name>
+              <Page isRef="6" />
+              <Parent isRef="23" />
+              <Text>{CustomerInfo.Name}</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text1>
+            <Text2 Ref="25" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.2,0.6,12.6,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <Guid>b9b3f2b06e15416b8fb3ed482ede1623</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text2</Name>
+              <Page isRef="6" />
+              <Parent isRef="23" />
+              <Text>{CustomerInfo.CounteragentName}</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text2>
+            <Text5 Ref="26" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.2,1.2,12.6,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10</Font>
+              <Guid>715804f08f9143d2a078ede69156dd55</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text5</Name>
+              <Page isRef="6" />
+              <Parent isRef="23" />
+              <Text>{CustomerInfo.CounteragentDefaultLocalAddress}</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text5>
+            <Text16 Ref="27" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>27.6,0,0,3.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text16</Name>
+              <Page isRef="6" />
+              <Parent isRef="23" />
+              <Text>Name</Text>
+              <TextBrush>Black</TextBrush>
+            </Text16>
+            <Text26 Ref="28" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.2,0,12.6,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Calibri,14,Bold</Font>
+              <GlobalizedName>VatInvoice_Seller</GlobalizedName>
+              <Guid>7e42b325300642b2b4ef9e728f485bf0</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text26</Name>
+              <Page isRef="6" />
+              <Parent isRef="23" />
+              <Text>Seller</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text26>
+            <Text29 Ref="29" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>14.2,0,14,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Calibri,14,Bold</Font>
+              <GlobalizedName>VatInvoice_Purchaser</GlobalizedName>
+              <Guid>d104307b15864a0f9779bcac7ac3f288</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text29</Name>
+              <Page isRef="6" />
+              <Parent isRef="23" />
+              <Text>Purchaser</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text29>
+            <Text39 Ref="30" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>14.2,1.2,14,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10</Font>
+              <Guid>17d01fb25cdb4bab87f8d99c673fbf64</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text39</Name>
+              <Page isRef="6" />
+              <Parent isRef="23" />
+              <Text>{CustomerInfo.ShortAddress}</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text39>
+            <Text40 Ref="31" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>14.2,2.4,14,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10</Font>
+              <Guid>0f190499a2ed4e83942e0a0526a6020c</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text40</Name>
+              <Page isRef="6" />
+              <Parent isRef="23" />
+              <Text>{CustomerInfo.Code}</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text40>
+            <Text41 Ref="32" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>14.2,1.8,14,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10</Font>
+              <Guid>b1399ad3e08f420591f6b56ede8cf5bc</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text41</Name>
+              <Page isRef="6" />
+              <Parent isRef="23" />
+              <Text>{CustomerInfo.City}</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text41>
+            <Text53 Ref="33" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.2,1.8,2.6,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10</Font>
+              <Guid>7882fb9c411e4872ab90f6bddb983eb1</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text53</Name>
+              <Page isRef="6" />
+              <Parent isRef="23" />
+              <Text>{CustomerInfo.CounteragentCode}</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text53>
+            <Text54 Ref="34" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.2,2.4,12.6,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10</Font>
+              <Guid>b4ebb9a292d145fdb42f75cd859c5076</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text54</Name>
+              <Page isRef="6" />
+              <Parent isRef="23" />
+              <Text>{CustomerInfo.CounteragentCountry}</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text54>
+            <Text60 Ref="35" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>3.4,1.8,9.4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10</Font>
+              <Guid>010e382ea05240f881869204c89c240e</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text60</Name>
+              <Page isRef="6" />
+              <Parent isRef="23" />
+              <Text>{CustomerInfo.CounteragentCity}</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text60>
+            <Text4 Ref="36" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.2,3,12.6,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10</Font>
+              <Guid>3d27787ef421476f9ec83834e0498a28</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text4</Name>
+              <Page isRef="6" />
+              <Parent isRef="23" />
+              <Text>{CustomerInfo.CounteragentInn}</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text4>
+            <Text30 Ref="37" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.2,3.6,12.6,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10</Font>
+              <Guid>108a8718d5d045889b94d0fd041cf8ea</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text30</Name>
+              <Page isRef="6" />
+              <Parent isRef="23" />
+              <Text>{CustomerInfo.CounteragentPhone}</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text30>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Name>HeaderBand1</Name>
+          <Page isRef="6" />
+          <Parent isRef="6" />
+          <PrintIfEmpty>True</PrintIfEmpty>
+          <PrintOnAllPages>False</PrintOnAllPages>
+        </HeaderBand1>
+        <HeaderBand3 Ref="38" type="HeaderBand" isKey="true">
+          <Brush>EmptyBrush</Brush>
+          <ClientRectangle>0,10.2,28.7,0.6</ClientRectangle>
+          <Components isList="true" count="7">
+            <Text42 Ref="39" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>27.6,0,0,3.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10</Font>
+              <Guid>c61a182db4504105811cb873b0821917</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text42</Name>
+              <Page isRef="6" />
+              <Parent isRef="38" />
+              <Text>Name</Text>
+              <TextBrush>Black</TextBrush>
+            </Text42>
+            <Text7 Ref="40" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Gainsboro</Brush>
+              <ClientRectangle>1.2,0,11,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Calibri,11</Font>
+              <GlobalizedName>VatInvoice_NameOfService</GlobalizedName>
+              <Guid>8a7190b414a140a69fd87edcafd8bb67</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text7</Name>
+              <Page isRef="6" />
+              <Parent isRef="38" />
+              <Text>Name of service</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text7>
+            <Text49 Ref="41" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Gainsboro</Brush>
+              <ClientRectangle>12.2,0,4.4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Calibri,11</Font>
+              <GlobalizedName>VatInvoice_TotalNetPrice</GlobalizedName>
+              <Guid>9f7edccaf3d246afbc6b203fe54cbc79</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text49</Name>
+              <Page isRef="6" />
+              <Parent isRef="38" />
+              <Text>Total net price</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text49>
+            <Text43 Ref="42" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Gainsboro</Brush>
+              <ClientRectangle>0,0,1.2,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Calibri,11</Font>
+              <Guid>3087c9e7b3e449eabc968f76c34d9e39</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text43</Name>
+              <Page isRef="6" />
+              <Parent isRef="38" />
+              <Text>No</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text43>
+            <Text44 Ref="43" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Gainsboro</Brush>
+              <ClientRectangle>16.6,0,4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Calibri,11</Font>
+              <GlobalizedName>VatInvoice_VATRate</GlobalizedName>
+              <Guid>92fbe0eec63845769e4312e56857d678</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text44</Name>
+              <Page isRef="6" />
+              <Parent isRef="38" />
+              <Text>VAT rate</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text44>
+            <Text50 Ref="44" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Gainsboro</Brush>
+              <ClientRectangle>20.6,0,3.6,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Calibri,11</Font>
+              <GlobalizedName>VatInvoice_VATAmount</GlobalizedName>
+              <Guid>220944ca367b4c349ed15931981e7e53</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text50</Name>
+              <Page isRef="6" />
+              <Parent isRef="38" />
+              <Text>VAT amount</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text50>
+            <Text51 Ref="45" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Gainsboro</Brush>
+              <ClientRectangle>24.2,0,4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Calibri,11</Font>
+              <GlobalizedName>VatInvoice_GrossValue</GlobalizedName>
+              <Guid>9f9eef7caee34a9887458f148b5a47de</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text51</Name>
+              <Page isRef="6" />
+              <Parent isRef="38" />
+              <Text>Gross value</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text51>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Guid>888ba5817bc14cf4aa289b1ed349b12e</Guid>
+          <Name>HeaderBand3</Name>
+          <Page isRef="6" />
+          <Parent isRef="6" />
+          <PrintIfEmpty>True</PrintIfEmpty>
+        </HeaderBand3>
+        <DataItem Ref="46" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <CanBreak>True</CanBreak>
+          <ClientRectangle>0,11.6,28.7,0.8</ClientRectangle>
+          <Components isList="true" count="6">
+            <DataItem_Name Ref="47" type="Text" isKey="true">
+              <Border>Top, Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>1.2,0,11,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataItem_Name</Name>
+              <Page isRef="6" />
+              <Parent isRef="46" />
+              <Text>{ConsolidatedOrderItemInfo.Name}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </DataItem_Name>
+            <Text10 Ref="48" type="Text" isKey="true">
+              <Border>Top, Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>12.2,0,4.4,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10</Font>
+              <Guid>c18996133a5343b3b44dd5651dfba4e1</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text10</Name>
+              <Page isRef="6" />
+              <Parent isRef="46" />
+              <Text>{ConsolidatedOrderItemInfo.SumWithoutVat}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="49" type="NumberFormat" isKey="true">
+                <DecimalSeparator>,</DecimalSeparator>
+                <GroupSeparator> </GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </Text10>
+            <Text12 Ref="50" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,1.2,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10</Font>
+              <Guid>d76a399fbaac4b67961bd8de32397e25</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text12</Name>
+              <Page isRef="6" />
+              <Parent isRef="46" />
+              <Text>{ConsolidatedOrderItemInfo.Iterator}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="51" type="NumberFormat" isKey="true">
+                <DecimalDigits>0</DecimalDigits>
+                <DecimalSeparator>,</DecimalSeparator>
+                <GroupSeparator> </GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+                <UseGroupSeparator>False</UseGroupSeparator>
+                <UseLocalSetting>False</UseLocalSetting>
+              </TextFormat>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </Text12>
+            <Text8 Ref="52" type="Text" isKey="true">
+              <Border>Top, Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>16.6,0,4,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10</Font>
+              <Guid>fa47a72eb78546809a39357c497423ec</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text8</Name>
+              <Page isRef="6" />
+              <Parent isRef="46" />
+              <Text>{ConsolidatedOrderItemInfo.VatPercent}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="53" type="PercentageFormat" isKey="true">
+                <DecimalDigits>0</DecimalDigits>
+                <DecimalSeparator>,</DecimalSeparator>
+                <GroupSeparator> </GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+                <PositivePattern>1</PositivePattern>
+                <Symbol>%</Symbol>
+                <UseGroupSeparator>False</UseGroupSeparator>
+                <UseLocalSetting>False</UseLocalSetting>
+              </TextFormat>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </Text8>
+            <Text3 Ref="54" type="Text" isKey="true">
+              <Border>Top, Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>20.6,0,3.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10</Font>
+              <Guid>0def35f402e74aff889d4ffeb7071e1f</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text3</Name>
+              <Page isRef="6" />
+              <Parent isRef="46" />
+              <Text>{ConsolidatedOrderItemInfo.VatSum}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="55" type="NumberFormat" isKey="true">
+                <DecimalSeparator>,</DecimalSeparator>
+                <GroupSeparator> </GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </Text3>
+            <Text11 Ref="56" type="Text" isKey="true">
+              <Border>Top, Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>24.2,0,4,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10</Font>
+              <Guid>84bf120de95741d8b2f2fcafb8233c97</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text11</Name>
+              <Page isRef="6" />
+              <Parent isRef="46" />
+              <Text>{ConsolidatedOrderItemInfo.SumWithVat}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="57" type="NumberFormat" isKey="true">
+                <DecimalSeparator>,</DecimalSeparator>
+                <GroupSeparator> </GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </Text11>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <DataSourceName>ConsolidatedOrderItemInfo</DataSourceName>
+          <Filters isList="true" count="0" />
+          <Name>DataItem</Name>
+          <Page isRef="6" />
+          <Parent isRef="6" />
+          <Sort isList="true" count="0" />
+        </DataItem>
+        <HeaderBand4 Ref="58" type="HeaderBand" isKey="true">
+          <Brush>EmptyBrush</Brush>
+          <ClientRectangle>0,13.2,28.7,0.8</ClientRectangle>
+          <Components isList="true" count="5">
+            <Text55 Ref="59" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>27.6,0,0,3.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10</Font>
+              <Guid>570323d59d3e4ddcae2ed01960e45c7b</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text55</Name>
+              <Page isRef="6" />
+              <Parent isRef="58" />
+              <Text>Name</Text>
+              <TextBrush>Black</TextBrush>
+            </Text55>
+            <Text56 Ref="60" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>9.6,0,2.6,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold,Point,False,204</Font>
+              <GlobalizedName>VatInvoice_TOTAL</GlobalizedName>
+              <Guid>6fd162043bec443da92d26612e93e683</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text56</Name>
+              <Page isRef="6" />
+              <Parent isRef="58" />
+              <Text>TOTAL:</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text56>
+            <Text57 Ref="61" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>EmptyBrush</Brush>
+              <ClientRectangle>12.2,0,4.4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9.75,Regular,Point,False,204</Font>
+              <Guid>5e6cd773213e4df9ae7ba68863e1c9af</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text57</Name>
+              <Page isRef="6" />
+              <Parent isRef="58" />
+              <Text>{CustomerInfo.Sum}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="62" type="NumberFormat" isKey="true">
+                <DecimalSeparator>,</DecimalSeparator>
+                <GroupSeparator> </GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <VertAlignment>Center</VertAlignment>
+            </Text57>
+            <Text58 Ref="63" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>EmptyBrush</Brush>
+              <ClientRectangle>20.6,0,3.6,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Regular,Point,False,204</Font>
+              <Guid>19db98a7983249b5a349be9f30b0a41d</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text58</Name>
+              <Page isRef="6" />
+              <Parent isRef="58" />
+              <Text>{CustomerInfo.VatSum}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="64" type="NumberFormat" isKey="true">
+                <DecimalSeparator>,</DecimalSeparator>
+                <GroupSeparator> </GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <VertAlignment>Center</VertAlignment>
+            </Text58>
+            <Text59 Ref="65" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>EmptyBrush</Brush>
+              <ClientRectangle>24.2,0,4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold,Point,False,204</Font>
+              <Guid>6eb16a288b65433f943c76a64e46a30b</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text59</Name>
+              <Page isRef="6" />
+              <Parent isRef="58" />
+              <Text>{CustomerInfo.TotalSum}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="66" type="NumberFormat" isKey="true">
+                <DecimalSeparator>,</DecimalSeparator>
+                <GroupSeparator> </GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <VertAlignment>Center</VertAlignment>
+            </Text59>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Guid>bd37b42ec58b4a6794bf18d6dadbc708</Guid>
+          <Name>HeaderBand4</Name>
+          <Page isRef="6" />
+          <Parent isRef="6" />
+          <PrintIfEmpty>True</PrintIfEmpty>
+          <PrintOnAllPages>False</PrintOnAllPages>
+        </HeaderBand4>
+        <HeaderBand5 Ref="67" type="HeaderBand" isKey="true">
+          <Brush>EmptyBrush</Brush>
+          <ClientRectangle>0,14.8,28.7,1.2</ClientRectangle>
+          <Components isList="true" count="6">
+            <Text15 Ref="68" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>27.6,0,0,3.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10</Font>
+              <Guid>d5f8ab93715448b59108fe7008d951fd</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text15</Name>
+              <Page isRef="6" />
+              <Parent isRef="67" />
+              <Text>Name</Text>
+              <TextBrush>Black</TextBrush>
+            </Text15>
+            <Text36 Ref="69" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>12.2,0,4.4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Calibri,11</Font>
+              <GlobalizedName>VatInvoice_Taxrate</GlobalizedName>
+              <Guid>237fcc837c7f49a6bb1206cf9c044580</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text36</Name>
+              <Page isRef="6" />
+              <Parent isRef="67" />
+              <Text>Taxrate</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text36>
+            <Text45 Ref="70" type="Text" isKey="true">
+              <Border>Top, Left, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Gainsboro</Brush>
+              <ClientRectangle>12.2,0.6,4.4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Calibri,11</Font>
+              <GlobalizedName>VatInvoice_TotalNetPrice</GlobalizedName>
+              <Guid>93129dfcbd094262b811bf7301604c7a</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text45</Name>
+              <Page isRef="6" />
+              <Parent isRef="67" />
+              <Text>Net</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text45>
+            <Text46 Ref="71" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Gainsboro</Brush>
+              <ClientRectangle>16.6,0.6,4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Calibri,11</Font>
+              <GlobalizedName>VatInvoice_VATRate</GlobalizedName>
+              <Guid>73d3d618fb194c12b47705a6f70ce9f7</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text46</Name>
+              <Page isRef="6" />
+              <Parent isRef="67" />
+              <Text>Rate</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text46>
+            <Text47 Ref="72" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Gainsboro</Brush>
+              <ClientRectangle>20.6,0.6,3.6,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Calibri,11</Font>
+              <GlobalizedName>VatInvoice_VATAmount</GlobalizedName>
+              <Guid>778989418d214a31b962847035493a16</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text47</Name>
+              <Page isRef="6" />
+              <Parent isRef="67" />
+              <Text>VAT</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text47>
+            <Text48 Ref="73" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Gainsboro</Brush>
+              <ClientRectangle>24.2,0.6,4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Calibri,11</Font>
+              <GlobalizedName>VatInvoice_GrossValue</GlobalizedName>
+              <Guid>6b47ae7787254c7b8d12a53150662f13</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text48</Name>
+              <Page isRef="6" />
+              <Parent isRef="67" />
+              <Text>Gross</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text48>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Guid>83ccdbde83a04a1b8627a54250b6efcb</Guid>
+          <Name>HeaderBand5</Name>
+          <Page isRef="6" />
+          <Parent isRef="6" />
+          <PrintIfEmpty>True</PrintIfEmpty>
+        </HeaderBand5>
+        <DataItem2 Ref="74" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <CanBreak>True</CanBreak>
+          <ClientRectangle>0,16.8,28.7,0.8</ClientRectangle>
+          <Components isList="true" count="4">
+            <Text6 Ref="75" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>12.2,0,4.4,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10</Font>
+              <Guid>b5de6143d12b4304aa12c41c782439df</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text6</Name>
+              <Page isRef="6" />
+              <Parent isRef="74" />
+              <Text>{ConsolidatedOrderItemInfo.SumWithoutVat}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="76" type="NumberFormat" isKey="true">
+                <DecimalSeparator>,</DecimalSeparator>
+                <GroupSeparator> </GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </Text6>
+            <Text13 Ref="77" type="Text" isKey="true">
+              <Border>Top, Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>16.6,0,4,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10</Font>
+              <Guid>2024504488624ae0bc867a2e890b9d58</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text13</Name>
+              <Page isRef="6" />
+              <Parent isRef="74" />
+              <Text>{ConsolidatedOrderItemInfo.VatPercent}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="78" type="PercentageFormat" isKey="true">
+                <DecimalDigits>0</DecimalDigits>
+                <DecimalSeparator>,</DecimalSeparator>
+                <GroupSeparator> </GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+                <PositivePattern>1</PositivePattern>
+                <Symbol>%</Symbol>
+                <UseGroupSeparator>False</UseGroupSeparator>
+                <UseLocalSetting>False</UseLocalSetting>
+              </TextFormat>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </Text13>
+            <Text32 Ref="79" type="Text" isKey="true">
+              <Border>Top, Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>20.6,0,3.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10</Font>
+              <Guid>8bd6df4a38b24b95bd74992a23b1e647</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text32</Name>
+              <Page isRef="6" />
+              <Parent isRef="74" />
+              <Text>{ConsolidatedOrderItemInfo.VatSum}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="80" type="NumberFormat" isKey="true">
+                <DecimalSeparator>,</DecimalSeparator>
+                <GroupSeparator> </GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </Text32>
+            <Text33 Ref="81" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>24.2,0,4,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10</Font>
+              <Guid>dd658e23b2fc4d7a9710fb48ce91b43c</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text33</Name>
+              <Page isRef="6" />
+              <Parent isRef="74" />
+              <Text>{ConsolidatedOrderItemInfo.SumWithVat}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="82" type="NumberFormat" isKey="true">
+                <DecimalSeparator>,</DecimalSeparator>
+                <GroupSeparator> </GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </Text33>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <DataSourceName>ConsolidatedOrderItemInfo</DataSourceName>
+          <Filters isList="true" count="0" />
+          <Guid>3d9c2a23f137430399abda055e3c2e49</Guid>
+          <Name>DataItem2</Name>
+          <Page isRef="6" />
+          <Parent isRef="6" />
+          <Sort isList="true" count="0" />
+        </DataItem2>
+        <Footer Ref="83" type="FooterBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,18.4,28.7,4.2</ClientRectangle>
+          <Components isList="true" count="10">
+            <Text9 Ref="84" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>22.4,0.2,0,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text9</Name>
+              <Page isRef="6" />
+              <Parent isRef="83" />
+              <TextBrush>Black</TextBrush>
+            </Text9>
+            <Text38 Ref="85" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>7.4,0,3.6,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Calibri,13,Bold</Font>
+              <GlobalizedName>VatInvoice_TotalDue</GlobalizedName>
+              <Guid>6e3fd0d9b6e74d9b8152826755185f2b</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text38</Name>
+              <Page isRef="6" />
+              <Parent isRef="83" />
+              <Text>Total due:</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text38>
+            <Text17 Ref="86" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>7.4,0.6,3.6,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Calibri,11</Font>
+              <GlobalizedName>VatInvoice_InWords</GlobalizedName>
+              <Guid>7d253e47e12b4b0ebc99f912160919fa</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text17</Name>
+              <Page isRef="6" />
+              <Parent isRef="83" />
+              <Text>In words:</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text17>
+            <Text18 Ref="87" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>7.4,1.2,3.6,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Calibri,11</Font>
+              <GlobalizedName>VatInvoice_MethodOfPayment</GlobalizedName>
+              <Guid>f6ea092abd1148df9da17a341347b028</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text18</Name>
+              <Page isRef="6" />
+              <Parent isRef="83" />
+              <Text>Method of payment:</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text18>
+            <Text14 Ref="88" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>11.2,0,17,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,13,Bold</Font>
+              <Guid>808cc3d927874f4393d7529130f22d18</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text14</Name>
+              <Page isRef="6" />
+              <Parent isRef="83" />
+              <Text>{CustomerInfo.TotalSumWithCurrency}</Text>
+              <TextBrush>Black</TextBrush>
+            </Text14>
+            <Text37 Ref="89" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>11.2,1.2,17,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <Guid>98267d48f7204a66bb813fc43a5d9e19</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text37</Name>
+              <Page isRef="6" />
+              <Parent isRef="83" />
+              <Text>{GeneralInfo.PaymentItems}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="90" type="DateFormat" isKey="true">
+                <StringFormat>yy.MM.dd</StringFormat>
+              </TextFormat>
+              <VertAlignment>Center</VertAlignment>
+            </Text37>
+            <Text19 Ref="91" type="Text" isKey="true">
+              <Border>Top;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.2,3.2,10.2,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Calibri,11</Font>
+              <GlobalizedName>VatInvoice_SellerSignature</GlobalizedName>
+              <Guid>13e36b4edf4f49ae8b926488bf5c48dd</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text19</Name>
+              <Page isRef="6" />
+              <Parent isRef="83" />
+              <Text>Seller (signature)</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text19>
+            <Text22 Ref="92" type="Text" isKey="true">
+              <Border>Top;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>17.2,3.2,10.2,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Calibri,11</Font>
+              <GlobalizedName>VatInvoice_PurchaseSignature</GlobalizedName>
+              <Guid>1397259931644a6bb53bebf0c8ea6d6a</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text22</Name>
+              <Page isRef="6" />
+              <Parent isRef="83" />
+              <Text>Purchaser (signature)</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text22>
+            <Text25 Ref="93" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>3.2,4,6,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Calibri,11</Font>
+              <Guid>40a4faad39b8411bb5ac745ba10a6b16</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text25</Name>
+              <Page isRef="6" />
+              <Parent isRef="83" />
+              <Text>{GeneralInfo.LeaderName}</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text25>
+            <Text31 Ref="94" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>11.2,0.6,17,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <Guid>d8e322ca9bee474db45e3ea844a38647</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text31</Name>
+              <Page isRef="6" />
+              <Parent isRef="83" />
+              <Text>{CustomerInfo.RoundTotalSumWords+" "+CustomerInfo.Ampersand+" "+CustomerInfo.Cents+"/100"}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="95" type="DateFormat" isKey="true">
+                <StringFormat>yy.MM.dd</StringFormat>
+              </TextFormat>
+              <VertAlignment>Center</VertAlignment>
+            </Text31>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Name>Footer</Name>
+          <Page isRef="6" />
+          <Parent isRef="6" />
+          <PrintAtBottom>True</PrintAtBottom>
+          <PrintIfEmpty>True</PrintIfEmpty>
+        </Footer>
+      </Components>
+      <Conditions isList="true" count="0" />
+      <Guid>122b274bcde643f99f9384bd62f8a301</Guid>
+      <Margins>0.5,0.5,0.5,0.5</Margins>
+      <Name>Page1</Name>
+      <Orientation>Landscape</Orientation>
+      <PageHeight>21</PageHeight>
+      <PageWidth>29.7</PageWidth>
+      <Report isRef="0" />
+      <Watermark Ref="96" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
+        <Font>Arial,100</Font>
+        <TextBrush>[50:0:0:0]</TextBrush>
+      </Watermark>
+    </Page1>
+  </Pages>
+  <PrinterSettings Ref="97" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
+  <ReferencedAssemblies isList="true" count="8">
+    <value>System.Dll</value>
+    <value>System.Drawing.Dll</value>
+    <value>System.Windows.Forms.Dll</value>
+    <value>System.Data.Dll</value>
+    <value>System.Xml.Dll</value>
+    <value>Stimulsoft.Controls.Dll</value>
+    <value>Stimulsoft.Base.Dll</value>
+    <value>Stimulsoft.Report.Dll</value>
+  </ReferencedAssemblies>
+  <ReportAlias>Report</ReportAlias>
+  <ReportChanged>7/28/2015 1:21:00 PM</ReportChanged>
+  <ReportCreated>8/17/2011 9:06:43 AM</ReportCreated>
+  <ReportFile>C:\Projects\rms\release\dev\iikoFront.Net\Resto.Front.PrintTemplates\StimulSoftReports\Templates\VatInvoiceReport.mrt</ReportFile>
+  <ReportGuid>b214fa97a566466c848ab50a25585c2b</ReportGuid>
+  <ReportName>Report</ReportName>
+  <ReportUnit>Centimeters</ReportUnit>
+  <ReportVersion>2012.1.1300</ReportVersion>
+  <Script>using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Data;
+using Stimulsoft.Controls;
+using Stimulsoft.Base.Drawing;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Dialogs;
+using Stimulsoft.Report.Components;
+
+namespace Reports
+{
+    
+    public class Report : Stimulsoft.Report.StiReport
+    {
+        
+        public Report()
+        {
+            this.InitializeComponent();
+        }
+        #region StiReport Designer generated code - do not modify
+		#endregion StiReport Designer generated code - do not modify
+    }
+}
+</Script>
+  <ScriptLanguage>CSharp</ScriptLanguage>
+  <Styles isList="true" count="0" />
+</StiSerializer>

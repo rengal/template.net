@@ -1,0 +1,344 @@
+﻿<#@ template language="C#" hostspecific="true" debug="true" #>
+<#@ output extension="cs" encoding="utf-8" #>
+<#@ include file="..\..\..\WrappersCommon.tt" #>
+<#@ xsd processor="Resto.CodeGeneration.XsdProcessor" file="..\..\..\TemplateModels.xsd" #>
+<#
+    templateModels = Root.Load(Host.ResolvePath("TemplateModels.xml"));
+    rmsEntityWrappers = Root.Load(Host.ResolvePath(@"..\..\..\RmsEntityWrappers\RmsEntityWrappers.xml"));
+    templateModels.Models.ForEach(model => Render(this, () => RenderModel(model, true), "I" + GetSafeName(model.Name) + ".g.cs"));
+    rmsEntityWrappers.Models.ForEach(model => Render(this, () => RenderModel(model, false), "I" + GetSafeName(model.Name) + ".g.cs"));
+    templateModels.Enums.ForEach(enumeration => Render(this, () => RenderEnum(enumeration, "Resto.Front.PrintTemplates.Cheques.Razor.TemplateModels"), GetSafeName(enumeration.Name) + ".g.cs"));
+#>
+
+<#+
+    Root templateModels;
+    Root rmsEntityWrappers;
+
+    string GetTypeName(string name)
+    {
+        return IsEntity(name) ? "I" + name : name;
+    }
+
+    bool IsEntity(string name)
+    {
+        return IsEntity(name, templateModels, rmsEntityWrappers);
+    }
+
+    string GetPropertyType(Property property)
+    {
+        return GetTypeName(property.Type);
+    }
+
+    string GetCollectionPropertyType(Collection collection)
+    {
+        return string.Format("IEnumerable<{0}>", GetTypeName(collection.ItemType));
+    }
+
+    string GetDictionaryPropertyType(Dictionary dictionary)
+    {
+        return string.Format("IDictionary<{0}, {1}>", GetTypeName(dictionary.KeyType), GetTypeName(dictionary.ValueType));
+    }
+
+    string GetFieldName(string propertyName)
+    {
+        var result = Decapitalize(propertyName);
+        return result == "event" ? "@event" : result;
+    }
+
+    string GetCollectionFieldType(Collection collection)
+    {
+        return string.Format("List<{0}>", collection.ItemType);
+    }
+
+    string GetDictionaryFieldType(Dictionary dictionary)
+    {
+        return string.Format("Dictionary<{0}, {1}>", dictionary.KeyType, dictionary.ValueType);
+    }
+
+    IEnumerable<Model> GetModelsFor(Model model)
+    {
+        return rmsEntityWrappers.Models.Contains(model)
+            ? rmsEntityWrappers.Models
+            : templateModels.Models;
+    }
+
+    bool IsAbstractModel(Model model)
+    {
+        return !model.OmitAbstract && GetModelsFor(model).Any(m => m.Inherits.Select(inherit => inherit.Model).Contains(model.Name));
+    }
+
+    IEnumerable<Model> GetDerivedSealedNotTemplateRootModels(Model model)
+    {
+        if (!IsAbstractModel(model))
+            return Enumerable.Empty<Model>();
+
+        return GetModelsFor(model)
+            .Where(m => m.Inherits.Select(inherit => inherit.Model).Contains(model.Name))
+            .SelectMany(m => IsAbstractModel(m) ? GetDerivedSealedNotTemplateRootModels(m) : Enumerable.Repeat<Model>(m, 1))
+            .Where(m => !m.TemplateRootModel);
+    }
+
+    string GetInterfaceInheritsDeclaration(Model model)
+    {
+        var inheritsList = new List<string>();
+        if (model.TemplateRootModel)
+            inheritsList.Add("TemplateRootModel");
+
+        inheritsList.AddRange(model.Inherits.Select(inherit => inherit.Model));
+
+        return inheritsList.Count == 0
+            ? string.Empty
+            : " : " + string.Join(", ", inheritsList.Select(inherit => "I" + inherit));
+    }
+
+    string GetDTOInheritsDeclaration(Model model)
+    {
+        var inheritsList = new List<string>();
+        if (model.Inherits.Any())
+            inheritsList.AddRange(model.Inherits.Select(inherit => inherit.Model));
+        else
+            inheritsList.Add("TemplateModelBase");
+        
+        inheritsList.Add("I" + model.Name);
+
+        return string.Join(", ", inheritsList);
+    }
+
+    void RenderModel(Model model, bool renderInterface)
+    {
+#><#= T4Warning #>// ReSharper disable RedundantUsingDirective
+
+using Resto.Front.PrintTemplates.RmsEntityWrappers;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Xml.Linq;
+using Resto.Framework.Attributes.JetBrains;
+
+namespace Resto.Front.PrintTemplates.Cheques.Razor.TemplateModels
+{
+<#+ if (renderInterface) { #>
+<#+ if (!string.IsNullOrWhiteSpace(model.Comment)) { #>
+    /// <summary>
+    /// <#= model.Comment #>
+    /// </summary>
+<#+ } #>
+    public interface I<#= model.Name + GetInterfaceInheritsDeclaration(model) #>
+    {
+<#+     foreach (var property in GetPropertiesRecursive(model))
+        {
+            RenderAtomProperty(property, GetTypeName) ;
+        } 
+        
+        foreach (var collection in GetCollectionsRecursive(model))
+        {
+            RenderCollectionProperty(collection, GetTypeName);
+        }
+
+        foreach (var dictionary in GetDictionariesRecursive(model))
+        {
+            RenderDictionaryProperty(dictionary, GetTypeName);
+        } #>
+    }
+<#+ } #>
+
+    internal<#= IsAbstractModel(model) ? " abstract" : model.OmitAbstract ? "" : " sealed" #> class <#= model.Name #> : <#= GetDTOInheritsDeclaration(model) #>
+    {
+        #region Fields
+<#+     foreach (var property in GetPropertiesRecursive(model))
+        {
+            RenderDTOAtomField(property) ;
+        } 
+        
+        foreach (var collection in GetCollectionsRecursive(model))
+        {
+            RenderDTOCollectionField(collection);
+        }
+
+        foreach (var dictionary in GetDictionariesRecursive(model))
+        {
+            RenderDTODictionaryField(dictionary);
+        } #>
+        #endregion
+
+        #region Ctor
+<#+     if (!IsAbstractModel(model) && !model.OmitAbstract) { #>
+        [UsedImplicitly]
+<#+     }#>
+        <#= IsAbstractModel(model) || model.OmitAbstract ? "protected" : "private" #> <#= model.Name #>()
+        {}
+
+        <#= IsAbstractModel(model) || model.OmitAbstract ? "protected" : model.TemplateRootModel ? "internal" : "private" #> <#= model.Name #>([NotNull] CopyContext context, [NotNull] I<#= model.Name #> src)
+<#+         if (model.Inherits.Any()) { #>
+            : base(context, src)
+<#+         }#>
+        {
+            System.Diagnostics.Debug.Assert(context != null);
+            System.Diagnostics.Debug.Assert(src != null);
+
+<#+         if (!model.TemplateRootModel && !IsAbstractModel(model)) { #>
+            context.Register(src, this);
+
+<#+         }#>
+
+<#+         foreach (var property in GetPropertiesRecursive(model))
+            {
+#><#+           if (IsEntity(property.Type)) { #>
+            <#= GetFieldName(property.Name) #> = context.GetConverted(src.<#= property.Name #>, Resto.Front.PrintTemplates.Cheques.Razor.TemplateModels.<#= property.Type #>.Convert);
+<#+             }
+                else { #>
+            <#= GetFieldName(property.Name) #> = src.<#= property.Name #>;
+<#+             }#><#+
+            } 
+        
+            foreach (var collection in GetCollectionsRecursive(model))
+            {
+#><#+           if (IsEntity(collection.ItemType)) { #>
+            <#= GetFieldName(collection.Name) #> = src.<#= collection.Name #>.Select(i => context.GetConverted(i, Resto.Front.PrintTemplates.Cheques.Razor.TemplateModels.<#= collection.ItemType #>.Convert)).ToList();
+<#+             }
+                else { #>
+            <#= GetFieldName(collection.Name) #> = src.<#= collection.Name #>.ToList();
+<#+             }#><#+
+            }
+
+            foreach (var dictionary in GetDictionariesRecursive(model))
+            {
+#><#+           if (IsEntity(dictionary.KeyType) && IsEntity(dictionary.ValueType)) { #>
+            <#= GetFieldName(dictionary.Name) #> = src.<#= dictionary.Name #>.ToDictionary(kvp => context.GetConverted(kvp.Key, Resto.Front.PrintTemplates.Cheques.Razor.TemplateModels.<#= dictionary.KeyType #>.Convert), kvp => context.GetConverted(kvp.Value, Resto.Front.PrintTemplates.Cheques.Razor.TemplateModels.<#= dictionary.ValueType #>.Convert));
+<#+             }
+                else if (IsEntity(dictionary.KeyType) && !IsEntity(dictionary.ValueType)) { #>
+            <#= GetFieldName(dictionary.Name) #> = src.<#= dictionary.Name #>.ToDictionary(kvp => context.GetConverted(kvp.Key, Resto.Front.PrintTemplates.Cheques.Razor.TemplateModels.<#= dictionary.KeyType #>.Convert), kvp => kvp.Value);
+<#+             }
+                else if (!IsEntity(dictionary.KeyType) && IsEntity(dictionary.ValueType)) { #>
+            <#= GetFieldName(dictionary.Name) #> = src.<#= dictionary.Name #>.ToDictionary(kvp => kvp.Key, kvp => context.GetConverted(kvp.Value, Resto.Front.PrintTemplates.Cheques.Razor.TemplateModels.<#= dictionary.ValueType #>.Convert));
+<#+             }
+                else { #>
+            <#= GetFieldName(dictionary.Name) #> = new Dictionary<<#= GetTypeName(dictionary.KeyType) #>, <#= GetTypeName(dictionary.ValueType) #>>(src.<#= dictionary.Name #>);
+<#+             }#><#+
+            } #>
+        }
+
+<#+     if (IsAbstractModel(model) && GetDerivedSealedNotTemplateRootModels(model).Any()) { #>
+        [CanBeNull]
+        [ContractAnnotation("source:null => null; source:notnull => notnull")]
+        internal static <#= model.Name #> Convert([NotNull] CopyContext context, [CanBeNull] I<#= model.Name #> source)
+        {
+            if (source == null)
+                return null;
+
+<#+         var derivedModels = GetDerivedSealedNotTemplateRootModels(model).ToList(); #>
+<#+         for (var i = 0; i < derivedModels.Count; i++)
+            { #>
+            <#= i == 0 ? string.Empty : "else " #>if (source is I<#= derivedModels[i].Name #>)
+                return <#= derivedModels[i].Name #>.Convert(context, (I<#= derivedModels[i].Name #>)source);
+<#+         } #>
+            else
+                throw new ArgumentException(string.Format("Type {0} not supported", source.GetType()), "source");
+        }
+<#+     }#>
+
+<#+     if (!IsAbstractModel(model) && !model.TemplateRootModel) { #>
+        [CanBeNull]
+        [ContractAnnotation("source:null => null; source:notnull => notnull")]
+        internal static <#= model.Name #> Convert([NotNull] CopyContext context, [CanBeNull] I<#= model.Name #> source)
+        {
+            if (source == null)
+                return null;
+
+            return new <#= model.Name #>(context, source);
+        }
+<#+     }#>
+        #endregion
+
+        #region Props
+<#+     foreach (var property in GetPropertiesRecursive(model))
+        {
+            RenderDTOAtomProperty(model, property) ;
+        } 
+        
+        foreach (var collection in GetCollectionsRecursive(model))
+        {
+            RenderDTOCollectionProperty(collection);
+        }
+
+        foreach (var dictionary in GetDictionariesRecursive(model))
+        {
+            RenderDTODictionaryProperty(dictionary);
+        } #>
+        #endregion
+    }
+
+<#+ if (model.TemplateRootModel && !IsAbstractModel(model)) { #>
+    public static partial class ChequeSerializer
+    {
+        [NotNull]
+        public static string Serialize([NotNull] this I<#= model.Name #> cheque)
+        {
+            if (cheque == null)
+                throw new ArgumentNullException("cheque");
+
+            var context = new CopyContext();
+            var copy = new <#= model.Name #>(context, cheque);
+
+            return Resto.Framework.Common.XmlSerialization.Serializer.GetXmlText<I<#= model.Name #>>(copy, "<#= model.Name #>");
+        }
+    }
+<#+ } #>
+}
+<#+ 
+    }
+
+    void RenderDTOAtomField(Property property)
+    { #>
+        private readonly <#= property.Type #> <#= GetFieldName(property.Name) #>;
+<#+ }
+
+    void RenderDTOAtomProperty(Model model, Property property)
+    { #>
+<#+     if (property.Type != "string") { #>
+        public <#= GetPropertyType(property) #> <#= property.Name #>
+        {
+            get { return <#= GetFieldName(property.Name) #>; }
+        }
+
+<#+     } else { #>
+        public <#= GetPropertyType(property) #> <#= property.Name #>
+        {
+            get { return GetLocalizedValue(<#= GetFieldName(property.Name) #>); }
+        }
+
+<#+     }#>
+<#+ }
+
+    void RenderDTOCollectionField(Collection collection)
+    { #>
+        private readonly <#= GetCollectionFieldType(collection) #> <#= GetFieldName(collection.Name) #> = new <#= GetCollectionFieldType(collection) #>();
+<#+ }
+
+    void RenderDTOCollectionProperty(Collection collection)
+    { #>
+        public <#= GetCollectionPropertyType(collection) #> <#= collection.Name #>
+        {
+            get { return <#= GetFieldName(collection.Name) #>; }
+        }
+
+<#+ }
+
+    void RenderDTODictionaryField(Dictionary dictionary)
+    { #>
+        private readonly <#= GetDictionaryFieldType(dictionary) #> <#= GetFieldName(dictionary.Name) #> = new <#= GetDictionaryFieldType(dictionary) #>();
+<#+ }
+
+    void RenderDTODictionaryProperty(Dictionary dictionary)
+    { #>
+        public <#= GetDictionaryPropertyType(dictionary) #> <#= dictionary.Name #>
+        {
+<#+            if (!IsEntity(dictionary.KeyType) && !IsEntity(dictionary.ValueType)) { #>
+            get { return <#= GetFieldName(dictionary.Name) #>; }
+<#+            }
+            else { #>
+            get { return <#= GetFieldName(dictionary.Name) #>.ToDictionary(kvp => (<#= GetTypeName(dictionary.KeyType) #>)kvp.Key, kvp => (<#= GetTypeName(dictionary.ValueType) #>)kvp.Value); }
+<#+            }#>
+        }
+
+<#+ } #>

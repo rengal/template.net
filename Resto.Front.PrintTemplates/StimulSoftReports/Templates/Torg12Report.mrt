@@ -1,0 +1,3284 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StiSerializer version="1.02" type="Net" application="StiReport">
+  <Dictionary Ref="1" type="Dictionary" isKey="true">
+    <BusinessObjects isList="true" count="0" />
+    <Databases isList="true" count="0" />
+    <DataSources isList="true" count="2">
+      <Torg12TemplateProperties Ref="2" type="DataTableSource" isKey="true">
+        <Alias>Torg12TemplateProperties</Alias>
+        <Columns isList="true" count="24">
+          <value>Date,System.String</value>
+          <value>AllSum,System.String</value>
+          <value>OperationType,System.String</value>
+          <value>Organisation,System.String</value>
+          <value>OrganisationBusinessClassificationCode,System.String</value>
+          <value>OrganisationEconomicActivityClassificationCode,System.String</value>
+          <value>StructDev,System.String</value>
+          <value>Buyer,System.String</value>
+          <value>BuyerBusinessClassificationCode,System.String</value>
+          <value>Sender,System.String</value>
+          <value>SenderBusinessClassificationCode,System.String</value>
+          <value>Payer,System.String</value>
+          <value>PayerBusinessClassificationCode,System.String</value>
+          <value>Number,System.String</value>
+          <value>Accountant,System.String</value>
+          <value>CurrencyShort,System.String</value>
+          <value>CurrencyMainUnit,System.String</value>
+          <value>CurrencyAdditionalUnit,System.String</value>
+          <value>CurrencyCombined,System.String</value>
+          <value>_ID,System.Int32</value>
+          <value>_Current,System.Object</value>
+          <value>Byer,System.String</value>
+          <value>Foundation,System.String</value>
+          <value>Comment,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>Torg12TemplateProperties</Name>
+        <NameInSource>Torg12TemplateProperties</NameInSource>
+      </Torg12TemplateProperties>
+      <Torg12TemplateItem Ref="3" type="Stimulsoft.Report.Dictionary.StiBusinessObjectSource" isKey="true">
+        <Alias>Torg12TemplateItem</Alias>
+        <Columns isList="true" count="17">
+          <value>Number,System.Int32</value>
+          <value>Name,System.String</value>
+          <value>Code,System.String</value>
+          <value>UnitName,System.String</value>
+          <value>UnitCode,System.String</value>
+          <value>ContainerType,System.String</value>
+          <value>AmountInTare,System.Decimal</value>
+          <value>Amount,System.Decimal</value>
+          <value>Brutto,System.Decimal</value>
+          <value>Netto,System.Decimal</value>
+          <value>Price,System.Decimal</value>
+          <value>SumWithoutNds,System.Decimal</value>
+          <value>Nds,System.Decimal</value>
+          <value>NdsSum,System.Decimal</value>
+          <value>Sum,System.Decimal</value>
+          <value>_ID,System.Int32</value>
+          <value>_Current,System.Object</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>Torg12TemplateItem</Name>
+        <NameInSource>Torg12TemplateItem</NameInSource>
+      </Torg12TemplateItem>
+    </DataSources>
+    <Relations isList="true" count="0" />
+    <Report isRef="0" />
+    <Variables isList="true" count="0" />
+  </Dictionary>
+  <EngineVersion>EngineV1</EngineVersion>
+  <GlobalizationStrings isList="true" count="0" />
+  <MetaTags isList="true" count="0" />
+  <Pages isList="true" count="2">
+    <Page1 Ref="4" type="Page" isKey="true">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components isList="true" count="14">
+        <ReportTitle Ref="5" type="ReportTitleBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,0.4,27.7,9.6</ClientRectangle>
+          <Components isList="true" count="51">
+            <Текст1 Ref="6" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>11.46,0.2,16.2,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Regular,Point,False,204</Font>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Текст1</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>Унифицированная форма № ТОРГ- 12 Утверждена постановлением Госкомстата России от 25.12.98 № 132</Text>
+              <TextBrush>Black</TextBrush>
+            </Текст1>
+            <Текст8 Ref="7" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>23.6,1,4,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>4f17c269dc4e4488974a87f071bc5d39</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Текст8</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>0330212</Text>
+              <TextBrush>Black</TextBrush>
+            </Текст8>
+            <Text1 Ref="8" type="Text" isKey="true">
+              <Border>Top, Left, Right;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>23.6,0.6,4,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>ee5a59ae71f34159b7ce6d50c2df3ae4</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text1</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>Код</Text>
+              <TextBrush>Black</TextBrush>
+            </Text1>
+            <Text2 Ref="9" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>20.8,1,2.8,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>05af582272a64b9782a8f43c6b538ce0</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text2</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>Форма по ОКУД</Text>
+              <TextBrush>Black</TextBrush>
+            </Text2>
+            <Text3 Ref="10" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>21.8,1.6,1.8,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>9ed0b5d10d344dfdbd7bbd6678e60acf</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text3</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>по ОКПО</Text>
+              <TextBrush>Black</TextBrush>
+            </Text3>
+            <Text4 Ref="11" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>19,2.1,4.6,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>57775472a0a3464a89270418ae5bc932</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text4</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>Вид деятельности по ОКДП</Text>
+              <TextBrush>Black</TextBrush>
+            </Text4>
+            <Text5 Ref="12" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>21.8,3.2,1.8,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>1702a680be204dd8a658db11273ae8f4</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text5</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>по ОКПО</Text>
+              <TextBrush>Black</TextBrush>
+            </Text5>
+            <Text6 Ref="13" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>21.8,4.2,1.8,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>3d654fa95bfe4c8caf75146ec3087079</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text6</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>по ОКПО</Text>
+              <TextBrush>Black</TextBrush>
+            </Text6>
+            <Text7 Ref="14" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>21.8,5.2,1.8,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>07cda2a9c8664216a6af79d64ef3eba3</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text7</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>по ОКПО</Text>
+              <TextBrush>Black</TextBrush>
+            </Text7>
+            <Text8 Ref="15" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>21.8,5.6,1.8,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>37f8eca0ec8740b8bb69df8fc7b49f62</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text8</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>номер</Text>
+              <TextBrush>Black</TextBrush>
+            </Text8>
+            <Text10 Ref="16" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>21.8,6.4,1.8,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>18c88fad4ef6439c87f836b8694f931d</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text10</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>номер</Text>
+              <TextBrush>Black</TextBrush>
+            </Text10>
+            <Text11 Ref="17" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>21.8,6,1.8,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>dc52a2b3d81d401ab3858884b16a23da</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text11</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>дата</Text>
+              <TextBrush>Black</TextBrush>
+            </Text11>
+            <Text12 Ref="18" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>21.8,6.8,1.8,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>90128ae30dad4cb2973d39ec564826ae</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text12</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>дата</Text>
+              <TextBrush>Black</TextBrush>
+            </Text12>
+            <Text13 Ref="19" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>17.4,7.2,6.2,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>6c9a43996113491cb945910bb41c652d</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text13</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>Вид операции</Text>
+              <TextBrush>Black</TextBrush>
+            </Text13>
+            <Text14 Ref="20" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>17.4,6.8,4.4,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>b0dc5f064d004e32846c0f1423ec1d63</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text14</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>Транспортная накладная</Text>
+              <TextBrush>Black</TextBrush>
+            </Text14>
+            <Text15 Ref="21" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,3.2,3.4,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>b96a5326e97044d2bbf3bd38cfaea335</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text15</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>Грузополучатель</Text>
+              <TextBrush>Black</TextBrush>
+            </Text15>
+            <Text16 Ref="22" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,4.1,3.4,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>8dfa85330a0f409dbf9a770bd24a3efb</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text16</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>Поставщик</Text>
+              <TextBrush>Black</TextBrush>
+            </Text16>
+            <Text17 Ref="23" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,5,3.4,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>b361b68048a4464b9f89a52110a9fcaa</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text17</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>Плательщик</Text>
+              <TextBrush>Black</TextBrush>
+            </Text17>
+            <Text18 Ref="24" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,5.6,3.4,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>83569204001b4816af192c8816c46d68</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text18</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>Основание</Text>
+              <TextBrush>Black</TextBrush>
+            </Text18>
+            <Text19 Ref="25" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,1.8,20.8,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial Narrow,5.25,Regular,Point,False,204</Font>
+              <Guid>1d3ea3ef90ac4238973487d65c7ef7e4</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text19</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>организация - грузоотправитель, адрес, номер телефона, факса, банковские реквизиты</Text>
+              <TextBrush>Black</TextBrush>
+            </Text19>
+            <Text20 Ref="26" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.8,2.4,18.2,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial Narrow,5.25,Regular,Point,False,204</Font>
+              <Guid>e51920f90ee24455861a9bc19da98aa2</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text20</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>структурное подразделение</Text>
+              <TextBrush>Black</TextBrush>
+            </Text20>
+            <Text21 Ref="27" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>3.8,3.4,18,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial Narrow,5.25,Regular,Point,False,204</Font>
+              <Guid>b1b87d3c04c8478b988169227949986e</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text21</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>наименование организации, адрес, номер телефона, банковские реквизиты</Text>
+              <TextBrush>Black</TextBrush>
+            </Text21>
+            <Text22 Ref="28" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>3.8,4.4,18,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial Narrow,5.25,Regular,Point,False,204</Font>
+              <Guid>49264403a7b14f40bade208a11f0b454</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text22</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>наименование организации, адрес, номер телефона, банковские реквизиты</Text>
+              <TextBrush>Black</TextBrush>
+            </Text22>
+            <Text23 Ref="29" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>3.8,5.4,18,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial Narrow,5.25,Regular,Point,False,204</Font>
+              <Guid>97efe1ab18ef4b479c66680695a0dcfe</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text23</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>наименование организации, адрес, номер телефона, банковские реквизиты</Text>
+              <TextBrush>Black</TextBrush>
+            </Text23>
+            <Text24 Ref="30" type="Text" isKey="true">
+              <Border>Top;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>3.8,6,18,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,5</Font>
+              <Guid>9f73a84d4feb4150bb5fad39c00aacb8</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text24</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>наименование документа (договор, контракт, заказ-наряд)</Text>
+              <TextBrush>Black</TextBrush>
+            </Text24>
+            <Text80 Ref="31" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,1,20.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Regular,Point,False,204</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text80</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <ShrinkFontToFit>True</ShrinkFontToFit>
+              <Text>{Torg12TemplateProperties.Organisation}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text80>
+            <Text81 Ref="32" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,2,19,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text81</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>{Torg12TemplateProperties.StructDev}</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text81>
+            <Text82 Ref="33" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>3.8,2.6,18,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Regular,Point,False,204</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text82</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <ShrinkFontToFit>True</ShrinkFontToFit>
+              <ShrinkFontToFitMinimumSize>4</ShrinkFontToFitMinimumSize>
+              <Text>{Torg12TemplateProperties.Buyer}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text82>
+            <Text83 Ref="34" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>3.8,3.6,18,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text83</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <ShrinkFontToFit>True</ShrinkFontToFit>
+              <ShrinkFontToFitMinimumSize>5</ShrinkFontToFitMinimumSize>
+              <Text>{Torg12TemplateProperties.Sender}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text83>
+            <Text84 Ref="35" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>3.8,4.6,18,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Regular,Point,False,204</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text84</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <ShrinkFontToFit>True</ShrinkFontToFit>
+              <ShrinkFontToFitMinimumSize>5</ShrinkFontToFitMinimumSize>
+              <Text>{Torg12TemplateProperties.Payer}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text84>
+            <Text142 Ref="36" type="Text" isKey="true">
+              <Border>Top, Left, Right;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>14.6,7.8,2.6,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Regular,Point,False,204</Font>
+              <Guid>a5d4cf13780f4c7382c5a584c2e5784b</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text142</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>Номер документа</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text142>
+            <Text143 Ref="37" type="Text" isKey="true">
+              <Border>Top, Right;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>17.2,7.8,3,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Regular,Point,False,204</Font>
+              <Guid>b79fb26b74764b4d80cb971ce32da6fb</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text143</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>Дата составления</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text143>
+            <Text145 Ref="38" type="Text" isKey="true">
+              <Border>AdvBlack;2;Solid;Black;2;Solid;Black;2;Solid;Black;2;Solid;False;1;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>14.6,8.4,2.6,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>9fed7a5ea2ff4cbc9b63ecf755d5a66b</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text145</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>{Torg12TemplateProperties.Number}</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text145>
+            <Text146 Ref="39" type="Text" isKey="true">
+              <Border>AdvBlack;2;Solid;Black;2;Solid;Black;2;Solid;Black;2;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>17.2,8.4,3,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>77bc3763821f41cda1083a5b38b60f72</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text146</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>{Torg12TemplateProperties.Date}</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text146>
+            <Text156 Ref="40" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>23.6,1.4,4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>443e911df8424d40809a93a107405287</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text156</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>{Torg12TemplateProperties.OrganisationBusinessClassificationCode}</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text156>
+            <Text157 Ref="41" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>23.6,2,4,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>2b24f1dc32c243039141fb7635f9684d</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text157</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>{Torg12TemplateProperties.OrganisationEconomicActivityClassificationCode}</Text>
+              <TextBrush>Black</TextBrush>
+            </Text157>
+            <Text158 Ref="42" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>23.6,2.8,4,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>66dfd1ef67b9464baafa270077febddc</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text158</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>{Torg12TemplateProperties.BuyerBusinessClassificationCode}</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text158>
+            <Text159 Ref="43" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>23.6,3.6,4,1</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>856a60c58c804ba99f2c8b816f65081f</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text159</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>{Torg12TemplateProperties.SenderBusinessClassificationCode}</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text159>
+            <Text160 Ref="44" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>23.6,4.6,4,1</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>7d7276295cb745eeaa4aff0945915537</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text160</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>{Torg12TemplateProperties.PayerBusinessClassificationCode}</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text160>
+            <Text161 Ref="45" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>23.6,5.6,4,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>28380a84a1364f00a2e4a38c5c070ced</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text161</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <TextBrush>Black</TextBrush>
+            </Text161>
+            <Text162 Ref="46" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>23.6,6,4,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>fe6db388e57e40b8bf6c5cb1c77a32ee</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text162</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <TextBrush>Black</TextBrush>
+            </Text162>
+            <Text163 Ref="47" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>23.6,6.4,4,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>e4dfbd59fc9a4c07bb856275949f7647</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text163</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <TextBrush>Black</TextBrush>
+            </Text163>
+            <Text164 Ref="48" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>23.6,6.8,4,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>a86ab82c831e45289a13c80af6303c10</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text164</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <TextBrush>Black</TextBrush>
+            </Text164>
+            <Text69 Ref="49" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>23.6,7.2,4,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>49cb3e83a7294e1482a4b652365b7336</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text69</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>{Torg12TemplateProperties.OperationType}</Text>
+              <TextBrush>Black</TextBrush>
+            </Text69>
+            <Text141 Ref="50" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.6,8.4,13.6,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,12,Bold,Point,False,204</Font>
+              <Guid>a03f0e1088944e409795da3ef914d03c</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text141</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>ТОВАРНАЯ НАКЛАДНАЯ</Text>
+              <TextBrush>Black</TextBrush>
+            </Text141>
+            <StartPointPrimitive7 Ref="51" type="Stimulsoft.Report.Components.StiStartPointPrimitive" isKey="true">
+              <ClientRectangle>21.8,5.6,0,0</ClientRectangle>
+              <Name>StartPointPrimitive7</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <ReferenceToGuid>4ade39ce03e6413fabdd486695c25d32</ReferenceToGuid>
+            </StartPointPrimitive7>
+            <EndPointPrimitive7 Ref="52" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
+              <ClientRectangle>21.83,7.2,0,0</ClientRectangle>
+              <Name>EndPointPrimitive7</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <ReferenceToGuid>4ade39ce03e6413fabdd486695c25d32</ReferenceToGuid>
+            </EndPointPrimitive7>
+            <HorizontalLine7 Ref="53" type="HorizontalLinePrimitive" isKey="true">
+              <ClientRectangle>21.8,5.6,1.8,0.0254</ClientRectangle>
+              <Color>Black</Color>
+              <EndCap Ref="54" type="Cap" isKey="true">
+                <Color>Black</Color>
+              </EndCap>
+              <Name>HorizontalLine7</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Size>2</Size>
+              <StartCap Ref="55" type="Cap" isKey="true">
+                <Color>Black</Color>
+              </StartCap>
+            </HorizontalLine7>
+            <HorizontalLine8 Ref="56" type="HorizontalLinePrimitive" isKey="true">
+              <ClientRectangle>21.8,7.2,1.8,0.0254</ClientRectangle>
+              <Color>Black</Color>
+              <EndCap Ref="57" type="Cap" isKey="true">
+                <Color>Black</Color>
+              </EndCap>
+              <Name>HorizontalLine8</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Size>2</Size>
+              <StartCap Ref="58" type="Cap" isKey="true">
+                <Color>Black</Color>
+              </StartCap>
+            </HorizontalLine8>
+            <StartPointPrimitive8 Ref="59" type="Stimulsoft.Report.Components.StiStartPointPrimitive" isKey="true">
+              <ClientRectangle>23.6,1,0,0</ClientRectangle>
+              <Name>StartPointPrimitive8</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <ReferenceToGuid>419b820975ad47cc97b2be26fc20791c</ReferenceToGuid>
+            </StartPointPrimitive8>
+            <EndPointPrimitive8 Ref="60" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
+              <ClientRectangle>27.6,7.6,0,0</ClientRectangle>
+              <Name>EndPointPrimitive8</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <ReferenceToGuid>419b820975ad47cc97b2be26fc20791c</ReferenceToGuid>
+            </EndPointPrimitive8>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Name>ReportTitle</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+        </ReportTitle>
+        <Header Ref="61" type="HeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,10.8,27.7,1.6</ClientRectangle>
+          <Components isList="true" count="19">
+            <HeaderText1 Ref="62" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,1.2,1.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Regular,Point,False,204</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>HeaderText1</Name>
+              <Page isRef="4" />
+              <Parent isRef="61" />
+              <Text>Номер
+по
+порядку</Text>
+              <TextBrush>Black</TextBrush>
+            </HeaderText1>
+            <Текст15 Ref="63" type="Text" isKey="true">
+              <Border>Top, Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.2,0,8.8,0.7</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Regular,Point,False,204</Font>
+              <Guid>01f5b4d84fd14785933328003d7a9938</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Текст15</Name>
+              <Page isRef="4" />
+              <Parent isRef="61" />
+              <Text>Товар</Text>
+              <TextBrush>Black</TextBrush>
+            </Текст15>
+            <Text28 Ref="64" type="Text" isKey="true">
+              <Border>Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.2,0.7,7.6,0.9</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Regular,Point,False,204</Font>
+              <Guid>51841788b7e44c9d8656322b5f736b86</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text28</Name>
+              <Page isRef="4" />
+              <Parent isRef="61" />
+              <Text>наименование, характеристика, сорт, артикул товара</Text>
+              <TextBrush>Black</TextBrush>
+            </Text28>
+            <Text29 Ref="65" type="Text" isKey="true">
+              <Border>Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>8.8,0.7,1.2,0.9</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Regular,Point,False,204</Font>
+              <Guid>2bf402b1303f416d805c051cb6397f19</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text29</Name>
+              <Page isRef="4" />
+              <Parent isRef="61" />
+              <Text>код</Text>
+              <TextBrush>Black</TextBrush>
+            </Text29>
+            <Text30 Ref="66" type="Text" isKey="true">
+              <Border>Top, Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>10,0,2.2,0.7</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Regular,Point,False,204</Font>
+              <Guid>ecddb0b40c37417786efb19764827dc6</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text30</Name>
+              <Page isRef="4" />
+              <Parent isRef="61" />
+              <Text>Единица
+измерения</Text>
+              <TextBrush>Black</TextBrush>
+            </Text30>
+            <Text31 Ref="67" type="Text" isKey="true">
+              <Border>Top, Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>12.2,0,1.4,1.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Regular,Point,False,204</Font>
+              <Guid>8b0932d9557a403bb88dc6f1ff74806f</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text31</Name>
+              <Page isRef="4" />
+              <Parent isRef="61" />
+              <Text>Вид
+упаковки</Text>
+              <TextBrush>Black</TextBrush>
+            </Text31>
+            <Text32 Ref="68" type="Text" isKey="true">
+              <Border>Top, Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>13.6,0,3.2,0.7</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Regular,Point,False,204</Font>
+              <Guid>998a980beb0b4717a632d9eb79214e0c</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text32</Name>
+              <Page isRef="4" />
+              <Parent isRef="61" />
+              <Text>Количество (масса)</Text>
+              <TextBrush>Black</TextBrush>
+            </Text32>
+            <Text33 Ref="69" type="Text" isKey="true">
+              <Border>Top, Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>16.8,0,1.2,1.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Regular,Point,False,204</Font>
+              <Guid>080126e7be5d4da1bc7c0cee7e35de7d</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text33</Name>
+              <Page isRef="4" />
+              <Parent isRef="61" />
+              <Text>Масса
+брутто</Text>
+              <TextBrush>Black</TextBrush>
+            </Text33>
+            <Text34 Ref="70" type="Text" isKey="true">
+              <Border>Top, Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>18,0,1.4,1.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Regular,Point,False,204</Font>
+              <Guid>eec917d1ca524e9c86ad973b5277f5f4</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text34</Name>
+              <Page isRef="4" />
+              <Parent isRef="61" />
+              <Text>Коли-
+чество
+(масса
+нетто)</Text>
+              <TextBrush>Black</TextBrush>
+            </Text34>
+            <Text35 Ref="71" type="Text" isKey="true">
+              <Border>Top, Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>19.4,0,1.6,1.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Regular,Point,False,204</Font>
+              <Guid>5c39bb083f6b438b8c3b51d344cf301a</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text35</Name>
+              <Page isRef="4" />
+              <Parent isRef="61" />
+              <Text>Цена,
+{Torg12TemplateProperties.CurrencyCombined}</Text>
+              <TextBrush>Black</TextBrush>
+            </Text35>
+            <Text47 Ref="72" type="Text" isKey="true">
+              <Border>Top, Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>21,0,2,1.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Regular,Point,False,204</Font>
+              <Guid>6b643b89431e448ca457186b6409ffc2</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text47</Name>
+              <Page isRef="4" />
+              <Parent isRef="61" />
+              <Text>Сумма после 
+всех скидок 
+без учета НДС,
+{Torg12TemplateProperties.CurrencyCombined}</Text>
+              <TextBrush>Black</TextBrush>
+            </Text47>
+            <Text48 Ref="73" type="Text" isKey="true">
+              <Border>Top, Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>23,0,2.8,0.7</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Regular,Point,False,204</Font>
+              <Guid>025bb6de671f4281b2ab2c5b4ff70861</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text48</Name>
+              <Page isRef="4" />
+              <Parent isRef="61" />
+              <Text>НДС</Text>
+              <TextBrush>Black</TextBrush>
+            </Text48>
+            <Text49 Ref="74" type="Text" isKey="true">
+              <Border>Top, Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>25.8,0,1.8,1.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Regular,Point,False,204</Font>
+              <Guid>425a507107f14d5083b4683bbf7a0bfb</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text49</Name>
+              <Page isRef="4" />
+              <Parent isRef="61" />
+              <Text>Сумма после 
+всех скидок 
+с учетом НДС,
+{Torg12TemplateProperties.CurrencyCombined}</Text>
+              <TextBrush>Black</TextBrush>
+            </Text49>
+            <Text50 Ref="75" type="Text" isKey="true">
+              <Border>Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>10,0.7,1.2,0.9</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Regular,Point,False,204</Font>
+              <Guid>270189e7005c422b9ec4f07b27d352c6</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text50</Name>
+              <Page isRef="4" />
+              <Parent isRef="61" />
+              <Text>наиме-
+нование</Text>
+              <TextBrush>Black</TextBrush>
+            </Text50>
+            <Text51 Ref="76" type="Text" isKey="true">
+              <Border>Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>11.2,0.7,1,0.9</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Regular,Point,False,204</Font>
+              <Guid>bb5e7a1e1fa247b3badb28bad5c3e7aa</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text51</Name>
+              <Page isRef="4" />
+              <Parent isRef="61" />
+              <Text>Код по
+ОКЕИ</Text>
+              <TextBrush>Black</TextBrush>
+            </Text51>
+            <Text52 Ref="77" type="Text" isKey="true">
+              <Border>Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>13.6,0.7,1.6,0.9</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Regular,Point,False,204</Font>
+              <Guid>983b8527ffe84101bb4903fbb06767fa</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text52</Name>
+              <Page isRef="4" />
+              <Parent isRef="61" />
+              <Text>в одном
+месте</Text>
+              <TextBrush>Black</TextBrush>
+            </Text52>
+            <Text53 Ref="78" type="Text" isKey="true">
+              <Border>Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>15.2,0.7,1.6,0.9</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Regular,Point,False,204</Font>
+              <Guid>617bc187639345e8807d2a5706c2219a</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text53</Name>
+              <Page isRef="4" />
+              <Parent isRef="61" />
+              <Text>мест,
+штук</Text>
+              <TextBrush>Black</TextBrush>
+            </Text53>
+            <Text54 Ref="79" type="Text" isKey="true">
+              <Border>Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>23,0.7,1.4,0.9</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Regular,Point,False,204</Font>
+              <Guid>9da3593cbe59481881e6afdf02ad76fa</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text54</Name>
+              <Page isRef="4" />
+              <Parent isRef="61" />
+              <Text>ставка,%</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+            </Text54>
+            <Text55 Ref="80" type="Text" isKey="true">
+              <Border>Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>24.4,0.7,1.4,0.9</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Regular,Point,False,204</Font>
+              <Guid>55d22f0892b54e7c9343025ad67ce231</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text55</Name>
+              <Page isRef="4" />
+              <Parent isRef="61" />
+              <Text>сумма,
+{Torg12TemplateProperties.CurrencyCombined}</Text>
+              <TextBrush>Black</TextBrush>
+            </Text55>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Name>Header</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+          <PrintIfEmpty>True</PrintIfEmpty>
+        </Header>
+        <Header1 Ref="81" type="HeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,13.2,27.7,0.4</ClientRectangle>
+          <Components isList="true" count="18">
+            <Text36 Ref="82" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,1.2,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Regular,Point,False,204</Font>
+              <Guid>305364a8b0cf4af0b4472d7f6e05085a</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text36</Name>
+              <Page isRef="4" />
+              <Parent isRef="81" />
+              <Text>1</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text36>
+            <Text37 Ref="83" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.2,0,7.6,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Regular,Point,False,204</Font>
+              <Guid>9c7ba4b2535c46d2b7ddfbc6c6e88864</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text37</Name>
+              <Page isRef="4" />
+              <Parent isRef="81" />
+              <Text>2</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text37>
+            <Text38 Ref="84" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>8.8,0,1.2,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Regular,Point,False,204</Font>
+              <Guid>d302124bde5945729f67ae600b0f6e9a</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text38</Name>
+              <Page isRef="4" />
+              <Parent isRef="81" />
+              <Text>3</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text38>
+            <Text39 Ref="85" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>10,0,1.2,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Regular,Point,False,204</Font>
+              <Guid>231e564118044ac6bdafe650e89d019f</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text39</Name>
+              <Page isRef="4" />
+              <Parent isRef="81" />
+              <Text>4</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text39>
+            <Text40 Ref="86" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>11.2,0,1,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Regular,Point,False,204</Font>
+              <Guid>1108b5f8a80645efb782c0c90e264a86</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text40</Name>
+              <Page isRef="4" />
+              <Parent isRef="81" />
+              <Text>5</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text40>
+            <Text41 Ref="87" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>12.2,0,1.4,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Regular,Point,False,204</Font>
+              <Guid>f29001d22fbc4ac5b9e453a7d4612581</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text41</Name>
+              <Page isRef="4" />
+              <Parent isRef="81" />
+              <Text>6</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text41>
+            <Text42 Ref="88" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>13.6,0,1.6,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Regular,Point,False,204</Font>
+              <Guid>40008ff14ff045e78b26cc83b4f36fde</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text42</Name>
+              <Page isRef="4" />
+              <Parent isRef="81" />
+              <Text>7</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text42>
+            <Text43 Ref="89" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>15.2,0,1.6,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Regular,Point,False,204</Font>
+              <Guid>5d5525429406467687dec3bc0c8f22c4</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text43</Name>
+              <Page isRef="4" />
+              <Parent isRef="81" />
+              <Text>8</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text43>
+            <Text44 Ref="90" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>16.8,0,1.2,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Regular,Point,False,204</Font>
+              <Guid>5959a2bc1ba743ac8a8ac84dd01b9f85</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text44</Name>
+              <Page isRef="4" />
+              <Parent isRef="81" />
+              <Text>9</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text44>
+            <Text45 Ref="91" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>18,0,1.4,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Regular,Point,False,204</Font>
+              <Guid>2447c459628843fdac7620cd1916fb7b</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text45</Name>
+              <Page isRef="4" />
+              <Parent isRef="81" />
+              <Text>10</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text45>
+            <Text46 Ref="92" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>19.4,0,1.6,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Regular,Point,False,204</Font>
+              <Guid>ad2faeb24c214adf90a25869c96d9bce</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text46</Name>
+              <Page isRef="4" />
+              <Parent isRef="81" />
+              <Text>11</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text46>
+            <Text56 Ref="93" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>21,0,2,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Regular,Point,False,204</Font>
+              <Guid>bfe8fea80a554e4d96e005fc894e400a</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text56</Name>
+              <Page isRef="4" />
+              <Parent isRef="81" />
+              <Text>12</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text56>
+            <Text57 Ref="94" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>23,0,1.4,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Regular,Point,False,204</Font>
+              <Guid>2c5eb1873ee04baea89b299f778f13bd</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text57</Name>
+              <Page isRef="4" />
+              <Parent isRef="81" />
+              <Text>13</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text57>
+            <Text58 Ref="95" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>24.4,0,1.4,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Regular,Point,False,204</Font>
+              <Guid>699298b8b90948eb8076d80053d37692</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text58</Name>
+              <Page isRef="4" />
+              <Parent isRef="81" />
+              <Text>14</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text58>
+            <Text59 Ref="96" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>25.8,0,1.8,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Regular,Point,False,204</Font>
+              <Guid>8bbb40c2b6c44fe8b433f078f31c3caf</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text59</Name>
+              <Page isRef="4" />
+              <Parent isRef="81" />
+              <Text>15</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text59>
+            <HorizontalLine3 Ref="97" type="HorizontalLinePrimitive" isKey="true">
+              <ClientRectangle>11.2,0.4,11.8,0.0254</ClientRectangle>
+              <Color>Black</Color>
+              <EndCap Ref="98" type="Cap" isKey="true">
+                <Color>Black</Color>
+              </EndCap>
+              <Guid>f4f5df8e21a3444db01cb50bdb08a920</Guid>
+              <Name>HorizontalLine3</Name>
+              <Page isRef="4" />
+              <Parent isRef="81" />
+              <Size>2</Size>
+              <StartCap Ref="99" type="Cap" isKey="true">
+                <Color>Black</Color>
+              </StartCap>
+            </HorizontalLine3>
+            <HorizontalLine5 Ref="100" type="HorizontalLinePrimitive" isKey="true">
+              <ClientRectangle>8.8,0.4,1.2,0.0254</ClientRectangle>
+              <Color>Black</Color>
+              <EndCap Ref="101" type="Cap" isKey="true">
+                <Color>Black</Color>
+              </EndCap>
+              <Name>HorizontalLine5</Name>
+              <Page isRef="4" />
+              <Parent isRef="81" />
+              <Size>2</Size>
+              <StartCap Ref="102" type="Cap" isKey="true">
+                <Color>Black</Color>
+              </StartCap>
+            </HorizontalLine5>
+            <HorizontalLine6 Ref="103" type="HorizontalLinePrimitive" isKey="true">
+              <ClientRectangle>24.4,0.4,3.2,0.0254</ClientRectangle>
+              <Color>Black</Color>
+              <EndCap Ref="104" type="Cap" isKey="true">
+                <Color>Black</Color>
+              </EndCap>
+              <Name>HorizontalLine6</Name>
+              <Page isRef="4" />
+              <Parent isRef="81" />
+              <Size>2</Size>
+              <StartCap Ref="105" type="Cap" isKey="true">
+                <Color>Black</Color>
+              </StartCap>
+            </HorizontalLine6>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Guid>a533706d932d4a2db0d48fdbc57d7a9f</Guid>
+          <Name>Header1</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+          <PrintIfEmpty>True</PrintIfEmpty>
+        </Header1>
+        <Data Ref="106" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,14.4,27.7,0.4</ClientRectangle>
+          <Components isList="true" count="27">
+            <DataText1 Ref="107" type="Text" isKey="true">
+              <Border>Left, Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,1.2,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,204</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataText1</Name>
+              <Page isRef="4" />
+              <Parent isRef="106" />
+              <Text>{Torg12TemplateItem.Number}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </DataText1>
+            <DataText2 Ref="108" type="Text" isKey="true">
+              <Border>Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>1.2,0,7.6,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,204</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataText2</Name>
+              <Page isRef="4" />
+              <Parent isRef="106" />
+              <Text>{Torg12TemplateItem.Name}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </DataText2>
+            <DataText3 Ref="109" type="Text" isKey="true">
+              <Border>Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>8.8,0,1.2,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,204</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataText3</Name>
+              <Page isRef="4" />
+              <Parent isRef="106" />
+              <Text>{Torg12TemplateItem.Code}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </DataText3>
+            <DataText4 Ref="110" type="Text" isKey="true">
+              <Border>Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>10,0,1.2,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,204</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataText4</Name>
+              <Page isRef="4" />
+              <Parent isRef="106" />
+              <Text>{Torg12TemplateItem.UnitName}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </DataText4>
+            <DataText5 Ref="111" type="Text" isKey="true">
+              <Border>Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>13.6,0,1.6,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,204</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataText5</Name>
+              <Page isRef="4" />
+              <Parent isRef="106" />
+              <Text>{Torg12TemplateItem.AmountInTare}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="112" type="NumberFormat" isKey="true">
+                <DecimalDigits>3</DecimalDigits>
+                <DecimalSeparator>,</DecimalSeparator>
+                <GroupSeparator> </GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+                <UseLocalSetting>False</UseLocalSetting>
+              </TextFormat>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </DataText5>
+            <Текст37 Ref="113" type="Text" isKey="true">
+              <Border>Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>15.2,0,1.6,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,204</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>34977623cbe749d6b6294971a0b1ca09</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Текст37</Name>
+              <Page isRef="4" />
+              <Parent isRef="106" />
+              <Text>{Torg12TemplateItem.Amount}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="114" type="NumberFormat" isKey="true">
+                <DecimalDigits>3</DecimalDigits>
+                <DecimalSeparator>,</DecimalSeparator>
+                <GroupSeparator> </GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+                <UseLocalSetting>False</UseLocalSetting>
+              </TextFormat>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </Текст37>
+            <Текст38 Ref="115" type="Text" isKey="true">
+              <Border>Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>16.8,0,1.2,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>320ecd30cfa9440baa01d1afe758375e</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Текст38</Name>
+              <Page isRef="4" />
+              <Parent isRef="106" />
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </Текст38>
+            <Текст39 Ref="116" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>25.8,0,1.8,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,204</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>e9e8e3748f0f47e19be244e3f5ecdebd</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Текст39</Name>
+              <Page isRef="4" />
+              <Parent isRef="106" />
+              <Text>{Torg12TemplateItem.Sum}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="117" type="NumberFormat" isKey="true">
+                <DecimalSeparator>,</DecimalSeparator>
+                <GroupSeparator> </GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+                <UseLocalSetting>False</UseLocalSetting>
+              </TextFormat>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </Текст39>
+            <Text60 Ref="118" type="Text" isKey="true">
+              <Border>Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>24.4,0,1.4,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,204</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>29733bb31189477cafbdcb3ddbdbbde4</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text60</Name>
+              <Page isRef="4" />
+              <Parent isRef="106" />
+              <Text>{Torg12TemplateItem.NdsSum == decimal.Zero ? string.Empty : Torg12TemplateItem.NdsSum.ToString()}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="119" type="NumberFormat" isKey="true">
+                <DecimalSeparator>,</DecimalSeparator>
+                <GroupSeparator> </GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+                <UseLocalSetting>False</UseLocalSetting>
+              </TextFormat>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </Text60>
+            <Text61 Ref="120" type="Text" isKey="true">
+              <Border>Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>23,0,1.4,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,204</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>dde868969072437d82710b971410828b</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text61</Name>
+              <Page isRef="4" />
+              <Parent isRef="106" />
+              <Text>{Torg12TemplateItem.Nds == decimal.Zero ? "Без НДС" : Torg12TemplateItem.Nds.ToString()}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="121" type="NumberFormat" isKey="true">
+                <DecimalSeparator>,</DecimalSeparator>
+                <GroupSeparator> </GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+                <UseLocalSetting>False</UseLocalSetting>
+              </TextFormat>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </Text61>
+            <Text62 Ref="122" type="Text" isKey="true">
+              <Border>Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>21,0,2,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,204</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>3854364466f249fa8e58c0b3c739e375</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text62</Name>
+              <Page isRef="4" />
+              <Parent isRef="106" />
+              <Text>{Torg12TemplateItem.SumWithoutNds}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="123" type="NumberFormat" isKey="true">
+                <DecimalSeparator>,</DecimalSeparator>
+                <GroupSeparator> </GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+                <UseLocalSetting>False</UseLocalSetting>
+              </TextFormat>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </Text62>
+            <Text63 Ref="124" type="Text" isKey="true">
+              <Border>Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>19.4,0,1.6,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,204</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>aedfe2cee2fd4d5087460096f3b1e3f0</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text63</Name>
+              <Page isRef="4" />
+              <Parent isRef="106" />
+              <Text>{Torg12TemplateItem.Price}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="125" type="NumberFormat" isKey="true">
+                <DecimalSeparator>,</DecimalSeparator>
+                <GroupSeparator> </GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+                <UseLocalSetting>False</UseLocalSetting>
+              </TextFormat>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </Text63>
+            <Text64 Ref="126" type="Text" isKey="true">
+              <Border>Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>18,0,1.4,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>15eb0dd5309c4d2081ec3b449ae2f8a0</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text64</Name>
+              <Page isRef="4" />
+              <Parent isRef="106" />
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </Text64>
+            <Text65 Ref="127" type="Text" isKey="true">
+              <Border>Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>12.2,0,1.4,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>0cc209a3a66c4dd8ae997fbee66a5cf7</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text65</Name>
+              <Page isRef="4" />
+              <Parent isRef="106" />
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </Text65>
+            <Text66 Ref="128" type="Text" isKey="true">
+              <Border>Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>11.2,0,1,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>6ed1cb726739442ab81f203fb67637ed</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text66</Name>
+              <Page isRef="4" />
+              <Parent isRef="106" />
+              <Text>{Torg12TemplateItem.UnitCode}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </Text66>
+            <StartPointPrimitive1 Ref="129" type="Stimulsoft.Report.Components.StiStartPointPrimitive" isKey="true">
+              <ClientRectangle>8.8,0,0,0</ClientRectangle>
+              <Name>StartPointPrimitive1</Name>
+              <Page isRef="4" />
+              <Parent isRef="106" />
+              <ReferenceToGuid>3eebb5c30d924ab4b93eec3306b72892</ReferenceToGuid>
+            </StartPointPrimitive1>
+            <EndPointPrimitive1 Ref="130" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
+              <ClientRectangle>8.83,0.4,0,0</ClientRectangle>
+              <Name>EndPointPrimitive1</Name>
+              <Page isRef="4" />
+              <Parent isRef="106" />
+              <ReferenceToGuid>3eebb5c30d924ab4b93eec3306b72892</ReferenceToGuid>
+            </EndPointPrimitive1>
+            <StartPointPrimitive2 Ref="131" type="Stimulsoft.Report.Components.StiStartPointPrimitive" isKey="true">
+              <ClientRectangle>10,0,0,0</ClientRectangle>
+              <Name>StartPointPrimitive2</Name>
+              <Page isRef="4" />
+              <Parent isRef="106" />
+              <ReferenceToGuid>ce358b0eae6f45d48083690babb9f36f</ReferenceToGuid>
+            </StartPointPrimitive2>
+            <EndPointPrimitive2 Ref="132" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
+              <ClientRectangle>10.03,0.4,0,0</ClientRectangle>
+              <Name>EndPointPrimitive2</Name>
+              <Page isRef="4" />
+              <Parent isRef="106" />
+              <ReferenceToGuid>ce358b0eae6f45d48083690babb9f36f</ReferenceToGuid>
+            </EndPointPrimitive2>
+            <StartPointPrimitive3 Ref="133" type="Stimulsoft.Report.Components.StiStartPointPrimitive" isKey="true">
+              <ClientRectangle>11.2,0,0,0</ClientRectangle>
+              <Name>StartPointPrimitive3</Name>
+              <Page isRef="4" />
+              <Parent isRef="106" />
+              <ReferenceToGuid>9cfa7c4fec7c484e8d669b9fe131eefc</ReferenceToGuid>
+            </StartPointPrimitive3>
+            <EndPointPrimitive3 Ref="134" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
+              <ClientRectangle>11.23,0.4,0,0</ClientRectangle>
+              <Name>EndPointPrimitive3</Name>
+              <Page isRef="4" />
+              <Parent isRef="106" />
+              <ReferenceToGuid>9cfa7c4fec7c484e8d669b9fe131eefc</ReferenceToGuid>
+            </EndPointPrimitive3>
+            <StartPointPrimitive4 Ref="135" type="Stimulsoft.Report.Components.StiStartPointPrimitive" isKey="true">
+              <ClientRectangle>23,0,0,0</ClientRectangle>
+              <Name>StartPointPrimitive4</Name>
+              <Page isRef="4" />
+              <Parent isRef="106" />
+              <ReferenceToGuid>131a1bce8f694cf7a9a5352c52e908ef</ReferenceToGuid>
+            </StartPointPrimitive4>
+            <EndPointPrimitive4 Ref="136" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
+              <ClientRectangle>23.03,0.4,0,0</ClientRectangle>
+              <Name>EndPointPrimitive4</Name>
+              <Page isRef="4" />
+              <Parent isRef="106" />
+              <ReferenceToGuid>131a1bce8f694cf7a9a5352c52e908ef</ReferenceToGuid>
+            </EndPointPrimitive4>
+            <StartPointPrimitive5 Ref="137" type="Stimulsoft.Report.Components.StiStartPointPrimitive" isKey="true">
+              <ClientRectangle>24.4,0,0,0</ClientRectangle>
+              <Name>StartPointPrimitive5</Name>
+              <Page isRef="4" />
+              <Parent isRef="106" />
+              <ReferenceToGuid>3ea10634d0c045ce9787e544cfcccffb</ReferenceToGuid>
+            </StartPointPrimitive5>
+            <EndPointPrimitive5 Ref="138" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
+              <ClientRectangle>24.43,0.4,0,0</ClientRectangle>
+              <Name>EndPointPrimitive5</Name>
+              <Page isRef="4" />
+              <Parent isRef="106" />
+              <ReferenceToGuid>3ea10634d0c045ce9787e544cfcccffb</ReferenceToGuid>
+            </EndPointPrimitive5>
+            <StartPointPrimitive6 Ref="139" type="Stimulsoft.Report.Components.StiStartPointPrimitive" isKey="true">
+              <ClientRectangle>27.6,0,0,0</ClientRectangle>
+              <Name>StartPointPrimitive6</Name>
+              <Page isRef="4" />
+              <Parent isRef="106" />
+              <ReferenceToGuid>4021c7b9678d4abe9680c791f6410e36</ReferenceToGuid>
+            </StartPointPrimitive6>
+            <EndPointPrimitive6 Ref="140" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
+              <ClientRectangle>27.63,0.4,0,0</ClientRectangle>
+              <Name>EndPointPrimitive6</Name>
+              <Page isRef="4" />
+              <Parent isRef="106" />
+              <ReferenceToGuid>4021c7b9678d4abe9680c791f6410e36</ReferenceToGuid>
+            </EndPointPrimitive6>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataSourceName>Torg12TemplateItem</DataSourceName>
+          <Filters isList="true" count="0" />
+          <Name>Data</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+          <Sort isList="true" count="0" />
+        </Data>
+        <Footer1 Ref="141" type="FooterBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,15.6,27.7,1</ClientRectangle>
+          <Components isList="true" count="12">
+            <Text67 Ref="142" type="Text" isKey="true">
+              <Border>Left, Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>15.2,0,1.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,9,Regular,Point,False,204</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>be294b9838ae402eb3df5ceef69b1b83</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text67</Name>
+              <Page isRef="4" />
+              <Parent isRef="141" />
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </Text67>
+            <Text68 Ref="143" type="Text" isKey="true">
+              <Border>Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>16.8,0,1.2,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,9,Regular,Point,False,204</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>ac0457969e1b4a94aeb1475d76d26e12</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text68</Name>
+              <Page isRef="4" />
+              <Parent isRef="141" />
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </Text68>
+            <Text71 Ref="144" type="Text" isKey="true">
+              <Border>Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>23,0,1.4,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,9,Regular,Point,False,204</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>656d443a8b5b4f9e996f68dd3995bad5</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text71</Name>
+              <Page isRef="4" />
+              <Parent isRef="141" />
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </Text71>
+            <Text72 Ref="145" type="Text" isKey="true">
+              <Border>Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>21,0,2,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,204</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>2ca34958b12a4301b430e5ddc9365552</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text72</Name>
+              <Page isRef="4" />
+              <Parent isRef="141" />
+              <Text>{cSum(Torg12TemplateItem.SumWithoutNds)}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="146" type="NumberFormat" isKey="true">
+                <DecimalSeparator>,</DecimalSeparator>
+                <GroupSeparator> </GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+                <UseLocalSetting>False</UseLocalSetting>
+              </TextFormat>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </Text72>
+            <Text73 Ref="147" type="Text" isKey="true">
+              <Border>Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>19.4,0,1.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,9,Regular,Point,False,204</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>b5c105951f824a799f6e397080ffddff</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text73</Name>
+              <Page isRef="4" />
+              <Parent isRef="141" />
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </Text73>
+            <Text74 Ref="148" type="Text" isKey="true">
+              <Border>Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>18,0,1.4,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,9,Regular,Point,False,204</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>0e317d69185342b4bfa63525dfe2fa9a</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text74</Name>
+              <Page isRef="4" />
+              <Parent isRef="141" />
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </Text74>
+            <Text75 Ref="149" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>11.6,0,3.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,204</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text75</Name>
+              <Page isRef="4" />
+              <Parent isRef="141" />
+              <Text>Итого:</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </Text75>
+            <Text148 Ref="150" type="Text" isKey="true">
+              <Border>Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>24.4,0,1.4,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,204</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>232674d041d8445a84ca373f47836e17</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text148</Name>
+              <Page isRef="4" />
+              <Parent isRef="141" />
+              <Text>{cSum(Torg12TemplateItem.NdsSum)}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="151" type="NumberFormat" isKey="true">
+                <DecimalSeparator>,</DecimalSeparator>
+                <GroupSeparator> </GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+                <UseLocalSetting>False</UseLocalSetting>
+              </TextFormat>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </Text148>
+            <Text70 Ref="152" type="Text" isKey="true">
+              <Border>Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>25.8,0,1.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,204</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>2e67b2f354d74ce5b0c24091073d0060</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text70</Name>
+              <Page isRef="4" />
+              <Parent isRef="141" />
+              <Text>{cSum(Torg12TemplateItem.Sum)}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="153" type="NumberFormat" isKey="true">
+                <DecimalSeparator>,</DecimalSeparator>
+                <GroupSeparator> </GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+                <UseLocalSetting>False</UseLocalSetting>
+              </TextFormat>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </Text70>
+            <HorizontalLine1 Ref="154" type="HorizontalLinePrimitive" isKey="true">
+              <ClientRectangle>11.2,0,11.8,0.0254</ClientRectangle>
+              <Color>Black</Color>
+              <EndCap Ref="155" type="Cap" isKey="true">
+                <Color>Black</Color>
+              </EndCap>
+              <Name>HorizontalLine1</Name>
+              <Page isRef="4" />
+              <Parent isRef="141" />
+              <Size>2</Size>
+              <StartCap Ref="156" type="Cap" isKey="true">
+                <Color>Black</Color>
+              </StartCap>
+            </HorizontalLine1>
+            <HorizontalLine2 Ref="157" type="HorizontalLinePrimitive" isKey="true">
+              <ClientRectangle>24.4,0,3.2,0.0254</ClientRectangle>
+              <Color>Black</Color>
+              <EndCap Ref="158" type="Cap" isKey="true">
+                <Color>Black</Color>
+              </EndCap>
+              <Name>HorizontalLine2</Name>
+              <Page isRef="4" />
+              <Parent isRef="141" />
+              <Size>2</Size>
+              <StartCap Ref="159" type="Cap" isKey="true">
+                <Color>Black</Color>
+              </StartCap>
+            </HorizontalLine2>
+            <HorizontalLine4 Ref="160" type="HorizontalLinePrimitive" isKey="true">
+              <ClientRectangle>8.8,0,1.2,0.0254</ClientRectangle>
+              <Color>Black</Color>
+              <EndCap Ref="161" type="Cap" isKey="true">
+                <Color>Black</Color>
+              </EndCap>
+              <Name>HorizontalLine4</Name>
+              <Page isRef="4" />
+              <Parent isRef="141" />
+              <Size>2</Size>
+              <StartCap Ref="162" type="Cap" isKey="true">
+                <Color>Black</Color>
+              </StartCap>
+            </HorizontalLine4>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Name>Footer1</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+          <PrintIfEmpty>True</PrintIfEmpty>
+          <PrintOnAllPages>True</PrintOnAllPages>
+        </Footer1>
+        <Footer3 Ref="163" type="FooterBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,17.4,27.7,0.8</ClientRectangle>
+          <Components isList="true" count="9">
+            <Text132 Ref="164" type="Text" isKey="true">
+              <Border>Left, Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>15.2,0,1.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,9,Regular,Point,False,204</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>63759ee2f38a4a829484fbddc517b4b3</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text132</Name>
+              <Page isRef="4" />
+              <Parent isRef="163" />
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text132>
+            <Text133 Ref="165" type="Text" isKey="true">
+              <Border>Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>16.8,0,1.2,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,9,Regular,Point,False,204</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>d5eb08bbc2514b1395300deac82e042b</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text133</Name>
+              <Page isRef="4" />
+              <Parent isRef="163" />
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text133>
+            <Text134 Ref="166" type="Text" isKey="true">
+              <Border>Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>25.8,0,1.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,204</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>9e4d48e23eed4ffd9c68f5652f5efc6f</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text134</Name>
+              <Page isRef="4" />
+              <Parent isRef="163" />
+              <Text>{Sum(Torg12TemplateItem.Sum)}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="167" type="NumberFormat" isKey="true">
+                <DecimalSeparator>,</DecimalSeparator>
+                <GroupSeparator> </GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+                <UseLocalSetting>False</UseLocalSetting>
+              </TextFormat>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </Text134>
+            <Text135 Ref="168" type="Text" isKey="true">
+              <Border>Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>24.4,0,1.4,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,204</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>5cd1457f34bf436e88ef37341ec12170</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text135</Name>
+              <Page isRef="4" />
+              <Parent isRef="163" />
+              <Text>{Sum(Torg12TemplateItem.NdsSum)}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="169" type="NumberFormat" isKey="true">
+                <DecimalSeparator>,</DecimalSeparator>
+                <GroupSeparator> </GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+                <UseLocalSetting>False</UseLocalSetting>
+              </TextFormat>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </Text135>
+            <Text136 Ref="170" type="Text" isKey="true">
+              <Border>Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>23,0,1.4,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,9,Regular,Point,False,204</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>c4b29d2a6e7046469238c451d377f82a</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text136</Name>
+              <Page isRef="4" />
+              <Parent isRef="163" />
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text136>
+            <Text137 Ref="171" type="Text" isKey="true">
+              <Border>Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>21,0,2,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,204</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>e674edd53a154d16be900999fcd7643f</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text137</Name>
+              <Page isRef="4" />
+              <Parent isRef="163" />
+              <Text>{Sum(Torg12TemplateItem.SumWithoutNds)}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="172" type="NumberFormat" isKey="true">
+                <DecimalSeparator>,</DecimalSeparator>
+                <GroupSeparator> </GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+                <UseLocalSetting>False</UseLocalSetting>
+              </TextFormat>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </Text137>
+            <Text138 Ref="173" type="Text" isKey="true">
+              <Border>Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>19.4,0,1.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,9,Regular,Point,False,204</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>b93bf54ff3274156bd33f95e7c81e10b</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text138</Name>
+              <Page isRef="4" />
+              <Parent isRef="163" />
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text138>
+            <Text139 Ref="174" type="Text" isKey="true">
+              <Border>Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>18,0,1.4,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,9,Regular,Point,False,204</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>d5c02fed8ea741cb91de28b3a2303d04</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text139</Name>
+              <Page isRef="4" />
+              <Parent isRef="163" />
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text139>
+            <Text140 Ref="175" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>11.6,0,3.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,204</Font>
+              <Guid>8712216878b14f2e921ba16943294316</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text140</Name>
+              <Page isRef="4" />
+              <Parent isRef="163" />
+              <Text>Всего по накладной:</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text140>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Guid>c05e4515f7304020a1dfcc3dcba7099a</Guid>
+          <Name>Footer3</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+          <PrintIfEmpty>True</PrintIfEmpty>
+        </Footer3>
+        <VerticalLine1 Ref="176" type="VerticalLinePrimitive" isKey="true">
+          <ClientRectangle>8.8,14.4,0.0254,0.4</ClientRectangle>
+          <Color>Black</Color>
+          <EndCap Ref="177" type="Cap" isKey="true">
+            <Color>Black</Color>
+          </EndCap>
+          <Guid>3eebb5c30d924ab4b93eec3306b72892</Guid>
+          <Name>VerticalLine1</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+          <Size>2</Size>
+          <StartCap Ref="178" type="Cap" isKey="true">
+            <Color>Black</Color>
+          </StartCap>
+        </VerticalLine1>
+        <VerticalLine2 Ref="179" type="VerticalLinePrimitive" isKey="true">
+          <ClientRectangle>10,14.4,0.0254,0.4</ClientRectangle>
+          <Color>Black</Color>
+          <EndCap Ref="180" type="Cap" isKey="true">
+            <Color>Black</Color>
+          </EndCap>
+          <Guid>ce358b0eae6f45d48083690babb9f36f</Guid>
+          <Name>VerticalLine2</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+          <Size>2</Size>
+          <StartCap Ref="181" type="Cap" isKey="true">
+            <Color>Black</Color>
+          </StartCap>
+        </VerticalLine2>
+        <VerticalLine3 Ref="182" type="VerticalLinePrimitive" isKey="true">
+          <ClientRectangle>11.2,14.4,0.0254,0.4</ClientRectangle>
+          <Color>Black</Color>
+          <EndCap Ref="183" type="Cap" isKey="true">
+            <Color>Black</Color>
+          </EndCap>
+          <Guid>9cfa7c4fec7c484e8d669b9fe131eefc</Guid>
+          <Name>VerticalLine3</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+          <Size>2</Size>
+          <StartCap Ref="184" type="Cap" isKey="true">
+            <Color>Black</Color>
+          </StartCap>
+        </VerticalLine3>
+        <VerticalLine4 Ref="185" type="VerticalLinePrimitive" isKey="true">
+          <ClientRectangle>23,14.4,0.0254,0.4</ClientRectangle>
+          <Color>Black</Color>
+          <EndCap Ref="186" type="Cap" isKey="true">
+            <Color>Black</Color>
+          </EndCap>
+          <Guid>131a1bce8f694cf7a9a5352c52e908ef</Guid>
+          <Name>VerticalLine4</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+          <Size>2</Size>
+          <StartCap Ref="187" type="Cap" isKey="true">
+            <Color>Black</Color>
+          </StartCap>
+        </VerticalLine4>
+        <VerticalLine5 Ref="188" type="VerticalLinePrimitive" isKey="true">
+          <ClientRectangle>24.4,14.4,0.0254,0.4</ClientRectangle>
+          <Color>Black</Color>
+          <EndCap Ref="189" type="Cap" isKey="true">
+            <Color>Black</Color>
+          </EndCap>
+          <Guid>3ea10634d0c045ce9787e544cfcccffb</Guid>
+          <Name>VerticalLine5</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+          <Size>2</Size>
+          <StartCap Ref="190" type="Cap" isKey="true">
+            <Color>Black</Color>
+          </StartCap>
+        </VerticalLine5>
+        <VerticalLine6 Ref="191" type="VerticalLinePrimitive" isKey="true">
+          <ClientRectangle>27.6,14.4,0.0254,0.4</ClientRectangle>
+          <Color>Black</Color>
+          <EndCap Ref="192" type="Cap" isKey="true">
+            <Color>Black</Color>
+          </EndCap>
+          <Guid>4021c7b9678d4abe9680c791f6410e36</Guid>
+          <Name>VerticalLine6</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+          <Size>2</Size>
+          <StartCap Ref="193" type="Cap" isKey="true">
+            <Color>Black</Color>
+          </StartCap>
+        </VerticalLine6>
+        <VerticalLine7 Ref="194" type="VerticalLinePrimitive" isKey="true">
+          <ClientRectangle>21.8,6,0.0254,1.6</ClientRectangle>
+          <Color>Black</Color>
+          <EndCap Ref="195" type="Cap" isKey="true">
+            <Color>Black</Color>
+          </EndCap>
+          <Guid>4ade39ce03e6413fabdd486695c25d32</Guid>
+          <Name>VerticalLine7</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+          <Size>2</Size>
+          <StartCap Ref="196" type="Cap" isKey="true">
+            <Color>Black</Color>
+          </StartCap>
+        </VerticalLine7>
+        <Rectangle1 Ref="197" type="RectanglePrimitive" isKey="true">
+          <ClientRectangle>23.6,1.4,4,6.6</ClientRectangle>
+          <Color>Black</Color>
+          <Guid>419b820975ad47cc97b2be26fc20791c</Guid>
+          <Name>Rectangle1</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+          <Size>2</Size>
+        </Rectangle1>
+      </Components>
+      <Conditions isList="true" count="0" />
+      <Guid>50162af6202a4a57b03cc172fcbe3c05</Guid>
+      <Margins>1,1,1,1</Margins>
+      <Name>Page1</Name>
+      <Orientation>Landscape</Orientation>
+      <PageHeight>21</PageHeight>
+      <PageWidth>29.7</PageWidth>
+      <PaperSize>A4</PaperSize>
+      <Report isRef="0" />
+      <Watermark Ref="198" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
+        <Font>Arial,100</Font>
+        <TextBrush>[50:0:0:0]</TextBrush>
+      </Watermark>
+    </Page1>
+    <Page2 Ref="199" type="Page" isKey="true">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components isList="true" count="1">
+        <ReportSummary2 Ref="200" type="ReportSummaryBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,0.4,27.7,8.4</ClientRectangle>
+          <Components isList="true" count="58">
+            <Text89 Ref="201" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,1.4,7.6,1</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>1d2e4988c18c4688860d924ea31a42f3</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text89</Name>
+              <Page isRef="199" />
+              <Parent isRef="200" />
+              <Text>Товарная накладная имеет приложение на
+и содержит</Text>
+              <TextBrush>Black</TextBrush>
+            </Text89>
+            <Text76 Ref="202" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>17.8,1.6,6.2,1</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>502da7716e594b898b528c770acbcb52</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text76</Name>
+              <Page isRef="199" />
+              <Parent isRef="200" />
+              <Text>листах
+порядковых номеров записей</Text>
+              <TextBrush>Black</TextBrush>
+            </Text76>
+            <Text77 Ref="203" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>9.8,2.8,3.2,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>e9ae28e580af47148f8d0ac22d11ff73</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text77</Name>
+              <Page isRef="199" />
+              <Parent isRef="200" />
+              <Text>Масса груза (нетто)</Text>
+              <TextBrush>Black</TextBrush>
+            </Text77>
+            <Text78 Ref="204" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>9.8,3.4,3.2,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>dd89ce2e917e4af19d1dbcbafbd5bed7</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text78</Name>
+              <Page isRef="199" />
+              <Parent isRef="200" />
+              <Text>Масса груза (брутто)</Text>
+              <TextBrush>Black</TextBrush>
+            </Text78>
+            <Text79 Ref="205" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.4,3.4,1.8,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>53f71116a3d442559d1aa98934f49b43</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text79</Name>
+              <Page isRef="199" />
+              <Parent isRef="200" />
+              <Text>Всего мест</Text>
+              <TextBrush>Black</TextBrush>
+            </Text79>
+            <Text88 Ref="206" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,4.2,7.4,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>69c6d105dfbd498a9f2697282bed5dde</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text88</Name>
+              <Page isRef="199" />
+              <Parent isRef="200" />
+              <Text>Приложение (паспорта, сертификаты, и т.п.) на</Text>
+              <TextBrush>Black</TextBrush>
+            </Text88>
+            <Text90 Ref="207" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>13.4,4.2,1.4,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>9a327bc09f8a4880a88c036963439e55</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text90</Name>
+              <Page isRef="199" />
+              <Parent isRef="200" />
+              <Text>листах</Text>
+              <TextBrush>Black</TextBrush>
+            </Text90>
+            <Text91 Ref="208" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,4.8,4.2,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>649bf44ead544638a136dee9e1a34db8</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text91</Name>
+              <Page isRef="199" />
+              <Parent isRef="200" />
+              <Text>Всего отпущено на сумму</Text>
+              <TextBrush>Black</TextBrush>
+            </Text91>
+            <Text92 Ref="209" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,6,3.2,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>bd830250d4c14a858c527976ce918950</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text92</Name>
+              <Page isRef="199" />
+              <Parent isRef="200" />
+              <Text>Отпуск разрешил</Text>
+              <TextBrush>Black</TextBrush>
+            </Text92>
+            <Text94 Ref="210" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,7.2,3.8,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>37e70d348d9042f48bcca2a335630a6e</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text94</Name>
+              <Page isRef="199" />
+              <Parent isRef="200" />
+              <Text>Отпуск груза произвел</Text>
+              <TextBrush>Black</TextBrush>
+            </Text94>
+            <Text95 Ref="211" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.6,7.8,1,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>f368052cc75444a6bdb2a7591badbcbf</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text95</Name>
+              <Page isRef="199" />
+              <Parent isRef="200" />
+              <Text>М.П.</Text>
+              <TextBrush>Black</TextBrush>
+            </Text95>
+            <Text96 Ref="212" type="Text" isKey="true">
+              <Border>Top;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.8,2.4,16,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,6,Regular,Point,False,204</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text96</Name>
+              <Page isRef="199" />
+              <Parent isRef="200" />
+              <Text>прописью</Text>
+              <TextBrush>Black</TextBrush>
+            </Text96>
+            <Text97 Ref="213" type="Text" isKey="true">
+              <Border>Top;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>13,3.2,6.8,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,6,Regular,Point,False,204</Font>
+              <Guid>17482c4c2e504038ba2f4ce78cb9c77d</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text97</Name>
+              <Page isRef="199" />
+              <Parent isRef="200" />
+              <Text>прописью</Text>
+              <TextBrush>Black</TextBrush>
+            </Text97>
+            <Text98 Ref="214" type="Text" isKey="true">
+              <Border>Top;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>13,3.8,6.8,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,6,Regular,Point,False,204</Font>
+              <Guid>2dced7cef8684f769df80f9e9886705c</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text98</Name>
+              <Page isRef="199" />
+              <Parent isRef="200" />
+              <Text>прописью</Text>
+              <TextBrush>Black</TextBrush>
+            </Text98>
+            <Text99 Ref="215" type="Text" isKey="true">
+              <Border>Top;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2.4,3.8,6.6,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,6,Regular,Point,False,204</Font>
+              <Guid>6c6080be3ba0464280ff37ea7c75cc3f</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text99</Name>
+              <Page isRef="199" />
+              <Parent isRef="200" />
+              <Text>прописью</Text>
+              <TextBrush>Black</TextBrush>
+            </Text99>
+            <Text100 Ref="216" type="Text" isKey="true">
+              <Border>Top;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>7.8,4.6,5.4,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,6,Regular,Point,False,204</Font>
+              <Guid>713fbc546fa64ee386aa84340e8386ec</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text100</Name>
+              <Page isRef="199" />
+              <Parent isRef="200" />
+              <Text>прописью</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text100>
+            <Text101 Ref="217" type="Text" isKey="true">
+              <Border>Top;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>4.2,5.2,10.4,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,6,Regular,Point,False,204</Font>
+              <Guid>e9456654caa94a10a1088f4d7aeb85a9</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text101</Name>
+              <Page isRef="199" />
+              <Parent isRef="200" />
+              <Text>прописью</Text>
+              <TextBrush>Black</TextBrush>
+            </Text101>
+            <Text102 Ref="218" type="Text" isKey="true">
+              <Border>Top;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>3.2,6.4,5,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,6,Regular,Point,False,204</Font>
+              <Guid>58564b0d354a4bf09eb3bd0318922c2a</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text102</Name>
+              <Page isRef="199" />
+              <Parent isRef="200" />
+              <Text>должность</Text>
+              <TextBrush>Black</TextBrush>
+            </Text102>
+            <Text103 Ref="219" type="Text" isKey="true">
+              <Border>Top;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>3.8,7.6,4.4,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,6,Regular,Point,False,204</Font>
+              <Guid>1e2bf98795904eada51997ee4b3b9c2b</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text103</Name>
+              <Page isRef="199" />
+              <Parent isRef="200" />
+              <Text>должность</Text>
+              <TextBrush>Black</TextBrush>
+            </Text103>
+            <Text104 Ref="220" type="Text" isKey="true">
+              <Border>Top;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>8.6,6.4,2.4,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,6,Regular,Point,False,204</Font>
+              <Guid>98d26256238d4e2daff6152f8c57969b</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text104</Name>
+              <Page isRef="199" />
+              <Parent isRef="200" />
+              <Text>подпись</Text>
+              <TextBrush>Black</TextBrush>
+            </Text104>
+            <Text105 Ref="221" type="Text" isKey="true">
+              <Border>Top;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>8.6,7,2.4,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,6,Regular,Point,False,204</Font>
+              <Guid>bbded09ff64a4625842845bcbe262f4a</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text105</Name>
+              <Page isRef="199" />
+              <Parent isRef="200" />
+              <Text>подпись</Text>
+              <TextBrush>Black</TextBrush>
+            </Text105>
+            <Text106 Ref="222" type="Text" isKey="true">
+              <Border>Top;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>8.6,7.6,2.4,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,6,Regular,Point,False,204</Font>
+              <Guid>c849c7dd45b34050a797e0fc1b47542c</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text106</Name>
+              <Page isRef="199" />
+              <Parent isRef="200" />
+              <Text>подпись</Text>
+              <TextBrush>Black</TextBrush>
+            </Text106>
+            <Text107 Ref="223" type="Text" isKey="true">
+              <Border>Top;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>11.6,7.6,3,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,6,Regular,Point,False,204</Font>
+              <Guid>608c201de29e490c9cacb3f472276679</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text107</Name>
+              <Page isRef="199" />
+              <Parent isRef="200" />
+              <Text>расшифровка подписи</Text>
+              <TextBrush>Black</TextBrush>
+            </Text107>
+            <Text108 Ref="224" type="Text" isKey="true">
+              <Border>Top;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>11.6,7,3,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,6,Regular,Point,False,204</Font>
+              <Guid>4b9bc8c0fe044a49b1062504a5e50e18</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text108</Name>
+              <Page isRef="199" />
+              <Parent isRef="200" />
+              <Text>расшифровка подписи</Text>
+              <TextBrush>Black</TextBrush>
+            </Text108>
+            <Text109 Ref="225" type="Text" isKey="true">
+              <Border>Top;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>11.6,6.4,3,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,6,Regular,Point,False,204</Font>
+              <Guid>13f97a07c8024fdea113de721e327e09</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text109</Name>
+              <Page isRef="199" />
+              <Parent isRef="200" />
+              <Text>расшифровка подписи</Text>
+              <TextBrush>Black</TextBrush>
+            </Text109>
+            <Text110 Ref="226" type="Text" isKey="true">
+              <Border>Top;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>3.8,8.2,4.4,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,6,Regular,Point,False,204</Font>
+              <Guid>43bc37e59cbb4b2eb6cfc8ec5ee22c59</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text110</Name>
+              <Page isRef="199" />
+              <Parent isRef="200" />
+              <Text>дата</Text>
+              <TextBrush>Black</TextBrush>
+            </Text110>
+            <Text111 Ref="227" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>16.4,8,1,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>e752f8b900214134be26edc5b5cc23f5</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text111</Name>
+              <Page isRef="199" />
+              <Parent isRef="200" />
+              <Text>М.П.</Text>
+              <TextBrush>Black</TextBrush>
+            </Text111>
+            <Text112 Ref="228" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>15.2,4,3.6,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>d1438ab47af1403ea940ff6f29da1353</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text112</Name>
+              <Page isRef="199" />
+              <Parent isRef="200" />
+              <Text>По доверенности №</Text>
+              <TextBrush>Black</TextBrush>
+            </Text112>
+            <Text113 Ref="229" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>21.2,4,0.8,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>063539c5941049438e6d3124805e2eed</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text113</Name>
+              <Page isRef="199" />
+              <Parent isRef="200" />
+              <Text>от</Text>
+              <TextBrush>Black</TextBrush>
+            </Text113>
+            <Text114 Ref="230" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>15.2,4.4,1.8,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>35c75325168e4afe893c008db3154416</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text114</Name>
+              <Page isRef="199" />
+              <Parent isRef="200" />
+              <Text>выданной</Text>
+              <TextBrush>Black</TextBrush>
+            </Text114>
+            <Text115 Ref="231" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>15.2,6,2.2,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>6e7dc54203d1425bbb79bfc83e394e5d</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text115</Name>
+              <Page isRef="199" />
+              <Parent isRef="200" />
+              <Text>Груз принял</Text>
+              <TextBrush>Black</TextBrush>
+            </Text115>
+            <Text116 Ref="232" type="Text" isKey="true">
+              <Border>Top;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>18.2,6.4,3,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,6,Regular,Point,False,204</Font>
+              <Guid>ef26d55b2481470abb4eb72548305ede</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text116</Name>
+              <Page isRef="199" />
+              <Parent isRef="200" />
+              <Text>должность</Text>
+              <TextBrush>Black</TextBrush>
+            </Text116>
+            <Text117 Ref="233" type="Text" isKey="true">
+              <Border>Top;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>24.4,6.4,3,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,6,Regular,Point,False,204</Font>
+              <Guid>3979de6eb49f4bd794d1ab81dde22190</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text117</Name>
+              <Page isRef="199" />
+              <Parent isRef="200" />
+              <Text>расшифровка подписи</Text>
+              <TextBrush>Black</TextBrush>
+            </Text117>
+            <Text118 Ref="234" type="Text" isKey="true">
+              <Border>Top;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>21.6,6.4,2.4,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,6,Regular,Point,False,204</Font>
+              <Guid>2457a661a20a4c309a219ff106fff04b</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text118</Name>
+              <Page isRef="199" />
+              <Parent isRef="200" />
+              <Text>подпись</Text>
+              <TextBrush>Black</TextBrush>
+            </Text118>
+            <Text119 Ref="235" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>15.2,6.8,2.4,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>795669cc2bd5473e8326fdb57f876d2a</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text119</Name>
+              <Page isRef="199" />
+              <Parent isRef="200" />
+              <Text>Груз получил</Text>
+              <TextBrush>Black</TextBrush>
+            </Text119>
+            <Text120 Ref="236" type="Text" isKey="true">
+              <Border>Top;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>18.2,7.6,3,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,6,Regular,Point,False,204</Font>
+              <Guid>6a22d3ea87b54d029fbd92df7af1f3e8</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text120</Name>
+              <Page isRef="199" />
+              <Parent isRef="200" />
+              <Text>должность</Text>
+              <TextBrush>Black</TextBrush>
+            </Text120>
+            <Text121 Ref="237" type="Text" isKey="true">
+              <Border>Top;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>24.4,7.6,3,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,6,Regular,Point,False,204</Font>
+              <Guid>a9f0160797854f2e995e49b5461ab940</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text121</Name>
+              <Page isRef="199" />
+              <Parent isRef="200" />
+              <Text>расшифровка подписи</Text>
+              <TextBrush>Black</TextBrush>
+            </Text121>
+            <Text122 Ref="238" type="Text" isKey="true">
+              <Border>Top;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>21.6,7.6,2.4,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,6,Regular,Point,False,204</Font>
+              <Guid>b62faa57b9a14049a4c33c335914b3e8</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text122</Name>
+              <Page isRef="199" />
+              <Parent isRef="200" />
+              <Text>подпись</Text>
+              <TextBrush>Black</TextBrush>
+            </Text122>
+            <Text123 Ref="239" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>15.2,7.2,3,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>fa0d9caff5fa4486a83df5a969dacb1c</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text123</Name>
+              <Page isRef="199" />
+              <Parent isRef="200" />
+              <Text>грузополучатель</Text>
+              <TextBrush>Black</TextBrush>
+            </Text123>
+            <Text124 Ref="240" type="Text" isKey="true">
+              <Border>Top;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>17,4.8,10.4,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,6,Regular,Point,False,204</Font>
+              <Guid>5e6652e678804092a2c3427d8b6897d0</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text124</Name>
+              <Page isRef="199" />
+              <Parent isRef="200" />
+              <Text>кем, кому (организация, должность, фамилия, и., о.)</Text>
+              <TextBrush>Black</TextBrush>
+            </Text124>
+            <Text125 Ref="241" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>16,1.6,1.6,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text125</Name>
+              <Page isRef="199" />
+              <Parent isRef="200" />
+              <Text>{PageNumber}</Text>
+              <TextBrush>Black</TextBrush>
+            </Text125>
+            <Text126 Ref="242" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>4.2,4.8,10.4,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Regular,Point,False,204</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text126</Name>
+              <Page isRef="199" />
+              <Parent isRef="200" />
+              <Text>{Torg12TemplateProperties.AllSum}</Text>
+              <TextBrush>Black</TextBrush>
+            </Text126>
+            <Text127 Ref="243" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>16,2,1.6,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>976c88c46094404ca623ec35f7c9acb8</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text127</Name>
+              <Page isRef="199" />
+              <Parent isRef="200" />
+              <Text>{Count(Data)}</Text>
+              <TextBrush>Black</TextBrush>
+            </Text127>
+            <Text93 Ref="244" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,6.6,4.8,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>2f5a9fbe3eee4181bf7e5049c4a01ea7</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text93</Name>
+              <Page isRef="199" />
+              <Parent isRef="200" />
+              <Text>Главный (старший) бухгалтер</Text>
+              <TextBrush>Black</TextBrush>
+            </Text93>
+            <Text129 Ref="245" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>15,0.4,2.6,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Regular,Point,False,204</Font>
+              <Guid>5564a2b4f6514c25bdd135a169acf5e0</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text129</Name>
+              <Page isRef="199" />
+              <Parent isRef="200" />
+              <Text>Номер документа</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text129>
+            <Text128 Ref="246" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>17.6,0.4,2.8,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Regular,Point,False,204</Font>
+              <Guid>4df0281e795e4f4abb9b2278df9cd285</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text128</Name>
+              <Page isRef="199" />
+              <Parent isRef="200" />
+              <Text>Дата составления</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text128>
+            <Text130 Ref="247" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>15,1,2.6,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>a1032e6b57e94dca8994f1c24c887d50</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text130</Name>
+              <Page isRef="199" />
+              <Parent isRef="200" />
+              <Text>{Torg12TemplateProperties.Number}</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text130>
+            <Text131 Ref="248" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>17.6,1,2.8,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>45630a916b8a4678b93425ef94dfb139</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text131</Name>
+              <Page isRef="199" />
+              <Parent isRef="200" />
+              <Text>{Torg12TemplateProperties.Date}</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text131>
+            <Text165 Ref="249" type="Text" isKey="true">
+              <Border>All;Black;2;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>20.2,2.8,7.2,1.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,6,Italic,Point,False,204</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text165</Name>
+              <Page isRef="199" />
+              <Parent isRef="200" />
+              <TextBrush>Black</TextBrush>
+            </Text165>
+            <Text167 Ref="250" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>8,1.6,9.6,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,6,Italic,Point,False,204</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text167</Name>
+              <Page isRef="199" />
+              <Parent isRef="200" />
+              <TextBrush>Black</TextBrush>
+            </Text167>
+            <Text168 Ref="251" type="Text" isKey="true">
+              <Border>Top;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,5.8,14.6,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,6,Italic,Point,False,204</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text168</Name>
+              <Page isRef="199" />
+              <Parent isRef="200" />
+              <TextBrush>Black</TextBrush>
+            </Text168>
+            <Text169 Ref="252" type="Text" isKey="true">
+              <Border>Top;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>18.6,4.4,2.4,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,6,Italic,Point,False,204</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text169</Name>
+              <Page isRef="199" />
+              <Parent isRef="200" />
+              <TextBrush>Black</TextBrush>
+            </Text169>
+            <Text170 Ref="253" type="Text" isKey="true">
+              <Border>Top;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>22,4.4,5.4,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,6,Italic,Point,False,204</Font>
+              <Guid>4e0b35e947da4c7f96e0f5106cbe3a60</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text170</Name>
+              <Page isRef="199" />
+              <Parent isRef="200" />
+              <TextBrush>Black</TextBrush>
+            </Text170>
+            <Text171 Ref="254" type="Text" isKey="true">
+              <Border>Top;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>15.8,5.6,11.6,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,6,Italic,Point,False,204</Font>
+              <Guid>dd99062d3ac44ee8bf43775020e34117</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text171</Name>
+              <Page isRef="199" />
+              <Parent isRef="200" />
+              <TextBrush>Black</TextBrush>
+            </Text171>
+            <Text172 Ref="255" type="Text" isKey="true">
+              <Border>Top;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>15.8,5.2,11.6,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,6,Italic,Point,False,204</Font>
+              <Guid>a39a09f07858470483136b02975b03ea</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text172</Name>
+              <Page isRef="199" />
+              <Parent isRef="200" />
+              <TextBrush>Black</TextBrush>
+            </Text172>
+            <Text173 Ref="256" type="Text" isKey="true">
+              <Border>Right;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>14.8,4,0.2,4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,6,Italic,Point,False,204</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text173</Name>
+              <Page isRef="199" />
+              <Parent isRef="200" />
+              <TextBrush>Black</TextBrush>
+            </Text173>
+            <Text155 Ref="257" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>11.6,6.6,3,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,6,Regular,Point,False,204</Font>
+              <Guid>4777e7cd4e494c20b833661a545a5086</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text155</Name>
+              <Page isRef="199" />
+              <Parent isRef="200" />
+              <Text>{Torg12TemplateProperties.Accountant}</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text155>
+            <HorizontalLine9 Ref="258" type="HorizontalLinePrimitive" isKey="true">
+              <ClientRectangle>20.2,3.4,7.2,0.0254</ClientRectangle>
+              <Color>Black</Color>
+              <EndCap Ref="259" type="Cap" isKey="true">
+                <Color>Black</Color>
+              </EndCap>
+              <Name>HorizontalLine9</Name>
+              <Page isRef="199" />
+              <Parent isRef="200" />
+              <StartCap Ref="260" type="Cap" isKey="true">
+                <Color>Black</Color>
+              </StartCap>
+            </HorizontalLine9>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Guid>c561168d0e7e49b5bee4808a1ed42220</Guid>
+          <Name>ReportSummary2</Name>
+          <Page isRef="199" />
+          <Parent isRef="199" />
+        </ReportSummary2>
+      </Components>
+      <Conditions isList="true" count="0" />
+      <Guid>7559de8f3a444e408c4e774d92d15bec</Guid>
+      <Margins>1,1,1,1</Margins>
+      <Name>Page2</Name>
+      <Orientation>Landscape</Orientation>
+      <PageHeight>21</PageHeight>
+      <PageWidth>29.7</PageWidth>
+      <PrintHeadersFootersFromPreviousPage>True</PrintHeadersFootersFromPreviousPage>
+      <Report isRef="0" />
+      <Watermark Ref="261" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
+        <Font>Arial,100</Font>
+        <TextBrush>[50:0:0:0]</TextBrush>
+      </Watermark>
+    </Page2>
+  </Pages>
+  <PrinterSettings Ref="262" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
+  <ReferencedAssemblies isList="true" count="8">
+    <value>System.Dll</value>
+    <value>System.Drawing.Dll</value>
+    <value>System.Windows.Forms.Dll</value>
+    <value>System.Data.Dll</value>
+    <value>System.Xml.Dll</value>
+    <value>Stimulsoft.Controls.Dll</value>
+    <value>Stimulsoft.Base.Dll</value>
+    <value>Stimulsoft.Report.Dll</value>
+  </ReferencedAssemblies>
+  <ReportAlias>Отчет</ReportAlias>
+  <ReportChanged>7/20/2015 5:43:29 PM</ReportChanged>
+  <ReportCreated>6/17/2008 2:07:31 PM</ReportCreated>
+  <ReportFile>E:\Projects\rms_develop\dev\iikoFront.Net\Resto.Front.PrintTemplates\StimulSoftReports\Templates\Torg12Report.mrt</ReportFile>
+  <ReportGuid>278f7550278140df82a24679ab315c14</ReportGuid>
+  <ReportName>Отчет</ReportName>
+  <ReportUnit>Centimeters</ReportUnit>
+  <ReportVersion>2014.1.1900</ReportVersion>
+  <Script>using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Data;
+using Stimulsoft.Controls;
+using Stimulsoft.Base.Drawing;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Dialogs;
+using Stimulsoft.Report.Components;
+
+namespace Reports
+{
+    
+    public class Отчет : Stimulsoft.Report.StiReport
+    {
+        
+        public Отчет()
+        {
+            this.InitializeComponent();
+        }
+        #region StiReport Designer generated code - do not modify
+		#endregion StiReport Designer generated code - do not modify
+    }
+}
+</Script>
+  <ScriptLanguage>CSharp</ScriptLanguage>
+  <Styles isList="true" count="0" />
+</StiSerializer>

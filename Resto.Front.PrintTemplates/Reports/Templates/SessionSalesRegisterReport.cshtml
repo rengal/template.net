@@ -1,0 +1,164 @@
+﻿@using System
+@using System.Collections.Generic
+@using System.Linq
+@using Resto.Front.PrintTemplates.Reports
+@using Resto.Front.PrintTemplates.Reports.TemplateModels
+@using Resto.Front.PrintTemplates.RmsEntityWrappers
+
+@* 046 Реестр счетов *@
+@* Парный к 051 кассовый отчет по фискальным оплатам *@
+@inherits TemplateBase
+@{
+    var session = Model.CafeSession;
+    if (session == null)
+    {
+        <doc><center>@Resources.CafeSessionIsClosed</center></doc>
+        return;
+    }
+    
+    Model.Transactions.GetOrderPaymentTransactionsBySession(session)
+        .Where(tr => tr.PaymentType.PrintCheque && !(tr is IOrderPrepayClosedTransaction))
+        .ForEach(tr =>
+        {
+            records.Add(new RegisterRecord(tr.Order != null
+                ? tr.Order.FiscalChequeNumber.GetValueOrDefault(tr.ChequeNumber)
+                : tr.ChequeNumber, 
+                tr.Cashier.Name, tr.PaymentType, tr.Sum));
+        });
+}
+
+@if (!Model.IsOnlyBodyMarkupRequired)
+{
+    <doc formatter="split">
+        @Header()
+        @Body()
+        @Footer()
+    </doc>
+}
+else
+{
+    <doc formatter="split">
+        @Body()
+    </doc>
+}
+
+@helper Header()
+{
+    var terminalName = Model.CashRegister != null
+        ? string.Format(Resources.TerminalNumberNamePattern, Model.CashRegister.Number, Model.Group.Name)
+        : string.Format(Resources.TerminalNamePattern, Model.CurrentTerminal, Model.Group.Name);
+
+    foreach (var headerLine in Model.CafeSetup.ReportHeader.Split(Environment.NewLine.ToCharArray()))
+    {
+        <left>
+            <whitespace-preserve>@headerLine</whitespace-preserve>
+        </left>
+    }
+    
+    <np />
+    <center>@Model.Name</center>
+    <np />
+    <pair fit="left" left="@Resources.HeadTerminal" right="@terminalName" /> 
+    
+    if (Model.CafeSession != null)
+    {
+    <pair left="@Resources.HeadCashRegisterShift" right="@Model.CafeSession.Number" />
+    <pair left="@Resources.HeadCashRegisterShiftOpened" right="@FormatLongDateTime(Model.CafeSession.OpenTime)" />
+    } 
+    
+    <pair left="@Resources.HeadCurrentTime" right="@FormatLongDateTime(Model.CurrentTime)" />
+    <table>
+        <columns>
+            <column autowidth=""/>
+            <column align="right"/>
+        </columns>
+        <cells>
+            <ct>@Resources.HeadCurrentUser</ct>
+            <ct>@(Model.CurrentUser == null ? string.Empty : Model.CurrentUser.Name)</ct>
+        </cells>
+    </table> 
+}
+
+@helper Body()
+{
+    <table>
+        <columns>
+            <column align="right" autowidth="" />
+            <column formatter="split" />
+            <column formatter="split" />
+            <column align="right" autowidth="" />
+        </columns>
+        <cells>
+            <linecell symbols="-" />
+            <ct>@Resources.ChequeNumColumn</ct>
+            <ct>@Resources.Cashier</ct>
+            <ct>@Resources.PaymentType</ct>
+            <ct>@Resources.SumTitle</ct>
+            <linecell symbols="-" />
+            @FillMarkup()
+            <linecell symbols="-" />
+            @SummaryMarkup()
+        </cells>
+    </table>    
+}
+
+@helper Footer()
+{
+    <np />
+    <center>
+        @string.Format(Resources.AllSumsInFormat, Model.CafeSetup.CurrencyName)
+    </center>
+    <np />
+}
+
+@helper FillMarkup()
+{
+    foreach (var record in records.OrderBy(r => r.ChequeNumber))
+    {
+        <ct>@record.ChequeNumber</ct>
+        <ct>@record.CashierName</ct>
+        <ct>@record.PaymentType.Name</ct>
+        <ct>@FormatPrice(record.Sum)</ct>
+    }
+}
+
+@helper SummaryMarkup()
+{
+    <ct/>
+    <ct>@Resources.SectionTotal</ct>
+    <ct>@Resources.Cheques</ct>
+    <ct>@records.Count</ct>
+    <ct/>
+    <ct/>
+    <ct>@Resources.Sum</ct>
+    <ct>@FormatPrice(records.Sum(r => r.Sum))</ct>
+}
+
+@functions
+{
+    private readonly List<RegisterRecord> records = new List<RegisterRecord>();
+
+    /// <summary>
+    /// Строка в отчёте "Реестр счетов"
+    /// </summary>
+    private sealed class RegisterRecord
+    {
+        private readonly int chequeNumber;
+        private readonly string cashierName;
+        private readonly IPaymentType paymentType;
+        private readonly decimal sum;
+
+        public RegisterRecord(int chequeNumber, string cashierName, IPaymentType paymentType, decimal sum)
+        {
+            this.chequeNumber = chequeNumber;
+            this.cashierName = cashierName;
+            this.paymentType = paymentType;
+            this.sum = sum;
+        }
+
+        public int ChequeNumber { get { return chequeNumber; } }
+        public string CashierName { get { return cashierName; } }
+        public IPaymentType PaymentType { get { return paymentType; } }
+        public decimal Sum { get { return sum; } }
+    }
+}

@@ -1,0 +1,137 @@
+﻿@using System
+@using System.Collections.Generic
+@using System.Linq
+@using Resto.Front.PrintTemplates.Reports
+@using Resto.Front.PrintTemplates.Reports.TemplateModels
+
+@* 039 Отчет по вскрытия тары *@
+@inherits TemplateBase
+@{
+    FillData();
+}
+
+@if (!Model.IsOnlyBodyMarkupRequired)
+{
+    <doc formatter="split">
+        @Header()
+        @Body()
+    </doc>
+}
+else
+{
+    <doc formatter="split">
+        @Body()
+    </doc>
+}
+
+@helper Header()
+{
+    var terminalName = Model.CashRegister != null
+        ? string.Format(Resources.TerminalNumberNamePattern, Model.CashRegister.Number, Model.Group.Name)
+        : string.Format(Resources.TerminalNamePattern, Model.CurrentTerminal, Model.Group.Name);
+
+    foreach (var headerLine in Model.CafeSetup.ReportHeader.Split(Environment.NewLine.ToCharArray()))
+    {
+    <left>
+            <whitespace-preserve>@headerLine</whitespace-preserve>
+    </left>
+    }
+    
+    <np />
+    <center>@Model.Name</center>
+    <np />
+    <pair fit="left" left="@Resources.HeadTerminal" right="@terminalName" /> 
+    
+    <pair left="@Resources.From" right="@FormatDate(settings.GetPeriodBegin())" />
+    <pair left="@Resources.To" right="@FormatDate(settings.GetPeriodEnd())" />
+    
+    <pair left="@Resources.HeadCurrentTime" right="@FormatLongDateTime(Model.CurrentTime)" />
+    <table>
+        <columns>
+            <column autowidth=""/>
+            <column align="right"/>
+        </columns>
+        <cells>
+            <ct>@Resources.HeadCurrentUser</ct>
+            <ct>@(Model.CurrentUser == null ? string.Empty : Model.CurrentUser.Name)</ct>
+        </cells>
+    </table>
+}
+
+@helper Body()
+{
+    foreach (var groupByDate in egaisProductUnsealeds.GroupBy(p => p.OpenTime.ToShortDateString()))
+    {
+    @GetDateHeaderMarkup(groupByDate.Key)
+        foreach (var egaisProductUnsealed in groupByDate.OrderBy(p => p.WriteoffType).GroupBy(p => p.WriteoffType))
+        {
+           @GetMarkup(egaisProductUnsealed, egaisProductUnsealed.Key)
+        }
+    }
+}
+
+@* Вернуть заголовок подраздела *@
+@helper GetWriteoffTypeHeaderMarkup(string egaisShopWriteoffTypeGroupTitle)
+{
+    <table>
+        <columns>
+            <column formatter="split" />
+        </columns>
+        <cells>
+            <linecell symbols="=" />
+              <ct>@string.Format(Resources.EgaisShopWriteoffFormat, egaisShopWriteoffTypeGroupTitle)</ct>
+            <linecell symbols="=" />
+        </cells>
+    </table>
+}
+
+@helper GetDateHeaderMarkup(string date)
+{
+    <table>
+        <columns>
+            <column formatter="split" />
+        </columns>
+        <cells>
+            <linecell symbols="=" />
+              <ct>@date</ct>
+            <linecell symbols="=" />
+        </cells>
+    </table>
+}
+
+@helper GetMarkup(IEnumerable<IEgaisUnsealProduct> unsealProducts, string groupTitle)
+{
+    @GetWriteoffTypeHeaderMarkup(groupTitle)
+    <table>
+        <columns>
+            <column formatter="split" />
+        </columns>
+        <cells>
+            @foreach (var unsealProduct in unsealProducts.OrderBy(x => x.OpenTime))
+            {
+                var capacity = unsealProduct.Capacity != 0 ? string.Format(Resources.EgaisProductCapacityFormat, FormatAmount(unsealProduct.Capacity)) : "";
+                <ct>@string.Format(Resources.EgaisProductFullName, unsealProduct.FullName, capacity)</ct>
+                <ct>@string.Format(Resources.EgaisAlcCodeFormat, unsealProduct.EgaisAlcCode)</ct>
+                <ct>@string.Format(Resources.EgaisOpenTimeFormat, unsealProduct.OpenTime)</ct>   
+                <linecell symbols="-" />
+            }
+        </cells>
+    </table>
+}
+
+@functions
+{
+    private ISettings settings;
+
+    private IEnumerable<IEgaisUnsealProduct> egaisProductUnsealeds;
+
+    /// <summary>
+    /// Получение и заполнение данных о вскрытиях тары
+    /// </summary>
+    private void FillData()
+    {
+        settings = Model.ReportSettings;
+        egaisProductUnsealeds = Model.Entities.GetAllEgaisUnsealedProducts()
+            .Where(p => p.OpenTime >= settings.GetPeriodBegin() && p.OpenTime <= settings.GetPeriodEnd());
+    }   
+}

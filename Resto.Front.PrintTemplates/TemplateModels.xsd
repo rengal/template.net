@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<schema
+    targetNamespace="http://iiko.ru/XmlSchemas/TemplateModels.xsd"
+    xmlns:x="http://iiko.ru/XmlSchemas/TemplateModels.xsd"
+    xmlns="http://www.w3.org/2001/XMLSchema"
+    elementFormDefault="qualified">
+
+    <simpleType name="StandardType">
+        <restriction base="string">
+            <enumeration value="Guid" />
+            <enumeration value="Guid?" />
+            <enumeration value="bool" />
+            <enumeration value="bool?" />
+            <enumeration value="decimal" />
+            <enumeration value="decimal?" />
+            <enumeration value="string" />
+            <enumeration value="int" />
+            <enumeration value="int?" />
+            <enumeration value="TimeSpan" />
+            <enumeration value="TimeSpan?" />
+            <enumeration value="DateTime" />
+            <enumeration value="DateTime?" />
+            <enumeration value="XElement" />
+        </restriction>
+    </simpleType>
+
+    <simpleType name="Nullness">
+        <restriction base="string">
+            <enumeration value="NotNull" />
+            <enumeration value="CanBeNull" />
+            <enumeration value="Omit" />
+        </restriction>
+    </simpleType>
+
+    <simpleType name="Type">
+        <union memberTypes="x:StandardType NCName" />
+    </simpleType>
+
+    <attributeGroup name="PropertiesCommonAttributes">
+        <attribute name="Name" type="NCName" use="required" />
+        <attribute name="Comment" type="string" use="required" />
+        <attribute name="CommentEn" type="string" />
+        <attribute name="ObsolescenseComment" type="string" use="optional" />
+        <attribute name="ObsolescenseCommentEn" type="string" use="optional" />
+    </attributeGroup>
+
+    <complexType name="Property">
+        <attributeGroup ref="x:PropertiesCommonAttributes" />
+        <attribute name="Type" type="x:Type" use="required" />
+        <attribute name="Nullness" type="x:Nullness" use="optional" default="Omit" />
+    </complexType>
+
+    <complexType name="Collection">
+        <attributeGroup ref="x:PropertiesCommonAttributes" />
+        <attribute name="ItemType" type="x:Type" use="required" />
+    </complexType>
+
+    <complexType name="Dictionary">
+        <attributeGroup ref="x:PropertiesCommonAttributes" />
+        <attribute name="KeyType" type="x:Type" use="required" />
+        <attribute name="ValueType" type="x:Type" use="required" />
+    </complexType>
+
+    <complexType name="Include">
+        <attribute name="PropertiesGroupId" type="NCName" use="required" />
+    </complexType>
+
+    <complexType name="Inherit">
+        <attribute name="Model" type="NCName" use="required" />
+    </complexType>
+
+    <complexType name="PropertiesGroup">
+        <choice minOccurs="1" maxOccurs="unbounded">
+            <element name="Include" type="x:Include" />
+            <element name="Property" type="x:Property" />
+            <element name="Collection" type="x:Collection" />
+            <element name="Dictionary" type="x:Dictionary" />
+        </choice>
+        <attribute name="Id" type="NCName" use="required" />
+    </complexType>
+
+    <complexType name="Model">
+        <choice minOccurs="1" maxOccurs="unbounded">
+            <element name="Inherit" type="x:Inherit" />
+            <element name="Include" type="x:Include" />
+            <element name="Property" type="x:Property" />
+            <element name="Collection" type="x:Collection" />
+            <element name="Dictionary" type="x:Dictionary" />
+        </choice>
+        <attribute name="Name" type="NCName" use="required" />
+        <attribute name="Comment" type="string" use="required" />
+        <attribute name="CommentEn" type="string" />
+        <attribute name="TemplateRootModel" type="boolean" default="false" />
+        <attribute name="OmitAbstract" type="boolean" default="false" />
+    </complexType>
+
+    <complexType name="EnumValue">
+        <attribute name="Name" type="NCName" use="required" />
+        <attribute name="Comment" type="string" use="required" />
+        <attribute name="CommentEn" type="string" />
+    </complexType>
+
+    <complexType name="Enum">
+        <sequence>
+            <element name="Value" type="x:EnumValue" minOccurs="2" maxOccurs="unbounded" />
+        </sequence>
+        <attribute name="Name" type="NCName" use="required" />
+        <attribute name="Comment" type="string" use="required" />
+        <attribute name="CommentEn" type="string" />
+    </complexType>
+
+    <element name="Root">
+        <complexType>
+            <choice minOccurs="1" maxOccurs="unbounded">
+                <element name="PropertiesGroup" type="x:PropertiesGroup" minOccurs="0" maxOccurs="unbounded">
+                    <unique name="PropertiesGroup.UniquePropertiesGroupId">
+                        <selector xpath="x:Include" />
+                        <field xpath="@PropertiesGroupId" />
+                    </unique>
+                    <unique name="PropertiesGroup.UniquePropertyName">
+                        <selector xpath="x:Property | x:Collection | x:Dictionary" />
+                        <field xpath="@Name" />
+                    </unique>
+                </element>
+
+                <element name="Model" type="x:Model" minOccurs="1" maxOccurs="unbounded">
+                    <unique name="Model.UniquePropertiesGroupId">
+                        <selector xpath="x:Include" />
+                        <field xpath="@PropertiesGroupId" />
+                    </unique>
+                    <unique name="Model.UniquePropertyName">
+                        <selector xpath="x:Property | x:Collection | x:Dictionary" />
+                        <field xpath="@Name" />
+                    </unique>
+                </element>
+
+                <element name="Enum" type="x:Enum" minOccurs="0" maxOccurs="unbounded">
+                    <unique name="UniqueEnumValue">
+                        <selector xpath="x:Value" />
+                        <field xpath="@Name" />
+                    </unique>
+                </element>
+            </choice>
+        </complexType>
+
+        <unique name="UniqueEnumName">
+            <selector xpath="x:Enum" />
+            <field xpath="@Name" />
+        </unique>
+
+        <key name="PropertiesGroupId">
+            <selector xpath="x:PropertiesGroup" />
+            <field xpath="@Id" />
+        </key>
+
+        <keyref name="PropertiesGroup.Include" refer="x:PropertiesGroupId">
+            <selector xpath="x:PropertiesGroup/x:Include" />
+            <field xpath="@PropertiesGroupId" />
+        </keyref>
+
+        <keyref name="Model.Include" refer="x:PropertiesGroupId">
+            <selector xpath="x:Model/x:Include" />
+            <field xpath="@PropertiesGroupId" />
+        </keyref>
+
+        <key name="Model.Name">
+            <selector xpath="x:Model" />
+            <field xpath="@Name" />
+        </key>
+
+        <keyref name="Model.Inherit" refer="x:Model.Name">
+            <selector xpath="x:Model/x:Inherit" />
+            <field xpath="@Model" />
+        </keyref>
+    </element>
+
+</schema>

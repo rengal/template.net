@@ -1,0 +1,431 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Root
+    xmlns="http://iiko.ru/XmlSchemas/TemplateModels.xsd"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://iiko.ru/XmlSchemas/TemplateModels.xsd ..\..\TemplateModels.xsd">
+
+    <Model Name="CafeSession" Comment="Кассовая смена" CommentEn="Till shift">
+        <Property Name="Number" Type="int" Comment="Номер смены" CommentEn="Shift No." />
+        <Property Name="OpenTime" Type="DateTime" Comment="Дата/время открытия смены" CommentEn="Clock-in date/time" />
+        <Property Name="StartCash" Type="decimal" Comment="Сумма в кассе на начало смены" CommentEn="Opening balance" />
+        <Property Name="CalculatedBookCash" Type="decimal" Comment="Расчётная сумма наличных в кассе (по версии iiko)" CommentEn="Estimated cash amount in the till (by iiko)" />
+        <Collection Name="ClosedOrders" ItemType="Order" Comment="Закрытые заказы" CommentEn="Closed orders" />
+        <Collection Name="StornedOrders" ItemType="Order" Comment="Сторнированные заказы" CommentEn="Voided orders" />
+        <Collection Name="Recalculations" ItemType="RecalculateInfo" Comment="Контрольные пересчёты" CommentEn="Cash verification" />
+    </Model>
+
+    <Model Name="OrderCloseInfo" Comment="Информация о закрытии заказа" CommentEn="Close order information">
+        <Property Name="Cashier" Type="User" Nullness="NotNull" Comment="Кассир" CommentEn="Cashier" />
+        <Property Name="Change" Type="decimal" Comment="Сдача" CommentEn="Change" />
+        <Property Name="Time" Type="DateTime" Comment="Дата/время закрытия" CommentEn="Closing date/time" />
+        <Property Name="WriteoffType" Type="PaymentType" Nullness="CanBeNull" Comment="Тип списания" CommentEn="Write-off type" />
+        <Property Name="WriteoffItem" Type="WriteoffPaymentItem" Nullness="CanBeNull" Comment="Элемент списания" CommentEn="Write-off item" />
+    </Model>
+
+    <Model Name="Order" Comment="Заказ" CommentEn="Order">
+        <Property Name="Number" Type="int" Comment="Номер" CommentEn="No." />
+        <Property Name="FiscalChequeNumber" Type="int?" Comment="Номер чека" CommentEn="Receipt No."
+                  ObsolescenseComment="В заказе хранятся номера чеков, которые были напечатаны при закрытии заказа. Для обратной совместимости, здесь возвращается номер последнего чека. Вместо этого свойства необходимо использовать FiscalChequeNumbers."
+                  ObsolescenseCommentEn="Order contains receipt numbers that were printed when order was closed. For backwards compatibility reasons, current property returns last receipt number. Instead of this property, use FiscalChequeNumbers." />
+        <Collection Name="FiscalChequeNumbers" ItemType="int" Comment="Номера чеков" CommentEn="Receipts Numbers" />
+        <Property Name="OpenTime" Type="DateTime" Comment="Дата/время открытия" CommentEn="Opening date/time" />
+        <Property Name="PrechequeTime" Type="DateTime?" Comment="Дата/время пречека" CommentEn="Guest bill date/time" />
+        <Property Name="Type" Type="OrderType" Nullness="CanBeNull" Comment="Тип заказа" CommentEn="Order type" />
+        <Property Name="Table" Type="Table" Nullness="NotNull" Comment="Стол" CommentEn="Table" />
+        <Property Name="Waiter" Type="User" Nullness="CanBeNull" Comment="Официант" CommentEn="Waiter" />
+        <Collection Name="Guests" ItemType="Guest" Comment="Гости" CommentEn="Guests" />
+        <Property Name="InitialGuestsCount" Type="int" Comment="Номинальное количество гостей в заказе" CommentEn="Initial number of guests in order" />
+        <Property Name="CloseInfo" Type="OrderCloseInfo" Nullness="CanBeNull" Comment="Информация о закрытии заказа" CommentEn="Close order information" />
+        <Collection Name="DiscountItems" ItemType="DiscountItem" Comment="Скидки, применённые к заказу" CommentEn="Applied discounts" />
+        <Property Name="Status" Type="OrderStatus" Comment="Статус заказа" CommentEn="Order status" />
+        <Property Name="IsStorned" Type="bool" Comment="Был ли заказ сторнирован" CommentEn="Is order voided"/>
+        <Property Name="DeletedNewItemsAmount" Type="decimal" Comment="Количество удаленных неотпечатанных блюд" CommentEn="Number of deleted unprinted items" />
+        <Property Name="DeletedNewItemsSum" Type="decimal" Comment="Сумма удаленных неотпечатанных блюд" CommentEn="Total of deleted unprinted items" />
+        <Collection Name="PaymentItems" ItemType="PaymentItem" Comment="Оплаты" CommentEn="Payments" />
+        <Collection Name="PrePaymentItems" ItemType="PaymentItem" Comment="Предварительные оплаты" CommentEn="Prepayments" />
+        <Collection Name="Donations" ItemType="PaymentItem" Comment="Чаевые" CommentEn="Tips" />
+        <Dictionary Name="ExternalData" KeyType="string" ValueType="string" Comment="Общедоступные внешние данные, хранимые API-плагинами в заказе." CommentEn="Public external data stored in the order by API plugins." />
+    </Model>
+
+    <Model Name="Phone" Comment="Телефон" CommentEn="Phone">
+        <Property Name="Number" Type="string" Nullness="NotNull" Comment="Номер" CommentEn="Number" />
+        <Property Name="IsMain" Type="bool" Comment="Флаг основного номера" CommentEn="Main number flag" />
+    </Model>
+
+    <Model Name="Customer" Comment="Клиент" CommentEn="Customer">
+        <Property Name="Name" Type="string" Nullness="NotNull" Comment="Имя" CommentEn="Name" />
+        <Property Name="Surname" Type="string" Nullness="CanBeNull" Comment="Фамилия" CommentEn="Last name" />
+        <Property Name="Comment" Type="string" Nullness="CanBeNull" Comment="Комментарий" CommentEn="Comment" />
+        <Property Name="CardNumber" Type="string" Nullness="CanBeNull" Comment="Номер карты" CommentEn="Card number" />
+        <Property Name="InBlackList" Type="bool" Comment="Клиент в «чёрном» списке" CommentEn="Customer blacklisted" />
+        <Property Name="BlackListReason" Type="string" Nullness="CanBeNull" Comment="Причина внесения клиента в чёрный список" CommentEn="Blacklist reason" />
+        <Collection Name="Phones" ItemType="Phone" Comment="Телефоны" CommentEn="Phone numbers" />
+    </Model>
+
+    <Model Name="Reserve" Comment="Резерв/банкет" CommentEn="Reservation/banquet">
+        <Property Name="IsBanquet" Type="bool" Comment="Признак банкета" CommentEn="Banquet attribute" />
+        <Property Name="Number" Type="int" Comment="Номер" CommentEn="Number" />
+        <Property Name="StartTime" Type="DateTime" Comment="Дата/время начала" CommentEn="Start date/time" />
+        <Property Name="Duration" Type="TimeSpan" Comment="Продолжительность" CommentEn="Duration" />
+        <Property Name="GuestComingTime" Type="DateTime?" Comment="Дата/время прихода гостей" CommentEn="Date/time guests arrived" />
+        <Property Name="GuestsCount" Type="int" Comment="Количество гостей" CommentEn="Number of guests" />
+        <Property Name="ActivityType" Type="string" Nullness="CanBeNull" Comment="Тип мероприятия" CommentEn="Type of event" />
+        <Property Name="Comment" Type="string" Nullness="CanBeNull" Comment="Комментарий" CommentEn="Comment" />
+        <Property Name="Customer" Type="Customer" Nullness="NotNull" Comment="Клиент" CommentEn="Customer" />
+        <Property Name="Phone" Type="string" Nullness="CanBeNull" Comment="Номер телефона клиента" CommentEn="Customer phone number" />
+        <Collection Name="Tables" ItemType="Table" Comment="Столы" CommentEn="Tables" />
+        <Property Name="Order" Type="Order" Nullness="CanBeNull" Comment="Заказ" CommentEn="Order" />
+        <Property Name="LastModifiedTime" Type="DateTime" Comment="Время последнего изменения" CommentEn="Latest modification time" />
+        <Property Name="Status" Type="ReserveStatus" Comment="Статус" CommentEn="Status" />
+        <Property Name="CancelCause" Type="ReserveCancelCause" Comment="Причина отмены" CommentEn="Cancel reason" />
+    </Model>
+
+    <Enum Name="ReserveStatus" Comment="Статус, в котором находится резерв/банкет" CommentEn="Reservation/banquet status">
+        <Value Name="New" Comment="Новый резерв/банкет" CommentEn="New reservation/banquet" />
+        <Value Name="Eating" Comment="Гость пришел" CommentEn="Guest showed up"/>
+        <Value Name="Closed" Comment="Закрытый резерв/банкет" CommentEn="Closed reservation/banquet"/>
+    </Enum>
+
+    <Enum Name="ReserveCancelCause" Comment="Причина отмены резерва/банкета" CommentEn="Reservation/banquet cancel reason">
+        <Value Name="NotCanceled" Comment="Не отменен" CommentEn="Not canceled" />
+        <Value Name="NotArrived" Comment="Гость отказался" CommentEn="Canceled by guest" />
+        <Value Name="Refused" Comment="Гость не пришел" CommentEn="Guest didn’t show up"/>
+        <Value Name="Other" Comment="Другое" CommentEn="Other"/>
+    </Enum>
+
+    <Model Name="PaymentItem" Comment="Элемент оплаты заказа" CommentEn="Payment item">
+        <Property Name="Sum" Type="decimal" Comment="Сумма" CommentEn="Total" />
+        <Property Name="Type" Type="PaymentType" Nullness="NotNull" Comment="Тип оплаты" CommentEn="Payment type" />
+        <Property Name="DonationType" Type="DonationType" Nullness="CanBeNull" Comment="Тип чаевых" CommentEn="Type of tips" />
+        <Property Name="IsProcessedExternally" Type="bool" Comment="Является ли внешняя позиция оплаты заранее проведенной вовне" CommentEn="Was external payment item externally processed in advance" />
+        <Property Name="CurrencyInfo" Type="CurrencyInfo" Nullness="CanBeNull" Comment="Информация об оплате в дополнительной валюте. null, если оплата в основной валюте" CommentEn="Additional currency information. null if the main currency used" />
+    </Model>
+
+    <Model Name="WriteoffPaymentItem" Comment="Элемент оплаты заказа - списание" CommentEn="Payment item - write-off">
+        <Inherit Model="PaymentItem" />
+        <Property Name="Reason" Type="string" Comment="Комментарий" CommentEn="Comment" />
+    </Model>
+
+    <Model Name="CurrencyInfo" Comment="Информация об оплате в дополнительной валюте" CommentEn="Secondary currency information">
+        <Property Name="Currency" Type="AdditionalCurrency" Comment="Дополнительная валюта" CommentEn="Secondary currency" />
+        <Property Name="Rate" Type="decimal" Comment="Курс валюты" CommentEn="Currency rate" />
+        <Property Name="Sum" Type="decimal" Comment="Сумма в валюте" CommentEn="Currency amount" />
+    </Model>
+    
+    <Enum Name="OrderStatus" Comment="Статус, в котором находится заказ" CommentEn="Order status">
+        <Value Name="New" Comment="Новый заказ" CommentEn="New order" />
+        <Value Name="Bill" Comment="Заказ в процессе оплаты" CommentEn="Payment in progress"/>
+        <Value Name="Closing" Comment="Заказ в процессе закрытия" CommentEn="Order closing in progress" />
+        <Value Name="Closed" Comment="Закрытый заказ" CommentEn="Closed order"/>
+        <Value Name="Storning" Comment="Заказ в процессе сторнирования" CommentEn="Order voiding in progress" />
+        <Value Name="Deleted" Comment="Удаленный заказ" CommentEn="Deleted order"/>
+    </Enum>
+
+    <Model Name="DiscountCardInfo" Comment="Информация о скидочной карте" CommentEn="Discount card data">
+        <Property Name="Card" Type="string" Nullness="NotNull" Comment="Номер карты" CommentEn="Card No." />
+        <Property Name="MaskedCard" Type="string" Nullness="NotNull" Comment="Маскированный номер карты" CommentEn="Masked card No." />
+        <Property Name="Owner" Type="string" Nullness="NotNull" Comment="Владелец карты" CommentEn="Cardholder" />
+    </Model>
+
+    <Enum Name="DiscountSource" Comment="Способ добавления скидки в заказ" CommentEn="Discount application method">
+        <Value Name="User" Comment="Скидка добавлена пользователем (вручную или прокаткой карты)" CommentEn="Discount applied by user (manually or by card)" />
+        <Value Name="Auto" Comment="Скидка добавлена автоматически (по таймеру)" CommentEn="Discount applied automatically (by timer)" />
+        <Value Name="Plugin" Comment="Скидка добавлена плагином" CommentEn="Discount applied by plugin" />
+    </Enum>
+
+    <Model Name="DiscountItem" Comment="Скидка, применённая к заказу" CommentEn="Applied discount">
+        <Property Name="Type" Type="DiscountType" Nullness="NotNull" Comment="Тип скидки" CommentEn="Discount type" />
+        <Property Name="IsCategorized" Type="bool" Comment="Признак категориальной скидки" CommentEn="Category discount attribute" />
+        <Property Name="Source" Type="DiscountSource" Comment="Способ добавления скидки" CommentEn="Discount application method" />
+        <Property Name="CardInfo" Type="DiscountCardInfo" Nullness="CanBeNull" Comment="Информация о скидочной карте" CommentEn="Discount card information" />
+        <Property Name="NumOfPrintedDigits" Type="int?" Comment="Число знаков номера скидочной карты, для печати на пречеке" CommentEn="Number of discount card digits to be printed on a guest bill" />
+        <Property Name="AuthData" Type="AuthData" Nullness="CanBeNull" Comment="Кем авторизовано добавление скидки" CommentEn="Discount authorized by" />
+        <Dictionary Name="DiscountSums" KeyType="OrderEntry" ValueType="decimal" Comment="Суммы скидок по позициям заказа (ненулевые)" CommentEn="Discount amounts by order items (non-zero)" />
+    </Model>
+
+    <Model Name="Guest" Comment="Гость в заказе" CommentEn="Order guest">
+        <Property Name="Name" Type="string" Nullness="NotNull" Comment="Имя" CommentEn="Name" />
+        <Collection Name="Items" ItemType="OrderItem" Comment="Элементы заказа (блюда/услуги) гостя" CommentEn="Items(meals/services) order by guest" />
+    </Model>
+
+    <Enum Name="OrderEntryDeletionType" Comment="Тип удаления позиции заказа" CommentEn="Order item deletion type">
+        <Value Name="WithoutWriteoff" Comment="Без списания" CommentEn="W/o write-off" />
+        <Value Name="WriteoffAtTheExpenseOfEmployee" Comment="Списание за счёт сотрудника" CommentEn="Write-off on employee" />
+        <Value Name="WriteoffAtTheExpenseOfCafe" Comment="Списание за счёт заведения" CommentEn="Write-off on the house" />
+    </Enum>
+
+    <Model Name="OrderEntryDeletionInfo" Comment="Информация об удалении позиции заказа" CommentEn="Order item deletion data">
+        <Property Name="AuthData" Type="AuthData" Nullness="CanBeNull" Comment="Аутентификационные данные пользователя, выполнявшего/подтвердившего удаление" CommentEn="User authentication data who performed/confirmed deletion" />
+        <Property Name="DeletionType" Type="OrderEntryDeletionType" Comment="Тип удаления позиции заказа" CommentEn="Order item deletion type" />
+        <Property Name="Comment" Type="string" Nullness="CanBeNull" Comment="Комментарий" CommentEn="Comment" />
+        <Property Name="RemovalType" Type="RemovalType" Nullness="CanBeNull" Comment="Тип удаления" CommentEn="Deletion type"/>
+    </Model>
+
+    <Model Name="OrderEntry" Comment="Позиция заказа" CommentEn="Order item">
+        <Property Name="Product" Type="Product" Nullness="NotNull" Comment="Блюдо/продукт/услуга" CommentEn="Meal/product/service" />
+        <Property Name="ProductCategory" Type="ProductCategory" Nullness="CanBeNull" Comment="Категория блюда, зафиксированная на момент добавления позиции в заказ" CommentEn="Item's category registered when added to order" />
+        <Property Name="Amount" Type="decimal" Comment="Количество" CommentEn="Quantity" />
+        <Property Name="Price" Type="decimal" Comment="Цена за единицу" CommentEn="Unit price" />
+        <Property Name="Cost" Type="decimal" Comment="Стоимость" CommentEn="Cost" />
+        <Property Name="VatIncludedInPrice" Type="bool" Comment="НДС включен в стоимость" CommentEn="VAT included" />
+        <Property Name="Vat" Type="decimal" Comment="Ставка НДС" CommentEn="VAT rate" />
+        <Property Name="ExcludedVat" Type="decimal" Comment="Сумма НДС, не включенная в стоимость позиции заказа" CommentEn="VAT amount not included into an item’s cost"/>
+        <Property Name="IncludedVat" Type="decimal" Comment="Сумма НДС, включенная в стоимость позиции заказа" CommentEn="VAT amount included into an item’s cost"/>
+        <Property Name="DeletionInfo" Type="OrderEntryDeletionInfo" Nullness="CanBeNull" Comment="Информация об удалении позиции заказа. null, если позиция не удалена." CommentEn="Order item deletion information. null if an item has not been deleted." />
+        <Property Name="FlyerDeletionInfo" Type="OrderEntryDeletionInfo" Nullness="CanBeNull" Comment="Информация о том, является ли позиция заказа флаером. null, если позиция не флаер" CommentEn="Is an item a flyer. null if an item is not a flyer."/>
+    </Model>
+
+    <Model Name="OrderItem" Comment="Элемент заказа" CommentEn="Order item">
+        <Inherit Model="OrderEntry" />
+        <Property Name="Waiter" Type="User" Nullness="CanBeNull" Comment="Официант, добавивший или изменивший блюдо." CommentEn="Waiter who added or edited an item." />
+        <Property Name="Printed" Type="bool" Comment="Отпечатан ли элемент заказа" CommentEn="Whether an order item has been printed or not" />
+    </Model>
+
+    <Model Name="ProductItemComment" Comment="Комментарий к элементу заказа (блюду)" CommentEn="Comment on order item (dish)">
+        <Property Name="Text" Type="string" Nullness="NotNull" Comment="Текст комментария" CommentEn="Comment text" />
+        <Property Name="Deleted" Type="bool" Comment="Флаг удаления" CommentEn="Deletion flag" />
+    </Model>
+
+    <Model Name="CompoundOrderItemInfo" Comment="Информация о компонентах составных блюд" CommentEn="Information on components of composite items">
+        <Property Name="IsPrimaryComponent" Type="bool" Comment="Основная половина составного блюда" CommentEn="The primary part of a composite item" />
+    </Model>
+    
+    <Model Name="ProductItem" Comment="Элемент заказа (блюдо)" CommentEn="Order item (dish)">
+        <Inherit Model="OrderItem" />
+        <Property Name="Comment" Type="ProductItemComment" Nullness="CanBeNull" Comment="Комментарий" CommentEn="Comment" />
+        <Property Name="Course" Type="int" Comment="Курс" CommentEn="Course" />
+        <Collection Name="SimpleModifiers" ItemType="SimpleModifier" Comment="Простые модификаторы, доступные для добавления" CommentEn="Available simple modifiers" />
+        <Collection Name="GroupModifiers" ItemType="GroupModifier" Comment="Групповые модификаторы, доступные для добавления" CommentEn="Available group modifiers" />
+        <Collection Name="ModifierEntries" ItemType="ModifierEntry" Comment="Модификаторы, добавленные в заказ" CommentEn="Modifiers added to order" />
+        <Property Name="PrintTime" Type="DateTime?" Comment="Время печати" CommentEn="Printing time" />
+        <Property Name="CookingStartTime" Type="DateTime?" Comment="Время начала приготовления" CommentEn="Cooking start time" />
+        <Property Name="CookingFinishTime" Type="DateTime?" Comment="Время окончания приготовления" CommentEn="Cooking end time" />
+        <Property Name="DeliverTime" Type="DateTime?" Comment="Время подачи" CommentEn="Serving time" />
+        <Property Name="ServeGroupNumber" Type="int" Comment="Номер подачи" CommentEn="Course No." />
+        <Property Name="CookingPlaceType" Type="CookingPlaceType" Nullness="NotNull" Comment="Тип места приготовления" CommentEn="Type of production place" />
+        <Property Name="CookingPlace" Type="RestaurantSection" Nullness="NotNull" Comment="Место приготовления" CommentEn="Production place" />
+        <Property Name="HasMix" Type="bool" Comment="У элемента заказа есть микс" CommentEn="Order item has mix" />
+        <Property Name="MixDeleted" Type="bool" Comment="Микс удалён (только для элементов заказа с HasMix == true)" CommentEn="Mix deleted (only for order items with HasMix == true)" />
+        <Property Name="CompoundsInfo" Type="CompoundOrderItemInfo" Nullness="CanBeNull" Comment="Информация о компонентах составных блюд" CommentEn="Information on components of composite items" />
+    </Model>
+
+    <Model Name="ModifierEntry" Comment="Позиция заказа (модификатор)" CommentEn="Order item (modifier)">
+        <Inherit Model="OrderEntry" />
+        <Property Name="SimpleModifier" Type="SimpleModifier" Nullness="CanBeNull" Comment="Простой модификатор" CommentEn="Simple modifier" />
+        <Property Name="ChildModifier" Type="ChildModifier" Nullness="CanBeNull" Comment="Дочерний модификатор" CommentEn="Child modifier" />
+        <Property Name="CookingPlaceType" Type="CookingPlaceType" Nullness="NotNull" Comment="Тип места приготовления" CommentEn="Type of production place" />
+        <Property Name="CookingPlace" Type="RestaurantSection" Nullness="NotNull" Comment="Место приготовления" CommentEn="Production place" />
+    </Model>
+
+    <PropertiesGroup Id="ModifierCommonProps">
+        <Property Name="MinimumAmount" Type="int" Comment="Минимальное количество" CommentEn="Minimum quantity" />
+        <Property Name="MaximumAmount" Type="int" Comment="Максимальное количество" CommentEn="Maximum quantity" />
+    </PropertiesGroup>
+
+    <PropertiesGroup Id="LeafModifierCommonProps">
+        <Include PropertiesGroupId="ModifierCommonProps" />
+        <Property Name="Product" Type="Product" Nullness="NotNull" Comment="Продукт" CommentEn="Product" />
+        <Property Name="CookingPlace" Type="RestaurantSection" Nullness="NotNull" Comment="Место приготовления" CommentEn="Production place" />
+        <Property Name="DefaultAmount" Type="int" Comment="Количество по умолчанию" CommentEn="Default quantity" />
+        <Property Name="AmountIndependentOfParentAmount" Type="bool" Comment="Количество модификатора, добавленного в заказ, не зависит от количества блюда" CommentEn="Modifier quantity does not depend on the item quantity" />
+    </PropertiesGroup>
+
+    <Model Name="SimpleModifier" Comment="Простой модификатор" CommentEn="Simple modifier">
+        <Include PropertiesGroupId="LeafModifierCommonProps" />
+    </Model>
+
+    <Model Name="ChildModifier" Comment="Дочерний модификатор" CommentEn="Child modifier">
+        <Include PropertiesGroupId="LeafModifierCommonProps" />
+        <Property Name="HideIfDefaultAmount" Type="bool" Comment="Скрывать, если количество по умолчанию" CommentEn="Hide if default quantity" />
+    </Model>
+
+    <Model Name="GroupModifier" Comment="Групповой модификатор" CommentEn="Group modifier">
+        <Include PropertiesGroupId="ModifierCommonProps" />
+        <Property Name="ProductGroup" Type="ProductGroup" Nullness="NotNull" Comment="Группа продуктов" CommentEn="Product group" />
+        <Collection Name="ChildModifiers" ItemType="ChildModifier" Comment="Дочерние модификаторы" CommentEn="Child modifiers" />
+    </Model>
+
+    <Model Name="TimePayServiceItem" Comment="Элемент заказа (повременная услуга)" CommentEn="Order item (time-based service)">
+        <Inherit Model="OrderItem" />
+        <Property Name="TimeLimit" Type="TimeSpan?" Comment="Ограничение по времени" CommentEn="Time limit" />
+        <Property Name="TimePayServiceCost" Type="decimal" Comment="Стоимость услуги" CommentEn="Service cost" />
+        <Collection Name="RateScheduleEntries" ItemType="RateScheduleEntry" Comment="Позиции по тарифам повременной услуги" CommentEn="Time-based rate items" />
+    </Model>
+
+    <Model Name="RateScheduleEntry" Comment="Позиция заказа (для отдельного тарифа повременной услуги)" CommentEn="Order item (for a separate time-based service rate)">
+        <Inherit Model="OrderEntry" />
+    </Model>
+
+    <Model Name="RecalculateInfo" Comment="Информация по контрольному пересчёту" CommentEn="Cash verification data">
+        <Property Name="RealCashRest" Type="decimal" Comment="Фактический остаток" CommentEn="Actual balance" />
+        <Property Name="PriorCashRest" Type="decimal" Comment="Остаток при предыдущем пересчёте" CommentEn="Previous verification balance" />
+        <Property Name="FinalCashRest" Type="decimal" Comment="Конечный остаток" CommentEn="Closing balance" />
+        <Property Name="Difference" Type="decimal" Comment="Разница между конечным и фактическим остатком" CommentEn="Difference between closing and actual balance" />
+        <Property Name="Date" Type="DateTime" Comment="Дата/время пересчёта" CommentEn="Verification date/time" />
+        <Property Name="User" Type="User" Nullness="NotNull" Comment="Пользователь, производивший пересчёт" CommentEn="Verified by" />
+        <Collection Name="Auths" ItemType="AuthData" Comment="Аутентификационные данные пользователей, производивших пересчёт" CommentEn="Authentication data of users who performed verification" />
+    </Model>
+
+    <Model Name="EgaisUnsealProduct" Comment="Вскрытые продукты ЕГАИС">
+        <Property Name="FullName" Type="string" Comment="Наименование" />
+        <Property Name="Capacity" Type="decimal" Comment="Объем" />
+        <Property Name="EgaisAlcCode" Type="string" Comment="Алкокод" />
+        <Property Name="OpenTime" Type="DateTime" Comment="Время вскрытия" />
+        <Property Name="WriteoffType" Type="string" Comment="Причина списания" />
+    </Model>
+
+    <Model Name="Delivery" Comment="Доставка" CommentEn="Delivery">
+        <Property Name="Status" Type="DeliveryStatus" Comment="Статус" CommentEn="Status" />
+        <Property Name="Number" Type="int" Comment="Номер" CommentEn="No." />
+        <Property Name="Comment" Type="string" Comment="Комментарий" CommentEn="Comment" />
+        <Property Name="Courier" Type="User" Nullness="CanBeNull" Comment="Курьер" CommentEn="Driver" />
+        <Property Name="DeliverTime" Type="DateTime" Comment="Время, к которому надо доставить" CommentEn="Required delivery time" />
+        <Property Name="ActualTime" Type="DateTime?" Comment="Фактическое время доставки" CommentEn="Actual delivery time" />
+        <Property Name="Order" Type="Order" Nullness="NotNull" Comment="Заказ" CommentEn="Order" />
+        <Property Name="CancelCause" Type="string" Nullness="CanBeNull" Comment="Причина отмены доставки" CommentEn="Delivery cancel reason" />
+    </Model>
+
+    <Enum Name="DeliveryStatus" Comment="Статус, в котором находится доставка" CommentEn="Current delivery status">
+        <Value Name="Unconfirmed" Comment="Не подтверждена" CommentEn="Not confirmed" />
+        <Value Name="New" Comment="Новая доставка" CommentEn="New delivery" />
+        <Value Name="Waiting" Comment="Ожидает отправки" CommentEn="Dispatch pending" />
+        <Value Name="OnWay" Comment="В пути" CommentEn="On the way" />
+        <Value Name="Delivered" Comment="Доставлена" CommentEn="Delivered" />
+        <Value Name="Closed" Comment="Закрыта" CommentEn="Closed" />
+        <Value Name="Cancelled" Comment="Отменена" CommentEn="Canceled" />
+    </Enum>
+
+    <Enum Name="DishDeletionStatus" Comment="Статус удаления блюда" CommentEn="Item deletion status">
+        <Value Name="DeletedWithoutWriteoff" Comment="Блюдо удалено без списания" CommentEn="Item deleted without write-off" />
+        <Value Name="DeletedWithWriteoff" Comment="Блюдо удалено со списанием" CommentEn="Item deleted and written off" />
+        <Value Name="NotDeleted" Comment="Блюдо не удалено" CommentEn="Item is not deleted" />
+    </Enum>
+
+    <Model Name="WaiterDebtItem" Comment="Задолженность официанта" CommentEn="Waiter's dept">
+        <Property Name="User" Type="User" Nullness="NotNull" Comment="Официант" CommentEn="Waiter" />
+        <Property Name="Debt" Type="decimal" Comment="Текущая задолженность" CommentEn="Current dept" />
+    </Model>
+
+    <Model Name="CommonGroup" Comment="Все события" CommentEn="All events">
+        <Property Name="DisplayName" Type="string" Comment="Название" CommentEn="Name" />
+        <Property Name="DateTime" Type="DateTime" Comment="Время события" CommentEn="Event time" />
+        <Property Name="User" Type="User" Comment="Пользователь" CommentEn="User" />
+    </Model>
+
+    <Model Name="OrdersGroup" Comment="События работы с заказами" CommentEn="Order-related events">
+        <Inherit Model="CommonGroup" />
+        <Property Name="OrderNum" Type="int?" Comment="Номер заказа" CommentEn="Order No." />
+        <Property Name="Sum" Type="decimal?" Comment="Сумма" CommentEn="Total" />
+        <Property Name="Percent" Type="int?" Comment="Скидка/надбавка %" CommentEn="Discount/surcharge %" />
+        <Property Name="Waiter" Type="User" Nullness="CanBeNull" Comment="Официант" CommentEn="Waiter" />
+        <Property Name="OrderSumAfterDiscount" Type="decimal?" Comment="Сумма со скидкой" CommentEn="Amount after discount" />
+        <Property Name="Auth" Type="User" Comment="Доп. авторизация" CommentEn="Add. authentication" />
+        <Property Name="NumGuests" Type="int?" Comment="К-во гостей" CommentEn="Number of guests" />
+    </Model>
+
+    <Model Name="DishesGroup" Comment="События работы с позициями заказа" CommentEn="Events related to order items">
+        <Inherit Model="CommonGroup" />
+        <Property Name="OrderNum" Type="int?" Comment="Номер заказа" CommentEn="Order No." />
+        <Property Name="Sum" Type="decimal?" Comment="Сумма" CommentEn="Total" />
+        <Property Name="Percent" Type="int?" Comment="Скидка/надбавка %" CommentEn="Discount/surcharge %" />
+        <Property Name="Waiter" Type="User" Nullness="CanBeNull" Comment="Официант" CommentEn="Waiter" />
+        <Property Name="Dishes" Type="string" Comment="Список позиций заказа" CommentEn="List of order items" />
+        <Property Name="Reason" Type="string" Comment="Причина" CommentEn="Reason" />
+        <Property Name="Comment" Type="string" Comment="Комментарий" CommentEn="Comment" />
+        <Property Name="Order" Type="Order" Nullness="CanBeNull" Comment="Заказ" CommentEn="Order" />
+        <Property Name="RowCount" Type="int?" Comment="Кол-во строк" CommentEn="Number of rows" />
+    </Model>
+
+    <Model Name="ReservesGroup" Comment="События работы с резервами/банкетами" CommentEn="Events related to reservations/banquets">
+        <Inherit Model="CommonGroup" />
+        <Property Name="Reserve" Type="Reserve" Comment="Резерв/банкет" CommentEn="Reservation/banquet" />
+        <Property Name="NumGuests" Type="int?" Comment="К-во гостей" CommentEn="Number of quests" />
+        <Property Name="Auth" Type="User" Comment="Доп. авторизация" CommentEn="Add. authentication" />
+    </Model>
+
+    <Model Name="ManagingEmployees" Comment="Управление персоналом" CommentEn="Human resource management">
+        <Inherit Model="CommonGroup" />
+        <Property Name="Date" Type="DateTime?" Comment="Дата" CommentEn="Date" />
+        <Property Name="Name" Type="string" Comment="Название" CommentEn="Name" />
+        <Property Name="UserName" Type="string" Comment="Имя пользователя" CommentEn="Username" />
+    </Model>
+
+    <Model Name="IikoDelivery" Comment="Доставка" CommentEn="Delivery">
+        <Inherit Model="CommonGroup" />
+        <Property Name="DeliveryNumber" Type="string" Comment="Номер доставки" CommentEn="Delivery No." />
+        <Property Name="DeliveryOperator" Type="string" Comment="Оператор" CommentEn="Operator" />
+        <Property Name="DeliveryCustomer" Type="string" Comment="Клиент" CommentEn="Customer" />
+        <Property Name="DeliverySum" Type="decimal?" Comment="Сумма доставки" CommentEn="Delivery amount" />
+    </Model>
+
+    <Model Name="DeletedPrintedItems" Comment="Удаление отпечатанных позиций заказа" CommentEn="Deletion of printed order items">
+        <Inherit Model="DishesGroup" />
+    </Model>
+
+    <Model Name="DeletedNewItems" Comment="Удаление неотпечатанных позиций заказа" CommentEn="Deletion of unprinted order items">
+        <Inherit Model="DishesGroup" />
+    </Model>
+
+    <Model Name="DeletedExternalPayment" Comment="Удаление внешней оплаты" CommentEn="Deletion of external payment">
+        <Inherit Model="OrdersGroup" />
+    </Model>
+
+    <Model Name="OrderReturned" Comment="Сторнирование чека" CommentEn="Receipt voiding">
+        <Inherit Model="OrdersGroup" />
+    </Model>
+
+    <Model Name="ExceedLimit" Comment="Сумма чека больше максимальной" CommentEn="Receipt amount exceeds the upper limit">
+        <Inherit Model="OrdersGroup" />
+    </Model>
+
+    <Model Name="LessThanLimit" Comment="Сумма чека меньше минимальной" CommentEn="Receipt amount is less than lower limit">
+        <Inherit Model="OrdersGroup" />
+    </Model>
+
+    <Model Name="OrderCancelPrecheque" Comment="Отмена пречека" CommentEn="Guest bill canceling">
+        <Inherit Model="OrdersGroup" />
+    </Model>
+
+    <Model Name="SubstitutionCardRegistered" Comment="Выдача подменной карты" CommentEn="Replacement card issue">
+        <Inherit Model="ManagingEmployees" />
+        <Property Name="Auth" Type="User" Comment="Доп. авторизация" CommentEn="Add. authentication" />
+        <Property Name="Employee" Type="User" Comment="Сотрудник" CommentEn="Employee" />
+        <Property Name="RoleName" Type="string" Comment="Должность" CommentEn="Role" />
+        <Property Name="CardNumber" Type="string" Comment="Номер карты" CommentEn="Card No." />
+        <Property Name="Reason" Type="string" Comment="Причина" CommentEn="Reason" />
+    </Model>
+
+    <Model Name="DeliveryOrderCreatedToBlackListUser" Comment="Создание доставки на пользователя в статусе &quot;высокий риск&quot;" CommentEn="Creating a delivery order for a &quot;high-risk&quot; status user">
+        <Inherit Model="IikoDelivery" />
+    </Model>
+
+    <Model Name="InactivePriceListDocumentApplied" Comment="Применение прейскуранта вне расписания" CommentEn="Application of a price list off schedule">
+        <Inherit Model="DishesGroup" />
+        <Property Name="InactivePriceListDocumentName" Type="string" Comment="Наименование прейскуранта" CommentEn="Price list name" />
+        <Property Name="PriceBefore" Type="decimal?" Comment="Цена (старая)" CommentEn="Price (old)" />
+    </Model>
+
+    <Model Name="ChangedOrderGuestCount" Comment="Изменение количества гостей заказа" CommentEn="Number of order guests changed">
+        <Inherit Model="OrdersGroup" />
+        <Property Name="Comment" Type="string" Comment="Комментарий" CommentEn="Comment" />
+    </Model>
+
+    <Model Name="ChangedReserveGuestCount" Comment="Изменение количества гостей резерва" CommentEn="Number of reservation guests changed">
+        <Inherit Model="ReservesGroup" />
+        <Property Name="Comment" Type="string" Comment="Комментарий" CommentEn="Comment" />
+    </Model>
+
+    <Model Name="ProductCookEdit" Comment="Редактирование приготовления партии блюда" CommentEn="Editing preparation of a batch of the same items">
+        <Inherit Model="CommonGroup" />
+        <Property Name="Product" Type="Product" Nullness="NotNull" Comment="Блюдо" CommentEn="Item" />
+        <Property Name="OldAmount" Type="decimal" Comment="Старое количество" CommentEn="Old quantity" />
+        <Property Name="NewAmount" Type="decimal" Comment="Новое количество" CommentEn="New quantity" />
+        <Property Name="CookedBy" Type="User" Nullness="NotNull" Comment="Кем приготовлено" CommentEn="Cooked by" />
+        <Property Name="CookTime" Type="DateTime" Comment="Время приготовления" CommentEn="Cooking time" />
+    </Model>
+
+    <Model Name="ReturnProductsChequePrint" Comment="Возврат товаров без оплаченного в данной смене заказа " CommentEn="Return items without order">
+       <Inherit Model="OrdersGroup" />
+       <Property Name="Comment" Type="string" Comment="Комментарий" CommentEn="Comment" />
+    </Model>
+</Root>

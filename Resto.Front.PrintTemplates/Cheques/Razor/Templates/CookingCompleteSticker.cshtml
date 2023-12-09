@@ -1,0 +1,165 @@
+﻿@using System.Collections.Generic
+@using System.Linq
+@using Resto.Front.PrintTemplates.Cheques.Razor.TemplateModels
+
+@inherits Resto.Front.PrintTemplates.Cheques.Razor.TemplateBase<ICookingCompleteSticker>
+@{
+    var order = Model.Order;
+
+    if (!order.IsDeliveryOrder)
+    {
+        <nodoc/>
+        return;
+    }
+
+    IKitchenOrderItem actualEntry;
+    IKitchenOrderItem compoundItemSecondaryComponent = null;
+    if (Model.Modifier != null)
+    {
+        actualEntry = Model.Modifier;
+    }
+    else
+    {
+        actualEntry = Model.Item;
+        compoundItemSecondaryComponent = Model.CompoundItemSecondaryComponent;
+    }
+}
+
+<doc>
+    <center>@Model.CommonInfo.CafeSetup.LegalName</center>
+    <left><wrap>@string.Format("{0}   {1}", string.Format(Resources.BillHeaderOrderNumberPattern, order.Number), Model.Item.GuestName)</wrap></left>
+
+    @if (!string.IsNullOrWhiteSpace(order.ExternalNumber))
+    {
+        <left><wrap>@string.Format(Resources.BillHeaderOrderExternalNumberPattern, order.ExternalNumber)</wrap></left>
+    }
+
+    @Product(actualEntry)
+    @if (compoundItemSecondaryComponent != null)
+    {
+        @Product(compoundItemSecondaryComponent)
+    }
+
+    <left>@string.Format("{0} {1}", Resources.PrintTimeColon, FormatFullDateTime(Model.CommonInfo.CurrentTime))</left>
+    <np />
+</doc>
+
+@helper Product(IKitchenOrderItem orderItem)
+{
+    <left><wrap>@ProductName(orderItem)</wrap></left>
+    <left><wrap>@string.Format("{0} {1}", Resources.ProductPriceColon, FormatMoney(orderItem.Product.SalePrice))</wrap></left>
+    
+    if (!string.IsNullOrWhiteSpace(orderItem.Product.Description))
+    {
+        <left><wrap>@orderItem.Product.Description</wrap></left>
+    }
+    if (orderItem.Product.FoodValue != null)
+    {
+        <left>
+            <wrap>
+                @string.Join(" ",
+                    string.Format(Resources.ProteinFormat, FormatFoodValueItem(orderItem.Product.FoodValue.Protein)),
+                    string.Format(Resources.FatFormat, FormatFoodValueItem(orderItem.Product.FoodValue.Fat)),
+                    string.Format(Resources.CarbohydrateFormat, FormatFoodValueItem(orderItem.Product.FoodValue.Carbohydrate)),
+                    string.Format(Resources.CaloricityFormat, FormatFoodValueItem(orderItem.Product.FoodValue.Caloricity)))
+            </wrap>
+        </left>
+    }
+    if (orderItem.Product.ExpirationPeriod.Ticks > 0)
+    {
+        <left><wrap>@string.Format(Resources.ExpirationPeriodFormat, orderItem.Product.ExpirationPeriod.TotalHours)</wrap></left>
+    }
+}
+
+@helper ProductName(IKitchenOrderItem orderItem)
+{
+    var itemAmount = orderItem.Product.UseBalanceForSell && orderItem.Amount != 1m
+        ? " x" + FormatAmount(orderItem.Amount)
+        : string.Empty;
+
+    var productItem = orderItem as IKitchenOrderProductItem;
+    if (productItem == null)
+    {
+        <left><wrap>@(orderItem.Product.Name + itemAmount)</wrap></left>
+        return;
+    }
+
+    var itemName = string.Empty;
+    List<IKitchenOrderModifierItem> modifiersToPrint;
+    var modifiers = string.Empty;
+    
+    if (productItem.CompoundsInfo != null && productItem.CompoundsInfo.IsPrimaryComponent)
+    {
+        itemName = string.Format("{0} {1}", productItem.CompoundsInfo.ModifierSchemaName, productItem.ProductSize == null ? string.Empty : productItem.ProductSize.Name);
+        modifiersToPrint = productItem.Modifiers.Where(m => ModifiersFilter(m, productItem, true)).ToList();
+        if (modifiersToPrint.Count > 0)
+        {
+            modifiers = string.Format(" ({0})", string.Join("; ", modifiersToPrint.Select(modifier => GetModifierString(modifier, productItem, true))));
+        }
+        <left><wrap>@(itemName + modifiers)</wrap></left>
+    }
+
+    if (productItem.CompoundsInfo != null)
+    {
+        itemName = "1/2 ";
+    }
+
+    itemName += GetProductNameWithSize(productItem);
+    modifiersToPrint = productItem.Modifiers.Where(m => ModifiersFilter(m, productItem)).ToList();
+    if (modifiersToPrint.Count > 0)
+    {
+        modifiers = string.Format(" ({0})", string.Join("; ", modifiersToPrint.Select(modifier => GetModifierString(modifier, productItem))));
+    }
+    <left><wrap>@(itemName + itemAmount + modifiers)</wrap></left>
+}
+
+@functions
+{
+    private static bool CommonModifiersFilter(bool isCommonModifier, IKitchenOrderProductItem parent, bool onlyCommonModifiers)
+    {
+        if (parent.CompoundsInfo != null && parent.CompoundsInfo.IsPrimaryComponent)
+        {
+            if (onlyCommonModifiers && !isCommonModifier)
+                return false;
+            if (!onlyCommonModifiers && isCommonModifier)
+                return false;
+            return true;
+        }
+        return true;
+    }
+
+    private static bool ModifiersFilter(IKitchenOrderModifierItem modifier, IKitchenOrderProductItem parent, bool onlyCommonModifiers = false)
+    {
+        return CommonModifiersFilter(modifier.IsCommonModifier, parent, onlyCommonModifiers) && !modifier.IsHidden && modifier.Product.CookWithMainDish;
+    }
+
+    private static string GetModifierString(IKitchenOrderModifierItem modifier, IKitchenOrderProductItem parent, bool onlyCommonModifiers = false)
+    {
+        if (modifier.AmountIndependentOfParentAmount)
+        {
+            //если количества независимы, +1 пишется (!)
+            var description = parent.Product.UseBalanceForSell 
+                ? string.Empty 
+                : string.Format(Resources.IndependentModifierAmountForFormat, parent.Amount);
+            return string.Format("{0} +{1}{2}", modifier.Product.Name, FormatAmount(modifier.Amount), description);
+        }
+
+        //если количества независимы, ×1 не пишется
+        var amount = modifier.Amount / GetParentAmount(parent, onlyCommonModifiers);
+        return amount == 1m
+            ? modifier.Product.Name
+            : string.Format("{0} x{1}", modifier.Product.Name, FormatAmount(amount));
+    }
+
+    private static string GetProductNameWithSize(IKitchenOrderProductItem productItem)
+    {
+        return productItem.ProductSize == null || productItem.CompoundsInfo != null
+            ? productItem.Product.Name
+            : string.Format(Resources.ProductNameWithSizeFormat, productItem.Product.Name, productItem.ProductSize.Name);
+    }
+
+    private static decimal GetParentAmount(IKitchenOrderItem parent, bool onlyCommonModifiers)
+    {
+        return onlyCommonModifiers ? parent.Amount * 2 : parent.Amount;
+    }
+}

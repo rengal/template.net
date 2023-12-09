@@ -1,0 +1,1095 @@
+﻿@using System
+@using System.Collections.Generic
+@using System.Diagnostics
+@using System.Linq
+@using Resto.Front.PrintTemplates.Reports
+@using Resto.Front.PrintTemplates.Reports.TemplateModels
+@using Resto.Front.PrintTemplates.RmsEntityWrappers
+
+@* 047 Чеки по типам оплаты за смену *@
+@* Парный к 016-му отчет по кассовым данным *@
+@inherits TemplateBase
+@{
+    if (Model.CafeSession == null)
+    {
+        <doc><center>@Resources.CafeSessionIsClosed</center></doc>
+        return;
+    }
+    FillData();
+}
+
+@if (!Model.IsOnlyBodyMarkupRequired)
+{
+    <doc formatter="split">
+        @Header()
+        @Body()
+        @Footer()
+    </doc>
+}
+else
+{
+    <doc formatter="split">
+        @Body()
+    </doc>
+}
+
+@helper Header()
+{
+    var terminalName = Model.CashRegister != null
+        ? string.Format(Resources.TerminalNumberNamePattern, Model.CashRegister.Number, Model.Group.Name)
+        : string.Format(Resources.TerminalNamePattern, Model.CurrentTerminal, Model.Group.Name);
+
+    foreach (var headerLine in Model.CafeSetup.ReportHeader.Split(Environment.NewLine.ToCharArray()))
+    {
+        <left>
+            <whitespace-preserve>@headerLine</whitespace-preserve>
+        </left>
+    }
+
+    <np />
+    <center>@Model.Name</center>
+    <np />
+    <pair fit="left" left="@Resources.HeadTerminal" right="@terminalName" />
+
+    if (Model.CafeSession != null)
+    {
+        <pair left="@Resources.HeadCashRegisterShift" right="@Model.CafeSession.Number" />
+        <pair left="@Resources.HeadCashRegisterShiftOpened" right="@FormatLongDateTime(Model.CafeSession.OpenTime)" />
+    }
+
+    <pair left="@Resources.HeadCurrentTime" right="@FormatLongDateTime(Model.CurrentTime)" />
+    <table>
+        <columns>
+            <column autowidth="" />
+            <column align="right" />
+        </columns>
+        <cells>
+            <ct>@Resources.HeadCurrentUser</ct>
+            <ct>@(Model.CurrentUser == null ? string.Empty : Model.CurrentUser.Name)</ct>
+        </cells>
+    </table>
+}
+
+@helper Body()
+{
+    var payments = closedOrdersSource.SelectMany(order => order.Payments).ToList();
+
+    @GetCashSalesMarkup(payments.Where(p => p.PaymentType.Group == PaymentGroup.Cash).ToList())
+    @GetCardSalesMarkup(payments.Where(p => p.PaymentType.Group == PaymentGroup.Card).ToList())
+    @GetCreditSalesMarkup(payments.Where(p => p.PaymentType.Group == PaymentGroup.NonCash && IsCreditPaymentType(p.PaymentType)).ToList())
+    @GetWriteoffSalesMarkup(payments.Where(p => p.PaymentType.Group == PaymentGroup.Writeoff).ToList())
+    @GetNonCashSalesMarkup(payments.Where(p => p.PaymentType.Group == PaymentGroup.NonCash && !IsCreditPaymentType(p.PaymentType)).ToList())
+}
+
+@* Вернуть заголовок подраздела *@
+@helper GetSalesHeaderMarkup(string paymentTypeGroupTitle)
+{
+    <table>
+        <columns>
+            <column formatter="split" />
+        </columns>
+        <cells>
+            <linecell symbols="=" />
+            <ct>@paymentTypeGroupTitle</ct>
+        </cells>
+    </table>
+}
+
+@* Возвращает итоги по типам платежей внутри группы типов платежей (например, для группы платежей по банковским картам: MasterCard, Visa и т.п.) *@
+@helper GetPaymentTypesSummary(IEnumerable<ClosedOrderPayment> closedPayments, string paymentTypesSummaryName)
+{
+    <table>
+        <columns>
+            <column formatter="split" />
+            <column align="right" autowidth="" />
+            <column align="right" autowidth="" />
+        </columns>
+        <cells>
+            <linecell symbols="-" />
+            <ct>@paymentTypesSummaryName</ct>
+            <ct>@Resources.Cheques</ct>
+            <ct>@Resources.Sum</ct>
+            <linecell symbols="-" />
+            @foreach (var group in closedPayments.GroupBy(x => x.PaymentType))
+            {
+                <ct>@group.Key.Name</ct>
+                <ct>@group.Count()</ct>
+                <ct>@FormatPrice(group.Sum(x => x.Sum))</ct>
+            }
+        </cells>
+    </table>
+}
+
+@* Возвращает итоги по типам операций *@
+@helper GetOperationTypesSummary(List<ClosedOrderPayment> closedPayments, string operationTypeSummaryName)
+{
+    <table>
+        <columns>
+            <column formatter="split" />
+            <column align="right" autowidth="" />
+            <column align="right" autowidth="" />
+        </columns>
+        <cells>
+            <linecell symbols="-" />
+            <c>@Resources.OrderCloseType</c>
+            <ct>@Resources.Cheques</ct>
+            <ct>@Resources.Sum</ct>
+            <linecell symbols="-" />
+            @foreach (var group in closedPayments.GroupBy(x => x.CloseType))
+            {
+                <ct>@GetOrderCloseTypeSummaryName(group.Key)</ct>
+                <ct>@group.Count()</ct>
+                <ct>@FormatPrice(group.Sum(x => x.Sum))</ct>
+            }
+            <linecell symbols="-" />
+            <ct>@string.Format(Resources.PaymentTypeGroupSummary, operationTypeSummaryName)</ct>
+            <ct>@closedPayments.Count</ct>
+            <ct>@FormatPrice(closedPayments.Sum(order => order.Sum))</ct>
+        </cells>
+    </table>
+}
+
+@* Возвращает итоги по контрагентам *@
+@helper GetCreditUsersSummary(IEnumerable<ClosedOrderPayment> closedPayments)
+{
+    <table>
+        <columns>
+            <column formatter="split" />
+            <column align="right" autowidth="" />
+            <column align="right" autowidth="" />
+        </columns>
+        <cells>
+            <linecell symbols="-" />
+            <ct>@Resources.CreditUsersSummaryName</ct>
+            <ct>@Resources.Cheques</ct>
+            <ct>@Resources.Sum</ct>
+            <linecell symbols="-" />
+            @foreach (var group in closedPayments.GroupBy(x => x.CreditUserName))
+            {
+                <ct>@group.Key</ct>
+                <ct>@group.Count()</ct>
+                <ct>@FormatPrice(group.Sum(x => x.Sum))</ct>
+            }
+        </cells>
+    </table>
+}
+
+@* Создаёт разметку для подраздела "Продажи за наличные" *@
+@helper GetCashSalesMarkup(List<ClosedOrderPayment> closedPayments)
+{
+    @GetSalesHeaderMarkup(Resources.PaymentTypeGroupCashTitle)
+
+    foreach (var closedPaymentsGroup in closedPayments.GroupBy(x => x.Timestamp.Date))
+    {
+        <table>
+            <columns>
+                <column autowidth="" />
+                <column formatter="split" />
+                <column formatter="split" />
+                <column align="right" autowidth="" />
+            </columns>
+            <cells>
+                <linecell symbols="-" />
+                <c colspan="4">@closedPaymentsGroup.Key.Date.ToShortDateString()</c>
+                <linecell symbols="-" />
+                <ct>@Resources.TimeColumn</ct>
+                <ct>@Resources.OrderAndTableNumbersTitle</ct>
+                <ct>@Resources.WaiterColumn</ct>
+                <ct>@Resources.SumTitle</ct>
+                <linecell symbols="-" />
+
+                @foreach (var closedPayment in closedPaymentsGroup.OrderBy(x => x.Timestamp))
+                {
+                    <ct>@FormatTime(closedPayment.Timestamp)</ct>
+                    <ct>@closedPayment.Order.NumberAndTable</ct>
+                    switch (closedPayment.CloseType)
+                    {
+                        case OrderCloseType.Sale:
+                            {
+                                <ct>@closedPayment.Order.WaiterName</ct>
+                                <ct>@FormatPrice(closedPayment.Sum)</ct>
+                                @DiscountsLines(closedPayment.Order.Discounts)
+                                @CombinedPaymentsLines(closedPayment)
+                                break;
+                            }
+                        case OrderCloseType.Storno:
+                            {
+                                <ct>@GetOrderCloseTypeName(closedPayment.CloseType)</ct>
+                                <ct>@FormatPrice(closedPayment.Sum)</ct>
+                                @CombinedPaymentsLines(closedPayment)
+                                @AuthUserNameLine(closedPayment.AuthUserName)
+                                break;
+                            }
+                        case OrderCloseType.Prepay:
+                            {
+                                <ct>@GetOrderCloseTypeName(closedPayment.CloseType)</ct>
+                                <ct>@FormatPrice(closedPayment.Sum)</ct>
+                                @CombinedPaymentsLines(closedPayment)
+                                @CashierNameLine(closedPayment)
+                                break;
+                            }
+                        case OrderCloseType.PrepayReturn:
+                            {
+                                <ct>@GetOrderCloseTypeName(closedPayment.CloseType)</ct>
+                                <ct>@FormatPrice(closedPayment.Sum)</ct>
+                                @CombinedPaymentsLines(closedPayment)
+                                @AuthUserNameLine(closedPayment.AuthUserName)
+                                break;
+                            }
+                        default:
+                            throw new NotSupportedException();
+                    }
+                }
+            </cells>
+        </table>
+    }
+
+    @GetOperationTypesSummary(closedPayments, Resources.PaymentTypeGroupCashSummaryName)
+}
+
+@* Создаёт разметку для подраздела "Продажи по банковским картам" *@
+@helper GetCardSalesMarkup(List<ClosedOrderPayment> closedPayments)
+{
+    @GetSalesHeaderMarkup(Resources.PaymentTypeGroupCardTitle)
+
+    foreach (var closedPaymentsGroup in closedPayments.GroupBy(x => x.Timestamp.Date))
+    {
+        <table>
+            <columns>
+                <column autowidth="" />
+                <column formatter="split" />
+                <column formatter="split" />
+                <column align="right" autowidth="" />
+            </columns>
+            <cells>
+                <linecell symbols="-" />
+                <c colspan="4">@closedPaymentsGroup.Key.Date.ToShortDateString()</c>
+                <linecell symbols="-" />
+                <ct>@Resources.TimeColumn</ct>
+                <ct>@Resources.OrderAndTableNumbersTitle</ct>
+                <ct>@Resources.WaiterColumn</ct>
+                <ct>@Resources.SumTitle</ct>
+                <linecell symbols="-" />
+
+                @foreach (var closedPayment in closedPaymentsGroup.OrderBy(x => x.Timestamp))
+                {
+                    <ct>@FormatTime(closedPayment.Timestamp)</ct>
+                    <ct>@closedPayment.Order.NumberAndTable</ct>
+                    switch (closedPayment.CloseType)
+                    {
+                        case OrderCloseType.Sale:
+                            {
+                                <ct>@closedPayment.Order.WaiterName</ct>
+                                <ct>@FormatPrice(closedPayment.Sum)</ct>
+                                @DiscountsLines(closedPayment.Order.Discounts)
+                                @CombinedPaymentsLines(closedPayment)
+                                @CardNameLine(closedPayment.PaymentType.Name, closedPayment.CardNumber)
+                                @CashierNameLine(closedPayment)
+                                break;
+                            }
+                        case OrderCloseType.Storno:
+                            {
+                                <ct>@GetOrderCloseTypeName(closedPayment.CloseType)</ct>
+                                <ct>@FormatPrice(closedPayment.Sum)</ct>
+                                @CombinedPaymentsLines(closedPayment)
+                                @AuthUserNameLine(closedPayment.AuthUserName)
+                                @CardNameLine(closedPayment.PaymentType.Name, closedPayment.CardNumber)
+                                break;
+                            }
+                        case OrderCloseType.Prepay:
+                            {
+                                <ct>@GetOrderCloseTypeName(closedPayment.CloseType)</ct>
+                                <ct>@FormatPrice(closedPayment.Sum)</ct>
+                                @CombinedPaymentsLines(closedPayment)
+                                @CardNameLine(closedPayment.PaymentType.Name, closedPayment.CardNumber)
+                                @CashierNameLine(closedPayment)
+                                break;
+                            }
+                        case OrderCloseType.PrepayReturn:
+                            {
+                                <ct>@GetOrderCloseTypeName(closedPayment.CloseType)</ct>
+                                <ct>@FormatPrice(closedPayment.Sum)</ct>
+                                @CombinedPaymentsLines(closedPayment)
+                                @AuthUserNameLine(closedPayment.AuthUserName)
+                                @CardNameLine(closedPayment.PaymentType.Name, closedPayment.CardNumber)
+                                break;
+                            }
+                        default:
+                            throw new NotSupportedException();
+                    }
+                }
+            </cells>
+        </table>
+    }
+
+    @GetPaymentTypesSummary(closedPayments, Resources.CardPaymentType)
+    @GetOperationTypesSummary(closedPayments, Resources.PaymentTypeGroupCardSummaryName)
+}
+
+@* Создаёт разметку для подраздела "Продажи за счёт заведения" ("Без выручки") *@
+@helper GetWriteoffSalesMarkup(List<ClosedOrderPayment> closedPayments)
+{
+    @GetSalesHeaderMarkup(Resources.PaymentTypeGroupWriteoffTitle)
+
+    foreach (var closedPaymentsGroup in closedPayments.GroupBy(x => x.Timestamp.Date))
+    {
+        <table>
+            <columns>
+                <column autowidth="" />
+                <column formatter="split" />
+                <column formatter="split" />
+                <column align="right" autowidth="" />
+            </columns>
+            <cells>
+                <linecell symbols="-" />
+                <c colspan="4">@closedPaymentsGroup.Key.Date.ToShortDateString()</c>
+                <linecell symbols="-" />
+                <ct>@Resources.TimeColumn</ct>
+                <ct>@Resources.OrderAndTableNumbersTitle</ct>
+                <ct>@Resources.WaiterColumn</ct>
+                <ct>@Resources.SumTitle</ct>
+
+                @foreach (var ordersGroup in closedPaymentsGroup.GroupBy(x => x.PaymentType))
+                {
+                    <linecell symbols="-" />
+                    <c colspan="4">@ordersGroup.Key.Name</c>
+                    <linecell symbols="-" />
+
+                    foreach (var closedPayment in ordersGroup.OrderBy(x => x.Timestamp))
+                    {
+                        <ct>@FormatTime(closedPayment.Timestamp)</ct>
+                        <ct>@closedPayment.Order.NumberAndTable</ct>
+                        switch (closedPayment.CloseType)
+                        {
+                            case OrderCloseType.Sale:
+                                {
+                                    <ct>@closedPayment.Order.WaiterName</ct>
+                                    <ct>@FormatPrice(closedPayment.Sum)</ct>
+
+                                    foreach (var item in closedPayment.Order.Items)
+                                    {
+                                        <c colspan="3">@string.Format(Resources.ItemAmountAndNameFormat, FormatAmount(item.Amount), item.Name)</c>
+                                        <ct>@FormatPrice(item.Sum)</ct>
+                                    }
+
+                                    <c colspan="4">
+                                        <whitespace-preserve>@string.Format(Resources.PaymentTypeAccountName, GetWriteoffPaymentType(closedPayment.PaymentType).Account.Name)</whitespace-preserve>
+                                    </c>
+
+                                    @DiscountsLines(closedPayment.Order.Discounts)
+                                    @CashierNameLine(closedPayment)
+
+                                    if (!string.IsNullOrEmpty(closedPayment.WriteoffReason))
+                                    {
+                                        <c colspan="4"><whitespace-preserve>@string.Format(Resources.WriteoffReasonFormat, closedPayment.WriteoffReason)</whitespace-preserve></c>
+                                    }
+                                    break;
+                                }
+                            case OrderCloseType.Storno:
+                                {
+                                    <ct>@GetOrderCloseTypeName(closedPayment.CloseType)</ct>
+                                    <ct>@FormatPrice(closedPayment.Sum)</ct>
+                                    @CashierNameLine(closedPayment)
+                                    break;
+                                }
+                            // предоплат и их возврата с типом оплаты "без выручки" не существует!
+                            default:
+                                throw new NotSupportedException();
+                        }
+                    }
+                }
+            </cells>
+        </table>
+    }
+
+    @GetPaymentTypesSummary(closedPayments, Resources.WriteoffPaymentTypesSummaryName)
+    @GetOperationTypesSummary(closedPayments, Resources.PaymentTypeGroupWriteoffSummaryName)
+}
+
+@* Создаёт разметку для подраздела "Продажи в кредит" *@
+@helper GetCreditSalesMarkup(List<ClosedOrderPayment> closedPayments)
+{
+    @GetSalesHeaderMarkup(Resources.PaymentTypeGroupCreditTitle)
+
+    foreach (var closedPaymentsGroup in closedPayments.GroupBy(x => x.Timestamp.Date))
+    {
+        <table>
+            <columns>
+                <column autowidth="" />
+                <column formatter="split" />
+                <column formatter="split" />
+                <column align="right" autowidth="" />
+            </columns>
+            <cells>
+                <linecell symbols="-" />
+                <c colspan="4">@closedPaymentsGroup.Key.Date.ToShortDateString()</c>
+                <linecell symbols="-" />
+                <ct>@Resources.TimeColumn</ct>
+                <ct>@Resources.OrderAndTableNumbersTitle</ct>
+                <ct>@Resources.WaiterColumn</ct>
+                <ct>@Resources.SumTitle</ct>
+
+                @foreach (var ordersGroup in closedPayments.GroupBy(x => x.CreditUserName))
+                {
+                    <linecell symbols="-" />
+                    <c colspan="4">
+                        @(string.Format(Resources.CreditUserNameFormat, ordersGroup.Key)
+                                  + ordersGroup.Select(og => og.CreditUserMaskedCardNumber).FirstOrDefault(s => !string.IsNullOrEmpty(s)))
+                    </c>
+                    <linecell symbols="-" />
+
+                    foreach (var closedPayment in ordersGroup.OrderBy(x => x.Timestamp))
+                    {
+                        <ct>@FormatTime(closedPayment.Timestamp)</ct>
+                        <ct>@closedPayment.Order.NumberAndTable</ct>
+                        switch (closedPayment.CloseType)
+                        {
+                            case OrderCloseType.Sale:
+                                {
+                                    <ct>@closedPayment.Order.WaiterName</ct>
+                                    <ct>@FormatPrice(closedPayment.Sum)</ct>
+                                    foreach (var item in closedPayment.Order.Items)
+                                    {
+                                        <c colspan="3">@string.Format(Resources.ItemAmountAndNameFormat, FormatAmount(item.Amount), item.Name)</c>
+                                        <ct>@FormatPrice(item.Sum)</ct>
+                                    }
+                                    <c colspan="4">
+                                        <whitespace-preserve>@string.Format(Resources.CreditPaymentTypeNameFormat, closedPayment.PaymentType.Name)</whitespace-preserve>
+                                    </c>
+                                    @DiscountsLines(closedPayment.Order.Discounts)
+                                    @CombinedPaymentsLines(closedPayment)
+                                    @CashierNameLine(closedPayment)
+                                    break;
+                                }
+                            case OrderCloseType.Storno:
+                                {
+                                    <ct>@GetOrderCloseTypeName(closedPayment.CloseType)</ct>
+                                    <ct>@FormatPrice(closedPayment.Sum)</ct>
+                                    @CombinedPaymentsLines(closedPayment)
+                                    @AuthUserNameLine(closedPayment.AuthUserName)
+                                    break;
+                                }
+                            case OrderCloseType.Prepay:
+                                {
+                                    <ct>@GetOrderCloseTypeName(closedPayment.CloseType)</ct>
+                                    <ct>@FormatPrice(closedPayment.Sum)</ct>
+                                    @CombinedPaymentsLines(closedPayment)
+                                    @CashierNameLine(closedPayment)
+                                    break;
+                                }
+                            case OrderCloseType.PrepayReturn:
+                                {
+                                    <ct>@GetOrderCloseTypeName(closedPayment.CloseType)</ct>
+                                    <ct>@FormatPrice(closedPayment.Sum)</ct>
+                                    @CombinedPaymentsLines(closedPayment)
+                                    @AuthUserNameLine(closedPayment.AuthUserName)
+                                    break;
+                                }
+                            default:
+                                throw new NotSupportedException();
+                        }
+                    }
+                }
+            </cells>
+        </table>
+    }
+
+    @GetCreditUsersSummary(closedPayments)
+    @GetPaymentTypesSummary(closedPayments, Resources.CreditPaymentTypesSummaryName)
+    @GetOperationTypesSummary(closedPayments, Resources.PaymentTypeGroupCreditSummaryName)
+}
+
+@* Создаёт разметку для подраздела "Продажи по безналичным типам оплат" *@
+@helper GetNonCashSalesMarkup(List<ClosedOrderPayment> closedPayments)
+{
+    @GetSalesHeaderMarkup(Resources.PaymentTypeGroupNonCashTitle)
+
+    foreach (var closedPaymentsGroup in closedPayments.GroupBy(x => x.Timestamp.Date))
+    {
+        <table>
+            <columns>
+                <column autowidth="" />
+                <column formatter="split" />
+                <column formatter="split" />
+                <column align="right" autowidth="" />
+            </columns>
+            <cells>
+                <linecell symbols="-" />
+                <c colspan="4">@closedPaymentsGroup.Key.Date.ToShortDateString()</c>
+                <linecell symbols="-" />
+                <ct>@Resources.TimeColumn</ct>
+                <ct>@Resources.OrderAndTableNumbersTitle</ct>
+                <ct>@Resources.WaiterColumn</ct>
+                <ct>@Resources.SumTitle</ct>
+
+                @foreach (var ordersGroup in closedPayments.GroupBy(x => x.PaymentType))
+                {
+                    <linecell symbols="-" />
+                    <c colspan="4">@ordersGroup.Key.Name</c>
+                    <linecell symbols="-" />
+
+                    foreach (var closedPayment in ordersGroup.OrderBy(x => x.Timestamp))
+                    {
+                        <ct>@FormatTime(closedPayment.Timestamp)</ct>
+                        <ct>@closedPayment.Order.NumberAndTable</ct>
+                        switch (closedPayment.CloseType)
+                        {
+                            case OrderCloseType.Sale:
+                                {
+                                    <ct>@closedPayment.Order.WaiterName</ct>
+                                    <ct>@FormatPrice(closedPayment.Sum)</ct>
+                                    foreach (var item in closedPayment.Order.Items)
+                                    {
+                                        <c colspan="3">@string.Format(Resources.ItemAmountAndNameFormat, FormatAmount(item.Amount), item.Name)</c>
+                                        <ct>@FormatPrice(item.Sum)</ct>
+                                    }
+                                    @DiscountsLines(closedPayment.Order.Discounts)
+                                    @CombinedPaymentsLines(closedPayment)
+                                    @CashierNameLine(closedPayment)
+                                    break;
+                                }
+                            case OrderCloseType.Storno:
+                                {
+                                    <ct>@GetOrderCloseTypeName(closedPayment.CloseType)</ct>
+                                    <ct>@FormatPrice(closedPayment.Sum)</ct>
+                                    @CombinedPaymentsLines(closedPayment)
+                                    @AuthUserNameLine(closedPayment.AuthUserName)
+                                    break;
+                                }
+                            case OrderCloseType.Prepay:
+                                {
+                                    <ct>@GetOrderCloseTypeName(closedPayment.CloseType)</ct>
+                                    <ct>@FormatPrice(closedPayment.Sum)</ct>
+                                    @CombinedPaymentsLines(closedPayment)
+                                    @CashierNameLine(closedPayment)
+                                    break;
+                                }
+                            case OrderCloseType.PrepayReturn:
+                                {
+                                    <ct>@GetOrderCloseTypeName(closedPayment.CloseType)</ct>
+                                    <ct>@FormatPrice(closedPayment.Sum)</ct>
+                                    @CombinedPaymentsLines(closedPayment)
+                                    @AuthUserNameLine(closedPayment.AuthUserName)
+                                    break;
+                                }
+                            default:
+                                throw new NotSupportedException();
+                        }
+                    }
+                }
+            </cells>
+        </table>
+    }
+
+    @GetPaymentTypesSummary(closedPayments, Resources.NonCashPaymentTypesSummaryName)
+    @GetOperationTypesSummary(closedPayments, Resources.PaymentTypeGroupNonCashSummaryName)
+}
+
+@* Показать строки о скидках/надбавках *@
+@helper DiscountsLines(IEnumerable<ClosedOrderDiscountItem> discountItems)
+{
+    foreach (var discountItem in discountItems.OrderByDescending(d => d.DiscountPercent))
+    {
+        if (discountItem.DiscountPercent == 0)
+        {
+            return;
+        }
+        if (discountItem.IsCategorised)
+        {
+            <c colspan="2"><whitespace-preserve>@string.Format(Resources.CorrectionIsCategorisedFormat, discountItem.DiscountTypeName)</whitespace-preserve></c>
+        }
+        else
+        {
+            <c colspan="2"><whitespace-preserve>@string.Format(Resources.SumCorrectionFormat, discountItem.DiscountTypeName, Math.Abs(discountItem.DiscountPercent))</whitespace-preserve></c>
+        }
+        if (discountItem.IsAutomatic)
+        {
+            <c colspan="2">@Resources.DiscountTypeAuto</c>
+        }
+        else
+        {
+            if (string.IsNullOrEmpty(discountItem.GuestCardTrack))
+            {
+                <c colspan="2">@Resources.DiscountTypeManual</c>
+            }
+            else
+            {
+                var maskCardNumber = MaskCardNumber(discountItem.GuestCardTrack, discountItem.VisibleDigitsCount);
+                if (string.IsNullOrEmpty(maskCardNumber))
+                {
+                    <c colspan="2"><whitespace-preserve>@string.Format(Resources.GuestNameWithoutCardFormat, discountItem.GuestName)</whitespace-preserve></c>
+                }
+                else
+                {
+                    <c colspan="2"><whitespace-preserve>@string.Format(Resources.GuestNameFormat, discountItem.GuestName, maskCardNumber)</whitespace-preserve></c>
+                }
+            }
+            @AuthUserNameLine(discountItem.AuthUserName)
+        }
+    }
+}
+
+@* Для заказа, оплаченного несколькими типами оплат, показать комбинированные с указанным типом оплаты *@
+@helper CombinedPaymentsLines(ClosedOrderPayment closedPayment)
+{
+    foreach (var combinedPayment in closedPayment.Order.Payments.Where(x => x != closedPayment && x.PaymentType != closedPayment.PaymentType).Select(x => x.PaymentType).Distinct())
+    {
+        <c colspan="4"><whitespace-preserve>@string.Format(Resources.CombinedPaymentTypeNameFormat, combinedPayment.Name)</whitespace-preserve></c>
+    }
+}
+
+@* Вставить строку с именем пользователя, авторизовавшего операцию *@
+@helper AuthUserNameLine(string authUserName)
+{
+    if (string.IsNullOrEmpty(authUserName))
+    {
+        return;
+    }
+    <c colspan="4"><whitespace-preserve>@(string.Format(Resources.AuthUserFormat, authUserName))</whitespace-preserve></c>
+}
+
+@* Вставить строку с именем кассира *@
+@helper CashierNameLine(ClosedOrderPayment closedOrderPayment)
+{
+    <c colspan="4"><whitespace-preserve>@string.Format("   " + Resources.CashierNameFormat, closedOrderPayment.CashierName)</whitespace-preserve></c>
+}
+
+@* Вставить строку с названием карты *@
+@helper CardNameLine(string cardName, string cardNumber)
+{
+    <c colspan="4"><whitespace-preserve>@string.Format(Resources.PaymentNameAndCardNumber, cardName, cardNumber)</whitespace-preserve></c>
+}
+
+@helper Footer()
+{
+    <np />
+    <center>
+        @string.Format(Resources.AllSumsInFormat, Model.CafeSetup.CurrencyName)
+    </center>
+    <np />
+}
+
+@functions
+{
+    private IEnumerable<ClosedOrder> closedOrdersSource;
+
+    /// <summary>
+    /// Заполнение данных о всех оплатах
+    /// </summary>
+    private void FillData()
+    {
+        var session = Model.CafeSession;
+        Debug.Assert(session != null);
+
+        var allTransactions = Model.Transactions.GetOrderPaymentTransactionsBySession(session).ToList();
+        // получить все транзакции оплаты, сгруппированные по заказам
+        var transactions = allTransactions
+            .Where(tr => tr.Order != null)
+            .GroupBy(tr => tr.Order)
+            .ToDictionary(g => g.Key, g => (ICollection<IOrderPaymentTransaction>)g.ToArray());
+
+        // получение информации по возврату товаров без существующих заказов
+        var iseWithFakeOrders = Model.Events.GetItemSaleEventsBySession(session).Where(o => o.Order == null);
+        var revenueReturnTransactions = allTransactions
+            .Where(tr => tr.TransactionType == OrderPaymentTransactionType.RevenueReturn)
+            .ToDictionary(tr => tr, tr => iseWithFakeOrders.Where(i => i.OrderId == tr.OrderId).ToArray());
+
+        // Транзакции предоплат, внесённых в заказ до его разделения на 2ФР на другом фронте
+        // (при делении заказа на другом фронте, отличном от фронта, где была внесена предоплата, транзакции предоплат не перепривязываются к новым заказам).
+        var withoutOrderPrepayTransactions = allTransactions
+            .Where(tr => tr.Order == null)
+            .Where(tr => tr.TransactionType == OrderPaymentTransactionType.Prepay || tr.TransactionType == OrderPaymentTransactionType.PrepayReturn)
+            .GroupBy(tr => tr.OrderId)
+            .ToDictionary(g => g.Key, g => (ICollection<IOrderPaymentTransaction>)g.ToArray());
+
+        closedOrdersSource = session.ClosedOrders
+            .Concat(session.StornedOrders)
+            .Except(transactions.Keys)
+            .Select(order => new ClosedOrder(order, Array.Empty<IOrderPaymentTransaction>()))
+            .Concat(transactions.Select(tr => new ClosedOrder(tr.Key, tr.Value)))
+            .Concat(withoutOrderPrepayTransactions.Select(tr => new ClosedOrder(tr.Value)))
+            .Concat(revenueReturnTransactions.Select(tr => new ClosedOrder(tr.Key, tr.Value)))
+            .ToList();
+    }
+
+    public sealed class ClosedOrder
+    {
+        public readonly string WaiterName;
+        public readonly string NumberAndTable;
+
+        /// <summary>
+        /// Оплаты (включая предоплаты)
+        /// </summary>
+        public readonly List<ClosedOrderPayment> Payments;
+
+        /// <summary>
+        /// Скидки и надбавки
+        /// </summary>
+        public readonly List<ClosedOrderDiscountItem> Discounts;
+
+        /// <summary>
+        /// Оплаченные элементы заказа
+        /// </summary>
+        public readonly List<OrderItem> Items;
+
+        public ClosedOrder(IOrder order, ICollection<IOrderPaymentTransaction> transactions)
+        {
+            NumberAndTable = string.Format(Resources.OrderAndTableNumbersFormat, order.Number, order.Table.Number);
+            WaiterName = order.Waiter == null ? null : order.Waiter.Name;
+            Payments = BuildClosedOrderPaymentList(order, transactions).ToList();
+            Discounts = order.DiscountItems.Select(item => new ClosedOrderDiscountItem(item, order.GetFullSum())).ToList();
+            Items = order.GetIncludedEntries().Select(item => new OrderItem(item)).ToList();
+        }
+
+        public ClosedOrder(IOrderPaymentTransaction revenueReturnTransaction, IItemSaleEvent[] items)
+        {
+            // у возврата товаров не будет столбца NumberAndTable т.к. заказа и стола у них нет
+            WaiterName = revenueReturnTransaction.Cashier.Name;
+            Payments = new List<ClosedOrderPayment> { new ClosedOrderPayment(revenueReturnTransaction, OrderCloseType.Storno, this) };
+            Discounts = new List<ClosedOrderDiscountItem>();
+            Items = items.Select(item => new OrderItem(item)).ToList();
+        }
+
+        public ClosedOrder(ICollection<IOrderPaymentTransaction> transactions)
+        {
+            WaiterName = transactions.First().Cashier.Name;
+            Discounts = new List<ClosedOrderDiscountItem>();
+            Items = new List<OrderItem>();
+            Payments = transactions.Select(tr =>
+            {
+                switch (tr.TransactionType)
+                {
+                    case OrderPaymentTransactionType.Prepay:
+                        return new ClosedOrderPayment(tr, OrderCloseType.Prepay, this);
+                    case OrderPaymentTransactionType.PrepayReturn:
+                        return new ClosedOrderPayment(tr, OrderCloseType.PrepayReturn, this);
+                    default:
+                        throw new InvalidOperationException(string.Format("Transaction type {0} is not supported.", tr.TransactionType));
+                }
+            }).ToList();
+        }
+
+        private IEnumerable<ClosedOrderPayment> BuildClosedOrderPaymentList(IOrder baseOrder, ICollection<IOrderPaymentTransaction> transactions)
+        {
+            var closedOrderPayments = new List<ClosedOrderPayment>();
+
+            var prepays = transactions.OfType<IOrderPrepayTransaction>().Where(tr => tr.TransactionType == OrderPaymentTransactionType.Prepay);
+            closedOrderPayments.AddRange(prepays.Select(tr => new ClosedOrderPayment(tr, baseOrder, this)));
+            var returnPrepays = transactions.OfType<IOrderPrepayTransaction>().Where(tr => tr.TransactionType == OrderPaymentTransactionType.PrepayReturn);
+            closedOrderPayments.AddRange(returnPrepays.Select(tr => new ClosedOrderPayment(tr, baseOrder, this)));
+
+            var payments = transactions.Where(tr => !(tr is IOrderPrepayTransaction) && !(tr is IOrderPrepayClosedTransaction));
+            closedOrderPayments.AddRange(payments.Select(tr => new ClosedOrderPayment(tr, baseOrder, this)));
+
+            if (baseOrder.CloseInfo == null || baseOrder.CloseInfo.WriteoffItem == null)
+                return closedOrderPayments;
+
+            // создать фейковую транзакцию для типа оплаты "Без выручки" и добавить в список
+            closedOrderPayments.Add(new ClosedOrderPayment(false, baseOrder, this));
+
+            // создать фейковую транзакцию для сторнированного заказа (показывать с отриц.суммами) с типом оплаты "Без выручки" и добавить в список
+            if (baseOrder.Status == OrderStatus.Deleted)
+            {
+                closedOrderPayments.Add(new ClosedOrderPayment(true, baseOrder, this));
+            }
+
+            return closedOrderPayments;
+        }
+    }
+
+    public sealed class ClosedOrderPayment
+    {
+        public readonly IPaymentType PaymentType;
+
+        /// <summary>
+        /// Номер платёжной банковской карты для типа оплаты "Банковские карты".
+        /// Во фронте нет возможности узнать номер платёжной банковской карты
+        /// </summary>
+        public readonly string CardNumber = string.Empty;
+
+        /// <summary>
+        /// Контрагент для типа оплаты "В кредит"
+        /// </summary>
+        public readonly string CreditUserName;
+
+        /// <summary>
+        /// Карта контрагента для типа оплаты "В кредит"
+        /// </summary>
+        public readonly string CreditUserMaskedCardNumber;
+
+        /// <summary>
+        /// Причина оплаты "За счет заведения" (Без выручки)
+        /// </summary>
+        public readonly string WriteoffReason;
+
+        /// <summary>
+        /// Кассир
+        /// </summary>
+        public readonly string CashierName;
+
+        /// <summary>
+        /// Кем авторизована транзакция оплаты
+        /// </summary>
+        public readonly string AuthUserName;
+
+        /// <summary>
+        /// Родительский заказ
+        /// </summary>
+        public readonly ClosedOrder Order;
+
+        public readonly OrderCloseType CloseType;
+        public readonly decimal Sum;
+        public readonly DateTime Timestamp;
+
+        public ClosedOrderPayment(IOrderPaymentTransaction paymentTransaction, IOrder baseOrder, ClosedOrder closedOrder)
+            : this(paymentTransaction, ParseCloseType(paymentTransaction.TransactionType, paymentTransaction.Sum, baseOrder), closedOrder)
+        { }
+
+        public ClosedOrderPayment(IOrderPaymentTransaction paymentTransaction, OrderCloseType closeType, ClosedOrder closedOrder)
+        {
+            PaymentType = paymentTransaction.PaymentType;
+            CloseType = closeType;
+            Sum = paymentTransaction.Sum;
+            Timestamp = paymentTransaction.Date;
+            CashierName = paymentTransaction.Cashier.Name;
+            Order = closedOrder;
+
+            // Если это транзакции оплаты "В кредит"
+            var creditTransaction = paymentTransaction as ICreditPaymentTransaction;
+            if (creditTransaction != null && creditTransaction.Counteragent != null)
+            {
+                CreditUserName = creditTransaction.Counteragent.Name;
+                if (creditTransaction.CreditCounteragentCardSlided && !string.IsNullOrEmpty(creditTransaction.Counteragent.Card))
+                    CreditUserMaskedCardNumber = MaskCardNumber(creditTransaction.Counteragent.Card, 3);
+            }
+
+            AuthUserName = paymentTransaction.AuthData != null ? paymentTransaction.AuthData.User.Name : null;
+        }
+
+        public ClosedOrderPayment(bool isViewOrderAsStorned, IOrder baseOrder, ClosedOrder closedOrder)
+        {
+            var paymentItem = baseOrder.CloseInfo.WriteoffItem;
+            PaymentType = paymentItem.Type;
+            Sum = isViewOrderAsStorned ? -paymentItem.Sum : paymentItem.Sum;
+            CloseType = ParseCloseType(OrderPaymentTransactionType.OnTheHouse, Sum, baseOrder);
+            Timestamp = baseOrder.CloseInfo.Time; // Время закрытия заказа, но проставляется и как время оплаты, и как время сторнирования
+            CashierName = baseOrder.CloseInfo.Cashier.Name;
+            Order = closedOrder;
+
+            WriteoffReason = paymentItem.Reason;
+        }
+    }
+
+    public sealed class ClosedOrderDiscountItem
+    {
+        /// <summary>
+        /// Тип скидки или надбавки
+        /// </summary>
+        public readonly string DiscountTypeName;
+
+        /// <summary>
+        /// Процент скидки или надбавки
+        /// </summary>
+        public readonly decimal DiscountPercent;
+
+        /// <summary>
+        /// Кем авторизована скидка
+        /// </summary>
+        public readonly string AuthUserName;
+
+        /// <summary>
+        /// Имя гостя, если скидка по карте
+        /// </summary>
+        public readonly string GuestName;
+
+        /// <summary>
+        /// Трек гостевой катры, если скидка по карте
+        /// </summary>
+        public readonly string GuestCardTrack;
+
+        /// <summary>
+        /// Является ли скидка автоматической
+        /// </summary>
+        public readonly bool IsAutomatic;
+
+        /// <summary>
+        /// Является ли скидка скидкой на категорию
+        /// </summary>
+        public readonly bool IsCategorised;
+
+        /// <summary>
+        /// Количество отображаемых и печатаемых цифр номера карты, если скидка по карте
+        /// </summary>
+        private readonly int? visibleDigitsCount;
+        public int VisibleDigitsCount
+        {
+            get
+            {
+                if (!visibleDigitsCount.HasValue)
+                    throw new NotSupportedException();
+                return visibleDigitsCount.Value;
+            }
+        }
+
+        public ClosedOrderDiscountItem(IDiscountItem item, decimal orderSum)
+        {
+            IsAutomatic = item.Source == DiscountSource.Auto;
+            DiscountPercent = ModelExtensions.CalculateDiscountPercent(orderSum, item.GetDiscountSum());
+            DiscountTypeName = item.Type.Name;
+            IsCategorised = item.IsCategorized;
+            AuthUserName = item.AuthData != null ? item.AuthData.User.Name : null;
+
+            if (item.CardInfo == null)
+                return;
+
+            visibleDigitsCount = item.NumOfPrintedDigits;
+            GuestCardTrack = item.CardInfo.Card;
+            GuestName = item.CardInfo.Owner;
+        }
+    }
+
+    /// <summary>
+    /// Отдельная позиция закрытого заказа (блюдо)
+    /// </summary>
+    public sealed class OrderItem
+    {
+        public readonly string Name;
+        public readonly decimal Amount;
+        public readonly decimal Sum;
+
+        public OrderItem(IOrderEntry baseOrderItem)
+        {
+            Amount = baseOrderItem.Amount;
+            Name = baseOrderItem.Product.Name;
+            Sum = baseOrderItem.ExcludedVat + baseOrderItem.Cost;
+        }
+
+        public OrderItem(IItemSaleEvent itemSaleEvent)
+        {
+            Amount = itemSaleEvent.Amount;
+            Name = itemSaleEvent.Dish.Name;
+            Sum = itemSaleEvent.SumAfterDiscount;
+        }
+    }
+
+    public enum OrderCloseType
+    {
+        /// <summary>
+        /// Продажа
+        /// </summary>
+        Sale,
+        /// <summary>
+        /// Возврат заказа
+        /// </summary>
+        Storno,
+        /// <summary>
+        /// Внесение предоплаты
+        /// </summary>
+        Prepay,
+        /// <summary>
+        /// Возврат предоплаты
+        /// </summary>
+        PrepayReturn
+    };
+
+    private static OrderCloseType ParseCloseType(OrderPaymentTransactionType transactionType, decimal sum, IOrder baseOrder)
+    {
+        switch (transactionType)
+        {
+            case OrderPaymentTransactionType.Cash:
+            case OrderPaymentTransactionType.Card:
+            case OrderPaymentTransactionType.Credit:
+            case OrderPaymentTransactionType.OnTheHouse:
+                {
+                    // Если заказ сторнирован и показывается с отрицательной суммой, присваиваем OrderCloseType = Storno.
+                    // Все потому что для сторнирования не предусмотрен отдельный тип транзакции,
+                    // поэтому различаем сторнирование от продажи с помощью знаков суммы транзакции
+                    return baseOrder.Status == OrderStatus.Deleted
+                        ? sum > 0
+                            ? OrderCloseType.Sale
+                            : OrderCloseType.Storno
+                        : OrderCloseType.Sale;
+                }
+            case OrderPaymentTransactionType.RevenueReturn:
+                return OrderCloseType.Storno;
+            case OrderPaymentTransactionType.Prepay:
+                return OrderCloseType.Prepay;
+            case OrderPaymentTransactionType.PrepayReturn:
+                return OrderCloseType.PrepayReturn;
+            default:
+                throw new NotSupportedException();
+        }
+    }
+
+    /// <summary>
+    /// Возвращает название операции (для заголовка, в единственном числе)
+    /// </summary>
+    private static string GetOrderCloseTypeName(OrderCloseType closeType)
+    {
+        switch (closeType)
+        {
+            case OrderCloseType.Sale:
+                return Resources.OrderCloseTypeSell;
+            case OrderCloseType.Prepay:
+                return Resources.OrderCloseTypePrepay;
+            case OrderCloseType.Storno:
+                return Resources.OrderCloseTypeStorno;
+            case OrderCloseType.PrepayReturn:
+                return Resources.OrderCloseTypePrepayReturn;
+            default:
+                throw new ArgumentOutOfRangeException("closeType");
+        }
+    }
+
+    /// <summary>
+    /// Возвращает название операции (для итогов, во множественном числе)
+    /// </summary>
+    private static string GetOrderCloseTypeSummaryName(OrderCloseType closeType)
+    {
+        switch (closeType)
+        {
+            case OrderCloseType.Sale:
+                return Resources.OrderCloseTypeSummarySell;
+            case OrderCloseType.Prepay:
+                return Resources.OrderCloseTypeSummaryPrepay;
+            case OrderCloseType.Storno:
+                return Resources.OrderCloseTypeSummaryStorno;
+            case OrderCloseType.PrepayReturn:
+                return Resources.OrderCloseTypeSummaryPrepayReturn;
+            default:
+                throw new ArgumentOutOfRangeException("closeType");
+        }
+    }
+
+    private static IWriteoffPaymentType GetWriteoffPaymentType(IPaymentType paymentType)
+    {
+        var cpt = paymentType as IConfigurablePaymentType;
+        if (cpt != null)
+            paymentType = cpt.BasePaymentType;
+        return (IWriteoffPaymentType)paymentType;
+    }
+
+    private static bool IsCreditPaymentType(IPaymentType paymentType)
+    {
+        var cpt = paymentType as IConfigurablePaymentType;
+        if (cpt != null)
+            paymentType = cpt.BasePaymentType;
+        return paymentType is ICreditPaymentType;
+    }
+
+    private static string MaskCardNumber(string cardTrack, int visibleDigitsCount)
+    {
+        if (string.IsNullOrEmpty(cardTrack))
+            throw new ArgumentException("Card track must contain at least one digit", "cardTrack");
+
+        if (visibleDigitsCount < 0)
+            throw new ArgumentOutOfRangeException("visibleDigitsCount", "Visible digits count must be greater than or equal to zero.");
+
+        if (visibleDigitsCount == 0)
+            return string.Empty;
+
+        return cardTrack.Length > visibleDigitsCount
+            ? string.Format(Resources.GuestCardMaskFormat, cardTrack.Substring(cardTrack.Length - visibleDigitsCount))
+            : string.Format(Resources.GuestCardFormat, cardTrack);
+    }
+}

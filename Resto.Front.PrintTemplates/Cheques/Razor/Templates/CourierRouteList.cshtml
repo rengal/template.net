@@ -1,0 +1,42 @@
+﻿@using System.Linq
+@using Resto.Front.PrintTemplates.Cheques.Razor.TemplateModels
+
+@inherits Resto.Front.PrintTemplates.Cheques.Razor.TemplateBase<ICourierRouteList>
+<doc bell="">
+    @Body()
+</doc>
+
+@helper Body()
+{
+    var deliveries = Model.Deliveries.ToList();
+    
+    <center>
+      @string.Format(Resources.DeliveryRouteList)
+    </center>
+    <np />
+    for (var positionInRouteList = 0; positionInRouteList < deliveries.Count; positionInRouteList++)
+    {
+        var delivery = deliveries[positionInRouteList];
+        var address = delivery.Address;
+        var number = positionInRouteList + 1;
+    <left>
+            @string.Format(Resources.RouteListMainInformation, number, delivery.DeliverTime.ToString("HH:mm"), delivery.Number)
+    </left>
+        <left>
+            <split>
+            @string.Format(Resources.AddressFormat, address.StringView())
+            </split>
+        </left>
+    <left>
+            @(string.IsNullOrWhiteSpace(address.AdditionalInfo) ? string.Empty : address.AdditionalInfo)
+    </left>
+        if (!string.IsNullOrWhiteSpace(address.Region))
+        {
+    <left>
+                @string.Format(Resources.AddressRegionFormat, address.Region)
+    </left>
+        }
+    <np />
+    <np />
+    }
+}

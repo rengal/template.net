@@ -1,0 +1,272 @@
+﻿@using System
+@using System.Collections.Generic
+@using System.Diagnostics
+@using System.Linq
+@using Resto.Front.PrintTemplates.Reports
+@using Resto.Front.PrintTemplates.Reports.TemplateModels
+@using Resto.Front.PrintTemplates.RmsEntityWrappers
+
+@* 036 Отчет по скидкам и надбавкам *@
+@inherits TemplateBase
+@{
+    if (Model.CafeSession == null)
+    {
+        <doc><center>@Resources.CafeSessionIsClosed</center></doc>
+        return;
+    }
+    FillData();
+}
+
+@if (!Model.IsOnlyBodyMarkupRequired)
+{
+    <doc formatter="split">
+        @Header()
+        @Body()
+        @Footer()
+    </doc>
+}
+else
+{
+    <doc formatter="split">
+        @Body()
+    </doc>
+}
+
+@helper Header()
+{
+    var terminalName = Model.CashRegister != null
+        ? string.Format(Resources.TerminalNumberNamePattern, Model.CashRegister.Number, Model.Group.Name)
+        : string.Format(Resources.TerminalNamePattern, Model.CurrentTerminal, Model.Group.Name);
+
+    foreach (var headerLine in Model.CafeSetup.ReportHeader.Split(Environment.NewLine.ToCharArray()))
+    {
+        <left>
+            <whitespace-preserve>@headerLine</whitespace-preserve>
+        </left>
+    }
+
+    <np />
+    <center>@Model.Name</center>
+    <np />
+    <pair fit="left" left="@Resources.HeadTerminal" right="@terminalName" />
+
+    if (Model.CafeSession != null)
+    {
+        <pair left="@Resources.HeadCashRegisterShift" right="@Model.CafeSession.Number" />
+        <pair left="@Resources.HeadCashRegisterShiftOpened" right="@FormatLongDateTime(Model.CafeSession.OpenTime)" />
+    }
+
+    <pair left="@Resources.HeadCurrentTime" right="@FormatLongDateTime(Model.CurrentTime)" />
+    <table>
+        <columns>
+            <column autowidth="" />
+            <column align="right" />
+        </columns>
+        <cells>
+            <ct>@Resources.HeadCurrentUser</ct>
+            <ct>@(Model.CurrentUser == null ? string.Empty : Model.CurrentUser.Name)</ct>
+        </cells>
+    </table>
+}
+
+@helper Body()
+{
+    var increases = Data.GetIncreases();
+    var discounts = Data.GetDiscounts();
+    <line symbols="-" />
+    <pair left="@Resources.TotalSalesWithoutDiscount" right="@FormatPrice(Data.TotalSumWithoutDiscount)" />
+    <line symbols="-" />
+    <table>
+        <columns>
+            <column formatter="split" />
+            <column autowidth="" />
+            <column align="right" autowidth="" />
+        </columns>
+        <cells>
+            <ct>@Resources.Type</ct>
+            <ct>@Resources.Cheques</ct>
+            <ct>@Resources.SumTitle</ct>
+            <linecell symbols="-" />
+            @GetIncreases()
+            @GetDiscounts()
+            <ct>@Resources.TotalIncreases</ct>
+            <ct>@increases.Sum(inc => inc.OrdersCount)</ct>
+            <ct>@FormatPrice(increases.Sum(inc => inc.Sum))</ct>
+            <ct>@Resources.TotalDiscounts</ct>
+            <ct>@discounts.Sum(discount => discount.OrdersCount)</ct>
+            <ct>@FormatPrice(discounts.Sum(discount => discount.Sum))</ct>
+        </cells>
+    </table>
+    <line symbols="-" />
+    <pair left="@Resources.AvgDiscountPercentOnOrdersWithDiscount" right="@FormatPercent(Data.AvgDiscountPercentOnOrdersWithDiscount * 100m)" />
+    <pair left="@Resources.AvgDiscountPercentOnAllOrders" right="@FormatPercent(Data.AvgDiscountPercentOnAllOrders * 100m)" />
+    <line symbols="-" />
+}
+
+@helper Footer()
+{
+    <np />
+    <center>
+        @string.Format(Resources.AllSumsInFormat, Model.CafeSetup.CurrencyName)
+    </center>
+    <np />
+}
+
+@helper GetIncreases()
+{
+    var increases = Data.GetIncreases();
+    if (increases.Count != 0)
+    {
+        <c colspan="3">@Resources.IncreasesPart</c>
+        foreach (var increase in increases)
+        {
+            <ct>@string.Format(Resources.IncreaseNamePattern, increase.Name)</ct>
+            <ct>@increase.OrdersCount</ct>
+            <ct>@FormatPrice(increase.Sum)</ct>
+        }
+        <linecell symbols="-" />
+        <c colspan="2">@Resources.TotalSumWithIncreases</c>
+        <ct>@FormatPrice(Data.TotalSumWithIncreases)</ct>
+        <linecell symbols="-" />
+    }
+}
+
+@helper GetDiscounts()
+{
+    var discounts = Data.GetDiscounts();
+    if (discounts.Count != 0)
+    {
+        <c colspan="3">@Resources.DiscountsPart</c>
+        foreach (var discount in discounts)
+        {
+            <ct>@string.Format(Resources.DiscountNamePattern, discount.Name)</ct>
+            <ct>@discount.OrdersCount</ct>
+            <ct>@FormatPrice(discount.Sum)</ct>
+        }
+        <linecell symbols="-" />
+        <c colspan="2">@Resources.TotalSumWithIncreasesAndDiscounts</c>
+        <ct>@FormatPrice(Data.TotalSumWithIncreasesAndDiscounts)</ct>
+        <linecell symbols="-" />
+    }
+}
+
+@functions
+{
+    private readonly ReportData Data = new ReportData();
+
+    private void FillData()
+    {
+        var session = Model.CafeSession;
+        Debug.Assert(session != null);
+
+        var ordersWithDiscounts = new List<IOrder>();
+        var ordersWithoutDiscounts = new List<IOrder>();
+        foreach (var order in session.ClosedOrders)
+        {
+            if (WithDiscounts(order))
+                ordersWithDiscounts.Add(order);
+            else
+                ordersWithoutDiscounts.Add(order);
+        }
+
+        var totalSumWithoutDiscountsForOrdersWithDiscounts = ordersWithDiscounts.Sum(order => order.GetFullSum());
+        var totalSumWithoutDiscountsForOrdersWithoutDiscounts = ordersWithoutDiscounts.Sum(order => order.GetFullSum());
+        Data.TotalSumWithoutDiscount = totalSumWithoutDiscountsForOrdersWithDiscounts + totalSumWithoutDiscountsForOrdersWithoutDiscounts;
+
+        var totalSumAfterDiscountsForOrdersWithDiscount = totalSumWithoutDiscountsForOrdersWithDiscounts - ordersWithDiscounts
+            .Sum(order => order.DiscountItems.Sum(item => item.DiscountSums.Values.Sum()));
+
+        foreach (var order in ordersWithDiscounts)
+        {
+            var includedEntries = order.GetIncludedEntries();
+            foreach (var entry in includedEntries)
+            {
+                foreach (var discountItem in order.DiscountItems)
+                {
+                    Data.AddCorrection(discountItem, discountItem.GetDiscountSumFor(entry), order);
+                }
+            }
+        }
+        var totalIncreases = Data.GetIncreases().Sum(v => v.Sum);
+        Data.TotalSumWithIncreases = Data.TotalSumWithoutDiscount + totalIncreases;
+
+        var totalDiscounts = Data.GetDiscounts().Sum(v => v.Sum);
+        Data.TotalSumWithIncreasesAndDiscounts = Data.TotalSumWithIncreases - totalDiscounts;
+
+        var totalSumWithDiscountsForAllOrders = totalSumWithoutDiscountsForOrdersWithoutDiscounts +
+                                                totalSumAfterDiscountsForOrdersWithDiscount;
+        Data.AvgDiscountPercentOnAllOrders = Data.TotalSumWithoutDiscount == 0 ? 0 : (Data.TotalSumWithoutDiscount - totalSumWithDiscountsForAllOrders) / Data.TotalSumWithoutDiscount;
+        Data.AvgDiscountPercentOnOrdersWithDiscount = totalSumWithoutDiscountsForOrdersWithDiscounts == 0 ? 0 :
+            (totalSumWithoutDiscountsForOrdersWithDiscounts - totalSumAfterDiscountsForOrdersWithDiscount) / totalSumWithoutDiscountsForOrdersWithDiscounts;
+    }
+
+    private static bool WithDiscounts(IOrder order)
+    {
+        return order.DiscountItems.Any();
+    }
+
+    private sealed class ReportData
+    {
+        private readonly SortedDictionary<Tuple<IDiscountType, bool>, CorrectionInfo> corrections =
+            new SortedDictionary<Tuple<IDiscountType, bool>, CorrectionInfo>(new CorrectionKeyComparer());
+
+        public decimal TotalSumWithIncreasesAndDiscounts { get; set; }
+        public decimal TotalSumWithIncreases { get; set; }
+        public decimal TotalSumWithoutDiscount { get; set; }
+        public decimal AvgDiscountPercentOnOrdersWithDiscount { get; set; }
+        public decimal AvgDiscountPercentOnAllOrders { get; set; }
+
+        public void AddCorrection(IDiscountItem appliedDiscountItem, decimal sum, IOrder order)
+        {
+            if (sum == 0 && appliedDiscountItem.IsCategorized)
+                return;
+
+            var discountType = appliedDiscountItem.Type;
+            var key = Tuple.Create(discountType, appliedDiscountItem.DiscountSums.Values.Sum() >= 0);
+            if (!corrections.ContainsKey(key))
+                corrections[key] = new CorrectionInfo(discountType.Name);
+            corrections[key].Add(sum, order);
+        }
+
+        public IList<CorrectionInfo> GetIncreases()
+        {
+            return corrections.Where(t => !t.Key.Item2).Select(t => t.Value).ToList();
+        }
+
+        public IList<CorrectionInfo> GetDiscounts()
+        {
+            return corrections.Where(t => t.Key.Item2).Select(t => t.Value).ToList();
+        }
+    }
+
+    private sealed class CorrectionInfo
+    {
+        public string Name { get; private set; }
+        public int OrdersCount { get { return Orders.Count; } }
+        public decimal Sum { get; private set; }
+        private HashSet<IOrder> Orders { get; set; }
+
+        public CorrectionInfo(string name)
+        {
+            Orders = new HashSet<IOrder>();
+            Name = name;
+        }
+
+        public void Add(decimal sum, IOrder order)
+        {
+            Orders.Add(order);
+            Sum += Math.Abs(sum);
+        }
+    }
+
+    private sealed class CorrectionKeyComparer : IComparer<Tuple<IDiscountType, bool>>
+    {
+        public int Compare(Tuple<IDiscountType, bool> x, Tuple<IDiscountType, bool> y)
+        {
+            var res = StringComparer.CurrentCulture.Compare(x.Item1.Name, y.Item1.Name);
+            if (res != 0)
+                return res;
+            return x.Item2.CompareTo(y.Item2);
+        }
+    }
+}

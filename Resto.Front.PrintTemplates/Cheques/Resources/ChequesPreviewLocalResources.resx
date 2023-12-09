@@ -1,0 +1,424 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Guest" xml:space="preserve">
+    <value>Гость</value>
+  </data>
+  <data name="BillHeader" xml:space="preserve">
+    <value>******************************************
+«У друзей»
+ООО «Центральные кофейни»
+ИНН 7707658076
+******************************************
+</value>
+  </data>
+  <data name="BillFooter" xml:space="preserve">
+    <value>СПАСИБО! ЖДЕМ ВАС СНОВА!
+Вознаграждение официанта приветствуется,
+но всегда остается на Ваше усмотрение</value>
+  </data>
+  <data name="RestaurantName" xml:space="preserve">
+    <value>«У друзей»</value>
+  </data>
+  <data name="RestaurantLegalName" xml:space="preserve">
+    <value>ООО «Центральные кофейни»</value>
+  </data>
+  <data name="RestaurantLegalAddress" xml:space="preserve">
+    <value>г. Москва, ул. Арбат, д. 88</value>
+  </data>
+  <data name="CurrencyName" xml:space="preserve">
+    <value>РУБЛЯХ</value>
+    <comment>Название валюты для использования во фразе «ВСЕ СУММЫ В РУБЛЯХ»</comment>
+  </data>
+  <data name="CurrencyShortName2" xml:space="preserve">
+    <value>р.</value>
+    <comment>Краткое наименование валюты</comment>
+  </data>
+  <data name="UnitNameKilogramShort" xml:space="preserve">
+    <value>кг</value>
+  </data>
+  <data name="UnitNameKilogramFull" xml:space="preserve">
+    <value>килограмм</value>
+  </data>
+  <data name="UnitNamePortionShort" xml:space="preserve">
+    <value>порц</value>
+  </data>
+  <data name="UnitNamePortionFull" xml:space="preserve">
+    <value>порция</value>
+  </data>
+  <data name="UnitNamePieceShort" xml:space="preserve">
+    <value>шт</value>
+  </data>
+  <data name="UnitNamePieceFull" xml:space="preserve">
+    <value>штука</value>
+  </data>
+  <data name="UserName" xml:space="preserve">
+    <value>Александр</value>
+  </data>
+  <data name="UserRole" xml:space="preserve">
+    <value>Менеджер</value>
+  </data>
+  <data name="RestaurantGroupName" xml:space="preserve">
+    <value>Основная группа</value>
+    <comment>Название группы ресторана</comment>
+  </data>
+  <data name="Bar" xml:space="preserve">
+    <value>Бар</value>
+    <comment>Название отделения ресторана</comment>
+  </data>
+  <data name="Kitchen" xml:space="preserve">
+    <value>Кухня</value>
+    <comment>Название отделения ресторана</comment>
+  </data>
+  <data name="Discount1Name" xml:space="preserve">
+    <value>Скидка 10%</value>
+  </data>
+  <data name="Discount2Name" xml:space="preserve">
+    <value>Скидка на напитки 5%</value>
+  </data>
+  <data name="CashPaymentType" xml:space="preserve">
+    <value>Наличные</value>
+    <comment>Название типа оплаты</comment>
+  </data>
+  <data name="PayInComment" xml:space="preserve">
+    <value>Погашение задолженности</value>
+    <comment>Комментарий к внесению наличных в кассу</comment>
+  </data>
+  <data name="PayInEventTypeName" xml:space="preserve">
+    <value>Внесение наличных</value>
+  </data>
+  <data name="PayInAccountName" xml:space="preserve">
+    <value>Кредиты сотрудникам</value>
+  </data>
+  <data name="PayOutComment" xml:space="preserve">
+    <value>Изъятие денег под отчет</value>
+    <comment>Комментарий к изъятию наличных из кассы</comment>
+  </data>
+  <data name="PayOutEventTypeName" xml:space="preserve">
+    <value>Изъятие наличных</value>
+  </data>
+  <data name="PayOutAccountName" xml:space="preserve">
+    <value>Деньги, выданные под отчет</value>
+  </data>
+  <data name="CashierName" xml:space="preserve">
+    <value>Елизавета</value>
+  </data>
+  <data name="ReportHeader" xml:space="preserve">
+    <value>------------------------------------------
+ООО «Центральные кофейни»
+ИНН 7707658076
+------------------------------------------</value>
+  </data>
+  <data name="WaiterName" xml:space="preserve">
+    <value>Виктория</value>
+  </data>
+  <data name="WaiterRole" xml:space="preserve">
+    <value>Официант</value>
+  </data>
+  <data name="CurrencyIsoName" xml:space="preserve">
+    <value>RUB</value>
+    <comment>Код используемой валюты по ISO</comment>
+  </data>
+  <data name="CurrencyShortName" xml:space="preserve">
+    <value>руб.</value>
+    <comment>Краткое наименование валюты</comment>
+  </data>
+  <data name="CustomerAddressAdditionalInfo" xml:space="preserve">
+    <value>Въезд со двора</value>
+  </data>
+  <data name="CustomerAddressRegion" xml:space="preserve">
+    <value>Татарстан</value>
+  </data>
+  <data name="CustomerComment" xml:space="preserve">
+    <value>Может прийти раньше на 15-20 минут</value>
+  </data>
+  <data name="CustomerSurname" xml:space="preserve">
+    <value>Гарипов</value>
+  </data>
+  <data name="CustomerName" xml:space="preserve">
+    <value>Ренат</value>
+  </data>
+  <data name="CustomerAddressCity" xml:space="preserve">
+    <value>Казань</value>
+  </data>
+  <data name="CustomerAddressStreet" xml:space="preserve">
+    <value>Достоевского</value>
+  </data>
+  <data name="CardInfoOwner" xml:space="preserve">
+    <value>Гарипов Ренат</value>
+  </data>
+  <data name="GuestName" xml:space="preserve">
+    <value>Гарипов Ренат</value>
+  </data>
+  <data name="Hall" xml:space="preserve">
+    <value>Зал</value>
+  </data>
+  <data name="OrderTypeCommon" xml:space="preserve">
+    <value>Обычный заказ</value>
+    <comment>Тип заказа</comment>
+  </data>
+  <data name="OrderTypeDeliveryByCourier" xml:space="preserve">
+    <value>Доставка курьером</value>
+    <comment>Тип заказа</comment>
+  </data>
+  <data name="ReserveActivityType" xml:space="preserve">
+    <value>Свадьба</value>
+  </data>
+  <data name="ReserveComment" xml:space="preserve">
+    <value>Украсить зал воздушными шарами</value>
+  </data>
+  <data name="RestaurantAddress" xml:space="preserve">
+    <value>г. Казань, ул. Баумана, д. 147</value>
+  </data>
+  <data name="Breakfast" xml:space="preserve">
+    <value>Завтрак</value>
+  </data>
+  <data name="DeliveryProblemComment" xml:space="preserve">
+    <value>Превышено время доставки</value>
+  </data>
+  <data name="Discount3Name" xml:space="preserve">
+    <value>Скидка на соус 3%</value>
+  </data>
+  <data name="GuestRefusedComment" xml:space="preserve">
+    <value>гость отказался</value>
+  </data>
+  <data name="Order" xml:space="preserve">
+    <value>Заказ</value>
+  </data>
+  <data name="ProductAppleJuice" xml:space="preserve">
+    <value>Сок яблочный</value>
+  </data>
+  <data name="ProductApricotJam" xml:space="preserve">
+    <value>Абрикосовый джем</value>
+  </data>
+  <data name="ProductBeverages" xml:space="preserve">
+    <value>Напитки</value>
+  </data>
+  <data name="ProductCaesarSaladWithChicken" xml:space="preserve">
+    <value>Салат Цезарь с куриной грудкой</value>
+  </data>
+  <data name="ProductCappuccino" xml:space="preserve">
+    <value>Капучино</value>
+  </data>
+  <data name="ProductChampignon" xml:space="preserve">
+    <value>Шампиньоны</value>
+  </data>
+  <data name="ProductCheese" xml:space="preserve">
+    <value>Сырный</value>
+  </data>
+  <data name="ProductCherryJuice" xml:space="preserve">
+    <value>Сок вишневый</value>
+  </data>
+  <data name="ProductCream" xml:space="preserve">
+    <value>Сливки</value>
+  </data>
+  <data name="ProductDoily" xml:space="preserve">
+    <value>Салфетка</value>
+  </data>
+  <data name="ProductDough" xml:space="preserve">
+    <value>Тесто</value>
+  </data>
+  <data name="ProductKetchup" xml:space="preserve">
+    <value>Кетчуп</value>
+  </data>
+  <data name="ProductMayonnaise" xml:space="preserve">
+    <value>Майонез</value>
+  </data>
+  <data name="ProductOnion" xml:space="preserve">
+    <value>Лук</value>
+  </data>
+  <data name="ProductOrangeJuice" xml:space="preserve">
+    <value>Сок апельсиновый</value>
+  </data>
+  <data name="ProductPepper" xml:space="preserve">
+    <value>Перец</value>
+  </data>
+  <data name="ProductPepperoniPizza" xml:space="preserve">
+    <value>Пицца Пепперони</value>
+  </data>
+  <data name="ProductPizzaComment" xml:space="preserve">
+    <value>без лука и чеснока</value>
+  </data>
+  <data name="ProductPizzaScheme" xml:space="preserve">
+    <value>Схема Пицца</value>
+  </data>
+  <data name="ProductPorridgeChoice" xml:space="preserve">
+    <value>Каша на выбор</value>
+  </data>
+  <data name="ProductRaspberryJam" xml:space="preserve">
+    <value>Малиновый джем</value>
+  </data>
+  <data name="ProductSauce" xml:space="preserve">
+    <value>Соус</value>
+  </data>
+  <data name="ProductSizeLarge" xml:space="preserve">
+    <value>Большой</value>
+  </data>
+  <data name="ProductSizeMedium" xml:space="preserve">
+    <value>Средний</value>
+  </data>
+  <data name="ProductSizeSmall" xml:space="preserve">
+    <value>Маленький</value>
+  </data>
+  <data name="ProductStrawberryCheesecake" xml:space="preserve">
+    <value>Клубничный Чизкейк</value>
+  </data>
+  <data name="ProductStrawberryCheesecakeComment" xml:space="preserve">
+    <value>полить соусом из белого шоколада и коньяка, украсить ягодами и листьями мяты</value>
+  </data>
+  <data name="ProductSugar" xml:space="preserve">
+    <value>Сахар</value>
+  </data>
+  <data name="ProductThick" xml:space="preserve">
+    <value>Толстое</value>
+  </data>
+  <data name="ProductThin" xml:space="preserve">
+    <value>Тонкое</value>
+  </data>
+  <data name="ProductTomatoes" xml:space="preserve">
+    <value>Помидоры</value>
+  </data>
+  <data name="ProductVegetables" xml:space="preserve">
+    <value>Овощи</value>
+  </data>
+  <data name="WithoutWriteoff" xml:space="preserve">
+    <value>Без списания</value>
+  </data>
+  <data name="WithWriteoff" xml:space="preserve">
+    <value>Со списанием</value>
+  </data>
+  <data name="SalesTax" xml:space="preserve">
+    <value>Налог с продаж</value>
+  </data>
+  <data name="TaxExcise" xml:space="preserve">
+    <value>Акциз</value>
+  </data>
+  <data name="ProductCaesarSaladWithChickenDescription" xml:space="preserve">
+    <value>Знаменитый салат с нежнейшим куриным филе, воздушными хлопьями пармезана и хрустящими чесночными гренками, заправленный соусом по секретному рецепту шеф-повара, украшенный только что сорванными листьями салата.</value>
+  </data>
+  <data name="ProductCappuccinoDescription" xml:space="preserve">
+    <value>Очаровательно мягкий и вкусный кофейный напиток на базе эспрессо со взбитым молоком, обладающий естественной сладостью и характерным сливочным послевкусием.</value>
+  </data>
+  <data name="ProductStrawberryCheesecakeDescription" xml:space="preserve">
+    <value>Нежный чизкейк с невероятно вкусной кремовой текстурой в сочетании со свежими ягодами клубники и песочной штрейзельной крошкой создает просто непревзойденный вкус.</value>
+  </data>
+  <data name="WithoutTax" xml:space="preserve">
+    <value>Без налоговой категории</value>
+  </data>
+</root>

@@ -1,0 +1,276 @@
+﻿@using System.Linq
+@using Resto.Front.PrintTemplates.Cheques.Razor
+@using Resto.Front.PrintTemplates.Cheques.Razor.TemplateModels
+@using Resto.Front.PrintTemplates.RmsEntityWrappers
+
+@inherits TemplateBase<ICookingCompleteCheque>
+
+@{
+    var order = Model.Order;
+}
+
+<doc bell="" formatter="split">
+    @string.Format(Resources.KitchenHeaderPattern, FormatFullDateTime(Model.CommonInfo.CurrentTime), order.Number, 1, order.Waiter.GetNameOrEmpty())
+    <np />
+    <np />
+    <f1><split>@string.Format(Resources.ServiceChequeHeaderLocationPattern, order.Table.Number, order.Table.Section.Name, order.ActualGuestsCount)</split></f1>
+    <np />
+    <np />
+    <f1><np /></f1>
+    @{
+        @PrintKitchenOrderItem(order, Model.Item, Model.CookingPlace, Model.CompoundItemSecondaryComponent)
+        foreach (var item in Model.Items)
+        {
+            @PrintKitchenOrderItem(order, item.Item, Model.CookingPlace, item.CompoundItemSecondaryComponent)
+        }
+    }
+</doc>
+
+@helper ProductTable(IKitchenOrderProductItem product, IRestaurantSection cookingPlace)
+{
+    if (product.CompoundsInfo != null && product.CompoundsInfo.IsPrimaryComponent)
+    {
+        <f1>
+            <table>
+                <columns>
+                    @TableColumns()
+                </columns>
+                <cells>
+                    <ct>@string.Format("{0} {1}", product.CompoundsInfo.ModifierSchemaName, product.ProductSize == null ? string.Empty : product.ProductSize.Name)</ct>
+                    <ct>@FormatAmount(product.Amount * 2)</ct>
+                </cells>
+            </table>
+        </f1>
+        @ModifiersTable(product, cookingPlace, true)
+    }
+    var componentString = string.Empty;
+    if (product.CompoundsInfo != null)
+    {
+        componentString = " 1/2 ";
+    }
+    <f1>
+        <table>
+            <columns>
+                @TableColumns()
+            </columns>
+            <cells>
+                <c>
+                    <whitespace-preserve>@(cookingPlace == product.Kitchen
+                        ? componentString + GetProductKitchenNameWithSize(product)
+                        : componentString + string.Format(Resources.CookingPlaceTemplate, product.Kitchen.Name, GetProductKitchenNameWithSize(product)))</whitespace-preserve>
+                </c>
+
+                @if (product.CompoundsInfo == null)
+                {
+                    <ct>@FormatAmount(product.Amount)</ct>
+                }
+                else
+                {
+                    <ct />
+                }
+            </cells>
+        </table>
+    </f1>
+}
+
+@helper ModifierProductTable(IKitchenOrderModifierItem modifier, IRestaurantSection cookingPlace)
+{
+    <f1>
+        <table>
+            <columns>
+                @TableColumns()
+            </columns>
+            <cells>
+                <c>
+                    @(cookingPlace == modifier.Kitchen
+                          ? modifier.Product.GetKitchenOrDefaultName()
+                          : string.Format(Resources.CookingPlaceTemplate, modifier.Kitchen.Name, modifier.Product.GetKitchenOrDefaultName()))
+                </c>
+                <ct>@FormatAmount(modifier.Amount)</ct>
+            </cells>
+        </table>
+    </f1>
+}
+
+@helper ModifiersTable(IKitchenOrderProductItem productItem, IRestaurantSection cookingPlace, bool onlyCommonModifiers = false)
+{
+    var commentText = productItem.Comment != null && !productItem.Comment.Deleted ? productItem.Comment.Text : null;
+    var modifiers = productItem.Modifiers.Where(m =>
+        CommonModifiersFilter(m.IsCommonModifier, productItem, onlyCommonModifiers) &&
+        !m.Deleted && !m.IsHidden).ToList();
+    var productsOfZeroAmountModifiers = productItem.CompoundsInfo == null
+        ? productItem.ProductsOfZeroAmountCommonModifiers.Concat(productItem.ProductsOfZeroAmountModifiers)
+        : productItem.CompoundsInfo.IsPrimaryComponent && onlyCommonModifiers
+            ? productItem.ProductsOfZeroAmountCommonModifiers
+            : productItem.ProductsOfZeroAmountModifiers;
+
+    <f0>
+        <table>
+            <columns>
+                <column autowidth="" minwidth="2" />
+                @TableColumns()
+            </columns>
+            <cells>
+                @if (commentText != null)
+                {
+                    <ct />
+                    <c>@commentText</c>
+                    <ct />
+                }
+
+                @{
+                    var parentAmount = GetParentAmount(productItem, onlyCommonModifiers);
+                    foreach (var modifier in modifiers)
+                    {
+                        <ct />
+                        <c>
+                            @(cookingPlace == modifier.Kitchen
+                                  ? modifier.Product.GetKitchenOrDefaultName()
+                                  : string.Format(Resources.CookingPlaceTemplate, modifier.Kitchen.Name, modifier.Product.GetKitchenOrDefaultName()))
+                        </c>
+                        <ct>
+                            @(modifier.AmountIndependentOfParentAmount
+                                  ? string.Format(Resources.KitchenModifierAbsoluteAmountPattern, modifier.Amount)
+                                  : string.Format(Resources.KitchenModifierAmountPattern, (int)(modifier.Amount / parentAmount)))
+                        </ct>
+                    }
+                }
+
+                @foreach (var product in productsOfZeroAmountModifiers)
+                {
+                    <ct />
+                    <c>
+                        @(cookingPlace == productItem.Kitchen
+                              ? product.GetKitchenOrDefaultName()
+                              : string.Format(Resources.CookingPlaceTemplate, productItem.Kitchen.Name, product.GetKitchenOrDefaultName()))
+                    </c>
+                    <ct>@string.Format(Resources.KitchenModifierAmountPattern, 0m)</ct>
+                }
+            </cells>
+        </table>
+    </f0>
+}
+
+@helper TableColumns()
+{
+    <column formatter="split" />
+    <column autowidth="" />
+}
+
+@helper PrintKitchenOrderItem(IKitchenOrder order, IKitchenOrderItem item, IRestaurantSection cookingPlace, IKitchenOrderProductItem compoundItem)
+{
+    IKitchenOrderProductItem productItem;
+    IKitchenOrderProductItem compoundItemSecondaryComponent = null;
+    IKitchenOrderModifierItem modifierItem;
+
+    if (item is IKitchenOrderProductItem)
+    {
+        productItem = (IKitchenOrderProductItem)item;
+        if (compoundItem != null)
+        {
+            compoundItemSecondaryComponent = compoundItem;
+        }
+        modifierItem = null;
+    }
+    else
+    {
+        modifierItem = (IKitchenOrderModifierItem)item;
+        productItem = order.Items.Single(it => it.Modifiers.Contains(modifierItem));
+    }
+    var course = productItem.Course;
+    if (course != 1)
+    {
+        <f1>@GetCourseTitle(course)</f1>
+    }
+    if (modifierItem == null)
+    {
+        @ProductTable(productItem, cookingPlace)
+        if (HasModifiersToPrint(productItem))
+        {
+            @ModifiersTable(productItem, cookingPlace);
+        }
+        if (compoundItemSecondaryComponent != null)
+        {
+            @ProductTable(compoundItemSecondaryComponent, cookingPlace);
+            if (HasModifiersToPrint(productItem))
+            {
+                @ModifiersTable(compoundItemSecondaryComponent, cookingPlace);
+            }
+        }
+
+        if (cookingPlace.PrintKitchenBarcodeType != PrintKitchenBarcodeType.Never)
+        {
+            <np />
+            <center><barcode>@productItem.ServiceChequeBarcode</barcode></center>
+        }
+    }
+    else
+    {
+        @ModifierProductTable(modifierItem, cookingPlace);
+    }
+    <np />
+    <np />
+}
+
+@functions
+{
+    private string GetCourseTitle(int course)
+    {
+        string name;
+
+        if (Model.CommonInfo.CafeSetup.CourseCustomNames.TryGetValue(course, out name))
+            return name;
+
+        switch (course)
+        {
+            case 0:
+                return Resources.KitchenCourseVipTitle;
+            case 1:
+                return Resources.KitchenCourse1Title;
+            case 2:
+                return Resources.KitchenCourse2Title;
+            case 3:
+                return Resources.KitchenCourse3Title;
+            case 4:
+                return Resources.KitchenCourse4Title;
+            default:
+                return string.Format(Resources.KitchenCourseTitleFormat, course);
+        }
+    }
+
+    private static bool HasModifiersToPrint(IKitchenOrderProductItem productItem)
+    {
+        if (productItem.Comment != null && !productItem.Comment.Deleted)
+            return true;
+
+        if (productItem.Modifiers.Any(modifier => !modifier.Deleted && !modifier.IsHidden))
+            return true;
+
+        return productItem.ProductsOfZeroAmountModifiers.Any();
+    }
+
+    private static bool CommonModifiersFilter(bool isCommonModifier, IKitchenOrderProductItem parent, bool onlyCommonModifiers)
+    {
+        if (parent.CompoundsInfo != null && parent.CompoundsInfo.IsPrimaryComponent)
+        {
+            if (onlyCommonModifiers && !isCommonModifier)
+                return false;
+            if (!onlyCommonModifiers && isCommonModifier)
+                return false;
+            return true;
+        }
+        return true;
+    }
+
+    private static string GetProductKitchenNameWithSize(IKitchenOrderProductItem productItem)
+    {
+        return productItem.ProductSize == null || productItem.CompoundsInfo != null
+            ? productItem.Product.GetKitchenOrDefaultName()
+            : string.Format(Resources.ProductNameWithSizeFormat, productItem.Product.GetKitchenOrDefaultName(), productItem.ProductSize.Name);
+    }
+
+    private static decimal GetParentAmount(IKitchenOrderItem parent, bool onlyCommonModifiers)
+    {
+        return onlyCommonModifiers ? parent.Amount * 2 : parent.Amount;
+    }
+}

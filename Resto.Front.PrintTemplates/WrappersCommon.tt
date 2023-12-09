@@ -1,0 +1,196 @@
+<#@ include file="..\Resto.T4Common\T4Common.tt" #>
+
+<#+
+    static readonly HashSet<string> standardTypes = new HashSet<string> { "Guid", "Guid?", "bool", "bool?", "string", "decimal", "decimal?", "int", "int?", "DateTime", "DateTime?", "TimeSpan", "TimeSpan?", "XElement" };
+
+    static bool IsStandardType(string name)
+    {
+        return standardTypes.Contains(name);
+    }
+
+    string GetTypeName(string name, Root wrappers, params Root[] additionalWrappers)
+    {
+        return IsEntity(name, wrappers, additionalWrappers) ? "I" + name : name;
+    }
+
+    bool IsEntity(string name, Root wrappers, params Root[] additionalWrappers)
+    {
+        return
+            !IsStandardType(name) &&
+            !wrappers.Enums.Select(enumeration => enumeration.Name).Contains(name) &&
+            !additionalWrappers.SelectMany(w => w.Enums).Select(enumeration => enumeration.Name).Contains(name);
+    }
+
+    string GetPropertyType(Property property, Func<string, string> getTypeName)
+    {
+        return getTypeName(property.Type);
+    }
+
+    string GetCollectionPropertyType(Collection collection, Func<string, string> getTypeName)
+    {
+        return string.Format("IEnumerable<{0}>", getTypeName(collection.ItemType));
+    }
+
+    string GetDictionaryPropertyType(Dictionary dictionary, Func<string, string> getTypeName)
+    {
+        return string.Format("IDictionary<{0}, {1}>", getTypeName(dictionary.KeyType), getTypeName(dictionary.ValueType));
+    }
+
+    string GetInheritsDeclaration(Model model)
+    {
+        var inheritsList = new List<string>();
+        inheritsList.AddRange(model.Inherits.Select(inherit => inherit.Model));
+
+        return inheritsList.Count == 0
+            ? string.Empty
+            : " : " + string.Join(", ", inheritsList.Select(inherit => "I" + inherit));
+    }
+
+    IEnumerable<Property> GetPropertiesRecursive(Model model)
+    {
+        return GetRecursive(model, m => m.Properties, pg => pg.Properties);
+    }
+
+    IEnumerable<Collection> GetCollectionsRecursive(Model model)
+    {
+        return GetRecursive(model, m => m.Collections, pg => pg.Collections);
+    }
+
+    IEnumerable<Dictionary> GetDictionariesRecursive(Model model)
+    {
+        return GetRecursive(model, m => m.Dictionaries, pg => pg.Dictionaries);
+    }
+
+    IEnumerable<T> GetRecursive<T>(Model model, Func<Model, IEnumerable<T>> modelAccessor, Func<PropertiesGroup, IEnumerable<T>> propertiesGroupAccessor)
+    {
+        foreach (var value in model.Includes.SelectMany(include => GetRecursive(include.PropertiesGroupIdRef, propertiesGroupAccessor, model, new List<PropertiesGroup>())))
+            yield return value;
+        foreach (var value in modelAccessor(model))
+            yield return value;
+    }
+
+    IEnumerable<T> GetRecursive<T>(PropertiesGroup propertiesGroup, Func<PropertiesGroup, IEnumerable<T>> accessor, Model model, List<PropertiesGroup> path)
+    {
+        if (path.Contains(propertiesGroup))
+            throw new ArgumentException(string.Format("Model {0} contains cycle of includes: {0} -> {1} -> {2}",
+                model.Name, string.Join(" -> ", path.Select(m => m.Id)), propertiesGroup.Id));
+
+        path.Add(propertiesGroup);
+
+        foreach (var value in propertiesGroup.Includes.SelectMany(include => GetRecursive(include.PropertiesGroupIdRef, accessor, model, path)))
+            yield return value;
+        foreach (var value in accessor(propertiesGroup))
+            yield return value;
+
+        path.Remove(propertiesGroup);
+    }
+#>
+
+<#+
+    void RenderEnum(Enum enumeration, string namespaceName)
+    {
+#><#= T4Warning #>
+
+namespace <#=namespaceName#>
+{
+<#+ if (!string.IsNullOrWhiteSpace(enumeration.Comment)) { #>
+    /// <summary>
+    /// <#= enumeration.Comment #>
+    /// </summary>
+<#+ } #>
+    public enum <#= enumeration.Name #>
+    {
+<#+ foreach (var value in enumeration.Values) { #>
+<#+     if (!string.IsNullOrWhiteSpace(value.Comment)) { #>
+        /// <summary>
+        /// <#= value.Comment #>
+        /// </summary>
+<#+     }#>
+        <#= value.Name #>,
+
+<#+ } #>
+    }
+}
+<#+ }
+#>
+
+<#+
+    void RenderAtomProperty(Property property, Func<string, string> getTypeName)
+    { #>
+<#+     if (!string.IsNullOrWhiteSpace(property.Comment)) { #>
+        /// <summary>
+        /// <#= property.Comment #>
+        /// </summary>
+<#+     }#>
+<#+     if (property.Nullness != Nullness.Omit) { #>
+        [<#= property.Nullness.ToString() #>]
+<#+     }#>
+<#+     if (property.ObsolescenseComment != null) { #>
+        [Obsolete("<#=property.ObsolescenseComment#>")]
+<#+     }#>
+        <#= GetPropertyType(property, getTypeName) #> <#= property.Name #> { get; }
+
+<#+ }
+#>
+
+<#+
+    void RenderCollectionProperty(Collection collection, Func<string, string> getTypeName)
+    { #>
+<#+     if (!string.IsNullOrWhiteSpace(collection.Comment)) { #>
+        /// <summary>
+        /// <#= collection.Comment #>
+        /// </summary>
+<#+     }#>
+        [NotNull]
+<#+     if (collection.ObsolescenseComment != null) { #>
+        [Obsolete("<#=collection.ObsolescenseComment#>")]
+<#+     }#>
+        <#= GetCollectionPropertyType(collection, getTypeName) #> <#= collection.Name #> { get; }
+
+<#+ }
+#>
+
+<#+
+    void RenderDictionaryProperty(Dictionary dictionary, Func<string, string> getTypeName)
+    { #>
+<#+     if (!string.IsNullOrWhiteSpace(dictionary.Comment)) { #>
+        /// <summary>
+        /// <#= dictionary.Comment #>
+        /// </summary>
+<#+     }#>
+        [NotNull]
+<#+     if (dictionary.ObsolescenseComment != null) { #>
+        [Obsolete("<#=dictionary.ObsolescenseComment#>")]
+<#+     }#>
+        <#= GetDictionaryPropertyType(dictionary, getTypeName) #> <#= dictionary.Name #> { get; }
+
+<#+ }
+#>
+
+<#+
+    void RenderModel(Model model, Func<string, string> getTypeName)
+    {
+        if (!string.IsNullOrWhiteSpace(model.Comment)) { #>
+    /// <summary>
+    /// <#= model.Comment #>
+    /// </summary>
+<#+     } #>
+    public interface I<#= model.Name + GetInheritsDeclaration(model) #>
+    {
+<#+     foreach (var property in GetPropertiesRecursive(model))
+        {
+            RenderAtomProperty(property, getTypeName);
+        } 
+        
+        foreach (var collection in GetCollectionsRecursive(model))
+        {
+            RenderCollectionProperty(collection, getTypeName);
+        }
+
+        foreach (var dictionary in GetDictionariesRecursive(model))
+        {
+            RenderDictionaryProperty(dictionary, getTypeName);
+        } #>
+    }
+<#+ }
+#>

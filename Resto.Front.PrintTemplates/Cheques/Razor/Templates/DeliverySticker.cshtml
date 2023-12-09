@@ -1,0 +1,319 @@
+﻿@using System
+@using System.Collections.Generic
+@using System.Linq
+@using Resto.Front.PrintTemplates.Cheques.Razor.TemplateModels
+
+@inherits Resto.Front.PrintTemplates.Cheques.Razor.TemplateBase<IDeliverySticker>
+@{
+    var excludedCookingPlaceTypes = new List<string>
+    {
+        //добавьте сюда типы мест приготовления, для которых стикеры не должны печататься
+        //(например, готовые напитки, мороженое и т.п.) через запятую
+        //"Бар",
+        //"Готовые напитки"
+    };
+
+    var delivery = Model.Delivery;
+    var itemGuest = delivery.Order.Guests.Single(guest => guest.Items.Contains(Model.Item));
+
+    IOrderEntry actualEntry;
+    IProductItem compoundItemSecondaryComponent = null;
+    if (Model.Modifier != null)
+    {
+        actualEntry = Model.Modifier;
+    }
+    else
+    {
+        actualEntry = Model.Item;
+        compoundItemSecondaryComponent = Model.CompoundItemSecondaryComponent;
+    }
+
+    if (!ShouldPrintSticker(actualEntry, excludedCookingPlaceTypes))
+    {
+        throw new OperationCanceledException();
+    }
+
+    string guestName;
+    if (!delivery.SplitBetweenPersons && itemGuest.Name == string.Format(Resources.GuestNumFormat, 1) 
+        && !string.IsNullOrEmpty(delivery.Customer.Name))
+    {
+        var customer = delivery.Customer;
+        guestName = string.IsNullOrWhiteSpace(customer.Surname)
+            ? customer.Name
+            : string.Format("{0} {1}.", customer.Surname, customer.Name[0]);
+    }
+    else
+    {
+        guestName = itemGuest.Name;
+    }
+
+    var orderEntriesForStickers = delivery.Order.GetIncludedEntries()
+        .Where(entry => ShouldPrintSticker(entry, excludedCookingPlaceTypes))
+        .ToList()
+        .AsReadOnly();
+    var stickersWithCount = orderEntriesForStickers.ToDictionary(entry => entry, GetStickersCount);
+    var totalStickersCount = stickersWithCount.Sum(sc => sc.Value);
+    var stickerCount = stickersWithCount[actualEntry];
+    var startIndex = stickersWithCount.TakeWhile(sc => sc.Key != actualEntry).Sum(sc => sc.Value);
+    var order = delivery.Order;
+}
+
+<doc>
+    @for (int i = 0; i < stickerCount; i++)
+    {
+        var stickerIndex = startIndex + i + 1;
+        <right>@string.Format("{0} ({1})", stickerIndex, totalStickersCount)</right>
+
+        <center>@Model.CommonInfo.CafeSetup.LegalName</center>
+        <left><wrap>@string.Format("{0}   {1}", string.Format(Resources.BillHeaderOrderNumberPattern, delivery.Number), guestName)</wrap></left>
+
+        if (!string.IsNullOrWhiteSpace(order.ExternalNumber))
+        {
+            <left><wrap>@string.Format(Resources.BillHeaderOrderExternalNumberPattern, order.ExternalNumber)</wrap></left>
+        }
+
+        <left><wrap>@string.Format("{0} {1}", Resources.DeliveryDateTimeColon, FormatLongDateTime(delivery.DeliverTime))</wrap></left>
+
+        @Product(actualEntry)
+        if (compoundItemSecondaryComponent != null)
+        {
+            @Product(compoundItemSecondaryComponent)
+        }
+
+        <left>@string.Format("{0} {1}", Resources.PrintTimeColon, FormatFullDateTime(Model.CommonInfo.CurrentTime))</left>
+        <np />
+
+        if (i != stickerCount - 1)
+        {
+            <pagecut />
+        }
+    }
+</doc>
+
+@helper Product(IOrderEntry entry)
+{
+    <left><wrap>@ProductName(entry)</wrap></left>
+    <left><wrap>@string.Format("{0} {1}", Resources.ProductPriceColon, FormatMoney(entry.Product.SalePrice))</wrap></left>
+
+    if (entry.ProductCategory != null)
+    {
+        <left><wrap>@string.Format("{0} {1}", Resources.CategoryColon, entry.ProductCategory.Name)</wrap></left>
+    }
+    if (!string.IsNullOrWhiteSpace(entry.Product.Description))
+    {
+        <left><wrap>@entry.Product.Description</wrap></left>
+    }
+    if (entry.Product.FoodValue != null)
+    {
+        <left>
+            <wrap>
+                @string.Join(" ",
+                    string.Format(Resources.ProteinFormat, FormatFoodValueItem(entry.Product.FoodValue.Protein)),
+                    string.Format(Resources.FatFormat, FormatFoodValueItem(entry.Product.FoodValue.Fat)),
+                    string.Format(Resources.CarbohydrateFormat, FormatFoodValueItem(entry.Product.FoodValue.Carbohydrate)),
+                    string.Format(Resources.CaloricityFormat, FormatFoodValueItem(entry.Product.FoodValue.Caloricity)))
+            </wrap>
+        </left>
+    }
+    if (entry.Product.ExpirationPeriod.Ticks > 0)
+    {
+        <left><wrap>@string.Format(Resources.ExpirationPeriodFormat, entry.Product.ExpirationPeriod.TotalHours)</wrap></left>
+    }
+
+    @PrintOrderEntryAllergens(entry)
+}
+
+@helper ProductName(IOrderEntry entry)
+{
+    var itemAmount = entry.Product.UseBalanceForSell && entry.Amount != 1m
+        ? " x" + FormatAmount(entry.Amount)
+        : string.Empty;
+
+    var productItem = entry as IProductItem;
+    if (productItem == null)
+    {
+        var productName = entry.ProductCustomName ?? entry.Product.Name;
+        <left><wrap>@(productName + itemAmount)</wrap></left>
+        return;
+    }
+
+    var itemName = string.Empty;
+    List<IModifierEntry> modifiersToPrint;
+    var modifiers = string.Empty;
+
+    if (productItem.CompoundsInfo != null && productItem.CompoundsInfo.IsPrimaryComponent)
+    {
+        itemName = string.Format("{0} {1}", productItem.CompoundsInfo.ModifierSchemaName, productItem.ProductSize == null ? string.Empty : productItem.ProductSize.Name);
+        modifiersToPrint = productItem.ModifierEntries.Where(m => ModifiersFilter(m, productItem, true)).ToList();
+        if (modifiersToPrint.Count > 0)
+        {
+            modifiers = string.Format(" ({0})", string.Join("; ", modifiersToPrint.Select(modifier => GetModifierString(modifier, productItem, true))));
+        }
+        <left><wrap>@(itemName + modifiers)</wrap></left>
+    }
+
+    if (productItem.CompoundsInfo != null)
+    {
+        itemName = "1/2 ";
+    }
+
+    itemName += GetProductNameWithSize(productItem);
+    modifiersToPrint = productItem.GetNotDeletedChildren().Cast<IModifierEntry>().Where(m => ModifiersFilter(m, productItem)).ToList();
+
+    if (modifiersToPrint.Count > 0)
+    {
+        modifiers = string.Format(" ({0})", string.Join("; ", modifiersToPrint.Select(modifier => GetModifierString(modifier, productItem))));
+    }
+    <left><wrap>@(itemName + itemAmount + modifiers)</wrap></left>
+}
+
+@helper PrintOrderEntryAllergens(IOrderEntry orderEntry)
+{
+    var totalAllergens = orderEntry.Allergens.ToArray();
+    if (totalAllergens.Any())
+    {
+        <left>@( string.Format(Resources.AllergenGroupsFormat, string.Join(", ", totalAllergens)))</left>
+    }
+}
+
+@functions
+{
+    private static bool CommonModifiersFilter(bool isCommonModifier, IProductItem parent, bool onlyCommonModifiers)
+    {
+        if (parent.CompoundsInfo != null && parent.CompoundsInfo.IsPrimaryComponent)
+        {
+            if (onlyCommonModifiers && !isCommonModifier)
+                return false;
+            if (!onlyCommonModifiers && isCommonModifier)
+                return false;
+            return true;
+        }
+        return true;
+    }
+
+    private static bool GetModifiersCookWithMainDish(IModifierEntry modifier)
+    {
+        return modifier.SimpleModifier != null
+            ? modifier.SimpleModifier.Product.CookWithMainDish
+            : modifier.ChildModifier.Product.CookWithMainDish;
+    }
+
+    private static bool ModifiersFilter(IModifierEntry modifier, IProductItem parent, bool onlyCommonModifiers = false)
+    {
+        if (modifier.SimpleModifier == null && modifier.ChildModifier == null)
+            throw new ArgumentException("Modifier doesn't contain simple or child entries.", "modifier");
+
+        if (!CommonModifiersFilter(modifier.IsCommonModifier, parent, onlyCommonModifiers))
+            return false;
+
+        //на отдельно готовящиеся позиции печатаются отдельные стикеры, в этом списке не показываем
+        if (!GetModifiersCookWithMainDish(modifier))
+            return false;
+
+        if (modifier.ChildModifier == null || !modifier.ChildModifier.HideIfDefaultAmount)
+            return true;
+
+        var amountPerItem = modifier.ChildModifier.AmountIndependentOfParentAmount
+            ? modifier.Amount
+            : modifier.Amount / GetParentAmount(parent, onlyCommonModifiers);
+
+        return amountPerItem != modifier.ChildModifier.DefaultAmount;
+    }
+
+    private static string GetModifierString(IModifierEntry modifier, IProductItem parent, bool onlyCommonModifiers = false)
+    {
+        if (modifier.SimpleModifier == null && modifier.ChildModifier == null)
+            throw new ArgumentException("Modifier doesn't contain simple or child entries.", "modifier");
+
+        var productName = modifier.ProductCustomName ?? modifier.Product.Name;
+        var amountIndependentOfParentAmount = modifier.SimpleModifier != null
+            ? modifier.SimpleModifier.AmountIndependentOfParentAmount
+            : modifier.ChildModifier.AmountIndependentOfParentAmount;
+
+        if (amountIndependentOfParentAmount)
+        {
+            //если количества независимы, +1 пишется (!)
+            var description = parent.Product.UseBalanceForSell ? string.Empty : string.Format(Resources.IndependentModifierAmountForFormat, parent.Amount);
+
+            if (modifier.Allergens.Any())
+            {
+                var allergensString = string.Format(Resources.AllergenGroupsFormat, string.Join(", ", modifier.Allergens));
+                return string.Format("{0} +{1}{2} ({3})", productName, FormatAmount(modifier.Amount), description, allergensString);
+            }
+
+            return string.Format("{0} +{1}{2}", productName, FormatAmount(modifier.Amount), description);
+        }
+
+        //если количества независимы, ×1 не пишется
+        var amount = modifier.Amount / GetParentAmount(parent, onlyCommonModifiers);
+        if (amount == 1m)
+        {
+            if (modifier.Allergens.Any())
+            {
+                var allergensString = string.Format(Resources.AllergenGroupsFormat, string.Join(", ", modifier.Allergens));
+                return string.Format("{0} ({1})", productName, allergensString);
+            }
+
+            return productName;
+        }
+
+        if (modifier.Allergens.Any())
+        {
+            var allergensString = string.Format(Resources.AllergenGroupsFormat, string.Join(", ", modifier.Allergens));
+            return string.Format("{0} x{1} ({2})", productName, FormatAmount(amount), allergensString);
+        }
+
+        return string.Format("{0} x{1}", productName, FormatAmount(amount));
+    }
+
+    private static string GetProductNameWithSize(IProductItem productItem)
+    {
+        var productName = productItem.ProductCustomName ?? productItem.Product.Name;
+        return productItem.ProductSize == null || productItem.CompoundsInfo != null
+            ? productName
+            : string.Format(Resources.ProductNameWithSizeFormat, productName, productItem.ProductSize.Name);
+    }
+
+    private static decimal GetParentAmount(IOrderItem parent, bool onlyCommonModifiers)
+    {
+        return onlyCommonModifiers ? parent.Amount * 2 : parent.Amount;
+    }
+
+    private static bool ShouldPrintSticker(IOrderEntry orderEntry, IList<string> excludedCookingPlaceTypes)
+    {
+        //на блюдо стикер нужен, если только это не вторая половинка пиццы
+        //и его тип места приготовления не исключен из печати стикеров
+        var product = orderEntry as IProductItem;
+        if (product != null)
+            return (product.CompoundsInfo == null || product.CompoundsInfo.IsPrimaryComponent)
+                   && !excludedCookingPlaceTypes.Contains(product.CookingPlaceType.Name);
+
+        //на модификатор - если он готовится отдельно от основного блюда
+        //и его тип места приготовления не исключен из печати стикеров
+        var modifier = orderEntry as IModifierEntry;
+        if (modifier != null)
+            return !GetModifiersCookWithMainDish(modifier)
+                   && !excludedCookingPlaceTypes.Contains(modifier.CookingPlaceType.Name);
+
+        //на остальное стикеры не печатаем
+        return false;
+    }
+
+    private int GetStickersCount(IOrderEntry entry)
+    {
+        var modifier = entry as IModifierEntry;
+        if (modifier != null)
+            return modifier.Product.UseBalanceForSell ? 1 : (int) Math.Ceiling(entry.Amount);
+
+        var product = entry as IProductItem;
+        if (product != null)
+        {
+            if (product.CompoundsInfo == null)
+                return product.Product.UseBalanceForSell ? 1 : (int) Math.Ceiling(product.Amount);
+
+            return (int)Math.Ceiling(product.Amount * 2);
+        }
+
+        throw new ArgumentException("Entry is not valid for stickers.");
+    }
+}

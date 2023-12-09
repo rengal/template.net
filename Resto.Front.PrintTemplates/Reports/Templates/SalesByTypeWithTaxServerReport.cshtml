@@ -1,0 +1,314 @@
+﻿@using System
+@using System.Collections.Generic
+@using System.Linq
+@using Resto.Front.PrintTemplates.Reports
+@using Resto.Front.PrintTemplates.Reports.OlapReports
+@using Resto.Front.PrintTemplates.Reports.TemplateModels
+@using Resto.Front.PrintTemplates.RmsEntityWrappers
+
+@* 011 Общая выручка по типам с налогами *@
+@* Парный к 041-му отчет по серверным данным *@
+@inherits TemplateBase
+@{
+    settings = Model.ReportSettings;
+    
+    FillSalesData();
+    FillTaxesData();
+}
+
+@if (!Model.IsOnlyBodyMarkupRequired)
+{
+    <doc formatter="split">
+        @Header()
+        @Body()
+        @Footer()
+    </doc>
+}
+else
+{
+    <doc formatter="split">
+        @Body()
+    </doc>
+}
+
+@helper Header()
+{
+    var terminalName = Model.CashRegister != null
+        ? string.Format(Resources.TerminalNumberNamePattern, Model.CashRegister.Number, Model.Group.Name)
+        : string.Format(Resources.TerminalNamePattern, Model.CurrentTerminal, Model.Group.Name);
+        
+    foreach (var headerLine in Model.CafeSetup.ReportHeader.Split(Environment.NewLine.ToCharArray()))
+    {
+        <left>
+            <whitespace-preserve>@headerLine</whitespace-preserve>
+        </left>
+    }
+    
+    <np />
+    <center>@Model.Name</center>
+    <np />
+    <pair fit="left" left="@Resources.HeadTerminal" right="@terminalName" /> 
+    
+    <pair left="@Resources.From" right="@FormatDate(settings.GetPeriodBegin())" />
+    <pair left="@Resources.To" right="@FormatDate(settings.GetPeriodEnd())" />
+    
+    <pair left="@Resources.HeadCurrentTime" right="@FormatLongDateTime(Model.CurrentTime)" />
+    <table>
+        <columns>
+            <column autowidth=""/>
+            <column align="right"/>
+        </columns>
+        <cells>
+            <ct>@Resources.HeadCurrentUser</ct>
+            <ct>@(Model.CurrentUser == null ? string.Empty : Model.CurrentUser.Name)</ct>
+        </cells>
+    </table> 
+}
+
+@helper Footer()
+{
+    <np />
+    <center>
+        @string.Format(Resources.AllSumsInFormat, Model.CafeSetup.CurrencyName)
+    </center>
+    <np />
+}
+
+@helper Body()
+{
+    <table>
+        <columns>
+            <column formatter="split" />
+            <column align="right" autowidth="" />
+            <column align="right" autowidth="" />
+        </columns>
+        <cells>
+            @foreach (var groupIsFiscal in salesData)
+            {
+                var c = 0;
+                <c colspan="0"><np /></c>
+                <c colspan="3">@(groupIsFiscal.Key ? Resources.FiscalPaymentTypeList : Resources.NonFiscalPaymentTypeList)</c>
+
+                <linecell symbols="-" />
+                <ct>@Resources.PaymentType</ct>
+                <ct>@Resources.Orders</ct>
+                <ct>@Resources.Sum</ct>
+                <linecell symbols="-" />
+
+                foreach (var groupPaymentGroup in groupIsFiscal.Value)
+                {
+                    // Если несколько групп оплаты, то между ними вставляем пустую строку
+                    if (c++ > 0)
+                    {
+                        <c colspan="0"><np /></c>
+                    }
+                    <c colspan="3">@groupPaymentGroup.Key.GetLocalName()</c>
+                
+                    foreach (var saleInfo in groupPaymentGroup.Value)
+                    {
+                        <ct>@saleInfo.PaymentTypeName</ct>
+                        <ct>@FormatAmount(saleInfo.ChequesNum)</ct>
+                        <ct>@FormatPrice(saleInfo.Sum)</ct>
+                    }
+                    <ct>@string.Format(Resources.TotalSub, groupPaymentGroup.Key.GetLocalName())</ct>
+                    <ct>@FormatAmount(groupPaymentGroup.Value.Sum(i => i.ChequesNum))</ct>
+                    <ct>@FormatPrice(groupPaymentGroup.Value.Sum(i => i.Sum))</ct>
+                }
+                if (groupIsFiscal.Value.Any())
+                {
+                    <linecell symbols="-" />
+                }
+                
+                <ct>@(groupIsFiscal.Key ? Resources.TotalFiscal : Resources.TotalNonFiscal)</ct>
+                <ct>@FormatAmount(groupIsFiscal.Value.Sum(i => i.Value.Sum(j => j.ChequesNum)))</ct>
+                <ct>@FormatPrice(groupIsFiscal.Value.Sum(i => i.Value.Sum(j => j.Sum)))</ct>
+
+                if (groupIsFiscal.Key)
+                {
+                    @GetTaxesMarkup()
+                }
+            }
+
+            <c colspan="0"><np/></c>
+            <linecell symbols="-"/>
+
+            <ct>@Resources.TotalAllPaymentTypes</ct>
+            <ct>@FormatAmount(totalChequesNum)</ct>
+            <ct>@FormatPrice(salesData.Sum(i => i.Value.Sum(j => j.Value.Sum(k => k.Sum))))</ct>
+            <linecell symbols="-" />
+        </cells>
+    </table>
+}
+
+@helper GetTaxesMarkup()
+{
+    <c colspan="0"><np /></c>
+    <c colspan="3">@Resources.VatList</c>
+    <linecell symbols="-"/>
+    
+    <ct>@Resources.VatPercent</ct>
+    <ct>@Resources.VatSum</ct>
+    <ct>@Resources.VatVatSum</ct>
+    <linecell symbols="-"/>
+    
+    foreach (var tax in taxesData)
+    {
+        <ct>@string.Format(Resources.Vat, FormatPercent(tax.VatPercent))</ct>
+        <ct>@FormatPrice(tax.Sum)</ct>
+        <ct>@FormatPriceFractional(tax.VatSum)</ct>
+    }
+    if (taxesData.Any())
+    {
+        <linecell symbols="-" />
+    }
+    
+    <ct>@Resources.TotalVat</ct>
+    <ct>@FormatPrice(taxesData.Sum(tax => tax.Sum))</ct>
+    <ct>@FormatPriceFractional(taxesData.Sum(tax => tax.VatSum))</ct>
+}
+
+@functions
+{
+    private ISettings settings;
+
+    private SortedDictionary<bool, Dictionary<PaymentGroup, List<DetailedSaleInfo>>> salesData;
+    private IEnumerable<TaxInfo> taxesData;
+    private int totalChequesNum;
+
+    private sealed class SaleInfo
+    {
+        public bool IsFiscal { get; set; }
+        public PaymentGroup PaymentGroup { get; set; }
+        public DetailedSaleInfo DetailedSaleInfo { get; set; }
+    }
+
+    private sealed class DetailedSaleInfo
+    {
+        public string PaymentTypeName { get; set; }
+        public int ChequesNum { get; set; }
+        public decimal Sum { get; set; }
+    }
+
+    private sealed class TaxInfo
+    {
+        public decimal VatPercent { get; set; }
+        public decimal VatSum { get; set; }
+        public decimal Sum { get; set; }
+    }
+
+    /// <summary>
+    /// Заполнение данных о фискальных/нефискальных оплатах
+    /// </summary>
+    private void FillSalesData()
+    {
+        var report = Model.OlapReports.BuildReport(new OlapReportSettings(OlapReportType.Sales,
+            new List<string> { OlapField.PayTypesIsPrintCheque, OlapField.PayTypesId, OlapField.PayTypes, OlapField.NonCashPaymentTypeId, OlapField.NonCashPaymentType },
+            new List<string>(),
+            new List<string> { OlapField.UniqOrderId, OlapField.DishDiscountSum },
+            new Dictionary<string, OlapReportFilterCriteria>
+            {
+                { OlapField.SessionIdOperDay, new OlapReportFilterRangeCriteria(settings.GetPeriodBegin(), true, settings.GetPeriodEnd(), true) },
+                // Исключаем сторнированные заказы
+                { OlapField.IsStorned, new OlapReportFilterExcludeValuesCriteria(new object[] { true }) },
+                // Исключаем транзакции внесения / возврата чаевых
+                { OlapField.PayTypesTransactionType, new OlapReportFilterExcludeValuesCriteria(new object[] { "TIPS" }) }
+            }));
+
+        var saleInfos = new List<SaleInfo>();
+        foreach (var data in report.Data)
+        {
+            var paymentType = data.GetValue<IPaymentType>(OlapField.PayTypesId);
+            var nonCashPaymentType = data.GetValue<IPaymentType>(OlapField.NonCashPaymentTypeId);
+            // Исключаем оплаты без транзакций (закрытие заказа без оплаты, оплата типом "Без выручки")
+            if (paymentType == null &&
+                (nonCashPaymentType == null || nonCashPaymentType.IsWriteoffPaymentType()))
+                continue;
+
+            PaymentGroup paymentGroup;
+            string paymentTypeName;
+            if (paymentType != null)
+            {
+                paymentGroup = paymentType.Group;
+                paymentTypeName = data.GetValue<string>(OlapField.PayTypes);
+            }
+            else
+            {
+                paymentGroup = nonCashPaymentType.Group;
+                paymentTypeName = data.GetValue<string>(OlapField.NonCashPaymentType);
+            }
+
+            saleInfos.Add(new SaleInfo
+            {
+                IsFiscal = data.GetValue<bool>(OlapField.PayTypesIsPrintCheque),
+                PaymentGroup = paymentGroup,
+                DetailedSaleInfo = new DetailedSaleInfo
+                {
+                    PaymentTypeName = paymentTypeName,
+                    ChequesNum = data.GetValue<int>(OlapField.UniqOrderId),
+                    Sum = data.GetValue<decimal>(OlapField.DishDiscountSum)
+                }
+            });
+        }
+
+        // Группировка по фиск./нефиск. типам, потом по группам оплаты, где у каждой группы оплаты есть список DetailedSaleInfo (тип оплаты с количеством заказов и суммой)
+        var sales = saleInfos
+            .GroupBy(sale => sale.IsFiscal)
+            .ToDictionary(fiscalGroup => fiscalGroup.Key, fiscalGroup => fiscalGroup
+                .GroupBy(sale => sale.PaymentGroup)
+                .ToDictionary(paymentGroupGroup => paymentGroupGroup.Key, paymentGroupGroup => paymentGroupGroup
+                    .Select(info => info.DetailedSaleInfo)
+                    .OrderBy(info => info.PaymentTypeName)
+                    .ToList()));
+
+        if (!sales.ContainsKey(true))
+            sales.Add(true, new Dictionary<PaymentGroup, List<DetailedSaleInfo>>());
+        if (!sales.ContainsKey(false))
+            sales.Add(false, new Dictionary<PaymentGroup, List<DetailedSaleInfo>>());
+
+        salesData = new SortedDictionary<bool, Dictionary<PaymentGroup, List<DetailedSaleInfo>>>(sales, new DescendingComparer<bool>());
+        totalChequesNum = report.Totals != null ? (int)report.Totals[OlapField.UniqOrderId] : 0;
+    }
+
+    /// <summary>
+    /// Заполнение данных о налогах (НДС)
+    /// </summary>
+    private void FillTaxesData()
+    {
+        var report = Model.OlapReports.BuildReport(new OlapReportSettings(OlapReportType.Sales,
+            new List<string> { OlapField.PayTypesIsPrintCheque, OlapField.VatPercent },
+            new List<string>(),
+            new List<string> { OlapField.DishDiscountSum, OlapField.VatSum },
+            new Dictionary<string, OlapReportFilterCriteria>
+            {
+                { OlapField.SessionIdOperDay, new OlapReportFilterRangeCriteria(settings.GetPeriodBegin(), true, settings.GetPeriodEnd(), true) },
+                { OlapField.VatPercent, new OlapReportFilterRangeCriteria(0m, false, 100m, true) },
+                // Включаем только неудаленные блюда
+                { OlapField.DeletedWithWriteoff, new OlapReportFilterIncludeValuesCriteria(new object[] { Resto.Data.DishDeletionStatus.NOT_DELETED }) },
+                // Исключаем оплаты без транзакций (закрытие заказа без оплаты, оплата типом "Без выручки")
+                // Включаем только фискальные оплаты
+                { OlapField.PayTypesIsPrintCheque, new OlapReportFilterIncludeValuesCriteria(new object[] { "true" }) },
+                // Исключаем транзакции внесения / возврата чаевых
+                { OlapField.PayTypesTransactionType, new OlapReportFilterExcludeValuesCriteria(new object[] { "TIPS" }) }
+            }));
+
+        taxesData =  report.Data
+            .Select(data =>
+                new TaxInfo
+                {
+                    VatPercent = data.GetValue<decimal>(OlapField.VatPercent) * 100,
+                    Sum = data.GetValue<decimal>(OlapField.DishDiscountSum),
+                    VatSum = data.GetValue<decimal>(OlapField.VatSum)
+                }
+            )
+            .OrderBy(tax => tax.VatPercent)
+            .ToList();
+    }
+
+    private sealed class DescendingComparer<T> : IComparer<T> where T : IComparable<T>
+    {
+        public int Compare(T x, T y)
+        {
+            return y.CompareTo(x);
+        }
+    }
+}

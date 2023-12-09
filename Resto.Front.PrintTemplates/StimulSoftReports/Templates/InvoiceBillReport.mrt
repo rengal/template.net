@@ -1,0 +1,1895 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StiSerializer version="1.02" type="Net" application="StiReport">
+  <Dictionary Ref="1" type="Dictionary" isKey="true">
+    <BusinessObjects isList="true" count="0" />
+    <Databases isList="true" count="0" />
+    <DataSources isList="true" count="4">
+      <InvoiceBillTemplateProperties Ref="2" type="DataTableSource" isKey="true">
+        <Alias>InvoiceBillTemplateProperties</Alias>
+        <Columns isList="true" count="32">
+          <value>DocumentNumber,System.String</value>
+          <value>DocumentDate,System.DateTime</value>
+          <value>SalesDocumentNumber,System.String</value>
+          <value>SalesDocumentDate,System.DateTime</value>
+          <value>Seller,System.String</value>
+          <value>SellerAddress,System.String</value>
+          <value>SellerJurAddress,System.String</value>
+          <value>SellerINN,System.String</value>
+          <value>SellerKPP,System.String</value>
+          <value>SellerLeader,System.String</value>
+          <value>SellerAccountant,System.String</value>
+          <value>Buyer,System.String</value>
+          <value>BuyerAddress,System.String</value>
+          <value>BuyerJurAddress,System.String</value>
+          <value>BuyerINN,System.String</value>
+          <value>BuyerKPP,System.String</value>
+          <value>_ID,System.Int32</value>
+          <value>_Current,System.Object</value>
+          <value>SalerLeader,System.String</value>
+          <value>SalerAccountant,System.String</value>
+          <value>DocumentDateString,System.String</value>
+          <value>Saler,System.String</value>
+          <value>SalerAddress,System.String</value>
+          <value>SalerINN,System.String</value>
+          <value>SalesDocumentDateString,System.String</value>
+          <value>SalerAndAddress,System.String</value>
+          <value>ByerAndAddress,System.String</value>
+          <value>Byer,System.String</value>
+          <value>ByerAddress,System.String</value>
+          <value>ByerINN,System.String</value>
+          <value>CurrentcyNameAndCode,System.String</value>
+          <value>CurrencyFormat,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>InvoiceBillTemplateProperties</Name>
+        <NameInSource>InvoiceBillTemplateProperties</NameInSource>
+      </InvoiceBillTemplateProperties>
+      <InvoiceBillTemplateItem Ref="3" type="Stimulsoft.Report.Dictionary.StiBusinessObjectSource" isKey="true">
+        <Alias>InvoiceBillTemplateItem</Alias>
+        <Columns isList="true" count="15">
+          <value>Name,System.String</value>
+          <value>Unit,System.String</value>
+          <value>Amount,System.Decimal</value>
+          <value>Price,System.Decimal</value>
+          <value>SumPrice,System.Decimal</value>
+          <value>Acciz,System.String</value>
+          <value>Nds,System.Decimal</value>
+          <value>NdsPrice,System.Decimal</value>
+          <value>FinalPrice,System.Decimal</value>
+          <value>Country,System.String</value>
+          <value>DeclarationNumber,System.String</value>
+          <value>_ID,System.Int32</value>
+          <value>_Current,System.Object</value>
+          <value>CountryCode,System.String</value>
+          <value>UnitCode,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>InvoiceBillTemplateItem</Name>
+        <NameInSource>InvoiceBillTemplateItem</NameInSource>
+      </InvoiceBillTemplateItem>
+      <bindingSourceProperties Ref="4" type="Stimulsoft.Report.Dictionary.StiBusinessObjectSource" isKey="true">
+        <Alias>bindingSourceProperties</Alias>
+        <Columns isList="true" count="25">
+          <value>DocumentNumber,System.String</value>
+          <value>DocumentDate,System.DateTime</value>
+          <value>SalesDocumentNumber,System.String</value>
+          <value>SalesDocumentDate,System.DateTime</value>
+          <value>Seller,System.String</value>
+          <value>SellerAddress,System.String</value>
+          <value>SellerJurAddress,System.String</value>
+          <value>SellerINN,System.String</value>
+          <value>SellerKPP,System.String</value>
+          <value>SellerLeader,System.String</value>
+          <value>SellerAccountant,System.String</value>
+          <value>Buyer,System.String</value>
+          <value>BuyerAddress,System.String</value>
+          <value>BuyerJurAddress,System.String</value>
+          <value>BuyerINN,System.String</value>
+          <value>BuyerKPP,System.String</value>
+          <value>CurrencyShort,System.String</value>
+          <value>CurrencyMainUnit,System.String</value>
+          <value>CurrencyAdditionalUnit,System.String</value>
+          <value>CurrencyCombined,System.String</value>
+          <value>CurrentcyNameAndCode,System.String</value>
+          <value>CurrencyFormat,System.String</value>
+          <value>CurrencyFormatC,System.String</value>
+          <value>_ID,System.Int32</value>
+          <value>_Current,System.Object</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>bindingSourceProperties</Name>
+        <NameInSource>bindingSourceProperties</NameInSource>
+      </bindingSourceProperties>
+      <bindingSourceItems Ref="5" type="Stimulsoft.Report.Dictionary.StiBusinessObjectSource" isKey="true">
+        <Alias>bindingSourceItems</Alias>
+        <Columns isList="true" count="15">
+          <value>Name,System.String</value>
+          <value>Unit,System.String</value>
+          <value>UnitCode,System.String</value>
+          <value>Amount,System.Decimal</value>
+          <value>Price,System.Decimal</value>
+          <value>SumPrice,System.Decimal</value>
+          <value>Acciz,System.String</value>
+          <value>Nds,System.Decimal</value>
+          <value>NdsPrice,System.Decimal</value>
+          <value>FinalPrice,System.Decimal</value>
+          <value>CountryCode,System.String</value>
+          <value>Country,System.String</value>
+          <value>DeclarationNumber,System.String</value>
+          <value>_ID,System.Int32</value>
+          <value>_Current,System.Object</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>bindingSourceItems</Name>
+        <NameInSource>bindingSourceItems</NameInSource>
+      </bindingSourceItems>
+    </DataSources>
+    <Relations isList="true" count="0" />
+    <Report isRef="0" />
+    <Variables isList="true" count="0" />
+  </Dictionary>
+  <EngineVersion>EngineV1</EngineVersion>
+  <GlobalizationStrings isList="true" count="0" />
+  <MetaTags isList="true" count="0" />
+  <Pages isList="true" count="1">
+    <Страница1 Ref="6" type="Page" isKey="true">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components isList="true" count="5">
+        <ReportTitle Ref="7" type="ReportTitleBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,0.4,27.7,9.6</ClientRectangle>
+          <Components isList="true" count="33">
+            <Текст2 Ref="8" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>3.6,1.6,4.2,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,11,Bold</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Текст2</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Text>СЧЕТ-ФАКТУРА №</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Bottom</VertAlignment>
+            </Текст2>
+            <Текст4 Ref="9" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,3,2,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Текст4</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <ShrinkFontToFit>True</ShrinkFontToFit>
+              <ShrinkFontToFitMinimumSize>7</ShrinkFontToFitMinimumSize>
+              <Text>Продавец:</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=EllipsisCharacter, WordWrap=False, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+            </Текст4>
+            <Текст5 Ref="10" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,3.6,2,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>0ac691ad1f7e4356be326c5355731562</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Текст5</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <ShrinkFontToFit>True</ShrinkFontToFit>
+              <ShrinkFontToFitMinimumSize>7</ShrinkFontToFitMinimumSize>
+              <Text>Адрес:</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=EllipsisCharacter, WordWrap=False, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+            </Текст5>
+            <Текст6 Ref="11" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,4.2,3.4,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>90eacf9fa05c4cfcaed86bacb62ce933</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Текст6</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Text>ИНН/КПП продавца:</Text>
+              <TextBrush>Black</TextBrush>
+            </Текст6>
+            <Текст7 Ref="12" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,4.8,5.2,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>926ad65f00cf4b3ab4d7dbd3a9f9b88c</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Текст7</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Text>Грузоотправитель и его адрес:</Text>
+              <TextBrush>Black</TextBrush>
+            </Текст7>
+            <Текст8 Ref="13" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>5.2,4.8,18,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>4f17c269dc4e4488974a87f071bc5d39</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Текст8</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <ShrinkFontToFit>True</ShrinkFontToFit>
+              <ShrinkFontToFitMinimumSize>7</ShrinkFontToFitMinimumSize>
+              <Text>{InvoiceBillTemplateProperties.Seller}, {InvoiceBillTemplateProperties.SellerAddress}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+            </Текст8>
+            <Текст9 Ref="14" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,6,6.2,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Editable>True</Editable>
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>c2953e42c6ee4780a6377874b377c49b</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Текст9</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Text>К платежно-расчетному документу №</Text>
+              <TextBrush>Black</TextBrush>
+            </Текст9>
+            <Текст11 Ref="15" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,6.6,2.2,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>767b18d107f44f0390357abe2468c102</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Текст11</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Text>Покупатель:</Text>
+              <TextBrush>Black</TextBrush>
+            </Текст11>
+            <Текст13 Ref="16" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,7.2,1.4,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>9672e409745f42b8a301d0cc460902d3</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Текст13</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Text>Адрес:</Text>
+              <TextBrush>Black</TextBrush>
+            </Текст13>
+            <Текст14 Ref="17" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,7.8,3.6,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>8933d8d6936e477dac2e860c09ed4652</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Текст14</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Text>ИНН/КПП покупателя:</Text>
+              <TextBrush>Black</TextBrush>
+            </Текст14>
+            <Text6 Ref="18" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,8.4,4.8,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text6</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Text>Валюта: наименование, код</Text>
+              <TextBrush>Black</TextBrush>
+            </Text6>
+            <Text8 Ref="19" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>8.6,1.6,4.4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>8737779afd284c3f84f99e1cfc451239</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text8</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Text>{InvoiceBillTemplateProperties.DocumentNumber}</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text8>
+            <Text7 Ref="20" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>14,1.6,1.8,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>b4ccaf75ddf447d999ce2b9fa9e1b629</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text7</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Text>"{InvoiceBillTemplateProperties.DocumentDate.ToString("dd")}"</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text7>
+            <Text9 Ref="21" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>13,1.6,1,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>a5b4670baacd49faaea17f66d292b064</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text9</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Text>от</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text9>
+            <Text22 Ref="22" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>16.4,1.6,6.8,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>8afaa7f5fdf4426e86c88ddfb37ca592</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text22</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Text>{System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.MonthGenitiveNames[InvoiceBillTemplateProperties.DocumentDate.Month - 1]} {InvoiceBillTemplateProperties.DocumentDate.ToString("yyyy")} г.</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text22>
+            <Text23 Ref="23" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>3.6,2.2,4.2,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,11</Font>
+              <Guid>7fdb860507a545c8afa0e8278157c0ba</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text23</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Text>ИСПРАВЛЕНИЕ №</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text23>
+            <Text24 Ref="24" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>8.6,2.2,4.4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9.75,Regular,Point,False,204</Font>
+              <Guid>04e17d93f731403fa98dd7d6801ae25a</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text24</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Text>–</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text24>
+            <Text25 Ref="25" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>14,2.2,1.8,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9.75,Regular,Point,False,204</Font>
+              <Guid>8ebd3cfffb15496089ce6629e2b4e5d9</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text25</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <TextBrush>Black</TextBrush>
+            </Text25>
+            <Text26 Ref="26" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>13,2.2,1,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>0850c5d23c694da88299bde780b77623</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text26</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Text>от</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text26>
+            <Text27 Ref="27" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>16.4,2.2,6.8,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9.75,Regular,Point,False,204</Font>
+              <Guid>405f2fbf31e8477e88429a0e4709ba61</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text27</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Text>–</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text27>
+            <Text28 Ref="28" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>2,3,21.2,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>bd837823ffb149d0990ecd6c3513c70e</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text28</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <ShrinkFontToFit>True</ShrinkFontToFit>
+              <ShrinkFontToFitMinimumSize>7</ShrinkFontToFitMinimumSize>
+              <Text>{InvoiceBillTemplateProperties.Seller}
+</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+            </Text28>
+            <Text29 Ref="29" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>2,3.6,21.2,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>2b7c551634cd45e586b183f509b77e23</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text29</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <ShrinkFontToFit>True</ShrinkFontToFit>
+              <ShrinkFontToFitMinimumSize>7</ShrinkFontToFitMinimumSize>
+              <Text>{InvoiceBillTemplateProperties.SellerJurAddress}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+            </Text29>
+            <Text30 Ref="30" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>3.4,4.2,19.8,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>caf10790f5224b5a8d44ddffe9b46e8d</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text30</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <ShrinkFontToFit>True</ShrinkFontToFit>
+              <ShrinkFontToFitMinimumSize>7</ShrinkFontToFitMinimumSize>
+              <Text>{InvoiceBillTemplateProperties.SellerINN}/{InvoiceBillTemplateProperties.SellerKPP}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+            </Text30>
+            <Text31 Ref="31" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>6.2,6,17,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Editable>True</Editable>
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>73e8814aa91345e2884d87f9c44066f9</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text31</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <ShrinkFontToFit>True</ShrinkFontToFit>
+              <ShrinkFontToFitMinimumSize>7</ShrinkFontToFitMinimumSize>
+              <Text>							от</Text>
+              <TextBrush>Black</TextBrush>
+            </Text31>
+            <Text32 Ref="32" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>2.2,6.6,21,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>ddcaea49b5a5425eadd3a8edd7829b1e</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text32</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <ShrinkFontToFit>True</ShrinkFontToFit>
+              <ShrinkFontToFitMinimumSize>7</ShrinkFontToFitMinimumSize>
+              <Text>{InvoiceBillTemplateProperties.Buyer}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+            </Text32>
+            <Text33 Ref="33" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>1.4,7.2,21.8,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>ce88a09ede414c4e8cfc849aa273d822</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text33</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <ShrinkFontToFit>True</ShrinkFontToFit>
+              <ShrinkFontToFitMinimumSize>7</ShrinkFontToFitMinimumSize>
+              <Text>{InvoiceBillTemplateProperties.BuyerJurAddress}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+            </Text33>
+            <Text34 Ref="34" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>3.6,7.8,19.6,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>e6cdccede6ce4977ba5fad46ea0e8776</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text34</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <ShrinkFontToFit>True</ShrinkFontToFit>
+              <ShrinkFontToFitMinimumSize>7</ShrinkFontToFitMinimumSize>
+              <Text>{InvoiceBillTemplateProperties.BuyerINN}/{InvoiceBillTemplateProperties.BuyerKPP}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+            </Text34>
+            <Text35 Ref="35" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>4.8,8.4,18.4,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>dfa999ae50b34c8baf0283fec5ea8d2c</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text35</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <ShrinkFontToFit>True</ShrinkFontToFit>
+              <ShrinkFontToFitMinimumSize>7</ShrinkFontToFitMinimumSize>
+              <Text>{InvoiceBillTemplateProperties.CurrentcyNameAndCode}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+            </Text35>
+            <Text1 Ref="36" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,5.4,5.2,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>fc9b253d0d434681ba80ebf521a2458e</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text1</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Text>Грузополучатель и его адрес:</Text>
+              <TextBrush>Black</TextBrush>
+            </Text1>
+            <Text2 Ref="37" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>5.2,5.4,18,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>cbf6dd1042eb4b86beff2a08392f2555</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text2</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <ShrinkFontToFit>True</ShrinkFontToFit>
+              <ShrinkFontToFitMinimumSize>7</ShrinkFontToFitMinimumSize>
+              <Text>{InvoiceBillTemplateProperties.Buyer}, {InvoiceBillTemplateProperties.BuyerAddress}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+            </Text2>
+            <Text3 Ref="38" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,9,13.2,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>0b90d2e52cf04663babe9bd201b7be13</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text3</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Text>Идентификатор государственного контракта, договора (соглашения) (при наличии)</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text3>
+            <Text18 Ref="39" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>13.2,9,10,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Editable>True</Editable>
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>09c120e5ef774aaabf424107bbbd6836</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text18</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <ShrinkFontToFit>True</ShrinkFontToFit>
+              <ShrinkFontToFitMinimumSize>7</ShrinkFontToFitMinimumSize>
+              <Text>—</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text18>
+            <Текст1 Ref="40" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>18.06,0,9.6,1.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Regular,Point,False,204</Font>
+              <Guid>e4c4e899dc07453f990f3bf4eaa6f7eb</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Текст1</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Text>Приложение №1 
+к постановлению правительства Российской Федерации 
+от 26 декабря 2011 г. №1137
+(в ред. Постановления Правительства РФ от 19.08.2017 № 981)</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Текст1>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Name>ReportTitle</Name>
+          <Page isRef="6" />
+          <Parent isRef="6" />
+        </ReportTitle>
+        <Header Ref="41" type="HeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,10.8,27.7,2.6</ClientRectangle>
+          <Components isList="true" count="30">
+            <HeaderText1 Ref="42" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,5.8,2.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,8.25,Regular,Point,False,204</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>HeaderText1</Name>
+              <Page isRef="6" />
+              <Parent isRef="41" />
+              <Text>Наименование товара (описание
+выполненных работ, оказанных услуг),
+имущественного права</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </HeaderText1>
+            <Текст15 Ref="43" type="Text" isKey="true">
+              <Border>Top, Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>6.8,0,2.8,1</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,8.25,Regular,Point,False,204</Font>
+              <Guid>01f5b4d84fd14785933328003d7a9938</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Текст15</Name>
+              <Page isRef="6" />
+              <Parent isRef="41" />
+              <Text>Единица
+измерения</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Текст15>
+            <Текст16 Ref="44" type="Text" isKey="true">
+              <Border>Top, Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>9.6,0,1.6,2.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,8.25,Regular,Point,False,204</Font>
+              <Guid>92576e28565e4ce29ff730b6cfa82115</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Текст16</Name>
+              <Page isRef="6" />
+              <Parent isRef="41" />
+              <Text>Коли-
+чество
+(объём)</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Текст16>
+            <Текст17 Ref="45" type="Text" isKey="true">
+              <Border>Top, Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>11.2,0,1.6,2.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,8.25,Regular,Point,False,204</Font>
+              <Guid>035c046c6d45425c9fe2688d2b9bda35</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Текст17</Name>
+              <Page isRef="6" />
+              <Parent isRef="41" />
+              <Text>Цена
+(тариф
+за единицу
+измерения</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Текст17>
+            <Текст18 Ref="46" type="Text" isKey="true">
+              <Border>Top, Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>12.8,0,2.6,2.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,8.25,Regular,Point,False,204</Font>
+              <Guid>a9ed50bff40143ffa94ac7256b53ddf5</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Текст18</Name>
+              <Page isRef="6" />
+              <Parent isRef="41" />
+              <Text>Стоимость 
+товаров (работ,
+услуг), иму-
+щественных прав 
+без налога - всего</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Текст18>
+            <Текст19 Ref="47" type="Text" isKey="true">
+              <Border>Top, Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>15.4,0,1.2,2.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,8.25,Regular,Point,False,204</Font>
+              <Guid>911f77b8aadc441abc143bcd8a2a9a59</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Текст19</Name>
+              <Page isRef="6" />
+              <Parent isRef="41" />
+              <Text>В том
+числе
+сумма
+акциза</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Текст19>
+            <Текст20 Ref="48" type="Text" isKey="true">
+              <Border>Top, Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>16.6,0,1.6,2.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,8.25,Regular,Point,False,204</Font>
+              <Guid>0cb3321797d64f8b8b5e98bad4237fbc</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Текст20</Name>
+              <Page isRef="6" />
+              <Parent isRef="41" />
+              <Text>Налоговая
+ставка, %</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Текст20>
+            <Текст21 Ref="49" type="Text" isKey="true">
+              <Border>Top, Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>18.2,0,1.8,2.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,8.25,Regular,Point,False,204</Font>
+              <Guid>e94a73367fd94a1b88e76a0739a00b44</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Текст21</Name>
+              <Page isRef="6" />
+              <Parent isRef="41" />
+              <Text>Сумма
+налога,
+предъяв-
+ляемая
+покупателю</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Текст21>
+            <Текст22 Ref="50" type="Text" isKey="true">
+              <Border>Top, Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>20,0,2.6,2.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,8.25,Regular,Point,False,204</Font>
+              <Guid>814fc7fc905d4e1a9f0daa3dc11f3419</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Текст22</Name>
+              <Page isRef="6" />
+              <Parent isRef="41" />
+              <Text>Стоимость товаров
+(работ, услуг),
+имущественных
+прав, с налогом -
+всего </Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Текст22>
+            <Текст23 Ref="51" type="Text" isKey="true">
+              <Border>Top, Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>22.6,0,3.6,1</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,8.25,Regular,Point,False,204</Font>
+              <Guid>dcd6ff9368ee4d479d571b670908295c</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Текст23</Name>
+              <Page isRef="6" />
+              <Parent isRef="41" />
+              <Text>Страна
+происхождения товара</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Текст23>
+            <Текст24 Ref="52" type="Text" isKey="true">
+              <Border>Top, Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>26.2,0,1.5,2.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,8.25,Regular,Point,False,204</Font>
+              <Guid>447b2c34d33d43adaf4de64f6e499f28</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Текст24</Name>
+              <Page isRef="6" />
+              <Parent isRef="41" />
+              <Text>Регистра-
+ционный
+номер
+таможен-
+ной дек-
+ларации</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Текст24>
+            <Текст25 Ref="53" type="Text" isKey="true">
+              <Border>Left, Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,2.4,5.8,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,8.25,Regular,Point,False,204</Font>
+              <Guid>a299618596784d3c86c185c297fed6a5</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Текст25</Name>
+              <Page isRef="6" />
+              <Parent isRef="41" />
+              <Text>1</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Текст25>
+            <Текст26 Ref="54" type="Text" isKey="true">
+              <Border>Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>6.8,2.4,0.8,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,8.25,Regular,Point,False,204</Font>
+              <Guid>7f918b0a46c5479b90a2a5fe9090ef41</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Текст26</Name>
+              <Page isRef="6" />
+              <Parent isRef="41" />
+              <Text>2</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Текст26>
+            <Текст27 Ref="55" type="Text" isKey="true">
+              <Border>Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>9.6,2.4,1.6,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,8.25,Regular,Point,False,204</Font>
+              <Guid>aef5b54fca3d4de1bf203b8f2a00b5a3</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Текст27</Name>
+              <Page isRef="6" />
+              <Parent isRef="41" />
+              <Text>3</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Текст27>
+            <Текст28 Ref="56" type="Text" isKey="true">
+              <Border>Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>11.2,2.4,1.6,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,8.25,Regular,Point,False,204</Font>
+              <Guid>76593ced5b154724b503a3c45e332daa</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Текст28</Name>
+              <Page isRef="6" />
+              <Parent isRef="41" />
+              <Text>4</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Текст28>
+            <Текст29 Ref="57" type="Text" isKey="true">
+              <Border>Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>12.8,2.4,2.6,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,8.25,Regular,Point,False,204</Font>
+              <Guid>1d949c39d6944812bb6742ca62e8a2ad</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Текст29</Name>
+              <Page isRef="6" />
+              <Parent isRef="41" />
+              <Text>5</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Текст29>
+            <Текст30 Ref="58" type="Text" isKey="true">
+              <Border>Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>15.4,2.4,1.2,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,8.25,Regular,Point,False,204</Font>
+              <Guid>60ddbcf3f611421aa02523c9f4a1b8df</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Текст30</Name>
+              <Page isRef="6" />
+              <Parent isRef="41" />
+              <Text>6</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Текст30>
+            <Текст31 Ref="59" type="Text" isKey="true">
+              <Border>Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>16.6,2.4,1.6,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,8.25,Regular,Point,False,204</Font>
+              <Guid>c0f0dca72b474a56b29c4f3eaa4265aa</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Текст31</Name>
+              <Page isRef="6" />
+              <Parent isRef="41" />
+              <Text>7</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Текст31>
+            <Текст32 Ref="60" type="Text" isKey="true">
+              <Border>Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>18.2,2.4,1.8,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,8.25,Regular,Point,False,204</Font>
+              <Guid>fcd416a821ab430b810d42a4041f5103</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Текст32</Name>
+              <Page isRef="6" />
+              <Parent isRef="41" />
+              <Text>8</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Текст32>
+            <Текст33 Ref="61" type="Text" isKey="true">
+              <Border>Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>20,2.4,2.6,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,8.25,Regular,Point,False,204</Font>
+              <Guid>144f9a59c8664282aa53e62e680aa096</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Текст33</Name>
+              <Page isRef="6" />
+              <Parent isRef="41" />
+              <Text>9</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Текст33>
+            <Текст34 Ref="62" type="Text" isKey="true">
+              <Border>Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>22.6,2.4,1.6,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,8.25,Regular,Point,False,204</Font>
+              <Guid>5c2944216732459692dc7afc8650fae5</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Текст34</Name>
+              <Page isRef="6" />
+              <Parent isRef="41" />
+              <Text>10</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Текст34>
+            <Текст35 Ref="63" type="Text" isKey="true">
+              <Border>Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>26.2,2.4,1.5,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,8.25,Regular,Point,False,204</Font>
+              <Guid>702bb1d58acf48d3b9aab93854521e4e</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Текст35</Name>
+              <Page isRef="6" />
+              <Parent isRef="41" />
+              <Text>11</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Текст35>
+            <Text10 Ref="64" type="Text" isKey="true">
+              <Border>Top, Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>24.2,1,2,1.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,8.25,Regular,Point,False,204</Font>
+              <Guid>86a2f4ff2f044e65990eba6f71b09f09</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text10</Name>
+              <Page isRef="6" />
+              <Parent isRef="41" />
+              <Text>Краткое
+наимено-
+вание</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text10>
+            <Text11 Ref="65" type="Text" isKey="true">
+              <Border>Top, Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>22.6,1,1.6,1.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,8.25,Regular,Point,False,204</Font>
+              <Guid>67155cf54fa647b1b79519ea509d3e22</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text11</Name>
+              <Page isRef="6" />
+              <Parent isRef="41" />
+              <Text>Цифро-
+вой
+код</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text11>
+            <Text12 Ref="66" type="Text" isKey="true">
+              <Border>Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>24.2,2.4,2,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,8.25,Regular,Point,False,204</Font>
+              <Guid>605a8fa746d141a6a2023d17186d8600</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text12</Name>
+              <Page isRef="6" />
+              <Parent isRef="41" />
+              <Text>10а</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text12>
+            <Text13 Ref="67" type="Text" isKey="true">
+              <Border>Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>7.6,2.4,2,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,8.25,Regular,Point,False,204</Font>
+              <Guid>8858568e1b054fd78de7e1fdfdd089b7</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text13</Name>
+              <Page isRef="6" />
+              <Parent isRef="41" />
+              <Text>2а</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text13>
+            <Text14 Ref="68" type="Text" isKey="true">
+              <Border>Top, Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>6.8,1,0.8,1.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,8.25,Regular,Point,False,204</Font>
+              <Guid>94285e4220cd4d0a862e115f157aa2e8</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text14</Name>
+              <Page isRef="6" />
+              <Parent isRef="41" />
+              <Text>Код</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text14>
+            <Text15 Ref="69" type="Text" isKey="true">
+              <Border>Top, Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>7.6,1,2,1.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,8.25,Regular,Point,False,204</Font>
+              <Guid>6995552204b243419a86320cbea8cac6</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text15</Name>
+              <Page isRef="6" />
+              <Parent isRef="41" />
+              <Text>Условное
+обозначение
+(национальное)</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text15>
+            <Text78 Ref="70" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>5.8,0,1,2.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Guid>fae8f0b2ac63447eb72cabaf0e3d1748</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text78</Name>
+              <Page isRef="6" />
+              <Parent isRef="41" />
+              <Text>Код
+вида
+товара</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text78>
+            <Text79 Ref="71" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>5.8,2.4,1,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Guid>811847472a064a569eecad7ec17cf03e</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text79</Name>
+              <Page isRef="6" />
+              <Parent isRef="41" />
+              <Text>1а</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text79>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Name>Header</Name>
+          <Page isRef="6" />
+          <Parent isRef="6" />
+        </Header>
+        <Data Ref="72" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,14.2,27.7,0.7</ClientRectangle>
+          <Components isList="true" count="14">
+            <DataText1 Ref="73" type="Text" isKey="true">
+              <Border>Left, Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,5.8,0.7</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataText1</Name>
+              <Page isRef="6" />
+              <Parent isRef="72" />
+              <Text>{InvoiceBillTemplateItem.Name}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </DataText1>
+            <DataText2 Ref="74" type="Text" isKey="true">
+              <Border>Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>7.6,0,2,0.7</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataText2</Name>
+              <Page isRef="6" />
+              <Parent isRef="72" />
+              <Text>{InvoiceBillTemplateItem.Unit}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </DataText2>
+            <DataText3 Ref="75" type="Text" isKey="true">
+              <Border>Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>9.6,0,1.6,0.7</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataText3</Name>
+              <Page isRef="6" />
+              <Parent isRef="72" />
+              <Text>{InvoiceBillTemplateItem.Amount}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="76" type="NumberFormat" isKey="true">
+                <DecimalDigits>3</DecimalDigits>
+                <DecimalSeparator>,</DecimalSeparator>
+                <GroupSeparator> </GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+                <UseLocalSetting>False</UseLocalSetting>
+              </TextFormat>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </DataText3>
+            <DataText4 Ref="77" type="Text" isKey="true">
+              <Border>Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>11.2,0,1.6,0.7</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataText4</Name>
+              <Page isRef="6" />
+              <Parent isRef="72" />
+              <Text>{string.Format(InvoiceBillTemplateProperties.CurrencyFormat, InvoiceBillTemplateItem.Price)}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="78" type="NumberFormat" isKey="true">
+                <GroupSeparator> </GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+                <UseLocalSetting>False</UseLocalSetting>
+              </TextFormat>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </DataText4>
+            <DataText5 Ref="79" type="Text" isKey="true">
+              <Border>Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>15.4,0,1.2,0.7</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataText5</Name>
+              <Page isRef="6" />
+              <Parent isRef="72" />
+              <Text>без
+акциза</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </DataText5>
+            <Текст36 Ref="80" type="Text" isKey="true">
+              <Border>Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>12.8,0,2.6,0.7</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>22be41c3ba07482c825a2374360b7646</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Текст36</Name>
+              <Page isRef="6" />
+              <Parent isRef="72" />
+              <Text>{string.Format(InvoiceBillTemplateProperties.CurrencyFormat, InvoiceBillTemplateItem.SumPrice)}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="81" type="NumberFormat" isKey="true">
+                <GroupSeparator> </GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+                <UseLocalSetting>False</UseLocalSetting>
+              </TextFormat>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Текст36>
+            <Текст37 Ref="82" type="Text" isKey="true">
+              <Border>Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>16.6,0,1.6,0.7</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>34977623cbe749d6b6294971a0b1ca09</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Текст37</Name>
+              <Page isRef="6" />
+              <Parent isRef="72" />
+              <Text>{InvoiceBillTemplateItem.Nds == decimal.Zero ? "Без НДС" : InvoiceBillTemplateItem.Nds.ToString()}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="83" type="NumberFormat" isKey="true">
+                <DecimalSeparator>,</DecimalSeparator>
+                <GroupSeparator> </GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+                <UseLocalSetting>False</UseLocalSetting>
+              </TextFormat>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </Текст37>
+            <Текст38 Ref="84" type="Text" isKey="true">
+              <Border>Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>18.2,0,1.8,0.7</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>320ecd30cfa9440baa01d1afe758375e</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Текст38</Name>
+              <Page isRef="6" />
+              <Parent isRef="72" />
+              <Text>{string.Format(InvoiceBillTemplateProperties.CurrencyFormat, InvoiceBillTemplateItem.NdsPrice)}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="85" type="NumberFormat" isKey="true">
+                <GroupSeparator> </GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+                <UseLocalSetting>False</UseLocalSetting>
+              </TextFormat>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Текст38>
+            <Текст39 Ref="86" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>20,0,2.6,0.7</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>e9e8e3748f0f47e19be244e3f5ecdebd</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Текст39</Name>
+              <Page isRef="6" />
+              <Parent isRef="72" />
+              <Text>{string.Format(InvoiceBillTemplateProperties.CurrencyFormat, InvoiceBillTemplateItem.FinalPrice)}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="87" type="NumberFormat" isKey="true">
+                <GroupSeparator> </GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+                <UseLocalSetting>False</UseLocalSetting>
+              </TextFormat>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Текст39>
+            <Текст40 Ref="88" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>24.2,0,2,0.7</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>5730b39a988a4872bbb014730e6a1ea9</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Текст40</Name>
+              <Page isRef="6" />
+              <Parent isRef="72" />
+              <Text>{string.IsNullOrEmpty(InvoiceBillTemplateItem.CountryCode) ? "—" : InvoiceBillTemplateItem.Country}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Текст40>
+            <Text16 Ref="89" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>22.6,0,1.6,0.7</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>9b5bdf9394b54a35bd4583f5e2479d6b</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text16</Name>
+              <Page isRef="6" />
+              <Parent isRef="72" />
+              <Text>{string.IsNullOrEmpty(InvoiceBillTemplateItem.CountryCode) ? "—" : InvoiceBillTemplateItem.CountryCode}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text16>
+            <Text17 Ref="90" type="Text" isKey="true">
+              <Border>Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>6.8,0,0.8,0.7</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>644be082ceb14c35bd81d43ae17d89c3</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text17</Name>
+              <Page isRef="6" />
+              <Parent isRef="72" />
+              <Text>{InvoiceBillTemplateItem.UnitCode}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </Text17>
+            <Text87 Ref="91" type="Text" isKey="true">
+              <Border>AdvBlack;1;Solid;Black;1;Solid;Black;1;Solid;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>26.2,0,1.5,0.7</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,9,Regular,Point,False,204</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>59c3518f0acb4973a3e73ba1bb8341ab</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text87</Name>
+              <Page isRef="6" />
+              <Parent isRef="72" />
+              <Text>—</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text87>
+            <Text19 Ref="92" type="Text" isKey="true">
+              <Border>AdvBlack;1;Solid;Black;1;Solid;Black;1;Solid;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>5.8,0,1,0.7</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Times New Roman,9,Regular,Point,False,204</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>cf2ae6142bbb4f9796f2c2e108df9cc5</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text19</Name>
+              <Page isRef="6" />
+              <Parent isRef="72" />
+              <Text>—</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text19>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <DataSourceName>InvoiceBillTemplateItem</DataSourceName>
+          <Filters isList="true" count="0" />
+          <Name>Data</Name>
+          <Page isRef="6" />
+          <Parent isRef="6" />
+          <Sort isList="true" count="0" />
+        </Data>
+        <Footer Ref="93" type="FooterBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,15.7,27.7,0.4</ClientRectangle>
+          <Components isList="true" count="5">
+            <Текст42 Ref="94" type="Text" isKey="true">
+              <Border>Left, Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,12.8,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Bold,Point,False,204</Font>
+              <Guid>5e0d985328c74c79accda2b27806b589</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Текст42</Name>
+              <Page isRef="6" />
+              <Parent isRef="93" />
+              <Text>Всего к оплате</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Текст42>
+            <Текст43 Ref="95" type="Text" isKey="true">
+              <Border>Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>18.2,0,1.8,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>fc91c05e09d64ac1bcd5844c233a93d5</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Текст43</Name>
+              <Page isRef="6" />
+              <Parent isRef="93" />
+              <Text>{Sum(InvoiceBillTemplateItem.NdsPrice)}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="96" type="NumberFormat" isKey="true">
+                <GroupSeparator> </GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+                <UseLocalSetting>False</UseLocalSetting>
+              </TextFormat>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Текст43>
+            <Текст44 Ref="97" type="Text" isKey="true">
+              <Border>Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>20,0,2.6,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>37b6dc5eb136446fa64444c9d08a1142</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Текст44</Name>
+              <Page isRef="6" />
+              <Parent isRef="93" />
+              <Text>{Sum(InvoiceBillTemplateItem.FinalPrice)}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="98" type="NumberFormat" isKey="true">
+                <GroupSeparator> </GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+                <UseLocalSetting>False</UseLocalSetting>
+              </TextFormat>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Текст44>
+            <Text20 Ref="99" type="Text" isKey="true">
+              <Border>Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>15.4,0,2.8,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>7c4dd53e1ed3480daf80df56ae82bc62</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text20</Name>
+              <Page isRef="6" />
+              <Parent isRef="93" />
+              <Text>X</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="100" type="NumberFormat" isKey="true">
+                <GroupSeparator> </GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+                <UseLocalSetting>False</UseLocalSetting>
+              </TextFormat>
+              <VertAlignment>Center</VertAlignment>
+            </Text20>
+            <Text21 Ref="101" type="Text" isKey="true">
+              <Border>Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>12.8,0,2.6,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>c5fdc89518314232a75fc02aded11e8d</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text21</Name>
+              <Page isRef="6" />
+              <Parent isRef="93" />
+              <Text>{Sum(InvoiceBillTemplateItem.SumPrice)}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="102" type="NumberFormat" isKey="true">
+                <GroupSeparator> </GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+                <UseLocalSetting>False</UseLocalSetting>
+              </TextFormat>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text21>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Guid>ccbb6f916e0b49b9819df6eebc0096fb</Guid>
+          <Name>Footer</Name>
+          <Page isRef="6" />
+          <Parent isRef="6" />
+          <PrintOn>OnlyLastPage</PrintOn>
+        </Footer>
+        <ReportSummary1 Ref="103" type="ReportSummaryBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,16.9,27.7,3.2</ClientRectangle>
+          <Components isList="true" count="13">
+            <Текст45 Ref="104" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0.2,5.4,1</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>928a086c458f4d768b10c34b03c1afbd</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Текст45</Name>
+              <Page isRef="6" />
+              <Parent isRef="103" />
+              <Text>Руководитель организации
+или иное уполномоченное лицо</Text>
+              <TextBrush>Black</TextBrush>
+            </Текст45>
+            <Текст46 Ref="105" type="Text" isKey="true">
+              <Border>Top;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>5.4,0.6,3,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,6,Regular,Point,False,204</Font>
+              <Guid>ce649a43074444b8ac08bbc6185ea926</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Текст46</Name>
+              <Page isRef="6" />
+              <Parent isRef="103" />
+              <Text>(подпись)</Text>
+              <TextBrush>Black</TextBrush>
+            </Текст46>
+            <Текст47 Ref="106" type="Text" isKey="true">
+              <Border>Top;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>8.8,0.6,5,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,6,Regular,Point,False,204</Font>
+              <Guid>f2edb5aa49fb4043ad001597f29ba212</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Текст47</Name>
+              <Page isRef="6" />
+              <Parent isRef="103" />
+              <Text>(ф.и.о.)</Text>
+              <TextBrush>Black</TextBrush>
+            </Текст47>
+            <Текст48 Ref="107" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>14.2,0.2,5,1</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>197814ff29d9411f9a2a13ee3b1dc00c</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Текст48</Name>
+              <Page isRef="6" />
+              <Parent isRef="103" />
+              <Text>Главный бухгалтер
+или иное уполномоченное лицо</Text>
+              <TextBrush>Black</TextBrush>
+            </Текст48>
+            <Текст49 Ref="108" type="Text" isKey="true">
+              <Border>Top;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>19.4,0.6,2.8,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,6,Regular,Point,False,204</Font>
+              <Guid>e2390d75413b428d870d23e3249c6edd</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Текст49</Name>
+              <Page isRef="6" />
+              <Parent isRef="103" />
+              <Text>(подпись)</Text>
+              <TextBrush>Black</TextBrush>
+            </Текст49>
+            <Текст50 Ref="109" type="Text" isKey="true">
+              <Border>Top;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>22.6,0.6,5.1,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,6,Regular,Point,False,204</Font>
+              <Guid>83eb9882094d46709131be12dd22c283</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Текст50</Name>
+              <Page isRef="6" />
+              <Parent isRef="103" />
+              <Text>(ф.и.о.)</Text>
+              <TextBrush>Black</TextBrush>
+            </Текст50>
+            <Текст51 Ref="110" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,1.2,6,0.7</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>e3b3b4e9ba224260a8b00e96d8abf58e</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Текст51</Name>
+              <Page isRef="6" />
+              <Parent isRef="103" />
+              <Text>Индивидуальный предприниматель
+или иное уполномоченное лицо</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Текст51>
+            <Текст52 Ref="111" type="Text" isKey="true">
+              <Border>Top;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>6,1.9,3,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,6,Regular,Point,False,204</Font>
+              <Guid>b60bb460ff504ba0b8608897ec1cf1c4</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Текст52</Name>
+              <Page isRef="6" />
+              <Parent isRef="103" />
+              <Text>(подпись)</Text>
+              <TextBrush>Black</TextBrush>
+            </Текст52>
+            <Текст53 Ref="112" type="Text" isKey="true">
+              <Border>Top;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>9.4,1.9,5,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,6,Regular,Point,False,204</Font>
+              <Guid>c4af0f10933a4e3387b5b55017722418</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Текст53</Name>
+              <Page isRef="6" />
+              <Parent isRef="103" />
+              <Text>(ф.и.о.)</Text>
+              <TextBrush>Black</TextBrush>
+            </Текст53>
+            <Текст54 Ref="113" type="Text" isKey="true">
+              <Border>Top;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>15.2,1.9,11,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,6,Regular,Point,False,204</Font>
+              <Guid>86761a374769422d87b339b29d15f36a</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Текст54</Name>
+              <Page isRef="6" />
+              <Parent isRef="103" />
+              <Text>(реквизиты свидетельства о государственной регистрации 
+индивидуального предпринимателя)</Text>
+              <TextBrush>Black</TextBrush>
+            </Текст54>
+            <Текст55 Ref="114" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,2.5,26.2,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,6,Regular,Point,False,204</Font>
+              <Guid>61707b050c2047c09e027cad8f7e7b00</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Текст55</Name>
+              <Page isRef="6" />
+              <Parent isRef="103" />
+              <Text>Примечание 1. Первый экземпляр счета-фактуры, составленного на бумажном носителе - покупателю, второй экземпляр - продавцу.
+2. При составлении организацией счета-фактуры в электронном виде показатель "Главный бухгалтер (подпись)(ФИО)" не формируется.</Text>
+              <TextBrush>Black</TextBrush>
+            </Текст55>
+            <Text4 Ref="115" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>8.8,0.2,5,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>ab1db32dc22c4425a5a3f47dfebf3d42</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text4</Name>
+              <Page isRef="6" />
+              <Parent isRef="103" />
+              <ShrinkFontToFit>True</ShrinkFontToFit>
+              <Text>{InvoiceBillTemplateProperties.SellerLeader}</Text>
+              <TextBrush>Black</TextBrush>
+            </Text4>
+            <Text5 Ref="116" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>22.6,0.2,5.1,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Regular,Point,False,204</Font>
+              <Guid>3005144284074b3193b9af58f899c5d5</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text5</Name>
+              <Page isRef="6" />
+              <Parent isRef="103" />
+              <ShrinkFontToFit>True</ShrinkFontToFit>
+              <Text>{InvoiceBillTemplateProperties.SellerAccountant}</Text>
+              <TextBrush>Black</TextBrush>
+            </Text5>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Name>ReportSummary1</Name>
+          <Page isRef="6" />
+          <Parent isRef="6" />
+        </ReportSummary1>
+      </Components>
+      <Conditions isList="true" count="0" />
+      <Guid>50162af6202a4a57b03cc172fcbe3c05</Guid>
+      <LargeHeight>True</LargeHeight>
+      <Margins>1,1,1,1</Margins>
+      <Name>Страница1</Name>
+      <Orientation>Landscape</Orientation>
+      <PageHeight>21</PageHeight>
+      <PageWidth>29.7</PageWidth>
+      <PaperSize>A4</PaperSize>
+      <Report isRef="0" />
+      <Watermark Ref="117" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
+        <Font>Arial,100</Font>
+        <TextBrush>[50:0:0:0]</TextBrush>
+      </Watermark>
+    </Страница1>
+  </Pages>
+  <PrinterSettings Ref="118" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
+  <ReferencedAssemblies isList="true" count="8">
+    <value>System.Dll</value>
+    <value>System.Drawing.Dll</value>
+    <value>System.Windows.Forms.Dll</value>
+    <value>System.Data.Dll</value>
+    <value>System.Xml.Dll</value>
+    <value>Stimulsoft.Controls.Dll</value>
+    <value>Stimulsoft.Base.Dll</value>
+    <value>Stimulsoft.Report.Dll</value>
+  </ReferencedAssemblies>
+  <ReportAlias>Отчет</ReportAlias>
+  <ReportChanged>9/6/2018 11:41:43 AM</ReportChanged>
+  <ReportCreated>6/17/2008 2:07:31 PM</ReportCreated>
+  <ReportFile>C:\Users\visaev\Desktop\new\Release\InvoiceBillReport.mrt</ReportFile>
+  <ReportGuid>5b9a60ed5e5949c5859f5b4b88ec9c5d</ReportGuid>
+  <ReportName>Отчет</ReportName>
+  <ReportUnit>Centimeters</ReportUnit>
+  <ReportVersion>2014.1.1900</ReportVersion>
+  <Script>using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Data;
+using Stimulsoft.Controls;
+using Stimulsoft.Base.Drawing;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Dialogs;
+using Stimulsoft.Report.Components;
+
+namespace Reports
+{
+    
+    public class Отчет : Stimulsoft.Report.StiReport
+    {
+        
+        public Отчет()
+        {
+            this.InitializeComponent();
+        }
+        #region StiReport Designer generated code - do not modify
+		#endregion StiReport Designer generated code - do not modify
+    }
+}
+</Script>
+  <ScriptLanguage>CSharp</ScriptLanguage>
+  <Styles isList="true" count="0" />
+</StiSerializer>

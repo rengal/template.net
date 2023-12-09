@@ -1,0 +1,48 @@
+﻿@using System.Collections.Generic;
+
+@inherits Resto.Front.PrintTemplates.Cheques.Razor.TemplateBase<Resto.Front.PrintTemplates.Cheques.Razor.TemplateModels.IPriceTicket>
+
+<doc>
+  <center>
+    @Model.CommonInfo.CafeSetup.LegalName
+  </center>
+  <f1>
+    <center>
+      @Model.Product.Name
+    </center>
+  </f1>
+  <left>
+    <wrap>
+      @{
+        var lines = new List<string>();
+        
+        lines.Add(Resources.BarcodeAmount);
+        lines.Add(FormatAmount(Model.Amount));
+
+        lines.Add(Model.Product.MeasuringUnit.Name);
+
+        lines.Add(" " + Resources.BarcodePrice);
+        lines.Add(FormatMoney(Model.Product.SalePrice));
+        lines.Add(Model.CommonInfo.CafeSetup.ShortCurrencyName);
+      }
+      @string.Join(" ", lines)
+    </wrap>
+  </left>
+  <left>
+    @string.Join(" ", Resources.BarcodeSum, FormatMoney(Model.Amount * Model.Product.SalePrice), Model.CommonInfo.CafeSetup.ShortCurrencyName)
+  </left>
+  <left>
+    @if (Model.Product.ExpirationPeriod.Ticks > 0)
+    {
+      @:@string.Join(" ", Resources.BarcodeExpiration, FormatLongDateTime(Model.CommonInfo.CurrentTime + Model.Product.ExpirationPeriod))
+    }
+  </left>
+  @if (Model.Barcode != null)
+  {
+    <left>
+      <barcode>
+        @Model.Barcode
+      </barcode>
+    </left>
+  }
+</doc>

@@ -1,0 +1,1766 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StiSerializer version="1.02" type="Net" application="StiReport">
+  <CacheAllData>True</CacheAllData>
+  <Dictionary Ref="1" type="Dictionary" isKey="true">
+    <BusinessObjects isList="true" count="0" />
+    <Databases isList="true" count="0" />
+    <DataSources isList="true" count="11">
+      <DeliveryInfo Ref="2" type="Stimulsoft.Report.Dictionary.StiBusinessObjectSource" isKey="true">
+        <Alias>DeliveryInfo</Alias>
+        <Columns isList="true" count="23">
+          <value>OrderId,System.Guid</value>
+          <value>DeliveryId,System.Guid</value>
+          <value>DeliveryNumber,System.Int32</value>
+          <value>RestourantLegalName,System.String</value>
+          <value>TaxId,System.String</value>
+          <value>CustomerNameAndPatronymic,System.String</value>
+          <value>CustomerSurname,System.String</value>
+          <value>PhoneNumber,System.String</value>
+          <value>Address,System.String</value>
+          <value>Region,System.String</value>
+          <value>AdressComment,System.String</value>
+          <value>DiscountCardNumber,System.String</value>
+          <value>Manager,System.String</value>
+          <value>Courier,System.String</value>
+          <value>DeliveryReceiveTime,System.DateTime</value>
+          <value>DeliveryBillPrintTime,System.DateTime</value>
+          <value>DeliverTime,System.DateTime</value>
+          <value>Comments,System.String</value>
+          <value>IsSelfService,System.Boolean</value>
+          <value>IsPayed,System.Boolean</value>
+          <value>DeliveryOperator,System.String</value>
+          <value>SplitBetweenPersons,System.Boolean</value>
+          <value>PersonsCount,System.Int32</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <IsCloud>False</IsCloud>
+        <Name>DeliveryInfo</Name>
+        <NameInSource>DeliveryInfo</NameInSource>
+      </DeliveryInfo>
+      <DeliveryOrderItemInfo Ref="3" type="Stimulsoft.Report.Dictionary.StiBusinessObjectSource" isKey="true">
+        <Alias>DeliveryOrderItemInfo</Alias>
+        <Columns isList="true" count="25">
+          <value>Id,System.Guid</value>
+          <value>ParentId,System.Guid</value>
+          <value>GuestId,System.Guid</value>
+          <value>Name,System.String</value>
+          <value>Amount,System.Decimal</value>
+          <value>Price,System.Decimal</value>
+          <value>Sum,System.Decimal</value>
+          <value>MeasuringUnitName,System.String</value>
+          <value>IsPrechequePrintable,System.Boolean</value>
+          <value>CookingPlaceId,System.Guid</value>
+          <value>CookingPlaceName,System.String</value>
+          <value>CookingPlaceTypeId,System.Guid</value>
+          <value>CookingPlaceTypeName,System.String</value>
+          <value>ProductCategoryName,System.String</value>
+          <value>ParentGroupName,System.String</value>
+          <value>Description,System.String</value>
+          <value>Fat,System.Decimal</value>
+          <value>Protein,System.Decimal</value>
+          <value>Carbohydrate,System.Decimal</value>
+          <value>Energy,System.Decimal</value>
+          <value>Comment,System.String</value>
+          <value>IsPartOfCombo,System.Boolean</value>
+          <value>IsPartOfCompound,System.Boolean</value>
+          <value>HideBecauseOfDefaultAmount,System.Boolean</value>
+          <value>Allergens,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <IsCloud>False</IsCloud>
+        <Name>DeliveryOrderItemInfo</Name>
+        <NameInSource>DeliveryOrderItemInfo</NameInSource>
+      </DeliveryOrderItemInfo>
+      <DiscountInfo Ref="4" type="Stimulsoft.Report.Dictionary.StiBusinessObjectSource" isKey="true">
+        <Alias>DiscountInfo</Alias>
+        <Columns isList="true" count="4">
+          <value>Name,System.String</value>
+          <value>Percent,System.Decimal</value>
+          <value>Sum,System.Decimal</value>
+          <value>CardNumber,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <IsCloud>False</IsCloud>
+        <Name>DiscountInfo</Name>
+        <NameInSource>DiscountInfo</NameInSource>
+      </DiscountInfo>
+      <TotalSumsInfo Ref="5" type="Stimulsoft.Report.Dictionary.StiBusinessObjectSource" isKey="true">
+        <Alias>TotalSumsInfo</Alias>
+        <Columns isList="true" count="6">
+          <value>SubTotal,System.Decimal</value>
+          <value>ResultSum,System.Decimal</value>
+          <value>ChangeSum,System.Decimal</value>
+          <value>AllSumsCurrencyUnitLabel,System.String</value>
+          <value>VatSum,System.Decimal</value>
+          <value>AllPaymentsSum,System.Decimal</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <IsCloud>False</IsCloud>
+        <Name>TotalSumsInfo</Name>
+        <NameInSource>TotalSumsInfo</NameInSource>
+      </TotalSumsInfo>
+      <PaymentInfo Ref="6" type="Stimulsoft.Report.Dictionary.StiBusinessObjectSource" isKey="true">
+        <Alias>PaymentInfo</Alias>
+        <Columns isList="true" count="8">
+          <value>Name,System.String</value>
+          <value>Sum,System.Decimal</value>
+          <value>IsCash,System.Boolean</value>
+          <value>IsCard,System.Boolean</value>
+          <value>CounteragentName,System.String</value>
+          <value>CounteragentCardNumber,System.String</value>
+          <value>IsProcessedExternally,System.Boolean</value>
+          <value>IsPrepay,System.Boolean</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <IsCloud>False</IsCloud>
+        <Name>PaymentInfo</Name>
+        <NameInSource>PaymentInfo</NameInSource>
+      </PaymentInfo>
+      <BillFooter Ref="7" type="Stimulsoft.Report.Dictionary.StiBusinessObjectSource" isKey="true">
+        <Alias>BillFooter</Alias>
+        <Columns isList="true" count="1">
+          <value>Value,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <IsCloud>False</IsCloud>
+        <Name>BillFooter</Name>
+        <NameInSource>BillFooter</NameInSource>
+      </BillFooter>
+      <CategorizedDiscountInfo Ref="8" type="Stimulsoft.Report.Dictionary.StiBusinessObjectSource" isKey="true">
+        <Alias>CategorizedDiscountInfo</Alias>
+        <Columns isList="true" count="5">
+          <value>ParentItemId,System.Guid</value>
+          <value>Name,System.String</value>
+          <value>Percent,System.Decimal</value>
+          <value>Sum,System.Decimal</value>
+          <value>CardNumber,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <IsCloud>False</IsCloud>
+        <Name>CategorizedDiscountInfo</Name>
+        <NameInSource>CategorizedDiscountInfo</NameInSource>
+      </CategorizedDiscountInfo>
+      <VatInfo Ref="9" type="Stimulsoft.Report.Dictionary.StiBusinessObjectSource" isKey="true">
+        <Alias>VatInfo</Alias>
+        <Columns isList="true" count="2">
+          <value>VatPercent,System.Decimal</value>
+          <value>VatSum,System.Decimal</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <IsCloud>False</IsCloud>
+        <Name>VatInfo</Name>
+        <NameInSource>VatInfo</NameInSource>
+      </VatInfo>
+      <DeliveryGuest Ref="10" type="Stimulsoft.Report.Dictionary.StiBusinessObjectSource" isKey="true">
+        <Alias>DeliveryGuest</Alias>
+        <Columns isList="true" count="4">
+          <value>Id,System.Guid</value>
+          <value>Name,System.String</value>
+          <value>Sum,System.Decimal</value>
+          <value>IsVisualizedInReport,System.Boolean</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <IsCloud>False</IsCloud>
+        <Name>DeliveryGuest</Name>
+        <NameInSource>DeliveryGuest</NameInSource>
+      </DeliveryGuest>
+      <Address Ref="11" type="Stimulsoft.Report.Dictionary.StiBusinessObjectSource" isKey="true">
+        <Alias>Address</Alias>
+        <Columns isList="true" count="9">
+          <value>City,System.String</value>
+          <value>Street,System.String</value>
+          <value>House,System.String</value>
+          <value>Building,System.String</value>
+          <value>Flat,System.String</value>
+          <value>Entrance,System.String</value>
+          <value>Floor,System.String</value>
+          <value>Doorphone,System.String</value>
+          <value>AdditionalInfo,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <IsCloud>False</IsCloud>
+        <Name>Address</Name>
+        <NameInSource>Address</NameInSource>
+      </Address>
+      <IncludedVatInfo Ref="12" type="Stimulsoft.Report.Dictionary.StiBusinessObjectSource" isKey="true">
+        <Alias>IncludedVatInfo</Alias>
+        <Columns isList="true" count="2">
+          <value>VatPercent,System.Decimal</value>
+          <value>VatSum,System.Decimal</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <IsCloud>False</IsCloud>
+        <Name>IncludedVatInfo</Name>
+        <NameInSource>IncludedVatInfo</NameInSource>
+      </IncludedVatInfo>
+    </DataSources>
+    <Relations isList="true" count="5">
+      <Items Ref="13" type="DataRelation" isKey="true">
+        <Alias>Items</Alias>
+        <ChildColumns isList="true" count="1">
+          <value>ParentItemId</value>
+        </ChildColumns>
+        <ChildSource isRef="8" />
+        <Dictionary isRef="1" />
+        <Name>Items</Name>
+        <NameInSource>RelationToItems</NameInSource>
+        <ParentColumns isList="true" count="1">
+          <value>Id</value>
+        </ParentColumns>
+        <ParentSource isRef="3" />
+      </Items>
+      <GuestItems Ref="14" type="DataRelation" isKey="true">
+        <Alias>GuestItems</Alias>
+        <ChildColumns isList="true" count="1">
+          <value>GuestId</value>
+        </ChildColumns>
+        <ChildSource isRef="3" />
+        <Dictionary isRef="1" />
+        <Name>GuestItems</Name>
+        <NameInSource>GuestItems</NameInSource>
+        <ParentColumns isList="true" count="1">
+          <value>Id</value>
+        </ParentColumns>
+        <ParentSource isRef="10" />
+      </GuestItems>
+      <RelationDiscounts Ref="15" type="DataRelation" isKey="true">
+        <Alias>RelationDiscounts</Alias>
+        <ChildColumns isList="true" count="1">
+          <value>ParentItemId</value>
+        </ChildColumns>
+        <ChildSource isRef="8" />
+        <Dictionary isRef="1" />
+        <Name>RelationDiscounts</Name>
+        <NameInSource>RelationDiscounts</NameInSource>
+        <ParentColumns isList="true" count="1">
+          <value>Id</value>
+        </ParentColumns>
+        <ParentSource isRef="3" />
+      </RelationDiscounts>
+      <DiscountsSplit Ref="16" type="DataRelation" isKey="true">
+        <Alias>DiscountsSplit</Alias>
+        <ChildColumns isList="true" count="1">
+          <value>ParentItemId</value>
+        </ChildColumns>
+        <ChildSource isRef="8" />
+        <Dictionary isRef="1" />
+        <Name>DiscountsSplit</Name>
+        <NameInSource>DiscountsSplit</NameInSource>
+        <ParentColumns isList="true" count="1">
+          <value>Id</value>
+        </ParentColumns>
+        <ParentSource isRef="3" />
+      </DiscountsSplit>
+      <Discounts Ref="17" type="DataRelation" isKey="true">
+        <Alias>Discounts</Alias>
+        <ChildColumns isList="true" count="1">
+          <value>ParentItemId</value>
+        </ChildColumns>
+        <ChildSource isRef="8" />
+        <Dictionary isRef="1" />
+        <Name>Discounts</Name>
+        <NameInSource>Discounts</NameInSource>
+        <ParentColumns isList="true" count="1">
+          <value>Id</value>
+        </ParentColumns>
+        <ParentSource isRef="3" />
+      </Discounts>
+    </Relations>
+    <Report isRef="0" />
+    <Variables isList="true" count="1">
+      <value>,AddressCommentView,AddressCommentView,System.String,_x0028_string_x0029_IIF_x0028_DeliveryInfo.IsSelfService_x0020__x007C__x007C__x0020_System.String.IsNullOrEmpty_x0028_DeliveryInfo.AdressComment_x0029__x002C__x0022__x0022__x002C__x0020__x0022__x0020__x0028__x0022__x0020__x002B__x0020_DeliveryInfo.AdressComment_x0020__x002B__x0020__x0022__x0029__x0022__x0029_,True,True</value>
+    </Variables>
+  </Dictionary>
+  <EngineVersion>EngineV2</EngineVersion>
+  <GlobalizationStrings isList="true" count="0" />
+  <MetaTags isList="true" count="0" />
+  <Pages isList="true" count="1">
+    <Page1 Ref="18" type="Page" isKey="true">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components isList="true" count="15">
+        <ReportTitleBand1 Ref="19" type="ReportTitleBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <CanShrink>True</CanShrink>
+          <ClientRectangle>0,0.4,27.7,7.4</ClientRectangle>
+          <Components isList="true" count="23">
+            <Text1 Ref="20" type="Text" isKey="true">
+              <AutoWidth>True</AutoWidth>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.05,0.3,27.6,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Calibri,11.25,Bold,Point,False,204</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text1</Name>
+              <Page isRef="18" />
+              <Parent isRef="19" />
+              <Text>НАКЛАДНАЯ</Text>
+              <TextBrush>Black</TextBrush>
+            </Text1>
+            <Text2 Ref="21" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.05,1,27.6,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Calibri,11.25,Regular,Point,False,204</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text2</Name>
+              <Page isRef="18" />
+              <Parent isRef="19" />
+              <Text>ЗАКАЗ № {DeliveryInfo.DeliveryNumber}</Text>
+              <TextBrush>Black</TextBrush>
+            </Text2>
+            <Text3 Ref="22" type="Text" isKey="true">
+              <AutoWidth>True</AutoWidth>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1,2.2,3.4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Calibri,11.25,Regular,Point,False,204</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text3</Name>
+              <Page isRef="18" />
+              <Parent isRef="19" />
+              <Text>Грузоотправитель:</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text3>
+            <Text5 Ref="23" type="Text" isKey="true">
+              <AutoWidth>True</AutoWidth>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1,2.8,1,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Calibri,11.25,Regular,Point,False,204</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text5</Name>
+              <Page isRef="18" />
+              <Parent isRef="19" />
+              <Text>ИНН:</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text5>
+            <Text4 Ref="24" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanBreak>True</CanBreak>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>16,2.8,10,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Calibri,11.25,Regular,Point,False,0</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text4</Name>
+              <Page isRef="18" />
+              <Parent isRef="19" />
+              <Text>{DeliveryInfo.CustomerSurname} {DeliveryInfo.CustomerNameAndPatronymic}{IIF (Length(DeliveryInfo.CustomerNameAndPatronymic) != 0, ", тел.","тел. ")}{DeliveryInfo.PhoneNumber}{IIF (Length(DeliveryInfo.DiscountCardNumber) != 0, ", карта №" + DeliveryInfo.DiscountCardNumber, "")}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+            </Text4>
+            <Text7 Ref="25" type="Text" isKey="true">
+              <AutoWidth>True</AutoWidth>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>16,2.2,3,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Calibri,11.25,Regular,Point,False,204</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text7</Name>
+              <Page isRef="18" />
+              <Parent isRef="19" />
+              <Text>Грузополучатель:</Text>
+              <TextBrush>Black</TextBrush>
+            </Text7>
+            <Text6 Ref="26" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1,4.4,2.2,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Calibri,11.25,Regular,Point,False,204</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text6</Name>
+              <Page isRef="18" />
+              <Parent isRef="19" />
+              <Text>Менеджер:</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text6>
+            <Text8 Ref="27" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1,5,2,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Calibri,11.25,Regular,Point,False,204</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text8</Name>
+              <Page isRef="18" />
+              <Parent isRef="19" />
+              <Text>{IIF(DeliveryInfo.IsSelfService,"Оператор:","Курьер:")}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text8>
+            <Text9 Ref="28" type="Text" isKey="true">
+              <AutoWidth>True</AutoWidth>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>21,4.6,5.8,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Calibri,11.25,Regular,Point,False,204</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text9</Name>
+              <Page isRef="18" />
+              <Parent isRef="19" />
+              <Text>{DeliveryInfo.DeliveryReceiveTime}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="29" type="DateFormat" isKey="true">
+                <StringFormat>f</StringFormat>
+              </TextFormat>
+              <VertAlignment>Center</VertAlignment>
+            </Text9>
+            <Text10 Ref="30" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>16,4.6,3.8,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Calibri,11.25,Regular,Point,False,0</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text10</Name>
+              <Page isRef="18" />
+              <Parent isRef="19" />
+              <Text>Заказ принят:</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text10>
+            <Text11 Ref="31" type="Text" isKey="true">
+              <AutoWidth>True</AutoWidth>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>21,5.2,5.8,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Calibri,11.25,Regular,Point,False,0</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text11</Name>
+              <Page isRef="18" />
+              <Parent isRef="19" />
+              <Text>{DeliveryInfo.DeliveryBillPrintTime}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="32" type="DateFormat" isKey="true">
+                <StringFormat>f</StringFormat>
+              </TextFormat>
+              <VertAlignment>Center</VertAlignment>
+            </Text11>
+            <Text12 Ref="33" type="Text" isKey="true">
+              <AutoWidth>True</AutoWidth>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>16,5.2,3.8,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Calibri,11.25</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text12</Name>
+              <Page isRef="18" />
+              <Parent isRef="19" />
+              <Text>Накладная оформлена:</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text12>
+            <Text13 Ref="34" type="Text" isKey="true">
+              <AutoWidth>True</AutoWidth>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>21,5.8,5.8,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Calibri,11.25,Regular,Point,False,0</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text13</Name>
+              <Page isRef="18" />
+              <Parent isRef="19" />
+              <Text>{DeliveryInfo.DeliverTime}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="35" type="DateFormat" isKey="true">
+                <StringFormat>f</StringFormat>
+              </TextFormat>
+              <VertAlignment>Center</VertAlignment>
+            </Text13>
+            <Text14 Ref="36" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>16,5.8,3.8,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Calibri,11.25,Regular,Point,False,204</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text14</Name>
+              <Page isRef="18" />
+              <Parent isRef="19" />
+              <Text>Время доставки:</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text14>
+            <Text15 Ref="37" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>16,6.4,3.8,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Calibri,11.25,Regular,Point,False,0</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text15</Name>
+              <Page isRef="18" />
+              <Parent isRef="19" />
+              <Text>Заказ доставлен:</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text15>
+            <Text16 Ref="38" type="Text" isKey="true">
+              <AutoWidth>True</AutoWidth>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>4.8,2.2,4.6,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Calibri,11.25,Underline,Point,False,204</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text16</Name>
+              <Page isRef="18" />
+              <Parent isRef="19" />
+              <Text>{DeliveryInfo.RestourantLegalName}</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text16>
+            <Text17 Ref="39" type="Text" isKey="true">
+              <AutoWidth>True</AutoWidth>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2,2.8,6.6,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Calibri,11.25,Underline,Point,False,204</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text17</Name>
+              <Page isRef="18" />
+              <Parent isRef="19" />
+              <Text>{DeliveryInfo.TaxId}</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text17>
+            <Text18 Ref="40" type="Text" isKey="true">
+              <AutoWidth>True</AutoWidth>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>3.8,4.4,5.6,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Calibri,11.25,Underline,Point,False,204</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text18</Name>
+              <Page isRef="18" />
+              <Parent isRef="19" />
+              <Text>{DeliveryInfo.Manager}</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text18>
+            <Text19 Ref="41" type="Text" isKey="true">
+              <AutoWidth>True</AutoWidth>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>3.8,5,6.2,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Calibri,11.25,Underline,Point,False,204</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text19</Name>
+              <Page isRef="18" />
+              <Parent isRef="19" />
+              <Text>{IIF(DeliveryInfo.IsSelfService,DeliveryInfo.DeliveryOperator,DeliveryInfo.Courier)}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text19>
+            <Text21 Ref="42" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>16,3.6,1.4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Calibri,11.25,Regular,Point,False,204</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text21</Name>
+              <Page isRef="18" />
+              <Parent isRef="19" />
+              <Text>{IIF(DeliveryInfo.IsSelfService,"","Адрес:")}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text21>
+            <Text20 Ref="43" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>17.8,3.6,8.6,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Calibri,11.25,Regular,Point,False,204</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text20</Name>
+              <Page isRef="18" />
+              <Parent isRef="19" />
+              <Text>{DeliveryInfo.IsSelfService ? "" : DeliveryInfo.Address+AddressCommentView+"."}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+            </Text20>
+            <Text53 Ref="44" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,7,27.6,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Italic</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text53</Name>
+              <OnlyText>True</OnlyText>
+              <Page isRef="18" />
+              <Parent isRef="19" />
+              <Text> </Text>
+              <TextBrush>Black</TextBrush>
+            </Text53>
+            <HorizontalLinePrimitive1 Ref="45" type="HorizontalLinePrimitive" isKey="true">
+              <ClientRectangle>21,6.8,4.4,0.0254</ClientRectangle>
+              <Color>Black</Color>
+              <EndCap Ref="46" type="Cap" isKey="true">
+                <Color>Black</Color>
+              </EndCap>
+              <Name>HorizontalLinePrimitive1</Name>
+              <Page isRef="18" />
+              <Parent isRef="19" />
+              <StartCap Ref="47" type="Cap" isKey="true">
+                <Color>Black</Color>
+              </StartCap>
+            </HorizontalLinePrimitive1>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Name>ReportTitleBand1</Name>
+          <Page isRef="18" />
+          <Parent isRef="18" />
+        </ReportTitleBand1>
+        <HeaderBand1 Ref="48" type="HeaderBand" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,8.6,27.7,0.6</ClientRectangle>
+          <Components isList="true" count="5">
+            <Text22 Ref="49" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,10.6,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Calibri,11,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text22</Name>
+              <Page isRef="18" />
+              <Parent isRef="48" />
+              <Text>Наименование</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text22>
+            <Text23 Ref="50" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>10.6,0,3,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Calibri,11,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text23</Name>
+              <Page isRef="18" />
+              <Parent isRef="48" />
+              <Text>Количество</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text23>
+            <Text24 Ref="51" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>13.6,0,1.8,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Calibri,11,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text24</Name>
+              <Page isRef="18" />
+              <Parent isRef="48" />
+              <Text>Ед. изм.</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text24>
+            <Text25 Ref="52" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>15.4,0,5,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Calibri,11,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text25</Name>
+              <Page isRef="18" />
+              <Parent isRef="48" />
+              <Text>Цена</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text25>
+            <Text26 Ref="53" type="Text" isKey="true">
+              <Border>Top, Left, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>20.4,0,7.2,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Calibri,11,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text26</Name>
+              <Page isRef="18" />
+              <Parent isRef="48" />
+              <Text>Сумма</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text26>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Name>HeaderBand1</Name>
+          <Page isRef="18" />
+          <Parent isRef="18" />
+          <PrintIfEmpty>True</PrintIfEmpty>
+        </HeaderBand1>
+        <DeliveryItemsNotSplit Ref="54" type="DataBand" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,10,27.7,0.6</ClientRectangle>
+          <Components isList="true" count="5">
+            <Text27 Ref="55" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,10.6,0.6</ClientRectangle>
+              <Conditions isList="true" count="1">
+                <value>_x007B_DeliveryOrderItemInfo.ParentId_x0020__x0021__x003D__x0020_System.Guid.Empty_x007D_,Black,Transparent,Calibri_x002C_11.25_x002C_Italic_x002C_Point_x002C_False_x002C_204,True,False,</value>
+              </Conditions>
+              <Font>Calibri,11</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>c48b20d1792e4160924e9be3af58f616</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text27</Name>
+              <Page isRef="18" />
+              <Text>{IIF(DeliveryOrderItemInfo.IsPartOfCombo, "   ", "")}{IIF(DeliveryOrderItemInfo.IsPartOfCompound, "   ", "")}{IIF(DeliveryOrderItemInfo.ParentId != Guid.Empty, "   ", "")}{IIF(DeliveryOrderItemInfo.IsPartOfCompound &amp;&amp; DeliveryOrderItemInfo.ParentId == Guid.Empty, "1/2 ", "")}{DeliveryOrderItemInfo.Name}
+{IIF(DeliveryOrderItemInfo.IsPartOfCombo &amp;&amp; !System.String.IsNullOrEmpty(DeliveryOrderItemInfo.Allergens), "   ", "")}{IIF(DeliveryOrderItemInfo.IsPartOfCompound &amp;&amp; !System.String.IsNullOrEmpty(DeliveryOrderItemInfo.Allergens), "   ", "")}{IIF(DeliveryOrderItemInfo.ParentId != Guid.Empty &amp;&amp; !System.String.IsNullOrEmpty(DeliveryOrderItemInfo.Allergens), "   ", "")}{IIF(!System.String.IsNullOrEmpty(DeliveryOrderItemInfo.Allergens), "содержит: " + DeliveryOrderItemInfo.Allergens, "")}
+			  {IIF (!System.String.IsNullOrEmpty(DeliveryOrderItemInfo.Comment), "   " + DeliveryOrderItemInfo.Comment, "")}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text27>
+            <Text28 Ref="56" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>10.6,0,3,0.6</ClientRectangle>
+              <Conditions isList="true" count="1">
+                <value>_x007B_DeliveryOrderItemInfo.ParentId_x0020__x0021__x003D__x0020_System.Guid.Empty_x007D_,Black,Transparent,Calibri_x002C_11.25_x002C_Italic_x002C_Point_x002C_False_x002C_0,True,False,</value>
+              </Conditions>
+              <Font>Calibri,11</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>b5e9772e73a141d690482091de186fef</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text28</Name>
+              <Page isRef="18" />
+              <Parent isRef="54" />
+              <Text>{IIF(DeliveryOrderItemInfo.Amount != 0, DeliveryOrderItemInfo.Amount, "")}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text28>
+            <Text29 Ref="57" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>13.6,0,1.8,0.6</ClientRectangle>
+              <Conditions isList="true" count="1">
+                <value>_x007B_DeliveryOrderItemInfo.ParentId_x0020__x0021__x003D__x0020_System.Guid.Empty_x007D_,Black,Transparent,Calibri_x002C_11.25_x002C_Italic_x002C_Point_x002C_False_x002C_204,True,False,</value>
+              </Conditions>
+              <Font>Calibri,11</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>c98950f7e4c04bf38ff0d295b9c3f057</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text29</Name>
+              <Page isRef="18" />
+              <Parent isRef="54" />
+              <Text>{DeliveryOrderItemInfo.MeasuringUnitName}</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text29>
+            <Text30 Ref="58" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>15.4,0,5,0.6</ClientRectangle>
+              <Conditions isList="true" count="1">
+                <value>_x007B_DeliveryOrderItemInfo.ParentId_x0020__x0021__x003D__x0020_System.Guid.Empty_x007D_,Black,Transparent,Calibri_x002C_11.25_x002C_Italic_x002C_Point_x002C_False_x002C_204,True,False,</value>
+              </Conditions>
+              <Font>Calibri,11</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>ea0bab3d61e04c4d8fb1535d449cad96</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text30</Name>
+              <Page isRef="18" />
+              <Parent isRef="54" />
+              <Text>{IIF(DeliveryOrderItemInfo.Sum != 0 &amp;&amp; (!DeliveryOrderItemInfo.IsPartOfCombo || DeliveryOrderItemInfo.ParentId != Guid.Empty), DeliveryOrderItemInfo.Price, "")}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="59" type="NumberFormat" isKey="true">
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text30>
+            <Text31 Ref="60" type="Text" isKey="true">
+              <Border>Top, Left, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>20.4,0,7.2,0.6</ClientRectangle>
+              <Conditions isList="true" count="1">
+                <value>_x007B_DeliveryOrderItemInfo.ParentId_x0020__x0021__x003D__x0020_System.Guid.Empty_x007D_,Black,Transparent,Calibri_x002C_11.25_x002C_Italic_x002C_Point_x002C_False_x002C_204,True,False,</value>
+              </Conditions>
+              <Font>Calibri,11</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>b9bb19c3a36347ce881e43fd8c2aa76a</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text31</Name>
+              <Page isRef="18" />
+              <Parent isRef="54" />
+              <Text>{IIF(DeliveryOrderItemInfo.Sum != 0 &amp;&amp; (!DeliveryOrderItemInfo.IsPartOfCombo || DeliveryOrderItemInfo.ParentId != Guid.Empty), DeliveryOrderItemInfo.Sum, "")}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="61" type="NumberFormat" isKey="true">
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text31>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <DataSourceName>DeliveryOrderItemInfo</DataSourceName>
+          <Filters isList="true" count="1">
+            <value>_x007B_DeliveryOrderItemInfo.GuestId_x003D__x003D_System.Guid.Empty_x0020__x0026__x0026__x0020__x0028_DeliveryOrderItemInfo.Sum_x003E_0_x0020__x007C__x007C__x0020__x0028_DeliveryOrderItemInfo.IsPrechequePrintable_x0020__x0026__x0026__x0020__x0021_DeliveryOrderItemInfo.HideBecauseOfDefaultAmount_x0029__x0029__x007D_</value>
+          </Filters>
+          <Name>DeliveryItemsNotSplit</Name>
+          <Page isRef="18" />
+          <Parent isRef="18" />
+          <PrintIfDetailEmpty>True</PrintIfDetailEmpty>
+          <Sort isList="true" count="0" />
+        </DeliveryItemsNotSplit>
+        <DataCategorizedDiscountInfoNotSplit Ref="62" type="DataBand" isKey="true">
+          <Border>Left, Right;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <CanShrink>True</CanShrink>
+          <ClientRectangle>0,11.4,27.7,0.6</ClientRectangle>
+          <Components isList="true" count="3">
+            <DataCategorizedDiscountInfo_Name Ref="63" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>1.2,0,14.2,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Italic</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataCategorizedDiscountInfo_Name</Name>
+              <Page isRef="18" />
+              <Parent isRef="62" />
+              <Text>{CategorizedDiscountInfo.Name} {IIF (!System.String.IsNullOrEmpty(CategorizedDiscountInfo.CardNumber), "(по карте " + CategorizedDiscountInfo.CardNumber + ")", "")}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </DataCategorizedDiscountInfo_Name>
+            <DataCategorizedDiscountInfo_Percent Ref="64" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>15.4,0,5,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Italic</Font>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataCategorizedDiscountInfo_Percent</Name>
+              <Page isRef="18" />
+              <Parent isRef="62" />
+              <Text>{CategorizedDiscountInfo.Percent}%</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </DataCategorizedDiscountInfo_Percent>
+            <DataCategorizedDiscountInfo_Sum Ref="65" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>20.4,0,7.2,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Italic</Font>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataCategorizedDiscountInfo_Sum</Name>
+              <Page isRef="18" />
+              <Parent isRef="62" />
+              <Text>{CategorizedDiscountInfo.Sum}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="66" type="NumberFormat" isKey="true">
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </DataCategorizedDiscountInfo_Sum>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName>Discounts</DataRelationName>
+          <DataSourceName>CategorizedDiscountInfo</DataSourceName>
+          <Filters isList="true" count="0" />
+          <MasterComponent isRef="54" />
+          <Name>DataCategorizedDiscountInfoNotSplit</Name>
+          <Page isRef="18" />
+          <Parent isRef="18" />
+          <Sort isList="true" count="0" />
+        </DataCategorizedDiscountInfoNotSplit>
+        <DeliveryGuests Ref="67" type="DataBand" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,12.8,27.7,0.6</ClientRectangle>
+          <Components isList="true" count="4">
+            <Text50 Ref="68" type="Text" isKey="true">
+              <Border>Right;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,10.6,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Calibri,11,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text50</Name>
+              <Page isRef="18" />
+              <Parent isRef="67" />
+              <Text>{DeliveryGuest.Name}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text50>
+            <Text55 Ref="69" type="Text" isKey="true">
+              <Border>Left;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>20.4,0,7.2,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Calibri,11,Bold</Font>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text55</Name>
+              <Page isRef="18" />
+              <Parent isRef="67" />
+              <Text>{DeliveryGuest.Sum}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="70" type="NumberFormat" isKey="true">
+                <DecimalSeparator>,</DecimalSeparator>
+                <GroupSeparator> </GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <Type>Expression</Type>
+            </Text55>
+            <Text56 Ref="71" type="Text" isKey="true">
+              <Border>Left, Right;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>10.6,0,3,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Calibri,11,Bold</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text56</Name>
+              <Page isRef="18" />
+              <Parent isRef="67" />
+              <TextBrush>Black</TextBrush>
+            </Text56>
+            <Text57 Ref="72" type="Text" isKey="true">
+              <Border>Left, Right;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>13.6,0,1.8,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Calibri,11,Bold</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text57</Name>
+              <Page isRef="18" />
+              <Parent isRef="67" />
+              <TextBrush>Black</TextBrush>
+            </Text57>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <DataSourceName>DeliveryGuest</DataSourceName>
+          <Filters isList="true" count="1">
+            <value>IsVisualizedInReport,EqualTo,true,,Boolean</value>
+          </Filters>
+          <Name>DeliveryGuests</Name>
+          <Page isRef="18" />
+          <Parent isRef="18" />
+          <Sort isList="true" count="0" />
+        </DeliveryGuests>
+        <DeliveryItemsSplit Ref="73" type="DataBand" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,14.2,27.7,0.6</ClientRectangle>
+          <Components isList="true" count="5">
+            <Text58 Ref="74" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,10.6,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Calibri,11</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text58</Name>
+              <Page isRef="18" />
+              <Parent isRef="73" />
+              <Text>{IIF(DeliveryOrderItemInfo.IsPartOfCombo, "   ", "")}{IIF(DeliveryOrderItemInfo.IsPartOfCompound, "   ", "")}{IIF(DeliveryOrderItemInfo.ParentId != Guid.Empty, "   ", "")}{IIF(DeliveryOrderItemInfo.IsPartOfCompound &amp;&amp; DeliveryOrderItemInfo.ParentId == Guid.Empty, "1/2 ", "")}{DeliveryOrderItemInfo.Name}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text58>
+            <Text59 Ref="75" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>10.6,0,3,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Calibri,11</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text59</Name>
+              <Page isRef="18" />
+              <Parent isRef="73" />
+              <Text>{IIF(DeliveryOrderItemInfo.Amount != 0, DeliveryOrderItemInfo.Amount, "")}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text59>
+            <Text60 Ref="76" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>13.6,0,1.8,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Calibri,11</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text60</Name>
+              <Page isRef="18" />
+              <Parent isRef="73" />
+              <Text>{DeliveryOrderItemInfo.MeasuringUnitName}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>DataColumn</Type>
+            </Text60>
+            <Text61 Ref="77" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>15.4,0,5,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Calibri,11</Font>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text61</Name>
+              <Page isRef="18" />
+              <Parent isRef="73" />
+              <Text>{IIF(DeliveryOrderItemInfo.Sum != 0 &amp;&amp; (!DeliveryOrderItemInfo.IsPartOfCombo || DeliveryOrderItemInfo.ParentId != Guid.Empty), DeliveryOrderItemInfo.Price, "")}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="78" type="NumberFormat" isKey="true">
+                <DecimalSeparator>,</DecimalSeparator>
+                <GroupSeparator> </GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <Type>Expression</Type>
+            </Text61>
+            <Text62 Ref="79" type="Text" isKey="true">
+              <Border>Top, Left, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>20.4,0,7.2,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Calibri,11</Font>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text62</Name>
+              <Page isRef="18" />
+              <Parent isRef="73" />
+              <Text>{IIF(DeliveryOrderItemInfo.Sum != 0 &amp;&amp; (!DeliveryOrderItemInfo.IsPartOfCombo || DeliveryOrderItemInfo.ParentId != Guid.Empty), DeliveryOrderItemInfo.Sum, "")}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="80" type="NumberFormat" isKey="true">
+                <DecimalSeparator>,</DecimalSeparator>
+                <GroupSeparator> </GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <Type>Expression</Type>
+            </Text62>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName>GuestItems</DataRelationName>
+          <DataSourceName>DeliveryOrderItemInfo</DataSourceName>
+          <Filters isList="true" count="1">
+            <value>_x007B_DeliveryOrderItemInfo.Sum_x003E_0_x0020__x007C__x007C__x0020__x0028_DeliveryOrderItemInfo.IsPrechequePrintable_x0020__x0026__x0026__x0020__x0021_DeliveryOrderItemInfo.HideBecauseOfDefaultAmount_x0029__x007D_</value>
+          </Filters>
+          <MasterComponent isRef="67" />
+          <Name>DeliveryItemsSplit</Name>
+          <Page isRef="18" />
+          <Parent isRef="18" />
+          <PrintIfDetailEmpty>True</PrintIfDetailEmpty>
+          <Sort isList="true" count="0" />
+        </DeliveryItemsSplit>
+        <DataCategorizedDiscountInfoSplit Ref="81" type="DataBand" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,15.6,27.7,0.6</ClientRectangle>
+          <Components isList="true" count="3">
+            <Text63 Ref="82" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.2,0,15.8,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Italic</Font>
+              <Guid>989ae4dee7d640cb9ab396367bcfcc51</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text63</Name>
+              <Page isRef="18" />
+              <Parent isRef="81" />
+              <Text>{CategorizedDiscountInfo.Name} {IIF (!System.String.IsNullOrEmpty(CategorizedDiscountInfo.CardNumber), "(по карте " + CategorizedDiscountInfo.CardNumber + ")", "")}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text63>
+            <Text64 Ref="83" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>15.4,0,5,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Italic</Font>
+              <Guid>e70288257bb24480902c98bd7b9dfb87</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text64</Name>
+              <Page isRef="18" />
+              <Parent isRef="81" />
+              <Text>{CategorizedDiscountInfo.Percent}%</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text64>
+            <Text65 Ref="84" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>20.4,0,7.2,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9,Italic</Font>
+              <Guid>4dcff08bc54b4ae794250a27963f53e5</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text65</Name>
+              <Page isRef="18" />
+              <Parent isRef="81" />
+              <Text>{CategorizedDiscountInfo.Sum}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="85" type="NumberFormat" isKey="true">
+                <DecimalSeparator>,</DecimalSeparator>
+                <GroupSeparator> </GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <Type>DataColumn</Type>
+            </Text65>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName>Discounts</DataRelationName>
+          <DataSourceName>CategorizedDiscountInfo</DataSourceName>
+          <Filters isList="true" count="0" />
+          <Guid>c631be1a50ee4e359bd052448728cb11</Guid>
+          <MasterComponent isRef="73" />
+          <Name>DataCategorizedDiscountInfoSplit</Name>
+          <Page isRef="18" />
+          <Parent isRef="18" />
+          <Sort isList="true" count="0" />
+        </DataCategorizedDiscountInfoSplit>
+        <HeaderBand2 Ref="86" type="HeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,17,27.7,0.8</ClientRectangle>
+          <Components isList="true" count="2">
+            <Text32 Ref="87" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,1.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="1">
+                <value>,EqualTo,,,String,Red,Transparent,Arial_x002C_8,True,False,</value>
+              </Conditions>
+              <Font>Calibri,11,Bold</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text32</Name>
+              <Page isRef="18" />
+              <Parent isRef="86" />
+              <Text>Подытог:</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text32>
+            <Text33 Ref="88" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>20.4,0,7.2,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Calibri,11</Font>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text33</Name>
+              <Page isRef="18" />
+              <Parent isRef="86" />
+              <Text>{TotalSumsInfo.SubTotal}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="89" type="NumberFormat" isKey="true">
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <Type>DataColumn</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text33>
+          </Components>
+          <Conditions isList="true" count="1">
+            <value>_x007B__x0020_DataBand1.Count_x0020__x0020__x003D__x003D__x0020_0_x0020__x0026__x0026__x0020_DataBand2.Count_x0020__x0020__x003D__x003D__x0020_0_x007D_,Red,Transparent,Arial_x002C_8,False,False,,,None</value>
+          </Conditions>
+          <Name>HeaderBand2</Name>
+          <Page isRef="18" />
+          <Parent isRef="18" />
+          <PrintIfEmpty>True</PrintIfEmpty>
+        </HeaderBand2>
+        <DataBand2 Ref="90" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,18.6,27.7,0.6</ClientRectangle>
+          <Components isList="true" count="3">
+            <Text34 Ref="91" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,15.2,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Calibri,11</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text34</Name>
+              <Page isRef="18" />
+              <Parent isRef="90" />
+              <Text>{DiscountInfo.Name} {IIF (!System.String.IsNullOrEmpty(DiscountInfo.CardNumber), "(по карте " + DiscountInfo.CardNumber + ")", "")}</Text>
+              <TextBrush>Black</TextBrush>
+            </Text34>
+            <Text35 Ref="92" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>20.4,0,7.2,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Calibri,11</Font>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text35</Name>
+              <Page isRef="18" />
+              <Parent isRef="90" />
+              <Text>{DiscountInfo.Sum}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="93" type="NumberFormat" isKey="true">
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <VertAlignment>Center</VertAlignment>
+            </Text35>
+            <Text36 Ref="94" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>15.2,0,5.4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Calibri,11</Font>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text36</Name>
+              <Page isRef="18" />
+              <Parent isRef="90" />
+              <Text>{DiscountInfo.Percent}%</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text36>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <DataSourceName>DiscountInfo</DataSourceName>
+          <Filters isList="true" count="0" />
+          <Name>DataBand2</Name>
+          <Page isRef="18" />
+          <Parent isRef="18" />
+          <Sort isList="true" count="0" />
+        </DataBand2>
+        <DataBand1 Ref="95" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,20,27.7,0.6</ClientRectangle>
+          <Components isList="true" count="3">
+            <Text44 Ref="96" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,15.2,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Calibri,11</Font>
+              <Guid>86670dcef1ee4c12bc17d8b3fbcfab1b</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text44</Name>
+              <Page isRef="18" />
+              <Parent isRef="95" />
+              <Text>{IIF (VatInfo.VatPercent&gt;0, "НДС " + VatInfo.VatPercent + "%", "")}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text44>
+            <Text45 Ref="97" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>20.4,0,7.2,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Calibri,11</Font>
+              <Guid>83d9a2c640d9401083d44acd7bcb9a0d</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text45</Name>
+              <Page isRef="18" />
+              <Parent isRef="95" />
+              <Text>{VatInfo.VatSum}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="98" type="NumberFormat" isKey="true">
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <Type>DataColumn</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text45>
+            <Text69 Ref="99" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>15.2,0,5.4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Calibri,11</Font>
+              <Guid>5f2db255851e4ec28adaf2efc4fe5860</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text69</Name>
+              <Page isRef="18" />
+              <Parent isRef="95" />
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text69>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <DataSourceName>VatInfo</DataSourceName>
+          <Filters isList="true" count="0" />
+          <Guid>1a45f41c49a349f3b7294cd530bff230</Guid>
+          <Name>DataBand1</Name>
+          <Page isRef="18" />
+          <Parent isRef="18" />
+          <Sort isList="true" count="0" />
+        </DataBand1>
+        <DataBand4 Ref="100" type="DataBand" isKey="true">
+          <Border>Top;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,21.4,27.7,0.4</ClientRectangle>
+          <Components isList="true" count="2">
+            <Text38 Ref="101" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,3.2,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Calibri,11,Bold</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text38</Name>
+              <Page isRef="18" />
+              <Parent isRef="100" />
+              <Text>Итого к оплате:</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text38>
+            <Text37 Ref="102" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>20.6,0,7,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Calibri,11,Bold</Font>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text37</Name>
+              <Page isRef="18" />
+              <Parent isRef="100" />
+              <Text>{TotalSumsInfo.ResultSum}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="103" type="NumberFormat" isKey="true">
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <VertAlignment>Center</VertAlignment>
+            </Text37>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <DataSourceName>TotalSumsInfo</DataSourceName>
+          <Filters isList="true" count="0" />
+          <Name>DataBand4</Name>
+          <Page isRef="18" />
+          <Parent isRef="18" />
+          <Sort isList="true" count="0" />
+        </DataBand4>
+        <DataBand5 Ref="104" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,22.6,27.7,0.4</ClientRectangle>
+          <Components isList="true" count="2">
+            <Text39 Ref="105" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.2,0,14.6,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Calibri,11</Font>
+              <Guid>db41564826e243fbbd881b45666bcccd</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text39</Name>
+              <Page isRef="18" />
+              <Parent isRef="104" />
+              <Text>{IIF (IncludedVatInfo.VatPercent&gt;0, "В том числе НДС " + IncludedVatInfo.VatPercent + "%", "")}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text39>
+            <Text42 Ref="106" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>20.4,0,7.2,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Calibri,11</Font>
+              <Guid>ea6e2bc7e8af4be58bad9ae290c7b464</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text42</Name>
+              <Page isRef="18" />
+              <Parent isRef="104" />
+              <Text>{IIF(IncludedVatInfo.VatPercent &gt;0,IncludedVatInfo.VatSum,"") }</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="107" type="NumberFormat" isKey="true">
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text42>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <DataSourceName>IncludedVatInfo</DataSourceName>
+          <Filters isList="true" count="0" />
+          <Name>DataBand5</Name>
+          <Page isRef="18" />
+          <Parent isRef="18" />
+          <Sort isList="true" count="0" />
+        </DataBand5>
+        <DataBand3 Ref="108" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,23.8,27.7,0.6</ClientRectangle>
+          <Components isList="true" count="2">
+            <Text40 Ref="109" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>20.6,0,7,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Calibri,11</Font>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text40</Name>
+              <Page isRef="18" />
+              <Parent isRef="108" />
+              <Text>{PaymentInfo.Sum}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="110" type="NumberFormat" isKey="true">
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <VertAlignment>Center</VertAlignment>
+            </Text40>
+            <Text41 Ref="111" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,20.6,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Calibri,11</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text41</Name>
+              <Page isRef="18" />
+              <Parent isRef="108" />
+              <Text>{IIF(PaymentInfo.IsPrepay, "Предоплата (", "")}{IIF(PaymentInfo.IsCard, "Карта " + PaymentInfo.Name, PaymentInfo.Name)}{IIF(PaymentInfo.IsPrepay, ")", "")}{IIF(PaymentInfo.IsProcessedExternally, " (проведена)", "")}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text41>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <DataSourceName>PaymentInfo</DataSourceName>
+          <Filters isList="true" count="0" />
+          <Name>DataBand3</Name>
+          <Page isRef="18" />
+          <Parent isRef="18" />
+          <Sort isList="true" count="0" />
+        </DataBand3>
+        <ChangeSumDataBand Ref="112" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,25.2,27.7,0.6</ClientRectangle>
+          <Components isList="true" count="2">
+            <Text67 Ref="113" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,3.2,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Calibri,11.25,Regular,Point,False,204</Font>
+              <Guid>02980a812e9b4edbbb14766335a38fec</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text67</Name>
+              <Page isRef="18" />
+              <Parent isRef="112" />
+              <Text>Сдача</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text67>
+            <Text68 Ref="114" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>20.6,0,7,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Calibri,11.25,Regular,Point,False,204</Font>
+              <Guid>78b0fd1b2bac42349f4d1d6721aba916</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text68</Name>
+              <Page isRef="18" />
+              <Parent isRef="112" />
+              <Text>{TotalSumsInfo.ChangeSum}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="115" type="NumberFormat" isKey="true">
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <Type>DataColumn</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text68>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <DataSourceName>TotalSumsInfo</DataSourceName>
+          <Filters isList="true" count="1">
+            <value>ChangeSum,GreaterThan,_x0030_,,Numeric</value>
+          </Filters>
+          <Guid>9f05334a470944449c09be3ac49c3e1d</Guid>
+          <Name>ChangeSumDataBand</Name>
+          <Page isRef="18" />
+          <Parent isRef="18" />
+          <Sort isList="true" count="0" />
+        </ChangeSumDataBand>
+        <ReportSummaryBand2 Ref="116" type="ReportSummaryBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <CanBreak>True</CanBreak>
+          <ClientRectangle>0,26.6,27.7,6.8</ClientRectangle>
+          <Components isList="true" count="11">
+            <Text47 Ref="117" type="Text" isKey="true">
+              <AutoWidth>True</AutoWidth>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,1,2,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Calibri,11</Font>
+              <Guid>f1503491c25248148e2a676bb1f8189e</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text47</Name>
+              <Page isRef="18" />
+              <Parent isRef="116" />
+              <Text>Груз сдал:</Text>
+              <TextBrush>Black</TextBrush>
+            </Text47>
+            <Text48 Ref="118" type="Text" isKey="true">
+              <AutoWidth>True</AutoWidth>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>8.2,1,3.8,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Calibri,11</Font>
+              <Guid>9795e13a41264a98b51705486d35beec</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text48</Name>
+              <Page isRef="18" />
+              <Parent isRef="116" />
+              <Text>{IIF(DeliveryInfo.IsSelfService,DeliveryInfo.DeliveryOperator,DeliveryInfo.Courier)}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text48>
+            <Text49 Ref="119" type="Text" isKey="true">
+              <AutoWidth>True</AutoWidth>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>17.6,1,2.2,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Calibri,11</Font>
+              <Guid>a0df64d9ba6b4cdba766359940de7c24</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text49</Name>
+              <Page isRef="18" />
+              <Parent isRef="116" />
+              <Text>Груз принял:</Text>
+              <TextBrush>Black</TextBrush>
+            </Text49>
+            <Text51 Ref="120" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,5,27.6,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Calibri,11,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text51</Name>
+              <Page isRef="18" />
+              <Parent isRef="116" />
+              <Text>{TotalSumsInfo.AllSumsCurrencyUnitLabel}</Text>
+              <TextBrush>Black</TextBrush>
+            </Text51>
+            <Text52 Ref="121" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,6,27.6,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Calibri,11,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text52</Name>
+              <Page isRef="18" />
+              <Parent isRef="116" />
+              <Text>{BillFooter.Value}</Text>
+              <TextBrush>Black</TextBrush>
+            </Text52>
+            <Text54 Ref="122" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanBreak>True</CanBreak>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,2.2,27.6,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Calibri,11</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text54</Name>
+              <Page isRef="18" />
+              <Parent isRef="116" />
+              <Text>Комментарий к заказу: {DeliveryInfo.Comments}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+            </Text54>
+            <HorizontalLinePrimitive4 Ref="123" type="HorizontalLinePrimitive" isKey="true">
+              <ClientRectangle>2,1.4,6,0.0254</ClientRectangle>
+              <Color>Black</Color>
+              <EndCap Ref="124" type="Cap" isKey="true">
+                <Color>Black</Color>
+              </EndCap>
+              <Guid>fc5197373d7c45158360ba054df4109e</Guid>
+              <Name>HorizontalLinePrimitive4</Name>
+              <Page isRef="18" />
+              <Parent isRef="116" />
+              <StartCap Ref="125" type="Cap" isKey="true">
+                <Color>Black</Color>
+              </StartCap>
+            </HorizontalLinePrimitive4>
+            <HorizontalLinePrimitive5 Ref="126" type="HorizontalLinePrimitive" isKey="true">
+              <ClientRectangle>20,1.4,6,0.0254</ClientRectangle>
+              <Color>Black</Color>
+              <EndCap Ref="127" type="Cap" isKey="true">
+                <Color>Black</Color>
+              </EndCap>
+              <Guid>086e463beaa24bc49aeed3d95a403c63</Guid>
+              <Name>HorizontalLinePrimitive5</Name>
+              <Page isRef="18" />
+              <Parent isRef="116" />
+              <StartCap Ref="128" type="Cap" isKey="true">
+                <Color>Black</Color>
+              </StartCap>
+            </HorizontalLinePrimitive5>
+            <HorizontalLinePrimitive6 Ref="129" type="HorizontalLinePrimitive" isKey="true">
+              <ClientRectangle>0,3.2,27.6,0.0254</ClientRectangle>
+              <Color>Black</Color>
+              <EndCap Ref="130" type="Cap" isKey="true">
+                <Color>Black</Color>
+              </EndCap>
+              <Guid>9693539a48bf42caa3fa55a3ac3c3b54</Guid>
+              <Name>HorizontalLinePrimitive6</Name>
+              <Page isRef="18" />
+              <Parent isRef="116" />
+              <StartCap Ref="131" type="Cap" isKey="true">
+                <Color>Black</Color>
+              </StartCap>
+            </HorizontalLinePrimitive6>
+            <HorizontalLinePrimitive7 Ref="132" type="HorizontalLinePrimitive" isKey="true">
+              <ClientRectangle>0,3.8,27.6,0.0254</ClientRectangle>
+              <Color>Black</Color>
+              <EndCap Ref="133" type="Cap" isKey="true">
+                <Color>Black</Color>
+              </EndCap>
+              <Guid>29195d1b6bf04d3ba0144c947b4b977f</Guid>
+              <Name>HorizontalLinePrimitive7</Name>
+              <Page isRef="18" />
+              <Parent isRef="116" />
+              <StartCap Ref="134" type="Cap" isKey="true">
+                <Color>Black</Color>
+              </StartCap>
+            </HorizontalLinePrimitive7>
+            <HorizontalLinePrimitive8 Ref="135" type="HorizontalLinePrimitive" isKey="true">
+              <ClientRectangle>0,4.4,27.6,0.0254</ClientRectangle>
+              <Color>Black</Color>
+              <EndCap Ref="136" type="Cap" isKey="true">
+                <Color>Black</Color>
+              </EndCap>
+              <Guid>2bfb22a7f8af43d8aa3369e96fb5eb1b</Guid>
+              <Name>HorizontalLinePrimitive8</Name>
+              <Page isRef="18" />
+              <Parent isRef="116" />
+              <StartCap Ref="137" type="Cap" isKey="true">
+                <Color>Black</Color>
+              </StartCap>
+            </HorizontalLinePrimitive8>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Guid>94fd2ee81d9f41a1a3548b6e8aa38f75</Guid>
+          <Name>ReportSummaryBand2</Name>
+          <Page isRef="18" />
+          <Parent isRef="18" />
+        </ReportSummaryBand2>
+      </Components>
+      <Conditions isList="true" count="0" />
+      <Guid>c1a50d1b145c4a55a3dab4d3928dab9a</Guid>
+      <LargeHeight>True</LargeHeight>
+      <Margins>1,1,1,1</Margins>
+      <Name>Page1</Name>
+      <Orientation>Landscape</Orientation>
+      <PageHeight>21</PageHeight>
+      <PageWidth>29.7</PageWidth>
+      <PaperSize>A4</PaperSize>
+      <Report isRef="0" />
+      <Watermark Ref="138" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
+        <Font>Arial,100</Font>
+        <TextBrush>[50:0:0:0]</TextBrush>
+      </Watermark>
+    </Page1>
+  </Pages>
+  <PrinterSettings Ref="139" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
+  <ReferencedAssemblies isList="true" count="8">
+    <value>System.Dll</value>
+    <value>System.Drawing.Dll</value>
+    <value>System.Windows.Forms.Dll</value>
+    <value>System.Data.Dll</value>
+    <value>System.Xml.Dll</value>
+    <value>Stimulsoft.Controls.Dll</value>
+    <value>Stimulsoft.Base.Dll</value>
+    <value>Stimulsoft.Report.Dll</value>
+  </ReferencedAssemblies>
+  <RenderingEvent>DataBand3.Enabled = TotalSumsInfo.AllPaymentsSum &gt;= TotalSumsInfo.ResultSum;</RenderingEvent>
+  <ReportAlias>Отчет</ReportAlias>
+  <ReportChanged>11/22/2021 7:45:20 PM</ReportChanged>
+  <ReportCreated>9/17/2011 1:00:22 PM</ReportCreated>
+  <ReportFile>E:\ProjectsDevelop\RMS\dev\iikoFront.Net\Resto.Front.PrintTemplates\StimulSoftReports\Templates\DeliveryInvoiceReport.mrt</ReportFile>
+  <ReportGuid>130cd210cb2e454ea2edb198f8923012</ReportGuid>
+  <ReportName>Отчет</ReportName>
+  <ReportUnit>Centimeters</ReportUnit>
+  <ReportVersion>2014.2.2000</ReportVersion>
+  <Script>using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Data;
+using Stimulsoft.Controls;
+using Stimulsoft.Base.Drawing;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Dialogs;
+using Stimulsoft.Report.Components;
+
+namespace Reports
+{
+    
+    public class Отчет : Stimulsoft.Report.StiReport
+    {
+        
+        public Отчет()
+        {
+            this.InitializeComponent();
+        }
+        #region StiReport Designer generated code - do not modify
+		#endregion StiReport Designer generated code - do not modify
+    }
+}
+</Script>
+  <ScriptLanguage>CSharp</ScriptLanguage>
+  <Styles isList="true" count="1">
+    <Стиль1 Ref="140" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <Brush>Transparent</Brush>
+      <Conditions isList="true" count="0" />
+      <Description />
+      <Font>Arial,8</Font>
+      <Name>Стиль1</Name>
+      <TextBrush>Black</TextBrush>
+    </Стиль1>
+  </Styles>
+</StiSerializer>

@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<schema targetNamespace="http://iiko.ru/XmlSchemas/Documents.xsd"
+        xmlns:doc="http://iiko.ru/XmlSchemas/Documents.xsd"
+        xmlns="http://www.w3.org/2001/XMLSchema"
+        elementFormDefault="qualified">
+
+  <!-- SIMPLE TYPES -->
+
+  <simpleType name="DataType">
+    <union memberTypes="NCName doc:DataTypeEnum" />
+  </simpleType>
+  <simpleType name="DataTypeEnum">
+    <restriction base="string">
+      <enumeration value="bool" />
+      <enumeration value="string" />
+      <enumeration value="decimal" />
+      <enumeration value="int" />
+      <enumeration value="DateTime" />
+      <enumeration value="TimeSpan" />
+    </restriction>
+  </simpleType>
+
+  <!-- DOCUMENTS -->
+
+  <complexType name="Property">
+    <attribute name="Name" type="NCName" use="required" />
+    <attribute name="ItemName" type="NCName" />
+    <attribute name="Type" type="doc:DataType" use="required" />
+    <attribute name="Collection" type="boolean" default="false" />
+    <attribute name="Comment" type="string" use="optional" />
+  </complexType>
+
+  <complexType name="Resource">
+    <attribute name="Name" type="NCName" use="required" />
+    <attribute name="Type" type="doc:DataType" use="required" />
+  </complexType>
+
+  <complexType name="Type">
+    <sequence>
+      <element name="Property" type="doc:Property" maxOccurs="unbounded" />
+      <element name="Resource" type="doc:Resource" maxOccurs="unbounded" minOccurs="0" />
+    </sequence>
+    <attribute name="Name" type="NCName" use="required" />
+    <attribute name="ItemName" type="NCName" />
+    <attribute name="Root" type="boolean" default="false" />
+    <attribute name="Comment" type="string" use="optional" />
+  </complexType>
+
+  <element name="Type" type="doc:Type">
+    <key name="Document.Type.Property.Name">
+      <selector xpath="doc:Property" />
+      <field xpath="@Name" />
+    </key>
+  </element>
+
+  <complexType name="Document">
+    <sequence>
+      <element ref="doc:Type" maxOccurs="unbounded" />
+    </sequence>
+    <attribute name="Name" type="NCName" use="required" />
+    <attribute name="Comment" type="string" use="optional" />
+  </complexType>
+
+  <!-- ROOT -->
+
+  <element name="Root">
+    <complexType>
+      <choice maxOccurs="unbounded">
+        <element name="Document" type="doc:Document" />
+      </choice>
+    </complexType>
+
+    <!-- Document keys -->
+    <key name="Document.Name">
+      <selector xpath="doc:Document" />
+      <field xpath="@Name" />
+    </key>
+    <key name="Document.Type.Name">
+      <selector xpath="doc:Document/doc:Type" />
+      <field xpath="@Name" />
+    </key>
+  </element>
+
+</schema>

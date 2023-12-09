@@ -1,0 +1,46 @@
+﻿@using System.Linq
+@using Resto.Front.PrintTemplates.Cheques.Razor.TemplateModels
+@using Resto.Front.PrintTemplates.RmsEntityWrappers
+
+@inherits Resto.Front.PrintTemplates.Cheques.Razor.TemplateBase<IPrepayCheque>
+@{
+    var prepays = Model.Prepays.ToList();
+    var sum = prepays.Sum(prepay => prepay.Sum);
+}
+
+<doc>
+    <center>@(Model.IsReturn ? Resources.PrepayReturnCheque : Resources.PrepayCheque)</center>
+    <pair left="@Resources.CurrentDate" right="@FormatLongDateTime(Model.ChequeInfo.OperationTime)" />
+    <pair left="@string.Format(Resources.BillHeaderCashierPattern, Model.ChequeInfo.Cashier.Name)" right="@string.Format(Resources.BillHeaderOrderNumberPattern, Model.Order.Number)" />
+    <left>@string.Format(Resources.BillHeaderWaiterPattern, Model.Order.Waiter.GetNameOrEmpty())</left>
+    <line />
+    
+    @foreach(var prepay in prepays)
+    {
+        if (prepay.CurrencyInfo != null && !Model.IsReturn)
+        {
+            var paymentCurrencyIsoName = prepay.CurrencyInfo.Currency.IsoName;
+             <pair left="@prepay.PaymentType.Name" right="@string.Format(Resources.CurrencyFormat, paymentCurrencyIsoName, FormatMoney(prepay.CurrencyInfo.Sum, paymentCurrencyIsoName))"/>
+         }
+         else
+         {
+             <pair left="@(prepay.PaymentType.Group == PaymentGroup.Card ? string.Format(Resources.CardPattern, prepay.PaymentType.Name) : prepay.PaymentType.Name)" right="@FormatMoney(prepay.Sum)"/>
+         }
+
+         if (!string.IsNullOrWhiteSpace(prepay.Comment))
+         {
+             <left>@prepay.Comment</left>
+         }
+    }
+    @if (prepays.Count > 1)
+    {
+        <pair left="@Resources.Total" right="@FormatMoney(sum)" />
+    }
+
+    @if (!Model.ChequeInfo.IsForReport)
+    {
+        <center>@string.Format(Resources.AllSumsInFormat, Model.CommonInfo.CafeSetup.CurrencyName)</center>
+        <np />
+        <center><split><whitespace-preserve>@Model.CommonInfo.CafeSetup.BillFooter</whitespace-preserve></split></center>
+    }
+</doc>

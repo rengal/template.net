@@ -1,0 +1,53 @@
+﻿@using Resto.Front.PrintTemplates.Cheques.Razor.TemplateModels
+
+@inherits Resto.Front.PrintTemplates.Cheques.Razor.TemplateBase<IPayInOut>
+
+<doc>
+  @if (!Model.ChequeInfo.IsForReport)
+  {
+    <left>
+      <split>
+        <whitespace-preserve>@Model.CommonInfo.CafeSetup.BillHeader</whitespace-preserve>
+      </split>
+    </left>
+  }
+  <center>
+    @(Model.Event.IsPayIn ? Resources.PayIn : Resources.PayOut)
+  </center>
+  @if (Model.Event.IsChangePayIn)
+  {
+    <pair fit="left" left="@Resources.PayInOutType" right="@Resources.ChangePayIn" />
+  }
+  else if (!string.IsNullOrWhiteSpace(Model.Event.EventTypeName))
+  {
+    <pair fit="left" left="@Resources.PayInOutType" right="@Model.Event.EventTypeName" />
+  }
+  @if (Model.Event.Account != null)
+  {
+    <pair fit="left" left="@Resources.Account" right="@Model.Event.Account.Name" />
+  }
+  <pair left="@Resources.CurrentDate" right="@FormatLongDateTime(Model.ChequeInfo.OperationTime)" />
+  <pair fit="left" left="@Resources.BillHeaderCashier" right="@Model.ChequeInfo.Cashier.GetNameOrEmpty()" />
+  @if (Model.Event.Counteragent != null)
+  {
+    <pair fit="left" left="@Resources.Counteragent" right="@Model.Event.Counteragent.Name" />
+  }
+  <line />
+  <pair left="@(Model.Event.IsPayIn ? Resources.PaidIn : Resources.PaidOut)" right="@FormatMoney(Model.Event.Sum)" />
+  @if (!string.IsNullOrWhiteSpace(Model.Event.Comment))
+  {
+    @:@string.Format(Resources.ReasonFormat, Model.Event.Comment)
+  }
+  @if (!Model.ChequeInfo.IsForReport)
+  {
+    <center>
+      @string.Format(Resources.AllSumsInFormat, Model.CommonInfo.CafeSetup.CurrencyName)
+    </center>
+    <np />
+    <center>
+      <split>
+        <whitespace-preserve>@Model.CommonInfo.CafeSetup.BillFooter</whitespace-preserve>
+      </split>
+    </center>
+  }
+</doc>

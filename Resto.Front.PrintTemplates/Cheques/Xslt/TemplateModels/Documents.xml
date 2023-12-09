@@ -1,0 +1,619 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Root xmlns="http://iiko.ru/XmlSchemas/Documents.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://iiko.ru/XmlSchemas/Documents.xsd Documents.xsd">
+
+  <!-- DOCUMENTS -->
+
+  <!-- Cheques: Common -->
+
+  <Document Name="ChequesCommon">
+    <Type Name="ChequeSettings">
+      <Property Name="ChequeHeader" Type="string" />
+      <Property Name="ChequeFooter" Type="string" />
+      <Property Name="UserName" Type="string" />
+      <Property Name="GroupName" Type="string" />
+      <Property Name="CurrencyName" Type="string" />
+      <Property Name="ShortCurrencyName" Type="string" />
+      <Property Name="Now" Type="DateTime" />
+      <Property Name="EnterpriseName" Type="string" />
+      <Resource Name="Resources" Type="ChequeResources" />
+    </Type>
+
+    <!-- Дополнения к документам, вычисляются асинхронно в фоне (в т.ч. плагинами) -->
+    <Type Name="ChequeExtensions">
+      <Property Name="BeforeHeader" Type="XElement" Collection="true" />
+      <Property Name="AfterHeader" Type="XElement" Collection="true" />
+      <Property Name="BeforeFooter" Type="XElement" Collection="true" />
+      <Property Name="AfterFooter" Type="XElement" Collection="true" />
+    </Type>
+  </Document>
+
+  <!-- Price tickets (этикетки) -->
+  <Document Name="PriceTicket">
+    <Type Name="PriceTicket" Root="true" Comment="Этикетка">
+      <Property Name="Settings" Type="ChequeSettings" />
+      <Property Name="ProductName" Type="string" Comment="Наименование номерклатуры" />
+      <Property Name="Amount" Type="decimal" Comment="Количество" />
+      <Property Name="Price" Type="decimal" Comment="Цена" />
+      <Property Name="Cost" Type="decimal" Comment="Стоимость" />
+      <Property Name="UnitName" Type="string" Comment="Единица измерения" />
+      <Property Name="Composition" Type="string" Comment="Состав" />
+      <Property Name="FoodValue" Type="FoodValue" Comment="Пищевая ценность" />
+      <Property Name="IsExpirationPeriodSet" Type="bool" Comment="Задан ли срок хранения" />
+      <Property Name="ExpirationPeriod" Type="TimeSpan" Comment="Срок хранения" />
+      <Property Name="BestBeforeTime" Type="DateTime" Comment="Годен до" />
+      <Property Name="MakeTime" Type="DateTime" Comment="Время изготовления" />
+      <Property Name="BarcodeString" Type="string" Comment="Штрихкод" />
+    </Type>
+
+    <Type Name="FoodValue" Comment="Пищевая ценность">
+      <Property Name="IsEmpty" Type="bool" Comment="Заполнено ли" />
+      <Property Name="Fat" Type="decimal" Comment="Жиры" />
+      <Property Name="Protein" Type="decimal" Comment="Белки" />
+      <Property Name="Carbohydrate" Type="decimal" Comment="Углеводы" />
+      <Property Name="Caloricity" Type="decimal" Comment="Калорийность" />
+    </Type>
+  </Document>
+
+  <!-- Cheques: Service -->
+
+  <!-- Delivery stickers (стикеры) -->
+  <Document Name="DeliverySticker">
+    <Type Name="DeliverySticker" Root="true" Comment="Стикер">
+      <Property Name="Settings" Type="ChequeSettings" Comment="Настройки чеков" />
+      <!-- Delivery info -->
+      <Property Name="DeliveryNumber" Type="int" Comment="Номер доставки" />
+      <Property Name="DeliverTime" Type="DateTime" Comment="Время доставки" />
+      <!-- Position info -->
+      <Property Name="OrderItem" Type="DeliveryStickerOrderItemInfo" Comment="Блюдо" />
+    </Type>
+
+    <Type Name="DeliveryStickerOrderEntryInfo">
+      <Property Name="Name" Type="string" Comment="Наименование номерклатуры" />
+      <Property Name="Amount" Type="decimal" Comment="Количество" />
+    </Type>
+    <Type Name="DeliveryStickerOrderItemInfo">
+      <Property Name="Name" Type="string" Comment="Наименование номенклатуры" />
+      <Property Name="GuestName" Type="string" Comment="Имя гостя" />
+      <Property Name="Amount" Type="decimal" Comment="Количество" />
+      <Property Name="CategoryName" Type="string" Comment="Категория" />
+      <Property Name="UseBalanceForSell" Type="bool" Comment="Весовое ли блюдо" />
+      <Property Name="Price" Type="decimal" Comment="Цена" />
+      <Property Name="Composition" Type="string" Comment="Состав" />
+      <Property Name="FoodValue" Type="FoodValue" Comment="Пищевая ценность" />
+      <Property Name="IsExpirationPeriodSet" Type="bool" Comment="Задан ли срок хранения" />
+      <Property Name="ExpirationPeriodHours" Type="string" Comment="Срок хранения в часах" />
+      <Property Name="Modifiers" Type="DeliveryStickerOrderEntryInfo" ItemName="Modifier" Collection="true" Comment="Модификаторы" />
+      <Property Name="PrintTime" Type="DateTime" Comment="Время сервисной печати" />
+    </Type>
+  </Document>
+
+  <Document Name="DeliveryBillCheque">
+    <Type Name="DeliveryBill" Root="true">
+      <Property Name="Settings" Type="ChequeSettings" />
+      <Property Name="DeliveryInfo" Type="DeliveryInfo" />
+      <Property Name="DeliveryOrderInfo" Type="DeliveryOrderInfo" />
+      <Property Name="BillFooter" Type="BillFooter" />
+    </Type>
+
+    <Type Name="DeliveryInfo">
+      <Property Name="DeliveryNumber" Type="int" />
+      <Property Name="RestourantLegalName" Type="string" />
+      <Property Name="TaxId" Type="string" />
+      <Property Name="CustomerNameAndPatronymic" Type="string" />
+      <Property Name="CustomerSurname" Type="string" />
+      <Property Name="PhoneNumber" Type="string" />
+      <Property Name="Address" Type="string" />
+      <Property Name="Region" Type="string" />
+      <Property Name="AdressComment" Type="string" />
+      <Property Name="Comments" Type="string" />
+      <Property Name="DiscountCardNumber" Type="string" />
+      <Property Name="Manager" Type="string" />
+      <Property Name="Courier" Type="string" />
+      <Property Name="DeliveryOperator" Type="string" />
+      <Property Name="DeliveryReceiveTime" Type="DateTime" />
+      <Property Name="DeliveryBillPrintTime" Type="DateTime" />
+      <Property Name="DeliverTime" Type="DateTime" />
+      <Property Name="IsPayed" Type="bool" />
+      <Property Name="IsSelfService" Type="bool" />
+      <Property Name="SplitBetweenPersons" Type="bool" />
+      <Property Name="PersonsCount" Type="int" />
+    </Type>
+    <Type Name="DeliveryOrderInfo">
+      <Property Name="TotalSumsInfo" Type="TotalSumsInfo" />
+      <Property Name="EntriesByGuests" Type="DeliveryGuest" ItemName="DeliveryGuest" Collection="true" Comment="Гости" />
+      <Property Name="Discounts" Type="DiscountInfo" ItemName="Discount" Collection="true" />
+      <Property Name="Prepays" Type="PaymentInfo" ItemName="Prepay" Collection="true" />
+      <Property Name="Payments" Type="PaymentInfo" ItemName="Payment" Collection="true" />
+      <Property Name="Vats" Type="VatInfo" ItemName="Vat" Collection="true" />
+    </Type>
+    <Type Name="DeliveryOrderEntryInfo" >
+      <Property Name="IsModifier" Type="bool" />
+      <Property Name="IsPrechequePrintable" Type="bool" />
+      <Property Name="Name" Type="string" />
+      <Property Name="Amount" Type="decimal" />
+      <Property Name="Price" Type="decimal" />
+      <Property Name="Sum" Type="decimal" />
+      <Property Name="MeasuringUnitName" Type="string" />
+      <Property Name="Discounts" Type="DiscountInfo" ItemName="Discount" Collection="true" />
+    </Type>
+    <Type Name="DeliveryGuest" Comment="Гость">
+      <Property Name="Name" Type="string" Comment="Имя" />
+      <Property Name="Sum" Type="decimal" Comment="Итого по гостю с учётом всех скидок/надбавок" />
+      <Property Name="DeliveryItems" Type="DeliveryOrderEntryInfo" ItemName="DeliveryOrderEntryInfo" Collection="true" Comment="Заказанные блюда" />
+    </Type>
+    <Type Name="TotalSumsInfo">
+      <Property Name="SubTotal" Type="decimal" />
+      <Property Name="ResultSum" Type="decimal" />
+      <Property Name="ChangeSum" Type="decimal" />
+      <Property Name="VatSum" Type="decimal" />
+      <Property Name="AllSumsCurrencyUnitLabel" Type="string" />
+    </Type>
+    <Type Name="DiscountInfo">
+      <Property Name="Name" Type="string"/>
+      <Property Name="Percent"  Type="decimal" />
+      <Property Name="Sum" Type="decimal" />
+      <Property Name="CardNumber" Type="string" />
+    </Type>
+    <Type Name="PaymentInfo">
+      <Property Name="Name" Type="string" />
+      <Property Name="Sum" Type="decimal" />
+      <Property Name="IsCash" Type="bool" />
+      <Property Name="IsCard" Type="bool" />
+      <Property Name="CounteragentName" Type="string" />
+      <Property Name="CounteragentCardNumber" Type="string" />
+    </Type>
+    <Type Name="VatInfo" Comment="налог, не включенный в стоимость блюда">
+      <Property Name="VatPercent" Type="decimal" Comment="Процент налога" />
+      <Property Name="VatSum" Type="decimal" Comment="Процент сумма" />
+    </Type>
+    <Type Name="BillFooter">
+      <Property Name="Value" Type="string" />
+    </Type>
+  </Document>
+
+  <Document Name="ServiceChequesCommon">
+    <Type Name="KitchenChequeInfo" Comment="Информация о кухонном чеке">
+      <Property Name="Order" Type="OrderInfo" Comment="Сведения о заказе" />
+      <Property Name="PrinterCounter" Type="int" Comment="Счётчик печати" />
+      <Property Name="HasCourses" Type="bool" Comment="Флаг использования курсов" />
+    </Type>
+
+    <Type Name="OrderInfo" Comment="Сведения о заказе">
+      <Property Name="Number" Type="int" Comment="Номер заказа" />
+      <Property Name="TableNumber" Type="int" Comment="Номер стола" />
+      <Property Name="SectionName" Type="string" Comment="Название отделения" />
+      <Property Name="GuestsCount" Type="int" Comment="Количество гостей" />
+      <Property Name="WaiterName" Type="string" Comment="Имя официанта" />
+      <Property Name="OrderOpenTime" Type="DateTime" Comment="Время открытия заказа" />
+    </Type>
+
+    <Type Name="KitchenChequeItem" ItemName="ChequeItem" Comment="Элемент сервисного чека">
+      <Property Name="Course" Type="int" Comment="Курс блюд" />
+      <Property Name="IsWholeMix" Type="bool" Comment="Объединяет ли элемент все смиксованные блюда" />
+      <Property Name="Products" Type="KitchenChequeProduct" Collection="true" Comment="Блюда элемента" />
+    </Type>
+
+    <Type Name="KitchenChequeCourseGroup" ItemName="CourseGroup" Comment="Элементы сервисного чека с одинаковым курсом">
+      <Property Name="Course" Type="int" Comment="Курс блюд" />
+      <Property Name="ChequeItems" Type="KitchenChequeItem" Collection="true" Comment="Элементы чека" />
+    </Type>
+
+    <Type Name="KitchenChequeProduct" ItemName="Product" Comment="Блюдо сервисного чека">
+      <Property Name="Name" Type="string" Comment="Название" />
+      <Property Name="NameInMenu" Type="string" Comment="Название в меню" />
+      <Property Name="Code" Type="string" Comment="Код быстрого набора" />
+      <Property Name="BarCode" Type="string" Comment="Штрихкод" />
+      <Property Name="Amount" Type="decimal" Comment="Количество" />
+      <Property Name="CookingPlaceName" Type="string" Comment="Название места приготовления" />
+      <Property Name="GuestPlace" Type="int" Comment="Место гостя за столом" />
+      <Property Name="Modifiers" Type="KitchenChequeModifier" Collection="true" Comment="Модификаторы" />
+      <Property Name="ParentProduct" Type="string" Comment="Блюдо, модификатором для которого является данное" />
+    </Type>
+
+    <Type Name="KitchenChequeModifier" ItemName="Modifier" Comment="Модификатор в сервисном чеке">
+      <Property Name="Name" Type="string" Comment="Название" />
+      <Property Name="NameInMenu" Type="string" Comment="Название в меню" />
+      <Property Name="Code" Type="string" Comment="Код быстрого набора" />
+      <Property Name="Amount" Type="decimal" Comment="Количество" />
+      <Property Name="IsAmountAbsolute" Type="bool" Comment="Задано ли количество абсолютным значением или множителем к количеству родительского блюда" />
+      <Property Name="IsComment" Type="bool" Comment="Является ли комментарием" />
+      <Property Name="CookingPlaceName" Type="string" ItemName="SectionName" Comment="Название места приготовления" />
+    </Type>
+  </Document>
+
+  <Document Name="ServiceCheque" Comment="Сервисный чек (печать блюд)">
+    <Type Name="Service" Root="true" Comment="Сервисный чек (печать блюд)">
+      <Property Name="Settings" Type="ChequeSettings" />
+      <Property Name="Info" Type="KitchenChequeInfo" Comment="Информация о кухонном чеке" />
+      <Property Name="CourseGroups" Type="KitchenChequeCourseGroup" Collection="true" Comment="Элементы чека" />
+      <Property Name="IsRepeatedPrint" Type="bool" Comment="Флаг повторной печати блюд" />
+    </Type>
+  </Document>
+
+  <Document Name="CookingCompletedCheque" Comment="Чек завершения готовки">
+    <Type Name="CookingCompleted" Root="true" Comment="Чек завершения готовки">
+      <Property Name="Settings" Type="ChequeSettings" />
+      <Property Name="Info" Type="KitchenChequeInfo" Comment="Информация о кухонном чеке" />
+      <Property Name="CourseGroups" Type="KitchenChequeCourseGroup" Collection="true" Comment="Элементы чека" />
+    </Type>
+  </Document>
+
+  <Document Name="BanquetServiceCheque" Comment="Чек заказа на банкет">
+    <Type Name="BanquetService" Root="true" Comment="Чек заказа на банкет">
+      <Property Name="Settings" Type="ChequeSettings" />
+      <Property Name="Info" Type="KitchenChequeInfo" Comment="Информация о кухонном чеке" />
+      <Property Name="CourseGroups" Type="KitchenChequeCourseGroup" Collection="true" Comment="Элементы чека" />
+      <Property Name="IsRepeatedPrint" Type="bool" Comment="Флаг повторной печати" />
+      <Property Name="BanquetNumber" Type="int" Comment="Номер банкета" />
+    </Type>
+  </Document>
+
+  <Document Name="DeleteProductsServiceCheque" Comment="Удаление блюд">
+    <Type Name="DeleteProducts" Root="true" Comment="Удаление блюд">
+      <Property Name="Settings" Type="ChequeSettings" />
+      <Property Name="Info" Type="KitchenChequeInfo" Comment="Информация о кухонном чеке" />
+      <Property Name="CourseGroups" Type="KitchenChequeCourseGroup" Collection="true" Comment="Элементы чека" />
+      <Property Name="DeleteReason" Type="string" Comment="Причина удаления" />
+    </Type>
+  </Document>
+
+  <Document Name="DeleteModifiersServiceCheque" Comment="Удаление модификаторов">
+    <Type Name="DeleteModifiers" Root="true" Comment="Удаление модификаторов">
+      <Property Name="Settings" Type="ChequeSettings" />
+      <Property Name="Info" Type="KitchenChequeInfo" Comment="Информация о кухонном чеке" />
+      <Property Name="CourseGroups" Type="KitchenChequeCourseGroup" Collection="true" Comment="Элементы чека" />
+      <Property Name="DeleteReason" Type="string" Comment="Причина удаления" />
+    </Type>
+  </Document>
+
+  <Document Name="ProductsServeCheque" Comment="Чек подачи блюд">
+    <Type Name="ProductsServe" Root="true" Comment="Чек подачи блюд">
+      <Property Name="Settings" Type="ChequeSettings" />
+      <Property Name="Info" Type="KitchenChequeInfo" Comment="Информация о кухонном чеке" />
+      <Property Name="CourseGroups" Type="KitchenChequeCourseGroup" Collection="true" Comment="Элементы чека" />
+    </Type>
+  </Document>
+
+  <Document Name="WholeCourseServeCheque" Comment="Чек подачи всех блюд курса">
+    <Type Name="WholeCourseServe" Root="true" Comment="Чек подачи всех блюд курса">
+      <Property Name="Settings" Type="ChequeSettings" />
+      <Property Name="PrinterCounter" Type="int" Comment="Счётчик печати" />
+      <Property Name="Order" Type="OrderInfo" Comment="Информация о заказе" />
+      <Property Name="Course" Type="int" Comment="Номер курса" />
+      <Property Name="Info" Type="KitchenChequeInfo" Comment="Информация о кухонном чеке" />
+      <Property Name="ChequeItems" Type="KitchenChequeItem" Collection="true" Comment="Элементы чека" />
+    </Type>
+  </Document>
+
+  <!-- Cheques: Bill cheque -->
+
+  <Document Name="BillCheque" Comment="Пречек">
+    <Type Name="Bill" Root="true" Comment="Данные для пречека, корневой элемент">
+      <Property Name="Settings" Type="ChequeSettings" />
+      <Property Name="Extensions" Type="ChequeExtensions" />
+      <Property Name="SectionName" Type="string" Comment="Название отделения" />
+      <Property Name="TableNumber" Type="int" Comment="Номер стола" />
+      <Property Name="WaiterName" Type="string" Comment="Имя официанта" />
+      <Property Name="OrderNumber" Type="int" Comment="Номер заказа" />
+      <Property Name="OrderOpenTime" Type="DateTime" Comment="Время открытия заказа" />
+      <Property Name="FullSum" Type="decimal" Comment="Полная сумма заказа" />
+      <Property Name="SubTotal" Type="decimal" Comment="Подытог, полная сумма с учётом категориальных скидок/надбавок" />
+      <Property Name="TotalWithoutDiscounts" Type="decimal" Comment="Сумма заказа с учётом всех скидок/надбавок" />
+      <Property Name="Prepay" Type="decimal" Comment="Сумма предоплаты" />
+      <Property Name="VatSum" Type="decimal" Comment="Итоговая сумма НДС" />
+      <Property Name="Total" Type="decimal" Comment="Итоговая сумма, к оплате" />
+      <Property Name="Guests" Type="Guest" Collection="true" Comment="Гости" />
+      <Property Name="GuestCardsInfo" Type="string" Collection="true" Comment="Карты гостей" />
+      <Property Name="DiscountMarketingCampaigns" Type="DiscountMarketingCampaign" Collection="true" Comment="Маркетинговые акции для заказа" />
+      <Property Name="CategorizedDiscountsAndIncreases" Type="DiscountIncrease" Collection="true" Comment="Категориальные скидки/надбавки" />
+      <Property Name="NonCategorizedDiscountsAndIncreases" Type="DiscountIncrease" Collection="true" Comment="Некатегориальные скидки/надбавки" />
+      <Property Name="IsAdditionalServiceCheque" Type="bool" Comment="Нужно ли в пречеке место для подписи гостя" />
+      <Property Name="AdditionalServiceInfo" Type="AdditionalService" Comment="Промежуточная квитанция дозаказа" />
+      <Property Name="Vats" Type="VatItem" Collection="true" Comment="Налоги" />
+    </Type>
+
+    <Type Name="DiscountMarketingCampaign" Comment="Маркетинговая акция">
+      <Property Name="Name" Type="string" Comment="Название акции" />
+      <Property Name="TotalDiscount" Type="decimal" Comment="Полная скидка по всем операциям" />
+      <Property Name="BillComment" Type="string" Comment="Комментарий для чека" />
+      <Property Name="Operations" Type="DiscountMarketingCampaignOperation" Collection="true" Comment="Операции" />
+    </Type>
+
+    <Type Name="DiscountMarketingCampaignOperation" Comment="Скидка по маркетинговой акции">
+      <Property Name="Name" Type="string" Comment="Название продукта" />
+      <Property Name="Discount" Type="decimal" Comment="Скидка по продукту" />
+      <Property Name="Comment" Type="string" Comment="Комментарий, описывающий происхождение значения скидки" />
+    </Type>
+
+    <Type Name="Guest" Comment="Гость">
+      <Property Name="Name" Type="string" Comment="Имя" />
+      <Property Name="Subtotal" Type="decimal" Comment="Подытог, сумма гостя с учётом категориальных скидок/надбавок" />
+      <Property Name="Total" Type="decimal" Comment="Итого по гостю с учётом всех скидок/надбавок" />
+      <Property Name="Products" Type="Product" Collection="true" Comment="Заказанные блюда" />
+      <Property Name="NonCategorisedDiscountsAndIncreases" Type="DiscountIncrease" Collection="true" Comment="Некатегориальные скидки/надбавки" />
+    </Type>
+
+    <Type Name="Product" Comment="Блюдо">
+      <Property Name="Name" Type="string" Comment="Название" />
+      <Property Name="Amount" Type="decimal" Comment="Количество" />
+      <Property Name="Sum" Type="decimal" Comment="Стоимость" />
+      <Property Name="Modifiers" Type="Modifier" Collection="true" Comment="Модификаторы" />
+      <Property Name="CategorisedDiscountsAndIncreases" Type="DiscountIncrease" Collection="true" Comment="Категориальные скидки/надбавки" />
+      <Property Name="CommentExists" Type="bool" Comment="Есть комментарий" />
+      <Property Name="Comment" Type="string" Comment="Комментарий к блюду" />
+    </Type>
+
+    <Type Name="Modifier" Comment="Модификатор">
+      <Property Name="Name" Type="string" Comment="Название" />
+      <Property Name="Amount" Type="decimal" Comment="Количество" />
+      <Property Name="Sum" Type="decimal" Comment="Стоимость" />
+      <Property Name="CategorisedDiscountsAndIncreases" Type="DiscountIncrease" Collection="true" Comment="Категориальные скидки/надбавки" />
+    </Type>
+
+    <Type Name="DiscountIncrease" Comment="Скидка/надбавка">
+      <Property Name="IsDiscount" Type="bool" Comment="Является ли скидкой" />
+      <Property Name="PrintDetailed" Type="bool" Comment="Нужно ли детализировать в пречеке" />
+      <Property Name="Name" Type="string" Comment="Название" />
+      <Property Name="Percent" Type="decimal" Comment="Процент" />
+      <Property Name="Sum" Type="decimal" Comment="Сумма" />
+      <!-- Obsolete -->
+      <Property Name="SumString" Type="string" Comment="Сумма строкой" />
+      <Property Name="DescriptionString" Type="string" Comment="Описание для подвала" />
+      <Property Name="DescriptionStringForOrderItem" Type="string" Comment="Описание для блюда/модификатора" />
+    </Type>
+
+    <Type Name="VatItem" Comment="налог, не включенный в стоимость блюда">
+      <Property Name="VatPercent" Type="decimal" Comment="Процент налога" />
+      <Property Name="VatSum" Type="decimal" Comment="Процент сумма" />
+    </Type>
+
+    <Type Name="AdditionalService" Comment="Промежуточная квитанция дозаказа">
+      <Property Name="ClientBindCardInfo" Type="string" Comment="Привязанная к заказу карты гостей" />
+      <Property Name="AdditionalSum" Type="decimal" Comment="Итого добавлено" />
+      <Property Name="HasLimitSum" Type="bool" Comment="Есть ли лимит" />
+      <Property Name="LimitLeftSum" Type="decimal" Comment="Oсталось до лимита" />
+    </Type>
+  </Document>
+
+  <!-- Cheques: Cash cheques -->
+
+  <Document Name="CashChequesCommon">
+    <Type Name="CashChequeInfo" Comment="Информация о квитанциях">
+      <Property Name="IsForReport" Type="bool" />
+      <Property Name="CafeSessionNumber" Type="int" Comment="Номер смены" />
+      <Property Name="CafeSessionOpenTime" Type="DateTime" Comment="Время открытия кассовой смены" />
+      <Property Name="CashRegisterNumber" Type="int" Comment="Номер ФРа" />
+      <Property Name="CashierName" Type="string" Comment="Имя кассира" />
+      <Property Name="OperationTime" Type="DateTime" Comment="Текущее время" />
+    </Type>
+  </Document>
+
+  <Document Name="ReceiptCheque" Comment="Квитанция об оплате/возврате">
+    <Type Name="Receipt" Root="true" Comment="Оплата/возврат">
+      <Property Name="Settings" Type="ChequeSettings" />
+      <Property Name="Info" Type="CashChequeInfo" />
+      <Property Name="IsFullCheque" Type="bool" />
+      <Property Name="IsStorno" Type="bool" />
+      <Property Name="OrderNumber" Type="int" />
+      <Property Name="Sum" Type="decimal" />
+      <Property Name="VatSum" Type="decimal" Comment="Итоговая сумма НДС" />
+      <Property Name="ResultSum" Type="decimal" />
+      <Property Name="PaymentsSum" Type="decimal" />
+      <Property Name="ChangeSum" Type="decimal" />
+      <Property Name="HasMultiplePayments" Type="bool" />
+      <Property Name="Sales" Type="ReceiptSale" ItemName="Sale" Collection="true" />
+      <Property Name="Increases" Type="NonCategorialDiscountIncrease" ItemName="DiscountIncrease" Collection="true" />
+      <Property Name="Discounts" Type="NonCategorialDiscountIncrease" ItemName="DiscountIncrease" Collection="true" />
+      <Property Name="Prepays" Type="ReceiptPayment" ItemName="Prepay" Collection="true" />
+      <Property Name="Payments" Type="ReceiptPayment" Collection="true" />
+      <Property Name="BeforeCheque" Type="XElement" Collection="true" />
+      <Property Name="AfterCheque" Type="XElement" Collection="true" />
+      <Property Name="TableNumber" Type="int" Comment="Номер стола" />
+      <Property Name="SectionName" Type="string" Comment="Название отделения" />
+      <Property Name="GuestsAmount" Type="int" Comment="Количество гостей" />
+      <Property Name="WaiterName" Type="string" Comment="Имя официанта" />
+      <Property Name="Vats" Type="ReceiptVat" Collection="true" />
+    </Type>
+
+    <Type Name="NonCategorialDiscountIncrease" Comment="Некатегориальная скидка/надбавка">
+      <Property Name="SimpleCorrectionItem" Type="SimpleCorrectionItem" />
+      <Property Name="DiscountCardItem" Type="DiscountCardItem" />
+    </Type>
+
+    <Type Name="SimpleCorrectionItem" Comment="Ручная скидка/надбавка">
+      <Property Name="Name" Type="string" Comment="Название" />
+      <Property Name="Percent" Type="decimal" Comment="Процент" />
+      <Property Name="Price" Type="decimal" Comment="Значение" />
+    </Type>
+
+    <Type Name="DiscountCardItem" Comment="Скидка/надбавка по карте">
+      <Property Name="Name" Type="string" Comment="Название" />
+      <Property Name="Percent" Type="decimal" Comment="Процент" />
+      <Property Name="Price" Type="decimal" Comment="Значение" />
+      <Property Name="CardNumber" Type="string" Comment="Номер карты" />
+    </Type>
+
+    <Type Name="ReceiptSale" Comment="Элемент продаж">
+      <Property Name="Name" Type="string" Comment="Название" />
+      <Property Name="Amount" Type="decimal" Comment="Количество" />
+      <Property Name="Price" Type="decimal" Comment="Цена" />
+      <Property Name="Sum" Type="decimal" Comment="Сумма" />
+      <Property Name="Increase" Type="decimal" Comment="Процент надбавки" />
+      <Property Name="IncreaseSum" Type="decimal" Comment="Сумма надбавки" />
+      <Property Name="Discount" Type="decimal" Comment="Процент скидки" />
+      <Property Name="DiscountSum" Type="decimal" Comment="Сумма скидки" />
+    </Type>
+
+    <Type Name="ReceiptPayment" ItemName="Payment" Comment="Платёж">
+      <Property Name="Name" Type="string" Comment="Название" />
+      <Property Name="Sum" Type="decimal" Comment="Сумма" />
+      <Property Name="Comment" Type="string" Comment="Коментарий" />
+      <Property Name="IsFiscal" Type="bool" Comment="Фискальный ли тип" />
+      <Property Name="ChequeNumber" Type="int" Comment="Номер чека для платежа" />
+    </Type>
+
+    <Type Name="ReceiptVat" Comment="налог, не включенный в стоимость блюда">
+      <Property Name="VatPercent" Type="decimal" Comment="Процент налога" />
+      <Property Name="VatSum" Type="decimal" Comment="Процент сумма" />
+    </Type>
+  </Document>
+
+  <Document Name="PayInOutCheque" Comment="Квитанция о внесении/изъятии">
+    <Type Name="PayInOut" Root="true" Comment="Внесение/изъятие">
+      <Property Name="Settings" Type="ChequeSettings" />
+      <Property Name="Info" Type="CashChequeInfo" Comment="Информация о квитанциях" />
+      <Property Name="Sum" Type="decimal" Comment="Сумма" />
+      <Property Name="IsPayIn" Type="bool" Comment="Флаг внесения" />
+      <Property Name="IsChangePayIn" Type="bool" />
+      <Property Name="Comment" Type="string" Comment="Комментарий" />
+      <Property Name="EventTypeName" Type="string" />
+      <Property Name="AccountName" Type="string" Comment="Название счёта" />
+    </Type>
+  </Document>
+
+  <Document Name="PrepayCheque" Comment="Квитанция о предоплате">
+    <Type Name="Prepay" Root="true" Comment="Предоплата">
+      <Property Name="Settings" Type="ChequeSettings" />
+      <Property Name="Info" Type="CashChequeInfo" Comment="Информация о квитанциях" />
+      <Property Name="Sum" Type="decimal" Comment="Сумма" />
+      <Property Name="IsReturn" Type="bool" Comment="Флаг возврата" />
+      <Property Name="WaiterName" Type="string" Comment="Имя официанта" />
+      <Property Name="OrderNumber" Type="int" Comment="Номер заказа" />
+      <Property Name="PaymentTypeName" Type="string" Comment="Название типа оплаты" />
+    </Type>
+  </Document>
+
+  <!-- Cheques: Tables reserve -->
+  <Document Name="TablesReserveInfo" Comment="Табличка о зарезервированных столах">
+    <Type Name="TablesReserve" Root="true" Comment="Данные для таблички о зарезервированных столах, корневой элемент">
+      <Property Name="Settings" Type="ChequeSettings" />
+      <Property Name="Type" Type="string" Comment="Резерв или банкет" />
+      <Property Name="Number" Type="int" Comment="Номер резерва (банкета)" />
+      <Property Name="StartTime" Type="DateTime" Comment="Время начала банкета" />
+      <Property Name="EndTime" Type="DateTime" Comment="Время завершения банкета" />
+      <Property Name="StartDayOfWeekName" Type="string" Comment="День недели даты начала банкета" />
+      <Property Name="Sections" Type="ReservedSection" Collection="true" ItemName="Section" Comment="Залы" />
+      <Property Name="GuestsCount" Type="int" Comment="Количество гостей" />
+      <Property Name="ActivityType" Type="string" Comment="Тип мероприятия" />
+      <Property Name="Comment" Type="string" Comment="Комментарий" />
+      <Property Name="Customer" Type="Customer" Comment="Клиент" />
+    </Type>
+
+    <Type Name="ReservedSection" Comment="Зарезервированный зал">
+      <Property Name="Name" Type="string" Comment="Название зала" />
+      <Property Name="Tables" Type="string" Comment="Зарезервированные столы" />
+    </Type>
+
+    <Type Name="Customer" Comment="Клиент">
+      <Property Name="Name" Type="string" Comment="Имя" />
+      <Property Name="Surname" Type="string" Comment="Фамилия" />
+      <Property Name="PhoneNumbers" Type="string" Collection="true" Comment="Номера телефонов" />
+      <Property Name="DiscountCardType" Type="string" Comment="Тип скидочной карты" />
+      <Property Name="Comment" Type="string" Comment="Дополнительные сведения" />
+    </Type>
+  </Document>
+
+  <Document Name="CashMemoCheque" Comment="Товарный чек">
+    <Type Name="CashMemo" Root="true" Comment="Товарный чек">
+      <Property Name="Settings" Type="ChequeSettings" />
+      <Property Name="Info" Type="CashChequeInfo" />
+      <Property Name="OrderNumber" Type="int" />
+      <!-- TODO: унифицировать эти поля с другими чеками -->
+      <Property Name="WaiterName" Type="string" Comment="Имя официанта" />
+      <Property Name="TableNumber" Type="int" Comment="Номер стола" />
+      <Property Name="ItemsCount" Type="int" />
+      <Property Name="ChangeSum" Type="decimal" Comment="Сдача" />
+      <Property Name="ResultSum" Type="decimal" Comment="Итоговая сумма" />
+      <Property Name="VatSum" Type="decimal" Comment="Итоговая сумма без НДС" />
+      <Property Name="SubTotal" Type="decimal" Comment="Подытог" />
+
+      <Property Name="Prepays" Type="CashMemoChequePaymentItem" ItemName="Prepay" Collection="true" />
+      <Property Name="Payments" Type="CashMemoChequePaymentItem" ItemName="Payment" Collection="true" />
+      <Property Name="Products" Type="CashMemoChequeProductItem" ItemName="Product" Collection="true" />
+      <Property Name="Discounts" Type="CashMemoChequeDiscountItem" ItemName="Discount" Collection="true" />
+      <Property Name="Vats" Type="CashMemoChequeVatItem" ItemName="Vat" Collection="true" />
+    </Type>
+
+    <Type Name="CashMemoChequePaymentItem">
+      <Property Name="Name" Type="string" Comment="Название типа оплаты" />
+      <Property Name="Sum" Type="decimal" />
+    </Type>
+    <Type Name="CashMemoChequeProductItem" Comment="Элемент заказа">
+      <Property Name="Name" Type="string" Comment="Название товара" />
+      <Property Name="Amount" Type="decimal" Comment="Количество" />
+      <Property Name="Price" Type="decimal" Comment="Цена за единицу количества" />
+      <Property Name="Sum" Type="decimal" Comment="Сумма" />
+      <Property Name="MeasuringUnitName" Type="string" Comment="Название единицы измерения" />
+      <Property Name="Discounts" Type="CashMemoChequeDiscountItem" ItemName="Discount" Collection="true" />
+      <Property Name="Modifiers" Type="CashMemoChequeModifierItem" ItemName="Modifier" Collection="true" />
+      <Property Name="CommentExists" Type="bool" Comment="Есть комментарий" />
+      <Property Name="Comment" Type="string" Comment="Комментарий к блюду" />
+    </Type>
+    <Type Name="CashMemoChequeModifierItem" Comment="Модификатор товара">
+      <Property Name="Name" Type="string" Comment="Название модификатора" />
+      <Property Name="Amount" Type="decimal" Comment="Количество" />
+      <Property Name="Price" Type="decimal" Comment="Цена за единицу количества" />
+      <Property Name="Sum" Type="decimal" Comment="Сумма" />
+      <Property Name="MeasuringUnitName" Type="string" Comment="Название единицы измерения" />
+    </Type>
+    <Type Name="CashMemoChequeDiscountItem" Comment="Скидка">
+      <Property Name="Name" Type="string" Comment="Название скидки" />
+      <Property Name="CardNumber" Type="string" Comment="Номер скидочной карты, если есть" />
+      <Property Name="Sum" Type="decimal" Comment="Сумма скидки" />
+      <Property Name="Percent" Type="decimal" Comment="Процент скидки" />
+    </Type>
+    <Type Name="CashMemoChequeVatItem" Comment="Налог, не включенный в стоимость блюда">
+      <Property Name="VatPercent" Type="decimal" Comment="Процент налога" />
+      <Property Name="VatSum" Type="decimal" Comment="Процент сумма" />
+    </Type>
+  </Document>
+
+  <!-- iikoCard cheque -->
+  <Document Name="IikoCardCheque" Comment="Чек iikoCard">
+    <Type Name="IikoCard" Root="true" Comment="Чек iikoCard">
+      <Property Name="Settings" Type="ChequeSettings" />
+      <Property Name="CardInfo" Type="IikoCardInfo" Comment="Информация об операции и картой" />
+      <Property Name="HasOrder" Type="bool"  Comment="Есть ли заказ у чека" />
+      <Property Name="Order" Type="OrderInfo" Comment="Информация о заказе" />
+      <Property Name="IsSuccessful" Type="bool" Comment="Успешна ли операция" />
+    </Type>
+
+    <Type Name="IikoCardInfo" Comment="Общая информация iikoCard">
+      <Property Name="CardOwner" Type="string" Comment="Владелец карты" />
+      <Property Name="CardNumber" Type="string" Comment="Номер карты" />
+      <Property Name="Amount" Type="decimal" Comment="Сумма операции" />
+      <Property Name="OperationName" Type="string" Comment="Название операции, отображаемое на чеке" />
+      <Property Name="HasSignature" Type="bool" Comment="Имеет ли чек место для подписи покупателем" />
+      <Property Name="HasAmount" Type="bool" Comment="Имеет ли чек строку с суммой операции" />
+      <Property Name="IsPayment" Type="bool" Comment="Является ли оплатой" />
+      <Property Name="HasOperationIds" Type="bool" Comment="Отображать идентификаторы операций" />
+      <Property Name="OperationNumTitle" Type="string" Comment="Название серверного номера операции, отображаемое на чеке" />
+      <Property Name="RequestNumTitle" Type="string" Comment="Название клиентского номера операции (контрольного кода), отображаемое на чеке" />
+
+      <Property Name="ChequeRows" Type="IikoCardRow" Collection="true" Comment="Данные с сервера iikoCard" />
+      <Property Name="OperationId" Type="string"  Comment="Серверный номер операции" />
+      <Property Name="RequestId" Type="string"  Comment="Клиентский номер операции (контрольный код)" />
+      <Property Name="HostTime" Type="DateTime"  Comment="Дата и время на сервере" />
+      <Property Name="HasHostTime" Type="bool"  Comment="Есть ли дата и время на сервере" />
+      <Property Name="ErrorString" Type="string"  Comment="Описание ошибки" />
+
+      <Property Name="CashierName" Type="string"  Comment="Имя кассира" />
+      <Property Name="Terminal" Type="string"  Comment="Терминал" />
+    </Type>
+
+    <Type Name="IikoCardRow" Comment="Пары, получаемые с сервера">
+      <Property Name="Name" Type="string" Comment="Имя" />
+      <Property Name="Value" Type="decimal" Comment="Значение" />
+      <Property Name="Lines" Type="string" Comment="Дополнительные строки" />
+      <Property Name="HasLines" Type="bool" Comment="Есть ли дополнительные строки" />
+    </Type>
+  </Document>
+
+  <Document Name="IikoCardShortCheque" Comment="Чек iikoCard">
+    <Type Name="IikoCardShort" Root="true" Comment="Чек iikoCard для встравания в чек оплаты">
+      <Property Name="CardInfo" Type="IikoCardInfo" Comment="Информация об операции и картой" />
+      <Property Name="Settings" Type="ChequeSettings" />
+    </Type>
+  </Document>
+
+</Root>

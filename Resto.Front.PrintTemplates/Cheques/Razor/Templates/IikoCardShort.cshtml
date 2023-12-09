@@ -1,0 +1,50 @@
+﻿@inherits Resto.Front.PrintTemplates.Cheques.Razor.TemplateBase<Resto.Front.PrintTemplates.Cheques.Razor.TemplateModels.IIikoCardShortCheque>
+
+@{ var cardInfo = Model.CardInfo; }
+
+<doc>
+  <left>
+    <wrap>
+      @Resources.IikoCardCardNumber@cardInfo.CardNumber
+    </wrap>
+  </left>
+
+  <left>
+    <wrap>
+      @Resources.IikoCardCardOwner@cardInfo.CardOwner
+    </wrap>
+  </left>
+
+  <left>
+    <wrap>
+      @Resources.IikoCardRowSum@FormatMoney(cardInfo.Amount)
+    </wrap>
+  </left>
+
+  @foreach (var row in cardInfo.ChequeRows)
+  {
+    <left>
+      <wrap>
+        @row.Name@FormatMoney(row.Value)
+      </wrap>
+    </left>
+    if (!string.IsNullOrWhiteSpace(row.Lines))
+    {
+      <left>
+        <wrap>
+          @row.Lines
+        </wrap>
+      </left>
+    }
+  }
+
+  @* Дата хоста *@
+  @if (cardInfo.HostTime.HasValue)
+  {
+    <left>
+      <wrap>
+        @Resources.IikoCardFooterOperationDate@FormatFullDateTime(cardInfo.HostTime.Value)
+      </wrap>
+    </left>
+  }
+</doc>

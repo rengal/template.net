@@ -1,0 +1,593 @@
+﻿@using System
+@using System.Collections.Generic
+@using System.Linq
+@using Resto.Front.PrintTemplates.Reports
+@using Resto.Front.PrintTemplates.Reports.TemplateModels
+@using Resto.Front.PrintTemplates.RmsEntityWrappers
+
+@* 015 Краткий отчет по открытым заказам и продажам в разрезе залов *@
+@inherits TemplateBase
+@{
+    var ordersBoundToNonStartedReserves = Model.Entities.GetAllReserves()
+        .Where(r => r.Status == ReserveStatus.New)
+        .Select(r => r.Order)
+        .Where(o => o != null);
+
+    var ordersBySections = Model.Entities.GetAllOrders()
+        .Where(o => !ordersBoundToNonStartedReserves.Contains(o))
+        .ToLookup(o => o.Table.Section)
+        .ToDictionary(sectionOrders => sectionOrders.Key, sectionOrders => sectionOrders.ToList());
+
+    var sections = Model.Entities.GetAllNotDeletedSectionsWithAnyTablesByGroup(Model.Group)
+        .Except(ordersBySections.Keys)
+        .ToList();
+
+    AddRange(ordersBySections, sections.Select(s => new KeyValuePair<IRestaurantSection, List<IOrder>>(s, new List<IOrder>())));
+
+    openOrdersSummary.SetData(ordersBySections);
+    closedOrdersSummary.SetData(ordersBySections);
+    allOrdersSummary.SetData(openOrdersSummary, closedOrdersSummary);
+    dishDeletingSummary.SetData(ordersBySections);
+    discountsSummary.SetData(ordersBySections);
+}
+
+@if (!Model.IsOnlyBodyMarkupRequired)
+{
+    <doc formatter="split">
+        @Header()
+        @Body()
+        @Footer()
+    </doc>
+}
+else
+{
+    <doc formatter="split">
+        @Body()
+    </doc>
+}
+
+@helper Header()
+{
+    var terminalName = Model.CashRegister != null
+        ? string.Format(Resources.TerminalNumberNamePattern, Model.CashRegister.Number, Model.Group.Name)
+        : string.Format(Resources.TerminalNamePattern, Model.CurrentTerminal, Model.Group.Name);
+
+    foreach (var headerLine in Model.CafeSetup.ReportHeader.Split(Environment.NewLine.ToCharArray()))
+    {
+        <left>
+            <whitespace-preserve>@headerLine</whitespace-preserve>
+        </left>
+    }
+
+    <np />
+    <center>@Model.Name</center>
+    <np />
+    <pair fit="left" left="@Resources.HeadTerminal" right="@terminalName" />
+
+    <pair left="@Resources.HeadCurrentTime" right="@FormatLongDateTime(Model.CurrentTime)" />
+    <table>
+        <columns>
+            <column autowidth="" />
+            <column align="right" />
+        </columns>
+        <cells>
+            <ct>@Resources.HeadCurrentUser</ct>
+            <ct>@(Model.CurrentUser == null ? string.Empty : Model.CurrentUser.Name)</ct>
+        </cells>
+    </table>
+}
+
+@helper Body()
+{
+    @GetSection1OpenOrdersMarkup()
+    @GetSection2ClosedOrdersMarkup()
+    @GetSection3AllOrdersMarkup()
+    @GetSection4DishDeletingMarkup()
+    @GetSection5DiscountsMarkup()
+    <line symbols="=" />
+}
+
+@helper Footer()
+{
+    <np />
+    <center>
+        @string.Format(Resources.AllSumsInFormat, Model.CafeSetup.CurrencyName)
+    </center>
+    <np />
+}
+
+@helper GetSection1OpenOrdersMarkup()
+{
+    <line symbols="=" />
+    <left>@Resources.OrdersSummaryReportSection1Title</left>
+    <left>@Resources.OrdersSummaryReportSection1Subtitle</left>
+    <table>
+        <columns>
+            <column formatter="split" />
+            <column align="right" autowidth="" />
+            <column align="right" autowidth="" />
+            <column align="right" autowidth="" />
+        </columns>
+        <cells>
+            <linecell symbols="-" />
+            <ct>@Resources.Section</ct>
+            <ct>@Resources.Orders</ct>
+            <ct>@Resources.Clients</ct>
+            <ct>@Resources.Sum</ct>
+            <linecell symbols="-" />
+            @foreach (var sectionData in openOrdersSummary.BySection.OrderBy(x => x.Key.Name))
+            {
+                <ct>@sectionData.Key.Name</ct>
+                <ct>@sectionData.Value.OrdersCount</ct>
+                <ct>@sectionData.Value.GuestsCount</ct>
+                <ct>@FormatPrice(sectionData.Value.Sum)</ct>
+            }
+            <linecell symbols="-" />
+            <c colspan="1">@Resources.SectionTotal</c>
+            <ct>@openOrdersSummary.Total.OrdersCount</ct>
+            <ct>@openOrdersSummary.Total.GuestsCount</ct>
+            <ct>@FormatPrice(openOrdersSummary.Total.Sum)</ct>
+        </cells>
+    </table>
+    <np />
+}
+
+@helper GetSection2ClosedOrdersMarkup()
+{
+    <line symbols="=" />
+    <left>@Resources.OrdersSummaryReportSection2Title</left>
+    <table>
+        <columns>
+            <column formatter="split" />
+            <column align="right" autowidth="" />
+            <column align="right" autowidth="" />
+            <column align="right" autowidth="" />
+        </columns>
+        <cells>
+            <linecell symbols="-" />
+            <ct>@Resources.Section</ct>
+            <ct>@Resources.AverageSumPerCheque</ct>
+            <ct>@Resources.AverageSumPerClient</ct>
+            <ct>@Resources.Sum</ct>
+            <linecell symbols="-" />
+            @foreach (var sectionData in closedOrdersSummary.BySection.OrderBy(x => x.Key.Name))
+            {
+                <ct>@sectionData.Key.Name</ct>
+                <ct>@FormatPrice(sectionData.Value.AverageSumPerCheque)</ct>
+                <ct>@FormatPrice(sectionData.Value.AverageSumPerGuest)</ct>
+                <ct>@FormatPrice(sectionData.Value.Sum)</ct>
+            }
+            <linecell symbols="-" />
+            <c colspan="1">@Resources.SectionTotal</c>
+            <ct>@FormatPrice(closedOrdersSummary.Total.AverageSumPerCheque)</ct>
+            <ct>@FormatPrice(closedOrdersSummary.Total.AverageSumPerGuest)</ct>
+            <ct>@FormatPrice(closedOrdersSummary.Total.Sum)</ct>
+        </cells>
+    </table>
+    <np />
+}
+
+@helper GetSection3AllOrdersMarkup()
+{
+    <line symbols="=" />
+    <left>@Resources.OrdersSummaryReportSection3Title</left>
+    <table>
+        <columns>
+            <column formatter="split" />
+            <column align="right" autowidth="" />
+        </columns>
+        <cells>
+            <linecell symbols="-" />
+            <ct>@Resources.Section</ct>
+            <ct>@Resources.Sum</ct>
+            <linecell symbols="-" />
+            @foreach (var sectionData in allOrdersSummary.BySection.OrderBy(x => x.Key.Name))
+            {
+                <ct>@sectionData.Key.Name</ct>
+                <ct>@FormatPrice(sectionData.Value)</ct>
+            }
+            <linecell symbols="-" />
+            <c colspan="1">@Resources.SectionTotal</c>
+            <ct>@FormatPrice(allOrdersSummary.Sum)</ct>
+        </cells>
+    </table>
+    <np />
+}
+
+@helper GetSection4DishDeletingMarkup()
+{
+    <line symbols="=" />
+    <left>@Resources.OrdersSummaryReportSection4Title</left>
+    <left>@string.Format(Resources.OrdersSummaryReportSection4Subtitle, TemplateHelpers.GetGenetiveMany())</left>
+    <table>
+        <columns>
+            <column formatter="split" />
+            <column align="right" autowidth="" />
+            <column align="right" autowidth="" />
+        </columns>
+        <cells>
+            <linecell symbols="-" />
+            <ct>@Resources.Section</ct>
+            <ct>@Resources.PrintedDishes</ct>
+            <ct>@Resources.NonPrintedDishes</ct>
+            <linecell symbols="-" />
+            @foreach (var sectionData in dishDeletingSummary.BySection.OrderBy(x => x.Key.Name))
+            {
+                <ct>@sectionData.Key.Name</ct>
+                <ct>@SumPerAmount(sectionData.Value.PrintedDishesSum, sectionData.Value.PrintedDishesAmount)</ct>
+                <ct>@SumPerAmount(sectionData.Value.NonPrintedDishesSum, sectionData.Value.NonPrintedDishesAmount)</ct>
+            }
+            <linecell symbols="-" />
+            <c colspan="1">@Resources.Average</c>
+            <ct>@SumPerAmount(dishDeletingSummary.Total.PrintedDishesSum, dishDeletingSummary.Total.PrintedDishesAmount)</ct>
+            <ct>@SumPerAmount(dishDeletingSummary.Total.NonPrintedDishesSum, dishDeletingSummary.Total.NonPrintedDishesAmount)</ct>
+        </cells>
+    </table>
+    <np />
+}
+
+@helper GetSection5DiscountsMarkup()
+{
+    <line symbols="=" />
+    <left>@Resources.OrdersSummaryReportSection5Title</left>
+    <left>@Resources.OrdersSummaryReportSection5Subtitle</left>
+    <table>
+        <columns>
+            <column formatter="split" />
+            <column align="right" autowidth="" />
+            <column align="right" autowidth="" />
+        </columns>
+        <cells>
+            <linecell symbols="-" />
+            <ct>@Resources.Section</ct>
+            <ct>@Resources.Orders</ct>
+            <ct>@Resources.AverageDiscount</ct>
+            <linecell symbols="-" />
+            @foreach (var sectionData in discountsSummary.BySection.OrderBy(x => x.Key.Name))
+            {
+                <ct>@sectionData.Key.Name</ct>
+                <ct>@CountOfTotalCount(sectionData.Value.OrdersWithDiscountsCount, sectionData.Value.AllOrdersCount)</ct>
+                <ct>@FormatAveragePercent(sectionData.Value.AverageDiscount)</ct>
+            }
+            <linecell symbols="-" />
+            <c colspan="2">@Resources.Section5Summary</c>
+            <ct>@FormatAveragePercent(discountsSummary.AverageDiscount)</ct>
+        </cells>
+    </table>
+    <np />
+}
+
+@functions
+{
+    private readonly OpenOrdersData openOrdersSummary = new OpenOrdersData();
+    private readonly ClosedOrdersData closedOrdersSummary = new ClosedOrdersData();
+    private readonly AllOrdersData allOrdersSummary = new AllOrdersData();
+    private readonly DishDeletingData dishDeletingSummary = new DishDeletingData();
+    private readonly DiscountsData discountsSummary = new DiscountsData();
+
+    private sealed class OpenOrdersData
+    {
+        internal sealed class StringData
+        {
+            internal int OrdersCount { get; set; }
+            internal int GuestsCount { get; set; }
+            internal decimal Sum { get; set; }
+        }
+
+        internal Dictionary<IRestaurantSection, StringData> BySection { get; private set; }
+        internal StringData Total { get; private set; }
+
+        internal OpenOrdersData()
+        {
+            BySection = new Dictionary<IRestaurantSection, StringData>();
+            Total = new StringData();
+        }
+
+        private void Clear()
+        {
+            BySection.Clear();
+
+            Total.OrdersCount = 0;
+            Total.GuestsCount = 0;
+            Total.Sum = 0m;
+        }
+
+        internal void SetData(Dictionary<IRestaurantSection, List<IOrder>> ordersBySections)
+        {
+            Clear();
+
+            var stringsData =
+                from ordersBySection in ordersBySections
+                let sectionName = ordersBySection.Key
+                let orders = ordersBySection.Value
+                    .Where(order => order.Status == OrderStatus.New ||
+                                    order.Status == OrderStatus.Bill ||
+                                    order.Status == OrderStatus.Closing)
+                    .ToList()
+                let data = new StringData
+                {
+                    OrdersCount = orders.Count,
+                    GuestsCount = orders.Sum(o => o.InitialGuestsCount),
+                    Sum = orders.Sum(o => o.GetResultSum())
+                }
+                select new KeyValuePair<IRestaurantSection, StringData>(sectionName, data);
+
+            AddRange(BySection, stringsData);
+
+            Total.OrdersCount = BySection.Values.Sum(s => s.OrdersCount);
+            Total.GuestsCount = BySection.Values.Sum(s => s.GuestsCount);
+            Total.Sum = BySection.Values.Sum(s => s.Sum);
+        }
+    }
+
+    private sealed class ClosedOrdersData
+    {
+        internal sealed class SectionData
+        {
+            internal decimal AverageSumPerCheque { get; set; }
+            internal decimal AverageSumPerGuest { get; set; }
+            internal decimal Sum { get; set; }
+        }
+
+        internal Dictionary<IRestaurantSection, SectionData> BySection { get; private set; }
+        internal SectionData Total { get; private set; }
+
+        internal ClosedOrdersData()
+        {
+            BySection = new Dictionary<IRestaurantSection, SectionData>();
+            Total = new SectionData();
+        }
+
+        private void Clear()
+        {
+            BySection.Clear();
+
+            Total.AverageSumPerCheque = 0m;
+            Total.AverageSumPerGuest = 0m;
+            Total.Sum = 0m;
+        }
+
+        internal void SetData(Dictionary<IRestaurantSection, List<IOrder>> ordersBySections)
+        {
+            Clear();
+
+            var filteredOrdersBySections = ordersBySections
+                .Select(ordersBySection => new
+                {
+                    Section = ordersBySection.Key,
+                    Orders = ordersBySection.Value
+                        .Where(order => order.Status == OrderStatus.Closed)
+                        .Select(order => new { GuestsCount = order.InitialGuestsCount, RevenueSum = GetOrderRevenueSum(order) })
+                        .ToList()
+                })
+                .ToList();
+
+            var stringsData =
+                from ordersBySection in filteredOrdersBySections
+                let ordersSum = ordersBySection.Orders.Sum(order => order.RevenueSum)
+                let data = new SectionData
+                {
+                    AverageSumPerCheque = AverageOrDefault(ordersBySection.Orders.Select(order => order.RevenueSum)),
+                    AverageSumPerGuest = CalulateAverageOrDefault(ordersSum, ordersBySection.Orders.Sum(order => order.GuestsCount)),
+                    Sum = ordersSum
+                }
+                select new KeyValuePair<IRestaurantSection, SectionData>(ordersBySection.Section, data);
+
+            AddRange(BySection, stringsData);
+
+            var orders = filteredOrdersBySections
+            .SelectMany(ordersBySection => ordersBySection.Orders)
+            .ToList();
+
+            Total.AverageSumPerCheque = AverageOrDefault(orders.Select(order => order.RevenueSum));
+            Total.Sum = orders.Sum(order => order.RevenueSum);
+            Total.AverageSumPerGuest = CalulateAverageOrDefault(Total.Sum, orders.Sum(order => order.GuestsCount));
+        }
+
+        private static decimal CalulateAverageOrDefault(decimal total, int count)
+        {
+            return count == 0 ? 0m : total / count;
+        }
+
+        private static decimal GetOrderRevenueSum(IOrder order)
+        {
+            return order.CloseInfo.WriteoffItem != null ? 0m : order.GetResultSum();
+        }
+    }
+
+    private sealed class AllOrdersData
+    {
+        internal Dictionary<IRestaurantSection, decimal> BySection { get; private set; }
+        internal decimal Sum { get; private set; }
+
+        internal AllOrdersData()
+        {
+            BySection = new Dictionary<IRestaurantSection, decimal>();
+        }
+
+        private void Clear()
+        {
+            BySection.Clear();
+
+            Sum = 0m;
+        }
+
+        internal void SetData(OpenOrdersData openOrdersSummary, ClosedOrdersData closedOrdersSummary)
+        {
+            Clear();
+
+            var stringsData =
+                from openOrdersBySection in openOrdersSummary.BySection
+                join closedOrdersBySection in closedOrdersSummary.BySection
+                    on openOrdersBySection.Key equals closedOrdersBySection.Key
+                let data = new
+                {
+                    Section = openOrdersBySection.Key,
+                    OpenOrdersSum = openOrdersBySection.Value.Sum,
+                    ClosedOrdersSum = closedOrdersBySection.Value.Sum
+                }
+                select new KeyValuePair<IRestaurantSection, decimal>(data.Section, data.OpenOrdersSum + data.ClosedOrdersSum);
+
+            AddRange(BySection, stringsData);
+
+            Sum = openOrdersSummary.Total.Sum + closedOrdersSummary.Total.Sum;
+        }
+    }
+
+    private sealed class DishDeletingData
+    {
+        internal sealed class StringData
+        {
+            internal decimal PrintedDishesSum { get; set; }
+            internal decimal PrintedDishesAmount { get; set; }
+            internal decimal NonPrintedDishesSum { get; set; }
+            internal decimal NonPrintedDishesAmount { get; set; }
+        }
+
+        internal Dictionary<IRestaurantSection, StringData> BySection { get; private set; }
+        internal StringData Total { get; private set; }
+
+        internal DishDeletingData()
+        {
+            BySection = new Dictionary<IRestaurantSection, StringData>();
+            Total = new StringData();
+        }
+
+        private void Clear()
+        {
+            BySection.Clear();
+
+            Total.PrintedDishesSum = 0m;
+            Total.PrintedDishesAmount = 0m;
+            Total.NonPrintedDishesSum = 0m;
+            Total.NonPrintedDishesAmount = 0m;
+        }
+
+        internal void SetData(Dictionary<IRestaurantSection, List<IOrder>> ordersBySections)
+        {
+            Clear();
+
+            var stringsData =
+                from ordersBySection in ordersBySections
+                let sectionName = ordersBySection.Key
+                let orders = ordersBySection.Value
+                let printedDeletedItems = orders
+                    .SelectMany(o => o.GetAllEntries())
+                    .Where(item => item.DeletionInfo != null)
+                    // Исключаем из списка услуги с нулевой стоимостью
+                    .Where(item =>
+                    {
+                        var timePayServiceItem = item as ITimePayServiceItem;
+                        return timePayServiceItem == null || timePayServiceItem.TimePayServiceCost != 0m;
+                    })
+                    .ToList()
+                let data = new StringData
+                {
+                    PrintedDishesSum = printedDeletedItems.Sum(i => i.Cost),
+                    PrintedDishesAmount = printedDeletedItems.Sum(i => i.Amount),
+                    NonPrintedDishesSum = orders.Sum(order => order.DeletedNewItemsSum),
+                    NonPrintedDishesAmount = orders.Sum(order => order.DeletedNewItemsAmount)
+                }
+                select new KeyValuePair<IRestaurantSection, StringData>(sectionName, data);
+
+            AddRange(BySection, stringsData);
+
+            Total.PrintedDishesSum = AverageOrDefault(BySection.Values.Select(s => s.PrintedDishesSum));
+            Total.PrintedDishesAmount = AverageOrDefault(BySection.Values.Select(s => s.PrintedDishesAmount));
+            Total.NonPrintedDishesSum = AverageOrDefault(BySection.Values.Select(s => s.NonPrintedDishesSum));
+            Total.NonPrintedDishesAmount = AverageOrDefault(BySection.Values.Select(s => s.NonPrintedDishesAmount));
+        }
+    }
+
+    private sealed class DiscountsData
+    {
+        internal sealed class StringData
+        {
+            internal int OrdersWithDiscountsCount { get; set; }
+            internal int AllOrdersCount { get; set; }
+            internal decimal AverageDiscount { get; set; }
+        }
+
+        internal Dictionary<IRestaurantSection, StringData> BySection { get; private set; }
+        internal decimal AverageDiscount { get; private set; }
+
+        internal DiscountsData()
+        {
+            BySection = new Dictionary<IRestaurantSection, StringData>();
+        }
+
+        private void Clear()
+        {
+            BySection.Clear();
+
+            AverageDiscount = 0m;
+        }
+
+        internal void SetData(Dictionary<IRestaurantSection, List<IOrder>> ordersBySections)
+        {
+            Clear();
+
+            var filteredOrdersDataBySections =
+                (from ordersBySection in ordersBySections
+                    let sectionName = ordersBySection.Key
+                    select new
+                    {
+                        Section = sectionName,
+                        OrderDiscounts = ordersBySection.Value
+                            .Where(order => !(order.Status == OrderStatus.Deleted && !order.IsStorned))
+                            .Select(o => ModelExtensions.CalculateDiscountPercent(o.GetFullSum(), o.DiscountItems.Sum(disc => disc.GetDiscountSum()))).ToList()
+                    }).ToList();
+
+            var stringsData =
+                from ordersData in filteredOrdersDataBySections
+                let discounts = ordersData.OrderDiscounts.Where(d => d != 0m).ToList()
+                let data = new StringData
+                {
+                    OrdersWithDiscountsCount = discounts.Count,
+                    AllOrdersCount = ordersData.OrderDiscounts.Count,
+                    AverageDiscount = AverageOrDefault(discounts)
+                }
+                select new KeyValuePair<IRestaurantSection, StringData>(ordersData.Section, data);
+
+            AddRange(BySection, stringsData);
+
+            AverageDiscount = AverageOrDefault(filteredOrdersDataBySections.SelectMany(i => i.OrderDiscounts).Where(d => d != 0m));
+        }
+    }
+
+    private static string SumPerAmount(decimal sum, decimal amount)
+    {
+        return string.Format("{0}/{1}", FormatPrice(sum), FormatAmount(amount));
+    }
+
+    private static string CountOfTotalCount(int count, int totalCount)
+    {
+        return string.Format("{0}/{1}", count, totalCount);
+    }
+
+    private static void AddRange<TItem, TAddedItem>(ICollection<TItem> list, IEnumerable<TAddedItem> items)
+            where TAddedItem : TItem
+    {
+        foreach (var item in items)
+            list.Add(item);
+    }
+
+    private static decimal AverageOrDefault(IEnumerable<decimal> source)
+    {
+        if (source == null)
+            throw new ArgumentNullException("source");
+
+        var sum = 0m;
+        var count = 0L;
+        foreach (var item in source)
+        {
+            sum += item;
+            count += 1L;
+        }
+        if (count <= 0L)
+        {
+            return 0m;
+        }
+        return (sum / count);
+    }
+}

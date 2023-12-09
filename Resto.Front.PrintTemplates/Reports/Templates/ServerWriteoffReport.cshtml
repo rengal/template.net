@@ -1,0 +1,327 @@
+﻿@using System
+@using System.Collections.Generic
+@using System.Diagnostics
+@using System.Linq
+@using Resto.Front.PrintTemplates.Reports
+@using Resto.Front.PrintTemplates.Reports.OlapReports
+@using Resto.Front.PrintTemplates.Reports.TemplateModels
+@using Resto.Front.PrintTemplates.RmsEntityWrappers
+
+@* 024 Общие списания блюд *@
+@* Парный к 034-му отчет по серверным данным *@
+@inherits TemplateBase
+@{
+    settings = Model.ReportSettings;
+
+    FillData();
+}
+
+@if (!Model.IsOnlyBodyMarkupRequired)
+{
+    <doc formatter="split">
+        @Header()
+        @Body()
+        @Footer()
+    </doc>
+}
+else
+{
+    <doc formatter="split">
+        @Body()
+    </doc>
+}
+
+@helper Header()
+{
+    var terminalName = Model.CashRegister != null
+        ? string.Format(Resources.TerminalNumberNamePattern, Model.CashRegister.Number, Model.Group.Name)
+        : string.Format(Resources.TerminalNamePattern, Model.CurrentTerminal, Model.Group.Name);
+
+    foreach (var headerLine in Model.CafeSetup.ReportHeader.Split(Environment.NewLine.ToCharArray()))
+    {
+        <left>
+            <whitespace-preserve>@headerLine</whitespace-preserve>
+        </left>
+    }
+
+    <np />
+    <center>@Model.Name</center>
+    <np />
+    <pair fit="left" left="@Resources.HeadTerminal" right="@terminalName" />
+
+    <pair left="@Resources.From" right="@FormatDate(settings.GetPeriodBegin())" />
+    <pair left="@Resources.To" right="@FormatDate(settings.GetPeriodEnd())" />
+
+    <pair left="@Resources.HeadCurrentTime" right="@FormatLongDateTime(Model.CurrentTime)" />
+    <table>
+        <columns>
+            <column autowidth="" />
+            <column align="right" />
+        </columns>
+        <cells>
+            <ct>@Resources.HeadCurrentUser</ct>
+            <ct>@(Model.CurrentUser == null ? string.Empty : Model.CurrentUser.Name)</ct>
+        </cells>
+    </table>
+}
+
+@helper Body()
+{
+    <table>
+        <columns>
+            <column autowidth="" />
+            <column formatter="split" />
+            <column align="right" autowidth="" />
+            <column align="right" autowidth="" />
+        </columns>
+        <cells>
+            <linecell symbols="-" />
+            <ct>@Resources.CodeTitle</ct>
+            <ct>@Resources.NameTitle</ct>
+            <ct>@(settings.GetBool("ShowOneDishPrice") ? Resources.AmountWithPriceTitle : Resources.CountTitle)</ct>
+            <ct>@Resources.SumTitle</ct>
+            <linecell symbols="-" />
+
+            @(settings.GetEnum("GroupDishes") == "GroupByDishes" ? GetWriteoffsWithoutGroupingMarkup() : GetWriteoffsWithGroupingMarkup())
+        </cells>
+    </table>
+    @* Если были списания, добавляем пустую строку *@
+    if (writeoffsData.Any())
+    {
+        <np />
+    }
+    <pair left="@string.Format("{0}:", Resources.Total)" right="@FormatPrice(TotalWriteoffs)" />
+    <line symbols="-" />
+}
+
+@helper Footer()
+{
+    <np />
+    <center>
+        @string.Format(Resources.AllSumsInFormat, Model.CafeSetup.CurrencyName)
+    </center>
+    <np />
+}
+
+@helper GetWriteoffsWithoutGroupingMarkup()
+{
+    var c = 0;
+    foreach (var writeoff in writeoffsData)
+    {
+        // Если несколько групп списаний, то между ними вставляем пустую строку
+        if (c++ > 0)
+        {
+            <c colspan="0"><np /></c>
+        }
+        <c colspan="0">@writeoff.Key</c>
+        <linecell symbols="-" />
+
+        foreach (var product in writeoff.Value.GroupBy(prod => prod.DishId).OrderBy(prod => prod.First().DishName).ThenBy(prod => prod.First().DishCode, fastCodeComparer))
+        {
+            var amount = product.Sum(item => item.Amount);
+            var sum = product.Sum(item => item.Sum);
+            var price = amount == 0 ? 0 : sum / amount;
+
+            <ct>@product.First().DishCode</ct>
+            <ct>@product.First().DishName</ct>
+            @GetAmountCell(amount, price)
+            <ct>@FormatPrice(sum)</ct>
+        }
+        <linecell symbols="-" />
+        <c colspan="3">@string.Format(Resources.TotalForCategoryPattern, writeoff.Key)</c>
+        <ct>@FormatPrice(writeoff.Value.Sum(item => item.Sum))</ct>
+    }
+}
+
+@helper GetWriteoffsWithGroupingMarkup()
+{
+    var c = 0;
+    foreach (var writeoff in writeoffsData)
+    {
+        // Если несколько групп списаний, то между ними вставляем пустую строку
+        if (c++ > 0)
+        {
+            <c colspan="0"><np /></c>
+        }
+        <c colspan="0">@writeoff.Key</c>
+        <linecell symbols="-" />
+
+        var k = 0;
+        foreach (var group in writeoff.Value.GroupBy(prod => prod.GroupKey).OrderBy(prod => prod.Key))
+        {
+            // Если несколько групп списаний, то между ними вставляем пустую строку
+            if (k++ > 0)
+            {
+                <c colspan="0"><np /></c>
+            }
+            <c colspan="0">@group.Key</c>
+
+            foreach (var productGroup in group.GroupBy(prod => prod.DishId).OrderBy(prod => prod.First().DishName).ThenBy(prod => prod.First().DishCode, fastCodeComparer))
+            {
+                var amount = productGroup.Sum(item => item.Amount);
+                var sum = productGroup.Sum(item => item.Sum);
+                var price = amount != 0 ? sum / amount : 0;
+
+                <ct>@productGroup.First().DishCode</ct>
+                <ct>@productGroup.First().DishName</ct>
+                @GetAmountCell(amount, price)
+                <ct>@FormatPrice(sum)</ct>
+            }
+
+            <c colspan="3">@string.Format(Resources.TotalForCategoryPattern, group.Key)</c>
+            <ct>@FormatPrice(group.Sum(prod => prod.Sum))</ct>
+        }
+
+        <linecell symbols="-" />
+        <c colspan="3">@string.Format(Resources.TotalForCategoryPattern, writeoff.Key)</c>
+        <ct>@FormatPrice(writeoff.Value.Sum(item => item.Sum))</ct>
+    }
+}
+
+@helper GetAmountCell(decimal amount, decimal price)
+{
+    <ct>@(settings.GetBool("ShowOneDishPrice") ? FormatAmountAndPrice(amount, price) : FormatAmount(amount))</ct>
+}
+
+@functions
+{
+    private ISettings settings;
+
+    private static readonly FastCodeComparer fastCodeComparer = new FastCodeComparer();
+
+    /// <summary>
+    /// Списания
+    /// </summary>
+    private readonly SortedDictionary<string, List<WriteoffInfo>> writeoffsData =
+        new SortedDictionary<string, List<WriteoffInfo>>();
+
+    private decimal TotalWriteoffs { get; set; }
+
+    private sealed class WriteoffInfo
+    {
+        public string GroupKey { get; private set; }
+        public string DishName { get; private set; }
+        public Guid DishId { get; private set; }
+        public string DishCode { get; private set; }
+        public decimal Amount { get; private set; }
+        public decimal Sum { get; private set; }
+
+        public WriteoffInfo(string groupKey, string dishName, Guid dishId, decimal amount, decimal sum, string dishCode)
+        {
+            GroupKey = groupKey;
+            DishName = dishName;
+            DishId = dishId;
+            DishCode = dishCode;
+            Amount = amount;
+            Sum = sum;
+        }
+    }
+
+    /// <summary>
+    /// Получение и заполнение данных о списаниях
+    /// </summary>
+    private void FillData()
+    {
+        var report = Model.OlapReports.BuildReport(new OlapReportSettings(OlapReportType.Sales,
+            new List<string> { OlapField.PayTypesId, OlapField.NonCashPaymentTypeId, OlapField.NonCashPaymentType, OlapField.DishCategory, OlapField.DishCodeQuick, OlapField.DishName,
+                OlapField.DishId, OlapField.DeletedWithWriteoff, OlapField.RemovalTypeId, OlapField.ItemWaiterName, OlapField.CookingPlaceType },
+            new List<string>(),
+            new List<string> { OlapField.DishAmount, OlapField.DishSum },
+            new Dictionary<string, OlapReportFilterCriteria>
+            {
+                { OlapField.SessionIdOperDay, new OlapReportFilterDateRangeCriteria(settings.GetPeriodBegin(), true, settings.GetPeriodEnd(), true) },
+                // Исключаем удаленные без списания блюда
+                { OlapField.DeletedWithWriteoff, new OlapReportFilterExcludeValuesCriteria(new object[] { Resto.Data.DishDeletionStatus.DELETED_WITHOUT_WRITEOFF }) },
+            }));
+
+        foreach (var data in report.Data)
+        {
+            var paymentType = data.GetValue<IPaymentType>(OlapField.PayTypesId);
+            var nonCashPaymentType = data.GetValue<IPaymentType>(OlapField.NonCashPaymentTypeId);
+            var nonCashPaymentTypeName = data.GetValue<string>(OlapField.NonCashPaymentType);
+            var dishCategory = data.GetValue<string>(OlapField.DishCategory) ?? Resources.WithoutCategory;
+            var dishCode = data.GetValue<string>(OlapField.DishCodeQuick) ?? string.Empty;
+            var dishName = data.GetValue<string>(OlapField.DishName);
+            var dishId = data.GetValue<Guid>(OlapField.DishId);
+            var deletedWithWriteoff = data.GetValue<DishDeletionStatus>(OlapField.DeletedWithWriteoff);
+            var removalType = data.GetValue<IRemovalType>(OlapField.RemovalTypeId);
+            var removalTypeId = data.GetValue<Guid>(OlapField.RemovalTypeId);
+            var waiterName = data.GetValue<string>(OlapField.ItemWaiterName) ?? Resources.UnknownUser;
+            var amount = data.GetValue<decimal>(OlapField.DishAmount);
+            var sum = data.GetValue<decimal>(OlapField.DishSum);
+            var cookingPlaceType = data.GetValue<string>(OlapField.CookingPlaceType) ?? Resources.WithoutCookingPlace;
+
+            if (amount == 0)
+                continue;
+
+            // Если (транзакция оплаты была или оплата не была типом "Без выручки") и блюдо не удалено, то это — продажа.
+            // Если же не было ни транзакции, ни оплаты типом "Без выручки", то, вероятно, это оплата как скидка.
+            if ((paymentType != null || !nonCashPaymentType.IsWriteoffPaymentType()) &&
+                deletedWithWriteoff == DishDeletionStatus.NotDeleted)
+                continue;
+
+            // Сюда приходим, если блюдо оплачено типом "Без выручки" или удалено со списанием
+            string groupKey;
+
+            // Если блюдо удалено "Со списанием", запоминаем название счета, на который производится списание
+            // Т.к. счета в олапах нет, достаем его из сконвертированного типа удаления
+            if (removalTypeId != Guid.Empty)
+            {
+                groupKey = removalType != null
+                    ? removalType.Account != null
+                        ? removalType.Account.Name
+                        : removalType.Name
+                    : Resources.Writeoff;
+            }
+            // Иначе блюдо оплачено типом "Без выручки", запоминаем название типа оплаты
+            else
+            {
+                Debug.Assert(!string.IsNullOrEmpty(nonCashPaymentTypeName));
+                groupKey = nonCashPaymentTypeName;
+            }
+
+            AddWriteoff(groupKey, dishName, dishId, dishCategory, amount, sum, dishCode, waiterName, cookingPlaceType);
+        }
+    }
+
+    private void AddWriteoff(string writeoffType, string dishName, Guid dishId, string dishCategory, decimal amount, decimal sum, string dishFastCode, string waiterName, string cookingPlaceType)
+    {
+        if (!writeoffsData.ContainsKey(writeoffType))
+            writeoffsData[writeoffType] = new List<WriteoffInfo>();
+
+        string groupKey;
+        // В зависимости от настроек, выбираем ключ, по которому будем группировать данные
+        switch (settings.GetEnum("GroupDishes"))
+        {
+            case "GroupByDishes":
+                groupKey = string.Empty;
+                break;
+            case "GroupByCategories":
+                groupKey = dishCategory;
+                break;
+            case "GroupByWaiters":
+                groupKey = waiterName;
+                break;
+            case "GroupByCookingPlaceTypes":
+                groupKey = cookingPlaceType;
+                break;
+            default:
+                throw new NotSupportedException();
+        }
+
+        writeoffsData[writeoffType].Add(new WriteoffInfo(groupKey, dishName, dishId, amount, sum, dishFastCode));
+        TotalWriteoffs += sum;
+    }
+
+    private sealed class FastCodeComparer : IComparer<string>
+    {
+        public int Compare(string x, string y)
+        {
+            int intX, intY;
+            var res = 0;
+            if (int.TryParse(x, out intX) && int.TryParse(y, out intY))
+                res = intX.CompareTo(intY);
+            return res != 0 ? res : StringComparer.CurrentCulture.Compare(x, y);
+        }
+    }
+}

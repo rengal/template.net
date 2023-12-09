@@ -1,0 +1,7 @@
+﻿<#@ template language="C#" hostspecific="true" debug="true" #>
+<#@ output extension="g.cs" encoding="UTF-8" #>
+<#@ include file="..\ResourcesCommon.tt" #>
+<#@ xsd processor="Resto.CodeGeneration.XsdProcessor" file="..\..\Resto.Front.Localization\Resources\ReportLocalResources.resx" #>
+<#
+    RenderResources(@"..\..\Resto.Front.Localization\Resources\ReportLocalResources.resx", "Resto.Front.PrintTemplates.Reports", "TemplateBase", "ReportLocalResources");
+#>

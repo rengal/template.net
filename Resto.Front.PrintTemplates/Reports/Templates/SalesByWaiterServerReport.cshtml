@@ -1,0 +1,279 @@
+﻿@using System
+@using System.Collections.Generic
+@using System.Linq
+@using Resto.Front.PrintTemplates.Reports
+@using Resto.Front.PrintTemplates.Reports.OlapReports
+@using Resto.Front.PrintTemplates.Reports.TemplateModels
+@using Resto.Front.PrintTemplates.RmsEntityWrappers
+
+@* 013 Общая выручка по официантам *@
+@inherits TemplateBase
+@{
+    settings = Model.ReportSettings;
+
+    FillData();
+}
+
+@if (!Model.IsOnlyBodyMarkupRequired)
+{
+    <doc formatter="split">
+        @Header()
+        @Body()
+        @Footer()
+    </doc>
+}
+else
+{
+    <doc formatter="split">
+        @Body()
+    </doc>
+}
+
+@helper Header()
+{
+    var terminalName = Model.CashRegister != null
+        ? string.Format(Resources.TerminalNumberNamePattern, Model.CashRegister.Number, Model.Group.Name)
+        : string.Format(Resources.TerminalNamePattern, Model.CurrentTerminal, Model.Group.Name);
+
+    foreach (var headerLine in Model.CafeSetup.ReportHeader.Split(Environment.NewLine.ToCharArray()))
+    {
+        <left>
+            <whitespace-preserve>@headerLine</whitespace-preserve>
+        </left>
+    }
+
+    <np />
+    <center>@Model.Name</center>
+    <np />
+    <pair fit="left" left="@Resources.HeadTerminal" right="@terminalName" />
+
+    <pair left="@Resources.From" right="@FormatDate(settings.GetPeriodBegin())" />
+    <pair left="@Resources.To" right="@FormatDate(settings.GetPeriodEnd())" />
+
+    <pair left="@Resources.HeadCurrentTime" right="@FormatLongDateTime(Model.CurrentTime)" />
+    <table>
+        <columns>
+            <column autowidth="" />
+            <column align="right" />
+        </columns>
+        <cells>
+            <ct>@Resources.HeadCurrentUser</ct>
+            <ct>@(Model.CurrentUser == null ? string.Empty : Model.CurrentUser.Name)</ct>
+        </cells>
+    </table>
+}
+
+@helper Body()
+{
+    <line symbols="-" />
+    <pair left="@Resources.EmployeeTitle" right="@Resources.Sum" />
+    <line symbols="-" />
+    var index = 0;
+    foreach (var waiter in waitersData)
+    {
+        if (index++ > 0)
+        {
+            <np />
+        }
+        <left>@waiter.Name</left>
+        <np />
+        <table>
+            <columns>
+                <column formatter="split" />
+                <column align="right" autowidth="" />
+            </columns>
+            <cells>
+                <ct>@Resources.Cash</ct>
+                <ct>@FormatPrice(waiter.SumCash)</ct>
+                <ct>@Resources.Card</ct>
+                <ct>@FormatPrice(waiter.SumCard)</ct>
+                <ct>@Resources.NonCash</ct>
+                <ct>@FormatPrice(waiter.SumNonCash)</ct>
+                <ct>@Resources.Sum</ct>
+                <ct>@FormatPrice(waiter.TotalSum)</ct>
+                <ct>@Resources.Cheques</ct>
+                <ct>@FormatAmount(waiter.ChequesNum)</ct>
+                <ct>@Resources.Clients</ct>
+                <ct>@FormatAmount(waiter.GuestsNum)</ct>
+            </cells>
+        </table>
+    }
+    <line symbols="-" />
+    <table>
+        <columns>
+            <column formatter="split" />
+            <column align="right" autowidth="" />
+        </columns>
+        <cells>
+            <ct>@Resources.Sum</ct>
+            <ct>@FormatPrice(summaryInfo.Sum)</ct>
+            <ct>@Resources.Cheques</ct>
+            <ct>@FormatAmount(summaryInfo.ChequesCount)</ct>
+            <ct>@Resources.Clients</ct>
+            <ct>@FormatAmount(summaryInfo.GuestsCount)</ct>
+        </cells>
+    </table>
+    <line symbols="-" />
+}
+
+@helper Footer()
+{
+    <np />
+    <center>
+        @string.Format(Resources.AllSumsInFormat, Model.CafeSetup.CurrencyName)
+    </center>
+    <np />
+}
+
+@functions
+{
+    private ISettings settings;
+
+    private ICollection<WaiterInfo> waitersData;
+    private SummaryInfo summaryInfo;
+
+    private void FillData()
+    {
+        // Официант блюда или официант заказа в зависимости от настройки в ТП (для группировки)
+        var waiterNameField = Model.CafeSetup.DisplayWaiterRevenueByDishes ? OlapField.ItemWaiterName : OlapField.OrderWaiterName;
+        // Id заказа (для группировки)
+        const string orderIdField = "UniqOrderId.Id";
+        // Заказов (для агрегации)
+        const string ordersCountField = OlapField.UniqOrderId;
+        // Количество гостей (для агрегации)
+        const string guestsCountField = OlapField.GuestNum;
+
+        var report = Model.OlapReports.BuildReport(new OlapReportSettings(OlapReportType.Sales,
+            new List<string> { waiterNameField, orderIdField, OlapField.IsStorned, OlapField.PayTypesId, OlapField.NonCashPaymentTypeId },
+            new List<string>(),
+            new List<string> { OlapField.DishDiscountSum, ordersCountField, guestsCountField },
+            new Dictionary<string, OlapReportFilterCriteria>
+            {
+                { OlapField.SessionIdOperDay, new OlapReportFilterRangeCriteria(settings.GetPeriodBegin(), true, settings.GetPeriodEnd(), true) },
+                // Включаем только неудаленные блюда
+                { OlapField.DeletedWithWriteoff, new OlapReportFilterIncludeValuesCriteria(new object[] { Resto.Data.DishDeletionStatus.NOT_DELETED }) },
+                // Исключаем транзакции внесения / возврата чаевых
+                { OlapField.PayTypesTransactionType, new OlapReportFilterExcludeValuesCriteria(new object[] { "TIPS" }) }
+            }));
+
+        var tempData = report.Data
+            .Where(PaymentTypesFilter)
+            .Select(data => new
+            {
+                Waiter = data.GetValue<string>(waiterNameField),
+                OrderId = data.GetValue<Guid>(orderIdField),
+                PaymentGroup = (data.GetValue<IPaymentType>(OlapField.PayTypesId) ?? data.GetValue<IPaymentType>(OlapField.NonCashPaymentTypeId)).Group,
+                Sum = data.GetValue<decimal>(OlapField.DishDiscountSum),
+                ChequesNum = data.GetValue<int>(ordersCountField),
+                GuestsNum = data.GetValue<bool>(OlapField.IsStorned) ? 0 : data.GetValue<int>(guestsCountField)
+            })
+            .ToList();
+
+        waitersData = tempData
+            .Distinct(x => new Pair<string, Guid>(x.Waiter, x.OrderId))
+            .Select(x => new
+            {
+                x.Waiter,
+                x.ChequesNum,
+                x.GuestsNum
+            })
+            .GroupBy(x => x.Waiter)
+            .Join(tempData
+                .GroupBy(x => x.Waiter),
+                counters => counters.Key,
+                sums => sums.Key,
+                (counters, sums) => new WaiterInfo
+                {
+                    Name = counters.Key,
+                    ChequesNum = counters.Sum(data => data.ChequesNum),
+                    GuestsNum = counters.Sum(data => data.GuestsNum),
+                    SumCash = sums.Where(data => data.PaymentGroup == PaymentGroup.Cash).Sum(data => data.Sum),
+                    SumCard = sums.Where(data => data.PaymentGroup == PaymentGroup.Card).Sum(data => data.Sum),
+                    SumNonCash = sums.Where(data => data.PaymentGroup == PaymentGroup.NonCash).Sum(data => data.Sum)
+                })
+            .ToList();
+
+        var summaries = tempData
+            .Distinct(x => x.OrderId)
+            .Select(x => new
+            {
+                x.ChequesNum,
+                x.GuestsNum
+            })
+            .ToList();
+
+        summaryInfo = new SummaryInfo(summaries.Sum(w => w.GuestsNum), summaries.Sum(w => w.ChequesNum), waitersData.Sum(w => w.TotalSum));
+    }
+
+    private sealed class WaiterInfo
+    {
+        public string Name { get; set; }
+        public decimal SumCash { get; set; }
+        public decimal SumCard { get; set; }
+        public decimal SumNonCash { get; set; }
+        public decimal TotalSum { get { return SumCash + SumCard + SumNonCash; } }
+        public int ChequesNum { get; set; }
+        public int GuestsNum { get; set; }
+    }
+
+    private struct SummaryInfo
+    {
+        public readonly int GuestsCount;
+        public readonly int ChequesCount;
+        public readonly decimal Sum;
+
+        public SummaryInfo(int guestsCount, int chequesCount, decimal sum)
+        {
+            GuestsCount = guestsCount;
+            ChequesCount = chequesCount;
+            Sum = sum;
+        }
+    }
+
+    public struct Pair<T1, T2> : IEquatable<Pair<T1, T2>>
+    {
+        private readonly T1 first;
+        private readonly T2 second;
+
+        public Pair(T1 first, T2 second)
+        {
+            this.first = first;
+            this.second = second;
+        }
+
+        public bool Equals(Pair<T1, T2> other)
+        {
+            return Equals(other.first, first) && Equals(other.second, second);
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj))
+                return false;
+            if (obj.GetType() != typeof(Pair<T1, T2>))
+                return false;
+            return Equals((Pair<T1, T2>)obj);
+        }
+
+        public override int GetHashCode()
+        {
+            unchecked
+            {
+                return ((first != null ? first.GetHashCode() : 0) * 397) ^ (second != null ? second.GetHashCode() : 0);
+            }
+        }
+    }
+
+    private static bool PaymentTypesFilter(IOlapReportItem data)
+    {
+        var paymentType = data.GetValue<IPaymentType>(OlapField.PayTypesId);
+        var nonCashPaymentType = data.GetValue<IPaymentType>(OlapField.NonCashPaymentTypeId);
+
+        // Исключаем оплаты без транзакций (закрытие заказа без оплаты, оплата типом "Без выручки")
+        if (paymentType == null &&
+            (nonCashPaymentType == null || nonCashPaymentType.IsWriteoffPaymentType()))
+            return false;
+
+        return true;
+    }
+}

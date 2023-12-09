@@ -1,0 +1,197 @@
+﻿@using System.Collections.Generic
+@using System.Linq
+@using Resto.Front.PrintTemplates.Cheques.Razor
+@using Resto.Front.PrintTemplates.Cheques.Razor.TemplateModels
+
+@inherits TemplateBase<IPastOrderCashMemoCheque>
+
+@{
+    var order = Model.Order;
+    var chequeInfo = Model.ChequeInfo;
+    var session = chequeInfo.Session;
+
+    bool useAggregatedDiscount;
+    if (order.Items.Count() < 2)
+    {
+        useAggregatedDiscount = true;
+    }
+    else
+    {
+        const decimal MaxGeneralDiscountDeviation = 0.01m;
+        var discounts = order.Items.Select(x => x.SumWithoutDiscounts == 0 ? 0 : x.SumWithDiscounts / x.SumWithoutDiscounts).ToList();
+        useAggregatedDiscount = discounts.Max() - discounts.Min() < MaxGeneralDiscountDeviation;
+    }
+
+    var resultSum = order.Items.Sum(item => item.SumWithDiscounts);
+    var subTotal = order.Items.Sum(item => item.SumWithoutDiscounts);
+}
+
+<doc>
+    @* header *@
+    <left>
+        <split>
+            <whitespace-preserve>@Model.CommonInfo.CafeSetup.BillHeader</whitespace-preserve>
+        </split>
+    </left>
+    <center>
+        @Resources.CashMemoChequeTitle
+    </center>
+    <pair fit="left" left="@string.Format(Resources.CashRegisterFormat, session.CashRegisterNumber)" right="@Model.CommonInfo.Group.Name" />
+    <pair left="@Resources.HeadCashRegisterShift" right="@session.Number" />
+    <pair left="@Resources.CafeSessionOpenDate" right="@FormatLongDateTime(session.OpenTime)" />
+    <pair left="@Resources.CurrentDate" right="@FormatLongDateTime(chequeInfo.OperationTime)" />
+    <pair 
+          left="@string.Format(Resources.BillHeaderCashierPattern, chequeInfo.Cashier.GetNameOrEmpty())"
+          right="@string.Format(Resources.BillHeaderOrderNumberPattern, order.Number)" />
+
+    @* body *@
+    <line />
+    @Products(order.Items, useAggregatedDiscount)
+    <line />
+    @if (useAggregatedDiscount && subTotal != resultSum)
+    {
+        var percent = decimal.Round((resultSum / subTotal - 1) * 100, 2);
+        var sum = resultSum - subTotal;
+
+        <pair left="@Resources.BillFooterTotalPlain" right="@FormatMoney(subTotal)" />
+        <table>
+            <columns>
+                <column formatter="split" />
+                <column align="right" autowidth="" />
+                <column align="right" autowidth="" />
+            </columns>
+            <cells>
+                <ct>
+                    @(percent < 0m ? string.Format(Resources.AggregatedDiscountNameFormat, -percent) : string.Format(Resources.AggregatedIncreaseNameFormat, percent))
+                </ct>
+                <ct>
+                    @FormatPercent(percent)
+                </ct>
+                <ct>
+                    @FormatMoney(sum)
+                </ct>
+            </cells>
+        </table>
+    }
+
+    @* payments *@
+    <pair left="@Resources.BillFooterTotalLower" right="@FormatMoney(resultSum)" />
+    <line />
+    @foreach (var prepay in order.Payments.Where(p => p.IsPrepay))
+    {
+        <pair left="@string.Format(Resources.PrepayTemplate, prepay.Type.Name)" right="@FormatMoney(prepay.Sum)" />
+    }
+    @foreach (var payment in order.Payments.Where(p => !p.IsPrepay))
+    {
+        <pair left="@payment.Type.Name" right="@FormatMoney(payment.Sum)" />
+    }
+    <line />
+    <pair left="@Resources.FooterTotalUpper" right="@FormatMoney(resultSum)" />
+
+    @if (Model.Order.Donations.Any())
+    {
+        <line />
+        foreach (var donation in Model.Order.Donations)
+        {
+            <pair left="@string.Format(Resources.DonationsAndPaymentTypeFormat, donation.Type.Name)"
+                  right="@FormatMoney(donation.Sum)" />
+        }
+    }
+
+    <line />
+    @* footer *@
+    <pair left="@Resources.ItemsCount" right="@order.Items.Count()" />
+    <left>
+        @string.Format(Resources.SumFormat, FormatMoneyInWords(resultSum))
+    </left>
+    <np />
+    <left>
+        @Resources.Released
+    </left>
+    <fill symbols="_">
+        <np />
+    </fill>
+    <center>
+        @Resources.MemoChequeSignature
+    </center>
+    <np />
+    <center>
+        @string.Format(Resources.AllSumsInFormat, Model.CommonInfo.CafeSetup.CurrencyName)
+    </center>
+    <np />
+    <center>
+        <split>
+            <whitespace-preserve>@Model.CommonInfo.CafeSetup.BillFooter</whitespace-preserve>
+        </split>
+    </center>
+</doc>
+
+@helper Products(IEnumerable<IPastOrderItem> orderItems, bool useAggregatedDiscount)
+{
+    if (orderItems.IsEmpty())
+    {
+        @Resources.ZeroChequeBody
+    }
+    else
+    {
+        <table>
+            <columns>
+                <column formatter="split" />
+                <column align="right" autowidth="" />
+                <column align="right" autowidth="" />
+                <column align="right" autowidth="" />
+            </columns>
+            <cells>
+                <ct>
+                    @Resources.NameColumnHeader
+                </ct>
+                <ct>
+                    @Resources.AmountShort
+                </ct>
+                <ct>
+                    @Resources.ProductPrice
+                </ct>
+                <ct>
+                    @Resources.ResultSum
+                </ct>
+                <linecell />
+                @foreach (var orderItem in orderItems)
+                {
+                    @Product(orderItem, useAggregatedDiscount)
+                }
+            </cells>
+        </table>
+    }
+}
+
+@helper Product(IPastOrderItem orderItem, bool useAggregatedDiscount)
+{
+    <c colspan="4">
+        @(orderItem.ProductSize == null ? orderItem.Product.Name : string.Format(Resources.ProductNameWithSizeFormat, orderItem.Product.Name, orderItem.ProductSize.Name))
+    </c>
+    <c colspan="2">
+        <right>
+            @string.Format("{0} {1} x", FormatAmount(orderItem.Amount), orderItem.Product.MeasuringUnit.Name)
+        </right>
+    </c>
+    <ct>
+        @FormatMoney(orderItem.Price)
+    </ct>
+    <ct>
+        @FormatMoney(orderItem.SumWithoutDiscounts)
+    </ct>
+    if (!useAggregatedDiscount && orderItem.SumWithoutDiscounts != orderItem.SumWithDiscounts)
+    {
+        var percent = decimal.Round((orderItem.SumWithDiscounts / orderItem.SumWithoutDiscounts - 1) * 100, 2);
+        var sum = orderItem.SumWithDiscounts - orderItem.SumWithoutDiscounts;
+
+    <c colspan="3">
+      <whitespace-preserve>@string.Format(Resources.CashMemoChequeDiscountItemNameAndPercentFormat,
+        percent < 0m ? string.Format(Resources.AggregatedDiscountNameFormat, -percent) : string.Format(Resources.AggregatedIncreaseNameFormat, percent),
+        FormatPercent(percent))</whitespace-preserve>
+    </c>
+    <ct>
+        @FormatMoney(sum)
+    </ct>
+    }
+}

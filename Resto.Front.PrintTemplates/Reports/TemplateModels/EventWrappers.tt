@@ -1,0 +1,7 @@
+<#@ template language="C#" hostspecific="true" debug="true" #>
+<#@ output extension="cs" encoding="utf-8" #>
+<#@ include file="ReportWrappers.tt" #>
+<#@ xsd processor="Resto.CodeGeneration.XsdProcessor" file="..\..\TemplateModels.xsd" #>
+<#
+    RenderWrappers("EventWrappers.xml");
+#>

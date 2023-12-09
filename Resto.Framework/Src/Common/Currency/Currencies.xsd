@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<schema targetNamespace="http://iiko.ru/XmlSchemas/Currencies.xsd" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:a="http://iiko.ru/XmlSchemas/Currencies.xsd" elementFormDefault="qualified">
+
+  <!-- Валюта -->
+  <complexType name="Currency">
+
+    <attribute name="Comment" type="string" use="required">
+      <annotation>
+        <documentation>
+          Документирующий комментарий к обёртке (можно добавить как атрибут или как элемент).
+        </documentation>
+      </annotation>
+    </attribute>
+
+    <attribute name="Name" type="string" use="required">
+      <annotation>
+        <documentation>
+          Имя валюты.
+        </documentation>
+      </annotation>
+    </attribute>
+
+    <attribute name="IsoName" type="string" use="required">
+      <annotation>
+        <documentation>
+          ISO Наименование валюты.
+        </documentation>
+      </annotation>
+    </attribute>
+
+    <attribute name="ResName" type="string" use="optional">
+      <annotation>
+        <documentation>
+          Наименование валюты в ресурсах. Если не указано - считается, что совпадает с Name.
+        </documentation>
+      </annotation>
+    </attribute>
+
+    <attribute name="ResKopName" type="string" use="optional">
+      <annotation>
+        <documentation>
+          Наименование долей валюты в ресурсах. Если не указано - считается, что совпадает с ResName.
+        </documentation>
+      </annotation>
+    </attribute>
+
+    <attribute name="Male" type="boolean" use="required">
+      <annotation>
+        <documentation>
+          Мужской ли род.
+        </documentation>
+      </annotation>
+    </attribute>
+
+    <attribute name="FracPart" type="int" use="required">
+      <annotation>
+        <documentation>
+          Длина дробной части (количество значимых цифр после запятой)
+        </documentation>
+      </annotation>
+    </attribute>
+
+    <attribute name="MaxPayInOut" type="string" use="required">
+      <annotation>
+        <documentation>
+          Максимальная сумма внесений и изъятий
+        </documentation>
+      </annotation>
+    </attribute>
+    
+    <attribute name="Recalc" type="boolean" use="optional" default="true">
+      <annotation>
+        <documentation>
+          Флаг, указывает передавать ли на ФР стоимость одной единицы и количество
+          или подсчитывать итоговую сумму в соотвествии с настройками валюты и в качестве количева передавать единиц.
+        </documentation>
+      </annotation>
+    </attribute>    
+  </complexType>
+
+  <!-- root -->
+  <element name="CurrenciesList">
+    <annotation>
+      <documentation>
+        Список валют.
+      </documentation>
+    </annotation>
+    <complexType>
+      <choice minOccurs="0" maxOccurs="unbounded">
+        <element name="Currency" type="a:Currency">
+          <annotation>
+            <documentation>
+              Валюта со списком свойств.
+            </documentation>
+          </annotation>
+        </element>
+      </choice>
+    </complexType>
+
+    <key name="Currency.Name">
+      <selector xpath="Currency" />
+      <field xpath="@Name" />
+    </key>
+  </element>
+</schema>

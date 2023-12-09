@@ -1,0 +1,97 @@
+﻿<#@ template language="C#" debug="true" hostSpecific="true" #>
+<#@ output extension="cs" encoding="utf-8" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System" #>
+<#@ import namespace="System.Collections" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.Linq" #>
+<#@ xsd processor="Resto.CodeGeneration.XsdProcessor" file="Currencies.xsd" #>
+<#
+    CurrenciesList helper = CurrenciesList.Load(Host.ResolvePath("Currencies.xml"));
+    List<Currency> currencies = GetListsItems<Currency>(helper);
+#>
+using Resto.Framework.Properties;
+using System.Configuration;
+
+namespace Resto.Framework.Common.Currency
+{<# 
+    foreach(Currency cur in currencies){
+#>
+
+    ///<summary><#=cur.Comment#></summary>
+    public sealed class <#=cur.Name#>Number { public static string IsoName = "<#=cur.IsoName#>"; }
+<# } #>
+
+
+    public static partial class CurrencyHelper
+    {
+
+        static CurrencyHelper()
+        {
+<# 
+            foreach(Currency cur in currencies){
+#>
+			//<#= cur.IsoName #> - <#= cur.Comment #>
+            Register(<#= cur.Name #>Number.IsoName, 
+				<#= cur.FracPart #>, 
+				<#= cur.MaxPayInOut #>, 
+				<#= cur.Recalc ? "true" : "false" #>, 
+				"<#=cur.Name#>Number", 
+				<#= cur.Male ? "true" : "false" #>,
+                <#= GetResName(cur, false, "1") #>, 
+                <#= GetResName(cur, false, "2") #>, 
+                <#= GetResName(cur, false, "3") #>, 
+                <#= GetResName(cur, false, "4") #>, 
+                <#= GetResName(cur, false, "5") #>,
+                <#= GetResName(cur, true, "1") #>,  
+                <#= GetResName(cur, true, "2") #>, 
+                <#= GetResName(cur, true, "3") #>,
+                
+                <#= GetResName(cur, false, "DativeOne") #>,
+                <#= GetResName(cur, false, "DativeMany") #>,
+                <#= GetResName(cur, false, "AccusativeOne") #>,
+                <#= GetResName(cur, false, "AccusativeMany") #>,
+                <#= GetResName(cur, false, "InstrumentalOne") #>,
+                <#= GetResName(cur, false, "InstrumentalMany") #>,
+                <#= GetResName(cur, false, "PrepositionalOne") #>);
+                
+<# } #>
+        }
+    }
+}
+<#+ 
+    static string GetResName(Currency cur, bool forKop, string suffix) 
+    {
+        if (forKop && cur.FracPart <= 0)
+            return "string.Empty";
+        return string.Format("\"CurrencyConverter{0}{1}{2}\"", GetResName(cur, forKop), forKop ? "Kop" : "", suffix);
+    } 
+
+    static string GetResName(Currency cur, bool forKop) 
+    {
+        return forKop && !string.IsNullOrEmpty(cur.ResKopName) 
+            ? cur.ResKopName
+            : string.IsNullOrEmpty(cur.ResName) 
+                 ? cur.Name 
+            : cur.ResName;
+    }
+
+    /// <summary>Получить элементы заданного типа из всех полей-списков в объекте.</summary>
+    static List<TItem> GetListsItems<TItem>(object obj)
+    {
+        return obj.GetType().GetFields()
+            .Where(f => IsGenericSubclassOf(f.FieldType, typeof(List<>)) &&
+                (f.FieldType.GetGenericArguments()[0] == typeof(TItem) || f.FieldType.GetGenericArguments()[0].IsSubclassOf(typeof(TItem))))
+            .Select(f => (IEnumerable)f.GetValue(obj))
+            .SelectMany(l => l.Cast<TItem>())
+            .ToList();
+    }
+    
+    static bool IsGenericSubclassOf(System.Type type, System.Type generic)
+    {
+        for (; type != typeof(object); type = type.BaseType)
+            if ((type.IsGenericType ? type.GetGenericTypeDefinition() : type) == generic)
+                return true;
+        return false;
+    }
+#>

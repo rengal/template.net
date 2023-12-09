@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CurrenciesList xmlns="http://iiko.ru/XmlSchemas/Currencies.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://iiko.ru/XmlSchemas/Currencies.xsd Currencies.xsd">
+
+<!---  Для округления денежных значений до разрядов в целой части используйте отрицательные значения параметра FracPart (fractionalPartLength)
+       Например, при fractionalPartLength равном -1, денежные величины будут округляться до десятков рублей/долларов/etc.
+
+       Необходимо будет добавить также соответствующие ресурсные файлы. Описание см. в RMS-23845 -->
+
+  <Currency Name="Rus" ResName="Rub" IsoName="RUB" Comment="Российский рубль" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Armenia" ResName="Amd" IsoName="AMD" Comment="Армянский драм" Male="true" FracPart="0" MaxPayInOut="999999999m" />
+  <Currency Name="Euro" ResName="Eur" IsoName="EUR" Comment="Евро" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Belarus" ResName="Rub" IsoName="BYR" Comment="Белорусский рубль" Male="true" FracPart="-2" MaxPayInOut="99999999m" Recalc="false"/>
+  <Currency Name="BelarusNew" ResName="Rub" IsoName="BYN" Comment="Белорусский рубль после деноминации" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="USA" ResName="Usd" IsoName="USD" Comment="Американский доллар" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Uzbekistan" ResName="Uzs" IsoName="UZS" Comment="Узбекский сум" Male="true" FracPart="0" MaxPayInOut="99999999m" />
+  <Currency Name="Moldova" ResName="Mdl" IsoName="MDL" Comment="Молдавский лей" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Ukrainian" ResName="Uah" ResKopName="Rub" IsoName="UAH" Comment="Украинская гривна" Male="false" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Chinese" ResName="Cny" IsoName="CNY" Comment="Китайский юань" Male="true" FracPart="1" MaxPayInOut="99999999.9m" />
+
+  <Currency Name="Bif" ResName="Rwf" IsoName="BIF" Comment="Бурундийский франк" Male="true" FracPart="0" MaxPayInOut="99999999m" />
+  <Currency Name="Clp" ResName="Php" IsoName="CLP" Comment="Чилийское песо" Male="true" FracPart="0" MaxPayInOut="99999999m" />
+  <Currency Name="Kmf" ResName="Rwf" IsoName="KMF" Comment="Франк Комор" Male="true" FracPart="0" MaxPayInOut="99999999m" />
+  <Currency Name="Djf" ResName="Rwf" IsoName="DJF" Comment="Франк Джибути" Male="true" FracPart="0" MaxPayInOut="99999999m" />
+  <Currency Name="Gnf" ResName="Rwf" IsoName="GNF" Comment="Гвинейский франк" Male="true" FracPart="0" MaxPayInOut="99999999m" />
+  <Currency Name="Jpy" IsoName="JPY" Comment="Иена" Male="false" FracPart="0" MaxPayInOut="99999999m" />
+  <Currency Name="Krw" ResName="Kpw" IsoName="KRW" Comment="Вона" Male="true" FracPart="0" MaxPayInOut="99999999m" />
+  <Currency Name="Vuv" IsoName="VUV" Comment="Вату" Male="true" FracPart="0" MaxPayInOut="99999999m" />
+  <Currency Name="Pyg" ResKopName="Aoa" IsoName="PYG" Comment="Гуарани" Male="true" FracPart="0" MaxPayInOut="99999999m" />
+  <Currency Name="Rwf" IsoName="RWF" Comment="Франк Руанды" Male="true" FracPart="0" MaxPayInOut="99999999m" />
+  <Currency Name="Xaf" ResName="Rwf" IsoName="XAF" Comment="Франк КФА ВЕАС" Male="true" FracPart="0" MaxPayInOut="99999999m" />
+  <Currency Name="Xof" ResName="Rwf" IsoName="XOF" Comment="Франк КФА ВСЕАО" Male="true" FracPart="0" MaxPayInOut="99999999m" />
+  <Currency Name="Xpf" ResName="Rwf" IsoName="XPF" Comment="Франк КФП" Male="true" FracPart="0" MaxPayInOut="99999999m" />
+  <Currency Name="Mga" IsoName="MGA" Comment="Малагасийский ариари" Male="true" FracPart="0" MaxPayInOut="99999999m" />  
+  <Currency Name="All" IsoName="ALL" Comment="Лек" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Dzd" ResName="Bhd" ResKopName="Rwf" IsoName="DZD" Comment="Алжирский динар" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Ars" ResName="Php" IsoName="ARS" Comment="Аргентинское песо" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Aud" ResName="Usd" IsoName="AUD" Comment="Австралийский доллар" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Bsd" ResName="Usd" IsoName="BSD" Comment="Багамский доллар" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Bdt" ResKopName="Inr" IsoName="BDT" Comment="Така" Male="false" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Bbd" ResName="Usd" IsoName="BBD" Comment="Барбадосский доллар" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Bmd" ResName="Usd" IsoName="BMD" Comment="Бермудский доллар" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Btn" IsoName="BTN" Comment="Нгултрум" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Bob" ResKopName="Php" IsoName="BOB" Comment="Боливиано" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Bwp" IsoName="BWP" Comment="Пула" Male="false" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Bzd" ResName="Usd" IsoName="BZD" Comment="Белизский доллар" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Sbd" ResName="Usd" IsoName="SBD" Comment="Доллар Соломоновых Островов" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Bnd" ResName="Usd" ResKopName="Idr" IsoName="BND" Comment="Брунейский доллар" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Mmk" IsoName="MMK" Comment="Кьят" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Khr" ResKopName="Idr" IsoName="KHR" Comment="Риель" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Cad" ResName="Usd" IsoName="CAD" Comment="Канадский доллар" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Cve" ResKopName="Php" IsoName="CVE" Comment="Эскудо Кабо-Верде" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Kyd" ResName="Usd" IsoName="KYD" Comment="Доллар Островов Кайман" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Lkr" ResName="Inr" ResKopName="Usd" IsoName="LKR" Comment="Шри-Ланкийская рупия" Male="false" FracPart="2" MaxPayInOut="99999999.99m" />  
+  <Currency Name="Cop" ResName="Php" IsoName="COP" Comment="Колумбийское песо" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Crc" ResKopName="Aoa" IsoName="CRC" Comment="Костариканский колон" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Hrk" IsoName="HRK" Comment="Хорватская куна" Male="false" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Cup" ResName="Php" IsoName="CUP" Comment="Кубинское песо" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Czk" ResName="Dkk" ResKopName="Czk" IsoName="CZK" Comment="Чешская крона" Male="false" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Dkk" IsoName="DKK" Comment="Датская крона" Male="false" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Dop" ResName="Php" IsoName="DOP" Comment="Доминиканское песо" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Etb" ResKopName="Usd" IsoName="ETB" Comment="Эфиопский быр" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Ern" ResKopName="Usd" IsoName="ERN" Comment="Накфа" Male="false" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Fkp" ResName="Egp" ResKopName="Sgd" IsoName="FKP" Comment="Фунт Фолклендских островов" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Fjd" ResName="Usd" IsoName="FJD" Comment="Доллар Фиджи" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Gmd" IsoName="GMD" Comment="Даласи" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Gip" ResName="Egp" ResKopName="Sgd" IsoName="GIP" Comment="Гибралтарский фунт" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Gtq" ResKopName="Php" IsoName="GTQ" Comment="Кетсаль" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Gyd" ResName="Usd" IsoName="GYD" Comment="Гайанский доллар" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Htg" ResKopName="Rwf" IsoName="HTG" Comment="Гурд" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Hnl" ResKopName="Php" IsoName="HNL" Comment="Лемпира" Male="false" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Hkd" ResName="Usd" ResKopName="Vnd" IsoName="HKD" Comment="Гонконгский доллар" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Huf" IsoName="HUF" Comment="Форинт" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Isk" ResName="Dkk" IsoName="ISK" Comment="Исландская крона" Male="false" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Inr" IsoName="INR" Comment="Индийская рупия" Male="false" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Idr" ResName="Inr" ResKopName="Idr" IsoName="IDR" Comment="Рупия" Male="false" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Irr" IsoName="IRR" Comment="Иранский риал" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Ils" IsoName="ILS" Comment="Новый израильский шекель" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Jmd" ResName="Usd" IsoName="JMD" Comment="Ямайский доллар" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Kzt" IsoName="KZT" Comment="Тенге" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Kes" ResName="Sos" ResKopName="Usd" IsoName="KES" Comment="Кенийский шиллинг" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Kpw" IsoName="KPW" Comment="Северокорейская вона" Male="false" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Kgs" IsoName="KGS" Comment="Сом" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Lak" IsoName="LAK" Comment="Кип" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Lbp" ResName="Egp" IsoName="LBP" Comment="Ливанский фунт" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Lsl" IsoName="LSL" Comment="Лоти" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Lvl" ResKopName="Rwf" IsoName="LVL" Comment="Латвийский лат" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Lrd" ResName="Usd" IsoName="LRD" Comment="Либерийский доллар" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Ltl" ResKopName="Usd" IsoName="LTL" Comment="Литовский лит" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Mop" IsoName="MOP" Comment="Патака" Male="false" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Mwk" IsoName="MWK" Comment="Квача" Male="false" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Myr" ResKopName="Idr" IsoName="MYR" Comment="Малайзийский ринггит" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Mvr" IsoName="MVR" Comment="Руфия" Male="false" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Mro" IsoName="MRO" Comment="Угия" Male="false" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Mur" ResName="Inr" ResKopName="Usd" IsoName="MUR" Comment="Маврикийская рупия" Male="false" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Mxn" ResName="Php" IsoName="MXN" Comment="Мексиканское песо" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Mnt" IsoName="MNT" Comment="Тугрик" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />  
+  <Currency Name="Mad" ResKopName="Rwf" IsoName="MAD" Comment="Марокканский дирхам" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Nad" ResName="Usd" IsoName="NAD" Comment="Доллар Намибии" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Npr" ResName="Inr" IsoName="NPR" Comment="Непальская рупия" Male="false" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Ang" ResName="Awg" ResKopName="Usd" IsoName="ANG" Comment="Нидерландский антильский гульден" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Awg" IsoName="AWG" ResKopName="Usd" Comment="Арубанский гульден" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Nzd" ResName="Usd" IsoName="NZD" Comment="Новозеландский доллар" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Nio" ResKopName="Php" IsoName="NIO" Comment="Золотая кордоба" Male="false" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Ngn" IsoName="NGN" Comment="Найра" Male="false" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Nok" ResName="Dkk" IsoName="NOK" Comment="Норвежская крона" Male="false" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Pkr" ResName="Inr" IsoName="PKR" Comment="Пакистанская рупия" Male="false" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Pab" IsoName="PAB" Comment="Бальбоа" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Pgk" IsoName="PGK" Comment="Кина" Male="false" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Pen" ResKopName="Aoa" IsoName="PEN" Comment="Новый соль" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Php" IsoName="PHP" Comment="Филиппинское песо" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Qar" ResName="Qar" ResKopName="Lyd" IsoName="QAR" Comment="Катарский риял" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Shp" ResName="Egp" ResKopName="Czk" IsoName="SHP" Comment="Фунт Святой Елены" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Std" ResKopName="Aoa" IsoName="STD" Comment="Добра" Male="false" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Sar" IsoName="SAR" Comment="Саудовский риял" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Scr" ResName="Inr" ResKopName="Usd" IsoName="SCR" Comment="Сейшельская рупия" Male="false" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Sll" ResKopName="Usd" IsoName="SLL" Comment="Леоне" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Sgd" ResName="Usd" ResKopName="Sgd" IsoName="SGD" Comment="Сингапурский доллар" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Vnd" IsoName="VND" Comment="Донг" Male="true" FracPart="0" MaxPayInOut="99999999m" />
+  <Currency Name="Sos" ResKopName="Usd" IsoName="SOS" Comment="Сомалийский шиллинг" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Zar" ResKopName="Usd" IsoName="ZAR" Comment="Рэнд" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Szl" ResKopName="Usd" IsoName="SZL" Comment="Лилангени" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Sek" ResName="Dkk" IsoName="SEK" Comment="Шведская крона" Male="false" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Chf" ResName="Rwf" IsoName="CHF" Comment="Швейцарский франк" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Syp" ResName="Egp" IsoName="SYP" Comment="Сирийский фунт" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Thb" IsoName="THB" Comment="Бат" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Top" IsoName="TOP" Comment="Паанга" Male="false" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Ttd" ResName="Usd" IsoName="TTD" Comment="Доллар Тринидада и Тобаго" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Aed" ResName="Mad" ResKopName="Bhd" IsoName="AED" Comment="Дирхам (ОАЭ)" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Ugx" ResName="Sos" ResKopName="Usd" IsoName="UGX" Comment="Угандийский шиллинг" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Mkd" IsoName="MKD" Comment="Денар" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Egp" IsoName="EGP" Comment="Египетский фунт" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Gbp" ResName="Egp" ResKopName="Sgd" IsoName="GBP" Comment="Фунт стерлингов" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Tzs" ResName="Sos" ResKopName="Usd" IsoName="TZS" Comment="Танзанийский шиллинг" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Uyu" ResName="Php" ResKopName="Pab" IsoName="UYU" Comment="Уругвайское песо" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />  
+  <Currency Name="Wst" IsoName="WST" Comment="Тала" Male="false" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Yer" ResName="Irr" ResKopName="Bhd" IsoName="YER" Comment="Йеменский риал" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Zmk" ResName="Mwk" ResKopName="Zmk" IsoName="ZMK" Comment="Замбийская квача" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Twd" ResName="Usd" IsoName="TWD" Comment="Новый тайваньский доллар" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Zwl" ResName="Usd" IsoName="ZWL" Comment="Доллар Зимбабве" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Tmt" ResName="Azn" ResKopName="Tmt" IsoName="TMT" Comment="Новый манат" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Ghs" IsoName="GHS" Comment="Седи" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Vef" ResKopName="Aoa" IsoName="VEF" Comment="Боливар фуэрте" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Sdg" ResName="Egp" IsoName="SDG" Comment="Суданский фунт" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Rsd" ResName="Bhd" ResKopName="Rsd" IsoName="RSD" Comment="Сербский динар" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Mzn" ResKopName="Php" IsoName="MZN" Comment="Метикал" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Azn" IsoName="AZN" Comment="Азербайджанский манат" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Ron" ResName="Mdl" IsoName="RON" Comment="Новый лей" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Try" IsoName="TRY" Comment="Турецкая лира" Male="false" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Xcd" ResName="Usd" IsoName="XCD" Comment="Восточно-карибский доллар" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Srd" ResName="Usd" IsoName="SRD" Comment="Суринамский доллар" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Afn" IsoName="AFN" Comment="Афгани" Male="false" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Tjs" IsoName="TJS" Comment="Сомони" Male="false" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Aoa" IsoName="AOA" Comment="Кванза" Male="false" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Bgn" IsoName="BGN" Comment="Болгарский лев" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Cdf" ResName="Rwf" IsoName="CDF" Comment="Конголезский франк" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Bam" IsoName="BAM" Comment="Конвертируемая марка" Male="false" FracPart="2" MaxPayInOut="99999999.99m" />    
+  <Currency Name="Gel" IsoName="GEL" Comment="Лари" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Pln" IsoName="PLN" Comment="Злотый" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Brl" ResKopName="Php" IsoName="BRL" Comment="Бразильский реал" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="Bhd" IsoName="BHD" Comment="Бахрейнский динар" Male="true" FracPart="3" MaxPayInOut="99999999.999m" />
+  <Currency Name="Iqd" ResName="Bhd" IsoName="IQD" Comment="Иракский динар" Male="true" FracPart="3" MaxPayInOut="99999999.999m" />
+  <Currency Name="Jod" ResName="Bhd" ResKopName="Egp" IsoName="JOD" Comment="Иорданский динар" Male="true" FracPart="3" MaxPayInOut="99999999.999m" />
+  <Currency Name="Kwd" ResName="Bhd" IsoName="KWD" Comment="Кувейтский динар" Male="true" FracPart="3" MaxPayInOut="99999999.999m" />
+  <Currency Name="Lyd" ResName="Bhd" ResKopName="Lyd" IsoName="LYD" Comment="Ливийский динар" Male="true" FracPart="3" MaxPayInOut="99999999.999m" />
+  <Currency Name="Omr" ResName="Irr" ResKopName="Omr" IsoName="OMR" Comment="Оманский риал" Male="true" FracPart="3" MaxPayInOut="99999999.999m" />
+  <Currency Name="Tnd" ResName="Bhd" ResKopName="Tnd" IsoName="TND" Comment="Тунисский динар" Male="true" FracPart="3" MaxPayInOut="99999999.999m" />
+
+  <Currency Name="RusRubIikoNet" ResName="RubIikoNet" IsoName="RUBIIKONET" Comment="Рубль iiko.NET" Male="true" FracPart="2" MaxPayInOut="99999999.99m" />
+  <Currency Name="UkrainianHryvniaIikoNet" ResName="UahIikoNet" IsoName="UAHIIKONET" Comment="Украинская гривна iiko.NET" Male="false" FracPart="2" MaxPayInOut="99999999.99m" />
+</CurrenciesList>

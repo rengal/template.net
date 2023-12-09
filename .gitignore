@@ -1,0 +1,176 @@
+# folders
+
+# do not exclude whole .idea, otherwise it cannot be re-included again
+/**/.idea/*/*/*.*
+/**/.idea/*/*.*
+/**/.idea/*.*
+/**/.idea/.name
+/**/.idea/dataSources/**
+# some old git doesn't understand /**/
+/dev/Server/.idea/*/*.*
+/dev/Server/.idea/*.*
+/dev/Server/.idea/.name
+atlassian-ide-plugin.xml
+
+bin/
+BuildScripts/logs/
+BuildScripts/resto_home/
+dev/BackOffice/*/src.gen/
+dev/Server/logs/
+dev/Server/target/
+dev/Server/IikoBizServices/logs/
+dev/Server/RestoFrontDelivery/logs/
+dev/Server/RestoServer/logs/
+dev/Server/RestoServer/target/
+
+dev/SuperChain/.idea
+dev/SuperChain/.idea/libraries/*
+
+dev/SuperChain/.idea/**
+dev/SuperChain/**/*.log
+dev/SuperChain/**/*.epoch
+dev/SuperChain/target
+dev/SuperChain/*/src/main/java/resto/util/VersionInfo.java
+
+Tests/PSTests/TestResults/
+Resto.Front.Automation.Tests.Binaries/
+
+# Build Results
+/BuildResults/*
+/FrontApiPluginsBuildResults
+/dev/Installer/Resources/Plugins
+/dev/Installer/Resources/Webapps
+nunit-*.dll.xml
+dev/OEM/iiko1CIntegration/iiko1CInterface/BuildResults
+
+# svn docs
+/Help
+/dev/Installer/Resources/Docs
+
+Chain[Dd]ebug/
+[Dd]ebug/
+[Rr]elease/
+ConsoleRelease/
+_ReSharper*/
+*.dotCover
+# files
+*.[Rr]e[Ss]harper
+*.class
+*.csproj.*.cache
+*.idc
+*.lic
+*.ncb
+*.sln.cache
+*.suo
+*.user
+*.sdf
+*.opensdf
+
+build
+classes
+.gradle
+out
+
+/BuildScripts
+dev/Server/target
+dev/Server/Resto/*license.properties
+dev/Server/Resto/*.dat
+dev/Server/Resto/License*.*
+dev/Server/RestoServer/config/*alt.resto.properties
+dev/Server/RestoServer/src/resto/$V.java
+foodcostfix.log
+dev/iikoFront.Net/iikoFrontWithPlugins.sln
+dev/Server/Resto/config/resto.properties
+
+dev/iikoFront.Net/Sdk/Binaries/
+dev/iikoFront.Net/iikoFrontWithPlugins.Net.sln
+dev/iikoFront.Net/iikoFront.Net.ManagedOnly.sln
+dev/UnitTests.config
+*.log.txt
+/Tests/PSTests/TestRunner/ConfigAlt.ps1
+/Tests/PSTests/TestRunnerAlt.ps1
+*.ncrunchproject
+*crunchsolution*
+#файл создается mysysgit - http://code.google.com/p/tortoisegit/issues/detail?id=1011
+/sys$command
+
+# exceptions
+!**/.idea/default_settings
+!**/.idea/libraries
+!ThirdParty/Java/bin
+!ThirdParty/Java/bin/*/*
+!dev/Framework/dev/Build
+!dev/Server/.idea/*/*.xml.default
+!dev/Server/.idea/**/alt.resto.properties.default
+
+*.tmp
+BuildScripts/*.log
+obj/
+*.ipch
+ThirdParty/Net/Orderman/ScreenDesigner/Data/PreviousDirectories
+ThirdParty/Net/Orderman/ScreenDesigner/Data/Projects.xml
+ThirdParty/Net/Sberbank/SbrfSoft/*.log
+ThirdParty/Net/Sberbank/SbrfSoft/RDLS.R
+ThirdParty/Net/Sberbank/SbrfSoft/*.D
+ThirdParty/Net/Sberbank/SbrfSoft/*.I
+ThirdParty/Net/Sberbank/SbrfSoft/*.txt
+ThirdParty/Net/Sberbank/SbrfSoft/*.tlv
+ThirdParty/Net/Sberbank/SbrfSoft/*.B
+ThirdParty/Net/Sberbank/SbrfSoft/*.K
+
+# Документация Sandcastle
+dev/iikoFront.Net/Resto.Front.PowerShell.Doc/Help/*
+dev/iikoFront.Net/Api/Resto.Front.Api.V*.Documentation/Help/*
+dev/iikoFront.Net/Resto.Front.Api.WebApiServer.Documentation/Help/*
+dev/OEM/iiko1CIntegration/iiko1CInterfaceDocumentation/Help/*
+
+# Автосоздаваемые файлы лицензий .Net-компонентов (DevExpress и т.д.)
+licenses.licx
+
+# Резервная копия настроек Git Extensions (автоматически создаётся при изменении настроек)
+GitExtensions.settings.backup
+
+#Ресурсные файлы с переводами
+#Исключения
+!dev\iikoFront.Net\Resto.Front.Main\Properties\Resources.en-US.resx
+!dev\BackOffice\BackOffice\Properties\Resources.en-US.resx
+!dev\MobileDelivery\yandexmapkit-sample\local\strings.ru-RU.resx
+# Обычные ресурсные файлы
+*.??-??.resx
+!dev/iikoFront.Net/Sdk/Resto.Front.Api.SamplePlugin/Properties/Resources.ru-RU.resx
+!dev/iikoFront.Net/Resto.Front.Api.PartnerTech/Resources/PartnerTechLocalResources.ru-RU.resx
+!dev/iikoFront.Net/Resto.Front.Api.PartnerTech/Resources/PartnerTechLocalResources.hy-AM.resx
+*.??-????-??.resx
+# Серверные ресурсы
+dev/Server/RestoServer/config/resources/*_??.resx
+
+#Логи резгена и создаваемый им новый csv файл
+BuildScripts/resgen/*.log
+Resources/Translation/resources_new.csv
+
+# Временные файлы Test Complete
+*.tcLS
+*.tcCfgExtender
+/dev/BackOffice/PrintTemplates.Documentation/Help
+**/packages/*
+
+# Файлы BackApi.Core в проекте демо-плагина для iikoOffice
+dev/BackOffice/Resto.Plugin.Sample/lib/*
+
+# Репозиторий пререквизитов
+/Prerequisites
+
+# Deleted submodule
+Resources/Splash
+
+# Репозиторий с ресурсами для локализации
+Resources/Translation/*
+/BuildScripts/Resto.Build/Resto.Build.Extensions/azure-*.txt
+
+# Временные файлы VS2015 ии выше
+.vs/
+*.vc.vc.opendb
+*.vc.db
+
+node_modules/
+*.binlog

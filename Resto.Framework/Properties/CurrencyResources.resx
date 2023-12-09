@@ -1,0 +1,2733 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="RusNumber" xml:space="preserve">
+    <value>Российский рубль</value>
+  </data>
+  <data name="RusWoKopNumber" xml:space="preserve">
+    <value>Российский рубль без копеек</value>
+  </data>
+  <data name="ArmeniaNumber" xml:space="preserve">
+    <value>Армянский драм</value>
+  </data>
+  <data name="EuroNumber" xml:space="preserve">
+    <value>Евро</value>
+  </data>
+  <data name="USANumber" xml:space="preserve">
+    <value>Американский доллар</value>
+  </data>
+  <data name="UzbekistanNumber" xml:space="preserve">
+    <value>Узбекский сум</value>
+  </data>
+  <data name="MoldovaNumber" xml:space="preserve">
+    <value>Молдавский лей</value>
+  </data>
+  <data name="RolNumber" xml:space="preserve">
+    <value>Румынский лей</value>
+  </data>
+  <data name="UkrainianNumber" xml:space="preserve">
+    <value>Украинская гривна</value>
+  </data>
+  <data name="ChineseNumber" xml:space="preserve">
+    <value>Китайский юань</value>
+  </data>
+  <data name="BelarusNumber" xml:space="preserve">
+    <value>Белорусский рубль</value>
+  </data>
+  <data name="CurrencyNumber100" xml:space="preserve">
+    <value>сто </value>
+  </data>
+  <data name="CurrencyNumber200" xml:space="preserve">
+    <value>двести </value>
+  </data>
+  <data name="CurrencyNumber300" xml:space="preserve">
+    <value>триста </value>
+  </data>
+  <data name="CurrencyNumber400" xml:space="preserve">
+    <value>четыреста </value>
+  </data>
+  <data name="CurrencyNumber500" xml:space="preserve">
+    <value>пятьсот </value>
+  </data>
+  <data name="CurrencyNumber600" xml:space="preserve">
+    <value>шестьсот </value>
+  </data>
+  <data name="CurrencyNumber700" xml:space="preserve">
+    <value>семьсот </value>
+  </data>
+  <data name="CurrencyNumber800" xml:space="preserve">
+    <value>восемьсот </value>
+  </data>
+  <data name="CurrencyNumber900" xml:space="preserve">
+    <value>девятьсот </value>
+  </data>
+  <data name="CurrencyNumber10" xml:space="preserve">
+    <value>десять </value>
+  </data>
+  <data name="CurrencyNumber20" xml:space="preserve">
+    <value>двадцать </value>
+  </data>
+  <data name="CurrencyNumber30" xml:space="preserve">
+    <value>тридцать </value>
+  </data>
+  <data name="CurrencyNumber40" xml:space="preserve">
+    <value>сорок </value>
+  </data>
+  <data name="CurrencyNumber50" xml:space="preserve">
+    <value>пятьдесят </value>
+  </data>
+  <data name="CurrencyNumber60" xml:space="preserve">
+    <value>шестьдесят </value>
+  </data>
+  <data name="CurrencyNumber70" xml:space="preserve">
+    <value>семьдесят </value>
+  </data>
+  <data name="CurrencyNumber80" xml:space="preserve">
+    <value>восемьдесят </value>
+  </data>
+  <data name="CurrencyNumber90" xml:space="preserve">
+    <value>девяносто </value>
+  </data>
+  <data name="CurrencyNumber1" xml:space="preserve">
+    <value>один </value>
+  </data>
+  <data name="CurrencyNumber2" xml:space="preserve">
+    <value>два </value>
+  </data>
+  <data name="CurrencyNumber3" xml:space="preserve">
+    <value>три </value>
+  </data>
+  <data name="CurrencyNumber4" xml:space="preserve">
+    <value>четыре </value>
+  </data>
+  <data name="CurrencyNumber5" xml:space="preserve">
+    <value>пять </value>
+  </data>
+  <data name="CurrencyNumber6" xml:space="preserve">
+    <value>шесть </value>
+  </data>
+  <data name="CurrencyNumber7" xml:space="preserve">
+    <value>семь </value>
+  </data>
+  <data name="CurrencyNumber8" xml:space="preserve">
+    <value>восемь </value>
+  </data>
+  <data name="CurrencyNumber9" xml:space="preserve">
+    <value>девять </value>
+  </data>
+  <data name="CurrencyNumber10i" xml:space="preserve">
+    <value>десять </value>
+  </data>
+  <data name="CurrencyNumber11" xml:space="preserve">
+    <value>одиннадцать </value>
+  </data>
+  <data name="CurrencyNumber12" xml:space="preserve">
+    <value>двенадцать </value>
+  </data>
+  <data name="CurrencyNumber13" xml:space="preserve">
+    <value>тринадцать </value>
+  </data>
+  <data name="CurrencyNumber14" xml:space="preserve">
+    <value>четырнадцать </value>
+  </data>
+  <data name="CurrencyNumber15" xml:space="preserve">
+    <value>пятнадцать </value>
+  </data>
+  <data name="CurrencyNumber16" xml:space="preserve">
+    <value>шестнадцать </value>
+  </data>
+  <data name="CurrencyNumber17" xml:space="preserve">
+    <value>семнадцать </value>
+  </data>
+  <data name="CurrencyNumber18" xml:space="preserve">
+    <value>восемнадцать </value>
+  </data>
+  <data name="CurrencyNumber19" xml:space="preserve">
+    <value>девятнадцать </value>
+  </data>
+  <data name="CurrencyNumberParemeterCantBeNegative" xml:space="preserve">
+    <value>Параметр не может быть отрицательным</value>
+  </data>
+  <data name="CurrencyNumberOneFem" xml:space="preserve">
+    <value>одна </value>
+  </data>
+  <data name="CurrencyNumberTwoFem" xml:space="preserve">
+    <value>две </value>
+  </data>
+  <data name="CurrencyConverterRub1" xml:space="preserve">
+    <value>рубль</value>
+  </data>
+  <data name="CurrencyConverterRub2" xml:space="preserve">
+    <value>рубля</value>
+  </data>
+  <data name="CurrencyConverterRub3" xml:space="preserve">
+    <value>рублей</value>
+  </data>
+  <data name="CurrencyConverterRub4" xml:space="preserve">
+    <value>рублях</value>
+  </data>
+  <data name="CurrencyConverterRub5" xml:space="preserve">
+    <value>рубли</value>
+  </data>
+  <data name="CurrencyConverterRubAccusativeMany" xml:space="preserve">
+    <value>рубли</value>
+  </data>
+  <data name="CurrencyConverterRubAccusativeOne" xml:space="preserve">
+    <value>рубль</value>
+  </data>
+  <data name="CurrencyConverterRubDativeMany" xml:space="preserve">
+    <value>рублям</value>
+  </data>
+  <data name="CurrencyConverterRubDativeOne" xml:space="preserve">
+    <value>рублю</value>
+  </data>
+  <data name="CurrencyConverterRubInstrumentalMany" xml:space="preserve">
+    <value>рублями</value>
+  </data>
+  <data name="CurrencyConverterRubInstrumentalOne" xml:space="preserve">
+    <value>рублем</value>
+  </data>
+  <data name="CurrencyConverterRubPrepositionalOne" xml:space="preserve">
+    <value>рубле</value>
+  </data>
+  <data name="CurrencyConverterRubKop1" xml:space="preserve">
+    <value>копейка</value>
+  </data>
+  <data name="CurrencyConverterRubKop2" xml:space="preserve">
+    <value>копейки</value>
+  </data>
+  <data name="CurrencyConverterRubKop3" xml:space="preserve">
+    <value>копеек</value>
+  </data>
+  <data name="RusRubIikoNetNumber" xml:space="preserve">
+    <value>Бонусный рубль</value>
+  </data>
+  <data name="CurrencyConverterRubIikoNet1" xml:space="preserve">
+    <value>бонусный рубль</value>
+  </data>
+  <data name="CurrencyConverterRubIikoNet2" xml:space="preserve">
+    <value>бонусного рубля</value>
+  </data>
+  <data name="CurrencyConverterRubIikoNet3" xml:space="preserve">
+    <value>бонусных рублей</value>
+  </data>
+  <data name="CurrencyConverterRubIikoNet4" xml:space="preserve">
+    <value>бонусных рублях</value>
+  </data>
+  <data name="CurrencyConverterRubIikoNet5" xml:space="preserve">
+    <value>бонусные рубли</value>
+  </data>
+  <data name="CurrencyConverterRubIikoNetAccusativeMany" xml:space="preserve">
+    <value>бонусные рубли</value>
+  </data>
+  <data name="CurrencyConverterRubIikoNetAccusativeOne" xml:space="preserve">
+    <value>бонусный рубль</value>
+  </data>
+  <data name="CurrencyConverterRubIikoNetDativeMany" xml:space="preserve">
+    <value>бонусным рублям</value>
+  </data>
+  <data name="CurrencyConverterRubIikoNetDativeOne" xml:space="preserve">
+    <value>бонусному рублю</value>
+  </data>
+  <data name="CurrencyConverterRubIikoNetInstrumentalMany" xml:space="preserve">
+    <value>бонусными рублями</value>
+  </data>
+  <data name="CurrencyConverterRubIikoNetInstrumentalOne" xml:space="preserve">
+    <value>бонусным рублем</value>
+  </data>
+  <data name="CurrencyConverterRubIikoNetPrepositionalOne" xml:space="preserve">
+    <value>бонусных рублях</value>
+  </data>
+  <data name="CurrencyConverterRubIikoNetKop1" xml:space="preserve">
+    <value>копейка</value>
+  </data>
+  <data name="CurrencyConverterRubIikoNetKop2" xml:space="preserve">
+    <value>копейки</value>
+  </data>
+  <data name="CurrencyConverterRubIikoNetKop3" xml:space="preserve">
+    <value>копеек</value>
+  </data>
+  <data name="UkrainianHryvniaIikoNetNumber" xml:space="preserve">
+    <value>Бонусная гривна</value>
+  </data>
+  <data name="CurrencyConverterUahIikoNet1" xml:space="preserve">
+    <value>бонусная гривна</value>
+  </data>
+  <data name="CurrencyConverterUahIikoNet2" xml:space="preserve">
+    <value>бонусной гривны</value>
+  </data>
+  <data name="CurrencyConverterUahIikoNet3" xml:space="preserve">
+    <value>бонусной гривной</value>
+  </data>
+  <data name="CurrencyConverterUahIikoNet4" xml:space="preserve">
+    <value>бонусных гривнах</value>
+  </data>
+  <data name="CurrencyConverterUahIikoNet5" xml:space="preserve">
+    <value>бонусной гривны</value>
+  </data>
+  <data name="CurrencyConverterUahIikoNetAccusativeMany" xml:space="preserve">
+    <value>бонусной гривны</value>
+  </data>
+  <data name="CurrencyConverterUahIikoNetAccusativeOne" xml:space="preserve">
+    <value>бонусная гривна</value>
+  </data>
+  <data name="CurrencyConverterUahIikoNetDativeMany" xml:space="preserve">
+    <value>бонусным гривнам</value>
+  </data>
+  <data name="CurrencyConverterUahIikoNetDativeOne" xml:space="preserve">
+    <value>бонусной гривне</value>
+  </data>
+  <data name="CurrencyConverterUahIikoNetInstrumentalMany" xml:space="preserve">
+    <value>бонусным гривнам</value>
+  </data>
+  <data name="CurrencyConverterUahIikoNetInstrumentalOne" xml:space="preserve">
+    <value>бонусной гривной</value>
+  </data>
+  <data name="CurrencyConverterUahIikoNetPrepositionalOne" xml:space="preserve">
+    <value>бонусной гривне</value>
+  </data>
+  <data name="CurrencyConverterUahIikoNetKop1" xml:space="preserve">
+    <value>копейка</value>
+  </data>
+  <data name="CurrencyConverterUahIikoNetKop2" xml:space="preserve">
+    <value>копейки</value>
+  </data>
+  <data name="CurrencyConverterUahIikoNetKop3" xml:space="preserve">
+    <value>копеек</value>
+  </data>
+  <data name="CurrencyConverterEur1" xml:space="preserve">
+    <value>евро</value>
+  </data>
+  <data name="CurrencyConverterEur2" xml:space="preserve">
+    <value>евро</value>
+  </data>
+  <data name="CurrencyConverterEur3" xml:space="preserve">
+    <value>евро</value>
+  </data>
+  <data name="CurrencyConverterEur5" xml:space="preserve">
+    <value>евро</value>
+  </data>
+  <data name="CurrencyConverterEur4" xml:space="preserve">
+    <value>евро</value>
+  </data>
+  <data name="CurrencyConverterEurKop1" xml:space="preserve">
+    <value>евроцент</value>
+  </data>
+  <data name="CurrencyConverterEurKop2" xml:space="preserve">
+    <value>евроцента</value>
+  </data>
+  <data name="CurrencyConverterEurKop3" xml:space="preserve">
+    <value>евроцентов</value>
+  </data>
+  <data name="CurrencyConverterUsd1" xml:space="preserve">
+    <value>доллар</value>
+  </data>
+  <data name="CurrencyConverterUsd2" xml:space="preserve">
+    <value>доллара</value>
+  </data>
+  <data name="CurrencyConverterUsd3" xml:space="preserve">
+    <value>долларов</value>
+  </data>
+  <data name="CurrencyConverterUsd4" xml:space="preserve">
+    <value>долларах</value>
+  </data>
+  <data name="CurrencyConverterUsd5" xml:space="preserve">
+    <value>доллары</value>
+  </data>
+  <data name="CurrencyConverterUsdKop1" xml:space="preserve">
+    <value>цент</value>
+  </data>
+  <data name="CurrencyConverterUsdKop2" xml:space="preserve">
+    <value>цента</value>
+  </data>
+  <data name="CurrencyConverterUsdKop3" xml:space="preserve">
+    <value>центов</value>
+  </data>
+  <data name="CurrencyConverterAmd1" xml:space="preserve">
+    <value>драм</value>
+  </data>
+  <data name="CurrencyConverterAmd2" xml:space="preserve">
+    <value>драм</value>
+  </data>
+  <data name="CurrencyConverterAmd3" xml:space="preserve">
+    <value>драм</value>
+  </data>
+  <data name="CurrencyConverterAmd4" xml:space="preserve">
+    <value>драм</value>
+  </data>
+  <data name="CurrencyConverterAmd5" xml:space="preserve">
+    <value>драм</value>
+  </data>
+  <data name="CurrencyConverterUzs1" xml:space="preserve">
+    <value>сум</value>
+  </data>
+  <data name="CurrencyConverterUzs2" xml:space="preserve">
+    <value>сум</value>
+  </data>
+  <data name="CurrencyConverterUzs3" xml:space="preserve">
+    <value>сум</value>
+  </data>
+  <data name="CurrencyConverterUzs4" xml:space="preserve">
+    <value>сум</value>
+  </data>
+  <data name="CurrencyConverterUzs5" xml:space="preserve">
+    <value>сум</value>
+  </data>
+  <data name="CurrencyConverterMdl1" xml:space="preserve">
+    <value>лей</value>
+  </data>
+  <data name="CurrencyConverterMdl2" xml:space="preserve">
+    <value>лея</value>
+  </data>
+  <data name="CurrencyConverterMdl3" xml:space="preserve">
+    <value>леев</value>
+  </data>
+  <data name="CurrencyConverterMdl4" xml:space="preserve">
+    <value>леях</value>
+  </data>
+  <data name="CurrencyConverterMdl5" xml:space="preserve">
+    <value>леи</value>
+  </data>
+  <data name="CurrencyConverterMdlKop1" xml:space="preserve">
+    <value>бань</value>
+  </data>
+  <data name="CurrencyConverterMdlKop2" xml:space="preserve">
+    <value>бань</value>
+  </data>
+  <data name="CurrencyConverterMdlKop3" xml:space="preserve">
+    <value>бань</value>
+  </data>
+  <data name="CurrencyConverterUah1" xml:space="preserve">
+    <value>гривна</value>
+  </data>
+  <data name="CurrencyConverterUah2" xml:space="preserve">
+    <value>гривны</value>
+  </data>
+  <data name="CurrencyConverterUah3" xml:space="preserve">
+    <value>гривен</value>
+  </data>
+  <data name="CurrencyConverterUah4" xml:space="preserve">
+    <value>гривнах</value>
+  </data>
+  <data name="CurrencyConverterUah5" xml:space="preserve">
+    <value>гривны</value>
+  </data>
+  <data name="CurrencyConverterCny1" xml:space="preserve">
+    <value>юань</value>
+  </data>
+  <data name="CurrencyConverterCny2" xml:space="preserve">
+    <value>юаня</value>
+  </data>
+  <data name="CurrencyConverterCny3" xml:space="preserve">
+    <value>юаней</value>
+  </data>
+  <data name="CurrencyConverterCny4" xml:space="preserve">
+    <value>юанях</value>
+  </data>
+  <data name="CurrencyConverterCny5" xml:space="preserve">
+    <value>юани</value>
+  </data>
+  <data name="CurrencyConverterCnyKop1" xml:space="preserve">
+    <value>мао</value>
+  </data>
+  <data name="CurrencyConverterCnyKop2" xml:space="preserve">
+    <value>мао</value>
+  </data>
+  <data name="CurrencyConverterCnyKop3" xml:space="preserve">
+    <value>мао</value>
+  </data>
+  <data name="CurrencyConvertercCurrencyNotRegistered" xml:space="preserve">
+    <value>Валюта '{0}' не зарегистрирована</value>
+  </data>
+  <data name="CurrencyConverterZero" xml:space="preserve">
+    <value>ноль </value>
+  </data>
+  <data name="CurrencyConverterThousand1" xml:space="preserve">
+    <value>тысяча</value>
+  </data>
+  <data name="CurrencyConverterThousand2" xml:space="preserve">
+    <value>тысячи</value>
+  </data>
+  <data name="CurrencyConverterThousand3" xml:space="preserve">
+    <value>тысяч</value>
+  </data>
+  <data name="CurrencyConverterMillion1" xml:space="preserve">
+    <value>миллион</value>
+  </data>
+  <data name="CurrencyConverterMillion2" xml:space="preserve">
+    <value>миллиона</value>
+  </data>
+  <data name="CurrencyConverterMillion3" xml:space="preserve">
+    <value>миллионов</value>
+  </data>
+  <data name="CurrencyConverterBillion1" xml:space="preserve">
+    <value>миллиард</value>
+  </data>
+  <data name="CurrencyConverterBillion2" xml:space="preserve">
+    <value>миллиарда</value>
+  </data>
+  <data name="CurrencyConverterBillion3" xml:space="preserve">
+    <value>миллиардов</value>
+  </data>
+  <data name="CurrencyConverterTrillion1" xml:space="preserve">
+    <value>триллион</value>
+  </data>
+  <data name="CurrencyConverterTrillion2" xml:space="preserve">
+    <value>триллиона</value>
+  </data>
+  <data name="CurrencyConverterTrillion3" xml:space="preserve">
+    <value>триллионов</value>
+  </data>
+  <data name="CurrencyConverterTrilliard1" xml:space="preserve">
+    <value>триллиард</value>
+  </data>
+  <data name="CurrencyConverterTrilliard2" xml:space="preserve">
+    <value>триллиарда</value>
+  </data>
+  <data name="CurrencyConverterTrilliard3" xml:space="preserve">
+    <value>триллиардов</value>
+  </data>
+  <data name="CurrencyConverterMinus" xml:space="preserve">
+    <value>минус </value>
+  </data>
+  <data name="BifNumber" xml:space="preserve">
+    <value>Бурундийский франк</value>
+  </data>
+  <data name="ClpNumber" xml:space="preserve">
+    <value>Чилийское песо</value>
+  </data>
+  <data name="KmfNumber" xml:space="preserve">
+    <value>Франк Комор</value>
+  </data>
+  <data name="DjfNumber" xml:space="preserve">
+    <value>Франк Джибути</value>
+  </data>
+  <data name="GnfNumber" xml:space="preserve">
+    <value>Гвинейский франк</value>
+  </data>
+  <data name="JpyNumber" xml:space="preserve">
+    <value>Иена</value>
+  </data>
+  <data name="KrwNumber" xml:space="preserve">
+    <value>Вона</value>
+  </data>
+  <data name="VuvNumber" xml:space="preserve">
+    <value>Вату</value>
+  </data>
+  <data name="PygNumber" xml:space="preserve">
+    <value>Гуарани</value>
+  </data>
+  <data name="RwfNumber" xml:space="preserve">
+    <value>Франк Руанды</value>
+  </data>
+  <data name="XafNumber" xml:space="preserve">
+    <value>Франк КФА ВЕАС</value>
+  </data>
+  <data name="XofNumber" xml:space="preserve">
+    <value>Франк КФА ВСЕАО</value>
+  </data>
+  <data name="XpfNumber" xml:space="preserve">
+    <value>Франк КФП</value>
+  </data>
+  <data name="MgaNumber" xml:space="preserve">
+    <value>Малагасийский ариари</value>
+  </data>
+  <data name="AllNumber" xml:space="preserve">
+    <value>Лек</value>
+  </data>
+  <data name="DzdNumber" xml:space="preserve">
+    <value>Алжирский динар</value>
+  </data>
+  <data name="ArsNumber" xml:space="preserve">
+    <value>Аргентинское песо</value>
+  </data>
+  <data name="AudNumber" xml:space="preserve">
+    <value>Австралийский доллар</value>
+  </data>
+  <data name="BsdNumber" xml:space="preserve">
+    <value>Багамский доллар</value>
+  </data>
+  <data name="BdtNumber" xml:space="preserve">
+    <value>Така</value>
+  </data>
+  <data name="BbdNumber" xml:space="preserve">
+    <value>Барбадосский доллар</value>
+  </data>
+  <data name="BmdNumber" xml:space="preserve">
+    <value>Бермудский доллар</value>
+  </data>
+  <data name="BtnNumber" xml:space="preserve">
+    <value>Нгултрум</value>
+  </data>
+  <data name="BobNumber" xml:space="preserve">
+    <value>Боливиано</value>
+  </data>
+  <data name="BwpNumber" xml:space="preserve">
+    <value>Пула</value>
+  </data>
+  <data name="BzdNumber" xml:space="preserve">
+    <value>Белизский доллар</value>
+  </data>
+  <data name="SbdNumber" xml:space="preserve">
+    <value>Доллар Соломоновых Островов</value>
+  </data>
+  <data name="BndNumber" xml:space="preserve">
+    <value>Брунейский доллар</value>
+  </data>
+  <data name="MmkNumber" xml:space="preserve">
+    <value>Кьят</value>
+  </data>
+  <data name="KhrNumber" xml:space="preserve">
+    <value>Риель</value>
+  </data>
+  <data name="CadNumber" xml:space="preserve">
+    <value>Канадский доллар</value>
+  </data>
+  <data name="CveNumber" xml:space="preserve">
+    <value>Эскудо Кабо-Верде</value>
+  </data>
+  <data name="KydNumber" xml:space="preserve">
+    <value>Доллар Островов Кайман</value>
+  </data>
+  <data name="LkrNumber" xml:space="preserve">
+    <value>Шри-Ланкийская рупия</value>
+  </data>
+  <data name="CopNumber" xml:space="preserve">
+    <value>Колумбийское песо</value>
+  </data>
+  <data name="CrcNumber" xml:space="preserve">
+    <value>Костариканский колон</value>
+  </data>
+  <data name="HrkNumber" xml:space="preserve">
+    <value>Хорватская куна</value>
+  </data>
+  <data name="CupNumber" xml:space="preserve">
+    <value>Кубинское песо</value>
+  </data>
+  <data name="CzkNumber" xml:space="preserve">
+    <value>Чешская крона</value>
+  </data>
+  <data name="DkkNumber" xml:space="preserve">
+    <value>Датская крона</value>
+  </data>
+  <data name="DopNumber" xml:space="preserve">
+    <value>Доминиканское песо</value>
+  </data>
+  <data name="EtbNumber" xml:space="preserve">
+    <value>Эфиопский быр</value>
+  </data>
+  <data name="ErnNumber" xml:space="preserve">
+    <value>Накфа</value>
+  </data>
+  <data name="FkpNumber" xml:space="preserve">
+    <value>Фунт Фолклендских островов</value>
+  </data>
+  <data name="FjdNumber" xml:space="preserve">
+    <value>Доллар Фиджи</value>
+  </data>
+  <data name="GmdNumber" xml:space="preserve">
+    <value>Даласи</value>
+  </data>
+  <data name="GipNumber" xml:space="preserve">
+    <value>Гибралтарский фунт</value>
+  </data>
+  <data name="GtqNumber" xml:space="preserve">
+    <value>Кетсаль</value>
+  </data>
+  <data name="GydNumber" xml:space="preserve">
+    <value>Гайанский доллар</value>
+  </data>
+  <data name="HtgNumber" xml:space="preserve">
+    <value>Гурд</value>
+  </data>
+  <data name="HnlNumber" xml:space="preserve">
+    <value>Лемпира</value>
+  </data>
+  <data name="HkdNumber" xml:space="preserve">
+    <value>Гонконгский доллар</value>
+  </data>
+  <data name="HufNumber" xml:space="preserve">
+    <value>Форинт</value>
+  </data>
+  <data name="IskNumber" xml:space="preserve">
+    <value>Исландская крона</value>
+  </data>
+  <data name="InrNumber" xml:space="preserve">
+    <value>Индийская рупия</value>
+  </data>
+  <data name="IdrNumber" xml:space="preserve">
+    <value>Рупия</value>
+  </data>
+  <data name="IrrNumber" xml:space="preserve">
+    <value>Иранский риал</value>
+  </data>
+  <data name="IlsNumber" xml:space="preserve">
+    <value>Новый израильский шекель</value>
+  </data>
+  <data name="JmdNumber" xml:space="preserve">
+    <value>Ямайский доллар</value>
+  </data>
+  <data name="KztNumber" xml:space="preserve">
+    <value>Тенге</value>
+  </data>
+  <data name="KesNumber" xml:space="preserve">
+    <value>Кенийский шиллинг</value>
+  </data>
+  <data name="KpwNumber" xml:space="preserve">
+    <value>Северокорейская вона</value>
+  </data>
+  <data name="KgsNumber" xml:space="preserve">
+    <value>Сом</value>
+  </data>
+  <data name="LakNumber" xml:space="preserve">
+    <value>Кип</value>
+  </data>
+  <data name="LbpNumber" xml:space="preserve">
+    <value>Ливанский фунт</value>
+  </data>
+  <data name="LslNumber" xml:space="preserve">
+    <value>Лоти</value>
+  </data>
+  <data name="LvlNumber" xml:space="preserve">
+    <value>Латвийский лат</value>
+  </data>
+  <data name="LrdNumber" xml:space="preserve">
+    <value>Либерийский доллар</value>
+  </data>
+  <data name="LtlNumber" xml:space="preserve">
+    <value>Литовский лит</value>
+  </data>
+  <data name="MopNumber" xml:space="preserve">
+    <value>Патака</value>
+  </data>
+  <data name="MwkNumber" xml:space="preserve">
+    <value>Квача</value>
+  </data>
+  <data name="MyrNumber" xml:space="preserve">
+    <value>Малайзийский ринггит</value>
+  </data>
+  <data name="MvrNumber" xml:space="preserve">
+    <value>Руфия</value>
+  </data>
+  <data name="MroNumber" xml:space="preserve">
+    <value>Угия</value>
+  </data>
+  <data name="MurNumber" xml:space="preserve">
+    <value>Маврикийская рупия</value>
+  </data>
+  <data name="MxnNumber" xml:space="preserve">
+    <value>Мексиканское песо</value>
+  </data>
+  <data name="MntNumber" xml:space="preserve">
+    <value>Тугрик</value>
+  </data>
+  <data name="MadNumber" xml:space="preserve">
+    <value>Марокканский дирхам</value>
+  </data>
+  <data name="NadNumber" xml:space="preserve">
+    <value>Доллар Намибии</value>
+  </data>
+  <data name="NprNumber" xml:space="preserve">
+    <value>Непальская рупия</value>
+  </data>
+  <data name="AngNumber" xml:space="preserve">
+    <value>Нидерландский антильский гульден</value>
+  </data>
+  <data name="AwgNumber" xml:space="preserve">
+    <value>Арубанский гульден</value>
+  </data>
+  <data name="NzdNumber" xml:space="preserve">
+    <value>Новозеландский доллар</value>
+  </data>
+  <data name="NioNumber" xml:space="preserve">
+    <value>Золотая кордоба</value>
+  </data>
+  <data name="NgnNumber" xml:space="preserve">
+    <value>Найра</value>
+  </data>
+  <data name="NokNumber" xml:space="preserve">
+    <value>Норвежская крона</value>
+  </data>
+  <data name="PkrNumber" xml:space="preserve">
+    <value>Пакистанская рупия</value>
+  </data>
+  <data name="PabNumber" xml:space="preserve">
+    <value>Бальбоа</value>
+  </data>
+  <data name="PgkNumber" xml:space="preserve">
+    <value>Кина</value>
+  </data>
+  <data name="PenNumber" xml:space="preserve">
+    <value>Новый соль</value>
+  </data>
+  <data name="PhpNumber" xml:space="preserve">
+    <value>Филиппинское песо</value>
+  </data>
+  <data name="QarNumber" xml:space="preserve">
+    <value>Катарский риял</value>
+  </data>
+  <data name="ShpNumber" xml:space="preserve">
+    <value>Фунт Святой Елены</value>
+  </data>
+  <data name="StdNumber" xml:space="preserve">
+    <value>Добра</value>
+  </data>
+  <data name="SarNumber" xml:space="preserve">
+    <value>Саудовский риял</value>
+  </data>
+  <data name="ScrNumber" xml:space="preserve">
+    <value>Сейшельская рупия</value>
+  </data>
+  <data name="SllNumber" xml:space="preserve">
+    <value>Леоне</value>
+  </data>
+  <data name="SgdNumber" xml:space="preserve">
+    <value>Сингапурский доллар</value>
+  </data>
+  <data name="VndNumber" xml:space="preserve">
+    <value>Донг</value>
+  </data>
+  <data name="SosNumber" xml:space="preserve">
+    <value>Сомалийский шиллинг</value>
+  </data>
+  <data name="ZarNumber" xml:space="preserve">
+    <value>Рэнд</value>
+  </data>
+  <data name="SzlNumber" xml:space="preserve">
+    <value>Лилангени</value>
+  </data>
+  <data name="SekNumber" xml:space="preserve">
+    <value>Шведская крона</value>
+  </data>
+  <data name="ChfNumber" xml:space="preserve">
+    <value>Швейцарский франк</value>
+  </data>
+  <data name="SypNumber" xml:space="preserve">
+    <value>Сирийский фунт</value>
+  </data>
+  <data name="ThbNumber" xml:space="preserve">
+    <value>Бат</value>
+  </data>
+  <data name="TopNumber" xml:space="preserve">
+    <value>Паанга</value>
+  </data>
+  <data name="TtdNumber" xml:space="preserve">
+    <value>Доллар Тринидада и Тобаго</value>
+  </data>
+  <data name="AedNumber" xml:space="preserve">
+    <value>Дирхам (ОАЭ)</value>
+  </data>
+  <data name="UgxNumber" xml:space="preserve">
+    <value>Угандийский шиллинг</value>
+  </data>
+  <data name="MkdNumber" xml:space="preserve">
+    <value>Денар</value>
+  </data>
+  <data name="EgpNumber" xml:space="preserve">
+    <value>Египетский фунт</value>
+  </data>
+  <data name="GbpNumber" xml:space="preserve">
+    <value>Фунт стерлингов</value>
+  </data>
+  <data name="TzsNumber" xml:space="preserve">
+    <value>Танзанийский шиллинг</value>
+  </data>
+  <data name="UyuNumber" xml:space="preserve">
+    <value>Уругвайское песо</value>
+  </data>
+  <data name="WstNumber" xml:space="preserve">
+    <value>Тала</value>
+  </data>
+  <data name="YerNumber" xml:space="preserve">
+    <value>Йеменский риал</value>
+  </data>
+  <data name="ZmkNumber" xml:space="preserve">
+    <value>Замбийская квача</value>
+  </data>
+  <data name="TwdNumber" xml:space="preserve">
+    <value>Новый тайваньский доллар</value>
+  </data>
+  <data name="ZwlNumber" xml:space="preserve">
+    <value>Доллар Зимбабве</value>
+  </data>
+  <data name="TmtNumber" xml:space="preserve">
+    <value>Новый манат</value>
+  </data>
+  <data name="GhsNumber" xml:space="preserve">
+    <value>Седи</value>
+  </data>
+  <data name="VefNumber" xml:space="preserve">
+    <value>Боливар фуэрте</value>
+  </data>
+  <data name="SdgNumber" xml:space="preserve">
+    <value>Суданский фунт</value>
+  </data>
+  <data name="RsdNumber" xml:space="preserve">
+    <value>Сербский динар</value>
+  </data>
+  <data name="MznNumber" xml:space="preserve">
+    <value>Метикал</value>
+  </data>
+  <data name="AznNumber" xml:space="preserve">
+    <value>Азербайджанский манат</value>
+  </data>
+  <data name="RonNumber" xml:space="preserve">
+    <value>Новый лей</value>
+  </data>
+  <data name="TryNumber" xml:space="preserve">
+    <value>Турецкая лира</value>
+  </data>
+  <data name="XcdNumber" xml:space="preserve">
+    <value>Восточно-карибский доллар</value>
+  </data>
+  <data name="SrdNumber" xml:space="preserve">
+    <value>Суринамский доллар</value>
+  </data>
+  <data name="AfnNumber" xml:space="preserve">
+    <value>Афгани</value>
+  </data>
+  <data name="TjsNumber" xml:space="preserve">
+    <value>Сомони</value>
+  </data>
+  <data name="AoaNumber" xml:space="preserve">
+    <value>Кванза</value>
+  </data>
+  <data name="BgnNumber" xml:space="preserve">
+    <value>Болгарский лев</value>
+  </data>
+  <data name="CdfNumber" xml:space="preserve">
+    <value>Конголезский франк</value>
+  </data>
+  <data name="BamNumber" xml:space="preserve">
+    <value>Конвертируемая марка</value>
+  </data>
+  <data name="GelNumber" xml:space="preserve">
+    <value>Лари</value>
+  </data>
+  <data name="PlnNumber" xml:space="preserve">
+    <value>Злотый</value>
+  </data>
+  <data name="BrlNumber" xml:space="preserve">
+    <value>Бразильский реал</value>
+  </data>
+  <data name="BhdNumber" xml:space="preserve">
+    <value>Бахрейнский динар</value>
+  </data>
+  <data name="IqdNumber" xml:space="preserve">
+    <value>Иракский динар</value>
+  </data>
+  <data name="JodNumber" xml:space="preserve">
+    <value>Иорданский динар</value>
+  </data>
+  <data name="KwdNumber" xml:space="preserve">
+    <value>Кувейтский динар</value>
+  </data>
+  <data name="LydNumber" xml:space="preserve">
+    <value>Ливийский динар</value>
+  </data>
+  <data name="OmrNumber" xml:space="preserve">
+    <value>Оманский риал</value>
+  </data>
+  <data name="TndNumber" xml:space="preserve">
+    <value>Тунисский динар</value>
+  </data>
+  <data name="CurrencyConverterJpy1" xml:space="preserve">
+    <value>иена</value>
+  </data>
+  <data name="CurrencyConverterJpy2" xml:space="preserve">
+    <value>иена</value>
+  </data>
+  <data name="CurrencyConverterJpy3" xml:space="preserve">
+    <value>иена</value>
+  </data>
+  <data name="CurrencyConverterJpy4" xml:space="preserve">
+    <value>иена</value>
+  </data>
+  <data name="CurrencyConverterJpy5" xml:space="preserve">
+    <value>иена</value>
+  </data>
+  <data name="CurrencyConverterJpyKop1" xml:space="preserve">
+    <value>сэн</value>
+  </data>
+  <data name="CurrencyConverterJpyKop2" xml:space="preserve">
+    <value>сэн</value>
+  </data>
+  <data name="CurrencyConverterJpyKop3" xml:space="preserve">
+    <value>сэн</value>
+  </data>
+  <data name="CurrencyConverterVuv1" xml:space="preserve">
+    <value>вату</value>
+  </data>
+  <data name="CurrencyConverterVuv2" xml:space="preserve">
+    <value>вату</value>
+  </data>
+  <data name="CurrencyConverterVuv3" xml:space="preserve">
+    <value>вату</value>
+  </data>
+  <data name="CurrencyConverterVuv4" xml:space="preserve">
+    <value>вату</value>
+  </data>
+  <data name="CurrencyConverterVuv5" xml:space="preserve">
+    <value>вату</value>
+  </data>
+  <data name="CurrencyConverterPyg1" xml:space="preserve">
+    <value>гуарани</value>
+  </data>
+  <data name="CurrencyConverterPyg2" xml:space="preserve">
+    <value>гуарани</value>
+  </data>
+  <data name="CurrencyConverterPyg3" xml:space="preserve">
+    <value>гуарани</value>
+  </data>
+  <data name="CurrencyConverterPyg4" xml:space="preserve">
+    <value>гуарани</value>
+  </data>
+  <data name="CurrencyConverterPyg5" xml:space="preserve">
+    <value>гуарани</value>
+  </data>
+  <data name="CurrencyConverterRwf1" xml:space="preserve">
+    <value>франк</value>
+  </data>
+  <data name="CurrencyConverterRwf2" xml:space="preserve">
+    <value>франка</value>
+  </data>
+  <data name="CurrencyConverterRwf3" xml:space="preserve">
+    <value>франков</value>
+  </data>
+  <data name="CurrencyConverterRwf4" xml:space="preserve">
+    <value>франках</value>
+  </data>
+  <data name="CurrencyConverterRwf5" xml:space="preserve">
+    <value>франки</value>
+  </data>
+  <data name="CurrencyConverterRwfKop1" xml:space="preserve">
+    <value>сантим</value>
+  </data>
+  <data name="CurrencyConverterRwfKop2" xml:space="preserve">
+    <value>сантимы</value>
+  </data>
+  <data name="CurrencyConverterRwfKop3" xml:space="preserve">
+    <value>сантимов</value>
+  </data>
+  <data name="CurrencyConverterMga1" xml:space="preserve">
+    <value>ариари</value>
+  </data>
+  <data name="CurrencyConverterMga2" xml:space="preserve">
+    <value>ариари</value>
+  </data>
+  <data name="CurrencyConverterMga3" xml:space="preserve">
+    <value>ариари</value>
+  </data>
+  <data name="CurrencyConverterMga4" xml:space="preserve">
+    <value>ариари</value>
+  </data>
+  <data name="CurrencyConverterMga5" xml:space="preserve">
+    <value>ариари</value>
+  </data>
+  <data name="CurrencyConverterMgaKop1" xml:space="preserve">
+    <value>ираймбиланья</value>
+  </data>
+  <data name="CurrencyConverterMgaKop2" xml:space="preserve">
+    <value>ираймбиланья</value>
+  </data>
+  <data name="CurrencyConverterMgaKop3" xml:space="preserve">
+    <value>ираймбиланья</value>
+  </data>
+  <data name="CurrencyConverterAll1" xml:space="preserve">
+    <value>лек</value>
+  </data>
+  <data name="CurrencyConverterAll2" xml:space="preserve">
+    <value>лек</value>
+  </data>
+  <data name="CurrencyConverterAll3" xml:space="preserve">
+    <value>лек</value>
+  </data>
+  <data name="CurrencyConverterAll4" xml:space="preserve">
+    <value>лек</value>
+  </data>
+  <data name="CurrencyConverterAll5" xml:space="preserve">
+    <value>лек</value>
+  </data>
+  <data name="CurrencyConverterAllKop1" xml:space="preserve">
+    <value>киндарка</value>
+  </data>
+  <data name="CurrencyConverterAllKop2" xml:space="preserve">
+    <value>киндарка</value>
+  </data>
+  <data name="CurrencyConverterAllKop3" xml:space="preserve">
+    <value>киндарка</value>
+  </data>
+  <data name="CurrencyConverterDzdKop1" xml:space="preserve">
+    <value>сантим</value>
+  </data>
+  <data name="CurrencyConverterDzdKop2" xml:space="preserve">
+    <value>сантимы</value>
+  </data>
+  <data name="CurrencyConverterDzdKop3" xml:space="preserve">
+    <value>сантимов</value>
+  </data>
+  <data name="CurrencyConverterBdt1" xml:space="preserve">
+    <value>така</value>
+  </data>
+  <data name="CurrencyConverterBdt2" xml:space="preserve">
+    <value>така</value>
+  </data>
+  <data name="CurrencyConverterBdt3" xml:space="preserve">
+    <value>така</value>
+  </data>
+  <data name="CurrencyConverterBdt4" xml:space="preserve">
+    <value>така</value>
+  </data>
+  <data name="CurrencyConverterBdt5" xml:space="preserve">
+    <value>така</value>
+  </data>
+  <data name="CurrencyConverterBdtKop1" xml:space="preserve">
+    <value>пайса</value>
+  </data>
+  <data name="CurrencyConverterBdtKop2" xml:space="preserve">
+    <value>пайса</value>
+  </data>
+  <data name="CurrencyConverterBdtKop3" xml:space="preserve">
+    <value>пайса</value>
+  </data>
+  <data name="CurrencyConverterBtn1" xml:space="preserve">
+    <value>нгултрум</value>
+  </data>
+  <data name="CurrencyConverterBtn2" xml:space="preserve">
+    <value>нгултрум</value>
+  </data>
+  <data name="CurrencyConverterBtn3" xml:space="preserve">
+    <value>нгултрум</value>
+  </data>
+  <data name="CurrencyConverterBtn4" xml:space="preserve">
+    <value>нгултрум</value>
+  </data>
+  <data name="CurrencyConverterBtn5" xml:space="preserve">
+    <value>нгултрум</value>
+  </data>
+  <data name="CurrencyConverterBtnKop1" xml:space="preserve">
+    <value>четрум</value>
+  </data>
+  <data name="CurrencyConverterBtnKop2" xml:space="preserve">
+    <value>четрум</value>
+  </data>
+  <data name="CurrencyConverterBtnKop3" xml:space="preserve">
+    <value>четрум</value>
+  </data>
+  <data name="CurrencyConverterBob1" xml:space="preserve">
+    <value>боливиано</value>
+  </data>
+  <data name="CurrencyConverterBob2" xml:space="preserve">
+    <value>боливиано</value>
+  </data>
+  <data name="CurrencyConverterBob3" xml:space="preserve">
+    <value>боливиано</value>
+  </data>
+  <data name="CurrencyConverterBob4" xml:space="preserve">
+    <value>боливиано</value>
+  </data>
+  <data name="CurrencyConverterBob5" xml:space="preserve">
+    <value>боливиано</value>
+  </data>
+  <data name="CurrencyConverterBwp1" xml:space="preserve">
+    <value>пула</value>
+  </data>
+  <data name="CurrencyConverterBwp2" xml:space="preserve">
+    <value>пулы</value>
+  </data>
+  <data name="CurrencyConverterBwp3" xml:space="preserve">
+    <value>пул</value>
+  </data>
+  <data name="CurrencyConverterBwp4" xml:space="preserve">
+    <value>пулах</value>
+  </data>
+  <data name="CurrencyConverterBwp5" xml:space="preserve">
+    <value>пулы</value>
+  </data>
+  <data name="CurrencyConverterBwpKop1" xml:space="preserve">
+    <value>тхебе</value>
+  </data>
+  <data name="CurrencyConverterBwpKop2" xml:space="preserve">
+    <value>тхебе</value>
+  </data>
+  <data name="CurrencyConverterBwpKop3" xml:space="preserve">
+    <value>тхебе</value>
+  </data>
+  <data name="CurrencyConverterMmk1" xml:space="preserve">
+    <value>кьят</value>
+  </data>
+  <data name="CurrencyConverterMmk2" xml:space="preserve">
+    <value>кьята</value>
+  </data>
+  <data name="CurrencyConverterMmk3" xml:space="preserve">
+    <value>кьятов</value>
+  </data>
+  <data name="CurrencyConverterMmk4" xml:space="preserve">
+    <value>кьятах</value>
+  </data>
+  <data name="CurrencyConverterMmk5" xml:space="preserve">
+    <value>кьяты</value>
+  </data>
+  <data name="CurrencyConverterMmkKop1" xml:space="preserve">
+    <value>пья</value>
+  </data>
+  <data name="CurrencyConverterMmkKop2" xml:space="preserve">
+    <value>пья</value>
+  </data>
+  <data name="CurrencyConverterMmkKop3" xml:space="preserve">
+    <value>пья</value>
+  </data>
+  <data name="CurrencyConverterKhr1" xml:space="preserve">
+    <value>риель</value>
+  </data>
+  <data name="CurrencyConverterKhr2" xml:space="preserve">
+    <value>риели</value>
+  </data>
+  <data name="CurrencyConverterKhr3" xml:space="preserve">
+    <value>риелей</value>
+  </data>
+  <data name="CurrencyConverterKhr4" xml:space="preserve">
+    <value>риелях</value>
+  </data>
+  <data name="CurrencyConverterKhr5" xml:space="preserve">
+    <value>риели</value>
+  </data>
+  <data name="CurrencyConverterCve1" xml:space="preserve">
+    <value>эскудо</value>
+  </data>
+  <data name="CurrencyConverterCve2" xml:space="preserve">
+    <value>эскудо</value>
+  </data>
+  <data name="CurrencyConverterCve3" xml:space="preserve">
+    <value>эскудо</value>
+  </data>
+  <data name="CurrencyConverterCve4" xml:space="preserve">
+    <value>эскудо</value>
+  </data>
+  <data name="CurrencyConverterCve5" xml:space="preserve">
+    <value>эскудо</value>
+  </data>
+  <data name="CurrencyConverterLkr1" xml:space="preserve">
+    <value>рупия</value>
+  </data>
+  <data name="CurrencyConverterLkr2" xml:space="preserve">
+    <value>рупии</value>
+  </data>
+  <data name="CurrencyConverterLkr3" xml:space="preserve">
+    <value>рупий</value>
+  </data>
+  <data name="CurrencyConverterLkr4" xml:space="preserve">
+    <value>рупиях</value>
+  </data>
+  <data name="CurrencyConverterLkr5" xml:space="preserve">
+    <value>рупии</value>
+  </data>
+  <data name="CurrencyConverterCrc1" xml:space="preserve">
+    <value>колон</value>
+  </data>
+  <data name="CurrencyConverterCrc2" xml:space="preserve">
+    <value>колон</value>
+  </data>
+  <data name="CurrencyConverterCrc3" xml:space="preserve">
+    <value>колона</value>
+  </data>
+  <data name="CurrencyConverterCrc4" xml:space="preserve">
+    <value>колон</value>
+  </data>
+  <data name="CurrencyConverterCrc5" xml:space="preserve">
+    <value>колон</value>
+  </data>
+  <data name="CurrencyConverterHrk1" xml:space="preserve">
+    <value>куна</value>
+  </data>
+  <data name="CurrencyConverterHrk2" xml:space="preserve">
+    <value>кун</value>
+  </data>
+  <data name="CurrencyConverterHrk3" xml:space="preserve">
+    <value>кун</value>
+  </data>
+  <data name="CurrencyConverterHrk4" xml:space="preserve">
+    <value>кунах</value>
+  </data>
+  <data name="CurrencyConverterHrk5" xml:space="preserve">
+    <value>куны</value>
+  </data>
+  <data name="CurrencyConverterHrkKop1" xml:space="preserve">
+    <value>липа</value>
+  </data>
+  <data name="CurrencyConverterHrkKop2" xml:space="preserve">
+    <value>лип</value>
+  </data>
+  <data name="CurrencyConverterHrkKop3" xml:space="preserve">
+    <value>лип</value>
+  </data>
+  <data name="CurrencyConverterCzkKop1" xml:space="preserve">
+    <value>геллер</value>
+  </data>
+  <data name="CurrencyConverterCzkKop2" xml:space="preserve">
+    <value>геллера</value>
+  </data>
+  <data name="CurrencyConverterCzkKop3" xml:space="preserve">
+    <value>геллеров</value>
+  </data>
+  <data name="CurrencyConverterDkk1" xml:space="preserve">
+    <value>крона</value>
+  </data>
+  <data name="CurrencyConverterDkk2" xml:space="preserve">
+    <value>кроны</value>
+  </data>
+  <data name="CurrencyConverterDkk3" xml:space="preserve">
+    <value>крон</value>
+  </data>
+  <data name="CurrencyConverterDkk4" xml:space="preserve">
+    <value>кронах</value>
+  </data>
+  <data name="CurrencyConverterDkk5" xml:space="preserve">
+    <value>крон</value>
+  </data>
+  <data name="CurrencyConverterDkkKop1" xml:space="preserve">
+    <value>эре</value>
+  </data>
+  <data name="CurrencyConverterDkkKop2" xml:space="preserve">
+    <value>эре</value>
+  </data>
+  <data name="CurrencyConverterDkkKop3" xml:space="preserve">
+    <value>эре</value>
+  </data>
+  <data name="CurrencyConverterEtb1" xml:space="preserve">
+    <value>быр</value>
+  </data>
+  <data name="CurrencyConverterEtb2" xml:space="preserve">
+    <value>быра</value>
+  </data>
+  <data name="CurrencyConverterEtb3" xml:space="preserve">
+    <value>быр</value>
+  </data>
+  <data name="CurrencyConverterEtb4" xml:space="preserve">
+    <value>бырах</value>
+  </data>
+  <data name="CurrencyConverterEtb5" xml:space="preserve">
+    <value>быр</value>
+  </data>
+  <data name="CurrencyConverterErn1" xml:space="preserve">
+    <value>накфа</value>
+  </data>
+  <data name="CurrencyConverterErn2" xml:space="preserve">
+    <value>накфы</value>
+  </data>
+  <data name="CurrencyConverterErn3" xml:space="preserve">
+    <value>накф</value>
+  </data>
+  <data name="CurrencyConverterErn4" xml:space="preserve">
+    <value>накфах</value>
+  </data>
+  <data name="CurrencyConverterErn5" xml:space="preserve">
+    <value>накфы</value>
+  </data>
+  <data name="CurrencyConverterGmd1" xml:space="preserve">
+    <value>даласи</value>
+  </data>
+  <data name="CurrencyConverterGmd2" xml:space="preserve">
+    <value>даласи</value>
+  </data>
+  <data name="CurrencyConverterGmd3" xml:space="preserve">
+    <value>даласи</value>
+  </data>
+  <data name="CurrencyConverterGmd4" xml:space="preserve">
+    <value>даласи</value>
+  </data>
+  <data name="CurrencyConverterGmd5" xml:space="preserve">
+    <value>даласи</value>
+  </data>
+  <data name="CurrencyConverterGmdKop1" xml:space="preserve">
+    <value>бутут</value>
+  </data>
+  <data name="CurrencyConverterGmdKop2" xml:space="preserve">
+    <value>бутут</value>
+  </data>
+  <data name="CurrencyConverterGmdKop3" xml:space="preserve">
+    <value>бутут</value>
+  </data>
+  <data name="CurrencyConverterGtq1" xml:space="preserve">
+    <value>кетсаль</value>
+  </data>
+  <data name="CurrencyConverterGtq2" xml:space="preserve">
+    <value>кетсаль</value>
+  </data>
+  <data name="CurrencyConverterGtq3" xml:space="preserve">
+    <value>кетсаль</value>
+  </data>
+  <data name="CurrencyConverterGtq4" xml:space="preserve">
+    <value>кетсаль</value>
+  </data>
+  <data name="CurrencyConverterGtq5" xml:space="preserve">
+    <value>кетсаль</value>
+  </data>
+  <data name="CurrencyConverterHtg1" xml:space="preserve">
+    <value>гурд</value>
+  </data>
+  <data name="CurrencyConverterHtg2" xml:space="preserve">
+    <value>гурда</value>
+  </data>
+  <data name="CurrencyConverterHtg3" xml:space="preserve">
+    <value>гурдов</value>
+  </data>
+  <data name="CurrencyConverterHtg4" xml:space="preserve">
+    <value>гурдах</value>
+  </data>
+  <data name="CurrencyConverterHtg5" xml:space="preserve">
+    <value>гурды</value>
+  </data>
+  <data name="CurrencyConverterHnl1" xml:space="preserve">
+    <value>лемпира</value>
+  </data>
+  <data name="CurrencyConverterHnl2" xml:space="preserve">
+    <value>лемпиры</value>
+  </data>
+  <data name="CurrencyConverterHnl3" xml:space="preserve">
+    <value>лемпир</value>
+  </data>
+  <data name="CurrencyConverterHnl4" xml:space="preserve">
+    <value>лемпирах</value>
+  </data>
+  <data name="CurrencyConverterHnl5" xml:space="preserve">
+    <value>лемпиры</value>
+  </data>
+  <data name="CurrencyConverterHuf1" xml:space="preserve">
+    <value>форинт</value>
+  </data>
+  <data name="CurrencyConverterHuf2" xml:space="preserve">
+    <value>форинта</value>
+  </data>
+  <data name="CurrencyConverterHuf3" xml:space="preserve">
+    <value>форинтов</value>
+  </data>
+  <data name="CurrencyConverterHuf4" xml:space="preserve">
+    <value>форинтах</value>
+  </data>
+  <data name="CurrencyConverterHuf5" xml:space="preserve">
+    <value>форинты</value>
+  </data>
+  <data name="CurrencyConverterHufKop1" xml:space="preserve">
+    <value>филлер</value>
+  </data>
+  <data name="CurrencyConverterHufKop2" xml:space="preserve">
+    <value>филлера</value>
+  </data>
+  <data name="CurrencyConverterHufKop3" xml:space="preserve">
+    <value>филлеров</value>
+  </data>
+  <data name="CurrencyConverterInr1" xml:space="preserve">
+    <value>рупия</value>
+  </data>
+  <data name="CurrencyConverterInr2" xml:space="preserve">
+    <value>рупии</value>
+  </data>
+  <data name="CurrencyConverterInr3" xml:space="preserve">
+    <value>рупий</value>
+  </data>
+  <data name="CurrencyConverterInr4" xml:space="preserve">
+    <value>рупиях</value>
+  </data>
+  <data name="CurrencyConverterInr5" xml:space="preserve">
+    <value>рупии</value>
+  </data>
+  <data name="CurrencyConverterInrKop1" xml:space="preserve">
+    <value>пайса</value>
+  </data>
+  <data name="CurrencyConverterInrKop2" xml:space="preserve">
+    <value>пайсы</value>
+  </data>
+  <data name="CurrencyConverterInrKop3" xml:space="preserve">
+    <value>пайсов</value>
+  </data>
+  <data name="CurrencyConverterIdr1" xml:space="preserve">
+    <value>рупия</value>
+  </data>
+  <data name="CurrencyConverterIdr2" xml:space="preserve">
+    <value>рупии</value>
+  </data>
+  <data name="CurrencyConverterIdr3" xml:space="preserve">
+    <value>рупий</value>
+  </data>
+  <data name="CurrencyConverterIdr4" xml:space="preserve">
+    <value>рупиях</value>
+  </data>
+  <data name="CurrencyConverterIdr5" xml:space="preserve">
+    <value>рупии</value>
+  </data>
+  <data name="CurrencyConverterIdrKop1" xml:space="preserve">
+    <value>сен</value>
+  </data>
+  <data name="CurrencyConverterIdrKop2" xml:space="preserve">
+    <value>сена</value>
+  </data>
+  <data name="CurrencyConverterIdrKop3" xml:space="preserve">
+    <value>сенов</value>
+  </data>
+  <data name="CurrencyConverterIrr1" xml:space="preserve">
+    <value>риал</value>
+  </data>
+  <data name="CurrencyConverterIrr2" xml:space="preserve">
+    <value>риала</value>
+  </data>
+  <data name="CurrencyConverterIrr3" xml:space="preserve">
+    <value>риалов</value>
+  </data>
+  <data name="CurrencyConverterIrr4" xml:space="preserve">
+    <value>риалах</value>
+  </data>
+  <data name="CurrencyConverterIrr5" xml:space="preserve">
+    <value>риалы</value>
+  </data>
+  <data name="CurrencyConverterIrrKop1" xml:space="preserve">
+    <value>динар</value>
+  </data>
+  <data name="CurrencyConverterIrrKop2" xml:space="preserve">
+    <value>динара</value>
+  </data>
+  <data name="CurrencyConverterIrrKop3" xml:space="preserve">
+    <value>динаров</value>
+  </data>
+  <data name="CurrencyConverterIls1" xml:space="preserve">
+    <value>шекель</value>
+  </data>
+  <data name="CurrencyConverterIls2" xml:space="preserve">
+    <value>шекеля</value>
+  </data>
+  <data name="CurrencyConverterIls3" xml:space="preserve">
+    <value>шекелей</value>
+  </data>
+  <data name="CurrencyConverterIls4" xml:space="preserve">
+    <value>шекелях</value>
+  </data>
+  <data name="CurrencyConverterIls5" xml:space="preserve">
+    <value>шекели</value>
+  </data>
+  <data name="CurrencyConverterIlsKop1" xml:space="preserve">
+    <value>агора</value>
+  </data>
+  <data name="CurrencyConverterIlsKop2" xml:space="preserve">
+    <value>агоры</value>
+  </data>
+  <data name="CurrencyConverterIlsKop3" xml:space="preserve">
+    <value>агоров</value>
+  </data>
+  <data name="CurrencyConverterKzt1" xml:space="preserve">
+    <value>тенге</value>
+  </data>
+  <data name="CurrencyConverterKzt2" xml:space="preserve">
+    <value>тенге</value>
+  </data>
+  <data name="CurrencyConverterKzt3" xml:space="preserve">
+    <value>тенге</value>
+  </data>
+  <data name="CurrencyConverterKzt4" xml:space="preserve">
+    <value>тенге</value>
+  </data>
+  <data name="CurrencyConverterKzt5" xml:space="preserve">
+    <value>тенге</value>
+  </data>
+  <data name="CurrencyConverterKztKop1" xml:space="preserve">
+    <value>тиын</value>
+  </data>
+  <data name="CurrencyConverterKztKop2" xml:space="preserve">
+    <value>тиын</value>
+  </data>
+  <data name="CurrencyConverterKztKop3" xml:space="preserve">
+    <value>тиын</value>
+  </data>
+  <data name="CurrencyConverterKpw1" xml:space="preserve">
+    <value>вона</value>
+  </data>
+  <data name="CurrencyConverterKpw2" xml:space="preserve">
+    <value>воны</value>
+  </data>
+  <data name="CurrencyConverterKpw3" xml:space="preserve">
+    <value>вон</value>
+  </data>
+  <data name="CurrencyConverterKpw4" xml:space="preserve">
+    <value>вонах</value>
+  </data>
+  <data name="CurrencyConverterKpw5" xml:space="preserve">
+    <value>воны</value>
+  </data>
+  <data name="CurrencyConverterKpwKop1" xml:space="preserve">
+    <value>чон</value>
+  </data>
+  <data name="CurrencyConverterKpwKop2" xml:space="preserve">
+    <value>чона</value>
+  </data>
+  <data name="CurrencyConverterKpwKop3" xml:space="preserve">
+    <value>чонов</value>
+  </data>
+  <data name="CurrencyConverterKgs1" xml:space="preserve">
+    <value>сом</value>
+  </data>
+  <data name="CurrencyConverterKgs2" xml:space="preserve">
+    <value>сома</value>
+  </data>
+  <data name="CurrencyConverterKgs3" xml:space="preserve">
+    <value>сомов</value>
+  </data>
+  <data name="CurrencyConverterKgs4" xml:space="preserve">
+    <value>сомах</value>
+  </data>
+  <data name="CurrencyConverterKgs5" xml:space="preserve">
+    <value>сомы</value>
+  </data>
+  <data name="CurrencyConverterKgsKop1" xml:space="preserve">
+    <value>тыйын</value>
+  </data>
+  <data name="CurrencyConverterKgsKop2" xml:space="preserve">
+    <value>тыйына</value>
+  </data>
+  <data name="CurrencyConverterKgsKop3" xml:space="preserve">
+    <value>тыйынов</value>
+  </data>
+  <data name="CurrencyConverterLak1" xml:space="preserve">
+    <value>кип</value>
+  </data>
+  <data name="CurrencyConverterLak2" xml:space="preserve">
+    <value>кипа</value>
+  </data>
+  <data name="CurrencyConverterLak3" xml:space="preserve">
+    <value>кипов</value>
+  </data>
+  <data name="CurrencyConverterLak4" xml:space="preserve">
+    <value>кипах</value>
+  </data>
+  <data name="CurrencyConverterLak5" xml:space="preserve">
+    <value>кипы</value>
+  </data>
+  <data name="CurrencyConverterLakKop1" xml:space="preserve">
+    <value>ат</value>
+  </data>
+  <data name="CurrencyConverterLakKop2" xml:space="preserve">
+    <value>ата</value>
+  </data>
+  <data name="CurrencyConverterLakKop3" xml:space="preserve">
+    <value>атов</value>
+  </data>
+  <data name="CurrencyConverterLsl1" xml:space="preserve">
+    <value>лоти</value>
+  </data>
+  <data name="CurrencyConverterLsl2" xml:space="preserve">
+    <value>лоти</value>
+  </data>
+  <data name="CurrencyConverterLsl3" xml:space="preserve">
+    <value>лоти</value>
+  </data>
+  <data name="CurrencyConverterLsl4" xml:space="preserve">
+    <value>лоти</value>
+  </data>
+  <data name="CurrencyConverterLsl5" xml:space="preserve">
+    <value>лоти</value>
+  </data>
+  <data name="CurrencyConverterLslKop1" xml:space="preserve">
+    <value>сенти</value>
+  </data>
+  <data name="CurrencyConverterLslKop2" xml:space="preserve">
+    <value>сенти</value>
+  </data>
+  <data name="CurrencyConverterLslKop3" xml:space="preserve">
+    <value>сенти</value>
+  </data>
+  <data name="CurrencyConverterLvl1" xml:space="preserve">
+    <value>лат</value>
+  </data>
+  <data name="CurrencyConverterLvl2" xml:space="preserve">
+    <value>лата</value>
+  </data>
+  <data name="CurrencyConverterLvl3" xml:space="preserve">
+    <value>латов</value>
+  </data>
+  <data name="CurrencyConverterLvl4" xml:space="preserve">
+    <value>латах</value>
+  </data>
+  <data name="CurrencyConverterLvl5" xml:space="preserve">
+    <value>латы</value>
+  </data>
+  <data name="CurrencyConverterLtl1" xml:space="preserve">
+    <value>лит</value>
+  </data>
+  <data name="CurrencyConverterLtl2" xml:space="preserve">
+    <value>лита</value>
+  </data>
+  <data name="CurrencyConverterLtl3" xml:space="preserve">
+    <value>литов</value>
+  </data>
+  <data name="CurrencyConverterLtl4" xml:space="preserve">
+    <value>литах</value>
+  </data>
+  <data name="CurrencyConverterLtl5" xml:space="preserve">
+    <value>литы</value>
+  </data>
+  <data name="CurrencyConverterMop1" xml:space="preserve">
+    <value>патака</value>
+  </data>
+  <data name="CurrencyConverterMop2" xml:space="preserve">
+    <value>патаки</value>
+  </data>
+  <data name="CurrencyConverterMop3" xml:space="preserve">
+    <value>патак</value>
+  </data>
+  <data name="CurrencyConverterMop4" xml:space="preserve">
+    <value>патаках</value>
+  </data>
+  <data name="CurrencyConverterMop5" xml:space="preserve">
+    <value>патак</value>
+  </data>
+  <data name="CurrencyConverterMopKop1" xml:space="preserve">
+    <value>аво</value>
+  </data>
+  <data name="CurrencyConverterMopKop2" xml:space="preserve">
+    <value>аво</value>
+  </data>
+  <data name="CurrencyConverterMopKop3" xml:space="preserve">
+    <value>аво</value>
+  </data>
+  <data name="CurrencyConverterMwk1" xml:space="preserve">
+    <value>квача</value>
+  </data>
+  <data name="CurrencyConverterMwk2" xml:space="preserve">
+    <value>квачи</value>
+  </data>
+  <data name="CurrencyConverterMwk3" xml:space="preserve">
+    <value>квачей</value>
+  </data>
+  <data name="CurrencyConverterMwk4" xml:space="preserve">
+    <value>квачах</value>
+  </data>
+  <data name="CurrencyConverterMwk5" xml:space="preserve">
+    <value>квач</value>
+  </data>
+  <data name="CurrencyConverterMwkKop1" xml:space="preserve">
+    <value>тамбала</value>
+  </data>
+  <data name="CurrencyConverterMwkKop2" xml:space="preserve">
+    <value>тамбалы</value>
+  </data>
+  <data name="CurrencyConverterMwkKop3" xml:space="preserve">
+    <value>тамбал</value>
+  </data>
+  <data name="CurrencyConverterMyr1" xml:space="preserve">
+    <value>ринггит</value>
+  </data>
+  <data name="CurrencyConverterMyr2" xml:space="preserve">
+    <value>ринггита</value>
+  </data>
+  <data name="CurrencyConverterMyr3" xml:space="preserve">
+    <value>ринггитов</value>
+  </data>
+  <data name="CurrencyConverterMyr4" xml:space="preserve">
+    <value>ринггитах</value>
+  </data>
+  <data name="CurrencyConverterMyr5" xml:space="preserve">
+    <value>ринггиты</value>
+  </data>
+  <data name="CurrencyConverterMvr1" xml:space="preserve">
+    <value>руфия</value>
+  </data>
+  <data name="CurrencyConverterMvr2" xml:space="preserve">
+    <value>руфии</value>
+  </data>
+  <data name="CurrencyConverterMvr3" xml:space="preserve">
+    <value>руфий</value>
+  </data>
+  <data name="CurrencyConverterMvr4" xml:space="preserve">
+    <value>руфиях</value>
+  </data>
+  <data name="CurrencyConverterMvr5" xml:space="preserve">
+    <value>руфии</value>
+  </data>
+  <data name="CurrencyConverterMvrKop1" xml:space="preserve">
+    <value>лаари</value>
+  </data>
+  <data name="CurrencyConverterMvrKop2" xml:space="preserve">
+    <value>лаари</value>
+  </data>
+  <data name="CurrencyConverterMvrKop3" xml:space="preserve">
+    <value>лаари</value>
+  </data>
+  <data name="CurrencyConverterMro1" xml:space="preserve">
+    <value>угия</value>
+  </data>
+  <data name="CurrencyConverterMro2" xml:space="preserve">
+    <value>угии</value>
+  </data>
+  <data name="CurrencyConverterMro3" xml:space="preserve">
+    <value>угий</value>
+  </data>
+  <data name="CurrencyConverterMro4" xml:space="preserve">
+    <value>угиях</value>
+  </data>
+  <data name="CurrencyConverterMro5" xml:space="preserve">
+    <value>угии</value>
+  </data>
+  <data name="CurrencyConverterMroKop1" xml:space="preserve">
+    <value>хум</value>
+  </data>
+  <data name="CurrencyConverterMroKop2" xml:space="preserve">
+    <value>хума</value>
+  </data>
+  <data name="CurrencyConverterMroKop3" xml:space="preserve">
+    <value>хумов</value>
+  </data>
+  <data name="CurrencyConverterMnt1" xml:space="preserve">
+    <value>тугрик</value>
+  </data>
+  <data name="CurrencyConverterMnt2" xml:space="preserve">
+    <value>тугрика</value>
+  </data>
+  <data name="CurrencyConverterMnt3" xml:space="preserve">
+    <value>тугриков</value>
+  </data>
+  <data name="CurrencyConverterMnt4" xml:space="preserve">
+    <value>тугриках</value>
+  </data>
+  <data name="CurrencyConverterMnt5" xml:space="preserve">
+    <value>тугрики</value>
+  </data>
+  <data name="CurrencyConverterMntKop1" xml:space="preserve">
+    <value>мунгу</value>
+  </data>
+  <data name="CurrencyConverterMntKop2" xml:space="preserve">
+    <value>мунгу</value>
+  </data>
+  <data name="CurrencyConverterMntKop3" xml:space="preserve">
+    <value>мунгу</value>
+  </data>
+  <data name="CurrencyConverterMad1" xml:space="preserve">
+    <value>дирхам</value>
+  </data>
+  <data name="CurrencyConverterMad2" xml:space="preserve">
+    <value>дирхама</value>
+  </data>
+  <data name="CurrencyConverterMad3" xml:space="preserve">
+    <value>дирхамов</value>
+  </data>
+  <data name="CurrencyConverterMad4" xml:space="preserve">
+    <value>дирхамах</value>
+  </data>
+  <data name="CurrencyConverterMad5" xml:space="preserve">
+    <value>дирхамы</value>
+  </data>
+  <data name="CurrencyConverterMadKop1" xml:space="preserve">
+    <value>сантим</value>
+  </data>
+  <data name="CurrencyConverterMadKop2" xml:space="preserve">
+    <value>сантима</value>
+  </data>
+  <data name="CurrencyConverterMadKop3" xml:space="preserve">
+    <value>сантимов</value>
+  </data>
+  <data name="CurrencyConverterAwg1" xml:space="preserve">
+    <value>гульден</value>
+  </data>
+  <data name="CurrencyConverterAwg2" xml:space="preserve">
+    <value>гульдена</value>
+  </data>
+  <data name="CurrencyConverterAwg3" xml:space="preserve">
+    <value>гульденов</value>
+  </data>
+  <data name="CurrencyConverterAwg4" xml:space="preserve">
+    <value>гульденах</value>
+  </data>
+  <data name="CurrencyConverterAwg5" xml:space="preserve">
+    <value>гульдены</value>
+  </data>
+  <data name="CurrencyConverterNio1" xml:space="preserve">
+    <value>кордоба</value>
+  </data>
+  <data name="CurrencyConverterNio2" xml:space="preserve">
+    <value>кордобы</value>
+  </data>
+  <data name="CurrencyConverterNio3" xml:space="preserve">
+    <value>кордоб</value>
+  </data>
+  <data name="CurrencyConverterNio4" xml:space="preserve">
+    <value>кордобах</value>
+  </data>
+  <data name="CurrencyConverterNio5" xml:space="preserve">
+    <value>кордобы</value>
+  </data>
+  <data name="CurrencyConverterNgn1" xml:space="preserve">
+    <value>найра</value>
+  </data>
+  <data name="CurrencyConverterNgn2" xml:space="preserve">
+    <value>найры</value>
+  </data>
+  <data name="CurrencyConverterNgn3" xml:space="preserve">
+    <value>найр</value>
+  </data>
+  <data name="CurrencyConverterNgn4" xml:space="preserve">
+    <value>найрах</value>
+  </data>
+  <data name="CurrencyConverterNgn5" xml:space="preserve">
+    <value>найры</value>
+  </data>
+  <data name="CurrencyConverterNgnKop1" xml:space="preserve">
+    <value>кобо</value>
+  </data>
+  <data name="CurrencyConverterNgnKop2" xml:space="preserve">
+    <value>кобо</value>
+  </data>
+  <data name="CurrencyConverterNgnKop3" xml:space="preserve">
+    <value>кобо</value>
+  </data>
+  <data name="CurrencyConverterPab1" xml:space="preserve">
+    <value>бальбоа</value>
+  </data>
+  <data name="CurrencyConverterPab2" xml:space="preserve">
+    <value>бальбоа</value>
+  </data>
+  <data name="CurrencyConverterPab3" xml:space="preserve">
+    <value>бальбоа</value>
+  </data>
+  <data name="CurrencyConverterPab4" xml:space="preserve">
+    <value>бальбоа</value>
+  </data>
+  <data name="CurrencyConverterPab5" xml:space="preserve">
+    <value>бальбоа</value>
+  </data>
+  <data name="CurrencyConverterPabKop1" xml:space="preserve">
+    <value>сентесимо</value>
+  </data>
+  <data name="CurrencyConverterPabKop2" xml:space="preserve">
+    <value>сентесимо</value>
+  </data>
+  <data name="CurrencyConverterPabKop3" xml:space="preserve">
+    <value>сентесимо</value>
+  </data>
+  <data name="CurrencyConverterPgk1" xml:space="preserve">
+    <value>кина</value>
+  </data>
+  <data name="CurrencyConverterPgk2" xml:space="preserve">
+    <value>кины</value>
+  </data>
+  <data name="CurrencyConverterPgk3" xml:space="preserve">
+    <value>кин</value>
+  </data>
+  <data name="CurrencyConverterPgk4" xml:space="preserve">
+    <value>кинах</value>
+  </data>
+  <data name="CurrencyConverterPgk5" xml:space="preserve">
+    <value>кины</value>
+  </data>
+  <data name="CurrencyConverterPgkKop1" xml:space="preserve">
+    <value>тойа</value>
+  </data>
+  <data name="CurrencyConverterPgkKop2" xml:space="preserve">
+    <value>тойи</value>
+  </data>
+  <data name="CurrencyConverterPgkKop3" xml:space="preserve">
+    <value>той</value>
+  </data>
+  <data name="CurrencyConverterPen1" xml:space="preserve">
+    <value>соль</value>
+  </data>
+  <data name="CurrencyConverterPen2" xml:space="preserve">
+    <value>соля</value>
+  </data>
+  <data name="CurrencyConverterPen3" xml:space="preserve">
+    <value>солей</value>
+  </data>
+  <data name="CurrencyConverterPen4" xml:space="preserve">
+    <value>солях</value>
+  </data>
+  <data name="CurrencyConverterPen5" xml:space="preserve">
+    <value>соли</value>
+  </data>
+  <data name="CurrencyConverterPhp1" xml:space="preserve">
+    <value>песо</value>
+  </data>
+  <data name="CurrencyConverterPhp2" xml:space="preserve">
+    <value>песа</value>
+  </data>
+  <data name="CurrencyConverterPhp3" xml:space="preserve">
+    <value>песов</value>
+  </data>
+  <data name="CurrencyConverterPhp4" xml:space="preserve">
+    <value>песах</value>
+  </data>
+  <data name="CurrencyConverterPhp5" xml:space="preserve">
+    <value>песы</value>
+  </data>
+  <data name="CurrencyConverterPhpKop1" xml:space="preserve">
+    <value>сентаво</value>
+  </data>
+  <data name="CurrencyConverterPhpKop2" xml:space="preserve">
+    <value>сентаво</value>
+  </data>
+  <data name="CurrencyConverterPhpKop3" xml:space="preserve">
+    <value>сентаво</value>
+  </data>
+  <data name="CurrencyConverterStd1" xml:space="preserve">
+    <value>добра</value>
+  </data>
+  <data name="CurrencyConverterStd2" xml:space="preserve">
+    <value>добры</value>
+  </data>
+  <data name="CurrencyConverterStd3" xml:space="preserve">
+    <value>добр</value>
+  </data>
+  <data name="CurrencyConverterStd4" xml:space="preserve">
+    <value>добрах</value>
+  </data>
+  <data name="CurrencyConverterStd5" xml:space="preserve">
+    <value>добры</value>
+  </data>
+  <data name="CurrencyConverterSar1" xml:space="preserve">
+    <value>сиял</value>
+  </data>
+  <data name="CurrencyConverterSar2" xml:space="preserve">
+    <value>сияла</value>
+  </data>
+  <data name="CurrencyConverterSar3" xml:space="preserve">
+    <value>сиялов</value>
+  </data>
+  <data name="CurrencyConverterSar4" xml:space="preserve">
+    <value>сиялах</value>
+  </data>
+  <data name="CurrencyConverterSar5" xml:space="preserve">
+    <value>сиялы</value>
+  </data>
+  <data name="CurrencyConverterSarKop1" xml:space="preserve">
+    <value>халала</value>
+  </data>
+  <data name="CurrencyConverterSarKop2" xml:space="preserve">
+    <value>халалы</value>
+  </data>
+  <data name="CurrencyConverterSarKop3" xml:space="preserve">
+    <value>халал</value>
+  </data>
+  <data name="CurrencyConverterSll1" xml:space="preserve">
+    <value>леоне</value>
+  </data>
+  <data name="CurrencyConverterSll2" xml:space="preserve">
+    <value>леоне</value>
+  </data>
+  <data name="CurrencyConverterSll3" xml:space="preserve">
+    <value>леоне</value>
+  </data>
+  <data name="CurrencyConverterSll4" xml:space="preserve">
+    <value>леоне</value>
+  </data>
+  <data name="CurrencyConverterSll5" xml:space="preserve">
+    <value>леоне</value>
+  </data>
+  <data name="CurrencyConverterSgdKop1" xml:space="preserve">
+    <value>пенс</value>
+  </data>
+  <data name="CurrencyConverterSgdKop2" xml:space="preserve">
+    <value>пенса</value>
+  </data>
+  <data name="CurrencyConverterSgdKop3" xml:space="preserve">
+    <value>пенсов</value>
+  </data>
+  <data name="CurrencyConverterVnd1" xml:space="preserve">
+    <value>донг</value>
+  </data>
+  <data name="CurrencyConverterVnd2" xml:space="preserve">
+    <value>донга</value>
+  </data>
+  <data name="CurrencyConverterVnd3" xml:space="preserve">
+    <value>донгов</value>
+  </data>
+  <data name="CurrencyConverterVnd4" xml:space="preserve">
+    <value>донгах</value>
+  </data>
+  <data name="CurrencyConverterVnd5" xml:space="preserve">
+    <value>донги</value>
+  </data>
+  <data name="CurrencyConverterVndKop1" xml:space="preserve">
+    <value>хао</value>
+  </data>
+  <data name="CurrencyConverterVndKop2" xml:space="preserve">
+    <value>хао</value>
+  </data>
+  <data name="CurrencyConverterVndKop3" xml:space="preserve">
+    <value>хао</value>
+  </data>
+  <data name="CurrencyConverterSos1" xml:space="preserve">
+    <value>шиллинг</value>
+  </data>
+  <data name="CurrencyConverterSos2" xml:space="preserve">
+    <value>шиллинга</value>
+  </data>
+  <data name="CurrencyConverterSos3" xml:space="preserve">
+    <value>шиллингов</value>
+  </data>
+  <data name="CurrencyConverterSos4" xml:space="preserve">
+    <value>шиллингах</value>
+  </data>
+  <data name="CurrencyConverterSos5" xml:space="preserve">
+    <value>шиллинги</value>
+  </data>
+  <data name="CurrencyConverterZar1" xml:space="preserve">
+    <value>рэнд</value>
+  </data>
+  <data name="CurrencyConverterZar2" xml:space="preserve">
+    <value>рэнда</value>
+  </data>
+  <data name="CurrencyConverterZar3" xml:space="preserve">
+    <value>рэндов</value>
+  </data>
+  <data name="CurrencyConverterZar4" xml:space="preserve">
+    <value>рэндах</value>
+  </data>
+  <data name="CurrencyConverterZar5" xml:space="preserve">
+    <value>рэнды</value>
+  </data>
+  <data name="CurrencyConverterSzl1" xml:space="preserve">
+    <value>лилангени</value>
+  </data>
+  <data name="CurrencyConverterSzl2" xml:space="preserve">
+    <value>лилангени</value>
+  </data>
+  <data name="CurrencyConverterSzl3" xml:space="preserve">
+    <value>лилангени</value>
+  </data>
+  <data name="CurrencyConverterSzl4" xml:space="preserve">
+    <value>лилангени</value>
+  </data>
+  <data name="CurrencyConverterSzl5" xml:space="preserve">
+    <value>лилангени</value>
+  </data>
+  <data name="CurrencyConverterThb1" xml:space="preserve">
+    <value>бат</value>
+  </data>
+  <data name="CurrencyConverterThb2" xml:space="preserve">
+    <value>бата</value>
+  </data>
+  <data name="CurrencyConverterThb3" xml:space="preserve">
+    <value>батов</value>
+  </data>
+  <data name="CurrencyConverterThb4" xml:space="preserve">
+    <value>батах</value>
+  </data>
+  <data name="CurrencyConverterThb5" xml:space="preserve">
+    <value>баты</value>
+  </data>
+  <data name="CurrencyConverterThbKop1" xml:space="preserve">
+    <value>сатанг</value>
+  </data>
+  <data name="CurrencyConverterThbKop2" xml:space="preserve">
+    <value>сатанга</value>
+  </data>
+  <data name="CurrencyConverterThbKop3" xml:space="preserve">
+    <value>сатангов</value>
+  </data>
+  <data name="CurrencyConverterTop1" xml:space="preserve">
+    <value>паанга</value>
+  </data>
+  <data name="CurrencyConverterTop2" xml:space="preserve">
+    <value>паанги</value>
+  </data>
+  <data name="CurrencyConverterTop3" xml:space="preserve">
+    <value>паанг</value>
+  </data>
+  <data name="CurrencyConverterTop4" xml:space="preserve">
+    <value>паангах</value>
+  </data>
+  <data name="CurrencyConverterTop5" xml:space="preserve">
+    <value>паанги</value>
+  </data>
+  <data name="CurrencyConverterTopKop1" xml:space="preserve">
+    <value>сенити</value>
+  </data>
+  <data name="CurrencyConverterTopKop2" xml:space="preserve">
+    <value>сенити</value>
+  </data>
+  <data name="CurrencyConverterTopKop3" xml:space="preserve">
+    <value>сенити</value>
+  </data>
+  <data name="CurrencyConverterAedKop1" xml:space="preserve">
+    <value>филс</value>
+  </data>
+  <data name="CurrencyConverterAedKop2" xml:space="preserve">
+    <value>филса</value>
+  </data>
+  <data name="CurrencyConverterAedKop3" xml:space="preserve">
+    <value>филсов</value>
+  </data>
+  <data name="CurrencyConverterMkd1" xml:space="preserve">
+    <value>денар</value>
+  </data>
+  <data name="CurrencyConverterMkd2" xml:space="preserve">
+    <value>денара</value>
+  </data>
+  <data name="CurrencyConverterMkd3" xml:space="preserve">
+    <value>денаров</value>
+  </data>
+  <data name="CurrencyConverterMkd4" xml:space="preserve">
+    <value>денарах</value>
+  </data>
+  <data name="CurrencyConverterMkd5" xml:space="preserve">
+    <value>денары</value>
+  </data>
+  <data name="CurrencyConverterMkdKop1" xml:space="preserve">
+    <value>дени</value>
+  </data>
+  <data name="CurrencyConverterMkdKop2" xml:space="preserve">
+    <value>дени</value>
+  </data>
+  <data name="CurrencyConverterMkdKop3" xml:space="preserve">
+    <value>дени</value>
+  </data>
+  <data name="CurrencyConverterEgp1" xml:space="preserve">
+    <value>фунт</value>
+  </data>
+  <data name="CurrencyConverterEgp2" xml:space="preserve">
+    <value>фунта</value>
+  </data>
+  <data name="CurrencyConverterEgp3" xml:space="preserve">
+    <value>фунтов</value>
+  </data>
+  <data name="CurrencyConverterEgp4" xml:space="preserve">
+    <value>фунтах</value>
+  </data>
+  <data name="CurrencyConverterEgp5" xml:space="preserve">
+    <value>фунты</value>
+  </data>
+  <data name="CurrencyConverterEgpKop1" xml:space="preserve">
+    <value>пиастр</value>
+  </data>
+  <data name="CurrencyConverterEgpKop2" xml:space="preserve">
+    <value>пиастра</value>
+  </data>
+  <data name="CurrencyConverterEgpKop3" xml:space="preserve">
+    <value>пиастры</value>
+  </data>
+  <data name="CurrencyConverterWst1" xml:space="preserve">
+    <value>тала</value>
+  </data>
+  <data name="CurrencyConverterWst2" xml:space="preserve">
+    <value>талы</value>
+  </data>
+  <data name="CurrencyConverterWst3" xml:space="preserve">
+    <value>тал</value>
+  </data>
+  <data name="CurrencyConverterWst4" xml:space="preserve">
+    <value>талах</value>
+  </data>
+  <data name="CurrencyConverterWst5" xml:space="preserve">
+    <value>талы</value>
+  </data>
+  <data name="CurrencyConverterWstKop1" xml:space="preserve">
+    <value>сене</value>
+  </data>
+  <data name="CurrencyConverterWstKop2" xml:space="preserve">
+    <value>сене</value>
+  </data>
+  <data name="CurrencyConverterWstKop3" xml:space="preserve">
+    <value>сене</value>
+  </data>
+  <data name="CurrencyConverterYerKop1" xml:space="preserve">
+    <value>филс</value>
+  </data>
+  <data name="CurrencyConverterYerKop2" xml:space="preserve">
+    <value>филса</value>
+  </data>
+  <data name="CurrencyConverterYerKop3" xml:space="preserve">
+    <value>филсов</value>
+  </data>
+  <data name="CurrencyConverterZmkKop1" xml:space="preserve">
+    <value>нгве</value>
+  </data>
+  <data name="CurrencyConverterZmkKop2" xml:space="preserve">
+    <value>нгве</value>
+  </data>
+  <data name="CurrencyConverterZmkKop3" xml:space="preserve">
+    <value>нгве</value>
+  </data>
+  <data name="CurrencyConverterTmtKop1" xml:space="preserve">
+    <value>тенеси</value>
+  </data>
+  <data name="CurrencyConverterTmtKop2" xml:space="preserve">
+    <value>тенеси</value>
+  </data>
+  <data name="CurrencyConverterTmtKop3" xml:space="preserve">
+    <value>тенеси</value>
+  </data>
+  <data name="CurrencyConverterGhs1" xml:space="preserve">
+    <value>седи</value>
+  </data>
+  <data name="CurrencyConverterGhs2" xml:space="preserve">
+    <value>седи</value>
+  </data>
+  <data name="CurrencyConverterGhs3" xml:space="preserve">
+    <value>седи</value>
+  </data>
+  <data name="CurrencyConverterGhs4" xml:space="preserve">
+    <value>седи</value>
+  </data>
+  <data name="CurrencyConverterGhs5" xml:space="preserve">
+    <value>седи</value>
+  </data>
+  <data name="CurrencyConverterGhsKop1" xml:space="preserve">
+    <value>песева</value>
+  </data>
+  <data name="CurrencyConverterGhsKop2" xml:space="preserve">
+    <value>песевы</value>
+  </data>
+  <data name="CurrencyConverterGhsKop3" xml:space="preserve">
+    <value>песев</value>
+  </data>
+  <data name="CurrencyConverterVef1" xml:space="preserve">
+    <value>фуэрте</value>
+  </data>
+  <data name="CurrencyConverterVef2" xml:space="preserve">
+    <value>фуэрте</value>
+  </data>
+  <data name="CurrencyConverterVef3" xml:space="preserve">
+    <value>фуэрте</value>
+  </data>
+  <data name="CurrencyConverterVef4" xml:space="preserve">
+    <value>фуэрте</value>
+  </data>
+  <data name="CurrencyConverterVef5" xml:space="preserve">
+    <value>фуэрте</value>
+  </data>
+  <data name="CurrencyConverterRsdKop1" xml:space="preserve">
+    <value>пара</value>
+  </data>
+  <data name="CurrencyConverterRsdKop2" xml:space="preserve">
+    <value>пары</value>
+  </data>
+  <data name="CurrencyConverterRsdKop3" xml:space="preserve">
+    <value>пар</value>
+  </data>
+  <data name="CurrencyConverterMzn1" xml:space="preserve">
+    <value>метиакл</value>
+  </data>
+  <data name="CurrencyConverterMzn2" xml:space="preserve">
+    <value>метиакла</value>
+  </data>
+  <data name="CurrencyConverterMzn3" xml:space="preserve">
+    <value>метиаклов</value>
+  </data>
+  <data name="CurrencyConverterMzn4" xml:space="preserve">
+    <value>метиаклах</value>
+  </data>
+  <data name="CurrencyConverterMzn5" xml:space="preserve">
+    <value>метиаклы</value>
+  </data>
+  <data name="CurrencyConverterAzn1" xml:space="preserve">
+    <value>манат</value>
+  </data>
+  <data name="CurrencyConverterAzn2" xml:space="preserve">
+    <value>маната</value>
+  </data>
+  <data name="CurrencyConverterAzn3" xml:space="preserve">
+    <value>манатов</value>
+  </data>
+  <data name="CurrencyConverterAzn4" xml:space="preserve">
+    <value>манатах</value>
+  </data>
+  <data name="CurrencyConverterAzn5" xml:space="preserve">
+    <value>манаты</value>
+  </data>
+  <data name="CurrencyConverterAznKop1" xml:space="preserve">
+    <value>гяпик</value>
+  </data>
+  <data name="CurrencyConverterAznKop2" xml:space="preserve">
+    <value>гяпика</value>
+  </data>
+  <data name="CurrencyConverterAznKop3" xml:space="preserve">
+    <value>гяпиков</value>
+  </data>
+  <data name="CurrencyConverterTry1" xml:space="preserve">
+    <value>лира</value>
+  </data>
+  <data name="CurrencyConverterTry2" xml:space="preserve">
+    <value>лиры</value>
+  </data>
+  <data name="CurrencyConverterTry3" xml:space="preserve">
+    <value>лир</value>
+  </data>
+  <data name="CurrencyConverterTry4" xml:space="preserve">
+    <value>лирах</value>
+  </data>
+  <data name="CurrencyConverterTry5" xml:space="preserve">
+    <value>лиры</value>
+  </data>
+  <data name="CurrencyConverterTryKop1" xml:space="preserve">
+    <value>куруш</value>
+  </data>
+  <data name="CurrencyConverterTryKop2" xml:space="preserve">
+    <value>куруша</value>
+  </data>
+  <data name="CurrencyConverterTryKop3" xml:space="preserve">
+    <value>курушей</value>
+  </data>
+  <data name="CurrencyConverterAfn1" xml:space="preserve">
+    <value>афгани</value>
+  </data>
+  <data name="CurrencyConverterAfn2" xml:space="preserve">
+    <value>афгани</value>
+  </data>
+  <data name="CurrencyConverterAfn3" xml:space="preserve">
+    <value>афгани</value>
+  </data>
+  <data name="CurrencyConverterAfn4" xml:space="preserve">
+    <value>афгани</value>
+  </data>
+  <data name="CurrencyConverterAfn5" xml:space="preserve">
+    <value>афгани</value>
+  </data>
+  <data name="CurrencyConverterAfnKop1" xml:space="preserve">
+    <value>пул</value>
+  </data>
+  <data name="CurrencyConverterAfnKop2" xml:space="preserve">
+    <value>пула</value>
+  </data>
+  <data name="CurrencyConverterAfnKop3" xml:space="preserve">
+    <value>пулов</value>
+  </data>
+  <data name="CurrencyConverterTjs1" xml:space="preserve">
+    <value>сомони</value>
+  </data>
+  <data name="CurrencyConverterTjs2" xml:space="preserve">
+    <value>сомони</value>
+  </data>
+  <data name="CurrencyConverterTjs3" xml:space="preserve">
+    <value>сомони</value>
+  </data>
+  <data name="CurrencyConverterTjs4" xml:space="preserve">
+    <value>сомони</value>
+  </data>
+  <data name="CurrencyConverterTjs5" xml:space="preserve">
+    <value>сомони</value>
+  </data>
+  <data name="CurrencyConverterTjsKop1" xml:space="preserve">
+    <value>дирам</value>
+  </data>
+  <data name="CurrencyConverterTjsKop2" xml:space="preserve">
+    <value>дирама</value>
+  </data>
+  <data name="CurrencyConverterTjsKop3" xml:space="preserve">
+    <value>дирамов</value>
+  </data>
+  <data name="CurrencyConverterAoa1" xml:space="preserve">
+    <value>кванза</value>
+  </data>
+  <data name="CurrencyConverterAoa2" xml:space="preserve">
+    <value>кванзы</value>
+  </data>
+  <data name="CurrencyConverterAoa3" xml:space="preserve">
+    <value>кванз</value>
+  </data>
+  <data name="CurrencyConverterAoa4" xml:space="preserve">
+    <value>кванзах</value>
+  </data>
+  <data name="CurrencyConverterAoa5" xml:space="preserve">
+    <value>кванзы</value>
+  </data>
+  <data name="CurrencyConverterAoaKop1" xml:space="preserve">
+    <value>сентимо</value>
+  </data>
+  <data name="CurrencyConverterAoaKop2" xml:space="preserve">
+    <value>сентимо</value>
+  </data>
+  <data name="CurrencyConverterAoaKop3" xml:space="preserve">
+    <value>сентимо</value>
+  </data>
+  <data name="CurrencyConverterBgn1" xml:space="preserve">
+    <value>лев</value>
+  </data>
+  <data name="CurrencyConverterBgn2" xml:space="preserve">
+    <value>лева</value>
+  </data>
+  <data name="CurrencyConverterBgn3" xml:space="preserve">
+    <value>левов</value>
+  </data>
+  <data name="CurrencyConverterBgn4" xml:space="preserve">
+    <value>левах</value>
+  </data>
+  <data name="CurrencyConverterBgn5" xml:space="preserve">
+    <value>левы</value>
+  </data>
+  <data name="CurrencyConverterBgnKop1" xml:space="preserve">
+    <value>стотинка</value>
+  </data>
+  <data name="CurrencyConverterBgnKop2" xml:space="preserve">
+    <value>стотинки</value>
+  </data>
+  <data name="CurrencyConverterBgnKop3" xml:space="preserve">
+    <value>стотинкок</value>
+  </data>
+  <data name="CurrencyConverterBam1" xml:space="preserve">
+    <value>марка</value>
+  </data>
+  <data name="CurrencyConverterBam2" xml:space="preserve">
+    <value>марки</value>
+  </data>
+  <data name="CurrencyConverterBam3" xml:space="preserve">
+    <value>маркок</value>
+  </data>
+  <data name="CurrencyConverterBam4" xml:space="preserve">
+    <value>марках</value>
+  </data>
+  <data name="CurrencyConverterBam5" xml:space="preserve">
+    <value>марки</value>
+  </data>
+  <data name="CurrencyConverterBamKop1" xml:space="preserve">
+    <value>фенинг</value>
+  </data>
+  <data name="CurrencyConverterBamKop2" xml:space="preserve">
+    <value>фенинга</value>
+  </data>
+  <data name="CurrencyConverterBamKop3" xml:space="preserve">
+    <value>фенингов</value>
+  </data>
+  <data name="CurrencyConverterGel1" xml:space="preserve">
+    <value>лари</value>
+  </data>
+  <data name="CurrencyConverterGel2" xml:space="preserve">
+    <value>лари</value>
+  </data>
+  <data name="CurrencyConverterGel3" xml:space="preserve">
+    <value>лари</value>
+  </data>
+  <data name="CurrencyConverterGel4" xml:space="preserve">
+    <value>лари</value>
+  </data>
+  <data name="CurrencyConverterGel5" xml:space="preserve">
+    <value>лари</value>
+  </data>
+  <data name="CurrencyConverterGelKop1" xml:space="preserve">
+    <value>тетри</value>
+  </data>
+  <data name="CurrencyConverterGelKop2" xml:space="preserve">
+    <value>тетри</value>
+  </data>
+  <data name="CurrencyConverterGelKop3" xml:space="preserve">
+    <value>тетри</value>
+  </data>
+  <data name="CurrencyConverterPln1" xml:space="preserve">
+    <value>злотый</value>
+  </data>
+  <data name="CurrencyConverterPln2" xml:space="preserve">
+    <value>злотого</value>
+  </data>
+  <data name="CurrencyConverterPln3" xml:space="preserve">
+    <value>злотых</value>
+  </data>
+  <data name="CurrencyConverterPln4" xml:space="preserve">
+    <value>злотых</value>
+  </data>
+  <data name="CurrencyConverterPln5" xml:space="preserve">
+    <value>злотые</value>
+  </data>
+  <data name="CurrencyConverterPlnKop1" xml:space="preserve">
+    <value>грош</value>
+  </data>
+  <data name="CurrencyConverterPlnKop2" xml:space="preserve">
+    <value>гроша</value>
+  </data>
+  <data name="CurrencyConverterPlnKop3" xml:space="preserve">
+    <value>грошей</value>
+  </data>
+  <data name="CurrencyConverterBrl1" xml:space="preserve">
+    <value>реал</value>
+  </data>
+  <data name="CurrencyConverterBrl2" xml:space="preserve">
+    <value>реала</value>
+  </data>
+  <data name="CurrencyConverterBrl3" xml:space="preserve">
+    <value>реалов</value>
+  </data>
+  <data name="CurrencyConverterBrl4" xml:space="preserve">
+    <value>реалах</value>
+  </data>
+  <data name="CurrencyConverterBrl5" xml:space="preserve">
+    <value>реалы</value>
+  </data>
+  <data name="CurrencyConverterBhd1" xml:space="preserve">
+    <value>динар</value>
+  </data>
+  <data name="CurrencyConverterBhd2" xml:space="preserve">
+    <value>динара</value>
+  </data>
+  <data name="CurrencyConverterBhd3" xml:space="preserve">
+    <value>динаров</value>
+  </data>
+  <data name="CurrencyConverterBhd4" xml:space="preserve">
+    <value>динарах</value>
+  </data>
+  <data name="CurrencyConverterBhd5" xml:space="preserve">
+    <value>динары</value>
+  </data>
+  <data name="CurrencyConverterBhdKop1" xml:space="preserve">
+    <value>филс</value>
+  </data>
+  <data name="CurrencyConverterBhdKop2" xml:space="preserve">
+    <value>филса</value>
+  </data>
+  <data name="CurrencyConverterBhdKop3" xml:space="preserve">
+    <value>филсов</value>
+  </data>
+  <data name="CurrencyConverterLydKop1" xml:space="preserve">
+    <value>дирхам</value>
+  </data>
+  <data name="CurrencyConverterLydKop2" xml:space="preserve">
+    <value>дирхама</value>
+  </data>
+  <data name="CurrencyConverterLydKop3" xml:space="preserve">
+    <value>дирхамов</value>
+  </data>
+  <data name="CurrencyConverterOmrKop1" xml:space="preserve">
+    <value>байза</value>
+  </data>
+  <data name="CurrencyConverterOmrKop2" xml:space="preserve">
+    <value>байзы</value>
+  </data>
+  <data name="CurrencyConverterOmrKop3" xml:space="preserve">
+    <value>байз</value>
+  </data>
+  <data name="CurrencyConverterTndKop1" xml:space="preserve">
+    <value>миллим</value>
+  </data>
+  <data name="CurrencyConverterTndKop2" xml:space="preserve">
+    <value>миллима</value>
+  </data>
+  <data name="CurrencyConverterTndKop3" xml:space="preserve">
+    <value>миллимов</value>
+  </data>
+  <data name="BelarusNewNumber" xml:space="preserve">
+    <value>Белорусский рубль после деноминации</value>
+  </data>
+  <data name="CurrencyConverterQar1" xml:space="preserve">
+    <value>риял</value>
+  </data>
+  <data name="CurrencyConverterQar2" xml:space="preserve">
+    <value>рияла</value>
+  </data>
+  <data name="CurrencyConverterQar3" xml:space="preserve">
+    <value>риялов</value>
+  </data>
+  <data name="CurrencyConverterQar4" xml:space="preserve">
+    <value>риялах</value>
+  </data>
+  <data name="CurrencyConverterQar5" xml:space="preserve">
+    <value>риялы</value>
+  </data>
+</root>

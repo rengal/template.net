@@ -1,0 +1,818 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:mstns="http://iiko.ru/Doc.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" id="Doc">
+  <xs:element name="doc">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="anyInput">
+          <xs:attribute name="bell" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>
+                Включение кухонного звонка перед началом печати документа.
+                Примечания: Работает только для принтеров, проверяется только наличие аттрибута. Не рекомендуется для использования. Следует использовать тэг "pulse"
+              </xs:documentation>
+            </xs:annotation>
+          </xs:attribute>
+          <xs:attribute name="font">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:enumeration value="f0"/>
+                <xs:enumeration value="f1"/>
+                <xs:enumeration value="f2"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>	
+	        <xs:attribute name="italic">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:enumeration value="on"/>
+                <xs:enumeration value="off"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attribute name="bold">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:enumeration value="on"/>
+                <xs:enumeration value="off"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attribute name="reverse">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:enumeration value="on"/>
+                <xs:enumeration value="off"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attribute name="underline">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:enumeration value="on"/>
+                <xs:enumeration value="off"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attribute name="align">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:enumeration value="center"/>
+                <xs:enumeration value="left"/>
+                <xs:enumeration value="right"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attribute name="formatter">
+            <xs:annotation>
+              <xs:documentation>
+                Выбор способа переноса строк.
+              </xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:enumeration value="cut">
+                  <xs:annotation>
+                    <xs:documentation>Обрезать текст, который не помещается в строку.</xs:documentation>
+                  </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="split">
+                  <xs:annotation>
+                    <xs:documentation>Разбить текст на строки, перенося на пробельных символах (пробел, табуляция и др.).</xs:documentation>
+                  </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="wrap">
+                  <xs:annotation>
+                    <xs:documentation>(По-умолчанию) Разбить текст на строки, перенося в любом месте.</xs:documentation>
+                  </xs:annotation>
+                </xs:enumeration>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="anyInput" mixed="true">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:choice>
+        <xs:element name="center" type="anyInput"/>
+        <xs:element name="justify" type="anyInput"/>
+        <xs:element name="left" type="anyInput"/>
+        <xs:element name="right" type="anyInput"/>
+
+        <xs:element name="f0">
+          <xs:complexType>
+            <xs:complexContent>
+              <xs:extension base="anyInput">
+                <xs:attribute name="italic">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                      <xs:enumeration value="on"/>
+                      <xs:enumeration value="off"/>
+                    </xs:restriction>
+                  </xs:simpleType>
+                </xs:attribute>
+                <xs:attribute name="bold">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                      <xs:enumeration value="on"/>
+                      <xs:enumeration value="off"/>
+                    </xs:restriction>
+                  </xs:simpleType>
+                </xs:attribute>
+                <xs:attribute name="reverse">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                      <xs:enumeration value="on"/>
+                      <xs:enumeration value="off"/>
+                    </xs:restriction>
+                  </xs:simpleType>
+                </xs:attribute>
+                <xs:attribute name="underline">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                      <xs:enumeration value="on"/>
+                      <xs:enumeration value="off"/>
+                    </xs:restriction>
+                  </xs:simpleType>
+                </xs:attribute>
+              </xs:extension>
+            </xs:complexContent>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="f1">
+          <xs:complexType>
+            <xs:complexContent>
+              <xs:extension base="anyInput">
+                <xs:attribute name="italic">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                      <xs:enumeration value="on"/>
+                      <xs:enumeration value="off"/>
+                    </xs:restriction>
+                  </xs:simpleType>
+                </xs:attribute>
+                <xs:attribute name="bold">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                      <xs:enumeration value="on"/>
+                      <xs:enumeration value="off"/>
+                    </xs:restriction>
+                  </xs:simpleType>
+                </xs:attribute>
+                <xs:attribute name="reverse">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                      <xs:enumeration value="on"/>
+                      <xs:enumeration value="off"/>
+                    </xs:restriction>
+                  </xs:simpleType>
+                </xs:attribute>
+                <xs:attribute name="underline">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                      <xs:enumeration value="on"/>
+                      <xs:enumeration value="off"/>
+                    </xs:restriction>
+                  </xs:simpleType>
+                </xs:attribute>
+              </xs:extension>
+            </xs:complexContent>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="f2">
+          <xs:complexType>
+            <xs:complexContent>
+              <xs:extension base="anyInput">
+                <xs:attribute name="italic">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                      <xs:enumeration value="on"/>
+                      <xs:enumeration value="off"/>
+                    </xs:restriction>
+                  </xs:simpleType>
+                </xs:attribute>
+                <xs:attribute name="bold">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                      <xs:enumeration value="on"/>
+                      <xs:enumeration value="off"/>
+                    </xs:restriction>
+                  </xs:simpleType>
+                </xs:attribute>
+                <xs:attribute name="reverse">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                      <xs:enumeration value="on"/>
+                      <xs:enumeration value="off"/>
+                    </xs:restriction>
+                  </xs:simpleType>
+                </xs:attribute>
+                <xs:attribute name="underline">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                      <xs:enumeration value="on"/>
+                      <xs:enumeration value="off"/>
+                    </xs:restriction>
+                  </xs:simpleType>
+                </xs:attribute>
+              </xs:extension>
+            </xs:complexContent>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="barcode">
+          <xs:complexType>
+            <xs:simpleContent>
+              <xs:extension base="xs:string">
+                <xs:attribute name="align">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                      <xs:enumeration value="left"/>
+                      <xs:enumeration value="center"/>
+                      <xs:enumeration value="right"/>
+                    </xs:restriction>
+                  </xs:simpleType>
+                </xs:attribute>
+                <xs:attribute name="hri">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                      <xs:enumeration value="on"/>
+                      <xs:enumeration value="off"/>
+                    </xs:restriction>
+                  </xs:simpleType>
+                </xs:attribute>
+                <xs:attribute name="heightRatio" type="xs:double"/>
+              </xs:extension>
+            </xs:simpleContent>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="logo" type="xs:nonNegativeInteger"/>
+        <xs:element name="qrcode">
+          <xs:complexType>
+            <xs:simpleContent>
+              <xs:extension base="xs:string">
+                <xs:attribute name="align">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                      <xs:enumeration value="center"/>
+                      <xs:enumeration value="left"/>
+                      <xs:enumeration value="right"/>
+                    </xs:restriction>
+                  </xs:simpleType>
+                </xs:attribute>
+                <xs:attribute name="size">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                      <xs:enumeration value="tiny"/>
+                      <xs:enumeration value="small"/>
+                      <xs:enumeration value="normal"/>
+                      <xs:enumeration value="large"/>
+                      <xs:enumeration value="extralarge"/>
+                    </xs:restriction>
+                  </xs:simpleType>
+                </xs:attribute>
+                <xs:attribute name="correction">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                      <xs:enumeration value="low"/>
+                      <xs:enumeration value="medium"/>
+                      <xs:enumeration value="high"/>
+                      <xs:enumeration value="ultra"/>
+                    </xs:restriction>
+                  </xs:simpleType>
+                </xs:attribute>
+              </xs:extension>
+            </xs:simpleContent>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="image">
+          <xs:complexType>
+            <xs:simpleContent>
+              <xs:extension base="xs:string">
+                <xs:attribute name="align">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                      <xs:enumeration value="left"/>
+                      <xs:enumeration value="center"/>
+                      <xs:enumeration value="right"/>
+                    </xs:restriction>
+                  </xs:simpleType>
+                </xs:attribute>
+                <xs:attribute name="resizeMode">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                      <xs:enumeration value="fit"/>
+                      <xs:enumeration value="clip"/>
+                    </xs:restriction>
+                  </xs:simpleType>
+                </xs:attribute>
+              </xs:extension>
+            </xs:simpleContent>
+          </xs:complexType>
+        </xs:element>
+
+        <xs:element name="split" type="anyInput"/>
+        <xs:element name="cut" type="anyInput"/>
+        <xs:element name="wrap" type="anyInput"/>
+
+        <xs:element name="br">
+          <xs:annotation>
+            <xs:documentation>
+              Переход на новую строку.
+              Переход осуществится только если текущая строка пустая.
+              Любое количество подряд-идущих &lt;br &gt; на выходе дадут одну пустую строку.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="nobr">
+          <xs:annotation>
+            <xs:documentation>
+              Неразрывный пробел.
+              Слова, которые идут через неразрывный пробел, будут восприниматься как единое слово.
+              Это значит, что они не будут разбиваться при форматировании при использовании split formatter или justify alignment.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="np">
+          <xs:annotation>
+            <xs:documentation>
+              Новый параграф.
+              После его применения, следующий за ним текст начнется с новой строки,
+              и при этом если предшествующий параграф был отформатирован по ширине,
+              то последняя строка этого параграфа будет выровнена по левому краю (аналогично работает MS Word).
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="pagecut">
+          <xs:annotation>
+            <xs:documentation>
+              Разрез бумаги.
+              Примечание: в конце документа вставляется автоматически.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+
+        <xs:element name="pulse">
+          <xs:annotation>
+            <xs:documentation>
+              Подать импульс на выход принтера.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+
+        <xs:element name="fill">
+          <xs:annotation>
+            <xs:documentation>
+              Переопределяет символ, используемый для заполнения пустого пространства,
+              новый символ (или набор символов) задается атрибутом @symbol.
+
+              Примечания:
+              - Не наследуется таблицей, если ее обернуть тегом fill.
+              - Тег не переопределяет пробельные символы пользовательского текста.
+            </xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:complexContent>
+              <xs:extension base="anyInput">
+                <xs:attribute name="symbols" use="required">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                      <xs:minLength value="1"/>
+                    </xs:restriction>
+                  </xs:simpleType>
+                </xs:attribute>
+              </xs:extension>
+            </xs:complexContent>
+          </xs:complexType>
+        </xs:element>
+
+        <xs:element name="table">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="columns">
+                <xs:complexType>
+                  <xs:choice maxOccurs="unbounded">
+                    <xs:element name="column">
+                      <xs:complexType>
+                        <xs:attribute name="align">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:enumeration value="center"/>
+                              <xs:enumeration value="justify"/>
+                              <xs:enumeration value="left"/>
+                              <xs:enumeration value="right"/>
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:attribute>
+                        <xs:attribute name="formatter">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:enumeration value="cut"/>
+                              <xs:enumeration value="split"/>
+                              <xs:enumeration value="wrap"/>
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:attribute>
+                        <xs:attribute name="valign">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:enumeration value="bottom"/>
+                              <xs:enumeration value="center"/>
+                              <xs:enumeration value="top"/>
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:attribute>
+                        <xs:attribute name="width">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:pattern value="[0-9]+%?"/>
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:attribute>
+                        <xs:attribute name="minwidth" type="xs:positiveInteger"/>
+                        <xs:attribute name="maxwidth" type="xs:positiveInteger"/>
+                        <xs:attribute name="autowidth" type="xs:string"/>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="spacecolumn">
+                      <xs:complexType>
+                        <xs:attribute name="width">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:pattern value="[0-9]+%?"/>
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:attribute>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:choice>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="cells">
+                <xs:complexType>
+                  <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                    <xs:choice>
+                      <xs:element name="c">
+                        <xs:complexType>
+                          <xs:complexContent>
+                            <xs:extension base="anyInputWithoutFont">
+                              <xs:attribute name="width" type="xs:string"/>
+                              <xs:attribute name="colspan" type="xs:nonNegativeInteger"/>
+                              <xs:attribute name="font">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:enumeration value="f0"/>
+                                    <xs:enumeration value="f1"/>
+                                    <xs:enumeration value="f2"/>
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:attribute>
+                              <xs:attribute name="italic">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:enumeration value="on"/>
+                                    <xs:enumeration value="off"/>
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:attribute>
+                              <xs:attribute name="bold">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:enumeration value="on"/>
+                                    <xs:enumeration value="off"/>
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:attribute>
+                              <xs:attribute name="reverse">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:enumeration value="on"/>
+                                    <xs:enumeration value="off"/>
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:attribute>
+                              <xs:attribute name="underline">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:enumeration value="on"/>
+                                    <xs:enumeration value="off"/>
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:attribute>
+                            </xs:extension>
+                          </xs:complexContent>
+                        </xs:complexType>
+                      </xs:element>
+                      <xs:element name="ct">
+                        <xs:complexType>
+                          <xs:simpleContent>
+                            <xs:extension base="xs:string">
+                              <xs:attribute name="font">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:enumeration value="f0"/>
+                                    <xs:enumeration value="f1"/>
+                                    <xs:enumeration value="f2"/>
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:attribute>
+                              <xs:attribute name="italic">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:enumeration value="on"/>
+                                    <xs:enumeration value="off"/>
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:attribute>
+                              <xs:attribute name="bold">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:enumeration value="on"/>
+                                    <xs:enumeration value="off"/>
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:attribute>
+                              <xs:attribute name="reverse">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:enumeration value="on"/>
+                                    <xs:enumeration value="off"/>
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:attribute>
+                              <xs:attribute name="underline">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:enumeration value="on"/>
+                                    <xs:enumeration value="off"/>
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:attribute>
+                            </xs:extension>
+                          </xs:simpleContent>
+                        </xs:complexType>
+                      </xs:element>
+                    </xs:choice>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="cellspacing" type="xs:unsignedInt"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="anyInputWithoutFont" mixed="true">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:choice>
+        <xs:element name="center" type="anyInputWithoutFont"/>
+        <xs:element name="justify" type="anyInputWithoutFont"/>
+        <xs:element name="left" type="anyInputWithoutFont"/>
+        <xs:element name="right" type="anyInputWithoutFont"/>
+
+        <xs:element name="split" type="anyInputWithoutFont"/>
+        <xs:element name="cut" type="anyInputWithoutFont"/>
+        <xs:element name="wrap" type="anyInputWithoutFont"/>
+
+        <xs:element name="br">
+          <xs:annotation>
+            <xs:documentation>
+              Переход на новую строку.
+              Переход осуществится только если текущая строка пустая.
+              Любое количество подряд-идущих &lt;br &gt; на выходе дадут одну пустую строку.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="nobr">
+          <xs:annotation>
+            <xs:documentation>
+              Неразрывный пробел.
+              Слова, которые идут через неразрывный пробел, будут восприниматься как единое слово.
+              Это значит, что они не будут разбиваться при форматировании при использовании split formatter или justify alignment.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="np">
+          <xs:annotation>
+            <xs:documentation>
+              Новый параграф.
+              После его применения, следующий за ним текст начнется с новой строки,
+              и при этом если предшествующий параграф был отформатирован по ширине,
+              то последняя строка этого параграфа будет выровнена по левому краю (аналогично работает MS Word).
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="pagecut">
+          <xs:annotation>
+            <xs:documentation>
+              Разрез бумаги.
+              Примечание: в конце документа вставляется автоматически.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+
+        <xs:element name="fill">
+          <xs:annotation>
+            <xs:documentation>
+              Переопределяет символ, используемый для заполнения пустого пространства,
+              новый символ (или набор символов) задается атрибутом @symbol.
+
+              Примечания:
+              - Не наследуется таблицей, если ее обернуть тегом fill.
+              - Тег не переопределяет пробельные символы пользовательского текста.
+            </xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:complexContent>
+              <xs:extension base="anyInputWithoutFont">
+                <xs:attribute name="symbols" use="required">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                      <xs:minLength value="1"/>
+                    </xs:restriction>
+                  </xs:simpleType>
+                </xs:attribute>
+              </xs:extension>
+            </xs:complexContent>
+          </xs:complexType>
+        </xs:element>
+
+        <xs:element name="table">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="columns">
+                <xs:complexType>
+                  <xs:choice maxOccurs="unbounded">
+                    <xs:element name="column">
+                      <xs:complexType>
+                        <xs:attribute name="align">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:enumeration value="center"/>
+                              <xs:enumeration value="justify"/>
+                              <xs:enumeration value="left"/>
+                              <xs:enumeration value="right"/>
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:attribute>
+                        <xs:attribute name="formatter">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:enumeration value="cut"/>
+                              <xs:enumeration value="split"/>
+                              <xs:enumeration value="wrap"/>
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:attribute>
+                        <xs:attribute name="valign">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:enumeration value="bottom"/>
+                              <xs:enumeration value="center"/>
+                              <xs:enumeration value="top"/>
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:attribute>
+                        <xs:attribute name="width">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:pattern value="[0-9]+%?"/>
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:attribute>
+                        <xs:attribute name="minwidth" type="xs:positiveInteger"/>
+                        <xs:attribute name="maxwidth" type="xs:positiveInteger"/>
+                        <xs:attribute name="autowidth" type="xs:string"/>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="spacecolumn">
+                      <xs:complexType>
+                        <xs:attribute name="width">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:pattern value="[0-9]+%?"/>
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:attribute>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:choice>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="cells">
+                <xs:complexType>
+                  <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                    <xs:choice>
+                      <xs:element name="c">
+                        <xs:complexType>
+                          <xs:complexContent>
+                            <xs:extension base="anyInputWithoutFont">
+                              <xs:attribute name="width" type="xs:string"/>
+                              <xs:attribute name="colspan" type="xs:nonNegativeInteger"/>
+                              <xs:attribute name="font">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:enumeration value="f0"/>
+                                    <xs:enumeration value="f1"/>
+                                    <xs:enumeration value="f2"/>
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:attribute>
+                              <xs:attribute name="italic">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:enumeration value="on"/>
+                                    <xs:enumeration value="off"/>
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:attribute>
+                              <xs:attribute name="bold">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:enumeration value="on"/>
+                                    <xs:enumeration value="off"/>
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:attribute>
+                              <xs:attribute name="reverse">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:enumeration value="on"/>
+                                    <xs:enumeration value="off"/>
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:attribute>
+                              <xs:attribute name="underline">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:enumeration value="on"/>
+                                    <xs:enumeration value="off"/>
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:attribute>
+                            </xs:extension>
+                          </xs:complexContent>
+                        </xs:complexType>
+                      </xs:element>
+                      <xs:element name="ct">
+                        <xs:complexType>
+                          <xs:simpleContent>
+                            <xs:extension base="xs:string">
+                              <xs:attribute name="font">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:enumeration value="f0"/>
+                                    <xs:enumeration value="f1"/>
+                                    <xs:enumeration value="f2"/>
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:attribute>
+                              <xs:attribute name="italic">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:enumeration value="on"/>
+                                    <xs:enumeration value="off"/>
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:attribute>
+                              <xs:attribute name="bold">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:enumeration value="on"/>
+                                    <xs:enumeration value="off"/>
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:attribute>
+                              <xs:attribute name="reverse">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:enumeration value="on"/>
+                                    <xs:enumeration value="off"/>
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:attribute>
+                              <xs:attribute name="underline">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:enumeration value="on"/>
+                                    <xs:enumeration value="off"/>
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:attribute>
+                            </xs:extension>
+                          </xs:simpleContent>
+                        </xs:complexType>
+                      </xs:element>
+                    </xs:choice>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="cellspacing" type="xs:unsignedInt"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

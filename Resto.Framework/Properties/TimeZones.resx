@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+		Microsoft ResX Schema
+
+		Version 1.3
+
+		The primary goals of this format is to allow a simple XML format 
+		that is mostly human readable. The generation and parsing of the 
+		various data types are done through the TypeConverter classes 
+		associated with the data types.
+
+		Example:
+
+		... ado.net/XML headers & schema ...
+		<resheader name="resmimetype">text/microsoft-resx</resheader>
+		<resheader name="version">1.3</resheader>
+		<resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+		<resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+		<data name="Name1">this is my long string</data>
+		<data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+		<data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+			[base64 mime encoded serialized .NET Framework object]
+		</data>
+		<data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+			[base64 mime encoded string representing a byte array form of the .NET Framework object]
+		</data>
+
+		There are any number of "resheader" rows that contain simple 
+		name/value pairs.
+
+		Each data row contains a name, and value. The row also contains a 
+		type or mimetype. Type corresponds to a .NET class that support 
+		text/value conversion through the TypeConverter architecture. 
+		Classes that don't support this are serialized and stored with the 
+		mimetype set.
+
+		The mimetype is used for serialized objects, and tells the 
+		ResXResourceReader how to depersist the object. This is currently not 
+		extensible. For a given mimetype the value must be set accordingly:
+
+		Note - application/x-microsoft.net.object.binary.base64 is the format 
+		that the ResXResourceWriter will generate, however the reader can 
+		read any of the formats listed below.
+
+		mimetype: application/x-microsoft.net.object.binary.base64
+		value   : The object must be serialized with 
+			: System.Serialization.Formatters.Binary.BinaryFormatter
+			: and then encoded with base64 encoding.
+
+		mimetype: application/x-microsoft.net.object.soap.base64
+		value   : The object must be serialized with 
+			: System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+			: and then encoded with base64 encoding.
+
+		mimetype: application/x-microsoft.net.object.bytearray.base64
+		value   : The object must be serialized into a byte array 
+			: using a System.ComponentModel.TypeConverter
+			: and then encoded with base64 encoding.
+	-->
+
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>1.3</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+
+  <data name="Zone1" xml:space="preserve"><value>(UTC-12:00) Линия перемены дат</value><comment>Display name for timezone with .net framework id: [Dateline Standard Time]</comment></data>
+  <data name="Zone2" xml:space="preserve"><value>(UTC-11:00) Время в формате UTC -11</value><comment>Display name for timezone with .net framework id: [UTC-11]</comment></data>
+  <data name="Zone3" xml:space="preserve"><value>(UTC-10:00) Гавайи</value><comment>Display name for timezone with .net framework id: [Hawaiian Standard Time]</comment></data>
+  <data name="Zone4" xml:space="preserve"><value>(UTC-09:00) Аляска</value><comment>Display name for timezone with .net framework id: [Alaskan Standard Time]</comment></data>
+  <data name="Zone5" xml:space="preserve"><value>(UTC-08:00) Нижняя Калифорния</value><comment>Display name for timezone with .net framework id: [Pacific Standard Time (Mexico)]</comment></data>
+  <data name="Zone6" xml:space="preserve"><value>(UTC-08:00) Тихоокеанское время (США и Канада)</value><comment>Display name for timezone with .net framework id: [Pacific Standard Time]</comment></data>
+  <data name="Zone7" xml:space="preserve"><value>(UTC-07:00) Аризона</value><comment>Display name for timezone with .net framework id: [US Mountain Standard Time]</comment></data>
+  <data name="Zone8" xml:space="preserve"><value>(UTC-07:00) Горное время (США и Канада)</value><comment>Display name for timezone with .net framework id: [Mountain Standard Time]</comment></data>
+  <data name="Zone9" xml:space="preserve"><value>(UTC-07:00) Ла-Пас, Мазатлан, Чихуахуа</value><comment>Display name for timezone with .net framework id: [Mountain Standard Time (Mexico)]</comment></data>
+  <data name="Zone10" xml:space="preserve"><value>(UTC-06:00) Гвадалахара, Мехико, Монтеррей</value><comment>Display name for timezone with .net framework id: [Central Standard Time (Mexico)]</comment></data>
+  <data name="Zone11" xml:space="preserve"><value>(UTC-06:00) Саскачеван</value><comment>Display name for timezone with .net framework id: [Canada Central Standard Time]</comment></data>
+  <data name="Zone12" xml:space="preserve"><value>(UTC-06:00) Центральная Америка</value><comment>Display name for timezone with .net framework id: [Central America Standard Time]</comment></data>
+  <data name="Zone13" xml:space="preserve"><value>(UTC-06:00) Центральное время (США и Канада)</value><comment>Display name for timezone with .net framework id: [Central Standard Time]</comment></data>
+  <data name="Zone14" xml:space="preserve"><value>(UTC-05:00) Богота, Кито, Лима</value><comment>Display name for timezone with .net framework id: [SA Pacific Standard Time]</comment></data>
+  <data name="Zone15" xml:space="preserve"><value>(UTC-05:00) Восточное время (США и Канада)</value><comment>Display name for timezone with .net framework id: [Eastern Standard Time]</comment></data>
+  <data name="Zone16" xml:space="preserve"><value>(UTC-05:00) Индиана (восток)</value><comment>Display name for timezone with .net framework id: [US Eastern Standard Time]</comment></data>
+  <data name="Zone17" xml:space="preserve"><value>(UTC-04:30) Каракас</value><comment>Display name for timezone with .net framework id: [Venezuela Standard Time]</comment></data>
+  <data name="Zone18" xml:space="preserve"><value>(UTC-04:00) Асунсьон</value><comment>Display name for timezone with .net framework id: [Paraguay Standard Time]</comment></data>
+  <data name="Zone19" xml:space="preserve"><value>(UTC-04:00) Атлантическое время (Канада)</value><comment>Display name for timezone with .net framework id: [Atlantic Standard Time]</comment></data>
+  <data name="Zone20" xml:space="preserve"><value>(UTC-04:00) Джорджтаун, Ла-Пас, Манаус, Сан-Хуан</value><comment>Display name for timezone with .net framework id: [SA Western Standard Time]</comment></data>
+  <data name="Zone21" xml:space="preserve"><value>(UTC-04:00) Куяба</value><comment>Display name for timezone with .net framework id: [Central Brazilian Standard Time]</comment></data>
+  <data name="Zone22" xml:space="preserve"><value>(UTC-04:00) Сантьяго</value><comment>Display name for timezone with .net framework id: [Pacific SA Standard Time]</comment></data>
+  <data name="Zone23" xml:space="preserve"><value>(UTC-03:30) Ньюфаундленд</value><comment>Display name for timezone with .net framework id: [Newfoundland Standard Time]</comment></data>
+  <data name="Zone24" xml:space="preserve"><value>(UTC-03:00) Бразилия</value><comment>Display name for timezone with .net framework id: [E. South America Standard Time]</comment></data>
+  <data name="Zone25" xml:space="preserve"><value>(UTC-03:00) Буэнос-Айрес</value><comment>Display name for timezone with .net framework id: [Argentina Standard Time]</comment></data>
+  <data name="Zone26" xml:space="preserve"><value>(UTC-03:00) Гренландия</value><comment>Display name for timezone with .net framework id: [Greenland Standard Time]</comment></data>
+  <data name="Zone27" xml:space="preserve"><value>(UTC-03:00) Кайенна, Форталеза</value><comment>Display name for timezone with .net framework id: [SA Eastern Standard Time]</comment></data>
+  <data name="Zone28" xml:space="preserve"><value>(UTC-03:00) Монтевидео</value><comment>Display name for timezone with .net framework id: [Montevideo Standard Time]</comment></data>
+  <data name="Zone29" xml:space="preserve"><value>(UTC-03:00) Сальвадор</value><comment>Display name for timezone with .net framework id: [Bahia Standard Time]</comment></data>
+  <data name="Zone30" xml:space="preserve"><value>(UTC-02:00) Время в формате UTC -02</value><comment>Display name for timezone with .net framework id: [UTC-02]</comment></data>
+  <data name="Zone31" xml:space="preserve"><value>(UTC-02:00) Среднеатлантическое время</value><comment>Display name for timezone with .net framework id: [Mid-Atlantic Standard Time]</comment></data>
+  <data name="Zone32" xml:space="preserve"><value>(UTC-01:00) Азорские о-ва</value><comment>Display name for timezone with .net framework id: [Azores Standard Time]</comment></data>
+  <data name="Zone33" xml:space="preserve"><value>(UTC-01:00) О-ва Зеленого Мыса</value><comment>Display name for timezone with .net framework id: [Cape Verde Standard Time]</comment></data>
+  <data name="Zone34" xml:space="preserve"><value>(UTC) Время в формате UTC</value><comment>Display name for timezone with .net framework id: [UTC]</comment></data>
+  <data name="Zone35" xml:space="preserve"><value>(UTC) Дублин, Лиссабон, Лондон, Эдинбург</value><comment>Display name for timezone with .net framework id: [GMT Standard Time]</comment></data>
+  <data name="Zone36" xml:space="preserve"><value>(UTC) Касабланка</value><comment>Display name for timezone with .net framework id: [Morocco Standard Time]</comment></data>
+  <data name="Zone37" xml:space="preserve"><value>(UTC) Монровия, Рейкьявик</value><comment>Display name for timezone with .net framework id: [Greenwich Standard Time]</comment></data>
+  <data name="Zone38" xml:space="preserve"><value>(UTC+01:00) Амстердам, Берлин, Берн, Вена, Рим, Стокгольм</value><comment>Display name for timezone with .net framework id: [W. Europe Standard Time]</comment></data>
+  <data name="Zone39" xml:space="preserve"><value>(UTC+01:00) Белград, Братислава, Будапешт, Любляна, Прага</value><comment>Display name for timezone with .net framework id: [Central Europe Standard Time]</comment></data>
+  <data name="Zone40" xml:space="preserve"><value>(UTC+01:00) Брюссель, Копенгаген, Мадрид, Париж</value><comment>Display name for timezone with .net framework id: [Romance Standard Time]</comment></data>
+  <data name="Zone41" xml:space="preserve"><value>(UTC+01:00) Варшава, Загреб, Сараево, Скопье</value><comment>Display name for timezone with .net framework id: [Central European Standard Time]</comment></data>
+  <data name="Zone42" xml:space="preserve"><value>(UTC+01:00) Виндхук</value><comment>Display name for timezone with .net framework id: [Namibia Standard Time]</comment></data>
+  <data name="Zone43" xml:space="preserve"><value>(UTC+01:00) Западная Центральная Африка</value><comment>Display name for timezone with .net framework id: [W. Central Africa Standard Time]</comment></data>
+  <data name="Zone44" xml:space="preserve"><value>(UTC+02:00) Амман</value><comment>Display name for timezone with .net framework id: [Jordan Standard Time]</comment></data>
+  <data name="Zone45" xml:space="preserve"><value>(UTC+02:00) Афины, Бухарест</value><comment>Display name for timezone with .net framework id: [GTB Standard Time]</comment></data>
+  <data name="Zone46" xml:space="preserve"><value>(UTC+02:00) Бейрут</value><comment>Display name for timezone with .net framework id: [Middle East Standard Time]</comment></data>
+  <data name="Zone47" xml:space="preserve"><value>(UTC+02:00) Вильнюс, Киев, Рига, София, Таллин, Хельсинки</value><comment>Display name for timezone with .net framework id: [FLE Standard Time]</comment></data>
+  <data name="Zone48" xml:space="preserve"><value>(UTC+02:00) Дамаск</value><comment>Display name for timezone with .net framework id: [Syria Standard Time]</comment></data>
+  <data name="Zone49" xml:space="preserve"><value>(UTC+02:00) Иерусалим</value><comment>Display name for timezone with .net framework id: [Israel Standard Time]</comment></data>
+  <data name="Zone50" xml:space="preserve"><value>(UTC+02:00) Каир</value><comment>Display name for timezone with .net framework id: [Egypt Standard Time]</comment></data>
+  <data name="Zone51" xml:space="preserve"><value>(UTC+02:00) Никосия</value><comment>Display name for timezone with .net framework id: [E. Europe Standard Time]</comment></data>
+  <data name="Zone52" xml:space="preserve"><value>(UTC+02:00) Стамбул</value><comment>Display name for timezone with .net framework id: [Turkey Standard Time]</comment></data>
+  <data name="Zone53" xml:space="preserve"><value>(UTC+02:00) Хараре, Претория</value><comment>Display name for timezone with .net framework id: [South Africa Standard Time]</comment></data>
+  <data name="Zone54" xml:space="preserve"><value>(UTC+03:00) Багдад</value><comment>Display name for timezone with .net framework id: [Arabic Standard Time]</comment></data>
+  <data name="Zone55" xml:space="preserve"><value>(UTC+03:00) Калиниград, Минск</value><comment>Display name for timezone with .net framework id: [Kaliningrad Standard Time]</comment></data>
+  <data name="Zone56" xml:space="preserve"><value>(UTC+03:00) Кувейт, Эр-Рияд</value><comment>Display name for timezone with .net framework id: [Arab Standard Time]</comment></data>
+  <data name="Zone57" xml:space="preserve"><value>(UTC+03:00) Найроби</value><comment>Display name for timezone with .net framework id: [E. Africa Standard Time]</comment></data>
+  <data name="Zone58" xml:space="preserve"><value>(UTC+03:30) Тегеран</value><comment>Display name for timezone with .net framework id: [Iran Standard Time]</comment></data>
+  <data name="Zone59" xml:space="preserve"><value>(UTC+04:00) Абу-Даби, Мускат</value><comment>Display name for timezone with .net framework id: [Arabian Standard Time]</comment></data>
+  <data name="Zone60" xml:space="preserve"><value>(UTC+04:00) Баку</value><comment>Display name for timezone with .net framework id: [Azerbaijan Standard Time]</comment></data>
+  <data name="Zone61" xml:space="preserve"><value>(UTC+04:00) Волгоград, Москва, Санкт-Петербург</value><comment>Display name for timezone with .net framework id: [Russian Standard Time]</comment></data>
+  <data name="Zone62" xml:space="preserve"><value>(UTC+04:00) Ереван</value><comment>Display name for timezone with .net framework id: [Caucasus Standard Time]</comment></data>
+  <data name="Zone63" xml:space="preserve"><value>(UTC+04:00) Порт-Луи</value><comment>Display name for timezone with .net framework id: [Mauritius Standard Time]</comment></data>
+  <data name="Zone64" xml:space="preserve"><value>(UTC+04:00) Тбилиси</value><comment>Display name for timezone with .net framework id: [Georgian Standard Time]</comment></data>
+  <data name="Zone65" xml:space="preserve"><value>(UTC+04:30) Кабул</value><comment>Display name for timezone with .net framework id: [Afghanistan Standard Time]</comment></data>
+  <data name="Zone66" xml:space="preserve"><value>(UTC+05:00) Исламабад, Карачи</value><comment>Display name for timezone with .net framework id: [Pakistan Standard Time]</comment></data>
+  <data name="Zone67" xml:space="preserve"><value>(UTC+05:00) Ташкент</value><comment>Display name for timezone with .net framework id: [West Asia Standard Time]</comment></data>
+  <data name="Zone68" xml:space="preserve"><value>(UTC+05:30) Колката, Мумбаи, Нью-Дели, Ченнай</value><comment>Display name for timezone with .net framework id: [India Standard Time]</comment></data>
+  <data name="Zone69" xml:space="preserve"><value>(UTC+05:30) Шри-Джаявардене-пура-Котте</value><comment>Display name for timezone with .net framework id: [Sri Lanka Standard Time]</comment></data>
+  <data name="Zone70" xml:space="preserve"><value>(UTC+05:45) Катманду</value><comment>Display name for timezone with .net framework id: [Nepal Standard Time]</comment></data>
+  <data name="Zone71" xml:space="preserve"><value>(UTC+06:00) Астана</value><comment>Display name for timezone with .net framework id: [Central Asia Standard Time]</comment></data>
+  <data name="Zone72" xml:space="preserve"><value>(UTC+06:00) Дакка</value><comment>Display name for timezone with .net framework id: [Bangladesh Standard Time]</comment></data>
+  <data name="Zone73" xml:space="preserve"><value>(UTC+06:00) Екатеринбург</value><comment>Display name for timezone with .net framework id: [Ekaterinburg Standard Time]</comment></data>
+  <data name="Zone74" xml:space="preserve"><value>(UTC+06:30) Янгон</value><comment>Display name for timezone with .net framework id: [Myanmar Standard Time]</comment></data>
+  <data name="Zone75" xml:space="preserve"><value>(UTC+07:00) Бангкок, Джакарта, Ханой</value><comment>Display name for timezone with .net framework id: [SE Asia Standard Time]</comment></data>
+  <data name="Zone76" xml:space="preserve"><value>(UTC+07:00) Новосибирск</value><comment>Display name for timezone with .net framework id: [N. Central Asia Standard Time]</comment></data>
+  <data name="Zone77" xml:space="preserve"><value>(UTC+08:00) Гонконг, Пекин, Урумчи, Чунцин</value><comment>Display name for timezone with .net framework id: [China Standard Time]</comment></data>
+  <data name="Zone78" xml:space="preserve"><value>(UTC+08:00) Красноярск</value><comment>Display name for timezone with .net framework id: [North Asia Standard Time]</comment></data>
+  <data name="Zone79" xml:space="preserve"><value>(UTC+08:00) Куала-Лумпур, Сингапур</value><comment>Display name for timezone with .net framework id: [Singapore Standard Time]</comment></data>
+  <data name="Zone80" xml:space="preserve"><value>(UTC+08:00) Перт</value><comment>Display name for timezone with .net framework id: [W. Australia Standard Time]</comment></data>
+  <data name="Zone81" xml:space="preserve"><value>(UTC+08:00) Тайбэй</value><comment>Display name for timezone with .net framework id: [Taipei Standard Time]</comment></data>
+  <data name="Zone82" xml:space="preserve"><value>(UTC+08:00) Улан-Батор</value><comment>Display name for timezone with .net framework id: [Ulaanbaatar Standard Time]</comment></data>
+  <data name="Zone83" xml:space="preserve"><value>(UTC+09:00) Иркутск</value><comment>Display name for timezone with .net framework id: [North Asia East Standard Time]</comment></data>
+  <data name="Zone84" xml:space="preserve"><value>(UTC+09:00) Осака, Саппоро, Токио</value><comment>Display name for timezone with .net framework id: [Tokyo Standard Time]</comment></data>
+  <data name="Zone85" xml:space="preserve"><value>(UTC+09:00) Сеул</value><comment>Display name for timezone with .net framework id: [Korea Standard Time]</comment></data>
+  <data name="Zone86" xml:space="preserve"><value>(UTC+09:30) Аделаида</value><comment>Display name for timezone with .net framework id: [Cen. Australia Standard Time]</comment></data>
+  <data name="Zone87" xml:space="preserve"><value>(UTC+09:30) Дарвин</value><comment>Display name for timezone with .net framework id: [AUS Central Standard Time]</comment></data>
+  <data name="Zone88" xml:space="preserve"><value>(UTC+10:00) Брисбен</value><comment>Display name for timezone with .net framework id: [E. Australia Standard Time]</comment></data>
+  <data name="Zone89" xml:space="preserve"><value>(UTC+10:00) Гуам, Порт-Морсби</value><comment>Display name for timezone with .net framework id: [West Pacific Standard Time]</comment></data>
+  <data name="Zone90" xml:space="preserve"><value>(UTC+10:00) Канберра, Мельбурн, Сидней</value><comment>Display name for timezone with .net framework id: [AUS Eastern Standard Time]</comment></data>
+  <data name="Zone91" xml:space="preserve"><value>(UTC+10:00) Хобарт</value><comment>Display name for timezone with .net framework id: [Tasmania Standard Time]</comment></data>
+  <data name="Zone92" xml:space="preserve"><value>(UTC+10:00) Якутск</value><comment>Display name for timezone with .net framework id: [Yakutsk Standard Time]</comment></data>
+  <data name="Zone93" xml:space="preserve"><value>(UTC+11:00) Владивосток</value><comment>Display name for timezone with .net framework id: [Vladivostok Standard Time]</comment></data>
+  <data name="Zone94" xml:space="preserve"><value>(UTC+11:00) Соломоновы о-ва, Нов. Каледония</value><comment>Display name for timezone with .net framework id: [Central Pacific Standard Time]</comment></data>
+  <data name="Zone95" xml:space="preserve"><value>(UTC+12:00) Веллингтон, Окленд</value><comment>Display name for timezone with .net framework id: [New Zealand Standard Time]</comment></data>
+  <data name="Zone96" xml:space="preserve"><value>(UTC+12:00) Время в формате UTC +12</value><comment>Display name for timezone with .net framework id: [UTC+12]</comment></data>
+  <data name="Zone97" xml:space="preserve"><value>(UTC+12:00) Магадан</value><comment>Display name for timezone with .net framework id: [Magadan Standard Time]</comment></data>
+  <data name="Zone98" xml:space="preserve"><value>(UTC+12:00) Петропавловск-Камчатский — устаревшее</value><comment>Display name for timezone with .net framework id: [Kamchatka Standard Time]</comment></data>
+  <data name="Zone99" xml:space="preserve"><value>(UTC+12:00) Фиджи</value><comment>Display name for timezone with .net framework id: [Fiji Standard Time]</comment></data>
+  <data name="Zone100" xml:space="preserve"><value>(UTC+13:00) Нукуалофа</value><comment>Display name for timezone with .net framework id: [Tonga Standard Time]</comment></data>
+  <data name="Zone101" xml:space="preserve"><value>(UTC+13:00) Самоа</value><comment>Display name for timezone with .net framework id: [Samoa Standard Time]</comment></data>
+</root>

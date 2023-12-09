@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2007 rel. 3 sp1 (http://www.altova.com) by DBorisov (EMBRACE) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="integrationData">
+		<xs:annotation>
+			<xs:documentation>Корневой узел</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="crypto">
+					<xs:annotation>
+						<xs:documentation>Настройки алгоритма шифрования</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:choice minOccurs="0">
+							<xs:element name="desSettings" type="desSettings">
+								<xs:annotation>
+									<xs:documentation>специфические настройки алгоритма шифрования DES</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+						</xs:choice>
+						<xs:attribute name="algorithm" use="required">
+							<xs:annotation>
+								<xs:documentation>Тип алгоритма шифрования (none или des)</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="none"/>
+									<xs:enumeration value="des"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="metadata" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Необязательный узел, может содержать специфические настройки и параметры для данного типа файла</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="data">
+					<xs:annotation>
+						<xs:documentation>Узел с данными. Данные представляют из себя содержимое ZIP-архива, зашифрованное в соответсвии с алгоритмом шифрования из секции crypto и записанные в виде base64 в секцию CDATA</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:attribute name="size" type="xs:integer" use="required">
+							<xs:annotation>
+								<xs:documentation>Размер секции данных (CDATA)</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="crc32" use="required">
+							<xs:annotation>
+								<xs:documentation>Контрольная сумма секции данных (CDATA)</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="version" type="xs:int" use="optional" default="1">
+				<xs:annotation>
+					<xs:documentation>Версия контейнера обмена</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="ownerType" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Тип модуля/части системы который может обработать файл экспорта</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="created" type="xs:string" use="required">
+				<xs:annotation>
+					<xs:documentation>Дата создания</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="desSettings">
+		<xs:annotation>
+			<xs:documentation>Настройки шифрования для DES</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="keyHash" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>хэш ключа DES - позволяет дешифрующей стороне найти в своем хранилище ключей нужный или сообщить о невозможности дешифрации</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+</xs:schema>

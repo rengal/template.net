@@ -1,0 +1,465 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Down" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Down.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Excel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\excelIconSmall.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Up" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Up.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DocPreProcess" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Src\Common\Print\VirtualTape\DocPreprocess.xslt;System.String</value>
+  </data>
+  <data name="DefaultConfirmationDialogCaption" xml:space="preserve">
+    <value>Подтверждение</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Да</value>
+  </data>
+  <data name="ErrorMessageCaption" xml:space="preserve">
+    <value>Ошибка</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Добавить...</value>
+  </data>
+  <data name="Copy" xml:space="preserve">
+    <value>Копировать</value>
+  </data>
+  <data name="Cut" xml:space="preserve">
+    <value>Вырезать</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Удалить...</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Редактировать...</value>
+  </data>
+  <data name="Paste" xml:space="preserve">
+    <value>Вставить</value>
+  </data>
+  <data name="DayForm1" xml:space="preserve">
+    <value>день</value>
+  </data>
+  <data name="DayForm2" xml:space="preserve">
+    <value>дня</value>
+  </data>
+  <data name="DayForm3" xml:space="preserve">
+    <value>дней</value>
+  </data>
+  <data name="HelpHelperShowPopupRestaurantSettings" xml:space="preserve">
+    <value>Настройка конфигурации</value>
+  </data>
+  <data name="RestoGridEmpty" xml:space="preserve">
+    <value>Список пуст</value>
+  </data>
+  <data name="Apply" xml:space="preserve">
+    <value>Применить</value>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>Обновить</value>
+  </data>
+  <data name="GuiUtilWarningMessageCaption" xml:space="preserve">
+    <value>Предупреждение</value>
+  </data>
+  <data name="GuiUtilInfoMessageCaption" xml:space="preserve">
+    <value>Сообщение</value>
+  </data>
+  <data name="GuiUtilContinueWithUnsavedDataMessage" xml:space="preserve">
+    <value>Несохраненные изменения будут утеряны. Продолжить?</value>
+  </data>
+  <data name="GuiUtilSaveDataQuestionMessage" xml:space="preserve">
+    <value>Сохранить изменения?</value>
+  </data>
+  <data name="ExcelExportControlDefaultExcelFileExtension" xml:space="preserve">
+    <value>.xlsx</value>
+  </data>
+  <data name="ExcelExportControlMaxColumnErrorMessage" xml:space="preserve">
+    <value>Невозможно выполнить экспорт. Превышено допустимое количество колонок - 256.</value>
+  </data>
+  <data name="ExcelExportControlDefaultExportErrorMessage" xml:space="preserve">
+    <value>Невозможно выполнить экспорт. Возможные причины:
+    1) Превышено допустимое количество колонок (256) или строк (65536). Попробуйте выполнить экспорт в формат XLSX.
+    2) Запущен MS Excel</value>
+  </data>
+  <data name="CloseAction" xml:space="preserve">
+    <value>Закрыть</value>
+  </data>
+  <data name="SelectAllAction" xml:space="preserve">
+    <value>Выбрать все</value>
+  </data>
+  <data name="ClearAllAction" xml:space="preserve">
+    <value>Очистить все</value>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>Все</value>
+  </data>
+  <data name="HelpFileNameIsNull" xml:space="preserve">
+    <value>{0} не может быть null.</value>
+  </data>
+  <data name="WizardControlLastNextText" xml:space="preserve">
+    <value>Завершить</value>
+  </data>
+  <data name="WizardControlNextText" xml:space="preserve">
+    <value>Далее &gt;</value>
+  </data>
+  <data name="CryptoContainerHelperInvalidFileFormatAttributeNotFound" xml:space="preserve">
+    <value>Неверный формат файла: атрибут '{0}' не найден.</value>
+  </data>
+  <data name="CryptoContainerHelperInvalidFileFormatCanNotInterpretValue" xml:space="preserve">
+    <value>Неверный формат файла: невозможно интерпретировать значение '{0}'.</value>
+  </data>
+  <data name="CryptoContainerHelperInvalidFileFormat" xml:space="preserve">
+    <value>Неверный формат файла.</value>
+  </data>
+  <data name="CryptoContainerHelperUnknownContainerVersion" xml:space="preserve">
+    <value>Неизвестная версия контейнера '{0}'</value>
+  </data>
+  <data name="CryptoContainerHelperUnsupportedAttributeValue" xml:space="preserve">
+    <value>Неподдерживаемое значение '{0}' для атрибута '{1}'</value>
+  </data>
+  <data name="CryptoContainerHelperDataSectionNotFound" xml:space="preserve">
+    <value>Не найдена секция данных</value>
+  </data>
+  <data name="CryptoContainerHelperInvalidXMLFormat" xml:space="preserve">
+    <value>Неверный формат XML:{0}</value>
+  </data>
+  <data name="CryptoContainerHelperFileProcessingError" xml:space="preserve">
+    <value>Ошибка при обработке файла: {0}</value>
+  </data>
+  <data name="DbiEnvironmentBDELibraryNotFoundTryReinstallApplication" xml:space="preserve">
+    <value>Библиотеки BDE не найдены. Попробуйте переустановить приложение.</value>
+  </data>
+  <data name="DbiEnvironmentParadoxDriverInitializationError" xml:space="preserve">
+    <value>Ошибка инициализации драйвера Paradox.{0}Возможно запущенны другие приложения использующие этот драйвер (например UCS StoreHouse, ImportRK).{0}Закройте эти приложения и повторите попытку.{0}{0}Код ошибки: </value>
+  </data>
+  <data name="MsHtmlHelperPageSetup" xml:space="preserve">
+    <value>Параметры страницы</value>
+  </data>
+  <data name="MsHtmlHelperBook" xml:space="preserve">
+    <value>Книжная</value>
+  </data>
+  <data name="MsHtmlHelperBook1" xml:space="preserve">
+    <value>К&amp;нижная</value>
+  </data>
+  <data name="MsHtmlHelperLandscape" xml:space="preserve">
+    <value>Альбомная</value>
+  </data>
+  <data name="MsHtmlHelperLandscape1" xml:space="preserve">
+    <value>Аль&amp;бомная</value>
+  </data>
+  <data name="OlapHelperYes" xml:space="preserve">
+    <value>Да</value>
+  </data>
+  <data name="OlapHelperNo" xml:space="preserve">
+    <value>Нет</value>
+  </data>
+  <data name="PCSCSmartCardReaderDeviceError" xml:space="preserve">
+    <value>Ошибка устройства. {0}</value>
+  </data>
+  <data name="XmlHelperImpossibleSaveFile" xml:space="preserve">
+    <value>Невозможно сохранить файл {0}:{1}</value>
+  </data>
+  <data name="SubscribedControlWrapAddControlMustBeInheritedFrom" xml:space="preserve">
+    <value>Добавляемый контрол должен быть унаследован от BaseEdit, BaseCheckedListBoxControl из DevExpress.XtraEditors, либо реализовывать интерфейс IChangeable из Resto.Framework.UI.Common.</value>
+  </data>
+  <data name="RestoDoubleListName" xml:space="preserve">
+    <value>Имя</value>
+  </data>
+  <data name="FieldChooserDefault" xml:space="preserve">
+    <value>По умолчанию</value>
+  </data>
+  <data name="FieldChooserOptimalWidth" xml:space="preserve">
+    <value>Оптимальная ширина</value>
+  </data>
+  <data name="FieldChooserRename" xml:space="preserve">
+    <value>Переименовать...</value>
+  </data>
+  <data name="FieldChooserEnterNewColumnName" xml:space="preserve">
+    <value>Введите новое имя колонки:</value>
+  </data>
+  <data name="RestoGridClipboardDataCellFormerError" xml:space="preserve">
+    <value>There are no common rule to implement this operation. Use BeforeCuttingObject event. Ошибка: {0}</value>
+  </data>
+  <data name="RestoGridViewDragColumnTitlesToGroupData" xml:space="preserve">
+    <value>Перетащите сюда заголовки столбцов, по которым необходимо сгруппировать данные</value>
+  </data>
+  <data name="RepositoryItemRestoTextEditInputError" xml:space="preserve">
+    <value>Ошибка ввода</value>
+  </data>
+  <data name="RepositoryItemRestoTextEditEnteredIncorrectData" xml:space="preserve">
+    <value>Введены неверные данные</value>
+  </data>
+  <data name="BaseTabManagerNoRightsToViewInformation" xml:space="preserve">
+    <value>У вас нет прав для просмотра данной информации</value>
+  </data>
+  <data name="BaseTabManagerCloseAll" xml:space="preserve">
+    <value>Закрыть все</value>
+  </data>
+  <data name="BaseTabManagerCloseAllExceptCurrent" xml:space="preserve">
+    <value>Закрыть все, кроме текущей</value>
+  </data>
+  <data name="ExcelFilesPostprocessorFailedOpenFile" xml:space="preserve">
+    <value>Не удалось открыть файл(ы):</value>
+  </data>
+  <data name="HelpHelperClassMustBeInitialize" xml:space="preserve">
+    <value>Класс должен быть проинициализирован вызовом метода Initialize().</value>
+  </data>
+  <data name="HelpHelperNoAnyDocumentation" xml:space="preserve">
+    <value>Документация отсутствует.</value>
+  </data>
+  <data name="OfficeHelperNoAnyApplicationAssociatedWithThatFileType" xml:space="preserve">
+    <value>Возможно, не установлено ни одного приложения, ассоциированного с данным типом файлов.</value>
+  </data>
+  <data name="OfficeHelperOpenFolderWithSavedFile" xml:space="preserve">
+    <value>Открыть папку куда был сохранен файл?</value>
+  </data>
+  <data name="OfficeHelperInformation" xml:space="preserve">
+    <value>Информация</value>
+  </data>
+  <data name="ExcelExportControlNoDataForExport" xml:space="preserve">
+    <value>Нет данных для экспорта</value>
+  </data>
+  <data name="ReducedDay" xml:space="preserve">
+    <value>{0} д</value>
+  </data>
+  <data name="ReducedHour" xml:space="preserve">
+    <value>{0} ч</value>
+  </data>
+  <data name="ReducedMinute" xml:space="preserve">
+    <value>{0} мин</value>
+  </data>
+  <data name="TimeSpanSuffix" xml:space="preserve">
+    <value>. </value>
+  </data>
+  <data name="RecordedUsingAStandardTypeOfMetadata" xml:space="preserve">
+    <value>Dependency property '{0}' зарегистрирован с использованием стандартного типа метаданных, но для него не определена обертка в виде доступного (public) свойства. Определите обертку, либо воспользуйтесь метаданными типа 'HandleChangesPropertyMetadata'.</value>
+  </data>
+  <data name="Cancellation" xml:space="preserve">
+    <value>Отмена</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Сохранить</value>
+  </data>
+  <data name="Select" xml:space="preserve">
+    <value>Выберите</value>
+  </data>
+  <data name="Developments" xml:space="preserve">
+    <value>События</value>
+  </data>
+  <data name="ReportGenerationIsPerformed" xml:space="preserve">
+    <value>Выполняется формирование отчета...</value>
+  </data>
+  <data name="ExportToMSExcel" xml:space="preserve">
+    <value>Экспорт в MS Excel</value>
+  </data>
+  <data name="TheListIsEmpty" xml:space="preserve">
+    <value>Список пуст</value>
+  </data>
+  <data name="InputError" xml:space="preserve">
+    <value>Ошибка ввода</value>
+  </data>
+  <data name="IncorrectlyEnteredData" xml:space="preserve">
+    <value>Введены неверные данные</value>
+  </data>
+  <data name="Clean" xml:space="preserve">
+    <value>Очистить</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Поиск:</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>ОК</value>
+  </data>
+  <data name="ChildObjectConverter_ConvertTo" xml:space="preserve">
+    <value>[значение не определено]</value>
+  </data>
+  <data name="KodosRDProcessor_SerialPortDataReceivedPrefix" xml:space="preserve">
+    <value>Префикс Кодос не должен заканчиваться на символ *</value>
+  </data>
+  <data name="KodosRDProcessor_SerialPortDataReceivedSuffix" xml:space="preserve">
+    <value>Суффикс Кодос не должен начинаться с символа *</value>
+  </data>
+  <data name="Key" xml:space="preserve">
+    <value>Ключ</value>
+  </data>
+  <data name="Algorithm" xml:space="preserve">
+    <value>Алгоритм</value>
+  </data>
+  <data name="TypeEncryptionAlgorithm" xml:space="preserve">
+    <value>Тип алгоритма шифрования</value>
+  </data>
+  <data name="EncryptionOptions" xml:space="preserve">
+    <value>Параметры шифрования</value>
+  </data>
+  <data name="SpecificParameters" xml:space="preserve">
+    <value>Специфические параметры выбранного алгоритма шифрования</value>
+  </data>
+  <data name="CardProcessorInvalidPrefix" xml:space="preserve">
+    <value>Префикс считывателя карт не должен заканчиваться на символ *</value>
+  </data>
+  <data name="CardProcessorInvalidSuffix" xml:space="preserve">
+    <value>Суффикс считывателя карт не должен начинаться с символа *</value>
+  </data>
+  <data name="CopyToClipboard" xml:space="preserve">
+    <value>Скопировать в буфер обмена</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>Нет</value>
+  </data>
+  <data name="DeleteActionCaption" xml:space="preserve">
+    <value>Удаление</value>
+  </data>
+  <data name="DeleteSelectedItemsQuestion" xml:space="preserve">
+    <value>Удалить выбранные элементы?</value>
+  </data>
+  <data name="DeleteSelectedItemQuestion" xml:space="preserve">
+    <value>Удалить выбранный элемент?</value>
+  </data>
+  <data name="DeleteAllItemsQuestion" xml:space="preserve">
+    <value>Удалить все элементы?</value>
+  </data>
+  <data name="YearShortText" xml:space="preserve">
+    <value>г.</value>
+  </data>
+  <data name="MonthShortText" xml:space="preserve">
+    <value>мес.</value>
+  </data>
+  <data name="WeekShortText" xml:space="preserve">
+    <value>нед.</value>
+  </data>
+  <data name="DayShortText" xml:space="preserve">
+    <value>д.</value>
+  </data>
+  <data name="HourShortText" xml:space="preserve">
+    <value>ч.</value>
+  </data>
+  <data name="MinuteShortText" xml:space="preserve">
+    <value>мин.</value>
+  </data>
+  <data name="SecondShortText" xml:space="preserve">
+    <value>сек.</value>
+  </data>
+  <data name="CardProcessorInvalidPattern" xml:space="preserve">
+    <value>Некорректный шаблон для считывателя карт</value>
+  </data>
+</root>

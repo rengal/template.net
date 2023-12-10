@@ -9,7 +9,7 @@ using log4net.Layout;
 
 namespace Resto.Framework.Common
 {
-    internal class LogFactoryInternal : ILogFactory
+    public class LogFactoryInternal : ILogFactory
     {
         /// <summary>
         /// Признак инициализированности класса

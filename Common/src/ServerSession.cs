@@ -305,7 +305,7 @@ namespace Resto.Data
             request.Headers[RPCHeaders.BACK_VERSION.Name] = VersionInfo.String;
             request.Headers[RPCHeaders.AUTH_TYPE.Name] = ClientType;
             request.Headers[RPCHeaders.EDITION.Name] = Edition.CurrentEdition.ToString();
-            request.Timeout = (int?)requestTimeout?.TotalMilliseconds ?? Settings.Default.SERVICE_METHOD_TIMEOUT_MILLISECONDS;
+            request.Timeout = (int?)requestTimeout?.TotalMilliseconds ?? Settings.SERVICE_METHOD_TIMEOUT_MILLISECONDS;
             if (LanguageCode != null)
             {
                 request.Headers["Accept-Language"] = LanguageCode;

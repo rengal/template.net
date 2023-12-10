@@ -1,7 +1,6 @@
-﻿using System;
-using Resto.Framework.Attributes.JetBrains;
+﻿using Resto.Framework.Attributes.JetBrains;
 
-namespace Resto.Front.Localization.Resources
+namespace Resto.Front.PrintTemplates.Cheques.Resources
 {
     public partial class ChequesPreviewLocalResources
     {

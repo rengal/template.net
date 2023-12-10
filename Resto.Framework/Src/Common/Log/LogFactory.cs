@@ -1,3 +1,4 @@
+using log4net.Appender;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Resto.Framework.Common
@@ -15,9 +16,9 @@ namespace Resto.Framework.Common
             {
                 if (instance != null)
                     return instance;
-                var services = new ServiceCollection();
-                var serviceProvider = services.BuildServiceProvider();
-                instance = serviceProvider.GetService<ILogFactory>();
+                instance = ServiceProviderExtensions.GetService<ILogFactory>();
+                instance.Configure(@"d:\templates.log", LogFactory.SHORT_LOG_PATTERN, new FileAppender.MinimalLock(),
+                    true, true, 30);
                 return instance;
             }
         }

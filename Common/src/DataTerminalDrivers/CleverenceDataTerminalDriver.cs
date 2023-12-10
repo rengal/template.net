@@ -125,7 +125,7 @@ namespace Resto.Common.DataTerminalDrivers
                     switch (p.ExitCode)
                     {
                         case 1:
-                            if (!Settings.Default.IgnoreCleverenceDriverDriverExceptions)
+                            if (!Settings.IgnoreCleverenceDriverDriverExceptions)
                                 throw new RestoException(res);
                             break;
                         case -1:

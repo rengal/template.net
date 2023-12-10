@@ -1,33 +1,28 @@
-﻿using System;
-using Resto.Framework.Attributes.JetBrains;
+﻿using Resto.Framework.Attributes.JetBrains;
 
 namespace Resto.Framework.Common
 {
     public static class ServiceProviderExtensions
     {
-        /// <summary>
-        /// Gets the service object of the specified type.
-        /// </summary>
-        /// <typeparam name="T">The type of service object to get.</typeparam>
-        /// <param name="serviceProvider">Object that provides custom support to other objects.</param>
-        /// <returns>A service object of type serviceType. -or- null if there is no service object of type serviceType.</returns>
-        [CanBeNull]
-        public static T TryGetService<T>([NotNull] this IServiceProvider serviceProvider) where T : class
-        {
-            if (serviceProvider == null)
-                throw new ArgumentNullException(nameof(serviceProvider));
+        private static IServiceProvider serviceProvider;
 
-            return (T)serviceProvider.GetService(typeof(T));
+        public static void SetServiceProvider(IServiceProvider value)
+        {
+            serviceProvider = value;
         }
 
         [NotNull]
-        public static T GetService<T>(this IServiceProvider serviceProvider)  where  T : class
+        public static T GetService<T>()  where  T : class
         {
-            var service = TryGetService<T>(serviceProvider);
-            if (service == null)
-                throw new InvalidOperationException("Cannot find service in serviceProvider");
+            if (serviceProvider == null)
+            {
+                throw new InvalidOperationException("Call SetServiceProvider first");
+            }
 
+            if (serviceProvider.GetService(typeof(T)) is not T service)
+                throw new InvalidOperationException("Init service first");
             return service;
         }
+
     }
 }

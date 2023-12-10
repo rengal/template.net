@@ -1,4 +1,5 @@
 using Microsoft.Extensions.DependencyInjection;
+using Resto.Framework.Common;
 using Resto.Framework.Data;
 
 namespace Resto.Data
@@ -7,11 +8,8 @@ namespace Resto.Data
     {
         public IEntitiesProvider Create()
         {
-            var services = new ServiceCollection();
-            var serviceProvider = services.BuildServiceProvider();
-            var instance = ServiceProviderServiceExtensions.GetService<IBaseEntityManager>(serviceProvider);
+            var instance = ServiceProviderExtensions.GetService<IBaseEntityManager>();
             return instance;
-            //return UnityHelper.GetFactoryContainer().Resolve<IBaseEntityManager>();
         }
     }
 }

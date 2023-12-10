@@ -3,6 +3,7 @@ using System.Text.RegularExpressions;
 using Resto.Framework.Attributes.JetBrains;
 using Resto.Framework.Data;
 using Resto.Front.Localization.Resources;
+using Resto.Front.PrintTemplates.Cheques.Resources;
 
 namespace Resto.Front.PrintTemplates.Cheques.Razor.TemplateModels
 {

@@ -2,7 +2,7 @@
 // Do not edit it manually.
 
 
-namespace Resto.Front.Localization.Resources
+namespace Resto.Front.PrintTemplates.Cheques.Resources
 {
     public static partial class ChequesPreviewLocalResources
     {

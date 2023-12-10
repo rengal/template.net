@@ -50,10 +50,10 @@ namespace Resto.Common
             foreach (var protocol in protocols)
             {
                 var request = (HttpWebRequest)WebRequest.Create(string.Format(
-                    Settings.Default.SERVER_INFO_PAGE_ADDRESS,
+                    Settings.SERVER_INFO_PAGE_ADDRESS,
                     protocol, si.ServerAddr, si.Port, si.ServerSubUrl));
 
-                request.Timeout = Settings.Default.GETTING_SERVER_INFO_TIMEOUT_MILLISECONDS;
+                request.Timeout = Settings.GETTING_SERVER_INFO_TIMEOUT_MILLISECONDS;
                 request.Method = "GET";
                 request.KeepAlive = CommonConfig.Instance.KeepAliveHttpWebRequestFlag;
                 si.IsPresent = false;

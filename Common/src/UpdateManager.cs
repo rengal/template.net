@@ -42,9 +42,7 @@ namespace Resto.Data
                 {
                     if (instance != null)
                         return instance;
-                    var services = new ServiceCollection();
-                    var serviceProvider = services.BuildServiceProvider();
-                    instance = ServiceProviderExtensions.GetService<IUpdateManager>(serviceProvider);
+                    instance = ServiceProviderExtensions.GetService<IUpdateManager>();
                     return instance;
 
                 }

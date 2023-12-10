@@ -1,0 +1,2426 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="DocumentValidationResultErrorCaption" xml:space="preserve">
+    <value>Ошибка</value>
+  </data>
+  <data name="DocumentValidationResultIncomeOnNegativeBalanceCaption" xml:space="preserve">
+    <value>Приход на отрицательные остатки.</value>
+  </data>
+  <data name="DocumentValidationResultValidCaption" xml:space="preserve">
+    <value>Успешно</value>
+  </data>
+  <data name="DocumentValidationResultWarningCaption" xml:space="preserve">
+    <value>Предупреждение</value>
+  </data>
+  <data name="DocumentValidationResultWriteoffToNegativeBalancesCaption" xml:space="preserve">
+    <value>Расход с образованием отрицательных остатков.</value>
+  </data>
+  <data name="ObjectNotInCacheErrorCaption" xml:space="preserve">
+    <value>Объекта {0} (id: {1}), нет в кэше данных. 
+Пожалуйста, удалите или замените этот объект на текущей форме и повторите операцию.</value>
+  </data>
+  <data name="OfficialEmployeeRoleExtensionLeaderName" xml:space="preserve">
+    <value>Руководитель</value>
+  </data>
+  <data name="OfficialEmployeeRoleExtensionAccountantName" xml:space="preserve">
+    <value>Бухгалтер</value>
+  </data>
+  <data name="OfficialEmployeeRoleExtensionTechnologistName" xml:space="preserve">
+    <value>Технолог</value>
+  </data>
+  <data name="OfficialEmployeeRoleExtensionWorkManagerName" xml:space="preserve">
+    <value>Зав. производством</value>
+  </data>
+  <data name="FileNotFoundOrAccessDeniedException" xml:space="preserve">
+    <value>Файл {0} недоступен или удален.</value>
+  </data>
+  <data name="Barcodes" xml:space="preserve">
+    <value>Штрихкоды</value>
+  </data>
+  <data name="CellName" xml:space="preserve">
+    <value>Место хранения</value>
+  </data>
+  <data name="FactAmount" xml:space="preserve">
+    <value>Факт</value>
+  </data>
+  <data name="Pallet" xml:space="preserve">
+    <value>Паллета</value>
+  </data>
+  <data name="PlanAmount" xml:space="preserve">
+    <value>План</value>
+  </data>
+  <data name="ProductName" xml:space="preserve">
+    <value>Наименование</value>
+  </data>
+  <data name="ProductNumber" xml:space="preserve">
+    <value>Артикул</value>
+  </data>
+  <data name="ProductAmount" xml:space="preserve">
+    <value>На складе</value>
+  </data>
+  <data name="UnknownProduct" xml:space="preserve">
+    <value>Неизвестный товар</value>
+  </data>
+  <data name="MenuOrderTypeAddedDescription" xml:space="preserve">
+    <value>ввести в прайс-лист {0}следующие наименования:</value>
+  </data>
+  <data name="MenuOrderTypeChangedDescription" xml:space="preserve">
+    <value>ввести в прайс-лист {0}следующие изменения цен:</value>
+  </data>
+  <data name="MenuOrderTypeDeletedDescription" xml:space="preserve">
+    <value>изъять из прайс-листа {0}следующие наименования:</value>
+  </data>
+  <data name="WrongCsvInventoryFormatException" xml:space="preserve">
+    <value>Неверный формат csv файла. Возможно загружать файлы, только формата:
+#{Document.DeclaredItems}
+"{0}"
+или
+"{1}".</value>
+  </data>
+  <data name="CleverenceDataTerminalDriverName" xml:space="preserve">
+    <value>Универсальный драйвер Клеверенс Софт</value>
+  </data>
+  <data name="SyncFileNotFoundException" xml:space="preserve">
+    <value>Не удалось найти внешний модуль "{0}" для выполнения операции.</value>
+  </data>
+  <data name="AbortOperation" xml:space="preserve">
+    <value>Операция прервана.</value>
+  </data>
+  <data name="FinishingProccessException" xml:space="preserve">
+    <value>При попытке остановить синхронизацию произошла ошибка.
+{0}</value>
+  </data>
+  <data name="StartingProccessException" xml:space="preserve">
+    <value>При попытке выполнить синхронизацию произошла ошибка.
+{0}</value>
+  </data>
+  <data name="PackageId" xml:space="preserve">
+    <value>ИдУпаковки</value>
+  </data>
+  <data name="PackageName" xml:space="preserve">
+    <value>ИмяУпаковки</value>
+  </data>
+  <data name="QuantityPolicyId" xml:space="preserve">
+    <value>ИдПолитикиУчета</value>
+  </data>
+  <data name="ExePathNotDefined" xml:space="preserve">
+    <value>Не указан путь к исполняемому файлу.</value>
+  </data>
+  <data name="Id" xml:space="preserve">
+    <value>ид</value>
+  </data>
+  <data name="AddressFormat" xml:space="preserve">
+    <value>{0:city}{1:index}{2:street}{3:house}{4:building}{5:flat}{6:additionalInfo}</value>
+    <comment>Разделитель между полями адреса - AddressPartsDelimiter, 
+ 	 		 	    {0:city}{1:index}{1:street}{2:house}{3:building}{4:flat}{5:additionalInfo}
+ 	 		 	        &lt;&lt;mandatory-translation&gt;&gt;</comment>
+  </data>
+  <data name="AddressLine1Line2Format" xml:space="preserve">
+    <value>{0:line1}{1:line2}</value>
+  </data>
+  <data name="AddressLine1FromStreetFormat" xml:space="preserve">
+    <value>{0:city}{1:index}{2:street}{3:house}{4:building}</value>
+  </data>
+  <data name="AddressLine2FromStreetFormat" xml:space="preserve">
+    <value>{0:entrance}{1:floor}{2:flat}{3:doorphone}</value>
+  </data>
+  <data name="AddressPartsDelimiter" xml:space="preserve">
+    <value>, </value>
+    <comment>&lt;&lt;mandatory-translation&gt;&gt;</comment>
+  </data>
+  <data name="AddressLine1Format" xml:space="preserve">
+    <value>{0}</value>
+  </data>
+  <data name="AddressLine2Format" xml:space="preserve">
+    <value>{0}</value>
+  </data>
+  <data name="AddressCityFormat" xml:space="preserve">
+    <value>г. {0}</value>
+  </data>
+  <data name="AddressIndexFormat" xml:space="preserve">
+    <value>{0}</value>
+  </data>
+  <data name="AddressStreetFormat" xml:space="preserve">
+    <value>ул. {0}</value>
+  </data>
+  <data name="AddressHouseFormat" xml:space="preserve">
+    <value>д. {0}</value>
+  </data>
+  <data name="AddressBuildingFormat" xml:space="preserve">
+    <value>корп./стр. {0}</value>
+  </data>
+  <data name="AddressFlatFormat" xml:space="preserve">
+    <value>кв./офис {0}</value>
+  </data>
+  <data name="AddressEntranceFormat" xml:space="preserve">
+    <value>под. {0}</value>
+  </data>
+  <data name="AddressFloorFormat" xml:space="preserve">
+    <value>эт. {0}</value>
+  </data>
+  <data name="AddressDoorphoneInfoFormat" xml:space="preserve">
+    <value>домофон {0}</value>
+  </data>
+  <data name="MeasureUnits" xml:space="preserve">
+    <value>Единицы измерения</value>
+  </data>
+  <data name="NoPhotoText" xml:space="preserve">
+    <value>Нет фото</value>
+  </data>
+  <data name="CollectionTypeConverterConvertToLink" xml:space="preserve">
+    <value>&lt; Список... &gt;</value>
+  </data>
+  <data name="PrinterDeviceTypePrompt" xml:space="preserve">
+    <value>Выберите модель принтера</value>
+  </data>
+  <data name="PrinterDeviceTypeDeviceTypeName" xml:space="preserve">
+    <value>Принтер</value>
+  </data>
+  <data name="CameraDeviceTypeDeviceTypeName" xml:space="preserve">
+    <value>Видеокамера</value>
+  </data>
+  <data name="CameraDeviceTypePrompt" xml:space="preserve">
+    <value>Выберите видеокамеру для установки</value>
+  </data>
+  <data name="CashRegisterDeviceTypeDeviceTypeName" xml:space="preserve">
+    <value>ККМ, принтер чеков</value>
+  </data>
+  <data name="CashRegisterDeviceTypePrompt" xml:space="preserve">
+    <value>Выберите модель ККМ</value>
+  </data>
+  <data name="CardProcessingDeviceTypeDeviceTypeName" xml:space="preserve">
+    <value>Процессинг карт</value>
+  </data>
+  <data name="CardProcessingDeviceTypePrompt" xml:space="preserve">
+    <value>Выберите драйвер процессинга карт</value>
+  </data>
+  <data name="CustomerDisplayDeviceTypeDeviceTypeName" xml:space="preserve">
+    <value>Экран покупателя</value>
+  </data>
+  <data name="CustomerDisplayDeviceTypePrompt" xml:space="preserve">
+    <value>Выберите модель экрана покупателя</value>
+  </data>
+  <data name="ScaleDeviceTypeDeviceTypeName" xml:space="preserve">
+    <value>Весы</value>
+  </data>
+  <data name="ScaleDeviceTypePrompt" xml:space="preserve">
+    <value>Выберите модель весов</value>
+  </data>
+  <data name="PowerDeviceTypeDeviceTypeName" xml:space="preserve">
+    <value>Контроллер</value>
+  </data>
+  <data name="PowerDeviceTypePrompt" xml:space="preserve">
+    <value>Выберите модель контроллера</value>
+  </data>
+  <data name="CashDrawerDeviceTypeDeviceTypeName" xml:space="preserve">
+    <value>Денежный ящик</value>
+  </data>
+  <data name="CashDrawerDeviceTypePrompt" xml:space="preserve">
+    <value>Выберите модель денежного ящика</value>
+  </data>
+  <data name="ExpirationDateFormatString" xml:space="preserve">
+    <value>{0} мес. {1} дн. {2} ч. {3} мин.</value>
+  </data>
+  <data name="LicenseServiceInstanceCompany" xml:space="preserve">
+    <value>Компания:</value>
+  </data>
+  <data name="CashRegisterCashNameAndNumber" xml:space="preserve">
+    <value>Касса №{0:f0}, название: {1}</value>
+  </data>
+  <data name="StoreSummaryReportSettingsAccounts" xml:space="preserve">
+    <value>Счета: </value>
+  </data>
+  <data name="StoreSummaryReportSettingsContractor" xml:space="preserve">
+    <value> Контрагенты: </value>
+  </data>
+  <data name="StoreSummaryReportSettingsStorages" xml:space="preserve">
+    <value> Склады: </value>
+  </data>
+  <data name="StoreSummaryReportSettingsOperationTypes" xml:space="preserve">
+    <value> Типы операций:</value>
+  </data>
+  <data name="StoreSummaryReportSettingsSpecificationBy" xml:space="preserve">
+    <value> Детализация по:</value>
+  </data>
+  <data name="EditableDocumentTypeManualDocumentAbb" xml:space="preserve">
+    <value>Р</value>
+  </data>
+  <data name="EditableDocumentTypeManualDoc" xml:space="preserve">
+    <value>Ручной</value>
+  </data>
+  <data name="EditableDocumentTypeOpenAutoDocAbb" xml:space="preserve">
+    <value>АО</value>
+  </data>
+  <data name="EditableDocumentTypeOpenAutoDoc" xml:space="preserve">
+    <value>Автоматический, смена открыта</value>
+  </data>
+  <data name="EditableDocumentTypeClosedAutoDocAbb" xml:space="preserve">
+    <value>АЗ</value>
+  </data>
+  <data name="EditableDocumentTypeClosedAutoDoc" xml:space="preserve">
+    <value>Автоматический, смена закрыта</value>
+  </data>
+  <data name="CommonAdditionalPartsYes" xml:space="preserve">
+    <value>Да</value>
+  </data>
+  <data name="CommonAdditionalPartsNo" xml:space="preserve">
+    <value>Нет</value>
+  </data>
+  <data name="AbstractDocumentListRecordIncoming" xml:space="preserve">
+    <value>Приходная</value>
+  </data>
+  <data name="AbstractDocumentListRecordOutgoing" xml:space="preserve">
+    <value>Расходная</value>
+  </data>
+  <data name="ProductTypeGetAlterNameTheBlank" xml:space="preserve">
+    <value>заготовку</value>
+  </data>
+  <data name="ProductTypeGetAlterNameService" xml:space="preserve">
+    <value>услугу</value>
+  </data>
+  <data name="ProductTypeGetAlterNameRate" xml:space="preserve">
+    <value>тариф</value>
+  </data>
+  <data name="ProductTypePluralNameGoods" xml:space="preserve">
+    <value>Товары</value>
+  </data>
+  <data name="ProductTypePluralNameDishes" xml:space="preserve">
+    <value>Блюда</value>
+  </data>
+  <data name="ProductTypePluralNameModifiers" xml:space="preserve">
+    <value>Модификаторы</value>
+  </data>
+  <data name="ProductTypePluralNameBlanks" xml:space="preserve">
+    <value>Заготовки</value>
+  </data>
+  <data name="ProductTypePluralNameServices" xml:space="preserve">
+    <value>Услуги</value>
+  </data>
+  <data name="ProductTypePluralNameRates" xml:space="preserve">
+    <value>Тарифы</value>
+  </data>
+  <data name="ProductGroupHighLevelGroup" xml:space="preserve">
+    <value>Группа самого высокого уровня</value>
+  </data>
+  <data name="SupplierInfoToString" xml:space="preserve">
+    <value>Поставщик: {0} продукт у нас: {1}</value>
+  </data>
+  <data name="ProductProductMoreThanOneGoodWithTheBarcodeFound" xml:space="preserve">
+    <value>В системе обнаружено более одного товара со штрихкодом: {0}</value>
+  </data>
+  <data name="ProductMoreThanOneGoodFoundWithTheArticle" xml:space="preserve">
+    <value>В системе обнаружено более одного товара с артикулом: {0}</value>
+  </data>
+  <data name="SupplierProductIsAbsentInCurrentSupplierPrice" xml:space="preserve">
+    <value>Товар "{0}" отсутствует в прайс-листе поставщика "{1}".{2}Выберите другой товар.</value>
+  </data>
+  <data name="MeasureUnitDefaultPortionUnitName" xml:space="preserve">
+    <value>порц</value>
+  </data>
+  <data name="MeasureUnitDefaultPieceUnitName" xml:space="preserve">
+    <value>шт</value>
+  </data>
+  <data name="PreparedRegisterItemCookingPlaceTypeNotSpecified" xml:space="preserve">
+    <value>Не задано</value>
+  </data>
+  <data name="StoreOperationsReportItemGetItemNamePN" xml:space="preserve">
+    <value>ПН {0}</value>
+  </data>
+  <data name="StoreOperationsReportItemGetItemNameVP" xml:space="preserve">
+    <value>ВП {0}</value>
+  </data>
+  <data name="StoreOperationsReportItemGetItemNameAP" xml:space="preserve">
+    <value>АП {0}</value>
+  </data>
+  <data name="StoreOperationsReportItemGetItemNameAPR" xml:space="preserve">
+    <value>АПР {0}</value>
+  </data>
+  <data name="StoreOperationsReportItemGetItemNameINV" xml:space="preserve">
+    <value>ИНВ {0}</value>
+  </data>
+  <data name="StoreOperationsReportItemGetItemNameRN" xml:space="preserve">
+    <value>РН {0}</value>
+  </data>
+  <data name="StoreOperationsReportItemGetItemNameAS" xml:space="preserve">
+    <value>АС {0}</value>
+  </data>
+  <data name="StoreOperationsReportItemGetItemNameAR" xml:space="preserve">
+    <value>АР {0}</value>
+  </data>
+  <data name="StoreOperationsReportItemGetItemNameVN" xml:space="preserve">
+    <value>ВН {0}</value>
+  </data>
+  <data name="DepartmentEntityAllDepartments" xml:space="preserve">
+    <value>Все подразделения</value>
+  </data>
+  <data name="DepartmentAllTraders" xml:space="preserve">
+    <value>Все торговые предприятия</value>
+  </data>
+  <data name="RoundModeToGreaterInt" xml:space="preserve">
+    <value>До большего целого</value>
+  </data>
+  <data name="RoundModeToSmallerInt" xml:space="preserve">
+    <value>До меньшего целого</value>
+  </data>
+  <data name="RoundModeToNearestInt" xml:space="preserve">
+    <value>До ближайшего целого</value>
+  </data>
+  <data name="AbstractDocumentFullCaptionCopyWithFollowingAddition" xml:space="preserve">
+    <value>Копия, </value>
+  </data>
+  <data name="AbstractDocumentFullCaptionAutoCreated" xml:space="preserve">
+    <value>создан автоматически</value>
+  </data>
+  <data name="AbstractSalesDocumentDocumentFullCaption" xml:space="preserve">
+    <value>{0} №{1} от {2}{3}</value>
+  </data>
+  <data name="CameraDriverDescription" xml:space="preserve">
+    <value>Видеокамера</value>
+  </data>
+  <data name="PlastekDriverName" xml:space="preserve">
+    <value>ПЛАС-ТЕК</value>
+  </data>
+  <data name="PlastekDriverDescription" xml:space="preserve">
+    <value>Бонусные карты ПЛАС-ТЕК</value>
+  </data>
+  <data name="PulsarDriverName" xml:space="preserve">
+    <value>ПУЛЬСАР</value>
+  </data>
+  <data name="PulsarDriverDescription" xml:space="preserve">
+    <value>Процессинг банковских карт Pulsar</value>
+  </data>
+  <data name="HoistDriverName" xml:space="preserve">
+    <value>Система Hoist</value>
+  </data>
+  <data name="EdelweissDriverName" xml:space="preserve">
+    <value>Система управления гостиницей Эдельвейс</value>
+  </data>
+  <data name="EpitomeDriverName" xml:space="preserve">
+    <value>Система управления гостиницей Epitome PMS</value>
+  </data>
+  <data name="TrposDriverName" xml:space="preserve">
+    <value>Процессинг банковских карт TRPOS</value>
+  </data>
+  <data name="FV2029DriverDescription" xml:space="preserve">
+    <value>Экран покупателя Firich/Epson</value>
+  </data>
+  <data name="OposCustomerDisplayDriverDescription" xml:space="preserve">
+    <value>Экран покупателя OPOS</value>
+  </data>
+  <data name="AtolDriverName" xml:space="preserve">
+    <value>АТОЛ</value>
+  </data>
+  <data name="AtolDriverDescriptionFiscalRegistrar" xml:space="preserve">
+    <value>Фискальный регистратор линейки АТОЛ</value>
+  </data>
+  <data name="UnisystemDriverNameMIHI" xml:space="preserve">
+    <value>МIHI-ФП6</value>
+  </data>
+  <data name="UnisystemDriverDescriptionFiscalRegistrarMIHI" xml:space="preserve">
+    <value>Фискальный регистратор МIHI-ФП6</value>
+  </data>
+  <data name="ChequePrinterStubVirtualCashNonFiscal" xml:space="preserve">
+    <value>Виртуальная касса (нефискальный режим)</value>
+  </data>
+  <data name="ComstarDriverDescription" xml:space="preserve">
+    <value>Принтер Comstar</value>
+  </data>
+  <data name="EscPosPrinterDriverDescription" xml:space="preserve">
+    <value>ESC/POS принтер</value>
+  </data>
+  <data name="EpsonT88DriverDescription" xml:space="preserve">
+    <value>Принтер Epson TM-T88</value>
+  </data>
+  <data name="EpsonTMU220DriverDescription" xml:space="preserve">
+    <value>Принтер Epson TM-U220</value>
+  </data>
+  <data name="BtpR580IIDriverDescription" xml:space="preserve">
+    <value>Принтер BTP-R580II</value>
+  </data>
+  <data name="CheckwayDriverDescription" xml:space="preserve">
+    <value>Принтер CheckWay</value>
+  </data>
+  <data name="AtolPrinterName" xml:space="preserve">
+    <value>АТОЛ RP-326</value>
+  </data>
+  <data name="AtolPrinterDriverDescription" xml:space="preserve">
+    <value>Принтер АТОЛ RP-326</value>
+  </data>
+  <data name="CitizenCTSxxxPrinterName" xml:space="preserve">
+    <value>Citizen CT-Sxxx (термопринтер)</value>
+  </data>
+  <data name="CitizenCTSxxxPrinterDriverDescription" xml:space="preserve">
+    <value>Принтер Citizen CT-Sxxx</value>
+  </data>
+  <data name="SPrintTM200DriverDescription" xml:space="preserve">
+    <value>Принтер SPrint TM200</value>
+  </data>
+  <data name="SPrintTM200SimpleDriverDescription" xml:space="preserve">
+    <value>Принтер SPrint TM200 Min</value>
+  </data>
+  <data name="Shtrih600DriverName" xml:space="preserve">
+    <value>Штрих-600</value>
+  </data>
+  <data name="Shtrih600DriverDescription" xml:space="preserve">
+    <value>Принтер Штрих-600</value>
+  </data>
+  <data name="Shtrih700DriverName" xml:space="preserve">
+    <value>Штрих-700</value>
+  </data>
+  <data name="Shtrih700DriverDescription" xml:space="preserve">
+    <value>Принтер Штрих-700</value>
+  </data>
+  <data name="PosiflexDriverDescription" xml:space="preserve">
+    <value>Принтер Posiflex</value>
+  </data>
+  <data name="PrimFRDriverName" xml:space="preserve">
+    <value>ПРИМ-ФР</value>
+  </data>
+  <data name="PrimFRDriverDescriptionFiscalRegistrar" xml:space="preserve">
+    <value>Фискальный регистратор ПРИМ-ФР</value>
+  </data>
+  <data name="AzimuthPrimDriverName" xml:space="preserve">
+    <value>ПРИМ-ФР(Azimuth)</value>
+  </data>
+  <data name="AzimuthPrimDriverDescriptionFiscalRegistrar" xml:space="preserve">
+    <value>Фискальный регистратор ПРИМ-ФР(Azimuth)</value>
+  </data>
+  <data name="PilotFP410KDriverName" xml:space="preserve">
+    <value>ПИЛОТ FP-410К</value>
+  </data>
+  <data name="PilotFP410KDriverDescriptionFiscalRegistrar" xml:space="preserve">
+    <value>Фискальный регистратор ПИЛОТ FP-410К</value>
+  </data>
+  <data name="Maria301DriverName" xml:space="preserve">
+    <value>Мария-301 МТМ</value>
+  </data>
+  <data name="Maria301DriverDescriptionFiscalRegistrar" xml:space="preserve">
+    <value>Фискальный регистратор Мария-301 МТМ</value>
+  </data>
+  <data name="SP298DriverName" xml:space="preserve">
+    <value>STAR SP298</value>
+  </data>
+  <data name="SP298DriverDescription" xml:space="preserve">
+    <value>Принтер SP298</value>
+  </data>
+  <data name="SPxxxDriverName" xml:space="preserve">
+    <value>STAR SPxxx (матричный)</value>
+  </data>
+  <data name="SPxxxDriverDescription" xml:space="preserve">
+    <value>Матричный принтер STAR SPxxx</value>
+  </data>
+  <data name="ShtrihMDriverName" xml:space="preserve">
+    <value>ШТРИХ-М</value>
+  </data>
+  <data name="ShtrihMDriverDescriptionFiscalRegistrar" xml:space="preserve">
+    <value>Фискальный регистратор ШТРИХ-М</value>
+  </data>
+  <data name="ShtrihFRFDriverName" xml:space="preserve">
+    <value>ШТРИХ-ФР-*</value>
+  </data>
+  <data name="ShtrihFRFDriverDescriptionFiscalRegistrar" xml:space="preserve">
+    <value>Фискальный регистратор ШТРИХ-ФР-*</value>
+  </data>
+  <data name="SparkDriverName" xml:space="preserve">
+    <value>СПАРК</value>
+  </data>
+  <data name="SparkDriverDescriptionFiscalRegistrar" xml:space="preserve">
+    <value>Фискальный регистратор СПАРК</value>
+  </data>
+  <data name="SparkFnDriverName" xml:space="preserve">
+    <value>СПАРК с ФН</value>
+  </data>
+  <data name="SparkFnDriverDescriptionFiscalRegistrar" xml:space="preserve">
+    <value>Фискальный регистратор СПАРК</value>
+  </data>
+  <data name="TSPxxxDriverName" xml:space="preserve">
+    <value>STAR TSPxxx (термопринтер)</value>
+  </data>
+  <data name="TSPxxxDriverDescription" xml:space="preserve">
+    <value>Принтер STAR TSPxxx</value>
+  </data>
+  <data name="SMxxxDriverName" xml:space="preserve">
+    <value>STAR SMxxx (портативный)</value>
+  </data>
+  <data name="SMxxxDriverDescription" xml:space="preserve">
+    <value>Принтер STAR SMxxx</value>
+  </data>
+  <data name="MercuryDriverName" xml:space="preserve">
+    <value>МЕРКУРИЙ</value>
+  </data>
+  <data name="MercuryDriverDescriptionFiscalRegistrar" xml:space="preserve">
+    <value>Фискальный регистратор МЕРКУРИЙ MS-K</value>
+  </data>
+  <data name="MstarTKDriverName" xml:space="preserve">
+    <value>MSTAR-TK</value>
+  </data>
+  <data name="MstarTKDriverDescriptionFiscalRegistrar" xml:space="preserve">
+    <value>Фискальный регистратор MSTAR-TK</value>
+  </data>
+  <data name="Mercury130DriverName" xml:space="preserve">
+    <value>МЕРКУРИЙ 130Ф</value>
+  </data>
+  <data name="Mercury130DriverDescriptionFiscalRegistrar" xml:space="preserve">
+    <value>Фискальный регистратор МЕРКУРИЙ 130</value>
+  </data>
+  <data name="DatecsDriverName" xml:space="preserve">
+    <value>Линейка Datecs</value>
+  </data>
+  <data name="DatecsDriverDescriptionFiscalRegistrar" xml:space="preserve">
+    <value>Фискальный регистратор Datecs</value>
+  </data>
+  <data name="CashServerDriverName" xml:space="preserve">
+    <value>Кассовый сервер</value>
+  </data>
+  <data name="CASScaleDriverDescription" xml:space="preserve">
+    <value>Весы линейки CAS</value>
+  </data>
+  <data name="MassaScaleDriverName" xml:space="preserve">
+    <value>Масса ВПМ</value>
+  </data>
+  <data name="MassaScaleDriverDescription" xml:space="preserve">
+    <value>Весы линейки Масса ВПМ</value>
+  </data>
+  <data name="ShtrihPrintScaleDriverName" xml:space="preserve">
+    <value>Штрих-Принт</value>
+  </data>
+  <data name="ShtrihPrintScaleDriverDescription" xml:space="preserve">
+    <value>Весы линейки Штрих-Принт</value>
+  </data>
+  <data name="NciEcrScaleDriverName" xml:space="preserve">
+    <value>NCI-ECR весы</value>
+  </data>
+  <data name="NciEcrScaleDriverDescription" xml:space="preserve">
+    <value>NCI-ECR весы</value>
+  </data>
+  <data name="ShtrihScaleDriverName" xml:space="preserve">
+    <value>Штрих</value>
+  </data>
+  <data name="ShtrihScaleDriverDescription" xml:space="preserve">
+    <value>Весы линейки Штрих</value>
+  </data>
+  <data name="DiscountCardDriverName" xml:space="preserve">
+    <value>Клубные карты</value>
+  </data>
+  <data name="LuckyTicketDriverName" xml:space="preserve">
+    <value>Дисконтно-депозитная система Lucky Ticket</value>
+  </data>
+  <data name="PowerDeviceDriverName" xml:space="preserve">
+    <value>Контроллер</value>
+  </data>
+  <data name="PowerDeviceDriverDescription" xml:space="preserve">
+    <value>Контроллер MPOS-POWER8</value>
+  </data>
+  <data name="OPOSCashDrawerDriverName" xml:space="preserve">
+    <value>OPOS</value>
+  </data>
+  <data name="OPOSCashDrawerDriverDescription" xml:space="preserve">
+    <value>Денежный ящик OPOS</value>
+  </data>
+  <data name="ZebraEplDriverName" xml:space="preserve">
+    <value>Zebra Epl</value>
+  </data>
+  <data name="ZebraEplDriverDescription" xml:space="preserve">
+    <value>Принтер Zebra Epl2</value>
+  </data>
+  <data name="AgentMessageInvalidResultTypeObtained" xml:space="preserve">
+    <value>Получен неверный тип результата от {1} ('{0}')</value>
+    <comment>{1} - POS agent name</comment>
+  </data>
+  <data name="InstallerHelperFineReaderEngineFilesDirectoryNotFound" xml:space="preserve">
+    <value>Не найдена папка с файлами FineReader Engine. Возможно отсутствует Bin репозиторий.</value>
+  </data>
+  <data name="LogonAsAdminSpecifyTheUserWithAdministratorRights" xml:space="preserve">
+    <value>Укажите пользователя с правами администратора. Этот пользователь необходим для запуска процедуры обновления {0}.</value>
+  </data>
+  <data name="LogonAsAdminInvalidCredentials" xml:space="preserve">
+    <value>Имя пользователя или пароль введены неверно. Пожалуйста, введите их еще раз. Обратите внимание на регистр, а также выбранный язык ввода.</value>
+  </data>
+  <data name="LogonAsAdminWarningCaption" xml:space="preserve">
+    <value>Предупреждение</value>
+  </data>
+  <data name="LogonAsAdminProvidedUserIsNotAnAdmin" xml:space="preserve">
+    <value>Данный пользователь не обладает правами администратора. Пожалуйста, проверьте, что вводимый вами пользователь обладает правами администратора.</value>
+  </data>
+  <data name="LogonAsAdminCancelLogonFormat" xml:space="preserve">
+    <value>Процедура обновления не сможет продолжить свою работу, так как у текущего пользователя не хватает необходимых прав для ее успешного завершения.{1}Отказ от предоставления пользователя с правами администратора приведет к отмене процедуры обновления и завершению работы {0}.{1}{1}Отменить обновление?</value>
+  </data>
+  <data name="UserTypeEmployee" xml:space="preserve">
+    <value>Сотрудник</value>
+  </data>
+  <data name="UserTypeSupplier" xml:space="preserve">
+    <value>Поставщик</value>
+  </data>
+  <data name="UserTypeGuest" xml:space="preserve">
+    <value>Гость</value>
+  </data>
+  <data name="UserPassportData" xml:space="preserve">
+    <value>паспорт {0} №{1}, выдан {2} {3} г</value>
+  </data>
+  <data name="DeviceHierarchyBuildHierarchyWelcome" xml:space="preserve">
+    <value>Добро пожаловать</value>
+  </data>
+  <data name="OPOSPrinterDriverOPOSPrinter" xml:space="preserve">
+    <value>OPOS принтер</value>
+  </data>
+  <data name="AbstractDocumentListRecordNumberFrom" xml:space="preserve">
+    <value>№ {0} от {1}</value>
+  </data>
+  <data name="AbstractDocumentListRecordNumberFrom1" xml:space="preserve">
+    <value>{0} № {1} от {2}</value>
+  </data>
+  <data name="AbstractDocumentListRecordFrom" xml:space="preserve">
+    <value>{0} от {1}: {2}</value>
+  </data>
+  <data name="AbstractDocumentCopy" xml:space="preserve">
+    <value> (Копия)</value>
+  </data>
+  <data name="AbstractDocumentNumberFrom2" xml:space="preserve">
+    <value>{0} №{1} от {2}{3}</value>
+  </data>
+  <data name="StoreProductPairStoreProduct" xml:space="preserve">
+    <value>(склад: {0}, продукт: {1})</value>
+  </data>
+  <data name="CompanySetupINN" xml:space="preserve">
+    <value>, ИНН:</value>
+  </data>
+  <data name="PeriodFromTo" xml:space="preserve">
+    <value>с {0} по {1}</value>
+  </data>
+  <data name="OutgoingServiceTypeManual" xml:space="preserve">
+    <value>Ручной</value>
+  </data>
+  <data name="OutgoingServiceTypeAuto" xml:space="preserve">
+    <value>Автоматический</value>
+  </data>
+  <data name="IcsDriverDescriptionFiscalRegistrar" xml:space="preserve">
+    <value>Фискальный регистратор IKC (IKC-MARKET)</value>
+    <comment>IKC-483LT</comment>
+  </data>
+  <data name="IcsDriverName" xml:space="preserve">
+    <value>IKC (IKC-MARKET)</value>
+    <comment>IKC-483LT</comment>
+  </data>
+  <data name="IksSpsDriverDescriptionFiscalRegister" xml:space="preserve">
+    <value>Фискальный регистратор IKS (Straujos Prekybos Sistemos)</value>
+    <comment>IKC-483LT</comment>
+  </data>
+  <data name="IksSpsDriverName" xml:space="preserve">
+    <value>IKS (Straujos Prekybos Sistemos)</value>
+    <comment>IKS -T82F</comment>
+  </data>
+  <data name="PosnetDriverDescriptionFiscalRegister" xml:space="preserve">
+    <value>Фискальный регистратор Posnet</value>
+    <comment>Thermal FV EJ 1.01</comment>
+  </data>
+  <data name="PosnetDriverName" xml:space="preserve">
+    <value>Posnet</value>
+    <comment>Thermal FV EJ 1.01</comment>
+  </data>
+  <data name="PosnetThermalDriverDescriptionFiscalRegister" xml:space="preserve">
+    <value>Фискальный регистратор Posnet Thermal</value>
+    <comment>Thermal FV EJ 1.01</comment>
+  </data>
+  <data name="PosnetThermalDriverName" xml:space="preserve">
+    <value>Posnet Thermal</value>
+    <comment>Thermal FV EJ 1.01</comment>
+  </data>
+  <data name="HrsDriverDescriptionFiscalRegister" xml:space="preserve">
+    <value>Фискальный сервис HRS</value>
+  </data>
+  <data name="HrsDriverName" xml:space="preserve">
+    <value>Фискальный сервис HRS</value>
+  </data>
+  <data name="ExternalCashRegisterDriverName" xml:space="preserve">
+    <value>Внешний фискальный регистратор</value>
+  </data>
+  <data name="BrioFisFm32DriverDescriptionFiscalRegister" xml:space="preserve">
+    <value>Фискальный модуль BRIO Fis-FM32/32E(M)</value>
+    <comment>Fis-FM32/32E(M)</comment>
+  </data>
+  <data name="BrioFisFm32DriverName" xml:space="preserve">
+    <value>BRIO Fis-FM32/32E(M)</value>
+    <comment>Fis-FM32/32E(M)</comment>
+  </data>
+  <data name="AlposAf01DriverDescriptionFiscalRegister" xml:space="preserve">
+    <value>Фискальный модуль ALPOS AF01</value>
+    <comment>ALPOS AF01</comment>
+  </data>
+  <data name="AlposAf01DriverName" xml:space="preserve">
+    <value>ALPOS AF01</value>
+    <comment>ALPOS AF01</comment>
+  </data>
+  <data name="PiritDriverDescriptionFiscalRegister" xml:space="preserve">
+    <value>Фискальный регистратор Pirit</value>
+    <comment>Pirit</comment>
+  </data>
+  <data name="PiritDriverName" xml:space="preserve">
+    <value>Pirit</value>
+    <comment>Pirit</comment>
+  </data>
+  <data name="EmpirijaDriverDescriptionFiscalRegistrar" xml:space="preserve">
+    <value>Фискальный регистратор Empirija</value>
+    <comment>Altera EJ3</comment>
+  </data>
+  <data name="EmpirijaDriverName" xml:space="preserve">
+    <value>Empirija</value>
+    <comment>Altera EJ3</comment>
+  </data>
+  <data name="SmartSaleDriverName" xml:space="preserve">
+    <value>Процессинг банковских карт Smart Sale</value>
+  </data>
+  <data name="UnableToFindFile" xml:space="preserve">
+    <value>Не удается найти файл "{0}".</value>
+  </data>
+  <data name="ErrorWhileLoadingDataCallSupport" xml:space="preserve">
+    <value>При загрузке данных произошла ошибка.  Пожалуйста, обратитесь в службу поддержки.</value>
+  </data>
+  <data name="PayrollDocumentStringFormat" xml:space="preserve">
+    <value>{0} № {1} с {2} по {3}</value>
+  </data>
+  <data name="WindowsPrinterDriverDescription" xml:space="preserve">
+    <value>Windows принтер</value>
+  </data>
+  <data name="OPOSRegisterDriverDescriptionFiscalRegistrar" xml:space="preserve">
+    <value>Фискальный регистратор OPOS</value>
+  </data>
+  <data name="OPOSRegisterDriverName" xml:space="preserve">
+    <value>OPOS Fiscal Register</value>
+  </data>
+  <data name="ServiceReportPeriodFromTo" xml:space="preserve">
+    <value>Акт  № {0} от {1}</value>
+  </data>
+  <data name="ServiceReportSubHeader" xml:space="preserve">
+    <value>Основание: По договору  № {0} от {1}</value>
+  </data>
+  <data name="ServiceReportFullSumWithVat" xml:space="preserve">
+    <value>{0}, в т.ч. НДС {1}</value>
+  </data>
+  <data name="ServiceReportFullSumWithoutVat" xml:space="preserve">
+    <value>{0} Без налога (НДС)</value>
+  </data>
+  <data name="ServiceReportNoVat" xml:space="preserve">
+    <value>Без НДС</value>
+  </data>
+  <data name="EpsonTMU295DriverDescription" xml:space="preserve">
+    <value>Принтер Epson TM-U295</value>
+  </data>
+  <data name="EpsonTMU295Name" xml:space="preserve">
+    <value>Epson TM-U295</value>
+  </data>
+  <data name="PriceCategoryModelAllPriceCategories" xml:space="preserve">
+    <value>Все ценовые категории</value>
+  </data>
+  <data name="DigiScaleDriverDescription" xml:space="preserve">
+    <value>Весы линейки DIGI</value>
+  </data>
+  <data name="ExternalScaleDriverName" xml:space="preserve">
+    <value>Внешние весы</value>
+  </data>
+  <data name="DayOfTheWeekIsUnacceptable" xml:space="preserve">
+    <value>День недели доставки не соответствует настройкам</value>
+  </data>
+  <data name="DeliveryTimeIsUnacceptable" xml:space="preserve">
+    <value>Время доставки не соответствует общим настройкам времени работы (с {0} по {1})</value>
+  </data>
+  <data name="DeliveryTimeIsUnacceptableToRestrictionItem" xml:space="preserve">
+    <value>Время доставки не соответствует интервалу работы точки</value>
+  </data>
+  <data name="SumIsLessThenMinimum" xml:space="preserve">
+    <value>Сумма заказа меньше минимальной ({0})</value>
+  </data>
+  <data name="CannotFindDeliveryTerminalByDeliveryZone" xml:space="preserve">
+    <value>Не удалось найти точку доставки с учетом настроенных ограничений</value>
+  </data>
+  <data name="DeliveryRegionsMapAddressWithBuildingGeocodingFormat" xml:space="preserve">
+    <value>{0:city}, {1:street}, {2:house} к{3:building}</value>
+    <comment>Формат используется для геокодирования адреса,
+    при переводе использовать существующую структуру.
+    &lt;&lt;mandatory-translation&gt;&gt;</comment>
+  </data>
+  <data name="DeliveryRegionsMapAddressWithoutBuildingGeocodingFormat" xml:space="preserve">
+    <value>{0:city}, {1:street}, {2:house}</value>
+    <comment>Формат используется для геокодирования адреса (не содержит поле 'building'),
+    при переводе использовать существующую структуру.
+    &lt;&lt;mandatory-translation&gt;&gt;</comment>
+  </data>
+  <data name="CannotFindSuitableDeliveryTerminal" xml:space="preserve">
+    <value>Ресторан не может обработать доставку с указанными данными (адрес, дата, время и сумма)</value>
+  </data>
+  <data name="CommunicationWithServerLostAttention" xml:space="preserve">
+    <value>Внимание, потеряна связь с сервером. Проверка ограничений доставки невозможна</value>
+  </data>
+  <data name="GeocodingError" xml:space="preserve">
+    <value>Ошибка геокодирования адреса {0}</value>
+  </data>
+  <data name="AddressIsIncorrect" xml:space="preserve">
+    <value>Не удалось определить адрес доставки. Проверьте корректность адреса '{0}'</value>
+  </data>
+  <data name="DeliveryExternalAssignationServiceError" xml:space="preserve">
+    <value>При обращении к внешнему сервису распределения доставок произошла ошибка. Проверка ограничений доставки невозможна.</value>
+  </data>
+  <data name="ServiceItem_LesTrucs" xml:space="preserve">
+    <value>шт.</value>
+  </data>
+  <data name="ServiceTableRecord_LesTrucks" xml:space="preserve">
+    <value>шт.</value>
+  </data>
+  <data name="Loader_GetNullableDecimalErrorNumber" xml:space="preserve">
+    <value>Ошибка конвертации строки {0} в число с плавающей точкой в колонке {1}</value>
+  </data>
+  <data name="Loader_GetDateErrorDate" xml:space="preserve">
+    <value>Ошибка конвертации строки {0} в дату в колонке {1}</value>
+  </data>
+  <data name="Loader_GetDateEmptyString" xml:space="preserve">
+    <value>Пустая строка в колонке {0}</value>
+  </data>
+  <data name="DocumentPreviewItemInfo_SalesInfoComment" xml:space="preserve">
+    <value>Комментарий</value>
+  </data>
+  <data name="DocumentPreviewItemInfo_SalesInfoGroup" xml:space="preserve">
+    <value>Группа учета целевого блюда (название)</value>
+  </data>
+  <data name="DocumentPreviewItemInfo_SalesInfoIdGroup" xml:space="preserve">
+    <value>Группа учета целевого блюда (код)</value>
+  </data>
+  <data name="DocumentPreviewItemInfo_SalesInfoNameDish" xml:space="preserve">
+    <value>Проданное блюдо (название)</value>
+  </data>
+  <data name="DocumentPreviewItemInfo_SalesInfoIdDish" xml:space="preserve">
+    <value>Проданное блюдо (код)</value>
+  </data>
+  <data name="DocumentPreviewItemInfo_SalesInfoConceptionCode" xml:space="preserve">
+    <value>Концепция (код)</value>
+  </data>
+  <data name="DocumentPreviewItemInfo_SalesInfoConceptName" xml:space="preserve">
+    <value>Концепция (название)</value>
+  </data>
+  <data name="DocumentPreviewItemInfo_SalesInfoConceptionName" xml:space="preserve">
+    <value>Концепция (название)</value>
+  </data>
+  <data name="DocumentPreviewItemInfo_SalesInfoCashRegNumber" xml:space="preserve">
+    <value>Номер кассы</value>
+  </data>
+  <data name="DocumentPreviewItemInfo_SalesInfoSessionNumber" xml:space="preserve">
+    <value>Номер смены</value>
+  </data>
+  <data name="DocumentPreviewItemInfo_SalesInfoMeasureUnitName" xml:space="preserve">
+    <value>Единица измерения (название)</value>
+  </data>
+  <data name="DocumentPreviewItemInfo_SalesInfoMeasureUnitCode" xml:space="preserve">
+    <value>Единица измерения (код)</value>
+  </data>
+  <data name="DocumentPreviewItemInfo_SalesInfoTargetDishName" xml:space="preserve">
+    <value>Целевое блюдо (название)</value>
+  </data>
+  <data name="DocumentPreviewItemInfo_SalesInfoTargetDishCode" xml:space="preserve">
+    <value>Целевое блюдо (код)</value>
+  </data>
+  <data name="DocumentPreviewItemInfo_SalesInfoProductTypeName" xml:space="preserve">
+    <value>Тип номенклатуры (название)</value>
+  </data>
+  <data name="DocumentPreviewItemInfo_SalesInfoProductType" xml:space="preserve">
+    <value>Тип номенклатуры (код)</value>
+  </data>
+  <data name="DocumentPreviewItemInfo_SalesInfoWriteoffAccountName" xml:space="preserve">
+    <value>Статья расходов</value>
+  </data>
+  <data name="DocumentPreviewItemInfo_SalesInfoWriteoffAccountCode" xml:space="preserve">
+    <value>Статья расходов(код)</value>
+  </data>
+  <data name="DocumentPreviewItemInfo_SalesInfoRevenueAccountName" xml:space="preserve">
+    <value>Движение денежных средств</value>
+  </data>
+  <data name="DocumentPreviewItemInfo_SalesInfoRevenueAccountCode" xml:space="preserve">
+    <value>Движение денежных средств (код)</value>
+  </data>
+  <data name="DocumentPreviewItemInfo_SalesInfoWriteoffTypeName" xml:space="preserve">
+    <value>Тип списания (название)</value>
+  </data>
+  <data name="DocumentPreviewItemInfo_SalesInfoWriteoffType" xml:space="preserve">
+    <value>Тип списания</value>
+  </data>
+  <data name="DocumentPreviewItemInfo_SalesInfoJurPersonName" xml:space="preserve">
+    <value>ЮЛ (наименование)</value>
+  </data>
+  <data name="DocumentPreviewItemInfo_SalesInfoJurPersonINN" xml:space="preserve">
+    <value>ЮЛ (ИНН)</value>
+  </data>
+  <data name="DocumentPreviewItemInfo_SalesInfoDepartmentName" xml:space="preserve">
+    <value>Торговое предприятие (наименование)</value>
+  </data>
+  <data name="DocumentPreviewItemInfo_SalesInfoDepartmentId" xml:space="preserve">
+    <value>Торговое предприятие(код)</value>
+  </data>
+  <data name="DocumentPreviewItemInfo_SalesInfoNdsProductPercent" xml:space="preserve">
+    <value>Ставка НДС</value>
+  </data>
+  <data name="DocumentPreviewItemInfo_SalesInfoCostPrice" xml:space="preserve">
+    <value>Себестоимость без НДС</value>
+  </data>
+  <data name="DocumentPreviewItemInfo_SalesInfoCostPriceByUnit" xml:space="preserve">
+    <value>Себестоимость за ед. без НДС</value>
+  </data>
+  <data name="DocumentPreviewItemInfo_SalesInfoNdsPercent" xml:space="preserve">
+    <value>Ставка НДС с продаж</value>
+  </data>
+  <data name="DocumentPreviewItemInfo_SalesInfoNds" xml:space="preserve">
+    <value>Сумма НДС с продаж</value>
+  </data>
+  <data name="DocumentPreviewItemInfo_SalesInfoSumWithNds" xml:space="preserve">
+    <value>Сумма продажи с НДС</value>
+  </data>
+  <data name="DocumentPreviewItemInfo_SalesInfoPriceWithNds" xml:space="preserve">
+    <value>Цена продажи с НДС</value>
+  </data>
+  <data name="DocumentPreviewItemInfo_SalesInfoAmount" xml:space="preserve">
+    <value>Количество</value>
+  </data>
+  <data name="DocumentPreviewItemInfo_SalesInfoProductAccountGroupCode" xml:space="preserve">
+    <value>Группа учета (код)</value>
+  </data>
+  <data name="DocumentPreviewItemInfo_SalesInfoProductAccountGroupName" xml:space="preserve">
+    <value>Группа учета (название)</value>
+  </data>
+  <data name="DocumentPreviewItemInfo_SalesInfoProductName" xml:space="preserve">
+    <value>Номенклатура (наименование)</value>
+  </data>
+  <data name="DocumentPreviewItemInfo_SalesInfoProductCode" xml:space="preserve">
+    <value>Номенклатура (код)</value>
+  </data>
+  <data name="DocumentPreviewItemInfo_SalesInfoOperationTypeName" xml:space="preserve">
+    <value>Операция (название)</value>
+  </data>
+  <data name="DocumentPreviewItemInfo_SalesInfoOperationType" xml:space="preserve">
+    <value>Операция</value>
+  </data>
+  <data name="DocumentPreviewItemInfo_SalesInfoStoreName" xml:space="preserve">
+    <value>Склад (наименование)</value>
+  </data>
+  <data name="DocumentPreviewItemInfo_SalesInfoStoreCode" xml:space="preserve">
+    <value>Склад(код)</value>
+  </data>
+  <data name="DocumentPreviewItemInfo_SalesInfoProcessed" xml:space="preserve">
+    <value>Проведен ли документ</value>
+  </data>
+  <data name="DocumentPreviewItemInfo_SalesInfoDocNumber" xml:space="preserve">
+    <value>Номер</value>
+  </data>
+  <data name="DocumentPreviewItemInfo_SalesInfoDocDate" xml:space="preserve">
+    <value>Дата</value>
+  </data>
+  <data name="BaseIntegrationTool_InitConnectionServerError" xml:space="preserve">
+    <value>Не удалось соединиться с сервером: </value>
+  </data>
+  <data name="DocumentPreviewItemInfo_WriteoffInfoDocDate" xml:space="preserve">
+    <value>Дата</value>
+  </data>
+  <data name="DocumentPreviewItemInfo_WriteoffInfoDocNumber" xml:space="preserve">
+    <value>Номер</value>
+  </data>
+  <data name="DocumentPreviewItemInfo_WriteoffInfoProcessed" xml:space="preserve">
+    <value>Проведен ли документ</value>
+  </data>
+  <data name="DocumentPreviewItemInfo_WriteoffInfoStoreCode" xml:space="preserve">
+    <value>Склад (код)</value>
+  </data>
+  <data name="DocumentPreviewItemInfo_WriteoffInfoStoreName" xml:space="preserve">
+    <value>Склад (наименование)</value>
+  </data>
+  <data name="DocumentPreviewItemInfo_WriteoffInfoProductCode" xml:space="preserve">
+    <value>Номенклатура (код)</value>
+  </data>
+  <data name="DocumentPreviewItemInfo_WriteoffInfoProductName" xml:space="preserve">
+    <value>Номенклатура (наименование)</value>
+  </data>
+  <data name="DocumentPreviewItemInfo_WriteoffInfoProductAccountGroupName" xml:space="preserve">
+    <value>Группа учета (название)</value>
+  </data>
+  <data name="DocumentPreviewItemInfo_WriteoffInfoProductAccountGroupCode" xml:space="preserve">
+    <value>Группа учета (код)</value>
+  </data>
+  <data name="DocumentPreviewItemInfo_WriteoffInfoAmount" xml:space="preserve">
+    <value>Количество</value>
+  </data>
+  <data name="DocumentPreviewItemInfo_WriteoffInfoCostPriceByUnit" xml:space="preserve">
+    <value>Себестоимость за ед. без НДС</value>
+  </data>
+  <data name="DocumentPreviewItemInfo_WriteoffInfoCostPrice" xml:space="preserve">
+    <value>Себестоимость без НДС</value>
+  </data>
+  <data name="DocumentPreviewItemInfo_WriteoffInfoNdsProductPercent" xml:space="preserve">
+    <value>Ставка НДС</value>
+  </data>
+  <data name="DocumentPreviewItemInfo_WriteoffInfoDepartmentId" xml:space="preserve">
+    <value>Торговое предприятие(код)</value>
+  </data>
+  <data name="DocumentPreviewItemInfo_WriteoffInfoDepartmentName" xml:space="preserve">
+    <value>Торговое предприятие (наименование)</value>
+  </data>
+  <data name="DocumentPreviewItemInfo_WriteoffInfoJurPersonINN" xml:space="preserve">
+    <value>ЮЛ (ИНН)</value>
+  </data>
+  <data name="DocumentPreviewItemInfo_WriteoffInfoJurPersonName" xml:space="preserve">
+    <value>ЮЛ (наименование)</value>
+  </data>
+  <data name="DocumentPreviewItemInfo_WriteoffInfoWriteoffAccount" xml:space="preserve">
+    <value>Статья расходов</value>
+  </data>
+  <data name="DocumentPreviewItemInfo_WriteoffInfoWriteoffAccountCode" xml:space="preserve">
+    <value>Статья расходов(код)</value>
+  </data>
+  <data name="WriteoffType" xml:space="preserve">
+    <value>Тип списания</value>
+  </data>
+  <data name="WriteoffTypeName" xml:space="preserve">
+    <value>Тип списания (название)</value>
+  </data>
+  <data name="OperationType" xml:space="preserve">
+    <value>Операция</value>
+  </data>
+  <data name="OperationName" xml:space="preserve">
+    <value>Операция (название)</value>
+  </data>
+  <data name="ProductType" xml:space="preserve">
+    <value>Тип номенклатуры (код)</value>
+  </data>
+  <data name="ProductTypeName" xml:space="preserve">
+    <value>Тип номенклатуры (название)</value>
+  </data>
+  <data name="TargetDishCode" xml:space="preserve">
+    <value>Целевое блюдо (код)</value>
+  </data>
+  <data name="TargetDishName" xml:space="preserve">
+    <value>Целевое блюдо (название)</value>
+  </data>
+  <data name="MeasureUnitCode" xml:space="preserve">
+    <value>Единица измерения (код)</value>
+  </data>
+  <data name="MeasureUnitName" xml:space="preserve">
+    <value>Единица измерения (название)</value>
+  </data>
+  <data name="ConceptionName" xml:space="preserve">
+    <value>Концепция (название)</value>
+  </data>
+  <data name="ConceptionCode" xml:space="preserve">
+    <value>Концепция (код)</value>
+  </data>
+  <data name="SessionNumber" xml:space="preserve">
+    <value>Номер смены</value>
+  </data>
+  <data name="CashRegNumber" xml:space="preserve">
+    <value>Номер кассы</value>
+  </data>
+  <data name="SoldWithDishCode" xml:space="preserve">
+    <value>Проданное блюдо (код)</value>
+  </data>
+  <data name="SoldWithDishName" xml:space="preserve">
+    <value>Проданное блюдо (название)</value>
+  </data>
+  <data name="SoldWithDishAccountingCategoryCode" xml:space="preserve">
+    <value>Группа учета проданного блюда (код)</value>
+  </data>
+  <data name="SoldWithDishAccountingCategoryName" xml:space="preserve">
+    <value>Группа учета проданного блюда (название)</value>
+  </data>
+  <data name="Comment" xml:space="preserve">
+    <value>Комментарий</value>
+  </data>
+  <data name="DocDate" xml:space="preserve">
+    <value>Дата</value>
+  </data>
+  <data name="DocNumber" xml:space="preserve">
+    <value>Номер</value>
+  </data>
+  <data name="Processed" xml:space="preserve">
+    <value>Проведен ли документ</value>
+  </data>
+  <data name="StoreCode" xml:space="preserve">
+    <value>Склад (код)</value>
+  </data>
+  <data name="StoreName" xml:space="preserve">
+    <value>Склад (наименование)</value>
+  </data>
+  <data name="ProductCode" xml:space="preserve">
+    <value>Номенклатура (код)</value>
+  </data>
+  <data name="DocumentPreviewItemInfo_ReturnedInvoiceInfoProductName" xml:space="preserve">
+    <value>Номенклатура (наименование)</value>
+  </data>
+  <data name="ProductAccountGroupName" xml:space="preserve">
+    <value>Группа учета (название)</value>
+  </data>
+  <data name="ProductAccountGroupCode" xml:space="preserve">
+    <value>Группа учета (код)</value>
+  </data>
+  <data name="Amount" xml:space="preserve">
+    <value>Количество</value>
+  </data>
+  <data name="PriceWithNds" xml:space="preserve">
+    <value>Цена продажи с НДС</value>
+  </data>
+  <data name="SumWithNds" xml:space="preserve">
+    <value>Сумма продажи с НДС</value>
+  </data>
+  <data name="Nds" xml:space="preserve">
+    <value>Сумма НДС с продаж</value>
+  </data>
+  <data name="NdsPercent" xml:space="preserve">
+    <value>Ставка НДС с продаж</value>
+  </data>
+  <data name="CostPriceByUnit" xml:space="preserve">
+    <value>Себестоимость за ед. без НДС</value>
+  </data>
+  <data name="CostPrice" xml:space="preserve">
+    <value>Себестоимость без НДС</value>
+  </data>
+  <data name="NdsProductPercent" xml:space="preserve">
+    <value>Ставка НДС</value>
+  </data>
+  <data name="DepartmentId" xml:space="preserve">
+    <value>Торговое предприятие(код)</value>
+  </data>
+  <data name="DepartmentName" xml:space="preserve">
+    <value>Торговое предприятие (наименование)</value>
+  </data>
+  <data name="JurPersonINN" xml:space="preserve">
+    <value>ЮЛ (ИНН)</value>
+  </data>
+  <data name="JurPersonName" xml:space="preserve">
+    <value>ЮЛ (наименование)</value>
+  </data>
+  <data name="RevenueAccountCode" xml:space="preserve">
+    <value>Движение денежных средств (код)</value>
+  </data>
+  <data name="RevenueAccountName" xml:space="preserve">
+    <value>Движение денежных средств</value>
+  </data>
+  <data name="WriteoffAccountCode" xml:space="preserve">
+    <value>Статья расходов(код)</value>
+  </data>
+  <data name="WriteoffAccountName" xml:space="preserve">
+    <value>Статья расходов</value>
+  </data>
+  <data name="CustomerINN" xml:space="preserve">
+    <value>Покупатель (ИНН)</value>
+  </data>
+  <data name="CustomerCode" xml:space="preserve">
+    <value>Покупатель (код)</value>
+  </data>
+  <data name="CustomerName" xml:space="preserve">
+    <value>Покупатель (наименование)</value>
+  </data>
+  <data name="IncomingInvoiceDate" xml:space="preserve">
+    <value>Приходная накладная (дата)</value>
+  </data>
+  <data name="IncomingInvoiceNumber" xml:space="preserve">
+    <value>Приходная накладная (номер)</value>
+  </data>
+  <data name="Invoice" xml:space="preserve">
+    <value>Счет-фактура</value>
+  </data>
+  <data name="DocumentPreviewItemInfo_ReturnedInvoiceInfoProductType" xml:space="preserve">
+    <value>Тип номенклатуры (код)</value>
+  </data>
+  <data name="DocumentPreviewItemInfo_ReturnedInvoiceInfoProductTypeName" xml:space="preserve">
+    <value>Тип номенклатуры (название)</value>
+  </data>
+  <data name="Sum" xml:space="preserve">
+    <value>Сумма</value>
+  </data>
+  <data name="PaymentTypeId" xml:space="preserve">
+    <value>Вид оплаты(код)</value>
+  </data>
+  <data name="PaymentTypeName" xml:space="preserve">
+    <value>Вид оплаты(наименование)</value>
+  </data>
+  <data name="Card" xml:space="preserve">
+    <value>Номер карты</value>
+  </data>
+  <data name="CashRegisterNumber" xml:space="preserve">
+    <value>Номер кассы</value>
+  </data>
+  <data name="CashRegisterSerial" xml:space="preserve">
+    <value>Рег. номер ККМ</value>
+  </data>
+  <data name="CardHolderCompanyINN" xml:space="preserve">
+    <value>Покупатель(ИНН)</value>
+  </data>
+  <data name="CardHolderCompanyName" xml:space="preserve">
+    <value>Покупатель (наименование)</value>
+  </data>
+  <data name="CardHolderCode" xml:space="preserve">
+    <value>Покупатель (код)</value>
+  </data>
+  <data name="CardHolderLastName" xml:space="preserve">
+    <value>Фамилия</value>
+  </data>
+  <data name="CardHolderFirstName" xml:space="preserve">
+    <value>Имя</value>
+  </data>
+  <data name="CardHolderMiddleName" xml:space="preserve">
+    <value>Отчество</value>
+  </data>
+  <data name="CardHolderBirthday" xml:space="preserve">
+    <value>Дата рождения</value>
+  </data>
+  <data name="AdvanceProductName" xml:space="preserve">
+    <value>Авансовый платеж (название)</value>
+  </data>
+  <data name="AdvanceProductCode" xml:space="preserve">
+    <value>Авансовый платеж (код)</value>
+  </data>
+  <data name="TypeOfActivityCode" xml:space="preserve">
+    <value>Вид деятельности (код)</value>
+  </data>
+  <data name="TypeOfActivityName" xml:space="preserve">
+    <value>Вид деятельности (название)</value>
+  </data>
+  <data name="DocumentPreviewItemInfo_ProductionInfoDate" xml:space="preserve">
+    <value>Дата</value>
+  </data>
+  <data name="StoreOutcomeCode" xml:space="preserve">
+    <value>Склад списания(код)</value>
+  </data>
+  <data name="StoreOutcomeName" xml:space="preserve">
+    <value>Склад списания (наименование)</value>
+  </data>
+  <data name="DocumentPreviewItemInfo_ProductionInfoStoreCode" xml:space="preserve">
+    <value>Склад прихода(код)</value>
+  </data>
+  <data name="DocumentPreviewItemInfo_ProductionInfoStoreName" xml:space="preserve">
+    <value>Склад прихода (наименование)</value>
+  </data>
+  <data name="DocumentPreviewItemInfo_ProductionInfoOperationType" xml:space="preserve">
+    <value>Знак операции</value>
+  </data>
+  <data name="DocumentPreviewItemInfo_ProductionInfoOperationTypeName" xml:space="preserve">
+    <value>Знак операции (название)</value>
+  </data>
+  <data name="DocumentPreviewItemInfo_ProductionInfoProductName" xml:space="preserve">
+    <value>Номенклатура (наименование)</value>
+  </data>
+  <data name="TargetDishAccountingCategoryCode" xml:space="preserve">
+    <value>Группа учета целевого блюда (код)</value>
+  </data>
+  <data name="AccountCode" xml:space="preserve">
+    <value>Движение денежных средств(код)</value>
+  </data>
+  <data name="AccountName" xml:space="preserve">
+    <value>Движение денежных средств</value>
+  </data>
+  <data name="DocumentPreviewItemInfo_OutgoingServiceInfoProductName" xml:space="preserve">
+    <value>Номенклатура (наименование)</value>
+  </data>
+  <data name="SupplierINN" xml:space="preserve">
+    <value>Покупатель (ИНН)</value>
+  </data>
+  <data name="SupplierCode" xml:space="preserve">
+    <value>Покупатель (код)</value>
+  </data>
+  <data name="SupplierName" xml:space="preserve">
+    <value>Покупатель (наименование)</value>
+  </data>
+  <data name="RegisterNumber" xml:space="preserve">
+    <value>Номер кассы</value>
+  </data>
+  <data name="OperationTypeName" xml:space="preserve">
+    <value>Операция (название)</value>
+  </data>
+  <data name="CustomerStoreName" xml:space="preserve">
+    <value>Склад покупатель (наименование)</value>
+  </data>
+  <data name="CustomerStoreCode" xml:space="preserve">
+    <value>Склад покупатель (код)</value>
+  </data>
+  <data name="UserCode" xml:space="preserve">
+    <value>Сотрудник (код)</value>
+  </data>
+  <data name="UserName" xml:space="preserve">
+    <value>Сотрудник (наименование)</value>
+  </data>
+  <data name="TargetDishAccountingCategoryName" xml:space="preserve">
+    <value>Группа учета целевого блюда (название)</value>
+  </data>
+  <data name="IncomingNumber" xml:space="preserve">
+    <value>Вход. номер</value>
+  </data>
+  <data name="IncomingDate" xml:space="preserve">
+    <value>Вход. дата</value>
+  </data>
+  <data name="InternalCashDrawerName" xml:space="preserve">
+    <value>Встроенный ящик (подключенный к ФР)</value>
+  </data>
+  <data name="StaffCode" xml:space="preserve">
+    <value>Сотрудник (код)</value>
+  </data>
+  <data name="StaffName" xml:space="preserve">
+    <value>Сотрудник (наименование)</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>Дата</value>
+  </data>
+  <data name="Number" xml:space="preserve">
+    <value>Номер</value>
+  </data>
+  <data name="DebitAccountName" xml:space="preserve">
+    <value>Дебет (наименование)</value>
+  </data>
+  <data name="DebitAccountCode" xml:space="preserve">
+    <value>Дебет (код)</value>
+  </data>
+  <data name="DebitAccountType" xml:space="preserve">
+    <value>Дебет (тип)</value>
+  </data>
+  <data name="DebitSubAccountName" xml:space="preserve">
+    <value>Дебет, подсчет (наименование)</value>
+  </data>
+  <data name="DebitSubAccountCode" xml:space="preserve">
+    <value>Дебет, подсчет (код)</value>
+  </data>
+  <data name="CounteragentToINN" xml:space="preserve">
+    <value>Организация, дебет (ИНН)</value>
+  </data>
+  <data name="CounteragentToCode" xml:space="preserve">
+    <value>Организация, дебет (код)</value>
+  </data>
+  <data name="CounteragentToName" xml:space="preserve">
+    <value>Организация, дебет (наименование)</value>
+  </data>
+  <data name="CreditAccountName" xml:space="preserve">
+    <value>Кредит (наименование)</value>
+  </data>
+  <data name="CreditAccountCode" xml:space="preserve">
+    <value>Кредит (код)</value>
+  </data>
+  <data name="CreditAccountType" xml:space="preserve">
+    <value>Кредит (тип)</value>
+  </data>
+  <data name="CreditSubAccountName" xml:space="preserve">
+    <value>Кредит, подсчет (наименование)</value>
+  </data>
+  <data name="CreditSubAccountCode" xml:space="preserve">
+    <value>Кредит, подсчет (код)</value>
+  </data>
+  <data name="CounteragentFromINN" xml:space="preserve">
+    <value>Организация, кредит (ИНН)</value>
+  </data>
+  <data name="CounteragentFromCode" xml:space="preserve">
+    <value>Организация, кредит (код)</value>
+  </data>
+  <data name="CounteragentFromName" xml:space="preserve">
+    <value>Организация, кредит (наименование)</value>
+  </data>
+  <data name="JournalTypeName" xml:space="preserve">
+    <value>Вид журнала (название)</value>
+  </data>
+  <data name="JournalTypeCode" xml:space="preserve">
+    <value>Вид журнала (код)</value>
+  </data>
+  <data name="RegisteredDateTime" xml:space="preserve">
+    <value>Дата регистрации</value>
+  </data>
+  <data name="AccountingDateTime" xml:space="preserve">
+    <value>Дата учета</value>
+  </data>
+  <data name="EmployeeCode" xml:space="preserve">
+    <value>Сотрудник (код)</value>
+  </data>
+  <data name="EmployeeName" xml:space="preserve">
+    <value>Сотрудник (наименование)</value>
+  </data>
+  <data name="ScheduleCode" xml:space="preserve">
+    <value>Тип смены (код)</value>
+  </data>
+  <data name="ScheduleName" xml:space="preserve">
+    <value>Тип смены (наименование)</value>
+  </data>
+  <data name="ScheduleDuration" xml:space="preserve">
+    <value>Тип смены (длительность)</value>
+  </data>
+  <data name="ScheduleNonPaid" xml:space="preserve">
+    <value>Тип смены (неоплачиваемое время)</value>
+  </data>
+  <data name="ScheduleStart" xml:space="preserve">
+    <value>Тип смены (время начала)</value>
+  </data>
+  <data name="ScheduleEnd" xml:space="preserve">
+    <value>Тип смены (время окончания)</value>
+  </data>
+  <data name="NullableStartDate" xml:space="preserve">
+    <value>Время прихода</value>
+  </data>
+  <data name="NullableEndDate" xml:space="preserve">
+    <value>Время ухода</value>
+  </data>
+  <data name="Duration" xml:space="preserve">
+    <value>Длительность</value>
+  </data>
+  <data name="NonPaidDuration" xml:space="preserve">
+    <value>Неоплачиваемое время</value>
+  </data>
+  <data name="AttendanceName" xml:space="preserve">
+    <value>Тип явки (наименование)</value>
+  </data>
+  <data name="AttendanceCode" xml:space="preserve">
+    <value>Тип явки (код)</value>
+  </data>
+  <data name="AttendanceKoeff" xml:space="preserve">
+    <value>Тип явки (коэффициент расчета, %)</value>
+  </data>
+  <data name="AttendanceIsAttendance" xml:space="preserve">
+    <value>Тип явки (явка/неявка)</value>
+  </data>
+  <data name="DepartmentIdFrom" xml:space="preserve">
+    <value>Торговое предприятие отправитель (код)</value>
+  </data>
+  <data name="DepartmentNameFrom" xml:space="preserve">
+    <value>Торговое предприятие отправитель (наименование)</value>
+  </data>
+  <data name="JurPersonINNFrom" xml:space="preserve">
+    <value>ЮЛ отправитель (ИНН)</value>
+  </data>
+  <data name="JurPersonNameFrom" xml:space="preserve">
+    <value>ЮЛ отправитель (наименование)</value>
+  </data>
+  <data name="StoreFromCode" xml:space="preserve">
+    <value>Склад отправитель (код)</value>
+  </data>
+  <data name="StoreFromName" xml:space="preserve">
+    <value>Склад отправитель (наименование)</value>
+  </data>
+  <data name="AccountShortageCode" xml:space="preserve">
+    <value>Счет недостачи (код)</value>
+  </data>
+  <data name="AccountShortageName" xml:space="preserve">
+    <value>Счет недостачи (наименование)</value>
+  </data>
+  <data name="AccountSurplusCode" xml:space="preserve">
+    <value>Счет излишков (код)</value>
+  </data>
+  <data name="AccountSurplusName" xml:space="preserve">
+    <value>Счет излишков (наименование)</value>
+  </data>
+  <data name="DiffAmount" xml:space="preserve">
+    <value>Излишки/Недостача (количество)</value>
+  </data>
+  <data name="DiffCost" xml:space="preserve">
+    <value>Излишки/Недостача (сумма)</value>
+  </data>
+  <data name="OuterProductCode" xml:space="preserve">
+    <value>Номенклатура поставщика (код)</value>
+  </data>
+  <data name="OuterProductName" xml:space="preserve">
+    <value>Номенклатура поставщика (название)</value>
+  </data>
+  <data name="ContainerCode" xml:space="preserve">
+    <value>Тара (код)</value>
+  </data>
+  <data name="ContainerName" xml:space="preserve">
+    <value>Тара (название)</value>
+  </data>
+  <data name="NullableAmountInContainer" xml:space="preserve">
+    <value>Количество в таре</value>
+  </data>
+  <data name="SupplierStoreName" xml:space="preserve">
+    <value>Склад поставщик (наименование)</value>
+  </data>
+  <data name="SupplierStoreCode" xml:space="preserve">
+    <value>Склад поставщик (код)</value>
+  </data>
+  <data name="TypeName" xml:space="preserve">
+    <value>Тип строки (название)</value>
+  </data>
+  <data name="TypeCode" xml:space="preserve">
+    <value>Тип строки (код)</value>
+  </data>
+  <data name="SessionFiscalNumber" xml:space="preserve">
+    <value>Фискальный номер смены</value>
+  </data>
+  <data name="CashRegisterSerialNumber" xml:space="preserve">
+    <value>Серийный номер кассы</value>
+  </data>
+  <data name="OrderNumber" xml:space="preserve">
+    <value>Номер заказа</value>
+  </data>
+  <data name="OrderId" xml:space="preserve">
+    <value>Guid заказа</value>
+  </data>
+  <data name="NullableCheckNum" xml:space="preserve">
+    <value>Номер чека</value>
+  </data>
+  <data name="OrderClosed" xml:space="preserve">
+    <value>Дата и время регистрации</value>
+  </data>
+  <data name="NullableDishPrice" xml:space="preserve">
+    <value>Цена номенклатуры</value>
+  </data>
+  <data name="NullableDishAmount" xml:space="preserve">
+    <value>Количество</value>
+  </data>
+  <data name="NullableDishSumAfterDiscount" xml:space="preserve">
+    <value>Сумма продажи</value>
+  </data>
+  <data name="NullableDishDiscount" xml:space="preserve">
+    <value>Сумма скидки по позиции</value>
+  </data>
+  <data name="NullableSoldWishNds" xml:space="preserve">
+    <value>Ставка НДС по позиции</value>
+  </data>
+  <data name="NullableNdsSum" xml:space="preserve">
+    <value>Сумма НДС по позиции</value>
+  </data>
+  <data name="NullablePaymentSum" xml:space="preserve">
+    <value>Сумма оплаты</value>
+  </data>
+  <data name="NullableIsPaymentFiscal" xml:space="preserve">
+    <value>Фискальная оплата</value>
+  </data>
+  <data name="CounteragentCode" xml:space="preserve">
+    <value>Контрагент (код)</value>
+  </data>
+  <data name="CounteragentName" xml:space="preserve">
+    <value>Контрагент (наименование)</value>
+  </data>
+  <data name="DiscountId" xml:space="preserve">
+    <value>Тип скидки (код)</value>
+  </data>
+  <data name="DiscountName" xml:space="preserve">
+    <value>Тип скидки (название)</value>
+  </data>
+  <data name="NullableDiscountSum" xml:space="preserve">
+    <value>Сумма скидки</value>
+  </data>
+  <data name="RemovalTypeId" xml:space="preserve">
+    <value>Причина удаления (код)</value>
+  </data>
+  <data name="RemovalTypeName" xml:space="preserve">
+    <value>Причина удаления (название)</value>
+  </data>
+  <data name="ProductsWriteoff" xml:space="preserve">
+    <value>Списание продуктов</value>
+  </data>
+  <data name="MakeReplicationForGettingDeliveryRestrictions" xml:space="preserve">
+    <value>Отсутствуют настройки графика работ и картографии. Для их получения нужно провести репликацию.</value>
+  </data>
+  <data name="ProductAmountPercent" xml:space="preserve">
+    <value>Процент себестоимости</value>
+  </data>
+  <data name="CannotFindZoneIncludedAddress" xml:space="preserve">
+    <value>Не удалось найти точку, в зону которой входит адрес '{0}'</value>
+  </data>
+  <data name="AddressIsNotCoveredByRestarauntZone" xml:space="preserve">
+    <value>Адрес '{0}' не входит в зону покрытия ресторана</value>
+  </data>
+  <data name="DeliveryDishesReportTitle" xml:space="preserve">
+    <value>053 Блюда для приготовления доставок</value>
+  </data>
+  <data name="Identifier" xml:space="preserve">
+    <value>Идентификатор</value>
+  </data>
+  <data name="QuantityInContainer" xml:space="preserve">
+    <value>КолБазовыхУпаковок</value>
+  </data>
+  <data name="DeliverySettingsNotAvailableBeforeReplication" xml:space="preserve">
+    <value>Настройки доставки недоступны до проведения репликации с ЦО.</value>
+  </data>
+  <data name="InputMarketingSource" xml:space="preserve">
+    <value>Задайте рекламу.</value>
+  </data>
+  <data name="ChooseMarketingSource" xml:space="preserve">
+    <value>Выберите рекламу</value>
+  </data>
+  <data name="DeliveryNumberUnsetWrapper" xml:space="preserve">
+    <value>Не задан</value>
+  </data>
+  <data name="DeliverySplitByCashRegistersNumberFormat" xml:space="preserve">
+    <value>{0}*</value>
+  </data>
+  <data name="ArtSoftFiscalRegisterDriverDescription" xml:space="preserve">
+    <value>Универсальный драйвер АртСофт для фискальных регистраторов Украины</value>
+  </data>
+  <data name="ArtSoftFiscalRegisterDriverName" xml:space="preserve">
+    <value>АртСофт драйвер фискальных регистраторов Украины</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="BackOfficeIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BackOffice.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ChainOfficeIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ChainOffice.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IikoDeliveryDemandsFirstReplication" xml:space="preserve">
+    <value>Для начала работы с модулем доставки необходимо провести первую репликацию.</value>
+  </data>
+  <data name="KladrCitiesCompletionModelRegionStringFormat" xml:space="preserve">
+    <value>{0:region} ({1:regionType})</value>
+    <comment>Формат строки для региона города из КЛАДР (например, "Алтайский (край)")</comment>
+  </data>
+  <data name="KladrNewStreetForSynchronizedCityWarning" xml:space="preserve">
+    <value>Внимание, город {0} был загружен из КЛАДР.
+Вы действительно хотите добавить новую улицу?</value>
+  </data>
+  <data name="PeriodControlCurrentDay" xml:space="preserve">
+    <value>Текущий день</value>
+  </data>
+  <data name="PeriodControlCurrentMonth" xml:space="preserve">
+    <value>Текущий месяц</value>
+  </data>
+  <data name="PeriodControlCurrentPeriod" xml:space="preserve">
+    <value>Текущий период</value>
+  </data>
+  <data name="PeriodControlCurrentWeek" xml:space="preserve">
+    <value>Текущая неделя</value>
+  </data>
+  <data name="PeriodControlCurrentYear" xml:space="preserve">
+    <value>Текущий год</value>
+  </data>
+  <data name="PeriodControlCustom" xml:space="preserve">
+    <value>Другой...</value>
+  </data>
+  <data name="PeriodControlLastDay" xml:space="preserve">
+    <value>Прошлый день</value>
+  </data>
+  <data name="PeriodControlLastMonth" xml:space="preserve">
+    <value>Прошлый месяц</value>
+  </data>
+  <data name="PeriodControlLastWeek" xml:space="preserve">
+    <value>Прошлая неделя</value>
+  </data>
+  <data name="PeriodControlLastYear" xml:space="preserve">
+    <value>Прошлый год</value>
+  </data>
+  <data name="MustHaveAtLeastOneSelectedOrderType" xml:space="preserve">
+    <value>Должен быть выбран хотя бы один тип заказа</value>
+  </data>
+  <data name="ChooseDeliveryCostProduct" xml:space="preserve">
+    <value>Выберите добавляемую стоимость доставки</value>
+  </data>
+  <data name="DeliveryCostProductNotIncludedInMenu" xml:space="preserve">
+    <value>Для добавляемого блюда не задано место продажи</value>
+  </data>
+  <data name="DeliveryCostProductHasNoCookingPlaceType" xml:space="preserve">
+    <value>Для добавляемого блюда не задан тип места приготовления</value>
+  </data>
+  <data name="DeliveryCostCannotBeApplied" xml:space="preserve">
+    <value>Обратите внимание: услуга доставки не будет добавлена автоматически</value>
+  </data>
+  <data name="DeliveryCostNotSet" xml:space="preserve">
+    <value>Нет</value>
+  </data>
+  <data name="NotSelected" xml:space="preserve">
+    <value>Не выбран</value>
+  </data>
+  <data name="OrderStatusConfirmed" xml:space="preserve">
+    <value>ПОДТВЕРЖДЕН</value>
+  </data>
+  <data name="OrderStatusCreated" xml:space="preserve">
+    <value>НЕ ПРОВЕДЕН</value>
+  </data>
+  <data name="OrderStatusDespatched" xml:space="preserve">
+    <value>ОТГРУЖЕН</value>
+  </data>
+  <data name="OrderStatusDiscarded" xml:space="preserve">
+    <value>ОТМЕНЕН</value>
+  </data>
+  <data name="OrderStatusExecuted" xml:space="preserve">
+    <value>ВЫПОЛНЕН</value>
+  </data>
+  <data name="OrderStatusProcessed" xml:space="preserve">
+    <value>ПРОВЕДЕН</value>
+  </data>
+  <data name="OrderStatusReceived" xml:space="preserve">
+    <value>ПРИНЯТ</value>
+  </data>
+  <data name="OrderStatusSent" xml:space="preserve">
+    <value>ОТПРАВЛЕН</value>
+  </data>
+  <data name="OrderStatusToSend" xml:space="preserve">
+    <value>ОТПРАВЛЯЕТСЯ</value>
+  </data>
+  <data name="OrderStatusConfirmedWithChanges" xml:space="preserve">
+    <value>УТОЧНЕН</value>
+  </data>
+  <data name="UpdatePricesConfirmationDialogCancelButton" xml:space="preserve">
+    <value>Не пересчитывать</value>
+  </data>
+  <data name="UpdatePricesConfirmationDialogNoButton" xml:space="preserve">
+    <value>Пересчитать только нулевые</value>
+  </data>
+  <data name="UpdatePricesConfirmationDialogText" xml:space="preserve">
+    <value>Изменение параметров накладной может потребовать пересчета цен уже проставленных в документе.
+Пересчитать цены?</value>
+  </data>
+  <data name="UpdatePricesConfirmationDialogYesButton" xml:space="preserve">
+    <value>Пересчитать все цены</value>
+  </data>
+  <data name="RequiredEnterProductMessage" xml:space="preserve">
+    <value>Введите наименование товара</value>
+  </data>
+  <data name="MapUrlInformation" xml:space="preserve">
+    <value>Карта используется для определения зон доставки.
+    Карты Google: поддерживается новые и ранее созданные карты;
+    Карты Yandex: поддерживается только ранее созданные карты;</value>
+  </data>
+  <data name="GeocodeServiceTypeInformation" xml:space="preserve">
+    <value>Сервис геокодирования используется для определения координат по адресу. Следует использовать тот сервис, который лучше работает в вашей стране.</value>
+  </data>
+  <data name="AlcoholDeclarationJournal_Name" xml:space="preserve">
+    <value>Журнал учета объема розничной продажи алкогольной продукции</value>
+  </data>
+  <data name="SelectedTerminalNotSupportedDeliveryDelayPrediction" xml:space="preserve">
+    <value>Выбранный терминал доставки не поддерживает прогнозирование сдвига времени доставки</value>
+  </data>
+  <data name="BetweenServerAndFrontNoOneSynchronization" xml:space="preserve">
+    <value>Между сервером и точкой не было синхронизации.
+    Возможно точка не работает или прошло слишком мало времени с момента включения</value>
+  </data>
+  <data name="DataFromFrontNotActual" xml:space="preserve">
+    <value>Разные настройки мест приготовления для точки и КЦ. Пожалуйста произведите обмен данными</value>
+  </data>
+  <data name="CookingPlaceNotContainsCookFormat" xml:space="preserve">
+    <value>В месте приготовления "{0}" нет поваров с открытой личной сменой</value>
+  </data>
+  <data name="DeliveryDelayPredictionMsgFormat" xml:space="preserve">
+    <value>Прогнозируемое время доставки – {0} (время приготовления: {1}, время в пути: {2})
+Изменить время доставки на {3}?</value>
+  </data>
+  <data name="DeliveryDelayPredictionMessageFormat" xml:space="preserve">
+    <value>{0}. 
+Продолжить?</value>
+  </data>
+  <data name="DeliveryDelayPrediction" xml:space="preserve">
+    <value>Прогнозирование опоздания доставки</value>
+  </data>
+  <data name="ChangeDeliveryTime" xml:space="preserve">
+    <value>Изменить время доставки</value>
+  </data>
+  <data name="IgnorePrediction" xml:space="preserve">
+    <value>Игнорировать прогноз</value>
+  </data>
+  <data name="DeliveryPredictionDateFormat" xml:space="preserve">
+    <value>HH:mm</value>
+  </data>
+  <data name="EmptyOrganizationName" xml:space="preserve">
+    <value>Название предприятия не может быть пустым. </value>
+  </data>
+  <data name="EmptyOrganizationAddress" xml:space="preserve">
+    <value>Адрес предприятия не может быть пустым. </value>
+  </data>
+  <data name="EmptyAdminName" xml:space="preserve">
+    <value>Необходимо задать имя пользователя</value>
+  </data>
+  <data name="InvalidPhoneFormat" xml:space="preserve">
+    <value>Поле телефон пусто или задано в неверном формате.</value>
+  </data>
+  <data name="InvalidEmailFormat" xml:space="preserve">
+    <value>Поле e-mail пусто или задано в неверном формате.</value>
+  </data>
+  <data name="InvalidPassword" xml:space="preserve">
+    <value>Пароль не может быть пустым.</value>
+  </data>
+  <data name="DifferentPasswords" xml:space="preserve">
+    <value>Пароли не совпадают.</value>
+  </data>
+  <data name="IikoBizRulesAreNotSubmitted" xml:space="preserve">
+    <value>Для регистрации необходимо согласиться с регламентом {0}.</value>
+    <comment>{0} - legacy cloud API name</comment>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Зарегистрировать</value>
+  </data>
+  <data name="IikoBizOrgnanizationSettings" xml:space="preserve">
+    <value>Настройки организации {0}</value>
+    <comment>{0} - legacy cloud API name</comment>
+  </data>
+  <data name="Registration" xml:space="preserve">
+    <value>Регистрация организации в {0}</value>
+    <comment>{0} - legacy cloud API name</comment>
+  </data>
+  <data name="RegistrationSuccess" xml:space="preserve">
+    <value>
+      Была создана организация {0}. 
+      Логин для доступа: {1}. 
+      Пароль для доступа: {2}.     
+    </value>
+  </data>
+  <data name="RegistrationFailedUnsupportedCurrency" xml:space="preserve">
+    <value>{0} не поддерживает работу с установленной для вашего торгового предприятия валютой.
+Измените валюту торгового предприятия.</value>
+    <comment>{0} - legacy cloud API name</comment>
+  </data>
+  <data name="RegistrationFailedNameReserved" xml:space="preserve">
+    <value>Организация с названием '{0}' уже существует. Измените название организации.</value>
+  </data>
+  <data name="RegistrationFailed" xml:space="preserve">
+    <value>При регистрации организации произошла неизвестная ошибка.
+Для более подробной информации смотрите лог.</value>
+  </data>
+  <data name="RabbitMqConnectionError" xml:space="preserve">
+    <value>Соединение с RabbitMq не может быть установлено.</value>
+  </data>
+  <data name="RabbitMqAuthenticationError" xml:space="preserve">
+    <value>Соединение с RabbitMq не может быть установлено, проверьте логин/пароль.</value>
+  </data>
+  <data name="IikoBizTimeoutError" xml:space="preserve">
+    <value>Соединение с {0} не может быть установлено, превышено время ожидания.</value>
+    <comment>{0} - legacy cloud API name</comment>
+  </data>
+  <data name="RmsApiConnectionError" xml:space="preserve">
+    <value>Соединение с API не может быть установлено. Проверьте адрес подключения к API.</value>
+  </data>
+  <data name="MapUrlIncorrectFormatError" xml:space="preserve">
+    <value>Неверный формат ссылки на карту.</value>
+  </data>
+  <data name="DeliveryTerminalDisplayNameFormat" xml:space="preserve">
+    <value>{0} ({1})</value>
+    <comment>{0} – название терминала, {1} – название группы</comment>
+  </data>
+  <data name="RegistrationFailedInvalidPasswordForExistingUser" xml:space="preserve">
+    <value>При регистрации вы указали пользователя с электронным адресом, уже зарегистрированным на {0}, но ввели неверный пароль.
+Для регистрации организации на существующего пользователя укажите его действующий пароль для {0}.</value>
+    <comment>{0} - legacy cloud API name</comment>
+  </data>
+  <data name="DeliveryZonesUpdateFailed" xml:space="preserve">
+    <value>Не удалось обновить зоны доставки с помощью указанной ссылки.</value>
+  </data>
+  <data name="DeliveryZonesUpdateFailedServerUnavailiable" xml:space="preserve">
+    <value>Не удалось обновить зоны доставки с помощью указанной ссылки. Карта не доступна по заданной ссылке.</value>
+  </data>
+  <data name="DeliveryZonesUpdateFailedUnknownService" xml:space="preserve">
+    <value>Не удалось обновить зоны доставки с помощью указанной ссылки. Неизвестный тип карт.</value>
+  </data>
+  <data name="EgaisInvoiceDocumentFullCaption" xml:space="preserve">
+    <value>Накладная ЕГАИС №{0} от {1:d}</value>
+    <comment>&lt;&lt;untranslatable&gt;&gt;</comment>
+  </data>
+  <data name="EgaisAckStatusConfirmed" xml:space="preserve">
+    <value>ПОДТВЕРЖДЕНА</value>
+    <comment>&lt;&lt;untranslatable&gt;&gt;</comment>
+  </data>
+  <data name="EgaisAckStatusDiscarded" xml:space="preserve">
+    <value>ОТМЕНЕНА</value>
+    <comment>&lt;&lt;untranslatable&gt;&gt;</comment>
+  </data>
+  <data name="EgaisAckStatusReceived" xml:space="preserve">
+    <value>ПОЛУЧЕНА</value>
+    <comment>&lt;&lt;untranslatable&gt;&gt;</comment>
+  </data>
+  <data name="AddFreeProdcut" xml:space="preserve">
+    <value>Добавьте подарок</value>
+  </data>
+  <data name="EgaisReturnedInvoiceDocumentFullCaption" xml:space="preserve">
+    <value>Возвратная накладная ЕГАИС №{0} от {1:d}</value>
+    <comment>&lt;&lt;untranslatable&gt;&gt;</comment>
+  </data>
+  <data name="EgaisOutgoingInvoiceStatusToSend" xml:space="preserve">
+    <value>Накладная отправляется</value>
+    <comment>&lt;&lt;untranslatable&gt;&gt;</comment>
+  </data>
+  <data name="EgaisOutgoingInvoiceStatusSent" xml:space="preserve">
+    <value>Накладная отправлена</value>
+    <comment>&lt;&lt;untranslatable&gt;&gt;</comment>
+  </data>
+  <data name="EgaisOutgoingInvoiceStatusErrorToSend" xml:space="preserve">
+    <value>Ошибка отправки накладной в УТМ</value>
+    <comment>&lt;&lt;untranslatable&gt;&gt;</comment>
+  </data>
+  <data name="EgaisOutgoingInvoiceStatusConfirmedByEgais" xml:space="preserve">
+    <value>Принята ЕГАИС</value>
+    <comment>&lt;&lt;untranslatable&gt;&gt;</comment>
+  </data>
+  <data name="EgaisOutgoingInvoiceStatusRejectedByEgais" xml:space="preserve">
+    <value>Не принято в ЕГАИС</value>
+    <comment>&lt;&lt;untranslatable&gt;&gt;</comment>
+  </data>
+  <data name="EgaisOutgoingInvoiceStatusConfirmedByRecipient" xml:space="preserve">
+    <value>Подтверждена получателем</value>
+    <comment>&lt;&lt;untranslatable&gt;&gt;</comment>
+  </data>
+  <data name="EgaisOutgoingInvoiceStatusRejectedByRecipient" xml:space="preserve">
+    <value>Отменена получателем</value>
+    <comment>&lt;&lt;untranslatable&gt;&gt;</comment>
+  </data>
+  <data name="EgaisOutgoingInvoiceStatusConfirmedWithChangesByRecipient" xml:space="preserve">
+    <value>Подтверждена с расхождениями</value>
+    <comment>&lt;&lt;untranslatable&gt;&gt;</comment>
+  </data>
+  <data name="EgaisOutgoingInvoiceStatusAnswerToSend" xml:space="preserve">
+    <value>Ответ отправляется</value>
+    <comment>&lt;&lt;untranslatable&gt;&gt;</comment>
+  </data>
+  <data name="EgaisOutgoingInvoiceStatusAnswerSent" xml:space="preserve">
+    <value>Ответ отправлен</value>
+    <comment>&lt;&lt;untranslatable&gt;&gt;</comment>
+  </data>
+  <data name="EgaisOutgoingInvoiceStatusErrorToSendAnswer" xml:space="preserve">
+    <value>Ошибка отправки ответа</value>
+    <comment>&lt;&lt;untranslatable&gt;&gt;</comment>
+  </data>
+  <data name="EgaisOutgoingInvoiceStatusConfirmed" xml:space="preserve">
+    <value>Подтверждена ЕГАИС</value>
+    <comment>&lt;&lt;untranslatable&gt;&gt;</comment>
+  </data>
+  <data name="EgaisOutgoingInvoiceStatusRejected" xml:space="preserve">
+    <value>Отменена ЕГАИС</value>
+    <comment>&lt;&lt;untranslatable&gt;&gt;</comment>
+  </data>
+  <data name="IncorrectEgaisStatusForOperation" xml:space="preserve">
+    <value>Документ находится в статусе {0}. Выполнение операции невозможно.</value>
+    <comment>&lt;&lt;untranslatable&gt;&gt;</comment>
+  </data>
+  <data name="AmountInEgaisInvoiceItemsRequired" xml:space="preserve">
+    <value>В элементах накладной не проставлено количество. Выполнение операции невозможно.</value>
+    <comment>&lt;&lt;untranslatable&gt;&gt;</comment>
+  </data>
+  <data name="DateIncomingInEgaisInvoiceRequired" xml:space="preserve">
+    <value>Не заполнена дата приемки документа. Выполнение операции невозможно.</value>
+    <comment>&lt;&lt;untranslatable&gt;&gt;</comment>
+  </data>
+  <data name="DocumentNumberInEgaisInvoiceRequired" xml:space="preserve">
+    <value>Не заполнен номер документа приемки. Выполнение операции невозможно.</value>
+    <comment>&lt;&lt;untranslatable&gt;&gt;</comment>
+  </data>
+  <data name="EgaisOutgoingInvocieEmptyProductListErrorMessage" xml:space="preserve">
+    <value>Список товаров в накладной пуст. Выполнение операции невозможно.</value>
+    <comment>&lt;&lt;untranslatable&gt;&gt;</comment>
+  </data>
+  <data name="EgaisOutgoingInvocieAmountProductSummaryIsZeroErrorMessage" xml:space="preserve">
+    <value>Количество возвращаемого товара равно нулю. Выполнение операции невозможно.</value>
+    <comment>&lt;&lt;untranslatable&gt;&gt;</comment>
+  </data>
+  <data name="EdiSystemTypeInternal" xml:space="preserve">
+    <value>Внутренние заказы</value>
+  </data>
+  <data name="EdiSystemTypeKontur" xml:space="preserve">
+    <value>Контур EDI</value>
+  </data>
+  <data name="EdiSystemTypeExternal" xml:space="preserve">
+    <value>Системы EDI, подключенные по REST-API</value>
+  </data>
+  <data name="NotSpecifiedUserMainRole" xml:space="preserve">
+    <value>У пользователя {0} не задана основная должность.</value>
+  </data>
+  <data name="CustomerEmailIncorrect" xml:space="preserve">
+    <value>Введенный email клиента некорректен.</value>
+  </data>
+  <data name="EgaisBalanceDocumentFullCaption" xml:space="preserve">
+    <value>{0} на {1:d}</value>
+    <comment>&lt;&lt;untranslatable&gt;&gt;</comment>
+  </data>
+  <data name="EgaisMarkBalanceQueryFullCaption" xml:space="preserve">
+    <value>Запрос баланса штрихкодов (регистр 3) {0:d}</value>
+    <comment>&lt;&lt;untranslatable&gt;&gt;</comment>
+  </data>
+  <data name="EgaisMarkConfirmFullCaption" xml:space="preserve">
+    <value>Подтверждение марок в {1} {0:d}</value>
+    <comment>&lt;&lt;untranslatable&gt;&gt;</comment>
+  </data>
+  <data name="EgaisMarkFixFullCaption" xml:space="preserve">
+    <value>Акт фиксации штрихкодов (на регистр 3) {0:d}</value>
+    <comment>&lt;&lt;untranslatable&gt;&gt;</comment>
+  </data>
+  <data name="EgaisMarkUnFixFullCaption" xml:space="preserve">
+    <value>Акт отмены фиксации штрихкодов (с регистра 3) {0:d}</value>
+    <comment>&lt;&lt;untranslatable&gt;&gt;</comment>
+  </data>
+  <data name="EgaisShopIncomingFullCaption" xml:space="preserve">
+    <value>Акт постановки на баланс в торговом зале (на регистр 2) {0} {1:d}</value>
+    <comment>&lt;&lt;untranslatable&gt;&gt;</comment>
+  </data>
+  <data name="EgaisShopTransferToShopFullCaption" xml:space="preserve">
+    <value>Передача в торговый зал (на регистр 2) {0:d}</value>
+    <comment>&lt;&lt;untranslatable&gt;&gt;</comment>
+  </data>
+  <data name="EgaisShopTransferFromShopFullCaption" xml:space="preserve">
+    <value>Возврат из торгового зала (на регистр 1) {0:d}</value>
+    <comment>&lt;&lt;untranslatable&gt;&gt;</comment>
+  </data>
+  <data name="EgaisShopWriteoffSecondRegisterFullCaption" xml:space="preserve">
+    <value>Акт списания из торгового зала (с регистра 2) {0} {1:d}</value>
+    <comment>&lt;&lt;untranslatable&gt;&gt;</comment>
+  </data>
+  <data name="EgaisRequestRepealIncomingInvoiceActFullCaption" xml:space="preserve">
+    <value>Отмена приходной накладной {0} {1:d}</value>
+    <comment>&lt;&lt;untranslatable&gt;&gt;</comment>
+  </data>
+  <data name="EgaisRequestRepealOutgoingInvoiceActFullCaption" xml:space="preserve">
+    <value>Отмена расходной/возвратной накладной {0} {1:d}</value>
+    <comment>&lt;&lt;untranslatable&gt;&gt;</comment>
+  </data>
+  <data name="EgaisRequestRepealShopIncomingFullCaption" xml:space="preserve">
+    <value>Отмена акта постановки на баланс {0} {1:d}</value>
+    <comment>&lt;&lt;untranslatable&gt;&gt;</comment>
+  </data>
+  <data name="EgaisRequestRepealShopWriteoffFullCaption" xml:space="preserve">
+    <value>Отмена акта списания {0} {1:d}</value>
+    <comment>&lt;&lt;untranslatable&gt;&gt;</comment>
+  </data>
+  <data name="EgaisRequestRepealUnknownFullCaption" xml:space="preserve">
+    <value>Отмена документа ЕГАИС {0} {1:d}</value>
+    <comment>&lt;&lt;untranslatable&gt;&gt;</comment>
+  </data>
+  <data name="EgaisQueryProductFullCaption" xml:space="preserve">
+    <value>Запрос справочника продукции {0}{1:d}</value>
+    <comment>&lt;&lt;untranslatable&gt;&gt;</comment>
+  </data>
+  <data name="EgaisQueryOrganizationFullCaption" xml:space="preserve">
+    <value>Запрос справочника организаций {0}{1:d}</value>
+    <comment>&lt;&lt;untranslatable&gt;&gt;</comment>
+  </data>
+  <data name="EgaisQueryFormAFullCaption" xml:space="preserve">
+    <value>Запрос справки 1 {0}{1:d}</value>
+    <comment>&lt;&lt;untranslatable&gt;&gt;</comment>
+  </data>
+  <data name="ModelDoesNotSupportOfd" xml:space="preserve">
+    <value>Данная модель не поддерживает работу с ФН</value>
+  </data>
+  <data name="ModelMustSupportOfd" xml:space="preserve">
+    <value>Данная модель работает только в режиме поддержки ФН</value>
+  </data>
+  <data name="CashRegisterArtSoftDatecs" xml:space="preserve">
+    <value>Датекс (Datecs FP3530T, ЕКСЕЛЛІО FPU-550, ЕКСЕЛЛІО FPU-260, ЕКСЕЛЛІО LP-1000, ЕКСЕЛЛІО FP-700, ЕКСЕЛЛІО FP-2000)</value>
+  </data>
+  <data name="CashRegisterArtSoftIkc" xml:space="preserve">
+    <value>IKC (IKС-483 LT, Е260Т, E-810T, MG-T808TL, N707TS(RS-232), РФ 2160.05)</value>
+  </data>
+  <data name="CashRegisterArtSoftKrypton" xml:space="preserve">
+    <value>Криптон (Datecs FP3530T, Datecs FP-3141T, Datecs FP-T260, Datecs CMP-10)</value>
+  </data>
+  <data name="CashRegisterArtSoftMaria" xml:space="preserve">
+    <value>Мария (Мария 301МТМ, Мария-304Т, Мария-304Т1, Мария-304Т2, ПРАЙД-400)</value>
+  </data>
+  <data name="CashRegisterArtSoftMiniFP" xml:space="preserve">
+    <value>MIНI-ФП4, MIНI-ФП6</value>
+  </data>
+  <data name="CashRegisterArtSoftMiniFP2" xml:space="preserve">
+    <value>МІНІ-ФП54.01, МІНІ-ФП81.01</value>
+  </data>
+  <data name="CashRegisterArtSoftEthernet" xml:space="preserve">
+    <value>MG N707TS (TCP/IP), IPOS.XM (TCP/IP)</value>
+  </data>
+  <data name="PiritFnDriverDescriptionFiscalRegister" xml:space="preserve">
+    <value>Фискальный регистратор Pirit (с ФН)</value>
+    <comment>Pirit</comment>
+  </data>
+  <data name="PiritFnDriverName" xml:space="preserve">
+    <value>Pirit с ФН</value>
+    <comment>Pirit</comment>
+  </data>
+  <data name="MenuTemplateFullCaption" xml:space="preserve">
+    <value>Шаблон приказов</value>
+  </data>
+  <data name="ScheduledPaymentNotPaid" xml:space="preserve">
+    <value>не оплачен</value>
+  </data>
+  <data name="ScheduledPaymentPaid" xml:space="preserve">
+    <value>оплачен</value>
+  </data>
+  <data name="ScheduledPeriodMonth" xml:space="preserve">
+    <value>раз в месяц</value>
+  </data>
+  <data name="ScheduledPeriodOneDay" xml:space="preserve">
+    <value>ежедневно</value>
+  </data>
+  <data name="ScheduledPeriodQuater" xml:space="preserve">
+    <value>раз в квартал</value>
+  </data>
+  <data name="ScheduledPeriodTenDays" xml:space="preserve">
+    <value>каждые 10 дней</value>
+  </data>
+  <data name="ScheduledPeriodThreeDays" xml:space="preserve">
+    <value>каждые три дня</value>
+  </data>
+  <data name="ScheduledPeriodWeek" xml:space="preserve">
+    <value>каждую неделю</value>
+  </data>
+  <data name="ScheduledPeriodYear" xml:space="preserve">
+    <value>раз в год</value>
+  </data>
+  <data name="AzimuthFnPrimDriverName" xml:space="preserve">
+    <value>ПРИМ-ФР с ФН (Azimuth)</value>
+  </data>
+  <data name="AzimuthFnPrimDriverDescriptionFiscalRegister" xml:space="preserve">
+    <value>Фискальный регистратор ПРИМ-ФР с ФН (Azimuth)</value>
+  </data>
+  <data name="EgaisOutgoingInvoiceDocumentFullCaption" xml:space="preserve">
+    <value>Расходная накладная ЕГАИС №{0} {1:d}</value>
+    <comment>&lt;&lt;untranslatable&gt;&gt;</comment>
+  </data>
+  <data name="EgaisNewOutgoingInvoiceDocumnetFullCaption" xml:space="preserve">
+    <value>Новая расходная накладная ЕГАИС</value>
+    <comment>&lt;&lt;untranslatable&gt;&gt;</comment>
+  </data>
+  <data name="EgaisOutgoingInvoiceAmountOfProductSentIsZeroErrorMessage" xml:space="preserve">
+    <value>Количество отправляемого товара равно нулю. Выполнение операции невозможно.</value>
+    <comment>&lt;&lt;untranslatable&gt;&gt;</comment>
+  </data>
+  <data name="EgaisOutgoingInvoicePrevBregIdIsEmptyErrorMessage" xml:space="preserve">
+    <value>Нельзя отправить документ с записью без справки 2.</value>
+    <comment>&lt;&lt;untranslatable&gt;&gt;</comment>
+  </data>
+  <data name="EgaisOutgoingInvoiceDeletedErrorMessage" xml:space="preserve">
+    <value>Накладная удалена. Выполнение операции невозможно.</value>
+    <comment>&lt;&lt;untranslatable&gt;&gt;</comment>
+  </data>
+  <data name="EgaisShopWriteoffFirstRegisterFullCaption" xml:space="preserve">
+    <value>Акт списания со склада (с регистра 1) {0} {1:d}</value>
+    <comment>&lt;&lt;untranslatable&gt;&gt;</comment>
+  </data>
+  <data name="IikoCard5SyncSucceeded" xml:space="preserve">
+    <value>Принудительная синхронизация успешно запущена.</value>
+  </data>
+  <data name="EgaisShopWriteoffNoRegisterFullCaption" xml:space="preserve">
+    <value>Акт списания {0} {1:d}</value>
+    <comment>&lt;&lt;untranslatable&gt;&gt;</comment>
+  </data>
+  <data name="PresetEditorMinutesBeforeCurrentTime" xml:space="preserve">
+    <value>Минут до текущего времени</value>
+  </data>
+  <data name="IikoCard5SyncFailed" xml:space="preserve">
+    <value>Не удалось запустить принудительную синхронизацию.</value>
+  </data>
+  <data name="EditPresetCaption" xml:space="preserve">
+    <value>Редактирование фильтра</value>
+  </data>
+  <data name="NewPresetNameCaption" xml:space="preserve">
+    <value>Добавление нового фильтра</value>
+  </data>
+  <data name="NotFoundDefaultPreset" xml:space="preserve">
+    <value>Сначала задайте другой пресет, который будет использоваться как начальный.</value>
+  </data>
+  <data name="PresetEditorEmptyName" xml:space="preserve">
+    <value>Название не может быть пустым.</value>
+  </data>
+  <data name="EgaisInvoiceRejectedErrorMessage" xml:space="preserve">
+    <value>Повторная отправка уже принятых УТМ документов запрещена. Текущий статус документа: {0}</value>
+    <comment>&lt;&lt;untranslatable&gt;&gt;</comment>
+  </data>
+  <data name="FoodcostMinPriceSourceInvoice" xml:space="preserve">
+    <value>Накладная</value>
+  </data>
+  <data name="FoodcostMinPriceSourceSupplierPriceList" xml:space="preserve">
+    <value>Прайс-лист поставщика</value>
+  </data>
+  <data name="FoodcostMinPriceSourcePriceList" xml:space="preserve">
+    <value>Внутренний прайс-лист</value>
+  </data>
+  <data name="FoodcostRecommendationSupplier" xml:space="preserve">
+    <value>Поставщик</value>
+  </data>
+  <data name="FoodcostRecommendationMarkup" xml:space="preserve">
+    <value>Наценка</value>
+  </data>
+  <data name="FoodcostRecommendationLosses" xml:space="preserve">
+    <value>Ожидаются потери</value>
+  </data>
+  <data name="DeliveryCostProductShouldNotContainRequiredModifiers" xml:space="preserve">
+    <value>Добавляемое блюдо не должно содержать обязательные модификаторы.</value>
+  </data>
+  <data name="ChequePrinterStubExternalVirtualCashNonFiscal" xml:space="preserve">
+    <value>Внешняя (виртуальная) касса</value>
+  </data>
+  <data name="CommittentDefault" xml:space="preserve">
+    <value>Не указан</value>
+  </data>
+  <data name="EgaisShopWriteofNoRegisterShortCaption" xml:space="preserve">
+    <value>№ {0} от {1:d} {2}</value>
+    <comment>&lt;&lt;untranslatable&gt;&gt;</comment>
+  </data>
+  <data name="EgaisQueryNotAnsweredInvoicesFullCaption" xml:space="preserve">
+    <value>Запрос необработанных ТТН {0}{1:d}</value>
+    <comment>&lt;&lt;untranslatable&gt;&gt;</comment>
+  </data>
+  <data name="EgaisQueryResendInvoiceDocumentFullCaption" xml:space="preserve">
+    <value>Повторный запрос ТТН {0}{1:d}</value>
+    <comment>&lt;&lt;untranslatable&gt;&gt;</comment>
+  </data>
+  <data name="DateTimeUtilsAssertDateErrorMask" xml:space="preserve">
+    <value>Выберите дату после начала текущего периода ({0})</value>
+  </data>
+  <data name="CustomerPersonalDataConsentIsUnknown" xml:space="preserve">
+    <value>Необходимо указать, получено ли от гостя согласие на обработку персональных данных.</value>
+  </data>
+  <data name="DiscountSettingsPageNoServiceTypeSelectedErrorMessage" xml:space="preserve">
+    <value>Необходимо указать хотя бы один режим обслуживания.</value>
+  </data>
+  <data name="ReaderDeviceType" xml:space="preserve">
+    <value>Тип</value>
+  </data>
+  <data name="NullDriverDescription" xml:space="preserve">
+    <value>Без модели</value>
+  </data>
+  <data name="AddressUaeStreetFormat" xml:space="preserve">
+    <value>{0}</value>
+  </data>
+  <data name="UaeAddressDetailsFormat" xml:space="preserve">
+    <value>{0}</value>
+  </data>
+  <data name="BP21DriverName" xml:space="preserve">
+    <value>АТОЛ BP21</value>
+  </data>
+  <data name="BP21DriverDescription" xml:space="preserve">
+    <value>Принтер этикеток АТОЛ BP21</value>
+  </data>
+  <data name="BP41DriverName" xml:space="preserve">
+    <value>АТОЛ BP41</value>
+  </data>
+  <data name="BP41DriverDescription" xml:space="preserve">
+    <value>Принтер этикеток АТОЛ BP41</value>
+  </data>
+  <data name="TsplDriverName" xml:space="preserve">
+    <value>Принтер этикеток (протокол TSPL)</value>
+  </data>
+  <data name="TsplDriverDescription" xml:space="preserve">
+    <value>Принтер этикеток (протокол TSPL)</value>
+  </data>
+  <data name="UsePrinterCodepage" xml:space="preserve">
+    <value>Кодовая страница принтера</value>
+  </data>
+  <data name="Graphic_Gs_v_0" xml:space="preserve">
+    <value>GS v 0 (Graphic)</value>
+    <comment>&lt;&lt;untranslatable&gt;&gt;</comment>
+  </data>
+  <data name="Graphic_Gs_28_L" xml:space="preserve">
+    <value>GS ( L (Graphic)</value>
+    <comment>&lt;&lt;untranslatable&gt;&gt;</comment>
+  </data>
+  <data name="VIPСourse" xml:space="preserve">
+    <value>VIP</value>
+  </data>
+  <data name="CourseFormat" xml:space="preserve">
+    <value>Курс {0}</value>
+  </data>
+  <data name="CheckboxDriverDescription" xml:space="preserve">
+    <value>Checkbox</value>
+  </data>
+  <data name="CheckboxDriverName" xml:space="preserve">
+    <value>Checkbox</value>
+  </data>
+  <data name="CloseWithoutSave" xml:space="preserve">
+    <value>Закрыть без сохранения</value>
+  </data>
+  <data name="PoscenterDriverDescription" xml:space="preserve">
+    <value>Принтер Poscenter DX-2824G</value>
+  </data>
+  <data name="PoscenterDriverName" xml:space="preserve">
+    <value>Poscenter DX-2824G</value>
+  </data>
+</root>

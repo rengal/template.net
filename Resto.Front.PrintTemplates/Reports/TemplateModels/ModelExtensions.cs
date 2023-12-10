@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Resto.Framework.Attributes.JetBrains;
+using Resto.Framework.Common;
 using Resto.Front.PrintTemplates.RmsEntityWrappers;
 
 namespace Resto.Front.PrintTemplates.Reports.TemplateModels

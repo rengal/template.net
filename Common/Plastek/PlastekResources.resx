@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="SvcUnhandledDescription" xml:space="preserve">
+    <value>Необработанная ошибка WEB сервиса ПЛАС-ТЕК</value>
+  </data>
+  <data name="GenericDescription" xml:space="preserve">
+    <value>Другие ошибки, источник неизвестен</value>
+  </data>
+  <data name="OkDescription" xml:space="preserve">
+    <value>Успешное выполнение</value>
+  </data>
+  <data name="UninitializedDescription" xml:space="preserve">
+    <value>Ошибка инициализации объекта PT</value>
+  </data>
+  <data name="AuthenticationErrorDescription" xml:space="preserve">
+    <value>Ошибка аутентификации пользователя на сервере, имя или пароль введены неверно</value>
+  </data>
+  <data name="AuthorizationErrorDescription" xml:space="preserve">
+    <value>Пользователь не имеет прав для совершения операции</value>
+  </data>
+  <data name="GeneralErrorDescription" xml:space="preserve">
+    <value>Критическая ошибка WEB сервиса, возникает при нарушениях прав доступа к процедурам и таблицам сервера процессинга</value>
+  </data>
+  <data name="DatabaseErrorDescription" xml:space="preserve">
+    <value>Критическая ошибка базы данных, возникает при нарушениях прав доступа к процедурам и таблицам сервера процессинга</value>
+  </data>
+  <data name="DatabaseConnectErrorDescription" xml:space="preserve">
+    <value>Потеряно соединение между WEB интерфейсом и базой данных процессинга</value>
+  </data>
+  <data name="ItemExistsDescription" xml:space="preserve">
+    <value>Попытка повторной активации карты</value>
+  </data>
+  <data name="InvalidCardDescription" xml:space="preserve">
+    <value>Попытка использования карты, не активированной ранее</value>
+  </data>
+  <data name="InvalidPinDescription" xml:space="preserve">
+    <value>Введен неверный ПИН-код клиента</value>
+  </data>
+  <data name="ExpiredCardDescription" xml:space="preserve">
+    <value>Предъявленная карта устарела и была выведена из обращения автоматически</value>
+  </data>
+  <data name="ActiveCardDescription" xml:space="preserve">
+    <value>Попытка разблокировки активной карты</value>
+  </data>
+  <data name="InactiveCardDescription" xml:space="preserve">
+    <value>Попытка использования заблокированной карты</value>
+  </data>
+  <data name="StoppedCardDescription" xml:space="preserve">
+    <value>Попытка блокировки карты, уже блокированной ранее</value>
+  </data>
+  <data name="CanceledCardDescription" xml:space="preserve">
+    <value>Попытка использования отмененной ранее карты</value>
+  </data>
+  <data name="InsufficientBalanceDescription" xml:space="preserve">
+    <value>Текущий баланс карты менее суммы оплаты</value>
+  </data>
+  <data name="InvalidMerchantDescription" xml:space="preserve">
+    <value>Попытка обслуживания карты "чужой" торговой сети</value>
+  </data>
+  <data name="MaxAmountErrorDescription" xml:space="preserve">
+    <value>Операция не может быть выполнена, т.к. ее завершение нарушит установленные лимиты баланса карты</value>
+  </data>
+  <data name="DataNotFoundDescription" xml:space="preserve">
+    <value>Недействительные входные данные запроса</value>
+  </data>
+  <data name="InvalidLocationDescription" xml:space="preserve">
+    <value>Недействительный идентификатор места установки</value>
+  </data>
+  <data name="InvalidTerminalDescription" xml:space="preserve">
+    <value>Недействительный идентификатор терминала</value>
+  </data>
+  <data name="InvalidUserDescription" xml:space="preserve">
+    <value>Недействительное имя пользователя</value>
+  </data>
+  <data name="InvalidPasswordDescription" xml:space="preserve">
+    <value>Неверный пароль для существующего пользователя</value>
+  </data>
+  <data name="InvalidGroupDescription" xml:space="preserve">
+    <value>Недействительная группа пользователей</value>
+  </data>
+  <data name="InvalidOperationDescription" xml:space="preserve">
+    <value>Запрошена недействительная операция</value>
+  </data>
+  <data name="NonReloadableCardDescription" xml:space="preserve">
+    <value>Карта не может быть пополнена, т.к. такое действие не предусмотрено программой лояльности для данного типа карт</value>
+  </data>
+  <data name="InvalidProgramDescription" xml:space="preserve">
+    <value>Запрошенная программа лояльности не действует для продавца</value>
+  </data>
+  <data name="TooMuchDataDescription" xml:space="preserve">
+    <value>Объем возвращаемых данных превышает разрешенный лимит, например при генерации отчета по операциям</value>
+  </data>
+  <data name="InvalidParamDescription" xml:space="preserve">
+    <value>Установлено недопустимое значение одного из входных параметров</value>
+  </data>
+  <data name="MinAmountErrorDescription" xml:space="preserve">
+    <value>Сумма активации карты меньше минимальной суммы, заданной настройками программы лояльности</value>
+  </data>
+  <data name="CustomerLoginExistsDescription" xml:space="preserve">
+    <value>Имя, используемое клиентом при регистрации, уже занято</value>
+  </data>
+  <data name="CustomerRegisteredDescription" xml:space="preserve">
+    <value>Пользователь с указанным именем и номером паспорта уже зарегистрирован</value>
+  </data>
+  <data name="CustomerPassportRegisteredDescription" xml:space="preserve">
+    <value>Пользователь с указанным номером паспорта уже зарегистрирован</value>
+  </data>
+  <data name="CardNotRegisteredDescription" xml:space="preserve">
+    <value>Карта не зарегистрирована пользователем</value>
+  </data>
+  <data name="CardRegisteredDescription" xml:space="preserve">
+    <value>Карта уже зарегистрирована пользователем</value>
+  </data>
+  <data name="CardRegisteredAnotherLoginDescription" xml:space="preserve">
+    <value>Карта уже зарегистрирована другим пользователем</value>
+  </data>
+  <data name="CardAssignedDescription" xml:space="preserve">
+    <value>Карта принадлежит незарегистрированному пользователю</value>
+  </data>
+  <data name="OperationDelayedDescription" xml:space="preserve">
+    <value>Необходимо подождать, т.к. не прошло заданное время после предыдущей операции "Активация карты" или "Пополнение"</value>
+  </data>
+  <data name="AmountStepErrorDescription" xml:space="preserve">
+    <value>При пополнении карты нарушен заданный шаг пополнения</value>
+  </data>
+  <data name="InvalidTraceNumberDescription" xml:space="preserve">
+    <value>Номер операции (при автоматической отмене или восстановлении после сбоя) не соответствует данным сервера</value>
+  </data>
+  <data name="InvalidShiftDescription" xml:space="preserve">
+    <value>Номер смены, переданный в запросе, не совпадает с текущим номером смены терминала по данным сервера</value>
+  </data>
+  <data name="InvalidDistributorDescription" xml:space="preserve">
+    <value>Торговая сеть, инициировавшая операцию по карте, не входит в число разрешенных</value>
+  </data>
+  <data name="AuthorizedCardDescription" xml:space="preserve">
+    <value>Операция по карте отклонена, т.к. карта уже находится в авторизованном состоянии и другие операции недоступны, до завершения авторизации</value>
+  </data>
+  <data name="NotAuthorizedCardDescription" xml:space="preserve">
+    <value>Попытка завершения авторизации карты отклонена, т.к. карта не была предварительно авторизована</value>
+  </data>
+  <data name="InvalidAuthorizationDescription" xml:space="preserve">
+    <value>Передан неверный код авторизации (при завершении авторизации)</value>
+  </data>
+  <data name="InvalidAuthorizationAmountDescription" xml:space="preserve">
+    <value>Сумма, указанная в завершении авторизации, превышает авторизованную ранее сумму</value>
+  </data>
+  <data name="RedeemLimitErrorDescription" xml:space="preserve">
+    <value>Для карточной программы действует ограничение на допустимое количество операций "Оплата", которое было нарушено</value>
+  </data>
+  <data name="AuthDelayErrorDescription" xml:space="preserve">
+    <value>Доступ к функциям процессинга для данного терминала временно заблокирован по соображениям безопасности</value>
+  </data>
+  <data name="ConnectionErrorDescription" xml:space="preserve">
+    <value>Ошибка подключения к WEB сервису ПЛАС-ТЕК</value>
+  </data>
+  <data name="UnknownDescription" xml:space="preserve">
+    <value>Неизвестная ошибка WEB сервиса ПЛАС-ТЕК</value>
+  </data>
+  <data name="IncorrectServiceUriSchemeFormat" xml:space="preserve">
+    <value>Задан неверный протокол адреса WEB сервиса ПЛАС-ТЕК. Ожидаемое значение - «{0}», текущее значение - «{1}».</value>
+  </data>
+</root>

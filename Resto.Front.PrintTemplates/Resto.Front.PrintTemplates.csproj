@@ -6,4 +6,14 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="RazorEngine" Version="3.9.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Common\OfficeCommon.csproj" />
+    <ProjectReference Include="..\Resto.Framework\Resto.Framework.csproj" />
+    <ProjectReference Include="..\Resto.Front.Localization\Resto.Front.Localization.csproj" />
+  </ItemGroup>
+
 </Project>

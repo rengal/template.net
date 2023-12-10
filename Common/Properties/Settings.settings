@@ -1,0 +1,42 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Resto.Common.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="IIKO_APPDATA_SUBPATH" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">iiko</Value>
+    </Setting>
+    <Setting Name="RMS_EDITION_SUBPATH" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Rms</Value>
+    </Setting>
+    <Setting Name="CHAIN_EDITION_SUBPATH" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Chain</Value>
+    </Setting>
+    <Setting Name="BACK_LOG_FILENAME" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">back-log.log</Value>
+    </Setting>
+    <Setting Name="MAX_DECIMAL_VALUE" Type="System.Decimal" Scope="Application">
+      <Value Profile="(Default)">999999999.999999999</Value>
+    </Setting>
+    <Setting Name="HELP_URI" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://{language}.help.iikosoftware.com/articles/#!iikooffice/{topic}</Value>
+    </Setting>
+    <Setting Name="SERVICE_METHOD_TIMEOUT_MILLISECONDS" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">259200000</Value>
+    </Setting>
+    <Setting Name="GETTING_SERVER_INFO_TIMEOUT_MILLISECONDS" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">10000</Value>
+    </Setting>
+    <Setting Name="SERVER_INFO_PAGE_ADDRESS" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">{0}://{1}:{2}{3}/get_server_info.jsp?encoding=UTF-8</Value>
+    </Setting>
+    <Setting Name="PluginsDirectoryRelativePath" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Plugins</Value>
+    </Setting>
+    <Setting Name="IgnoreCleverenceDriverDriverExceptions" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="LogFileAgeDays" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">90</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

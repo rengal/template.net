@@ -46,6 +46,27 @@ namespace Resto.Framework.Common
         }
 
         /// <summary>
+        /// Returns the source sequence prefixed with the specified value.
+        /// </summary>
+        /// <typeparam name="TSource">Source sequence element type.</typeparam>
+        /// <param name="source">Source sequence.</param>
+        /// <param name="values">Values to prefix the sequence with.</param>
+        /// <returns>Sequence starting with the specified prefix value, followed by the source sequence.</returns>
+        public static IEnumerable<TSource> StartWith<TSource>(
+            this IEnumerable<TSource> source,
+            params TSource[] values)
+        {
+            foreach (TSource value in values)
+            {
+                yield return value; // Yield the values first
+            }
+            foreach (TSource item in source)
+            {
+                yield return item; // Then yield the elements from the source
+            }
+        }
+
+        /// <summary>
         /// Возвращает последовательность, образованную добавлением <paramref name="items"/> в
         /// конец последовательности <paramref name="sequence"/>.
         /// </summary>

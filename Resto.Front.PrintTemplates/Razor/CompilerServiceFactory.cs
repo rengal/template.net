@@ -4,10 +4,10 @@ using System.Linq;
 using Resto.Framework.Attributes.JetBrains;
 using RazorEngine;
 using RazorEngine.Compilation;
-using RazorEngine.Compilation.CSharp;
 using RazorEngine.Compilation.ReferenceResolver;
 using RazorEngine.Configuration;
 using RazorEngine.Templating;
+using RazorEngine.Roslyn.CSharp;
 
 namespace Resto.Front.PrintTemplates.Razor
 {
@@ -42,7 +42,7 @@ namespace Resto.Front.PrintTemplates.Razor
         public ICompilerService CreateCompilerService(Language language)
         {
             if (language == Language.CSharp)
-                return new CSharpDirectCompilerService();
+                return new CSharpRoslynCompilerService();
 
             throw new ArgumentException($"Language '{language}' not supported.");
         }

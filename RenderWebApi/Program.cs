@@ -5,6 +5,7 @@ using Resto.Framework.Common;
 using Resto.Framework.Common.Currency;
 using Resto.Framework.Data;
 using Resto.Front.PrintTemplates.Cheques.Resources;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -36,6 +37,7 @@ var corporation = new Corporation(Guid.NewGuid(), string.Empty, ChequesPreviewLo
     new StoreAccountingSettings());
 
 CurrencyHelper.SetCurrencyProviderResolver(() => corporation);
+Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

@@ -6,6 +6,8 @@ using System.Xml;
 using System.Xml.Schema;
 using Resto.Framework.Attributes.JetBrains;
 using log4net;
+using Resto.Framework.Properties;
+using System.Xml.Xsl;
 
 namespace Resto.Framework.Common.Print.VirtualTape
 {
@@ -25,12 +27,19 @@ namespace Resto.Framework.Common.Print.VirtualTape
         [NotNull]
         private static XmlReaderSettings CreateXmlReaderSettingsForValidate()
         {
-            XmlSchema schema;
-            using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("Resto.Framework.Src.Common.Print.Doc.xsd"))
-            {
-                Debug.Assert(stream != null);
-                schema = XmlSchema.Read(stream, SchemaValidationEventHandler);
-            }
+            //temp.Load(XmlReader.Create(new StringReader(ResourceFile.DocPreprocess1)));
+            // var temp = new XslCompiledTransform();
+            // temp.Load(XmlReader.Create(new StringReader(ResourceFile.DocPreprocess1)));
+            // return temp;
+
+            // XmlSchema schema;
+            // using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("Resto.Framework.Src.Common.Print.Doc.xsd"))
+            // {
+            //     Debug.Assert(stream != null);
+            //     schema = XmlSchema.Read(stream, SchemaValidationEventHandler);
+            // }
+
+            var schema = XmlSchema.Read(new StringReader(ResourceFile.Schema), SchemaValidationEventHandler);
 
             var settings = new XmlReaderSettings();
             settings.Schemas.Add(schema);

@@ -1,15 +1,10 @@
-using log4net.Appender;
 using Microsoft.AspNetCore.Mvc;
-using Resto.Common.Properties;
 using Resto.Data;
 using Resto.Framework.Attributes.JetBrains;
 using Resto.Framework.Common;
-using Resto.Framework.Common.Currency;
 using Resto.Framework.Common.Print.Tags;
 using Resto.Framework.Common.Print.VirtualTape;
 using Resto.Framework.Common.XmlSerialization;
-using Resto.Framework.Data;
-using Resto.Front.Localization.Resources;
 using Resto.Front.PrintTemplates.Cheques.Razor;
 using Resto.Front.PrintTemplates.Cheques.Razor.TemplateModels;
 using System.Xml.Linq;
@@ -58,19 +53,18 @@ namespace RenderWebApi.Controllers
         public IActionResult RenderRazorTemplate([FromBody] RenderRequest request)
         {
              var dataFileName = @"G:\Brio\obmen\Razor\BillChequePizza.xml";
-             var templateFileName = @"G:\Brio\obmen\Bill1.cshtml";
+             var templateFileName = @"G:\Brio\obmen\BillCheque2.cshtml";
             
             var dataStr = System.IO.File.ReadAllText(dataFileName);
             var templateStr = System.IO.File.ReadAllText(templateFileName);
-            var data = GetRazorPreviewData(dataStr);
+            var data = GetRazorPreviewData(dataStr) as IBillCheque;
             
-            var markup = RazorRunner.GetDocument(data, templateStr);
+            var markup = RazorRunner.GetDocument<IBillCheque>(data, templateStr);
             var document = FormatDocumentOnDefaultPrinter(ConvertXDocumentToXmlElement(markup));
             
             //var template = request.Template;
             //var data = request.Data;
             return Ok(document.ToString());
-            return Ok("hello world");
         }
 
         public static XmlElement ConvertXDocumentToXmlElement(XDocument xDoc)

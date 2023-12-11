@@ -133,7 +133,7 @@ namespace Resto.Front.PrintTemplates.Cheques.Razor
                 {
                     if (!Engine.Razor.IsTemplateCached(templateId, typeof(ITemplateRootModel)))
                     {
-                        Engine.Razor.Compile(template, templateId, typeof(ITemplateRootModel));
+                        Engine.Razor.Compile(template, templateId, typeof(IBillCheque));
                     }
                     break;
                 }

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
-using System.Linq;
+﻿using System.Diagnostics;
 using System.Text;
 using System.Xml;
 using System.Xml.Linq;
@@ -22,7 +18,7 @@ namespace Resto.Framework.Common.Print.VirtualTape
             () =>
             {
                 var temp = new XslCompiledTransform();
-                temp.Load(XmlReader.Create(new StringReader(Resources.DocPreProcess)));
+                temp.Load(XmlReader.Create(new StringReader(ResourceFile.DocPreprocess)));
                 return temp;
             });
 
